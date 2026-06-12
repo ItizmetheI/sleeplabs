@@ -22,6 +22,23 @@ type NavItem = {
 const navItems: NavItem[] = [
   { label: 'HOME', href: '/' },
   {
+    label: 'BEST MATTRESS',
+    href: '/best-mattress',
+    columns: [
+      {
+        title: 'Top Picks 2026',
+        items: [
+          { label: '⭐ Best Overall: AS3', href: '/best-mattress' },
+          { label: 'Best for Back Sleepers: AS2', href: '/best-mattress' },
+          { label: 'Best for Side Sleepers: AS5', href: '/best-mattress' },
+          { label: 'Best for Couples: AS6', href: '/best-mattress' },
+          { label: 'Best Organic: Organica', href: '/best-mattress' },
+          { label: 'Best Value: AS2', href: '/best-mattress' },
+        ]
+      }
+    ]
+  },
+  {
     label: 'REVIEWS',
     href: '/reviews',
     columns: [
@@ -159,7 +176,7 @@ const navItems: NavItem[] = [
     href: '/comparison',
     columns: [
       {
-        title: 'Compare Mattresses',
+        title: 'Amerisleep vs Amerisleep',
         items: [
           { label: 'AS2 vs AS3', href: '/comparison/amerisleep-as2-vs-as3' },
           { label: 'AS3 vs AS5', href: '/comparison/amerisleep-as3-vs-as5' },
@@ -167,6 +184,17 @@ const navItems: NavItem[] = [
           { label: 'AS3 vs Organica', href: '/comparison/amerisleep-as3-vs-organica' },
           { label: 'AS2 vs AS5', href: '/comparison/amerisleep-as2-vs-as5' },
           { label: 'AS6 vs Organica', href: '/comparison/amerisleep-as6-vs-organica' }
+        ]
+      },
+      {
+        title: 'vs Other Brands',
+        items: [
+          { label: 'AS3 vs Saatva Classic', href: '/comparison/amerisleep-as3-vs-saatva-classic' },
+          { label: 'AS3 vs Purple RestorePlus', href: '/comparison/amerisleep-as3-vs-purple-restoreplus-hybrid' },
+          { label: 'AS3 vs Helix Midnight Luxe', href: '/comparison/amerisleep-as3-vs-helix-midnight-luxe' },
+          { label: 'AS3 vs Casper Dream Hybrid', href: '/comparison/amerisleep-as3-vs-casper-dream-hybrid' },
+          { label: 'Organica vs Avocado Green', href: '/comparison/amerisleep-organica-vs-avocado-green' },
+          { label: 'All Comparisons →', href: '/comparison' }
         ]
       }
     ]

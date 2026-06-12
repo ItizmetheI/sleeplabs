@@ -10,7 +10,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-for-back-sleepers",
     "ogTitle": "The Best Mattress for Back Sleepers: Lock Your Spine In Place",
     "ogDescription": "Find the best mattress for back sleepers. We review medium-firm choices designed to absolutely lock down lumbar alignment and stop lower back pain.",
-    "ogImage": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "buying-guides",
     "tags": [
       "back-sleepers",
@@ -289,7 +289,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-for-side-sleepers",
     "ogTitle": "The Best Mattress for Side Sleepers: Stop Waking Up With Shoulder Pain",
     "ogDescription": "Stop waking up with numb arms. We review the best mattresses for side sleepers designed to absorb sharp shoulder pressure and keep your spine aligned.",
-    "ogImage": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "buying-guides",
     "tags": [
       "side-sleepers",
@@ -434,7 +434,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-for-stomach-sleepers",
     "ogTitle": "The Best Mattress for Stomach Sleepers",
     "ogDescription": "Discover the best mattress for stomach sleepers. We review firm mattresses built aggressively to prevent massive hip sinkage and keep your spine perfectly aligned.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "buying-guides",
     "tags": [
       "stomach-sleepers",
@@ -565,7 +565,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-for-combination-sleepers",
     "ogTitle": "The Best Mattress for Combination Sleepers",
     "ogDescription": "Find the best mattress for combination sleepers. We review responsive, medium-feel mattresses that support side, back, and stomach sleepers effortlessly.",
-    "ogImage": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "buying-guides",
     "tags": [
       "combination-sleepers",
@@ -702,7 +702,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-for-heavy-sleepers",
     "ogTitle": "The Best Mattress for Heavy Sleepers",
     "ogDescription": "Find the best mattress for heavy sleepers. We test dense, performance-grade mattresses capable of preventing massive sagging and offering true durability.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "buying-guides",
     "tags": [
       "heavy-sleepers",
@@ -980,7 +980,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-for-couples",
     "ogTitle": "The Best Mattress for Couples",
     "ogDescription": "Stop waking up every time your partner turns over. We expose the best mattresses for couples with massive motion isolation and uncompromising edge support.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "buying-guides",
     "tags": [
       "couples",
@@ -1110,7 +1110,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-for-hot-sleepers",
     "ogTitle": "The Best Mattress for Hot Sleepers",
     "ogDescription": "Stop waking up in a sweat. We review the best mattresses for hot sleepers designed with extreme cooling technology to forcefully drain away body heat.",
-    "ogImage": "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "buying-guides",
     "tags": [
       "cooling",
@@ -1240,7 +1240,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-organic-mattress",
     "ogTitle": "The Best Organic Mattress",
     "ogDescription": "We review the best organic mattress built from pure Talalay latex and organic wool. Ditch the toxic chemicals and sleep on verified organic materials.",
-    "ogImage": "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "buying-guides",
     "tags": [
       "organic",
@@ -1363,7 +1363,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-luxury-mattress",
     "ogTitle": "The Best Luxury Mattress",
     "ogDescription": "Upgrade your bedroom with the best luxury mattress. We review ultra-premium, 15-inch tall cooling beds designed for massive comfort and elite shock absorption.",
-    "ogImage": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "buying-guides",
     "tags": [
       "luxury",
@@ -1486,7 +1486,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-for-hip-pain",
     "ogTitle": "The Best Mattress for Hip Pain",
     "ogDescription": "Stop waking up with aching hips. We review the best mattresses formulated to absorb massive hip pressure and stop morning joint pain.",
-    "ogImage": "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "health-and-sleep",
     "tags": [
       "hip-pain",
@@ -1609,7 +1609,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-for-shoulder-pain",
     "ogTitle": "The Best Mattress for Shoulder Pain",
     "ogDescription": "Stop waking up with dead arms. We review the best mattresses built to relieve sharp shoulder compression and restore healthy circulation overnight.",
-    "ogImage": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "health-and-sleep",
     "tags": [
       "shoulder-pain",
@@ -1695,7 +1695,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-for-sciatica",
     "ogTitle": "The Best Mattress for Sciatica Nerve Pain",
     "ogDescription": "Sciatica requires absolute spinal neutrality. We review the best mattresses equipped with advanced zoning to stop nerve compression overnight.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "health-and-sleep",
     "tags": [
       "sciatica",
@@ -1782,7 +1782,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-for-arthritis",
     "ogTitle": "The Best Mattress for Arthritis",
     "ogDescription": "Stop fighting your bed. We review the best mattresses built to relieve extreme pressure sensitivity and make getting out of bed painless for arthritis sufferers.",
-    "ogImage": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "health-and-sleep",
     "tags": [
       "arthritis",
@@ -1869,7 +1869,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-for-fibromyalgia",
     "ogTitle": "The Best Mattress for Fibromyalgia",
     "ogDescription": "Fibromyalgia demands hyper-plush surface tension. Discover the best mattresses designed to eliminate painful trigger points and soothe full-body aches.",
-    "ogImage": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "health-and-sleep",
     "tags": [
       "fibromyalgia",
@@ -2043,7 +2043,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-for-seniors",
     "ogTitle": "The Best Mattress for Seniors",
     "ogDescription": "Aging changes your sleep requirements completely. Discover the best mattresses and adjustable bases that prioritize pressure relief and easy mobility.",
-    "ogImage": "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "health-and-sleep",
     "tags": [
       "seniors",
@@ -2130,7 +2130,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-for-pregnancy",
     "ogTitle": "The Best Mattress for Pregnancy",
     "ogDescription": "Pregnancy forces severe side-sleeping and immense pelvic pressure. Discover the plush mattresses designed to alleviate heavy joint stress and keep moms cool.",
-    "ogImage": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "health-and-sleep",
     "tags": [
       "pregnancy",
@@ -2216,7 +2216,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-for-athletes",
     "ogTitle": "The Best Mattress for Athletes",
     "ogDescription": "Maximized recovery demands deep sleep and high blood flow. Discover the elite mattresses tailored strictly for heavy athletic performance.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "health-and-sleep",
     "tags": [
       "athletes",
@@ -2385,7 +2385,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-under-1000",
     "ogTitle": "The Best Mattress Under $1,000",
     "ogDescription": "You don't need to spend thousands to secure premium plant-based memory foam. We examine what specific Amerisleep models fall perfectly under the $1,000 threshold.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "buying-guides",
     "tags": [
       "budget",
@@ -2468,7 +2468,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-memory-foam-mattress",
     "ogTitle": "The Best Memory Foam Mattress",
     "ogDescription": "Memory foam is not obsolete—it evolved. We review the best plant-based memory foam mattresses built to eliminate heat retention and maximize pressure relief.",
-    "ogImage": "https://images.unsplash.com/photo-1647376036543-f9f543601a1d?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "buying-guides",
     "tags": [
       "memory-foam",
@@ -2552,7 +2552,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-for-college-students",
     "ogTitle": "The Best Mattress for College Students",
     "ogDescription": "College students require durable, affordable recovery platforms. We isolate the best high-performance mattresses capable of surviving heavy dorm usage without draining budgets.",
-    "ogImage": "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "buying-guides",
     "tags": [
       "college",
@@ -2634,7 +2634,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-for-guest-bedroom",
     "ogTitle": "The Best Mattress for a Guest Bedroom",
     "ogDescription": "You cannot guess a visitor's sleep style. We expose why a medium firmness is mandatory for guest rooms and which premium model executes it flawlessly.",
-    "ogImage": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "buying-guides",
     "tags": [
       "guest-room",
@@ -2715,7 +2715,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-topper-for-back-pain",
     "ogTitle": "The Best Mattress Topper for Back Pain",
     "ogDescription": "Can a topper fix a bad bed? We break down when to use a topper versus entirely replacing your failing mattress, and review the best ergonomic options.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "buying-guides",
     "tags": [
       "toppers",
@@ -2801,7 +2801,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-topper-for-pressure-relief",
     "ogTitle": "The Best Mattress Topper for Pressure Relief",
     "ogDescription": "Turn your brick-hard bed into a cloud. Discover how thick, zoned memory foam toppers radically destroy joint pressure in shoulders and hips.",
-    "ogImage": "https://images.unsplash.com/photo-1647376036543-f9f543601a1d?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "buying-guides",
     "tags": [
       "toppers",
@@ -2884,7 +2884,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-cooling-mattress-topper",
     "ogTitle": "The Best Cooling Mattress Topper",
     "ogDescription": "Stop sweating on dense memory foam. We examine what separates a topper that genuinely pulls heat versus cheap gels that just feel cold briefly.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "buying-guides",
     "tags": [
       "toppers",
@@ -2966,7 +2966,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-pillow-for-side-sleepers",
     "ogTitle": "The Best Pillow for Side Sleepers",
     "ogDescription": "Side sleepers have an enormous shoulder gap. We test the deepest, highest-loft memory foam pillows capable of saving your neck alignment.",
-    "ogImage": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "buying-guides",
     "tags": [
       "pillows",
@@ -3053,7 +3053,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-pillow-for-neck-pain",
     "ogTitle": "The Best Pillow for Neck Pain",
     "ogDescription": "Incorrect loft utterly destroys cervical nerves. We look at highly adjustable pillows that allow you to exactly map the loft firmly to your head.",
-    "ogImage": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "buying-guides",
     "tags": [
       "pillows",
@@ -3139,7 +3139,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-adjustable-bed-base",
     "ogTitle": "The Best Adjustable Bed Base",
     "ogDescription": "Zero-gravity sleeping aggressively heals lower lumbar tension. We review what strictly elevates a flagship adjustable bed versus cheap basic models.",
-    "ogImage": "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "buying-guides",
     "tags": [
       "accessories",
@@ -3220,7 +3220,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-bamboo-sheets",
     "ogTitle": "The Best Bamboo Sheets for Deep Sleep",
     "ogDescription": "Are bamboo sheets really cooler than cotton? We break down the exact thermodynamics and reveal why premium bamboo drastically out-cools standard bedding.",
-    "ogImage": "https://images.unsplash.com/photo-1647376036543-f9f543601a1d?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "buying-guides",
     "tags": [
       "accessories",
@@ -3307,7 +3307,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-protector",
     "ogTitle": "The Best Waterproof Mattress Protector",
     "ogDescription": "Cheap protectors feel like sleeping on loud plastic trash bags. We review the best breathable, silent mattress protectors that save your bed perfectly.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "buying-guides",
     "tags": [
       "accessories",
@@ -3394,7 +3394,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-bed-frame-for-heavy-people",
     "ogTitle": "The Best Bed Frame for Heavy People",
     "ogDescription": "Stop breaking weak wooden slats. Discover the true structural weight capacities required to properly support a heavy sleeper and their mattress.",
-    "ogImage": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "buying-guides",
     "tags": [
       "accessories",
@@ -3480,7 +3480,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-upholstered-bed-frame",
     "ogTitle": "The Best Upholstered Bed Frame",
     "ogDescription": "Reviewing the most durable, stylish upholstered bed frames available that do not squeak or require complex massive tools to aggressively assemble.",
-    "ogImage": "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "buying-guides",
     "tags": [
       "accessories",
@@ -3565,7 +3565,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-mattress-for-back-pain-side-sleepers",
     "ogTitle": "The Best Mattress for Back Pain in Side Sleepers",
     "ogDescription": "Targeting lateral back pain requires absolute structural precision. Review the best mattresses built to yield exactly at the shoulder but hold the midsection.",
-    "ogImage": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "health-and-sleep",
     "tags": [
       "side-sleepers",
@@ -3656,7 +3656,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/memory-foam-vs-latex-mattress",
     "ogTitle": "Memory Foam vs. Latex Mattress: Which Is Better?",
     "ogDescription": "Memory foam provides a slow-sinking, deeply contoured feel that perfectly relieves joint pressure, while latex feels instantly bouncy and keeps you he...",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "product-comparison",
     "tags": [
       "comparisons",
@@ -3747,7 +3747,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/firm-vs-soft-mattress",
     "ogTitle": "Firm vs. Soft Mattress: How to Choose",
     "ogDescription": "Firm mattresses aggressively support the back and stomach by resisting heavy hip sinkage, while soft mattresses yield completely to the shoulders and ...",
-    "ogImage": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "product-comparison",
     "tags": [
       "comparisons",
@@ -3845,7 +3845,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/12-inch-vs-14-inch-mattress",
     "ogTitle": "12-Inch vs. 14-Inch Mattress: Why Height Matters",
     "ogDescription": "A 14-inch mattress provides drastically more compressive depth for heavy pressure relief than a 12-inch bed. The extra thickness is never purely cosme...",
-    "ogImage": "https://images.unsplash.com/photo-1647376036543-f9f543601a1d?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "product-comparison",
     "tags": [
       "comparisons",
@@ -3943,7 +3943,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/king-vs-cal-king-mattress",
     "ogTitle": "King vs. California King Mattress",
     "ogDescription": "A standard King mattress provides maximum width for couples, while a California King trades four inches of width for four inches of extra length. If y...",
-    "ogImage": "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "product-comparison",
     "tags": [
       "comparisons",
@@ -4040,7 +4040,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/queen-vs-king-mattress",
     "ogTitle": "Queen vs. King Mattress: Which Size Wins?",
     "ogDescription": "A King mattress offers 16 extra inches of width compared to a Queen, granting couples significantly more personal breathing room. If you sleep with a ...",
-    "ogImage": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "product-comparison",
     "tags": [
       "comparisons",
@@ -4137,7 +4137,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/split-king-vs-standard-king",
     "ogTitle": "Split King vs. Standard King Mattress",
     "ogDescription": "A Split King physically separates the mattress into two distinct sides, allowing each partner to independently raise or lower their head and feet usin...",
-    "ogImage": "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "product-comparison",
     "tags": [
       "comparisons",
@@ -4228,7 +4228,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/organic-mattress-vs-memory-foam",
     "ogTitle": "Organic Mattress vs. Memory Foam",
     "ogDescription": "Memory foam utilizes advanced synthesized cellular structures to deliver ultimate slow-response pressure relief, while an organic mattress uses sustai...",
-    "ogImage": "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "product-comparison",
     "tags": [
       "comparisons",
@@ -4319,7 +4319,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/cooling-mattress-vs-cooling-topper",
     "ogTitle": "Cooling Mattress vs. Cooling Topper",
     "ogDescription": "A cooling topper superficially masks surface heat, while a dedicated cooling mattress eliminates heat traps at every single structural layer. If your ...",
-    "ogImage": "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "product-comparison",
     "tags": [
       "comparisons",
@@ -4410,7 +4410,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/adjustable-base-vs-box-spring",
     "ogTitle": "Adjustable Base vs Box Spring: A Complete Breakdown",
     "ogDescription": "I break down the mechanical differences between an adjustable smart base and a traditional flat foundation, and why a box spring should never be considered.",
-    "ogImage": "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "product-comparison",
     "tags": [
       "comparisons",
@@ -4568,7 +4568,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/mattress-topper-vs-new-mattress",
     "ogTitle": "Mattress Topper Vs New Mattress: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding mattress topper vs new mattress.",
-    "ogImage": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "product-comparison",
     "tags": [
       "sleep-science",
@@ -4716,7 +4716,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/platform-bed-frame-vs-box-spring",
     "ogTitle": "Platform Bed Frame Vs Box Spring: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding platform bed frame vs box spring.",
-    "ogImage": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "product-comparison",
     "tags": [
       "sleep-science",
@@ -4864,7 +4864,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/bamboo-sheets-vs-cotton-sheets",
     "ogTitle": "Bamboo Sheets Vs Cotton Sheets: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding bamboo sheets vs cotton sheets.",
-    "ogImage": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "product-comparison",
     "tags": [
       "sleep-science",
@@ -5012,7 +5012,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/plush-vs-firm-mattress-for-back-pain",
     "ogTitle": "Plush Vs Firm Mattress For Back Pain: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding plush vs firm mattress for back pain.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "product-comparison",
     "tags": [
       "sleep-science",
@@ -5164,7 +5164,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/memory-foam-vs-latex-for-pressure-relief",
     "ogTitle": "Memory Foam Vs Latex For Pressure Relief: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding memory foam vs latex for pressure relief.",
-    "ogImage": "https://images.unsplash.com/photo-1647376036543-f9f543601a1d?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "product-comparison",
     "tags": [
       "sleep-science",
@@ -5312,7 +5312,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/down-pillow-vs-memory-foam-pillow",
     "ogTitle": "Down Pillow Vs Memory Foam Pillow: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding down pillow vs memory foam pillow.",
-    "ogImage": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "product-comparison",
     "tags": [
       "sleep-science",
@@ -5460,7 +5460,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-does-memory-foam-work",
     "ogTitle": "How Does Memory Foam Work: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how does memory foam work.",
-    "ogImage": "https://images.unsplash.com/photo-1647376036543-f9f543601a1d?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -5570,7 +5570,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/what-is-bio-pur-memory-foam",
     "ogTitle": "What Is Bio Pur Memory Foam: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding what is bio pur memory foam.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -5680,7 +5680,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/what-is-hive-technology",
     "ogTitle": "What Is Hive Technology: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding what is hive technology.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -5790,7 +5790,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/what-does-certipur-us-certified-mean",
     "ogTitle": "What Does Certipur Us Certified Mean: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding what does certipur us certified mean.",
-    "ogImage": "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -5900,7 +5900,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/what-is-off-gassing-and-is-it-dangerous",
     "ogTitle": "What Is Off Gassing And Is It Dangerous: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding what is off gassing and is it dangerous.",
-    "ogImage": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -6010,7 +6010,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-long-does-a-memory-foam-mattress-last",
     "ogTitle": "How Long Does A Memory Foam Mattress Last: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how long does a memory foam mattress last.",
-    "ogImage": "https://images.unsplash.com/photo-1647376036543-f9f543601a1d?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -6120,7 +6120,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/what-is-pressure-relief-in-a-mattress",
     "ogTitle": "What Is Pressure Relief In A Mattress: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding what is pressure relief in a mattress.",
-    "ogImage": "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -6234,7 +6234,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/what-is-spinal-neutral-position",
     "ogTitle": "What Is Spinal Neutral Position: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding what is spinal neutral position.",
-    "ogImage": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -6348,7 +6348,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/does-mattress-height-matter",
     "ogTitle": "Does Mattress Height Matter: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding does mattress height matter.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -6458,7 +6458,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-does-mattress-firmness-affect-sleep-quality",
     "ogTitle": "How Does Mattress Firmness Affect Sleep Quality: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how does mattress firmness affect sleep quality.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -6572,7 +6572,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/what-causes-lower-back-pain-when-sleeping",
     "ogTitle": "What Causes Lower Back Pain When Sleeping: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding what causes lower back pain when sleeping.",
-    "ogImage": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -6686,7 +6686,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/why-do-i-wake-up-with-hip-pain",
     "ogTitle": "Why Do I Wake Up With Hip Pain: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding why do i wake up with hip pain.",
-    "ogImage": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -6800,7 +6800,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-does-sleep-position-affect-neck-pain",
     "ogTitle": "How Does Sleep Position Affect Neck Pain: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how does sleep position affect neck pain.",
-    "ogImage": "https://images.unsplash.com/photo-1647376036543-f9f543601a1d?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -6914,7 +6914,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-tell-if-your-mattress-is-causing-back-pain",
     "ogTitle": "How To Tell If Your Mattress Is Causing Back Pain: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to tell if your mattress is causing back pain.",
-    "ogImage": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -7028,7 +7028,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/why-firm-mattresses-are-not-always-better-for-back-pain",
     "ogTitle": "Why Firm Mattresses Are Not Always Better For Back Pain: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding why firm mattresses are not always better for back pain.",
-    "ogImage": "https://images.unsplash.com/photo-1647376036543-f9f543601a1d?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -7142,7 +7142,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/can-a-new-mattress-fix-back-pain",
     "ogTitle": "Can A New Mattress Fix Back Pain: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding can a new mattress fix back pain.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -7256,7 +7256,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/does-sleeping-on-your-stomach-cause-neck-pain",
     "ogTitle": "Does Sleeping On Your Stomach Cause Neck Pain: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding does sleeping on your stomach cause neck pain.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -7370,7 +7370,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/why-your-body-feels-stiff-in-the-morning",
     "ogTitle": "Why Your Body Feels Stiff In The Morning: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding why your body feels stiff in the morning.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -7484,7 +7484,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/what-causes-night-sweats-during-sleep",
     "ogTitle": "What Causes Night Sweats During Sleep: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding what causes night sweats during sleep.",
-    "ogImage": "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -7594,7 +7594,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-mattress-temperature-affects-deep-sleep",
     "ogTitle": "How Mattress Temperature Affects Deep Sleep: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how mattress temperature affects deep sleep.",
-    "ogImage": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -7704,7 +7704,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/what-is-rem-sleep-and-why-it-matters",
     "ogTitle": "What Is Rem Sleep And Why It Matters: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding what is rem sleep and why it matters.",
-    "ogImage": "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -7814,7 +7814,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/what-causes-insomnia",
     "ogTitle": "What Causes Insomnia: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding what causes insomnia.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -7924,7 +7924,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-blue-light-affects-sleep-cycles",
     "ogTitle": "How Blue Light Affects Sleep Cycles: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how blue light affects sleep cycles.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -8144,7 +8144,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/what-is-sleep-debt-and-how-to-repay-it",
     "ogTitle": "What Is Sleep Debt And How To Repay It: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding what is sleep debt and how to repay it.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -8254,7 +8254,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-circadian-rhythm-affects-sleep",
     "ogTitle": "How Circadian Rhythm Affects Sleep: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how circadian rhythm affects sleep.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -8364,7 +8364,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-stress-physically-affects-sleep",
     "ogTitle": "How Stress Physically Affects Sleep: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how stress physically affects sleep.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -8474,7 +8474,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/what-is-sleep-pressure-and-why-it-matters",
     "ogTitle": "What Is Sleep Pressure And Why It Matters: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding what is sleep pressure and why it matters.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -8698,7 +8698,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/why-you-sleep-worse-in-a-new-place",
     "ogTitle": "Why You Sleep Worse In A New Place: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding why you sleep worse in a new place.",
-    "ogImage": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -8808,7 +8808,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-sleep-position-for-back-pain",
     "ogTitle": "Best Sleep Position For Back Pain: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding best sleep position for back pain.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -8922,7 +8922,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/best-sleep-position-for-hip-pain",
     "ogTitle": "Best Sleep Position For Hip Pain: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding best sleep position for hip pain.",
-    "ogImage": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -9146,7 +9146,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-stop-overheating-at-night",
     "ogTitle": "How To Stop Overheating At Night: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to stop overheating at night.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -9256,7 +9256,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/why-couples-sleep-better-apart",
     "ogTitle": "Why Couples Sleep Better Apart: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding why couples sleep better apart.",
-    "ogImage": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -9366,7 +9366,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/what-to-do-when-you-cannot-fall-asleep",
     "ogTitle": "What To Do When You Cannot Fall Asleep: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding what to do when you cannot fall asleep.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -9476,7 +9476,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-pregnancy-changes-sleep-position-needs",
     "ogTitle": "How Pregnancy Changes Sleep Position Needs: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how pregnancy changes sleep position needs.",
-    "ogImage": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -9590,7 +9590,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-aging-changes-sleep-patterns",
     "ogTitle": "How Aging Changes Sleep Patterns: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how aging changes sleep patterns.",
-    "ogImage": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -9704,7 +9704,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/impact-of-sleep-quality-on-daily-life",
     "ogTitle": "Impact Of Sleep Quality On Daily Life: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding impact of sleep quality on daily life.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -9814,7 +9814,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/sleep-hygiene-checklist",
     "ogTitle": "Sleep Hygiene Checklist: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding sleep hygiene checklist.",
-    "ogImage": "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -9924,7 +9924,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-clean-a-memory-foam-mattress",
     "ogTitle": "How To Clean A Memory Foam Mattress: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to clean a memory foam mattress.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -10055,7 +10055,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-remove-stains-from-mattress",
     "ogTitle": "How To Remove Stains From Mattress: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to remove stains from mattress.",
-    "ogImage": "https://images.unsplash.com/photo-1647376036543-f9f543601a1d?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -10186,7 +10186,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-rotate-a-memory-foam-mattress",
     "ogTitle": "How To Rotate A Memory Foam Mattress: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to rotate a memory foam mattress.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -10317,7 +10317,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-break-in-a-new-memory-foam-mattress",
     "ogTitle": "How To Break In A New Memory Foam Mattress: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to break in a new memory foam mattress.",
-    "ogImage": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -10448,7 +10448,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-get-rid-of-mattress-odor",
     "ogTitle": "How To Get Rid Of Mattress Odor: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to get rid of mattress odor.",
-    "ogImage": "https://images.unsplash.com/photo-1647376036543-f9f543601a1d?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -10579,7 +10579,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-dispose-of-an-old-mattress",
     "ogTitle": "How To Dispose Of An Old Mattress: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to dispose of an old mattress.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -10710,7 +10710,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-know-when-to-replace-your-mattress",
     "ogTitle": "How To Know When To Replace Your Mattress: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to know when to replace your mattress.",
-    "ogImage": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -10841,7 +10841,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-use-a-mattress-topper-correctly",
     "ogTitle": "How To Use A Mattress Topper Correctly: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to use a mattress topper correctly.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -10972,7 +10972,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-evaluate-a-mattress-during-the-trial-period",
     "ogTitle": "How To Evaluate A Mattress During The Trial Period: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to evaluate a mattress during the trial period.",
-    "ogImage": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -11103,7 +11103,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-move-a-memory-foam-mattress",
     "ogTitle": "How To Move A Memory Foam Mattress: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to move a memory foam mattress.",
-    "ogImage": "https://images.unsplash.com/photo-1647376036543-f9f543601a1d?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -11234,7 +11234,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-set-up-an-adjustable-bed-base",
     "ogTitle": "How To Set Up An Adjustable Bed Base: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to set up an adjustable bed base.",
-    "ogImage": "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -11365,7 +11365,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-set-up-zero-gravity-position",
     "ogTitle": "How To Set Up Zero Gravity Position: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to set up zero gravity position.",
-    "ogImage": "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -11496,7 +11496,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-measure-your-bedroom-for-a-bed-frame",
     "ogTitle": "How To Measure Your Bedroom For A Bed Frame: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to measure your bedroom for a bed frame.",
-    "ogImage": "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -11627,7 +11627,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-reduce-motion-transfer-in-a-shared-bed",
     "ogTitle": "How To Reduce Motion Transfer In A Shared Bed: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to reduce motion transfer in a shared bed.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -11758,7 +11758,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-keep-your-mattress-cool-in-summer",
     "ogTitle": "How To Keep Your Mattress Cool In Summer: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to keep your mattress cool in summer.",
-    "ogImage": "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -12020,7 +12020,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-set-up-a-bedroom-for-better-sleep",
     "ogTitle": "How To Set Up A Bedroom For Better Sleep: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to set up a bedroom for better sleep.",
-    "ogImage": "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -12151,7 +12151,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-make-a-guest-bedroom-sleep-comfortable",
     "ogTitle": "How To Make A Guest Bedroom Sleep Comfortable: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to make a guest bedroom sleep comfortable.",
-    "ogImage": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -12282,7 +12282,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-choose-the-right-pillow-loft",
     "ogTitle": "How To Choose The Right Pillow Loft: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to choose the right pillow loft.",
-    "ogImage": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -12417,7 +12417,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-wash-bamboo-sheets",
     "ogTitle": "How To Wash Bamboo Sheets: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to wash bamboo sheets.",
-    "ogImage": "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -12548,7 +12548,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-sleep-with-lower-back-pain-tonight",
     "ogTitle": "How To Sleep With Lower Back Pain Tonight: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to sleep with lower back pain tonight.",
-    "ogImage": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -12683,7 +12683,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-sleep-with-sciatica",
     "ogTitle": "How To Sleep With Sciatica: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to sleep with sciatica.",
-    "ogImage": "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -12818,7 +12818,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-stop-waking-up-with-neck-pain",
     "ogTitle": "How To Stop Waking Up With Neck Pain: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to stop waking up with neck pain.",
-    "ogImage": "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -12953,7 +12953,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-sleep-on-your-back-if-you-are-a-side-sleeper",
     "ogTitle": "How To Sleep On Your Back If You Are A Side Sleeper: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to sleep on your back if you are a side sleeper.",
-    "ogImage": "https://images.unsplash.com/photo-1647376036543-f9f543601a1d?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -13088,7 +13088,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-sleep-better-with-chronic-pain",
     "ogTitle": "How To Sleep Better With Chronic Pain: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to sleep better with chronic pain.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -13223,7 +13223,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-sleep-comfortably-during-pregnancy",
     "ogTitle": "How To Sleep Comfortably During Pregnancy: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to sleep comfortably during pregnancy.",
-    "ogImage": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -13358,7 +13358,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-reduce-snoring-with-sleep-setup",
     "ogTitle": "How To Reduce Snoring With Sleep Setup: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to reduce snoring with sleep setup.",
-    "ogImage": "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -13489,7 +13489,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-sleep-better-when-sharing-a-bed",
     "ogTitle": "How To Sleep Better When Sharing A Bed: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to sleep better when sharing a bed.",
-    "ogImage": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -13620,7 +13620,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-sleep-with-fibromyalgia",
     "ogTitle": "How To Sleep With Fibromyalgia: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to sleep with fibromyalgia.",
-    "ogImage": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -13755,7 +13755,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-sleep-with-arthritis",
     "ogTitle": "How To Sleep With Arthritis: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to sleep with arthritis.",
-    "ogImage": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -13890,7 +13890,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-build-a-sleep-routine-that-works",
     "ogTitle": "How To Build A Sleep Routine That Works: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to build a sleep routine that works.",
-    "ogImage": "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -14021,7 +14021,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-create-a-wind-down-routine",
     "ogTitle": "How To Create A Wind Down Routine: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to create a wind down routine.",
-    "ogImage": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -14152,7 +14152,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-improve-sleep-quality-without-medication",
     "ogTitle": "How To Improve Sleep Quality Without Medication: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to improve sleep quality without medication.",
-    "ogImage": "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -14283,7 +14283,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-evaluate-a-mattress-trial-period",
     "ogTitle": "How To Evaluate A Mattress Trial Period: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to evaluate a mattress trial period.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -14545,7 +14545,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-choose-between-two-mattresses",
     "ogTitle": "How To Choose Between Two Mattresses: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to choose between two mattresses.",
-    "ogImage": "https://images.unsplash.com/photo-1647376036543-f9f543601a1d?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -14676,7 +14676,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-make-a-hotel-bed-more-comfortable",
     "ogTitle": "How To Make A Hotel Bed More Comfortable: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to make a hotel bed more comfortable.",
-    "ogImage": "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -14807,7 +14807,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-stop-overheating-mid-sleep",
     "ogTitle": "How To Stop Overheating Mid Sleep: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to stop overheating mid sleep.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -14938,7 +14938,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-layer-a-bed-for-cold-sleepers",
     "ogTitle": "How To Layer A Bed For Cold Sleepers: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to layer a bed for cold sleepers.",
-    "ogImage": "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -15069,7 +15069,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-dispose-of-old-bedding-responsibly",
     "ogTitle": "How To Dispose Of Old Bedding Responsibly: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to dispose of old bedding responsibly.",
-    "ogImage": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/images/stencil/450w/content/assets/mattress-product/AS6-nav.jpg",
     "category": "mattress-care",
     "tags": [
       "sleep-science",
@@ -15200,7 +15200,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/what-to-ask-before-buying-a-mattress-online",
     "ogTitle": "What To Ask Before Buying A Mattress Online: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding what to ask before buying a mattress online.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -15310,7 +15310,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/mattress-buying-guide-for-first-time-buyers",
     "ogTitle": "Mattress Buying Guide For First Time Buyers: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding mattress buying guide for first time buyers.",
-    "ogImage": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -15420,7 +15420,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/what-the-100-night-trial-actually-covers",
     "ogTitle": "What The 100 Night Trial Actually Covers: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding what the 100 night trial actually covers.",
-    "ogImage": "https://images.unsplash.com/photo-1647376036543-f9f543601a1d?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -15530,7 +15530,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/the-truth-about-mattress-warranties",
     "ogTitle": "The Truth About Mattress Warranties: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding the truth about mattress warranties.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -15750,7 +15750,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/why-mattress-firmness-ratings-are-inconsistent",
     "ogTitle": "Why Mattress Firmness Ratings Are Inconsistent: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding why mattress firmness ratings are inconsistent.",
-    "ogImage": "https://images.unsplash.com/photo-1647376036543-f9f543601a1d?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -15860,7 +15860,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-body-weight-affects-mattress-firmness-feel",
     "ogTitle": "How Body Weight Affects Mattress Firmness Feel: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how body weight affects mattress firmness feel.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -15970,7 +15970,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/what-mattress-certifications-actually-mean",
     "ogTitle": "What Mattress Certifications Actually Mean: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding what mattress certifications actually mean.",
-    "ogImage": "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -16080,7 +16080,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-read-a-mattress-spec-sheet",
     "ogTitle": "How To Read A Mattress Spec Sheet: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to read a mattress spec sheet.",
-    "ogImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -16190,7 +16190,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/memory-foam-contouring-explained",
     "ogTitle": "Memory Foam Contouring Explained: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding memory foam contouring explained.",
-    "ogImage": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -16300,7 +16300,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-sleep-deprivation-affects-the-body",
     "ogTitle": "How Sleep Deprivation Affects The Body: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how sleep deprivation affects the body.",
-    "ogImage": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -16410,7 +16410,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-cortisol-affects-sleep",
     "ogTitle": "How Cortisol Affects Sleep: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how cortisol affects sleep.",
-    "ogImage": "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -16520,7 +16520,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/what-sleep-apnea-is-and-how-sleep-setup-helps",
     "ogTitle": "What Sleep Apnea Is And How Sleep Setup Helps: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding what sleep apnea is and how sleep setup helps.",
-    "ogImage": "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -16630,7 +16630,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-sciatica-originates-and-what-sleep-does",
     "ogTitle": "How Sciatica Originates And What Sleep Does: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how sciatica originates and what sleep does.",
-    "ogImage": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -16744,7 +16744,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/what-is-fibromyalgia-and-how-it-affects-sleep",
     "ogTitle": "What Is Fibromyalgia And How It Affects Sleep: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding what is fibromyalgia and how it affects sleep.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -16858,7 +16858,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-chronic-pain-changes-sleep-architecture",
     "ogTitle": "How Chronic Pain Changes Sleep Architecture: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how chronic pain changes sleep architecture.",
-    "ogImage": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -16972,7 +16972,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/zero-gravity-sleep-position-explained",
     "ogTitle": "Zero Gravity Sleep Position Explained: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding zero gravity sleep position explained.",
-    "ogImage": "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -17082,7 +17082,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/what-spinal-decompression-during-sleep-means",
     "ogTitle": "What Spinal Decompression During Sleep Means: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding what spinal decompression during sleep means.",
-    "ogImage": "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-organica-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -17196,7 +17196,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-sleep-affects-immune-function",
     "ogTitle": "How Sleep Affects Immune Function: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how sleep affects immune function.",
-    "ogImage": "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as5-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
@@ -17306,7 +17306,7 @@ export const blogPosts: BlogPost[] = [
     "canonicalUrl": "/blog/how-to-choose-the-right-amerisleep-mattress",
     "ogTitle": "How To Choose The Right Amerisleep Mattress: A Complete Guide",
     "ogDescription": "Expert testing and rigorous analysis regarding how to choose the right amerisleep mattress.",
-    "ogImage": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80",
+    "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg",
     "category": "sleep-science",
     "tags": [
       "sleep-science",
