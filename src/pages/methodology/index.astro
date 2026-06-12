@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const lastUpdated = "2026-05-01";
+const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How We Test Mattresses at PureSleep",
+  "description": "Our mattress testing methodology: 7-metric scoring, hands-on evaluation, editorially independent reviews.",
+  "author": { "@type": "Organization", "name": "PureSleep" },
+  "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
+  "datePublished": "2024-01-01",
+  "dateModified": lastUpdated,
+  "mainEntityOfPage": `${SITE_URL}/methodology/`
+};
+
+const formattedDate = new Date(lastUpdated).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+---
+
+<BaseLayout
+  title="How We Test Mattresses — PureSleep Testing Methodology"
+  description="Our mattress testing methodology: 7-metric scoring, hands-on evaluation, and editorially independent reviews of the full Amerisleep lineup."
+  canonicalUrl={`${SITE_URL}/methodology/`}
+  lastUpdated={lastUpdated}
+  jsonLd={jsonLd}
+>
+  <main class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop py-16 relative z-10 w-full flex flex-col gap-16">
+
+    <header class="flex flex-col gap-6 text-center">
+      <h1 class="text-headline-lg font-headline-lg text-primary font-bold">How We Test Mattresses at PureSleep</h1>
+      <div class="flex justify-center">
+        <span class="text-body-md text-on-surface-variant bg-surface px-6 py-2 rounded-full shadow-sm border border-outline-variant/30">
+          <strong>Last Updated:</strong> {formattedDate}
+        </span>
+      </div>
+      <p class="text-body-lg text-on-surface-variant leading-relaxed text-left mt-4 glass-panel p-8 rounded-3xl border border-white/60">
+        PureSleep evaluates Amerisleep mattresses using a standardized 7-metric scoring system. Every score comes from hands-on testing — we do not accept manufacturer PR samples in exchange for reviews. Our affiliate commissions from Amerisleep do not affect our scores or rankings.
+      </p>
+    </header>
+
+    <section class="flex flex-col gap-8">
+      <h2 class="text-headline-md font-headline-md text-primary border-b border-outline-variant/30 pb-4 italic">Our Testing Process</h2>
+      <div class="grid grid-cols-1 gap-6">
+        {[
+          { n: "1", title: "Mattress Acquisition", desc: "Mattresses are purchased or sourced independently. We never accept hand-picked review units from manufacturers, ensuring we test the same product a consumer receives." },
+          { n: "2", title: "Sleep Testing", desc: "Each mattress is tested across multiple sleep positions — back, side, and stomach — by multiple testers covering different body weights and sleep preferences." },
+          { n: "3", title: "7-Metric Scoring", desc: "Each mattress is scored on Support, Pressure Relief, Cooling, Motion Isolation, Edge Support, Responsiveness, and Value. All scores are 0–10." },
+          { n: "4", title: "Weighted Overall Score", desc: "The overall score is a weighted average. Support and Pressure Relief are each weighted 1.5× because they most directly affect sleep quality." },
+          { n: "5", title: "Editorial Independence", desc: "Scores are finalized before affiliate links are placed. No commercial relationship affects which model ranks higher." }
+        ].map(step => (
+          <div class="flex gap-6 items-start">
+            <div class="bg-primary/10 text-primary font-bold text-xl rounded-full w-12 h-12 flex items-center justify-center shrink-0 border border-primary/20">{step.n}</div>
+            <div class="pt-2">
+              <h3 class="font-bold text-on-surface mb-2">{step.title}</h3>
+              <p class="text-body-md text-on-surface-variant leading-relaxed">{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-8">
+      <h2 class="text-headline-md font-headline-md text-primary border-b border-outline-variant/30 pb-4 italic">The 7 Scoring Criteria</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {[
+          { metric: "Support", desc: "How well the mattress maintains spinal alignment across sleep positions." },
+          { metric: "Pressure Relief", desc: "How effectively it reduces pressure at shoulders, hips, and knees." },
+          { metric: "Cooling", desc: "Airflow and heat dissipation — how warm the surface feels over a full night." },
+          { metric: "Motion Isolation", desc: "How much movement from one side transfers to the other." },
+          { metric: "Edge Support", desc: "Firmness and usability at the perimeter — relevant for couples." },
+          { metric: "Responsiveness", desc: "How quickly the foam or latex returns to shape after pressure." },
+          { metric: "Value", desc: "Overall quality relative to price, including warranty and trial terms." }
+        ].map(item => (
+          <div class="glass-panel p-6 rounded-2xl border border-outline-variant/30">
+            <h4 class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold mb-2">{item.metric}</h4>
+            <p class="text-body-md text-on-surface-variant">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="glass-panel p-8 rounded-3xl border border-outline-variant/30 flex flex-col gap-4">
+      <h2 class="text-headline-md font-headline-md text-primary mb-2">Editorial Standards</h2>
+      <ul class="flex flex-col gap-3 text-body-md text-on-surface-variant">
+        <li class="flex gap-3"><span class="text-secondary font-bold">—</span> We do not make medical claims. No mattress can diagnose, treat, or cure any health condition.</li>
+        <li class="flex gap-3"><span class="text-secondary font-bold">—</span> We do not accept paid placements or sponsored rankings. Affiliate commissions are disclosed and do not influence scores.</li>
+        <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Scores reflect hands-on testing, not manufacturer-provided data.</li>
+        <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Reviews are updated when product specifications change or on a regular re-evaluation cycle.</li>
+      </ul>
+    </section>
+
+  </main>
+</BaseLayout>

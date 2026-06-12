@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { topics } from '../../data/topics';
+
+const lastUpdated = "2026-05-01";
+const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+
+const getTopicImage = (id: string) => {
+  const images = {
+    'memory-foam': 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80',
+    'cooling-technology': 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80',
+    'pocketed-coils': 'https://images.unsplash.com/photo-1499933374294-4584851497cc?auto=format&fit=crop&w=600&q=80',
+    'spinal-alignment': 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80',
+    'motion-isolation': 'https://images.unsplash.com/photo-1512438248247-f0f2a5a8b7f0?auto=format&fit=crop&w=600&q=80',
+    'edge-support': 'https://images.unsplash.com/photo-1505692952047-1a78307da8f2?auto=format&fit=crop&w=600&q=80',
+    'certipur-us': 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80',
+    'sleep-cycles': 'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80',
+  };
+  return images[id as keyof typeof images] || 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80';
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Mattress & Sleep Topics — PureSleep",
+  "description": "The science behind sleep: memory foam, cooling technology, spinal alignment, motion isolation, sleep cycles, and more.",
+  "url": `${SITE_URL}/topics/`,
+  "dateModified": lastUpdated,
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": topics.map((topic, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": `${SITE_URL}/topics/${topic.id}`,
+      "name": topic.title
+    }))
+  }
+};
+---
+
+<BaseLayout 
+  title="Key Mattress & Sleep Topics — PureSleep" 
+  description="Explore the science behind sleep: memory foam, cooling technology, spinal alignment, sleep cycles, and more."
+  canonicalUrl={`${SITE_URL}/topics/`}
+  lastUpdated={lastUpdated}
+  ogImage="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80"
+  jsonLd={jsonLd}
+>
+  <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 relative z-10 w-full flex flex-col gap-16">
+    <header class="flex flex-col gap-6 items-center text-center max-w-4xl mx-auto">
+      <h1 class="text-headline-lg font-headline-lg  text-primary font-bold">
+        Key Mattress & Sleep Topics
+      </h1>
+      <p class="text-body-lg font-body-lg text-on-surface-variant max-w-3xl">
+        Explore the science behind sleep: memory foam, cooling technology, spinal alignment, sleep cycles, and more.
+      </p>
+    </header>
+
+    <div class="flex flex-col gap-8 max-w-4xl mx-auto w-full">
+      {topics.map(topic => (
+        <article class="glass-panel border border-white/60 rounded-3xl overflow-hidden shadow-sm relative" id={topic.id}>
+          {/* Mobile Accordion Logic using peer hidden input */}
+          <input type="checkbox" id={`topic-${topic.id}`} class="peer absolute top-0 left-0 w-full h-24 opacity-0 z-10 cursor-pointer md:hidden" />
+          
+          <div class="p-6 md:p-8 font-title-lg md:text-headline-sm md:font-headline-sm text-primary flex justify-between items-center select-none">
+              {topic.title}
+              <span class="md:hidden text-primary shrink-0 transition-transform peer-checked:rotate-180">
+                <svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+              </span>
+          </div>
+          
+          <div class="px-6 md:px-8 pb-6 md:pb-8 hidden peer-checked:block md:!block">
+               <div class="flex flex-col lg:flex-row gap-8 items-start">
+                 <div class="flex-1 text-body-md text-on-surface-variant">
+                   <p class="font-bold text-lg text-primary mb-4 italic">{topic.description}</p>
+                   <div class="leading-relaxed space-y-4">
+                     {topic.body.split('\n\n').map((paragraph: string) => (
+                       <p>{paragraph}</p>
+                     ))}
+                   </div>
+                 </div>
+                 <div class="w-full lg:w-1/3 shrink-0 rounded-2xl overflow-hidden glass-panel">
+                   <img src={getTopicImage(topic.id)} alt={topic.title} class="w-full h-48 lg:h-full object-cover shadow-sm min-h-[200px]" loading="lazy" />
+                 </div>
+               </div>
+               
+               {(topic.relatedMattresses.length > 0 || topic.relatedGuides.length > 0) && (
+                 <div class="mt-8 pt-6 border-t border-outline-variant/20 flex flex-col md:flex-row gap-6">
+                    {topic.relatedMattresses.length > 0 && (
+                      <div class="flex-1">
+                        <strong class="text-label-sm uppercase tracking-widest text-secondary block mb-2">Related Reviews</strong>
+                        <div class="flex flex-col gap-2">
+                          {topic.relatedMattresses.map((id: string) => (
+                            <a href={`/reviews/${id}`} class="text-primary hover:text-secondary underline underline-offset-4 text-sm font-bold">
+                              {id.replace(/-/g, ' ').split(' ').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    {topic.relatedGuides.length > 0 && (
+                      <div class="flex-1">
+                        <strong class="text-label-sm uppercase tracking-widest text-secondary block mb-2">Related Guides</strong>
+                        <div class="flex flex-col gap-2">
+                          {topic.relatedGuides.map((id: string) => (
+                            <a href={`/guides`} class="text-primary hover:text-secondary underline underline-offset-4 text-sm font-bold">
+                              {id.replace(/-/g, ' ').split(' ').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                 </div>
+               )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

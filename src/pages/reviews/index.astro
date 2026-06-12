@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { mattresses } from '../../data/mattresses';
+
+const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Mattress Reviews 2026 — Expert Tested & Editorially Independent | PureSleep",
+  "description": "Independent Amerisleep mattress reviews. 5 models hands-on evaluated. Affiliate-disclosed. Tested by the PureSleep Testing Team.",
+  "url": `${SITE_URL}/reviews/`,
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": mattresses.map((m, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": `${SITE_URL}/reviews/${m.id}`
+    }))
+  }
+};
+
+const lastUpdated = "2026-05-01";
+const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', {
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric'
+});
+---
+
+<BaseLayout 
+  title="Mattress Reviews 2026 — Expert Tested & Editorially Independent | PureSleep" 
+  description="Independent Amerisleep mattress reviews. 5 models hands-on evaluated. Affiliate-disclosed. Tested by the PureSleep Testing Team."
+  canonicalUrl={`${SITE_URL}/reviews/`}
+  lastUpdated={lastUpdated}
+  ogImage="https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1200&q=80"
+  jsonLd={jsonLd}
+>
+  <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 relative z-10 w-full flex flex-col gap-16">
+    
+    <!-- Top Section -->
+    <header class="flex flex-col gap-6 items-center text-center max-w-4xl mx-auto">
+      <h1 class="text-headline-lg font-headline-lg  text-primary font-bold">
+        Mattress Reviews 2026
+      </h1>
+      <p class="text-body-lg font-body-lg text-on-surface-variant max-w-3xl">
+        Independent Amerisleep mattress reviews. 5 models hands-on evaluated. Affiliate-disclosed. Tested by the PureSleep Testing Team.
+      </p>
+      <div class="flex flex-col md:flex-row gap-4 items-center justify-center text-body-md text-on-surface-variant bg-surface px-6 py-3 rounded-full shadow-sm border border-outline-variant/30">
+        <span><strong class="text-on-background">Reviewed By:</strong> PureSleep Testing Team</span>
+        <span class="hidden md:inline-block w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+        <span><strong class="text-on-background">Last Updated:</strong> {formattedDateModified}</span>
+      </div>
+    </header>
+
+    <!-- Filter Bar -->
+    <section class="flex flex-col gap-4 items-center">
+      <div class="flex flex-wrap justify-center gap-2">
+        <a href="#all" class="px-5 py-2 rounded-full bg-primary text-on-primary font-bold text-label-sm uppercase tracking-widest hover:bg-primary/90 transition-colors">All</a>
+        <a href="#memory-foam" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-primary font-bold text-label-sm uppercase tracking-widest hover:border-primary/30 transition-colors">Memory Foam</a>
+        <a href="#hybrid" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-primary font-bold text-label-sm uppercase tracking-widest hover:border-primary/30 transition-colors">Hybrid</a>
+        <a href="#innerspring" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-primary font-bold text-label-sm uppercase tracking-widest hover:border-primary/30 transition-colors">Innerspring</a>
+        <a href="#latex" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-primary font-bold text-label-sm uppercase tracking-widest hover:border-primary/30 transition-colors">Latex</a>
+      </div>
+      <div class="flex flex-wrap justify-center gap-2 mt-2">
+        <a href="#side-sleepers" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-secondary font-bold text-label-sm uppercase tracking-widest hover:border-secondary/30 transition-colors">Best for Side Sleepers</a>
+        <a href="#back-pain" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-secondary font-bold text-label-sm uppercase tracking-widest hover:border-secondary/30 transition-colors">Best for Back Pain</a>
+        <a href="#hot-sleepers" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-secondary font-bold text-label-sm uppercase tracking-widest hover:border-secondary/30 transition-colors">Best for Hot Sleepers</a>
+      </div>
+    </section>
+
+    <!-- Mattress Grid -->
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {mattresses.map(mattress => (
+        <article class="glass-panel flex flex-col rounded-3xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all border border-white/60">
+          
+          <!-- Image -->
+          <div class="w-full h-56 overflow-hidden relative">
+            <img src={mattress.image} alt={`${mattress.name} mattress`} class="w-full h-full object-cover" />
+            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-md flex items-center gap-2">
+              <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface font-bold">Score</span>
+              <span class="text-title-lg font-title-lg italic text-secondary font-bold leading-none">{mattress.scores.overall}</span>
+            </div>
+          </div>
+
+          <!-- Content Base -->
+          <div class="p-8 flex flex-col flex-1 gap-6">
+            
+            <header>
+              <h2 class="text-title-lg font-title-lg text-primary mb-1">{mattress.name}</h2>
+              <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">by {mattress.brand}</span>
+            </header>
+
+            <!-- Top 4 Score Bars -->
+            <div class="flex flex-col gap-3">
+              {Object.entries({
+                'Support': mattress.scores.support,
+                'Pressure Relief': mattress.scores.pressureRelief,
+                'Cooling': mattress.scores.cooling,
+                'Motion Isolation': mattress.scores.motionIsolation,
+              }).map(([label, score]) => (
+                <div class="flex flex-col gap-1.5">
+                  <div class="flex justify-between items-center text-[13px] font-bold">
+                    <span class="text-on-surface-variant">{label}</span>
+                    <span class="text-primary">{score}/10</span>
+                  </div>
+                  <div class="w-full bg-outline-variant/20 h-2 rounded-full overflow-hidden">
+                    <div class="bg-secondary h-full rounded-full" style={`width: ${score * 10}%`}></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <!-- Tags & Specs -->
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider rounded-lg border border-primary/20">
+                {mattress.firmness} ({mattress.firmnessScale}/10)
+              </span>
+              {mattress.bestFor.slice(0, 3).map(tag => (
+                <span class="px-3 py-1 bg-surface border border-outline-variant/30 text-on-surface-variant text-xs font-bold rounded-lg whitespace-nowrap">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <!-- Trial & Warranty -->
+            <div class="flex gap-4 text-sm text-on-surface-variant font-medium border-y border-outline-variant/20 py-3 mt-2">
+              <div class="flex items-center gap-1.5">
+                <span class="text-primary font-bold">{mattress.trialNights}</span> Night Trial
+              </div>
+              <div class="w-px bg-outline-variant/30"></div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-primary font-bold">{mattress.warrantyYears}</span> Year Warranty
+              </div>
+            </div>
+
+            <!-- Size & Pricing -->
+            <details class="group mt-2">
+              <summary class="cursor-pointer text-label-sm font-bold uppercase tracking-widest text-secondary flex items-center gap-2 list-none py-2 hover:text-primary transition-colors">
+                <span>View Sizes & Pricing</span>
+                <span class="transition group-open:rotate-180 text-xs">▼</span>
+              </summary>
+              <div class="mt-3 border border-outline-variant/20 rounded-xl overflow-hidden text-sm">
+                {mattress.sizePricing.map((sp, i) => (
+                  <div class={`flex justify-between items-center px-4 py-2.5 ${i % 2 === 0 ? 'bg-transparent' : 'bg-surface/50'}`}>
+                    <div>
+                      <span class="font-bold text-on-surface">{sp.size}</span>
+                      <span class="text-on-surface-variant ml-2 text-xs">{sp.dimensions}</span>
+                    </div>
+                    <div class="text-right">
+                      <span class="line-through text-on-surface-variant text-xs mr-1">{sp.priceOriginal}</span>
+                      <span class="font-bold text-secondary">{sp.priceSale}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </details>
+
+            <p class="text-body-md text-on-surface-variant line-clamp-2 mt-2">
+              {mattress.verdict}
+            </p>
+
+            <!-- Actions -->
+            <div class="mt-auto flex flex-col gap-3 pt-6">
+              <a href={`/reviews/${mattress.id}`} class="w-full text-center py-3.5 rounded-xl border-2 border-primary text-primary font-label-md uppercase tracking-[0.15em] font-bold hover:bg-primary/5 transition-colors">
+                Read Full Review
+              </a>
+              <a href={mattress.affiliateUrl} target="_blank" rel="noopener noreferrer" class="w-full text-center py-3.5 rounded-xl bg-primary text-on-primary font-label-md uppercase tracking-[0.15em] font-bold hover:bg-primary/90 transition-colors shadow-sm">
+                Check Price
+              </a>
+            </div>
+
+          </div>
+        </article>
+      ))}
+    </section>
+
+    <section class="max-w-2xl mx-auto mt-8 glass-panel p-6 rounded-2xl border border-white/60">
+      <h3 class="text-title-md font-title-md text-primary font-bold mb-3">Why does the lineup skip AS1 and AS4?</h3>
+      <p class="text-body-md text-on-surface-variant leading-relaxed">
+        The AS1 was discontinued before 2021. The AS4 designation was never used commercially. Amerisleep's current active lineup is: AS2 (medium-firm), AS3 (medium), AS5 (soft), AS6 Black Series (luxury hybrid), and Organica (natural latex hybrid).
+      </p>
+    </section>
+  </main>
+</BaseLayout>

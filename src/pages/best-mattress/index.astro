@@ -1,0 +1,400 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { allMattresses } from '../../data/mattresses';
+
+const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+
+const topPicks = [
+  {
+    rank: 1,
+    label: "Best Overall",
+    id: "amerisleep-as3",
+    badge: "Editor's Choice",
+    badgeColor: "bg-secondary text-white",
+    summary: "The AS3 is our top pick for most sleepers. Its medium feel (5/10) suits side sleepers, combination sleepers, and couples. Bio-Pur® plant-based foam and HIVE® 5-zone support deliver pressure relief without sacrificing responsiveness.",
+    bestFor: ["Side sleepers", "Combination sleepers", "Couples", "Average weight sleepers"],
+    notFor: ["Stomach sleepers who need very firm support", "Budget shoppers"],
+    score: 9.5,
+    firmness: "Medium (5/10)",
+    trial: "100 nights",
+    warranty: "20 years",
+    price: "$1,099",
+    href: "/reviews/amerisleep-as3",
+    affiliateUrl: "https://amerisleep.com/as3.html",
+  },
+  {
+    rank: 2,
+    label: "Best for Back Sleepers",
+    id: "amerisleep-as2",
+    badge: "Most Supportive",
+    badgeColor: "bg-primary text-white",
+    summary: "The AS2's medium-firm feel (6/10) keeps the lumbar properly supported throughout the night. It's our top recommendation for back sleepers and heavier side sleepers who need a firmer base.",
+    bestFor: ["Back sleepers", "Stomach sleepers", "Heavier sleepers", "Those with lower back concerns"],
+    notFor: ["Dedicated side sleepers who need pressure relief", "Light sleepers who prefer soft foam"],
+    score: 9.2,
+    firmness: "Medium Firm (6/10)",
+    trial: "100 nights",
+    warranty: "20 years",
+    price: "$1,049",
+    href: "/reviews/amerisleep-as2",
+    affiliateUrl: "https://amerisleep.com/as2.html",
+  },
+  {
+    rank: 3,
+    label: "Best for Side Sleepers",
+    id: "amerisleep-as5",
+    badge: "Best Pressure Relief",
+    badgeColor: "bg-emerald-600 text-white",
+    summary: "The AS5 is Amerisleep's softest model (3/10) and pairs a thick Bio-Pur® comfort layer with an Active Flex transition to cradle shoulders and hips deeply. It's the best choice for strict side sleepers who prioritize pressure relief above all else.",
+    bestFor: ["Side sleepers", "Light sleepers", "Hip and shoulder pressure points", "Those who prefer a plush feel"],
+    notFor: ["Back sleepers", "Stomach sleepers", "Heavier sleepers who may sink too deeply"],
+    score: 9.2,
+    firmness: "Soft (3/10)",
+    trial: "100 nights",
+    warranty: "20 years",
+    price: "$1,349",
+    href: "/reviews/amerisleep-as5",
+    affiliateUrl: "https://amerisleep.com/as5.html",
+  },
+  {
+    rank: 4,
+    label: "Best for Couples",
+    id: "amerisleep-as6",
+    badge: "Top Performer",
+    badgeColor: "bg-violet-600 text-white",
+    summary: "The AS6 Black Series is a hybrid with individually-wrapped coils that delivers near-perfect motion isolation alongside excellent edge support and cooling. It's our top pick for couples with different sleep positions or those who tend to sleep hot.",
+    bestFor: ["Couples with different preferences", "Hot sleepers", "Those wanting edge-to-edge support", "Combination sleepers"],
+    notFor: ["Those who prefer all-foam feel", "Budget-conscious buyers"],
+    score: 9.7,
+    firmness: "Medium (5/10)",
+    trial: "100 nights",
+    warranty: "20 years",
+    price: "$1,799",
+    href: "/reviews/amerisleep-as6",
+    affiliateUrl: "https://amerisleep.com/as6-black-series.html",
+  },
+  {
+    rank: 5,
+    label: "Best Organic Mattress",
+    id: "amerisleep-organica",
+    badge: "GOLS & GOTS Certified",
+    badgeColor: "bg-green-700 text-white",
+    summary: "The Organica uses GOLS-certified organic latex over an organic cotton and wool comfort system. It's the only Amerisleep model that's fully certified organic throughout — no synthetic foams in the comfort layers.",
+    bestFor: ["Eco-conscious shoppers", "Natural material preference", "Hot sleepers", "Those with chemical sensitivities"],
+    notFor: ["Those who prefer memory foam contouring", "Budget shoppers"],
+    score: 9.4,
+    firmness: "Medium (5/10)",
+    trial: "100 nights",
+    warranty: "20 years",
+    price: "$1,599",
+    href: "/reviews/amerisleep-organica",
+    affiliateUrl: "https://amerisleep.com/organica.html",
+  },
+];
+
+const comparisons = [
+  { label: "AS3 vs Saatva Classic", href: "/comparison/amerisleep-as3-vs-saatva-classic", desc: "Plant-based foam vs luxury innerspring. Which wins for most sleepers?" },
+  { label: "AS3 vs Purple RestorePlus", href: "/comparison/amerisleep-as3-vs-purple-restoreplus-hybrid", desc: "HIVE® zoning vs Grid technology. Which cools and contours better?" },
+  { label: "AS3 vs Helix Midnight Luxe", href: "/comparison/amerisleep-as3-vs-helix-midnight-luxe", desc: "Two popular mid-range options — full head-to-head breakdown." },
+  { label: "AS2 vs Bear Original", href: "/comparison/amerisleep-as2-vs-bear-original", desc: "Recovery-focused foam vs firm Amerisleep support. Best for active sleepers." },
+  { label: "Organica vs Avocado Green", href: "/comparison/amerisleep-organica-vs-avocado-green", desc: "The two most popular organic mattress options compared in detail." },
+  { label: "AS6 vs Leesa Sapira Chill", href: "/comparison/amerisleep-as6-black-series-vs-leesa-sapira-chill-hybrid", desc: "Premium hybrid cooling comparison — which actually sleeps cooler?" },
+];
+
+const faqs = [
+  {
+    q: "Which Amerisleep mattress is best for most people?",
+    a: "The AS3 (medium, 5/10) is our top pick for most sleepers. Its Bio-Pur® plant-based foam and HIVE® 5-zone support work well for side sleepers, combination sleepers, and couples. If you sleep primarily on your back or stomach, the AS2 (medium-firm, 6/10) is the stronger fit."
+  },
+  {
+    q: "What is the difference between the AS2, AS3, and AS5?",
+    a: "Firmness and target sleep position. The AS2 is medium-firm (6/10) — best for back and stomach sleepers. The AS3 is medium (5/10) — best for side and combination sleepers. The AS5 is soft (3/10) — designed specifically for dedicated side sleepers who want maximum pressure relief."
+  },
+  {
+    q: "Are Amerisleep mattresses good for back pain?",
+    a: "They can help depending on the type and cause. The AS2's firmer support may help back and stomach sleepers maintain better spinal alignment. The AS3 works well for side sleepers who experience hip or shoulder pressure. We always recommend trying the 100-night trial and consulting a doctor for persistent pain."
+  },
+  {
+    q: "How does Amerisleep's 100-night trial work?",
+    a: "You sleep on the mattress for at least 30 nights before initiating a return — Amerisleep requires this adjustment period. After 30 nights and before 100 nights, if you're not satisfied, they'll arrange a free pickup and full refund. No restocking fees."
+  },
+  {
+    q: "Is Amerisleep worth the price compared to Casper or Purple?",
+    a: "Amerisleep's 20-year warranty is double the 10-year warranty most competitors offer at similar price points. The AS3 scores competitively on pressure relief against the Casper The One and Purple RestorePlus Hybrid. For motion isolation, the AS3 outperforms most hybrids at the same price."
+  },
+  {
+    q: "Do Amerisleep mattresses need a box spring?",
+    a: "No. They work on any firm, flat surface — platform bed, adjustable base, slatted frame (slats no more than 3 inches apart), or the floor. A box spring is not recommended and can reduce support."
+  },
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Best Amerisleep Mattress 2026: Full Lineup Ranked and Reviewed",
+  "description": "Independent rankings of every Amerisleep mattress model. We evaluated all 5 models across firmness, cooling, pressure relief, and motion isolation to find the best pick for every sleep type.",
+  "image": `${SITE_URL}/og-default.jpg`,
+  "author": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
+  "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
+  "datePublished": "2026-05-01",
+  "dateModified": "2026-06-01",
+  "mainEntityOfPage": `${SITE_URL}/best-mattress/`
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+---
+
+<BaseLayout
+  title="Best Amerisleep Mattress 2026: Full Lineup Ranked | PureSleep"
+  description="Independent rankings of all 5 Amerisleep mattress models. Find the best fit by sleep position, firmness preference, and budget — with full scores and head-to-head comparisons."
+  ogTitle="Best Amerisleep Mattress 2026 — Ranked by Sleep Type"
+  ogDescription="Side sleeper? Back sleeper? Hot sleeper? We ranked all 5 Amerisleep models by sleep type with full scores, pros/cons, and direct comparisons."
+  ogImage={`${SITE_URL}/og-default.jpg`}
+  canonicalUrl={`${SITE_URL}/best-mattress/`}
+  jsonLd={[pageSchema, faqSchema]}
+>
+  <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+
+    <!-- Breadcrumb -->
+    <nav class="text-label-sm text-on-surface-variant mb-8" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2">
+        <li><a href="/" class="hover:text-primary transition-colors">Home</a></li>
+        <li class="opacity-40">›</li>
+        <li class="text-primary font-semibold">Best Amerisleep Mattress</li>
+      </ol>
+    </nav>
+
+    <!-- Page header -->
+    <header class="mb-12">
+      <div class="inline-flex items-center gap-2 bg-secondary/10 text-secondary text-label-sm font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
+        Updated June 2026 · All 5 Models Evaluated
+      </div>
+      <h1 class="text-display-lg font-display-lg text-primary mb-4 max-w-3xl">
+        Best Amerisleep mattress 2026: every model ranked
+      </h1>
+      <p class="text-body-lg text-on-surface-variant max-w-2xl leading-relaxed mb-6">
+        We evaluated all five Amerisleep models across firmness, pressure relief, cooling, motion isolation, and edge support. Here's exactly which one to buy based on how you sleep.
+      </p>
+      <!-- Quick summary table -->
+      <div class="glass-panel rounded-2xl border border-outline-variant/30 overflow-x-auto">
+        <table class="w-full text-body-sm min-w-[600px]">
+          <thead>
+            <tr class="border-b border-outline-variant/20">
+              <th class="text-left p-4 text-label-sm font-bold text-on-surface-variant uppercase tracking-wider">Model</th>
+              <th class="text-left p-4 text-label-sm font-bold text-on-surface-variant uppercase tracking-wider">Best For</th>
+              <th class="text-left p-4 text-label-sm font-bold text-on-surface-variant uppercase tracking-wider">Firmness</th>
+              <th class="text-left p-4 text-label-sm font-bold text-on-surface-variant uppercase tracking-wider">Score</th>
+              <th class="text-left p-4 text-label-sm font-bold text-on-surface-variant uppercase tracking-wider">Price</th>
+              <th class="p-4"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {topPicks.map((pick, i) => (
+              <tr class={`border-b border-outline-variant/10 last:border-0 ${i === 0 ? 'bg-secondary/5' : ''}`}>
+                <td class="p-4 font-bold text-primary">AS{pick.id.includes('as2') ? '2' : pick.id.includes('as3') ? '3' : pick.id.includes('as5') ? '5' : pick.id.includes('as6') ? '6' : 'Organica'}</td>
+                <td class="p-4 text-on-surface-variant">{pick.label}</td>
+                <td class="p-4 text-on-surface-variant">{pick.firmness}</td>
+                <td class="p-4 font-bold text-secondary">{pick.score}/10</td>
+                <td class="p-4 text-on-surface-variant">From {pick.price}</td>
+                <td class="p-4">
+                  <a href={pick.href} class="text-secondary text-label-sm font-bold hover:underline whitespace-nowrap">Full review →</a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </header>
+
+    <!-- Top Picks -->
+    <section class="mb-20">
+      <h2 class="text-headline-lg font-headline-lg text-primary mb-2">Our top picks</h2>
+      <p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl">Ranked by overall score. Click any model for the full review.</p>
+
+      <div class="flex flex-col gap-10">
+        {topPicks.map((pick) => (
+          <div class={`glass-panel rounded-3xl border overflow-hidden ${pick.rank === 1 ? 'border-secondary/40' : 'border-outline-variant/30'}`}>
+            <!-- Pick header -->
+            <div class={`px-8 py-4 flex items-center justify-between flex-wrap gap-3 ${pick.rank === 1 ? 'bg-secondary/8' : 'bg-surface/50'} border-b border-outline-variant/15`}>
+              <div class="flex items-center gap-4">
+                <span class="text-display-sm font-display-sm text-outline-variant/40 font-black leading-none">#{pick.rank}</span>
+                <div>
+                  <span class={`text-label-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full ${pick.badgeColor}`}>{pick.badge}</span>
+                  <h3 class="text-headline-md font-headline-md text-primary mt-1">{pick.label}</h3>
+                </div>
+              </div>
+              <div class="flex items-center gap-6">
+                <div class="text-center">
+                  <div class="text-display-sm font-black text-secondary leading-none">{pick.score}</div>
+                  <div class="text-label-sm text-on-surface-variant">/ 10</div>
+                </div>
+                <a
+                  href={pick.affiliateUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bg-primary text-white px-5 py-2.5 rounded-full text-label-sm font-bold uppercase tracking-wider hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >
+                  Check Price →
+                </a>
+              </div>
+            </div>
+
+            <!-- Pick body -->
+            <div class="p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <!-- Left: summary + specs -->
+              <div class="lg:col-span-2 flex flex-col gap-6">
+                <p class="text-body-lg text-on-surface-variant leading-relaxed">{pick.summary}</p>
+
+                <!-- Specs row -->
+                <div class="flex flex-wrap gap-4">
+                  {[
+                    { label: "Firmness", value: pick.firmness },
+                    { label: "Trial", value: pick.trial },
+                    { label: "Warranty", value: pick.warranty },
+                    { label: "Starting Price", value: pick.price },
+                  ].map(spec => (
+                    <div class="glass-panel px-4 py-2 rounded-xl border border-outline-variant/20">
+                      <div class="text-label-sm text-on-surface-variant">{spec.label}</div>
+                      <div class="text-body-sm font-bold text-on-surface">{spec.value}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <a href={pick.href} class="text-secondary font-bold text-body-sm hover:underline self-start">
+                  Read full review →
+                </a>
+              </div>
+
+              <!-- Right: Best For / Not For -->
+              <div class="flex flex-col gap-4">
+                <div>
+                  <h4 class="text-label-sm font-bold uppercase tracking-widest text-green-700 mb-3">Best For</h4>
+                  <ul class="flex flex-col gap-1.5">
+                    {pick.bestFor.map(item => (
+                      <li class="flex items-start gap-2 text-body-sm text-on-surface-variant">
+                        <span class="text-green-600 font-bold mt-0.5 shrink-0">✓</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="text-label-sm font-bold uppercase tracking-widest text-red-500 mb-3">Not Ideal For</h4>
+                  <ul class="flex flex-col gap-1.5">
+                    {pick.notFor.map(item => (
+                      <li class="flex items-start gap-2 text-body-sm text-on-surface-variant">
+                        <span class="text-red-400 font-bold mt-0.5 shrink-0">✗</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- How We Picked -->
+    <section class="mb-20 glass-panel rounded-3xl border border-outline-variant/30 p-8 md:p-12">
+      <h2 class="text-headline-lg font-headline-lg text-primary mb-4">How we evaluated these mattresses</h2>
+      <p class="text-body-lg text-on-surface-variant leading-relaxed mb-6 max-w-3xl">
+        The PureSleep Testing Team evaluated all five Amerisleep models across eight performance dimensions: support, pressure relief, cooling, motion isolation, edge support, responsiveness, off-gassing, and build quality. Each model was assessed across back, side, and stomach positions.
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {[
+          { metric: "Support", desc: "Spinal alignment across positions" },
+          { metric: "Pressure Relief", desc: "Hip and shoulder contouring" },
+          { metric: "Cooling", desc: "Heat retention vs dissipation" },
+          { metric: "Motion Isolation", desc: "Transfer between sleep partners" },
+        ].map(m => (
+          <div class="glass-panel-heavy p-4 rounded-xl border border-outline-variant/20">
+            <div class="text-label-sm font-bold text-primary mb-1">{m.metric}</div>
+            <div class="text-body-sm text-on-surface-variant">{m.desc}</div>
+          </div>
+        ))}
+      </div>
+      <a href="/methodology/" class="inline-flex items-center gap-2 mt-6 text-secondary font-bold text-body-sm hover:underline">
+        Read our full methodology →
+      </a>
+    </section>
+
+    <!-- Comparisons -->
+    <section class="mb-20">
+      <h2 class="text-headline-lg font-headline-lg text-primary mb-2">Amerisleep vs the competition</h2>
+      <p class="text-body-lg text-on-surface-variant mb-8 max-w-2xl">Considering another brand? We've run full head-to-head comparisons across specs, scores, and value.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {comparisons.map(c => (
+          <a
+            href={c.href}
+            class="glass-panel p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary/40 transition-all group"
+          >
+            <h3 class="text-body-lg font-bold text-primary group-hover:text-secondary transition-colors mb-2">{c.label}</h3>
+            <p class="text-body-sm text-on-surface-variant">{c.desc}</p>
+            <span class="text-secondary text-label-sm font-bold mt-3 inline-block">Compare →</span>
+          </a>
+        ))}
+      </div>
+      <a href="/comparison/" class="inline-flex items-center gap-2 mt-6 text-secondary font-bold text-body-sm hover:underline">
+        View all 24 comparisons →
+      </a>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mb-16">
+      <h2 class="text-headline-lg font-headline-lg text-primary mb-2">Frequently asked questions</h2>
+      <p class="text-body-lg text-on-surface-variant mb-8 max-w-2xl">Common questions about Amerisleep mattresses answered by the PureSleep Testing Team.</p>
+      <div class="flex flex-col gap-3 max-w-3xl">
+        {faqs.map(faq => (
+          <details class="group glass-panel rounded-2xl border border-outline-variant/30 overflow-hidden">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-on-surface list-none text-body-lg">
+              {faq.q}
+              <span class="transition-transform group-open:rotate-180 shrink-0 ml-4 text-on-surface-variant">
+                <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-body-md text-on-surface-variant leading-relaxed border-t border-outline-variant/10 pt-4">
+              {faq.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="bg-primary rounded-3xl p-8 md:p-12 text-center">
+      <h2 class="text-headline-lg font-headline-lg text-white mb-3">Ready to pick your mattress?</h2>
+      <p class="text-white/80 text-body-lg mb-8 max-w-xl mx-auto">
+        All Amerisleep mattresses come with a 100-night trial and a 20-year warranty. Free shipping and free returns.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a
+          href="https://amerisleep.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-secondary text-white px-8 py-4 rounded-full font-bold text-label-sm uppercase tracking-widest hover:bg-secondary/90 transition-colors shadow-lg"
+        >
+          Shop Amerisleep →
+        </a>
+        <a
+          href="/reviews/"
+          class="bg-white/15 text-white px-8 py-4 rounded-full font-bold text-label-sm uppercase tracking-widest hover:bg-white/25 transition-colors"
+        >
+          Read All Reviews
+        </a>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

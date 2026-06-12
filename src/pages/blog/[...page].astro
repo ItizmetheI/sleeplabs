@@ -1,0 +1,129 @@
+---
+import { blogPosts } from '../../data/blogs-generated';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+  const postsPerPage = 10;
+  const sortedPosts = [...blogPosts].sort((a, b) => new Date(b.datePublished).valueOf() - new Date(a.datePublished).valueOf());
+  const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
+  return Array.from({ length: totalPages }, (_, i) => ({
+    params: { page: i === 0 ? undefined : String(i + 1) },
+    props: {
+      posts: sortedPosts.slice(i * postsPerPage, (i + 1) * postsPerPage),
+      currentPage: i + 1,
+      totalPages
+    }
+  }));
+}
+
+const { posts, currentPage, totalPages } = Astro.props;
+const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "PureSleep Sleep & Mattress Blog",
+  "description": "Expert sleep science, mattress guides, and buying advice from PureSleep's editorial team.",
+  "url": SITE_URL + "/blog/",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": posts.map((post: any, index: number) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": SITE_URL + "/blog/" + post.slug,
+      "name": post.title
+    }))
+  }
+};
+---
+
+<BaseLayout
+  title="Sleep & Mattress Blog 2026 — Expert Guides & Reviews"
+  description="Expert-written sleep tips, mattress guides, and buying advice. Editorially Independent where applicable. All product links go to Amerisleep."
+  canonicalUrl={currentPage === 1 ? `${SITE_URL}/blog/` : `${SITE_URL}/blog/${currentPage}/`}
+  lastUpdated="2026-05-01"
+  jsonLd={jsonLd}
+>
+  <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+
+    <header class="text-center mb-16">
+      <h1 class="text-display-lg font-display-lg italic text-primary mb-4">Sleep & Mattress Guides</h1>
+      <p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+        Expert-written guides on sleep science, mattress buying, and bedroom setup.
+        Editorially Independent where applicable.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {posts.map(post => (
+        <article class="glass-panel rounded-3xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all group flex flex-col">
+
+          <div class="h-48 overflow-hidden bg-surface-variant relative group">
+            <img
+              src={post.ogImage}
+              alt={post.title}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 absolute inset-0 z-10"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1200&q=80';"
+            />
+            <div class="absolute inset-0 flex items-center justify-center text-outline-variant/30">
+               <!-- Placeholder behind the image -->
+               <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0V19a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v6"/></svg>
+            </div>
+          </div>
+
+          <div class="p-6 flex flex-col flex-1 gap-4">
+            <div class="inline-block text-label-sm font-label-sm uppercase tracking-widest text-secondary bg-secondary/10 px-3 py-1 rounded-full font-bold w-fit">
+              {post.category.replace(/-/g, ' ')}
+            </div>
+
+            <h2 class="text-headline-md font-headline-md text-primary group-hover:text-secondary transition-colors leading-snug">
+              <a href={`/blog/${post.slug}`}>{post.title}</a>
+            </h2>
+
+            <p class="text-body-md text-on-surface-variant leading-relaxed flex-1">
+              {post.excerpt}
+            </p>
+
+            <div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest border-t border-outline-variant/30 pt-4 mt-2">
+              <span>{new Date(post.datePublished).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+              <span>{post.readTimeMinutes} min read</span>
+            </div>
+
+            <a
+              href={`/blog/${post.slug}`}
+              class="w-full text-center py-3 rounded-xl border-2 border-primary text-primary font-label-sm uppercase tracking-widest font-bold hover:bg-primary/5 transition-colors"
+            >
+              Read Article →
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Pagination -->
+    {totalPages > 1 && (
+      <div class="flex justify-center gap-3 mt-16 flex-wrap">
+        {currentPage > 1 && (
+          <a href={currentPage === 2 ? `/blog` : `/blog/${currentPage - 1}`} class="glass-panel px-6 py-3 rounded-full text-label-sm font-label-sm uppercase tracking-widest text-primary hover:text-secondary transition-colors font-bold">
+            ← Previous
+          </a>
+        )}
+        {Array.from({ length: totalPages }, (_, i) => (
+          <a
+            href={i === 0 ? `/blog` : `/blog/${i + 1}`}
+            class={`px-4 py-3 rounded-full text-label-sm font-label-sm uppercase tracking-widest font-bold transition-colors ${currentPage === i + 1 ? 'bg-primary text-white' : 'glass-panel text-primary hover:text-secondary'}`}
+          >
+            {i + 1}
+          </a>
+        ))}
+        {currentPage < totalPages && (
+          <a href={`/blog/${currentPage + 1}`} class="glass-panel px-6 py-3 rounded-full text-label-sm font-label-sm uppercase tracking-widest text-primary hover:text-secondary transition-colors font-bold">
+            Next →
+          </a>
+        )}
+      </div>
+    )}
+
+  </main>
+</BaseLayout>
