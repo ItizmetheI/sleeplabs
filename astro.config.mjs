@@ -12,7 +12,17 @@ export default defineConfig({
   }),
   integrations: [
     react(),
-    sitemap(),
+    sitemap({
+      filter: (page) => {
+        // Exclude pain/YMYL category pages until copy is fully safety-reviewed
+        if (page.includes('/blog/category/pain') || page.includes('/blog/tag/back-pain') || page.includes('/blog/tag/hip-pain') || page.includes('/blog/tag/shoulder-pain') || page.includes('/blog/tag/sciatica') || page.includes('/blog/tag/arthritis') || page.includes('/blog/tag/fibromyalgia')) return false;
+        // Exclude admin
+        if (page.includes('/admin')) return false;
+        // Exclude API routes
+        if (page.includes('/api/')) return false;
+        return true;
+      }
+    }),
   ],
   vite: {
     plugins: [tailwindcss()],

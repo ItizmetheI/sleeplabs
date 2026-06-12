@@ -49,7 +49,7 @@ const jsonLd = {
   description={`Explore our expert sleep and mattress guides in the ${category!.replace(/-/g, ' ')} category.`}
   canonicalUrl={`${SITE_URL}/blog/category/${category}/`}
   jsonLd={jsonLd}
-  noindex={posts.length === 0}
+  noindex={posts.length === 0 || ['pain-and-health','back-pain','hip-pain','shoulder-pain','sciatica','arthritis','fibromyalgia'].includes(category ?? '')}
 >
   <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
 
