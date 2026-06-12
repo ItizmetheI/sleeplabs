@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Privacy Policy — PureSleep",
+  "url": `${SITE_URL}/privacy-policy/`,
+  "description": "PureSleep privacy policy. How we collect, use, and protect your information.",
+  "dateModified": "2026-05-01"
+};
+---
+
+<BaseLayout
+  title="Privacy Policy — PureSleep"
+  description="PureSleep privacy policy. How we collect, use, and protect your information."
+  canonicalUrl={`${SITE_URL}/privacy-policy/`}
+  jsonLd={jsonLd}
+>
+  <main class="max-w-[760px] mx-auto px-margin-mobile md:px-0 py-16 relative z-10 flex flex-col gap-10">
+
+    <header>
+      <h1 class="text-headline-lg font-headline-lg text-primary font-bold mb-4">Privacy Policy</h1>
+      <p class="text-body-md text-on-surface-variant">Last updated: May 1, 2026</p>
+    </header>
+
+    <div class="flex flex-col gap-8 text-body-md text-on-surface-variant leading-relaxed">
+
+      <section>
+        <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">1. Information We Collect</h2>
+        <p>PureSleep (puresleep.com) is a content publication. We do not require account creation or collect personal information for standard site use. We may collect anonymized usage data (page views, referring URLs, browser type) via analytics tools to improve site performance.</p>
+      </section>
+
+      <section>
+        <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">2. Affiliate Links</h2>
+        <p>This site contains affiliate links to amerisleep.com. When you click these links and make a purchase, PureSleep may earn a commission. This commission comes at no additional cost to you. Amerisleep may use cookies to track affiliate referrals. Their privacy practices are governed by <a href="https://amerisleep.com/privacy-policy/" target="_blank" rel="noopener noreferrer" class="text-primary underline">Amerisleep's privacy policy</a>.</p>
+      </section>
+
+      <section>
+        <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">3. Cookies</h2>
+        <p>We may use cookies for analytics and site functionality. We do not use cookies to track personal information or serve targeted advertising. You can disable cookies in your browser settings without affecting your ability to use this site.</p>
+      </section>
+
+      <section>
+        <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">4. Third-Party Services</h2>
+        <p>We use third-party analytics services (such as Google Analytics) that may collect anonymized data about your visit. These services have their own privacy policies. We do not sell data to third parties.</p>
+      </section>
+
+      <section>
+        <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">5. Your Rights (GDPR / CCPA)</h2>
+        <p>If you are located in the European Economic Area or California, you have the right to request access to, correction of, or deletion of any personal data we hold. Since we do not collect personal data for standard site use, such requests are typically resolved by confirming no data exists. Contact us at the address below for any privacy-related requests.</p>
+      </section>
+
+      <section>
+        <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">6. Contact</h2>
+        <p>For privacy-related inquiries, contact us via the information on our <a href="/about" class="text-primary underline">About page</a>.</p>
+      </section>
+
+    </div>
+  </main>
+</BaseLayout>

@@ -1,0 +1,56 @@
+{
+  "AS2": {
+    "productId": "AS2",
+    "productName": "Amerisleep AS2",
+    "productUrl": "https://amerisleep.com/as2.html",
+    "salePrice": "$799"
+  },
+  "AS3": {
+    "productId": "AS3",
+    "productName": "Amerisleep AS3",
+    "productUrl": "https://amerisleep.com/as3.html",
+    "salePrice": "$999"
+  },
+  "AS5": {
+    "productId": "AS5",
+    "productName": "Amerisleep AS5",
+    "productUrl": "https://amerisleep.com/as5.html",
+    "salePrice": "$1,599"
+  },
+  "AS6": {
+    "productId": "AS6",
+    "productName": "Amerisleep AS6",
+    "productUrl": "https://amerisleep.com/as6/",
+    "salePrice": "$2,399"
+  },
+  "Organica": {
+    "productId": "Organica",
+    "productName": "Amerisleep Organica",
+    "productUrl": "https://amerisleep.com/organica/organic-mattress/",
+    "salePrice": "$1,199"
+  },
+  "BambooSheets": {
+    "productId": "BambooSheets",
+    "productName": "Amerisleep Bamboo Sheets",
+    "productUrl": "https://amerisleep.com/bedding/bamboo-sheets/",
+    "salePrice": "$150"
+  },
+  "BambooProtector": {
+    "productId": "BambooProtector",
+    "productName": "Amerisleep Bamboo Protector",
+    "productUrl": "https://amerisleep.com/bedding/waterproof-mattress-protector/",
+    "salePrice": "$80"
+  },
+  "LiftTopper": {
+    "productId": "LiftTopper",
+    "productName": "Amerisleep Lift Topper",
+    "productUrl": "https://amerisleep.com/bedding/lift-mattress-topper/",
+    "salePrice": "$254"
+  },
+  "AdjustableBedFrame": {
+    "productId": "AdjustableBedFrame",
+    "productName": "Amerisleep Adjustable Bed Frame",
+    "productUrl": "https://amerisleep.com/bed-bases/adjustable-bed-frame/",
+    "salePrice": "$1,260"
+  }
+}

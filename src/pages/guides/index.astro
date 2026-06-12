@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { topics } from '../../data/topics';
+
+const lastUpdated = "2026-05-01";
+const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+
+const getTopicImage = (id: string) => {
+  const images = {
+    'memory-foam': 'https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg',
+    'cooling-technology': 'https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg',
+    'pocketed-coils': 'https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg',
+    'spinal-alignment': 'https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg',
+    'motion-isolation': 'https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg',
+    'edge-support': 'https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg',
+    'certipur-us': 'https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg',
+    'sleep-cycles': 'https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg',
+  };
+  return images[id as keyof typeof images] || 'https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg';
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Mattress Buying Guides — PureSleep",
+  "description": "Deep-dive mattress guides covering memory foam, cooling technology, spinal alignment, hybrid coils, and buying decisions.",
+  "url": `${SITE_URL}/guides/`,
+  "dateModified": lastUpdated,
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": topics.map((topic, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": `${SITE_URL}/topics/${topic.id}`,
+      "name": topic.title
+    }))
+  }
+};
+---
+
+<BaseLayout 
+  title="Mattress Buying Guides — PureSleep" 
+  description="From understanding memory foam densities to navigating hybrid coils, our deep-dive guides equip you with the knowledge to make the right mattress investment."
+  canonicalUrl={`${SITE_URL}/guides/`}
+  lastUpdated={lastUpdated}
+  ogImage="https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg"
+  jsonLd={jsonLd}
+>
+  <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 relative z-10 w-full flex flex-col gap-16">
+    <header class="flex flex-col gap-6 items-center text-center max-w-4xl mx-auto">
+      <div class="flex flex-col md:flex-row gap-4 items-center justify-center text-body-md text-on-surface-variant bg-surface px-6 py-3 rounded-full shadow-sm border border-outline-variant/30 mt-4">
+          <span><strong class="text-on-background">Editorial Team:</strong> PureSleep Testing Team</span>
+      </div>
+      <h1 class="text-headline-lg font-headline-lg  text-primary font-bold">
+        Comprehensive Guides
+      </h1>
+      <p class="text-body-lg font-body-lg text-on-surface-variant max-w-3xl">
+        From understanding memory foam densities to navigating hybrid coils, our deep-dive guides equip you with the knowledge to make the right mattress investment.
+      </p>
+    </header>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {topics.map(topic => (
+        <a href={`/topics#${topic.id}`} class="glass-panel flex flex-col rounded-3xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all border border-outline-variant/20 bg-white group block">
+          <div class="h-48 overflow-hidden relative">
+            <img 
+              src={getTopicImage(topic.id)} 
+              alt={topic.title} 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            <h2 class="absolute bottom-4 left-6 text-title-lg font-title-lg text-white mb-0 drop-shadow-md">
+              {topic.title}
+            </h2>
+          </div>
+          <div class="p-6 flex flex-col flex-1 gap-4">
+            <p class="text-body-md text-on-surface-variant line-clamp-3">
+              {topic.description}
+            </p>
+            <span class="text-primary font-label-sm uppercase tracking-widest font-bold mt-auto pt-4 border-t border-outline-variant/20 inline-flex items-center gap-2 group-hover:text-secondary transition-colors">
+              Read Guide <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </span>
+          </div>
+        </a>
+      ))}
+    </section>
+
+  </main>
+</BaseLayout>

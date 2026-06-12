@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+const lastUpdated = "2026-05-01";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About PureSleep",
+    "url": `${SITE_URL}/about/`,
+    "description": "PureSleep is an independent mattress review publication specializing in the Amerisleep product catalog.",
+    "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL }
+  }
+];
+---
+
+<BaseLayout
+  title="About PureSleep — Independent Amerisleep Mattress Reviews"
+  description="PureSleep is an independent mattress review publication focused on the Amerisleep catalog. Editorially independent, affiliate-disclosed."
+  canonicalUrl={`${SITE_URL}/about/`}
+  lastUpdated={lastUpdated}
+  jsonLd={jsonLd}
+>
+  <main class="max-w-[760px] mx-auto px-margin-mobile md:px-0 py-16 relative z-10 flex flex-col gap-16">
+
+    <header class="flex flex-col gap-6">
+      <h1 class="text-headline-lg font-headline-lg text-primary font-bold">About PureSleep</h1>
+      <p class="text-body-lg text-on-surface-variant leading-relaxed">
+        PureSleep is an independent mattress review publication that tests and scores Amerisleep mattresses. We focus exclusively on the Amerisleep catalog because it lets us go deeper — more test nights, more metrics, more comparison data — than a generalist review site covering hundreds of brands.
+      </p>
+    </header>
+
+    <section class="flex flex-col gap-6">
+      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">What We Do</h2>
+      <div class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-col gap-4">
+        <p class="text-body-md text-on-surface-variant leading-relaxed">
+          We test every Amerisleep mattress using a standardized 7-metric scoring system. Each model is evaluated hands-on before any score is published.
+        </p>
+        <p class="text-body-md text-on-surface-variant leading-relaxed">
+          We earn affiliate commissions from Amerisleep when readers purchase through our links. This commercial relationship <strong>does not affect our scores or rankings</strong>. If a model underperforms in testing, we say so clearly.
+        </p>
+        <a href="/methodology" class="text-primary hover:text-secondary underline underline-offset-4 font-bold transition-colors w-fit">Read our full testing methodology →</a>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-6">
+      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Our Testing Team</h2>
+      <div class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-col gap-4">
+        <p class="text-body-md text-on-surface-variant leading-relaxed">
+          Reviews are written and scored by the PureSleep Testing Team — sleep product testers who evaluate mattresses across different body weights, sleep positions, and comfort preferences. All reviews are editorially independent.
+        </p>
+        <a href="/methodology" class="text-primary hover:text-secondary underline underline-offset-4 font-bold transition-colors w-fit">How we test →</a>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-6">
+      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Why Only Amerisleep?</h2>
+      <div class="flex flex-col gap-4 text-body-md text-on-surface-variant leading-relaxed">
+        <p>Most mattress review sites cover 50–100 brands with limited test time per model. We focus on 5 models with extended hands-on testing. That depth is only possible because we specialize.</p>
+        <p>Amerisleep's lineup is well-suited to data-driven review: all models share the same core technology (Bio-Pur® foam, HIVE® zoning) with controlled variations in firmness and construction. This allows genuine apples-to-apples comparison across the lineup.</p>
+        <p>If you're deciding between Amerisleep and another brand, we're not the right resource. If you've narrowed it down to Amerisleep and want to know which model, we're the most detailed source available.</p>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-6">
+      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Affiliate Disclosure</h2>
+      <div class="glass-panel p-8 rounded-3xl border border-white/60">
+        <p class="text-body-md text-on-surface-variant leading-relaxed">
+          PureSleep earns affiliate commissions when readers purchase Amerisleep products through links on this site. This does not affect our editorial rankings, scores, or recommendations. For questions, contact us at <a href="mailto:support@puresleep.com" class="text-secondary hover:text-primary transition-colors underline underline-offset-4">support@puresleep.com</a>.
+        </p>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

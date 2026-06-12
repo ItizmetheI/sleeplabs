@@ -1,0 +1,82 @@
+---
+import '../styles/global.css';
+
+import TopNavBar from '../components/TopNavBar';
+import Footer from '../components/Footer';
+
+export interface Props {
+  title: string;
+  description?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  ogType?: string;
+  canonicalUrl?: string;
+  jsonLd?: object;
+  lastUpdated?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = "PureSleep: Expert mattress reviews and sleep guides.",
+  ogTitle,
+  ogDescription,
+  ogImage,
+  ogType,
+  canonicalUrl,
+  jsonLd,
+  lastUpdated,
+  noindex,
+} = Astro.props;
+
+const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    
+    <meta property="og:title" content={ogTitle ?? title} />
+    <meta property="og:description" content={ogDescription ?? description} />
+    <meta property="og:image" content={ogImage ?? `${SITE_URL}/og-default.jpg`} />
+    <meta property="og:type" content={ogType ?? "website"} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle ?? title} />
+    <meta name="twitter:description" content={ogDescription ?? description} />
+    <meta name="twitter:image" content={ogImage ?? `${SITE_URL}/og-default.jpg`} />
+    
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <div class="bg-background text-on-background font-body-md text-body-md antialiased pt-[60px] min-h-screen flex flex-col selection:bg-secondary/20 selection:text-secondary relative overflow-hidden">
+      <!-- Global Liquid Background -->
+      <div class="fixed inset-0 pointer-events-none -z-10 bg-white overflow-hidden">
+        <div class="liquid-blob bg-[#1d4ed8] w-[80vw] h-[80vh] opacity-[0.05] top-[-20%] left-[-10%]"></div>
+        <div class="liquid-blob bg-[#3b82f6] w-[60vw] h-[60vh] opacity-[0.03] bottom-[-10%] right-[-10%]"></div>
+        <div class="liquid-blob bg-[#fbbf24] w-[40vw] h-[40vh] opacity-[0.04] top-[30%] right-[20%]"></div>
+      </div>
+      
+      <TopNavBar client:load currentPath={Astro.url.pathname} />
+      
+      <slot />
+      
+      <Footer client:visible />
+    </div>
+  </body>
+</html>

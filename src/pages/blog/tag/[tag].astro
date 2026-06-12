@@ -1,0 +1,119 @@
+---
+import { blogPosts } from '../../../data/blogs-generated';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+  const tags = new Set<string>([
+    'amerisleep', 'back-sleepers', 'stomach-sleepers', 'memory-foam',
+    'combination-sleepers', 'pressure-relief', 'side-sleepers', 'hip-pain',
+    'cooling', 'couples'
+  ]);
+  blogPosts.forEach((post: any) => {
+    if (post.tags) {
+      post.tags.forEach((tag: string) => tags.add(tag.toLowerCase().replace(/\s+/g, '-')));
+    }
+  });
+
+  return Array.from(tags).map(tag => {
+    const filteredPosts = blogPosts.filter((post: any) => 
+      post.tags && post.tags.some((t: string) => t.toLowerCase().replace(/\s+/g, '-') === tag)
+    );
+    return {
+      params: { tag },
+      props: { posts: filteredPosts.sort((a: any, b: any) => new Date(b.datePublished).valueOf() - new Date(a.datePublished).valueOf()) }
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": `Posts tagged with ${tag}`,
+  "url": SITE_URL + `/blog/tag/${tag}/`,
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": posts.map((post: any, index: number) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": SITE_URL + "/blog/" + post.slug,
+      "name": post.title
+    }))
+  }
+};
+---
+
+<BaseLayout
+  title={`Posts tagged with ${tag} | PureSleep Blog`}
+  description={`Explore our expert sleep and mattress guides tagged with ${tag}.`}
+  canonicalUrl={`${SITE_URL}/blog/tag/${tag}/`}
+  jsonLd={jsonLd}
+  noindex={posts.length === 0}
+>
+  <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+
+    <header class="text-center mb-16">
+      <h1 class="text-display-lg font-display-lg italic text-primary mb-4">Tag: {tag}</h1>
+      <p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+        Showing all articles tagged with <span class="capitalize font-bold">{tag.replace(/-/g, ' ')}</span>.
+      </p>
+    </header>
+
+    {posts.length === 0 ? (
+      <div class="text-center py-20">
+        <h2 class="text-headline-md text-primary mb-4">No posts found</h2>
+        <a href="/blog" class="text-nav font-nav text-secondary hover:underline">← Back to Blog</a>
+      </div>
+    ) : (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post: any) => (
+          <article class="glass-panel rounded-3xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all group flex flex-col">
+
+            <div class="h-48 overflow-hidden bg-surface-variant relative group">
+              <img
+                src={post.ogImage}
+                alt={post.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 absolute inset-0 z-10"
+                loading="lazy"
+                onerror="this.onerror=null; this.src='/og-default.jpg';"
+              />
+              <div class="absolute inset-0 flex items-center justify-center text-outline-variant/30">
+                 <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0V19a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v6"/></svg>
+              </div>
+            </div>
+
+            <div class="p-6 flex flex-col flex-1 gap-4">
+              <div class="inline-block text-label-sm font-label-sm uppercase tracking-widest text-secondary bg-secondary/10 px-3 py-1 rounded-full font-bold w-fit">
+                {post.category.replace(/-/g, ' ')}
+              </div>
+
+              <h2 class="text-headline-md font-headline-md text-primary group-hover:text-secondary transition-colors leading-snug">
+                <a href={`/blog/${post.slug}`}>{post.title}</a>
+              </h2>
+
+              <p class="text-body-md text-on-surface-variant leading-relaxed flex-1">
+                {post.excerpt}
+              </p>
+
+              <div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest border-t border-outline-variant/30 pt-4 mt-2">
+                <span>{new Date(post.datePublished).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                <span>{post.readTimeMinutes} min read</span>
+              </div>
+
+              <a
+                href={`/blog/${post.slug}`}
+                class="w-full text-center py-3 rounded-xl border-2 border-primary text-primary font-label-sm uppercase tracking-widest font-bold hover:bg-primary/5 transition-colors"
+              >
+                Read Article →
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    )}
+
+  </main>
+</BaseLayout>

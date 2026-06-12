@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Terms of Service — PureSleep",
+  "url": `${SITE_URL}/terms-of-service/`,
+  "description": "PureSleep terms of service. Terms governing use of puresleep.com.",
+  "dateModified": "2026-05-01"
+};
+---
+
+<BaseLayout
+  title="Terms of Service — PureSleep"
+  description="PureSleep terms of service. Terms governing use of puresleep.com."
+  canonicalUrl={`${SITE_URL}/terms-of-service/`}
+  jsonLd={jsonLd}
+>
+  <main class="max-w-[760px] mx-auto px-margin-mobile md:px-0 py-16 relative z-10 flex flex-col gap-10">
+
+    <header>
+      <h1 class="text-headline-lg font-headline-lg text-primary font-bold mb-4">Terms of Service</h1>
+      <p class="text-body-md text-on-surface-variant">Last updated: May 1, 2026</p>
+    </header>
+
+    <div class="flex flex-col gap-8 text-body-md text-on-surface-variant leading-relaxed">
+
+      <section>
+        <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">1. Acceptance of Terms</h2>
+        <p>By accessing puresleep.com, you agree to these terms. If you do not agree, do not use this site.</p>
+      </section>
+
+      <section>
+        <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">2. Content & Editorial Purpose</h2>
+        <p>PureSleep publishes independent mattress reviews and buying guides for informational purposes. Content is not a substitute for professional medical advice. Mattress recommendations are general in nature. Consult a healthcare professional for mattress advice related to specific medical conditions.</p>
+      </section>
+
+      <section>
+        <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">3. Affiliate Relationships</h2>
+        <p>PureSleep participates in affiliate programs. We may earn commissions from purchases made through links on this site. Affiliate relationships are disclosed where applicable and do not influence editorial content. All purchases are subject to the terms and policies of the retailer (amerisleep.com).</p>
+      </section>
+
+      <section>
+        <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">4. Accuracy of Information</h2>
+        <p>We strive to keep pricing, product availability, and specifications accurate and current. Product details (prices, availability, specifications) are subject to change by the manufacturer. Always verify current details at amerisleep.com before purchasing.</p>
+      </section>
+
+      <section>
+        <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">5. Intellectual Property</h2>
+        <p>All content on this site — including reviews, scores, comparison data, and guides — is the property of PureSleep unless otherwise noted. You may not reproduce, republish, or distribute our content without written permission.</p>
+      </section>
+
+      <section>
+        <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">6. Limitation of Liability</h2>
+        <p>PureSleep is not responsible for any damages arising from reliance on content published on this site, or from transactions conducted with third-party retailers linked from this site.</p>
+      </section>
+
+      <section>
+        <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">7. Changes to Terms</h2>
+        <p>We may update these terms at any time. Continued use of the site after changes constitutes acceptance of the new terms.</p>
+      </section>
+
+    </div>
+  </main>
+</BaseLayout>

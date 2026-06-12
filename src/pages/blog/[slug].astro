@@ -1,0 +1,433 @@
+---
+import { blogPosts } from '../../data/blogs-generated';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+  return blogPosts.map(post => ({
+    params: { slug: post.slug },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+
+if ((post as any).redirectTo) {
+  return Astro.redirect((post as any).redirectTo, 301);
+}
+
+const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": post.schemaType === 'HowTo' ? 'HowTo' : 'Article',
+  "headline": post.title,
+  "description": post.metaDescription,
+  "image": post.ogImage,
+  "author": {
+    "@type": "Organization",
+    "name": post.author.name,
+    "url": post.author.url
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PureSleep",
+    "url": SITE_URL
+  },
+  "datePublished": post.datePublished,
+  "dateModified": post.dateModified,
+  "mainEntityOfPage": post.canonicalUrl,
+  "articleBody": post.sections.map(s => s.content).join(' '),
+  ...(post.reviewedBy ? {
+    "reviewedBy": {
+      "@type": "Organization",
+      "name": "PureSleep Testing Team",
+      "url": "https://puresleep.com/methodology/"
+    }
+  } : {})
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": post.faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+  }))
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, 
+      "name": "Home", "item": SITE_URL },
+    { "@type": "ListItem", "position": 2, 
+      "name": "Blog", "item": SITE_URL + "/blog/" },
+    { "@type": "ListItem", "position": 3, 
+      "name": post.title, 
+      "item": SITE_URL + "/blog/" + post.slug }
+  ]
+};
+
+const jsonLd = [articleSchema, faqSchema, breadcrumbSchema];
+
+const isAmerisleePost = (post.productRefs && post.productRefs.length > 0) &&
+(post.tags?.some((t: string) => ['amerisleep','bio-pur','hive-technology','as2','as3','as5','as6','organica'].includes(t.toLowerCase())) ||
+post.entityMentions?.some((e: string) => /amerisleep/i.test(e)));
+
+const formatProse = (text: string) => {
+  let formatted = text || '';
+  
+  if (!formatted.includes('<p>') && !formatted.includes('<br>')) {
+     // Safely try to break into smaller paragraphs by looking for ". "
+     // without destroying any text or tags.
+     const parts = formatted.split('. ');
+     let paragraphs = [];
+     let currentParagraph = "";
+     parts.forEach((part, i) => {
+        currentParagraph += part + (i < parts.length - 1 ? ". " : "");
+        // Group every 3 sentences
+        if ((i + 1) % 3 === 0 || i === parts.length - 1) {
+           paragraphs.push(`<p class="mb-5 last:mb-0">${currentParagraph.trim()}</p>`);
+           currentParagraph = "";
+        }
+     });
+     formatted = paragraphs.join("");
+  }
+  
+  // Highlight terms after paragraphing so tags don't get split.
+  formatted = formatted.replace(/Bio-Pur®/g, `<span class="bg-primary/10 text-primary border border-primary/30 rounded-md px-1.5 py-0.5 font-semibold text-[15px] whitespace-nowrap">Bio-Pur®</span>`);
+  formatted = formatted.replace(/HIVE® technology/g, `<span class="bg-secondary/10 text-secondary border border-secondary/30 rounded-md px-1.5 py-0.5 font-semibold text-[15px] whitespace-nowrap font-sans">HIVE® Technology</span>`);
+  formatted = formatted.replace(/HIVE® Technology/g, `<span class="bg-secondary/10 text-secondary border border-secondary/30 rounded-md px-1.5 py-0.5 font-semibold text-[15px] whitespace-nowrap font-sans">HIVE® Technology</span>`);
+  formatted = formatted.replace(/Refresh Fabric/g, `<span class="bg-blue-50 text-blue-700 border border-blue-300 rounded-md px-1.5 py-0.5 font-semibold text-[15px] whitespace-nowrap">Refresh Fabric</span>`);
+  
+  return formatted;
+};
+---
+
+<BaseLayout
+  title={post.metaTitle}
+  description={post.metaDescription}
+  ogTitle={post.ogTitle}
+  ogDescription={post.ogDescription}
+  ogImage={post.ogImage}
+  ogType="article"
+  canonicalUrl={`${SITE_URL}/blog/${post.slug}`}
+  lastUpdated={post.dateModified}
+  jsonLd={jsonLd}
+>
+  <article class="max-w-[760px] mx-auto px-margin-mobile md:px-0 py-stack-lg">
+
+    <!-- Breadcrumb -->
+    <nav class="text-label-sm font-label-sm text-on-surface-variant mb-8 uppercase tracking-widest">
+      <a href="/" class="hover:text-secondary transition-colors">Home</a>
+      <span class="mx-2">·</span>
+      <a href="/blog/" class="hover:text-secondary transition-colors">Blog</a>
+      <span class="mx-2">·</span>
+      <span class="text-primary">{post.category.replace(/-/g, ' ')}</span>
+    </nav>
+
+    <!-- Category pill -->
+    <div class="inline-block text-label-sm font-label-sm uppercase tracking-widest text-secondary bg-secondary/10 px-4 py-1.5 rounded-full mb-6 font-bold">
+      {post.category.replace(/-/g, ' ')}
+    </div>
+
+    <!-- H1 -->
+    <h1 class="text-display-lg font-display-lg text-primary italic leading-tight mb-6">
+      {post.title}
+    </h1>
+
+    <!-- Direct Answer Box — LLM signal -->
+    <div class="glass-panel p-6 rounded-2xl border-l-4 border-secondary mb-8">
+      <p class="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-2 font-bold">Quick Answer</p>
+      <p class="text-body-lg text-on-background leading-relaxed">{post.directAnswer}</p>
+    </div>
+
+    <!-- Byline & Social Share -->
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 pb-8 border-b border-outline-variant/30">
+      <div class="flex flex-wrap items-center gap-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-secondary text-primary flex items-center justify-center font-bold text-lg font-serif">P</div>
+          <span>By {post.author.name}</span>
+        </div>
+        {post.reviewedBy && (
+          <span>· Reviewed by <a href={post.reviewedBy.url} class="text-secondary hover:text-primary transition-colors">{post.reviewedBy.name}</a>, {post.reviewedBy.role}</span>
+        )}
+        <span>· <time datetime={post.dateModified}>Updated: {new Date(post.dateModified).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time></span>
+        <span>· {post.readTimeMinutes} min read</span>
+      </div>
+      
+      <!-- Social Share Buttons -->
+      <div class="flex items-center gap-2">
+        <span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest mr-2">Share:</span>
+        <button class="w-8 h-8 rounded-full bg-surface border border-outline-variant/50 hover:border-primary flex items-center justify-center hover:bg-primary/5 transition-all" aria-label="Share on Twitter" onclick={`window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(window.location.href)+'&text='+encodeURIComponent(document.title), '_blank')`}>
+          <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.054 10.054 0 01-3.127 1.195 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+        </button>
+        <button class="w-8 h-8 rounded-full bg-surface border border-outline-variant/50 hover:border-primary flex items-center justify-center hover:bg-primary/5 transition-all" aria-label="Share on Facebook" onclick={`window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href), '_blank')`}>
+          <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Hero image -->
+    <div class="w-full h-[400px] rounded-[2rem] overflow-hidden mb-12 glass-panel shadow-xl shadow-primary/5 relative group border border-outline-variant/20 bg-surface-variant">
+      <div class="absolute inset-0 flex items-center justify-center text-outline-variant/30">
+        <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0V19a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v6"/></svg>
+      </div>
+      <img src={post.ogImage} alt={post.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 absolute inset-0 z-10" loading="lazy" onerror="this.onerror=null; this.src='/og-default.jpg';" />
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent z-20"></div>
+    </div>
+
+    <!-- Table of Contents -->
+    {post.sections.filter(s => s.heading).length > 0 && (
+      <div class="glass-panel p-8 rounded-[2rem] mb-12 border border-outline-variant/40 shadow-sm relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none"></div>
+        <h2 class="text-label-sm font-label-sm uppercase tracking-widest text-primary font-bold mb-5 flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
+          Table of Contents
+        </h2>
+        <ul class="space-y-3">
+          {post.sections.filter(s => s.heading).map((section, idx) => (
+            <li class="pl-4 border-l-2 border-outline-variant/30 hover:border-secondary transition-colors relative">
+              <div class="absolute w-1.5 h-1.5 rounded-full bg-secondary/50 -left-[4px] top-2 border border-white"></div>
+              <a href={`#section-${idx}`} class="text-body-md text-on-surface-variant hover:text-primary transition-colors font-medium">
+                {section.heading}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    <!-- Article sections -->
+    {post.sections.map((section, index) => {
+      // Check if section mentions high performance rating scores
+      const scoreMatch = section.content.match(/\b([89]\.\d)\/10\b/);
+      const firstScore = scoreMatch ? scoreMatch[1] : null;
+
+      // Check if the section focuses on clinical/spinal alignment
+      const sectionId = section.heading ? `section-${post.sections.filter(s => s.heading).indexOf(section)}` : `content-${index}`;
+
+      return (
+        <div id={sectionId} class="mb-12 scroll-mt-24 border-b border-outline-variant/10 pb-10 last:border-b-0">
+          <!-- Heading -->
+          {section.heading && section.headingLevel === 2 && (
+            <h2 class="text-headline-lg font-headline-lg text-primary italic mb-6 leading-tight tracking-tight flex items-center gap-3">
+              <span class="w-1.5 h-8 bg-gradient-to-b from-secondary to-orange-400 rounded-full inline-block shadow-sm"></span>
+              {section.heading}
+            </h2>
+          )}
+          {section.heading && section.headingLevel === 3 && (
+            <h3 class="text-headline-md font-headline-md text-primary mb-4 font-bold flex items-center gap-2">
+               <span class="text-secondary/50">#</span> {section.heading}
+            </h3>
+          )}
+
+          <!-- Score Badge Accent -->
+          {firstScore && (
+            <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-800 rounded-xl px-3.5 py-1.5 mb-4 text-xs font-bold uppercase tracking-wider shadow-sm">
+              <span class="text-amber-500">★</span> 
+              <span>PureSleep Certified:</span>
+              <span class="text-amber-600 font-extrabold text-sm">{firstScore}/10</span>
+            </div>
+          )}
+
+          <!-- Content Prose -->
+          {section.heading === null ? (
+            <div class="text-body-lg text-on-surface-variant leading-relaxed font-sans first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left first-letter:font-serif first-letter:italic first-letter:leading-none select-all" set:html={formatProse(section.content)} />
+          ) : (
+            <div class="text-body-lg text-on-surface-variant leading-relaxed font-sans select-all" set:html={formatProse(section.content)} />
+          )}
+
+          
+
+          <!-- Bullet List Grid -->
+          {section.hasBulletList && section.bulletItems && (
+            <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {section.bulletItems.map(item => (
+                <div class="flex items-start gap-3 bg-surface border border-outline-variant/30 rounded-2xl p-4 shadow-sm hover:border-secondary/20 hover:shadow-md transition-all duration-300">
+                  <span class="p-1 rounded-full bg-secondary/10 text-secondary shrink-0 text-[10px] mt-0.5 font-sans font-extrabold w-5 h-5 flex items-center justify-center border border-secondary/15">
+                    ✓
+                  </span>
+                  <p class="text-body-md text-on-surface-variant leading-relaxed font-medium">{item}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          <!-- High-Contrast Table formatting -->
+          {section.hasTable && section.tableData && (
+            <div class="mt-8 mb-6 glass-panel rounded-2xl overflow-hidden shadow-md">
+              <table class="w-full text-left">
+                <thead class="bg-primary text-white border-b border-primary-container/20">
+                  <tr>
+                    {section.tableData.headers.map(h => (
+                      <th class="py-4 px-5 text-[11px] font-label-sm uppercase tracking-widest font-extrabold">{h}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-outline-variant/10 bg-white">
+                  {section.tableData.rows.map(row => (
+                    <tr class="hover:bg-primary/[0.02] transition-colors duration-200">
+                      {row.map((cell, cellIdx) => {
+                        const containsModel = cell.includes("AS2") || cell.includes("AS3") || cell.includes("AS5") || cell.includes("AS6") || cell.includes("Organica");
+                        return (
+                          <td class={`py-4 px-5 text-body-md text-on-surface-variant ${cellIdx === 0 || containsModel ? 'font-bold text-primary' : ''}`}>
+                            {cell}
+                          </td>
+                        )
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+          
+          <!-- Multiple Mid-content CTAs -->
+          {isAmerisleePost && post.productRefs.length > 0 && index > 0 && index % 2 !== 0 && index !== post.sections.length - 1 && (
+            <div class="my-10 text-center py-8 px-6 glass-panel rounded-[2rem] border border-secondary/20 bg-secondary/[0.03] shadow-inner relative overflow-hidden group hover:border-secondary/40 transition-colors">
+              <div class="absolute inset-0 bg-gradient-to-r from-secondary/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <span class="inline-block p-2 bg-secondary/10 text-secondary rounded-full mb-3 shadow-sm border border-secondary/20 relative z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </span>
+              <h4 class="text-headline-md font-headline-md text-primary mb-3 relative z-10">Upgrade Your Sleep Today</h4>
+              <p class="text-body-lg text-on-surface-variant max-w-lg mx-auto mb-6 relative z-10">Experience the pressure-relieving comfort of the {post.productRefs[Math.floor(index / 2) % post.productRefs.length].productName} risk-free for 100 nights.</p>
+              <a href={post.productRefs[Math.floor(index / 2) % post.productRefs.length].productUrl} target="_blank" rel="noopener noreferrer" class="relative z-10 inline-flex items-center justify-center bg-primary text-white px-8 py-4 rounded-full font-bold text-label-sm uppercase tracking-widest hover:bg-blue-800 hover:scale-105 active:scale-95 transition-all shadow-[0_5px_15px_rgba(29,78,216,0.3)]">
+                Check Latest Price <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+            </div>
+          )}
+        </div>
+      );
+    })}
+
+    <!-- *** PRODUCT CTA BOX — ALL LINKS GO TO AMERISLEEP.COM *** -->
+    {isAmerisleePost && post.productRefs.length > 0 && (
+      <div class="glass-panel-heavy p-8 md:p-10 rounded-[2rem] border-2 border-outline-variant/50 my-12 relative overflow-hidden shadow-xl shadow-primary/5">
+        <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[80px] -mr-20 -mt-20 pointer-events-none"></div>
+        <div class="relative z-10">
+          <p class="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-4 font-bold flex items-center gap-2">
+            <span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+            Our Top Pick
+          </p>
+          <h3 class="text-display-sm font-display-sm text-primary mb-3 leading-tight">{post.productRefs[0].productName}</h3>
+          <p class="text-body-lg text-on-surface-variant mb-8 font-medium">
+            On sale from {post.productRefs[0].salePrice} · 100-night trial · 20-year warranty · Free shipping
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-2">
+            <a
+              href={post.productRefs[0].productUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center bg-primary text-white px-8 py-5 rounded-full text-label-sm font-label-sm uppercase tracking-widest hover:bg-blue-800 hover:scale-[1.02] active:scale-[0.98] transition-all font-bold shadow-[0_10px_25px_rgba(29,78,216,0.4)]"
+            >
+              Shop on Amerisleep <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <a
+              href="https://amerisleep.com/sale/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center glass-panel text-primary border border-outline-variant/50 px-8 py-5 rounded-full text-label-sm font-label-sm uppercase tracking-widest hover:bg-white hover:shadow-md transition-all font-bold"
+            >
+              See All Sale Prices
+            </a>
+          </div>
+          <p class="text-[12px] text-on-surface-variant mt-6 bg-surface px-4 py-2 rounded-lg inline-block border border-outline-variant/30">
+            Shop all Amerisleep mattresses at
+            <a href="https://amerisleep.com/sale/" target="_blank" rel="noopener noreferrer" class="text-primary font-bold hover:underline ml-1">amerisleep.com/sale</a>
+          </p>
+        </div>
+      </div>
+    )}
+
+    <!-- If post has multiple product refs, show secondary ones too -->
+    {isAmerisleePost && post.productRefs.length > 1 && (
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 my-10">
+        {post.productRefs.slice(1).map(ref => (
+          <a
+            href={ref.productUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="glass-panel p-6 rounded-[2rem] border border-outline-variant/30 hover:border-secondary/50 hover:shadow-lg transition-all group relative overflow-hidden"
+          >
+            <div class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <p class="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-2 font-bold flex items-center gap-2">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              Also Consider
+            </p>
+            <p class="text-headline-sm font-headline-sm text-primary font-bold group-hover:text-blue-800 transition-colors mb-2">{ref.productName}</p>
+            <p class="text-body-sm text-on-surface-variant group-hover:text-primary transition-colors flex items-center font-medium">From {ref.salePrice} at amerisleep.com <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span></p>
+          </a>
+        ))}
+      </div>
+    )}
+
+    <!-- Author Box -->
+    <div class="my-16 glass-panel rounded-[2rem] p-8 border border-outline-variant/40 flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left shadow-sm">
+      <div class="w-24 h-24 rounded-full bg-primary text-white flex items-center justify-center font-bold text-4xl font-serif shrink-0 shadow-lg relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent"></div>
+        <span>{post.author.name.charAt(0)}</span>
+      </div>
+      <div>
+        <h3 class="text-headline-sm font-headline-sm text-primary mb-2 font-bold">{post.author.name}</h3>
+        <p class="text-body-md text-on-surface-variant leading-relaxed mb-4">
+          The PureSleep editorial team consists of sleep science researchers, product testers, and health professionals dedicated to finding the exact mechanical solutions for perfect sleep posture.
+        </p>
+        <div class="flex items-center justify-center sm:justify-start gap-4 text-label-sm uppercase tracking-widest font-bold">
+          <a href="/about/" class="text-secondary hover:text-primary transition-colors">Read Our Story</a>
+          <span class="text-outline-variant">|</span>
+          <a href="/methodology/" class="text-secondary hover:text-primary transition-colors">How We Test</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ section -->
+    <div class="mt-12 border-t border-outline-variant/30 pt-12">
+      <h2 class="text-headline-lg font-headline-lg text-primary italic mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {post.faqs.map(faq => (
+          <div class="glass-panel rounded-2xl p-6 border-l-4 border-l-secondary">
+            <h3 class="text-body-lg font-bold text-primary mb-3">
+              {faq.question}
+            </h3>
+            <p class="text-body-md text-on-surface-variant leading-relaxed">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Related reading (internal links) -->
+    <div class="mt-12 border-t border-outline-variant/30 pt-12">
+      <h3 class="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-6 font-bold">Related Reading</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {post.internalLinks.map(link => (
+          <a href={link.url} class="glass-panel p-5 rounded-2xl hover:border-secondary transition-all group">
+            <span class="text-body-md text-primary font-bold group-hover:text-secondary transition-colors">{link.anchorText} →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Bottom CTA banner — only on Amerisleep product posts -->
+    {isAmerisleePost && (
+    <div class="mt-16 bg-primary rounded-3xl p-8 text-center">
+      <p class="text-label-sm font-label-sm uppercase tracking-widest text-blue-200 mb-3">Ready to buy?</p>
+      <h3 class="text-headline-lg font-headline-lg text-white italic mb-4">Shop Amerisleep — 100-Night Trial</h3>
+      <p class="text-blue-200 text-body-md mb-6">Free shipping · 20-year warranty · </p>
+      <a
+        href="https://amerisleep.com/sale/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center bg-white text-primary px-8 py-4 rounded-full text-label-sm font-label-sm uppercase tracking-widest hover:bg-blue-50 transition-colors font-bold shadow-lg"
+      >
+        Shop Amerisleep Sale →
+      </a>
+    </div>
+    )}
+
+  </article>
+</BaseLayout>

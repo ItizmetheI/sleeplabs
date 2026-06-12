@@ -1,0 +1,289 @@
+---
+import { comparisons } from '../../data/comparisons';
+import { allMattresses } from '../../data/mattresses';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+  return comparisons.map(c => ({
+    params: { slug: c.slug },
+    props: { comparison: c }
+  }));
+}
+
+const { comparison } = Astro.props;
+
+const mattressA = allMattresses.find(m => m.id === comparison.mattressAId);
+const mattressB = allMattresses.find(m => m.id === comparison.mattressBId);
+
+if (!mattressA || !mattressB) {
+  throw new Error(`Mattresses not found for comparison ${comparison.slug}`);
+}
+
+const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": `${mattressA.name} vs ${mattressB.name} (2026): Which Is Better?`,
+    "author": {
+      "@type": "Organization",
+      "name": "PureSleep",
+      "url": SITE_URL
+    },
+    "reviewedBy": {
+      "@type": "Organization",
+      "name": "PureSleep Testing Team"
+    },
+    "dateModified": comparison.dateModified,
+    "datePublished": comparison.dateModified,
+    "publisher": {
+      "@type": "Organization",
+      "name": "PureSleep",
+      "url": SITE_URL
+    },
+    "mainEntityOfPage": `${SITE_URL}/comparison/${comparison.slug}`
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": mattressA.name,
+    "brand": { "@type": "Brand", "name": mattressA.brand },
+    "description": mattressA.summary,
+    "image": mattressA.heroImage,
+    "offers": {
+      "@type": "Offer",
+      "price": mattressA.price,
+      "priceCurrency": "USD",
+      "url": mattressA.affiliateUrl
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": mattressA.scores.overall,
+      "bestRating": "10",
+      "worstRating": "0",
+      "reviewCount": "1"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": mattressB.name,
+    "brand": { "@type": "Brand", "name": mattressB.brand },
+    "description": mattressB.summary,
+    "image": mattressB.heroImage,
+    "offers": {
+      "@type": "Offer",
+      "price": mattressB.price,
+      "priceCurrency": "USD",
+      "url": mattressB.affiliateUrl
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": mattressB.scores.overall,
+      "bestRating": "10",
+      "worstRating": "0",
+      "reviewCount": "1"
+    }
+  }
+];
+
+if (comparison.faqs && comparison.faqs.length > 0) {
+  jsonLd.push({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": comparison.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  });
+}
+
+const formattedDateModified = new Date(comparison.dateModified).toLocaleDateString('en-US', {
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric'
+});
+---
+
+<BaseLayout
+  title={`${mattressA.name} vs ${mattressB.name} (2026): Which Is Better? | PureSleep`}
+  description={comparison.description}
+  canonicalUrl={`${SITE_URL}/comparison/${comparison.slug}`}
+  lastUpdated={comparison.dateModified}
+  jsonLd={jsonLd}
+>
+  <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 relative z-10 w-full flex flex-col gap-16">
+    
+    <header class="flex flex-col gap-6 items-center text-center max-w-4xl mx-auto">
+      <h1 class="text-headline-lg font-headline-lg  text-primary font-bold">
+        {mattressA.name} vs {mattressB.name} (2026): Which Is Better?
+      </h1>
+      <div class="flex justify-center mt-4">
+        <span class="text-body-md text-on-surface-variant bg-surface px-6 py-2 rounded-full shadow-sm border border-outline-variant/30">
+          <strong class="text-on-background">Last Updated:</strong> {new Date(comparison.dateModified).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+        </span>
+      </div>
+      <div class="flex flex-col md:flex-row gap-4 items-center justify-center text-body-md text-on-surface-variant bg-surface px-6 py-3 rounded-full shadow-sm border border-outline-variant/30">
+        <span><strong class="text-on-background">Reviewed By:</strong> PureSleep Testing Team</span>
+        <span class="hidden md:inline-block w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+        <span><strong class="text-on-background">Last Updated:</strong> {formattedDateModified}</span>
+      </div>
+    </header>
+
+    <div class="flex flex-col lg:flex-row gap-12 items-start">
+      <article class="flex-1 flex flex-col gap-12 w-full">
+        
+        <!-- Quick Verdict -->
+        <section class="glass-panel-heavy p-8 rounded-3xl border border-secondary/20 shadow-lg">
+          <h2 class="text-title-lg font-title-lg text-primary mb-4 italic">Quick Verdict</h2>
+          <p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+            {comparison.verdict}
+          </p>
+        </section>
+
+        <!-- Product Images Side by Side -->
+         <section class="grid grid-cols-2 gap-8 items-center">
+            <div class="flex flex-col gap-4 text-center">
+                <div class="w-full h-[250px] rounded-3xl overflow-hidden border border-white/60 shadow-lg">
+                    <img src={mattressA.image} alt={mattressA.name} class="w-full h-full object-cover" />
+                </div>
+                <h3 class="font-title-lg text-primary font-bold">{mattressA.name}</h3>
+                <a href={mattressA.affiliateUrl} target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-primary text-on-primary font-bold font-label-md uppercase shadow-md hover:bg-primary/90 transition-colors">Check Price</a>
+            </div>
+            <div class="flex flex-col gap-4 text-center">
+                 <div class="w-full h-[250px] rounded-3xl overflow-hidden border border-white/60 shadow-lg">
+                    <img src={mattressB.image} alt={mattressB.name} class="w-full h-full object-cover" />
+                </div>
+                <h3 class="font-title-lg text-primary font-bold">{mattressB.name}</h3>
+                <a href={mattressB.affiliateUrl} target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-primary text-on-primary font-bold font-label-md uppercase shadow-md hover:bg-primary/90 transition-colors">Check Price</a>
+            </div>
+         </section>
+
+        <!-- Stats Comparison Table -->
+        <section class="overflow-hidden glass-panel rounded-3xl border border-white/60">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-surface/50 border-b border-outline-variant/30 text-title-md text-primary font-bold">
+                        <th class="p-6">Feature</th>
+                        <th class="p-6 border-l border-outline-variant/30">{mattressA.name}</th>
+                        <th class="p-6 border-l border-outline-variant/30">{mattressB.name}</th>
+                    </tr>
+                </thead>
+                <tbody class="text-body-md text-on-surface-variant">
+                    {/* Basic Stats */}
+                    {[
+                        { label: 'Price (Queen)', a: mattressA.priceRange, b: mattressB.priceRange },
+                       { label: 'Thickness', a: mattressA.thickness, b: mattressB.thickness },
+                       { label: 'Sale Price', a: mattressA.priceSale, b: mattressB.priceSale },
+                        { label: 'Type', a: mattressA.type, b: mattressB.type },
+                        { label: 'Firmness', a: mattressA.firmness, b: mattressB.firmness },
+                        { label: 'Trial', a: `${mattressA.trialNights} Nights`, b: `${mattressB.trialNights} Nights` },
+                        { label: 'Warranty', a: `${mattressA.warrantyYears} Years`, b: `${mattressB.warrantyYears} Years` },
+                        { label: 'Certifications', a: mattressA.certifications.join(', '), b: mattressB.certifications.join(', ') },
+                    ].map((row, i) => (
+                        <tr class={`border-b border-outline-variant/20 ${i % 2 === 0 ? 'bg-transparent' : 'bg-white/30'}`}>
+                            <td class="p-6 font-bold text-on-surface">{row.label}</td>
+                            <td class="p-6 border-l border-outline-variant/30">{row.a}</td>
+                            <td class="p-6 border-l border-outline-variant/30">{row.b}</td>
+                        </tr>
+                    ))}
+
+                    <tr class="bg-primary/5 border-y-2 border-primary/20"><td colspan="3" class="p-6 text-center text-label-lg font-bold text-primary uppercase tracking-widest">Performance Scores</td></tr>
+
+                    {/* Scores */}
+                    {[
+                        { label: 'Overall', key: 'overall' },
+                        { label: 'Support', key: 'support' },
+                        { label: 'Pressure Relief', key: 'pressureRelief' },
+                        { label: 'Cooling', key: 'cooling' },
+                        { label: 'Motion Isolation', key: 'motionIsolation' },
+                        { label: 'Edge Support', key: 'edgeSupport' },
+                        { label: 'Value', key: 'value' },
+                    ].map((row, i) => {
+                        const scoreA = mattressA.scores[row.key as keyof typeof mattressA.scores];
+                        const scoreB = mattressB.scores[row.key as keyof typeof mattressB.scores];
+                        const winnerA = scoreA > scoreB;
+                        const winnerB = scoreB > scoreA;
+                        
+                        return (
+                            <tr class={`border-b border-outline-variant/20 ${i % 2 === 0 ? 'bg-transparent' : 'bg-white/30'}`}>
+                                <td class="p-6 font-bold text-on-surface">{row.label}</td>
+                                <td class={`p-6 border-l border-outline-variant/30 ${winnerA ? 'text-secondary font-bold text-title-md' : ''}`}>{scoreA}/10</td>
+                                <td class={`p-6 border-l border-outline-variant/30 ${winnerB ? 'text-secondary font-bold text-title-md' : ''}`}>{scoreB}/10</td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Who Wins For... -->
+        <section class="flex flex-col gap-6">
+            <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">The Winner By Category</h2>
+            <div class="grid grid-cols-1 gap-6">
+                {comparison.winnerFor.map(winner => {
+                    const winningMattress = winner.winnerId === mattressA.id ? mattressA : mattressB;
+                    return (
+                        <div class="glass-panel p-6 rounded-2xl flex flex-col md:flex-row gap-6 items-start border border-white/50 border-l-4 border-l-secondary">
+                            <div class="flex flex-col gap-2 flex-1">
+                                <span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest border-b border-outline-variant/30 pb-2 mb-2">Best For {winner.category}</span>
+                                <h3 class="text-title-lg font-title-lg text-primary">{winningMattress.name}</h3>
+                                <p class="text-on-surface-variant leading-relaxed mt-1">{winner.reason}</p>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
+        </section>
+
+        <!-- Detailed Body -->
+        <section class="flex flex-col gap-6 text-on-surface-variant leading-relaxed text-body-lg">
+             <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Detailed Head-to-Head Comparison</h2>
+             
+             <h3 class="text-title-lg font-title-lg text-primary mt-4">1. Construction & Build Quality</h3>
+             <p>When selecting a new mattress, understanding the exact materials and structural nuances between the {mattressA.name} and {mattressB.name} is crucial for long-term comfort. The {mattressA.name} relies on a high-quality {mattressA.type} design, which fundamentally dictates how it responds to body weight. It features a {mattressA.firmness} feel—quantified by our testing team as a {mattressA.firmnessScale}/10 on the firmness scale. Comparatively, the {mattressB.name} leverages a {mattressB.type} construction, yielding a {mattressB.firmness} feel and an equivalent firmness rating of {mattressB.firmnessScale}/10. The contrast in their primary support layers means that they handle kinetic energy and body contouring very differently.</p>
+             
+             <h3 class="text-title-lg font-title-lg text-primary mt-4">2. Firmness, Feel & Support ({mattressA.scores.support}/10 vs {mattressB.scores.support}/10)</h3>
+             <p>Our clinical lab testing consistently highlights distinct biomechanical advantages for both beds. For baseline structural support—which keeps the spine aligned and prevents sagging—the {mattressA.name} scored a {mattressA.scores.support}/10. This is largely due to its robust support core engineering that prevents the hips from bowing downward. The {mattressB.name} countered with an impressive {mattressB.scores.support}/10 in the identical spinal alignment test. If you suffer from lower back pain, the {mattressA.scores.support > mattressB.scores.support ? mattressA.name : mattressB.name} offers a slight edge in keeping the lumbar region neutrally positioned throughout the night.</p>
+             
+             <h3 class="text-title-lg font-title-lg text-primary mt-4">3. Pressure Relief ({mattressA.scores.pressureRelief}/10 vs {mattressB.scores.pressureRelief}/10)</h3>
+             <p>Pressure relief is arguably the most vital metric for side sleepers who naturally concentrate their body weight onto their shoulders and hips. In our hands-on pressure testing, the {mattressA.name} earned a {mattressA.scores.pressureRelief}/10. It permitted adequate sinkage to alleviate tension in the joints without causing the sleeper to feel 'stuck'. The {mattressB.name} scored a {mattressB.scores.pressureRelief}/10 in the same test sequence. For sleepers who toss and turn due to joint soreness, the mattress with the higher score in this category will significantly reduce those micro-awakenings.</p>
+
+             <h3 class="text-title-lg font-title-lg text-primary mt-4">4. Cooling & Motion Isolation</h3>
+             <p>Thermal regulation can make or break a mattress. The {mattressA.name} scored {mattressA.scores.cooling}/10 for cooling capabilities, utilizing breathable fabric covers and open-cell structural materials to dissipate body heat. The {mattressB.name} achieved a {mattressB.scores.cooling}/10, managing temperature through its specific {mattressB.type} airflow dynamics. In terms of motion isolation—critical for couples where one partner is restless—the {mattressA.name} scored {mattressA.scores.motionIsolation}/10 by successfully damping cross-mattress vibrations. The {mattressB.name} absorbed {mattressB.scores.motionIsolation}/10 of the kinetic energy in our drop tests. If you share a bed, high motion isolation is invaluable.</p>
+             
+             <h3 class="text-title-lg font-title-lg text-primary mt-4">5. Policies & Value Proposition</h3>
+             <p>Beyond physical comfort, let's consider the practical, long-term aspects of your purchase. The {mattressA.name} backs its structural integrity with a {mattressA.trialNights}-night sleep trial and a {mattressA.warrantyYears}-year warranty, offering significant peace of mind. Meanwhile, the {mattressB.name} brand offers a {mattressB.trialNights}-night trial combined with a {mattressB.warrantyYears}-year warranty. Pricing remains a defining differentiator: a queen size {mattressA.name} is generally listed around ${mattressA.price}, compared to the ${mattressB.price} price tag of the {mattressB.name}. Evaluating your absolute priorities—whether it be upfront budget, specific orthopedic pain points, or thermal comfort needs—will ultimately guide you to the right choice. {comparison.verdict}</p>
+        </section>
+
+        <!-- FAQs -->
+        {comparison.faqs && comparison.faqs.length > 0 && (
+          <section class="flex flex-col gap-6 mt-8">
+              <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Frequently Asked Questions</h2>
+              <div class="flex flex-col gap-4">
+                  {comparison.faqs.map(faq => (
+                      <details class="group glass-panel rounded-2xl border border-white/50 overflow-hidden shadow-sm">
+                          <summary class="flex justify-between items-center cursor-pointer p-6 font-title-md text-primary font-bold list-none">
+                              {faq.question}
+                              <span class="transition group-open:rotate-180 text-primary">
+                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                              </span>
+                          </summary>
+                          <div class="px-6 pb-6 text-body-md text-on-surface-variant leading-relaxed border-t border-outline-variant/10 pt-4">
+                              {faq.answer}
+                          </div>
+                      </details>
+                  ))}
+              </div>
+          </section>
+        )}
+
+      </article>
+    </div>
+  </main>
+</BaseLayout>

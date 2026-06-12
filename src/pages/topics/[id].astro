@@ -1,0 +1,128 @@
+---
+import { topics } from '../../data/topics';
+import { mattresses, reviewer_drsmith } from '../../data/mattresses';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+  return topics.map(topic => ({
+    params: { id: topic.id },
+    props: { topic }
+  }));
+}
+
+const { topic } = Astro.props;
+const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+
+const relatedMattressData = topic.relatedMattresses
+  .map(id => mattresses.find(m => m.id === id))
+  .filter(Boolean);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": topic.title,
+    "description": topic.description,
+    "dateModified": topic.dateModified,
+    "author": {
+      "@type": "Person",
+      "name": reviewer_drsmith.name,
+      "jobTitle": reviewer_drsmith.role,
+      "description": reviewer_drsmith.credentials,
+      "sameAs": reviewer_drsmith.sameAs,
+      "url": `${SITE_URL}/methodology/`
+    },
+    "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
+    "mainEntityOfPage": `${SITE_URL}/topics/${topic.id}`
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "name": topic.title,
+    "description": topic.description,
+    "inDefinedTermSet": { "@type": "DefinedTermSet", "name": "PureSleep Sleep & Mattress Glossary" }
+  }
+];
+
+const formattedDate = new Date(topic.dateModified).toLocaleDateString('en-US', {
+  month: 'long', day: 'numeric', year: 'numeric'
+});
+---
+
+<BaseLayout
+  title={`${topic.title} — PureSleep Sleep Science Guide`}
+  description={topic.description}
+  canonicalUrl={`${SITE_URL}/topics/${topic.id}`}
+  lastUpdated={topic.dateModified}
+  jsonLd={jsonLd}
+>
+  <main class="max-w-[760px] mx-auto px-margin-mobile md:px-0 py-12 relative z-10 flex flex-col gap-12">
+
+    <nav class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest">
+      <a href="/" class="hover:text-secondary transition-colors">Home</a>
+      <span class="mx-2">·</span>
+      <a href="/topics" class="hover:text-secondary transition-colors">Topics</a>
+      <span class="mx-2">·</span>
+      <span class="text-primary">{topic.title}</span>
+    </nav>
+
+    <header class="flex flex-col gap-4">
+      <h1 class="text-headline-lg font-headline-lg text-primary font-bold">{topic.title}</h1>
+      <p class="text-title-md font-title-md text-on-surface-variant italic">{topic.description}</p>
+      <div class="text-label-sm font-label-sm text-on-surface-variant bg-surface px-4 py-2 rounded-full border border-outline-variant/30 w-fit">
+        Last Updated: {formattedDate}
+      </div>
+    </header>
+
+    <article class="flex flex-col gap-6 text-body-lg text-on-surface-variant leading-relaxed">
+      {topic.body.split('\n\n').map((paragraph: string) => (
+        <p>{paragraph}</p>
+      ))}
+    </article>
+
+    {relatedMattressData.length > 0 && (
+      <section class="flex flex-col gap-6 pt-8 border-t border-outline-variant/20">
+        <h2 class="text-headline-md font-headline-md text-primary italic">Related Mattress Reviews</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {relatedMattressData.map((mattress: any) => (
+            <a href={`/reviews/${mattress.id}`} class="glass-panel p-6 rounded-2xl hover:border-secondary transition-all group flex flex-col gap-3">
+              <div class="flex justify-between items-start">
+                <h3 class="text-title-md font-title-md text-primary group-hover:text-secondary transition-colors">{mattress.name}</h3>
+                <span class="text-secondary font-bold text-title-md">{mattress.scores.overall}/10</span>
+              </div>
+              <p class="text-label-sm text-on-surface-variant">{mattress.firmness} · from {mattress.priceSale}</p>
+              <span class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold mt-auto">Read Review →</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {topic.relatedGuides.length > 0 && (
+      <section class="flex flex-col gap-4 pt-8 border-t border-outline-variant/20">
+        <h2 class="text-headline-md font-headline-md text-primary italic">Related Guides</h2>
+        <div class="flex flex-col gap-2">
+          {topic.relatedGuides.map((slug: string) => (
+            <a href={`/blog/${slug}`} class="text-primary hover:text-secondary underline underline-offset-4 font-bold text-body-md transition-colors">
+              {slug.replace(/-/g, ' ').split(' ').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')} →
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <div class="bg-primary rounded-3xl p-8 text-center mt-4">
+      <h3 class="text-headline-md font-headline-md text-white italic mb-4">Ready to find your mattress?</h3>
+      <p class="text-blue-200 text-body-md mb-6">100-night trial · 20-year warranty · Free shipping</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/reviews" class="inline-flex items-center justify-center bg-white text-primary px-8 py-4 rounded-full text-label-sm font-label-sm uppercase tracking-widest hover:bg-blue-50 transition-colors font-bold">
+          View All Reviews →
+        </a>
+        <a href="https://amerisleep.com/sale/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center border-2 border-white text-white px-8 py-4 rounded-full text-label-sm font-label-sm uppercase tracking-widest hover:bg-white/10 transition-colors font-bold">
+          Shop Amerisleep Sale →
+        </a>
+      </div>
+    </div>
+
+  </main>
+</BaseLayout>
