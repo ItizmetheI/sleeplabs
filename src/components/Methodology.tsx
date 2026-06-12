@@ -31,7 +31,7 @@ export default function Methodology() {
               { stat: "7", title: "Scoring Criteria", desc: "Support, Pressure Relief, Cooling, Motion Isolation, Edge Support, Responsiveness, and Value — each scored 0–10." },
               { stat: "5", title: "Models Reviewed", desc: "AS2, AS3, AS5, AS6 Black Series, and Organica — the full Amerisleep lineup." },
               { stat: "100", title: "Night Trial", desc: "All Amerisleep models carry a 100-night home trial with free returns." },
-              { stat: "0", title: "Paid Placements", desc: "Rankings are never bought. Commissions never affect scores." }
+              { stat: "0", title: "Sponsored Rankings", desc: "Affiliate-disclosed. Commissions never affect our scores or recommendations." }
             ].map((item, i) => (
               <motion.div 
                 key={i}
