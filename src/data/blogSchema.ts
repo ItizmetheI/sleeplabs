@@ -45,7 +45,7 @@ export interface BlogPost {
 
   ogImage: string;
   // Use Unsplash URL for placeholder. Format:
-  // "https://images.unsplash.com/photo-{id}?auto=format&fit=crop&w=1200&q=80"
+  // Use Amerisleep CDN or same-origin images only. No Unsplash.
   // Choose a relevant bedroom/sleep/mattress image.
   // NEVER use a made-up Unsplash URL. Use only real IDs from this approved list:
   // Bedroom: 1540518614846-7eded433c457, 1505693314120-0d443867891c

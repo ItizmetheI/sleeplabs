@@ -164,10 +164,10 @@ Requirements:
 - Define 2 or 3 internal reading links using approved URLs: "/reviews/amerisleep-as3", "/reviews/amerisleep-as2", "/reviews/amerisleep-as5", "/reviews/", "/guides/", "/comparison/", "/methodology/", "/topics/".
 - Define 1-3 product references from APPROVED_PRODUCTS. Product 1 must match the Primary Target Product chosen.
 - Choose ogImage from approved Bedroom/Mattress Unsplash list:
-  Bedroom: "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=80"
-  Mattress: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
-  Sleep: "https://images.unsplash.com/photo-1531353827579-6e6f95e8b84e?auto=format&fit=crop&w=1200&q=80"
-  Bedding: "https://images.unsplash.com/photo-1591820328689-9db07d29ccfd?auto=format&fit=crop&w=1200&q=80"
+  Bedroom: "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg"
+  Mattress: "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg"
+  Sleep: "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg"
+  Bedding: "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg"
 
 Execute writing with high lexical variety and crisp professional typography guidelines. Return the raw json matching BlogPost schema.`;
 
