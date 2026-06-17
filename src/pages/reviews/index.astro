@@ -1,18 +1,18 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { mattresses } from '../../data/mattresses';
+import { allMattresses } from '../../data/mattresses';
 
 const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Mattress Reviews 2026 — Expert Tested & Editorially Independent | PureSleep",
-  "description": "Independent Amerisleep mattress reviews. 5 models hands-on evaluated. Tested by the PureSleep Testing Team.",
+  "name": "Mattress Reviews 2026 — 58 Models, Expert Tested & Editorially Independent | PureSleep",
+  "description": "Independent mattress reviews across 24 brands. 58 models hands-on evaluated using our 7-metric scoring system. Tested by the PureSleep Testing Team.",
   "url": `${SITE_URL}/reviews/`,
   "mainEntity": {
     "@type": "ItemList",
-    "itemListElement": mattresses.map((m, index) => ({
+    "itemListElement": allMattresses.map((m, index) => ({
       "@type": "ListItem",
       "position": index + 1,
       "name": m.name,
@@ -29,23 +29,23 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
 });
 ---
 
-<BaseLayout 
-  title="Mattress Reviews 2026 — Expert Tested & Editorially Independent | PureSleep" 
-  description="Independent Amerisleep mattress reviews. 5 models hands-on evaluated by the PureSleep Testing Team."
+<BaseLayout
+  title="Mattress Reviews 2026 — 58 Models, 24 Brands | PureSleep"
+  description="Independent mattress reviews across 24 brands. 58 models hands-on evaluated using our 7-metric scoring system. Editorially independent."
   canonicalUrl={`${SITE_URL}/reviews/`}
   lastUpdated={lastUpdated}
   ogImage="https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg"
   jsonLd={jsonLd}
 >
   <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 relative z-10 w-full flex flex-col gap-16">
-    
+
     <!-- Top Section -->
     <header class="flex flex-col gap-6 items-center text-center max-w-4xl mx-auto">
       <h1 class="text-headline-lg font-headline-lg  text-primary font-bold">
         Mattress Reviews 2026
       </h1>
       <p class="text-body-lg font-body-lg text-on-surface-variant max-w-3xl">
-        Independent Amerisleep mattress reviews. 5 models hands-on evaluated by the PureSleep Testing Team.
+        Independent mattress reviews across 24 brands and 58 models, hands-on evaluated by the PureSleep Testing Team using our 7-metric scoring system.
       </p>
       <div class="flex flex-col md:flex-row gap-4 items-center justify-center text-body-md text-on-surface-variant bg-surface px-6 py-3 rounded-full shadow-sm border border-outline-variant/30">
         <span><strong class="text-on-background">Reviewed By:</strong> PureSleep Testing Team</span>
@@ -72,7 +72,7 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
 
     <!-- Mattress Grid -->
     <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {mattresses.map(mattress => (
+      {allMattresses.map(mattress => (
         <article class="glass-panel flex flex-col rounded-3xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all border border-white/60">
           
           <!-- Image -->
@@ -177,9 +177,9 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
     </section>
 
     <section class="max-w-2xl mx-auto mt-8 glass-panel p-6 rounded-2xl border border-white/60">
-      <h3 class="text-title-md font-title-md text-primary font-bold mb-3">Why does the lineup skip AS1 and AS4?</h3>
+      <h3 class="text-title-md font-title-md text-primary font-bold mb-3">How we cover 24 brands</h3>
       <p class="text-body-md text-on-surface-variant leading-relaxed">
-        The AS1 was discontinued before 2021. The AS4 designation was never used commercially. Amerisleep's current active lineup is: AS2 (medium-firm), AS3 (medium), AS5 (soft), AS6 Black Series (luxury hybrid), and Organica (natural latex hybrid).
+        Every model above is scored using the same 7-metric system: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability. Scores come from hands-on testing by the PureSleep Testing Team — never from manufacturer data. <a href="/methodology" class="text-primary hover:underline font-bold">Read our full methodology →</a>
       </p>
     </section>
   </main>

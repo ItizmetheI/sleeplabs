@@ -20,20 +20,53 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  { label: 'HOME', href: '/' },
   {
-    label: 'BEST MATTRESS',
-    href: '/best-mattress',
+    label: 'SLEEPER TYPES',
+    href: '/best/back-sleepers',
     columns: [
       {
-        title: 'Top Picks 2026',
+        title: 'By Sleep Position',
         items: [
-          { label: '⭐ Best Overall: AS3', href: '/best-mattress' },
-          { label: 'Best for Back Sleepers: AS2', href: '/best-mattress' },
-          { label: 'Best for Side Sleepers: AS5', href: '/best-mattress' },
-          { label: 'Best for Couples: AS6', href: '/best-mattress' },
-          { label: 'Best Organic: Organica', href: '/best-mattress' },
-          { label: 'Best Value: AS2', href: '/best-mattress' },
+          { label: 'Back Sleepers', href: '/best/back-sleepers' },
+          { label: 'Side Sleepers', href: '/best/side-sleepers' },
+          { label: 'Stomach Sleepers', href: '/best/stomach-sleepers' },
+          { label: 'Combination Sleepers', href: '/best/combination-sleepers' },
+          { label: 'Heavy Sleepers', href: '/best/heavy-sleepers' },
+          { label: 'Couples', href: '/best/couples' },
+        ]
+      }
+    ]
+  },
+  {
+    label: 'SLEEP CONCERNS',
+    href: '/best/back-pain',
+    columns: [
+      {
+        title: 'By Sleep Concern',
+        items: [
+          { label: 'Back Pain', href: '/best/back-pain' },
+          { label: 'Hip Pain', href: '/best/hip-pain' },
+          { label: 'Shoulder Pain', href: '/best/shoulder-pain' },
+          { label: 'Hot Sleepers', href: '/best/cooling' },
+          { label: 'Motion Isolation', href: '/best/motion-isolation' },
+          { label: 'Pressure Relief', href: '/best/pressure-relief' },
+        ]
+      }
+    ]
+  },
+  {
+    label: 'TOP PICKS',
+    href: '/best/overall',
+    columns: [
+      {
+        title: 'Best of 2026',
+        items: [
+          { label: 'Best Overall', href: '/best/overall' },
+          { label: 'Best Luxury', href: '/best/luxury' },
+          { label: 'Best Cooling', href: '/best/cooling' },
+          { label: 'Best Hybrid', href: '/best/hybrid' },
+          { label: 'Best Organic', href: '/best/organic' },
+          { label: 'Best Value', href: '/best/value' },
         ]
       }
     ]
@@ -43,136 +76,20 @@ const navItems: NavItem[] = [
     href: '/reviews',
     columns: [
       {
-        title: 'By Sleeper Type',
+        title: 'Amerisleep Models',
         items: [
-          { label: 'Best for Side Sleepers: AS5', href: '/reviews/amerisleep-as5' },
-          { label: 'Best for Back Sleepers: AS2', href: '/reviews/amerisleep-as2' },
-          { label: 'Best for Stomach Sleepers: AS2', href: '/reviews/amerisleep-as2' },
-          { label: 'Best for Combo Sleepers: AS3', href: '/reviews/amerisleep-as3' },
-          { label: 'Best for Heavy Sleepers: AS2', href: '/reviews/amerisleep-as2' },
-          { label: 'Best for Couples: AS6', href: '/reviews/amerisleep-as6' }
-        ]
-      },
-      {
-        title: 'By Concern',
-        items: [
-          { label: 'Back Pain', href: '/reviews/amerisleep-as2' },
-          { label: 'Hip Pain', href: '/reviews/amerisleep-as5' },
-          { label: 'Shoulder Pain', href: '/reviews/amerisleep-as5' },
-          { label: 'Hot Sleepers', href: '/reviews/amerisleep-as6' },
-          { label: 'Motion Isolation', href: '/reviews/amerisleep-as5' },
-          { label: 'Pressure Relief', href: '/reviews/amerisleep-as5' }
-        ]
-      },
-      {
-        title: 'Top Picks 2026',
-        items: [
-          { label: 'Best Overall: AS3', href: '/reviews/amerisleep-as3' },
-          { label: 'Best Luxury: AS6', href: '/reviews/amerisleep-as6' },
-          { label: 'Best Natural: Organica', href: '/reviews/amerisleep-organica' },
-          { label: 'Best Value: AS2', href: '/reviews/amerisleep-as2' },
-          { label: 'Best for Side Sleepers: AS5', href: '/reviews/amerisleep-as5' },
-          { label: 'All Reviews', href: '/reviews' }
+          { label: 'AS2 Review', href: '/reviews/amerisleep-as2' },
+          { label: 'AS3 Review', href: '/reviews/amerisleep-as3' },
+          { label: 'AS5 Review', href: '/reviews/amerisleep-as5' },
+          { label: 'AS6 Black Series Review', href: '/reviews/amerisleep-as6' },
+          { label: 'Organica Review', href: '/reviews/amerisleep-organica' },
+          { label: 'All 58 Reviews →', href: '/reviews' },
         ]
       }
     ]
   },
   {
-    label: 'GUIDES',
-    href: '/guides',
-    columns: [
-      {
-        title: 'Buying Guides',
-        items: [
-          { label: 'How to Choose a Mattress', href: '/guides' },
-          { label: 'Mattress Sizes Explained', href: '/guides' },
-          { label: 'Firmness Guide', href: '/guides' },
-          { label: 'Best Mattress for Back Pain', href: '/guides' },
-          { label: 'Memory Foam vs Hybrid', href: '/guides' },
-          { label: 'All Guides', href: '/guides' },
-        ]
-      }
-    ]
-  },
-  {
-    label: 'BLOG',
-    href: '/blog',
-    columns: [
-      {
-        title: 'By Mattress',
-        items: [
-          {
-            label: 'AS2 Blogs',
-            href: '/blog/tag/amerisleep', // since ?tag=as2 is not an approved tag from instructions, although amerisleep is
-            subItems: [
-              { label: 'Best for Back Sleepers', href: '/blog/tag/back-sleepers' },
-              { label: 'Stomach Sleepers Guide', href: '/blog/tag/stomach-sleepers' }
-            ]
-          },
-          {
-            label: 'AS3 Blogs',
-            href: '/blog/tag/memory-foam',
-            subItems: [
-              { label: 'Combo Sleepers Guide', href: '/blog/tag/combination-sleepers' },
-              { label: 'Memory Foam Deep Dive', href: '/blog/tag/memory-foam' }
-            ]
-          },
-          {
-            label: 'AS5 Blogs',
-            href: '/blog/tag/pressure-relief',
-            subItems: [
-              { label: 'Side Sleepers Tips', href: '/blog/tag/side-sleepers' },
-              { label: 'Hip Pain Relief', href: '/blog/tag/hip-pain' }
-            ]
-          },
-          {
-            label: 'AS6 Blogs',
-            href: '/blog/tag/cooling',
-            subItems: [
-              { label: 'Cooling Technology', href: '/blog/tag/cooling' },
-              { label: 'Best for Couples', href: '/blog/tag/couples' }
-            ]
-          }
-        ]
-      },
-      {
-        title: 'Categories',
-        items: [
-          { label: 'Sleep Science', href: '/blog/category/sleep-science' },
-          { label: 'Buying Guides', href: '/blog/category/buying-guides' },
-          { label: 'Mattress Care', href: '/blog/category/mattress-care' },
-          { label: 'Bedroom Design', href: '/blog/category/bedroom-design' }
-        ]
-      }
-    ]
-  },
-  {
-    label: 'KEY TOPICS',
-    href: '/topics',
-    columns: [
-      {
-        title: 'Sleep Science',
-        items: [
-          { label: 'Sleep Cycles Explained', href: '/topics#sleep-cycles' },
-          { label: 'Spinal Alignment', href: '/topics#spinal-alignment' },
-          { label: 'Motion Isolation', href: '/topics#motion-isolation' },
-          { label: 'Edge Support', href: '/topics#edge-support' },
-          { label: 'All Topics', href: '/topics' }
-        ]
-      },
-      {
-        title: 'Materials & Certifications',
-        items: [
-          { label: 'Memory Foam Explained', href: '/topics#memory-foam' },
-          { label: 'Cooling Technology', href: '/topics#cooling-technology' },
-          { label: 'Pocketed Coils Guide', href: '/topics#pocketed-coils' },
-          { label: 'CertiPUR-US Explained', href: '/topics#certipur-us' }
-        ]
-      }
-    ]
-  },
-  {
-    label: 'COMPARISON',
+    label: 'COMPARISONS',
     href: '/comparison',
     columns: [
       {
@@ -183,18 +100,18 @@ const navItems: NavItem[] = [
           { label: 'AS3 vs AS6', href: '/comparison/amerisleep-as3-vs-as6' },
           { label: 'AS3 vs Organica', href: '/comparison/amerisleep-as3-vs-organica' },
           { label: 'AS2 vs AS5', href: '/comparison/amerisleep-as2-vs-as5' },
-          { label: 'AS6 vs Organica', href: '/comparison/amerisleep-as6-vs-organica' }
+          { label: 'AS6 vs Organica', href: '/comparison/amerisleep-as6-vs-organica' },
         ]
       },
       {
         title: 'vs Other Brands',
         items: [
           { label: 'AS3 vs Saatva Classic', href: '/comparison/amerisleep-as3-vs-saatva-classic' },
-          { label: 'AS3 vs Purple RestorePlus', href: '/comparison/amerisleep-as3-vs-purple-restoreplus-hybrid' },
+          { label: 'AS3 vs Nolah Evolution 15', href: '/comparison/amerisleep-as3-vs-nolah-evolution-15' },
           { label: 'AS3 vs Helix Midnight Luxe', href: '/comparison/amerisleep-as3-vs-helix-midnight-luxe' },
-          { label: 'AS3 vs Casper Dream Hybrid', href: '/comparison/amerisleep-as3-vs-casper-dream-hybrid' },
+          { label: 'AS5 Hybrid vs Leesa Sapira Chill', href: '/comparison/amerisleep-as5-hybrid-vs-leesa-sapira-chill-hybrid' },
           { label: 'Organica vs Avocado Green', href: '/comparison/amerisleep-organica-vs-avocado-green' },
-          { label: 'All Comparisons →', href: '/comparison' }
+          { label: 'All Comparisons →', href: '/comparison' },
         ]
       }
     ]

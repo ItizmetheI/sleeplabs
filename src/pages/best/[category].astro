@@ -1,0 +1,213 @@
+---
+import { allMattresses } from '../../data/mattresses';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { BEST_CATEGORIES } from '../../lib/bestCategories';
+
+const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+
+export function getStaticPaths() {
+  return Object.keys(BEST_CATEGORIES).map(category => ({
+    params: { category },
+    props: { category }
+  }));
+}
+
+const { category } = Astro.params;
+const cat = BEST_CATEGORIES[category];
+if (!cat) return Astro.redirect('/best/overall');
+
+const pickModels = cat.picks
+  .map(id => allMattresses.find((m: any) => m.id === id))
+  .filter(Boolean);
+
+const winner = pickModels[0];
+const lastUpdated = "2026-06-16";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": cat.h1,
+    "description": cat.description,
+    "author": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
+    "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
+    "datePublished": "2026-01-01",
+    "dateModified": lastUpdated,
+    "mainEntityOfPage": `${SITE_URL}/best/${category}/`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+      { "@type": "ListItem", "position": 2, "name": "Best Picks", "item": `${SITE_URL}/best/overall` },
+      { "@type": "ListItem", "position": 3, "name": cat.h1, "item": `${SITE_URL}/best/${category}/` },
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": cat.h1,
+    "url": `${SITE_URL}/best/${category}/`,
+    "itemListElement": pickModels.map((m: any, i: number) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": m.name,
+      "url": `${SITE_URL}/reviews/${m.id}`
+    }))
+  }
+];
+---
+
+<BaseLayout
+  title={cat.title}
+  description={cat.description}
+  canonicalUrl={`${SITE_URL}/best/${category}/`}
+  lastUpdated={lastUpdated}
+  jsonLd={jsonLd}
+>
+  <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 relative z-10 w-full flex flex-col gap-16">
+
+    <nav class="text-body-sm text-on-surface-variant flex items-center gap-2 flex-wrap">
+      <a href="/" class="hover:text-primary transition-colors">Home</a>
+      <span>›</span>
+      <a href="/best/overall" class="hover:text-primary transition-colors">Best Picks</a>
+      <span>›</span>
+      <span class="text-on-surface font-medium">{cat.h1}</span>
+    </nav>
+
+    <header class="flex flex-col gap-6 max-w-4xl">
+      <h1 class="text-headline-lg font-headline-lg text-primary font-bold">{cat.h1}</h1>
+      <p class="text-body-lg text-on-surface-variant leading-relaxed">{cat.intro}</p>
+      <div class="flex gap-4 items-center text-body-sm text-on-surface-variant">
+        <span><strong class="text-on-surface">Reviewed by:</strong> PureSleep Testing Team</span>
+        <span>·</span>
+        <span><strong class="text-on-surface">Updated:</strong> June 2026</span>
+      </div>
+    </header>
+
+    {winner && (
+      <section class="glass-panel p-8 md:p-10 rounded-3xl border border-white/60 flex flex-col gap-6">
+        <div class="flex items-center gap-3">
+          <span class="bg-primary text-on-primary text-label-sm font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">Editor's Pick #1</span>
+          <span class="text-on-surface-variant text-body-sm">Hands-on tested by the PureSleep Testing Team</span>
+        </div>
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="w-full md:w-64 flex-shrink-0 rounded-2xl overflow-hidden bg-surface">
+            <img src={(winner as any).heroImage} alt={`${(winner as any).name} mattress`} class="w-full h-48 object-cover" />
+          </div>
+          <div class="flex flex-col gap-4 flex-1">
+            <div>
+              <h2 class="text-headline-md font-headline-md text-primary font-bold">{(winner as any).name}</h2>
+              <span class="text-body-sm text-on-surface-variant">by {(winner as any).brand}</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-display-sm font-bold text-secondary">{(winner as any).scores.overall}</span>
+              <span class="text-on-surface-variant text-body-sm">/ 10 Overall</span>
+            </div>
+            <p class="text-body-md text-on-surface-variant leading-relaxed">{cat.winnerNote}</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-2">
+              {([
+                ['Value', (winner as any).scores.value],
+                ['Edge Support', (winner as any).scores.edgeSupport],
+                ['Trial Period', (winner as any).scores.trialPeriod],
+                ['Response Time', (winner as any).scores.responseTime],
+                ['Motion Transfer', (winner as any).scores.motionTransfer],
+                ['Cooling', (winner as any).scores.coolingBreathability],
+              ] as [string, number][]).map(([label, score]) => (
+                <div class="bg-surface rounded-xl p-3 border border-outline-variant/20">
+                  <div class="text-xs text-on-surface-variant font-bold uppercase tracking-wider mb-1">{label}</div>
+                  <div class="text-title-md font-bold text-primary">{score}<span class="text-body-sm text-on-surface-variant font-normal">/10</span></div>
+                </div>
+              ))}
+            </div>
+            <div class="flex gap-3 mt-4 flex-wrap">
+              <a href={`/reviews/${(winner as any).id}`} class="px-6 py-3 rounded-xl border-2 border-primary text-primary font-bold text-label-sm uppercase tracking-widest hover:bg-primary/5 transition-colors">
+                Full Review
+              </a>
+              <a href={(winner as any).affiliateUrl} target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-primary text-on-primary font-bold text-label-sm uppercase tracking-widest hover:bg-primary/90 transition-colors shadow-sm">
+                Check Latest Price →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <section class="flex flex-col gap-8">
+      <h2 class="text-headline-md font-headline-md text-primary font-bold border-b border-outline-variant/30 pb-4">All Top Picks</h2>
+      {cat.filterNote && (
+        <div class="bg-secondary/5 border border-secondary/20 rounded-2xl p-5 text-body-md text-on-surface-variant">
+          <strong class="text-on-surface">Editorial Note: </strong>{cat.filterNote}
+        </div>
+      )}
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {pickModels.map((m: any, i: number) => m && (
+          <article class="glass-panel flex flex-col rounded-3xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all border border-white/60">
+            <div class="relative w-full h-44 overflow-hidden">
+              <img src={m.image} alt={`${m.name} mattress`} class="w-full h-full object-cover" />
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-on-surface">
+                #{i + 1}
+              </div>
+              <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1">
+                <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Score</span>
+                <span class="font-bold text-secondary text-sm">{m.scores.overall}</span>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col gap-4 flex-1">
+              <div>
+                <h3 class="text-title-lg font-title-lg text-primary font-bold">{m.name}</h3>
+                <span class="text-body-sm text-on-surface-variant">by {m.brand}</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                {([
+                  ['Value', m.scores.value],
+                  ['Edge Support', m.scores.edgeSupport],
+                  ['Cooling', m.scores.coolingBreathability],
+                ] as [string, number][]).map(([label, score]) => (
+                  <div class="flex items-center gap-3">
+                    <span class="text-xs text-on-surface-variant w-24 font-medium">{label}</span>
+                    <div class="flex-1 bg-outline-variant/20 h-1.5 rounded-full overflow-hidden">
+                      <div class="bg-secondary h-full rounded-full" style={`width: ${score * 10}%`}></div>
+                    </div>
+                    <span class="text-xs font-bold text-primary w-8 text-right">{score}/10</span>
+                  </div>
+                ))}
+              </div>
+              <p class="text-body-sm text-on-surface-variant line-clamp-2">{m.verdict}</p>
+              <div class="mt-auto pt-4 flex gap-2">
+                <a href={`/reviews/${m.id}`} class="flex-1 text-center py-2.5 rounded-xl border border-primary text-primary font-bold text-xs uppercase tracking-widest hover:bg-primary/5 transition-colors">
+                  Review
+                </a>
+                <a href={m.affiliateUrl} target="_blank" rel="noopener noreferrer" class="flex-1 text-center py-2.5 rounded-xl bg-primary text-on-primary font-bold text-xs uppercase tracking-widest hover:bg-primary/90 transition-colors">
+                  Price →
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-col gap-4">
+      <h2 class="text-headline-sm font-headline-sm text-primary font-bold">How These Were Selected</h2>
+      <p class="text-body-md text-on-surface-variant leading-relaxed">
+        All picks above were evaluated hands-on by the PureSleep Testing Team using our standardized 7-metric scoring system: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability. Scores come only from our testing data — never from manufacturer claims or third-party databases.
+      </p>
+      <p class="text-body-md text-on-surface-variant leading-relaxed">
+        PureSleep earns no commission and accepts no paid placements. Rankings are editorially independent.
+      </p>
+      <a href="/methodology" class="text-primary hover:text-secondary font-bold underline underline-offset-4 w-fit transition-colors">Read our full testing methodology →</a>
+    </section>
+
+    <nav class="flex flex-wrap gap-3" aria-label="Other categories">
+      <span class="text-body-sm text-on-surface-variant font-medium self-center">Other categories:</span>
+      {Object.entries(BEST_CATEGORIES).filter(([k]) => k !== category).map(([k, c]) => (
+        <a href={`/best/${k}`} class="px-4 py-2 rounded-full bg-surface border border-outline-variant/30 text-primary text-body-sm font-bold hover:border-primary/30 transition-colors">
+          {c.h1.replace(' of 2026', '').replace(' 2026', '')}
+        </a>
+      ))}
+    </nav>
+
+  </main>
+</BaseLayout>
