@@ -36,7 +36,7 @@ const formattedDate = new Date(lastUpdated).toLocaleDateString('en-US', { month:
         </span>
       </div>
       <p class="text-body-lg text-on-surface-variant leading-relaxed text-left mt-4 glass-panel p-8 rounded-3xl border border-white/60">
-        PureSleep evaluates Amerisleep mattresses using a standardized 7-metric scoring system. Every score comes from hands-on testing — we do not accept manufacturer PR samples in exchange for reviews. Our affiliate commissions from Amerisleep do not affect our scores or rankings.
+        PureSleep evaluates Amerisleep mattresses using a standardized 7-metric scoring system. Every score comes from hands-on testing — we do not accept manufacturer PR samples in exchange for reviews. PureSleep earns no commission and accepts no paid placements. Scores are editorially independent.
       </p>
     </header>
 
@@ -46,9 +46,9 @@ const formattedDate = new Date(lastUpdated).toLocaleDateString('en-US', { month:
         {[
           { n: "1", title: "Mattress Acquisition", desc: "Mattresses are purchased or sourced independently. We never accept hand-picked review units from manufacturers, ensuring we test the same product a consumer receives." },
           { n: "2", title: "Sleep Testing", desc: "Each mattress is tested across multiple sleep positions — back, side, and stomach — by multiple testers covering different body weights and sleep preferences." },
-          { n: "3", title: "7-Metric Scoring", desc: "Each mattress is scored on Support, Pressure Relief, Cooling, Motion Isolation, Edge Support, Responsiveness, and Value. All scores are 0–10." },
-          { n: "4", title: "Weighted Overall Score", desc: "The overall score is a weighted average. Support and Pressure Relief are each weighted 1.5× because they most directly affect sleep quality." },
-          { n: "5", title: "Editorial Independence", desc: "Scores are finalized before affiliate links are placed. No commercial relationship affects which model ranks higher." }
+          { n: "3", title: "7-Metric Scoring", desc: "Each mattress is scored on Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. All scores are 0–10." },
+          { n: "4", title: "Overall Score", desc: "The overall score is a hands-on composite evaluation. Scores reflect the testing team's direct assessment, not lab measurements or manufacturer data." },
+          { n: "5", title: "Editorial Independence", desc: "PureSleep earns no commission and accepts no paid placements. No commercial relationship affects which model ranks higher." }
         ].map(step => (
           <div class="flex gap-6 items-start">
             <div class="bg-primary/10 text-primary font-bold text-xl rounded-full w-12 h-12 flex items-center justify-center shrink-0 border border-primary/20">{step.n}</div>
@@ -65,13 +65,13 @@ const formattedDate = new Date(lastUpdated).toLocaleDateString('en-US', { month:
       <h2 class="text-headline-md font-headline-md text-primary border-b border-outline-variant/30 pb-4 italic">The 7 Scoring Criteria</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {[
-          { metric: "Support", desc: "How well the mattress maintains spinal alignment across sleep positions." },
-          { metric: "Pressure Relief", desc: "How effectively it reduces pressure at shoulders, hips, and knees." },
-          { metric: "Cooling", desc: "Airflow and heat dissipation — how warm the surface feels over a full night." },
-          { metric: "Motion Isolation", desc: "How much movement from one side transfers to the other." },
-          { metric: "Edge Support", desc: "Firmness and usability at the perimeter — relevant for couples." },
-          { metric: "Responsiveness", desc: "How quickly the foam or latex returns to shape after pressure." },
-          { metric: "Value", desc: "Overall quality relative to price, including warranty and trial terms." }
+          { metric: "Overall", desc: "The composite hands-on evaluation score reflecting total sleep experience across all metrics." },
+          { metric: "Value", desc: "Overall quality relative to price, including warranty and trial terms." },
+          { metric: "Edge Support", desc: "Firmness and usability at the perimeter — relevant for couples and getting in/out of bed." },
+          { metric: "Trial Period", desc: "Quality and length of the home trial policy, scored relative to industry standard." },
+          { metric: "Response Time", desc: "How quickly the surface responds to movement and position changes." },
+          { metric: "Motion Transfer", desc: "How much movement from one side transfers to the other — critical for couples." },
+          { metric: "Cooling & Breathability", desc: "Airflow and heat dissipation — how warm the surface feels over a full night." }
         ].map(item => (
           <div class="glass-panel p-6 rounded-2xl border border-outline-variant/30">
             <h4 class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold mb-2">{item.metric}</h4>
@@ -85,7 +85,7 @@ const formattedDate = new Date(lastUpdated).toLocaleDateString('en-US', { month:
       <h2 class="text-headline-md font-headline-md text-primary mb-2">Editorial Standards</h2>
       <ul class="flex flex-col gap-3 text-body-md text-on-surface-variant">
         <li class="flex gap-3"><span class="text-secondary font-bold">—</span> We do not make medical claims. Mattresses address sleep comfort and support only, not health conditions.</li>
-        <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Affiliate commissions are disclosed and do not influence scores or rankings.</li>
+        <li class="flex gap-3"><span class="text-secondary font-bold">—</span> PureSleep earns no commission and accepts no paid placements. Scores are editorially independent.</li>
         <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Scores reflect hands-on testing, not manufacturer-provided data.</li>
         <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Reviews are updated when product specifications change or on a regular re-evaluation cycle.</li>
       </ul>

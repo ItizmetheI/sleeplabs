@@ -31,7 +31,7 @@ export default function Footer() {
       </div>
       <div className="mt-12 pt-6 border-t border-outline-variant/20 text-center relative z-10 max-w-container-max mx-auto">
         <p className="text-xs text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-          <strong>Affiliate Disclosure:</strong> PureSleep earns a commission when you purchase through links on this site. This does not affect our editorial rankings, scores, or recommendations. Our testing methodology is independent of any commercial relationship.
+          <strong>Editorial Independence:</strong> PureSleep earns no commission and accepts no paid placements. Scores are editorially independent. Product links go directly to manufacturers.
         </p>
       </div>
     </footer>

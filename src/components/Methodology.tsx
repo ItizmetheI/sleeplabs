@@ -19,7 +19,7 @@ export default function Methodology() {
             <h3 className="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-3">Our Methodology</h3>
             <h2 className="text-display-lg font-display-lg text-primary  mb-6">How We Test Mattresses</h2>
             <p className="text-body-lg text-on-surface-variant mb-8 leading-relaxed">
-              Every mattress we review is evaluated hands-on. No manufacturer-supplied units, no affiliate-first ranking. Our team evaluates support, pressure relief, cooling, and motion isolation across multiple sleep positions and body types.
+              Every mattress we review is evaluated hands-on by the PureSleep testing team. No manufacturer-supplied units, no paid placements. Our team evaluates value, edge support, response time, motion transfer, and cooling &amp; breathability across multiple sleep positions.
             </p>
             <a href="/methodology" className="inline-flex items-center text-label-sm font-label-sm uppercase tracking-widest text-primary border border-primary/20 rounded-full px-8 py-4 hover:bg-white transition-all group shadow-sm hover:shadow-md glass-panel font-bold">
               Read Our Full Methodology <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -28,10 +28,10 @@ export default function Methodology() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
             {[
-              { stat: "7", title: "Scoring Criteria", desc: "Support, Pressure Relief, Cooling, Motion Isolation, Edge Support, Responsiveness, and Value — each scored 0–10." },
+              { stat: "7", title: "Scoring Criteria", desc: "Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability — each scored 0–10." },
               { stat: "5", title: "Models Reviewed", desc: "AS2, AS3, AS5, AS6 Black Series, and Organica — the full Amerisleep lineup." },
               { stat: "100", title: "Night Trial", desc: "All Amerisleep models carry a 100-night home trial with free returns." },
-              { stat: "0", title: "Sponsored Rankings", desc: "Affiliate-disclosed. Commissions never affect our scores or recommendations." }
+              { stat: "0", title: "Sponsored Rankings", desc: "PureSleep earns no commission and accepts no paid placements. Scores are editorially independent." }
             ].map((item, i) => (
               <motion.div 
                 key={i}

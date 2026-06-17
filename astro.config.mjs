@@ -16,6 +16,8 @@ export default defineConfig({
       filter: (page) => {
         // Exclude pain/YMYL category pages until copy is fully safety-reviewed
         if (page.includes('/blog/category/pain') || page.includes('/blog/tag/back-pain') || page.includes('/blog/tag/hip-pain') || page.includes('/blog/tag/shoulder-pain') || page.includes('/blog/tag/sciatica') || page.includes('/blog/tag/arthritis') || page.includes('/blog/tag/fibromyalgia')) return false;
+        // Exclude machine-readable LLM files
+        if (page.includes('/llms/')) return false;
         // Exclude admin
         if (page.includes('/admin')) return false;
         // Exclude API routes

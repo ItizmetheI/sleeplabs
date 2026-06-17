@@ -51,18 +51,20 @@ const jsonLd = [
     "brand": { "@type": "Brand", "name": mattressA.brand },
     "description": mattressA.summary,
     "image": mattressA.heroImage,
+    "sameAs": mattressA.affiliateUrl,
     "offers": {
       "@type": "Offer",
       "price": mattressA.price,
       "priceCurrency": "USD",
       "url": mattressA.affiliateUrl
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": mattressA.scores.overall,
-      "bestRating": "10",
-      "worstRating": "0",
-      "reviewCount": "1"
+    "review": {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": mattressA.scores.overall, "bestRating": "10" },
+      "author": { "@type": "Organization", "name": "PureSleep Testing Team" },
+      "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
+      "datePublished": "2026-06-16",
+      "dateModified": "2026-06-16"
     }
   },
   {
@@ -72,18 +74,20 @@ const jsonLd = [
     "brand": { "@type": "Brand", "name": mattressB.brand },
     "description": mattressB.summary,
     "image": mattressB.heroImage,
+    "sameAs": mattressB.affiliateUrl,
     "offers": {
       "@type": "Offer",
       "price": mattressB.price,
       "priceCurrency": "USD",
       "url": mattressB.affiliateUrl
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": mattressB.scores.overall,
-      "bestRating": "10",
-      "worstRating": "0",
-      "reviewCount": "1"
+    "review": {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": mattressB.scores.overall, "bestRating": "10" },
+      "author": { "@type": "Organization", "name": "PureSleep Testing Team" },
+      "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
+      "datePublished": "2026-06-16",
+      "dateModified": "2026-06-16"
     }
   }
 ];
@@ -198,12 +202,12 @@ const formattedDateModified = new Date(comparison.dateModified).toLocaleDateStri
                     {/* Scores */}
                     {[
                         { label: 'Overall', key: 'overall' },
-                        { label: 'Support', key: 'support' },
-                        { label: 'Pressure Relief', key: 'pressureRelief' },
-                        { label: 'Cooling', key: 'cooling' },
-                        { label: 'Motion Isolation', key: 'motionIsolation' },
-                        { label: 'Edge Support', key: 'edgeSupport' },
                         { label: 'Value', key: 'value' },
+                        { label: 'Edge Support', key: 'edgeSupport' },
+                        { label: 'Trial Period', key: 'trialPeriod' },
+                        { label: 'Response Time', key: 'responseTime' },
+                        { label: 'Motion Transfer', key: 'motionTransfer' },
+                        { label: 'Cooling & Breathability', key: 'coolingBreathability' },
                     ].map((row, i) => {
                         const scoreA = mattressA.scores[row.key as keyof typeof mattressA.scores];
                         const scoreB = mattressB.scores[row.key as keyof typeof mattressB.scores];
@@ -248,14 +252,14 @@ const formattedDateModified = new Date(comparison.dateModified).toLocaleDateStri
              <h3 class="text-title-lg font-title-lg text-primary mt-4">1. Construction & Build Quality</h3>
              <p>When selecting a new mattress, understanding the exact materials and structural nuances between the {mattressA.name} and {mattressB.name} is crucial for long-term comfort. The {mattressA.name} relies on a high-quality {mattressA.type} design, which fundamentally dictates how it responds to body weight. It features a {mattressA.firmness} feel—quantified by our testing team as a {mattressA.firmnessScale}/10 on the firmness scale. Comparatively, the {mattressB.name} leverages a {mattressB.type} construction, yielding a {mattressB.firmness} feel and an equivalent firmness rating of {mattressB.firmnessScale}/10. The contrast in their primary support layers means that they handle kinetic energy and body contouring very differently.</p>
              
-             <h3 class="text-title-lg font-title-lg text-primary mt-4">2. Firmness, Feel & Support ({mattressA.scores.support}/10 vs {mattressB.scores.support}/10)</h3>
-             <p>Our clinical lab testing consistently highlights distinct biomechanical advantages for both beds. For baseline structural support—which keeps the spine aligned and prevents sagging—the {mattressA.name} scored a {mattressA.scores.support}/10. This is largely due to its robust support core engineering that prevents the hips from bowing downward. The {mattressB.name} countered with an impressive {mattressB.scores.support}/10 in the identical spinal alignment test. If you suffer from lower back pain, the {mattressA.scores.support > mattressB.scores.support ? mattressA.name : mattressB.name} offers a slight edge in keeping the lumbar region neutrally positioned throughout the night.</p>
-             
-             <h3 class="text-title-lg font-title-lg text-primary mt-4">3. Pressure Relief ({mattressA.scores.pressureRelief}/10 vs {mattressB.scores.pressureRelief}/10)</h3>
-             <p>Pressure relief is arguably the most vital metric for side sleepers who naturally concentrate their body weight onto their shoulders and hips. In our hands-on pressure testing, the {mattressA.name} earned a {mattressA.scores.pressureRelief}/10. It permitted adequate sinkage to alleviate tension in the joints without causing the sleeper to feel 'stuck'. The {mattressB.name} scored a {mattressB.scores.pressureRelief}/10 in the same test sequence. For sleepers who toss and turn due to joint soreness, the mattress with the higher score in this category will significantly reduce those micro-awakenings.</p>
+             <h3 class="text-title-lg font-title-lg text-primary mt-4">2. Firmness, Feel & Overall Score ({mattressA.scores.overall}/10 vs {mattressB.scores.overall}/10)</h3>
+             <p>Our hands-on testing evaluates each mattress across multiple sleep positions. The {mattressA.name} earned an overall score of {mattressA.scores.overall}/10, with edge support at {mattressA.scores.edgeSupport}/10 and response time at {mattressA.scores.responseTime}/10. The {mattressB.name} scored {mattressB.scores.overall}/10 overall, with edge support at {mattressB.scores.edgeSupport}/10 and response time at {mattressB.scores.responseTime}/10. The {mattressA.scores.overall >= mattressB.scores.overall ? mattressA.name : mattressB.name} leads on composite performance. Scores are editorial, hands-on evaluations — not lab measurements or manufacturer data.</p>
 
-             <h3 class="text-title-lg font-title-lg text-primary mt-4">4. Cooling & Motion Isolation</h3>
-             <p>Thermal regulation can make or break a mattress. The {mattressA.name} scored {mattressA.scores.cooling}/10 for cooling capabilities, utilizing breathable fabric covers and open-cell structural materials to dissipate body heat. The {mattressB.name} achieved a {mattressB.scores.cooling}/10, managing temperature through its specific {mattressB.type} airflow dynamics. In terms of motion isolation—critical for couples where one partner is restless—the {mattressA.name} scored {mattressA.scores.motionIsolation}/10 by successfully damping cross-mattress vibrations. The {mattressB.name} absorbed {mattressB.scores.motionIsolation}/10 of the kinetic energy in our drop tests. If you share a bed, high motion isolation is invaluable.</p>
+             <h3 class="text-title-lg font-title-lg text-primary mt-4">3. Motion Transfer & Cooling</h3>
+             <p>For couples and light sleepers, motion transfer matters. The {mattressA.name} scored {mattressA.scores.motionTransfer}/10 for motion transfer, making it {mattressA.scores.motionTransfer >= 9 ? 'an excellent' : 'a solid'} choice for co-sleepers. The {mattressB.name} rated {mattressB.scores.motionTransfer}/10. For thermal comfort, the {mattressA.name} earned {mattressA.scores.coolingBreathability}/10 for cooling &amp; breathability while the {mattressB.name} scored {mattressB.scores.coolingBreathability}/10. The {mattressA.scores.coolingBreathability >= mattressB.scores.coolingBreathability ? mattressA.name : mattressB.name} is the better choice for hot sleepers.</p>
+
+             <h3 class="text-title-lg font-title-lg text-primary mt-4">4. Value & Trial Period</h3>
+             <p>Value scores capture overall quality relative to price, warranty, and trial terms. The {mattressA.name} scored {mattressA.scores.value}/10 for value, with a {mattressA.trialNights}-night trial (scored {mattressA.scores.trialPeriod}/10 for trial quality). The {mattressB.name} earned {mattressB.scores.value}/10 for value, backed by a {mattressB.trialNights}-night trial (scored {mattressB.scores.trialPeriod}/10).</p>
              
              <h3 class="text-title-lg font-title-lg text-primary mt-4">5. Policies & Value Proposition</h3>
              <p>Beyond physical comfort, let's consider the practical, long-term aspects of your purchase. The {mattressA.name} backs its structural integrity with a {mattressA.trialNights}-night sleep trial and a {mattressA.warrantyYears}-year warranty, offering significant peace of mind. Meanwhile, the {mattressB.name} brand offers a {mattressB.trialNights}-night trial combined with a {mattressB.warrantyYears}-year warranty. Pricing remains a defining differentiator: a queen size {mattressA.name} is generally listed around ${mattressA.price}, compared to the ${mattressB.price} price tag of the {mattressB.name}. Evaluating your absolute priorities—whether it be upfront budget, specific orthopedic pain points, or thermal comfort needs—will ultimately guide you to the right choice. {comparison.verdict}</p>

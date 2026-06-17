@@ -308,14 +308,14 @@ const faqSchema = {
     <section class="mb-20 glass-panel rounded-3xl border border-outline-variant/30 p-8 md:p-12">
       <h2 class="text-headline-lg font-headline-lg text-primary mb-4">How we evaluated these mattresses</h2>
       <p class="text-body-lg text-on-surface-variant leading-relaxed mb-6 max-w-3xl">
-        The PureSleep Testing Team evaluated all five Amerisleep models across eight performance dimensions: support, pressure relief, cooling, motion isolation, edge support, responsiveness, off-gassing, and build quality. Each model was assessed across back, side, and stomach positions.
+        The PureSleep Testing Team evaluated all five Amerisleep models across seven scoring criteria: overall, value, edge support, trial period, response time, motion transfer, and cooling &amp; breathability. Each model was assessed across back, side, and stomach positions.
       </p>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
         {[
-          { metric: "Support", desc: "Spinal alignment across positions" },
-          { metric: "Pressure Relief", desc: "Hip and shoulder contouring" },
-          { metric: "Cooling", desc: "Heat retention vs dissipation" },
-          { metric: "Motion Isolation", desc: "Transfer between sleep partners" },
+          { metric: "Value", desc: "Quality relative to price and warranty" },
+          { metric: "Edge Support", desc: "Perimeter firmness for couples" },
+          { metric: "Response Time", desc: "Speed of recovery from movement" },
+          { metric: "Cooling & Breathability", desc: "Heat dissipation over a full night" },
         ].map(m => (
           <div class="glass-panel-heavy p-4 rounded-xl border border-outline-variant/20">
             <div class="text-label-sm font-bold text-primary mb-1">{m.metric}</div>

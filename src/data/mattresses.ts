@@ -1,12 +1,11 @@
 export interface MattressScore {
-  support: number;
-  pressureRelief: number;
-  cooling: number;
-  motionIsolation: number;
-  edgeSupport: number;
-  responsiveness: number;
-  value: number;
   overall: number;
+  value: number;
+  edgeSupport: number;
+  trialPeriod: number;
+  responseTime: number;
+  motionTransfer: number;
+  coolingBreathability: number;
 }
 
 export interface Reviewer {
@@ -83,16 +82,7 @@ export const mattresses: Mattress[] = [
     warrantyYears: 20,
     certifications: ["CertiPUR-US"],
     technology: ["Bio-Pur® Plant-Based Memory Foam", "HIVE® 5-Zone Technology", "Refresh Cooling Cover", "Bio-Core® Support Foam"],
-    scores: {
-      support: 9.6,
-      pressureRelief: 9.3,
-      cooling: 8.8,
-      motionIsolation: 9.1,
-      edgeSupport: 8.5,
-      responsiveness: 8.2,
-      value: 9.0,
-      overall: 9.5
-    },
+    scores: { overall: 10, value: 9, edgeSupport: 10, trialPeriod: 9, responseTime: 9, motionTransfer: 10, coolingBreathability: 10 },
     reviewer: reviewer_editorial,
     dateReviewed: "2026-01-15",
     dateModified: "2026-05-01",
@@ -193,16 +183,7 @@ export const mattresses: Mattress[] = [
     warrantyYears: 20,
     certifications: ["CertiPUR-US"],
     technology: ["Bio-Pur® Plant-Based Memory Foam", "HIVE® 5-Zone Technology", "Refresh Cooling Cover", "Bio-Core® Support Foam"],
-    scores: {
-      support: 9.7,
-      pressureRelief: 8.8,
-      cooling: 8.9,
-      motionIsolation: 9.2,
-      edgeSupport: 8.4,
-      responsiveness: 8.0,
-      value: 9.3,
-      overall: 9.2
-    },
+    scores: { overall: 9, value: 9, edgeSupport: 8, trialPeriod: 9, responseTime: 10, motionTransfer: 10, coolingBreathability: 10 },
     reviewer: reviewer_editorial,
     dateReviewed: "2026-01-20",
     dateModified: "2026-05-01",
@@ -295,16 +276,7 @@ export const mattresses: Mattress[] = [
     warrantyYears: 20,
     certifications: ["CertiPUR-US"],
     technology: ["Bio-Pur® Plant-Based Memory Foam", "Active Flex Layer", "HIVE® 5-Zone Technology", "Refresh Cooling Cover", "Bio-Core® Support Foam"],
-    scores: {
-      support: 9.0,
-      pressureRelief: 9.8,
-      cooling: 8.6,
-      motionIsolation: 9.4,
-      edgeSupport: 8.2,
-      responsiveness: 8.8,
-      value: 8.5,
-      overall: 9.1
-    },
+    scores: { overall: 9, value: 8, edgeSupport: 10, trialPeriod: 9, responseTime: 8, motionTransfer: 9, coolingBreathability: 10 },
     reviewer: reviewer_editorial,
     dateReviewed: "2026-02-01",
     dateModified: "2026-05-01",
@@ -402,16 +374,7 @@ export const mattresses: Mattress[] = [
     warrantyYears: 20,
     certifications: ["CertiPUR-US"],
     technology: ["Bio-Pur® Plant-Based Memory Foam", "HIVE® 5-Zone Technology", "Pocketed Coil Support", "Refresh Cooling Cover", "Bio-Core® Support Foam"],
-    scores: {
-      support: 9.8,
-      pressureRelief: 9.5,
-      cooling: 9.4,
-      motionIsolation: 9.0,
-      edgeSupport: 9.6,
-      responsiveness: 9.3,
-      value: 8.2,
-      overall: 9.7
-    },
+    scores: { overall: 10, value: 9, edgeSupport: 9, trialPeriod: 9, responseTime: 9, motionTransfer: 10, coolingBreathability: 10 },
     reviewer: reviewer_editorial,
     dateReviewed: "2026-02-15",
     dateModified: "2026-05-01",
@@ -508,16 +471,7 @@ export const mattresses: Mattress[] = [
     warrantyYears: 20,
     certifications: ["CertiPUR-US", "GOTS Certified Organic Cotton", "GOLS Certified Organic Latex", "Rainforest Alliance"],
     technology: ["GOLS Certified Organic Latex", "GOTS Organic Cotton Cover", "Organic Wool Fire Barrier", "Pocketed Coil Support"],
-    scores: {
-      support: 9.3,
-      pressureRelief: 9.1,
-      cooling: 9.5,
-      motionIsolation: 8.7,
-      edgeSupport: 9.0,
-      responsiveness: 9.6,
-      value: 8.8,
-      overall: 9.3
-    },
+    scores: { overall: 9, value: 9, edgeSupport: 9, trialPeriod: 9, responseTime: 10, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
     dateReviewed: "2026-02-20",
     dateModified: "2026-05-01",
@@ -626,7 +580,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 15,
     certifications: ["CertiPUR-US"],
     technology: ["Dual Steel Coil System", "Lumbar Zone Support", "Organic Cotton Cover"],
-    scores: { support: 9.1, pressureRelief: 8.4, cooling: 9.0, motionIsolation: 7.8, edgeSupport: 9.2, responsiveness: 9.0, value: 8.2, overall: 8.8 },
+    scores: { overall: 10, value: 7, edgeSupport: 10, trialPeriod: 10, responseTime: 10, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -664,7 +618,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 15,
     certifications: ["CertiPUR-US", "OEKO-TEX"],
     technology: ["AirFoam™ HDMax", "HDMax Tri-Zone Coils", "Cooling Organic Cover"],
-    scores: { support: 9.0, pressureRelief: 9.0, cooling: 9.2, motionIsolation: 8.8, edgeSupport: 9.0, responsiveness: 8.9, value: 8.3, overall: 9.0 },
+    scores: { overall: 10, value: 10, edgeSupport: 10, trialPeriod: 9, responseTime: 9, motionTransfer: 10, coolingBreathability: 9 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -702,7 +656,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 10,
     certifications: ["CertiPUR-US"],
     technology: ["TitanCool™ Cooling Foam", "TitanFlex™ Foam", "Ascension Coil System"],
-    scores: { support: 8.9, pressureRelief: 8.7, cooling: 9.1, motionIsolation: 8.6, edgeSupport: 8.8, responsiveness: 9.0, value: 8.6, overall: 8.9 },
+    scores: { overall: 9, value: 9, edgeSupport: 8, trialPeriod: 9, responseTime: 8, motionTransfer: 9, coolingBreathability: 10 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -740,7 +694,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 10,
     certifications: ["CertiPUR-US"],
     technology: ["Cooling Gel Foam", "Pocketed Coil Support"],
-    scores: { support: 8.6, pressureRelief: 8.5, cooling: 8.9, motionIsolation: 8.4, edgeSupport: 8.5, responsiveness: 8.6, value: 8.7, overall: 8.6 },
+    scores: { overall: 9, value: 10, edgeSupport: 9, trialPeriod: 10, responseTime: 8, motionTransfer: 9, coolingBreathability: 10 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -778,7 +732,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 25,
     certifications: ["GOLS", "GOTS", "OEKO-TEX", "Rainforest Alliance"],
     technology: ["Talalay Latex", "Organic Wool Fire Barrier", "GOTS Organic Cotton Cover", "Pocketed Coils"],
-    scores: { support: 9.0, pressureRelief: 8.6, cooling: 9.3, motionIsolation: 8.5, edgeSupport: 8.8, responsiveness: 9.2, value: 8.5, overall: 9.0 },
+    scores: { overall: 8, value: 9, edgeSupport: 9, trialPeriod: 9, responseTime: 10, motionTransfer: 8, coolingBreathability: 9 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -816,7 +770,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 20,
     certifications: ["CertiPUR-US", "OEKO-TEX"],
     technology: ["Celliant® Cover", "Copper-Infused Memory Foam", "Pocketed Coil System"],
-    scores: { support: 8.9, pressureRelief: 8.8, cooling: 9.0, motionIsolation: 8.7, edgeSupport: 8.9, responsiveness: 8.8, value: 8.4, overall: 8.9 },
+    scores: { overall: 9, value: 9, edgeSupport: 9, trialPeriod: 9, responseTime: 8, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -854,7 +808,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 25,
     certifications: ["GOLS", "GOTS", "MADE SAFE®", "Rainforest Alliance"],
     technology: ["GOLS Certified Dunlop Latex", "GOTS Organic Cotton", "Organic Wool Fire Barrier", "Upcycled Steel Coils"],
-    scores: { support: 9.2, pressureRelief: 8.5, cooling: 9.4, motionIsolation: 8.3, edgeSupport: 8.9, responsiveness: 9.4, value: 8.3, overall: 9.0 },
+    scores: { overall: 9, value: 7, edgeSupport: 9, trialPeriod: 10, responseTime: 9, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -892,7 +846,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 10,
     certifications: ["CertiPUR-US"],
     technology: ["Purple Grid™ Technology", "Responsive Coil System"],
-    scores: { support: 8.8, pressureRelief: 9.2, cooling: 9.3, motionIsolation: 8.6, edgeSupport: 8.5, responsiveness: 9.3, value: 7.8, overall: 9.0 },
+    scores: { overall: 9, value: 7, edgeSupport: 9, trialPeriod: 9, responseTime: 10, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -930,7 +884,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 20,
     certifications: ["CertiPUR-US", "OEKO-TEX"],
     technology: ["SmartFlow Support™ Coils", "QE Foam", "Organic Cotton Cover"],
-    scores: { support: 8.8, pressureRelief: 8.7, cooling: 8.8, motionIsolation: 8.7, edgeSupport: 8.6, responsiveness: 8.8, value: 8.7, overall: 8.8 },
+    scores: { overall: 10, value: 8, edgeSupport: 10, trialPeriod: 10, responseTime: 9, motionTransfer: 10, coolingBreathability: 9 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -968,7 +922,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 15,
     certifications: ["CertiPUR-US"],
     technology: ["Memory Plus Foam", "Zoned Pocketed Coils", "Tencel™ Cover"],
-    scores: { support: 9.0, pressureRelief: 9.1, cooling: 8.7, motionIsolation: 9.0, edgeSupport: 8.8, responsiveness: 8.7, value: 8.4, overall: 9.0 },
+    scores: { overall: 9, value: 7, edgeSupport: 10, trialPeriod: 9, responseTime: 9, motionTransfer: 9, coolingBreathability: 10 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -1006,7 +960,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 10,
     certifications: ["CertiPUR-US"],
     technology: ["LSA200™ Foam", "Memory Foam Comfort Layer", "Dense Support Core"],
-    scores: { support: 8.5, pressureRelief: 8.6, cooling: 8.2, motionIsolation: 8.9, edgeSupport: 7.8, responsiveness: 7.8, value: 8.8, overall: 8.5 },
+    scores: { overall: 8, value: 8, edgeSupport: 7, trialPeriod: 9, responseTime: 9, motionTransfer: 9, coolingBreathability: 8 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -1044,7 +998,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 10,
     certifications: ["CertiPUR-US"],
     technology: ["LSA200™ Foam", "Pocketed Spring System", "Memory Foam Layer"],
-    scores: { support: 8.8, pressureRelief: 8.7, cooling: 8.8, motionIsolation: 8.7, edgeSupport: 8.8, responsiveness: 8.8, value: 8.5, overall: 8.8 },
+    scores: { overall: 9, value: 8, edgeSupport: 8, trialPeriod: 9, responseTime: 9, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -1082,7 +1036,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 10,
     certifications: ["CertiPUR-US"],
     technology: ["Firm Foam Layers", "High-Density Support Core", "Flippable Design"],
-    scores: { support: 9.4, pressureRelief: 7.5, cooling: 8.5, motionIsolation: 8.2, edgeSupport: 8.8, responsiveness: 8.5, value: 8.9, overall: 8.6 },
+    scores: { overall: 9, value: 9, edgeSupport: 10, trialPeriod: 9, responseTime: 9, motionTransfer: 8, coolingBreathability: 8 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -1120,7 +1074,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 10,
     certifications: ["CertiPUR-US", "OEKO-TEX"],
     technology: ["Celliant® Cover", "Cooling Graphite Foam", "Support Core"],
-    scores: { support: 8.7, pressureRelief: 8.4, cooling: 8.6, motionIsolation: 8.6, edgeSupport: 7.9, responsiveness: 8.1, value: 9.1, overall: 8.6 },
+    scores: { overall: 9, value: 10, edgeSupport: 10, trialPeriod: 9, responseTime: 9, motionTransfer: 8, coolingBreathability: 9 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -1158,7 +1112,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 20,
     certifications: ["CertiPUR-US"],
     technology: ["Ghost Ice™ Cover", "Ghost Bounce™ Foam", "Ghost Comfort™ Foam", "Pocketed Coils"],
-    scores: { support: 8.8, pressureRelief: 8.8, cooling: 9.0, motionIsolation: 8.6, edgeSupport: 8.7, responsiveness: 9.0, value: 8.5, overall: 8.9 },
+    scores: { overall: 9, value: 8, edgeSupport: 8, trialPeriod: 9, responseTime: 8, motionTransfer: 10, coolingBreathability: 10 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -1196,7 +1150,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 15,
     certifications: ["CertiPUR-US"],
     technology: ["Firm Helix Foam", "Zoned Pocketed Coils", "Cashmere Pillow Top"],
-    scores: { support: 9.3, pressureRelief: 8.3, cooling: 8.7, motionIsolation: 8.7, edgeSupport: 9.0, responsiveness: 8.8, value: 8.3, overall: 8.9 },
+    scores: { overall: 9, value: 7, edgeSupport: 8, trialPeriod: 9, responseTime: 9, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -1234,7 +1188,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 10,
     certifications: ["CertiPUR-US"],
     technology: ["Cooling Foam", "Pocketed Coil System", "Phase Change Cover"],
-    scores: { support: 8.7, pressureRelief: 8.8, cooling: 9.2, motionIsolation: 8.6, edgeSupport: 8.7, responsiveness: 8.8, value: 8.0, overall: 8.8 },
+    scores: { overall: 10, value: 8, edgeSupport: 10, trialPeriod: 9, responseTime: 10, motionTransfer: 9, coolingBreathability: 10 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -1272,7 +1226,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 15,
     certifications: ["CertiPUR-US"],
     technology: ["Memory Plus Foam", "Zoned Pocketed Coils", "Tencel™ Cover", "Pillow Top"],
-    scores: { support: 8.5, pressureRelief: 9.2, cooling: 8.8, motionIsolation: 9.0, edgeSupport: 8.7, responsiveness: 8.6, value: 8.3, overall: 8.9 },
+    scores: { overall: 9, value: 7, edgeSupport: 8, trialPeriod: 9, responseTime: 9, motionTransfer: 10, coolingBreathability: 9 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -1310,7 +1264,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 25,
     certifications: ["CertiPUR-US"],
     technology: ["Ghost Ice™ Cooling Fabric", "Cooling Gel Foam", "Memory Foam", "Dense Support Core"],
-    scores: { support: 8.4, pressureRelief: 9.3, cooling: 9.4, motionIsolation: 9.2, edgeSupport: 7.8, responsiveness: 7.9, value: 8.1, overall: 8.9 },
+    scores: { overall: 7, value: 8, edgeSupport: 8, trialPeriod: 9, responseTime: 6, motionTransfer: 10, coolingBreathability: 9 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -1348,7 +1302,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 10,
     certifications: ["CertiPUR-US"],
     technology: ["AirScape™ Foam", "Zoned Support", "Support Core"],
-    scores: { support: 8.6, pressureRelief: 8.7, cooling: 8.5, motionIsolation: 8.8, edgeSupport: 7.9, responsiveness: 8.2, value: 8.9, overall: 8.6 },
+    scores: { overall: 8, value: 8, edgeSupport: 7, trialPeriod: 9, responseTime: 7, motionTransfer: 10, coolingBreathability: 8 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -1386,7 +1340,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 10,
     certifications: ["CertiPUR-US"],
     technology: ["AirScape™ Foam", "Zoned Pocketed Coils", "Ergonomic Zones"],
-    scores: { support: 8.9, pressureRelief: 8.8, cooling: 8.8, motionIsolation: 8.6, edgeSupport: 8.8, responsiveness: 8.9, value: 8.5, overall: 8.9 },
+    scores: { overall: 9, value: 8, edgeSupport: 8, trialPeriod: 9, responseTime: 9, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",
@@ -1424,7 +1378,7 @@ export const competitorMattresses: any[] = [
     warrantyYears: 20,
     certifications: ["CertiPUR-US"],
     technology: ["Micro Coil Comfort Layer", "Lumbar Zone Quilting", "Dual Coil Support", "Organic Cotton Cover"],
-    scores: { support: 9.3, pressureRelief: 9.4, cooling: 9.1, motionIsolation: 8.7, edgeSupport: 9.4, responsiveness: 9.2, value: 7.5, overall: 9.2 },
+    scores: { overall: 10, value: 7, edgeSupport: 9, trialPeriod: 10, responseTime: 10, motionTransfer: 10, coolingBreathability: 9 },
     reviewer: {
       name: "Sleep Review Editorial Team",
       role: "Certified Sleep Science Coach",

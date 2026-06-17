@@ -50,13 +50,35 @@ const jsonLd = [
       "priceCurrency": "USD",
       "url": mattress.affiliateUrl
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": mattress.scores.overall,
-      "bestRating": "10",
-      "worstRating": "0",
-      "reviewCount": "1"
+    "sameAs": mattress.affiliateUrl,
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": mattress.scores.overall,
+        "bestRating": "10"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "PureSleep Testing Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "PureSleep",
+        "url": SITE_URL
+      },
+      "datePublished": "2026-06-16",
+      "dateModified": "2026-06-16"
     }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+      { "@type": "ListItem", "position": 2, "name": "Reviews", "item": `${SITE_URL}/reviews/` },
+      { "@type": "ListItem", "position": 3, "name": `${mattress.name} Review`, "item": `${SITE_URL}/reviews/${mattress.id}` }
+    ]
   },
   {
     "@context": "https://schema.org",
@@ -183,7 +205,7 @@ const formattedDateModified = new Date(mattress.dateModified).toLocaleDateString
             Our team evaluated the {mattress.name} across back, side, and stomach positions. This {mattress.firmnessScale}/10 ({mattress.firmness}) mattress is best suited to {mattress.bestFor.slice(0,3).join(', ')} sleepers.
           </p>
           <p class="leading-relaxed text-on-surface-variant">
-            Support scores {mattress.scores.support}/10. Pressure relief scores {mattress.scores.pressureRelief}/10. Cooling scores {mattress.scores.cooling}/10. At {mattress.firmness} ({mattress.firmnessScale}/10), it balances contouring and support in a {mattress.thickness} profile.
+            Value: {mattress.scores.value}/10. Edge Support: {mattress.scores.edgeSupport}/10. Cooling &amp; Breathability: {mattress.scores.coolingBreathability}/10. At {mattress.firmness} ({mattress.firmnessScale}/10), this {mattress.thickness} mattress was evaluated hands-on by the PureSleep testing team. Scores are editorial evaluations — not lab measurements or manufacturer data.
           </p>
           <p class="leading-relaxed text-on-surface-variant">
             Certified {mattress.certifications.join(' and ')}. Backed by a {mattress.trialNights}-night trial and a {mattress.warrantyYears}-year warranty.
@@ -261,13 +283,12 @@ const formattedDateModified = new Date(mattress.dateModified).toLocaleDateString
           <!-- Detailed Metrics -->
           <div class="flex flex-col gap-6">
             {Object.entries({
-              'Support': mattress.scores.support,
-              'Pressure Relief': mattress.scores.pressureRelief,
-              'Cooling': mattress.scores.cooling,
-              'Motion Isolation': mattress.scores.motionIsolation,
-              'Edge Support': mattress.scores.edgeSupport,
-              'Responsiveness': mattress.scores.responsiveness,
               'Value': mattress.scores.value,
+              'Edge Support': mattress.scores.edgeSupport,
+              'Trial Period': mattress.scores.trialPeriod,
+              'Response Time': mattress.scores.responseTime,
+              'Motion Transfer': mattress.scores.motionTransfer,
+              'Cooling & Breathability': mattress.scores.coolingBreathability,
             }).map(([label, score]) => (
               <div class="flex flex-col gap-2">
                 <div class="flex justify-between items-center text-body-md font-body-md">
