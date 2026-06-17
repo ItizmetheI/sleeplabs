@@ -1,5 +1,6 @@
 ---
 import { allMattresses } from '../../data/mattresses';
+import { comparisons } from '../../data/comparisons';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { BEST_CATEGORIES } from '../../lib/bestCategories';
 
@@ -20,16 +21,22 @@ const pickModels = cat.picks
   .map(id => allMattresses.find((m: any) => m.id === id))
   .filter(Boolean);
 
-const winner = pickModels[0];
+const winner = pickModels[0] as any;
 const lastUpdated = "2026-06-16";
 
-const jsonLd = [
+const faqs = (cat as any).faqs || [];
+
+const relatedComparisons = comparisons
+  .filter(c => cat.picks.includes(c.mattressAId) || cat.picks.includes(c.mattressBId))
+  .slice(0, 6);
+
+const jsonLd: any[] = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": cat.h1,
     "description": cat.description,
-    "author": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
+    "author": { "@type": "Organization", "name": "PureSleep Testing Team", "url": SITE_URL },
     "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
     "datePublished": "2026-01-01",
     "dateModified": lastUpdated,
@@ -57,6 +64,18 @@ const jsonLd = [
     }))
   }
 ];
+
+if (faqs.length > 0) {
+  jsonLd.push({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq: any) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+    }))
+  });
+}
 ---
 
 <BaseLayout
@@ -66,54 +85,75 @@ const jsonLd = [
   lastUpdated={lastUpdated}
   jsonLd={jsonLd}
 >
-  <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 relative z-10 w-full flex flex-col gap-16">
+  <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 relative z-10 w-full flex flex-col gap-14">
 
-    <nav class="text-body-sm text-on-surface-variant flex items-center gap-2 flex-wrap">
+    <!-- Breadcrumb -->
+    <nav class="text-body-sm text-on-surface-variant flex items-center gap-2 flex-wrap" aria-label="Breadcrumb">
       <a href="/" class="hover:text-primary transition-colors">Home</a>
-      <span>›</span>
+      <span aria-hidden="true">›</span>
       <a href="/best/overall" class="hover:text-primary transition-colors">Best Picks</a>
-      <span>›</span>
+      <span aria-hidden="true">›</span>
       <span class="text-on-surface font-medium">{cat.h1}</span>
     </nav>
 
+    <!-- Header -->
     <header class="flex flex-col gap-6 max-w-4xl">
       <h1 class="text-headline-lg font-headline-lg text-primary font-bold">{cat.h1}</h1>
       <p class="text-body-lg text-on-surface-variant leading-relaxed">{cat.intro}</p>
-      <div class="flex gap-4 items-center text-body-sm text-on-surface-variant">
+      <div class="flex flex-wrap gap-x-5 gap-y-2 items-center text-body-sm text-on-surface-variant border-t border-outline-variant/20 pt-4">
         <span><strong class="text-on-surface">Reviewed by:</strong> PureSleep Testing Team</span>
-        <span>·</span>
+        <span class="hidden md:inline text-outline-variant">·</span>
         <span><strong class="text-on-surface">Updated:</strong> June 2026</span>
+        <span class="hidden md:inline text-outline-variant">·</span>
+        <span>58 models tested across 24 brands</span>
       </div>
     </header>
 
+    <!-- Trust bar -->
+    <div class="flex flex-wrap gap-3">
+      {[
+        '7-Metric Scoring System',
+        'Hands-On Team Testing',
+        'No Commission Earned',
+        'Editorially Independent',
+      ].map(badge => (
+        <span class="px-4 py-1.5 rounded-full bg-surface border border-outline-variant/30 text-label-sm font-bold uppercase tracking-widest text-on-surface-variant text-xs">
+          {badge}
+        </span>
+      ))}
+    </div>
+
+    <!-- Winner card -->
     {winner && (
-      <section class="glass-panel p-8 md:p-10 rounded-3xl border border-white/60 flex flex-col gap-6">
-        <div class="flex items-center gap-3">
-          <span class="bg-primary text-on-primary text-label-sm font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">Editor's Pick #1</span>
-          <span class="text-on-surface-variant text-body-sm">Hands-on tested by the PureSleep Testing Team</span>
+      <section class="glass-panel p-8 md:p-10 rounded-3xl border border-white/60 flex flex-col gap-6" id="top-pick">
+        <div class="flex items-center gap-3 flex-wrap">
+          <span class="bg-primary text-on-primary text-label-sm font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">#1 Editor's Pick</span>
+          <span class="text-on-surface-variant text-body-sm">Evaluated hands-on by the PureSleep Testing Team</span>
         </div>
         <div class="flex flex-col md:flex-row gap-8 items-start">
           <div class="w-full md:w-64 flex-shrink-0 rounded-2xl overflow-hidden bg-surface">
-            <img src={(winner as any).heroImage} alt={`${(winner as any).name} mattress`} class="w-full h-48 object-cover" />
+            <img src={winner.heroImage || winner.image} alt={`${winner.name} mattress`} class="w-full h-48 object-cover" loading="eager" />
           </div>
           <div class="flex flex-col gap-4 flex-1">
             <div>
-              <h2 class="text-headline-md font-headline-md text-primary font-bold">{(winner as any).name}</h2>
-              <span class="text-body-sm text-on-surface-variant">by {(winner as any).brand}</span>
+              <h2 class="text-headline-md font-headline-md text-primary font-bold">{winner.name}</h2>
+              <span class="text-body-sm text-on-surface-variant">by {winner.brand}</span>
             </div>
-            <div class="flex items-center gap-3">
-              <span class="text-display-sm font-bold text-secondary">{(winner as any).scores.overall}</span>
-              <span class="text-on-surface-variant text-body-sm">/ 10 Overall</span>
+            <div class="flex items-baseline gap-2">
+              <span class="text-display-sm font-bold text-secondary">{winner.scores.overall}</span>
+              <span class="text-on-surface-variant text-body-md">/ 10 Overall Score</span>
             </div>
             <p class="text-body-md text-on-surface-variant leading-relaxed">{cat.winnerNote}</p>
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-2">
+
+            <!-- Score grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {([
-                ['Value', (winner as any).scores.value],
-                ['Edge Support', (winner as any).scores.edgeSupport],
-                ['Trial Period', (winner as any).scores.trialPeriod],
-                ['Response Time', (winner as any).scores.responseTime],
-                ['Motion Transfer', (winner as any).scores.motionTransfer],
-                ['Cooling', (winner as any).scores.coolingBreathability],
+                ['Value', winner.scores.value],
+                ['Edge Support', winner.scores.edgeSupport],
+                ['Trial Period', winner.scores.trialPeriod],
+                ['Response Time', winner.scores.responseTime],
+                ['Motion Transfer', winner.scores.motionTransfer],
+                ['Cooling', winner.scores.coolingBreathability],
               ] as [string, number][]).map(([label, score]) => (
                 <div class="bg-surface rounded-xl p-3 border border-outline-variant/20">
                   <div class="text-xs text-on-surface-variant font-bold uppercase tracking-wider mb-1">{label}</div>
@@ -121,11 +161,21 @@ const jsonLd = [
                 </div>
               ))}
             </div>
-            <div class="flex gap-3 mt-4 flex-wrap">
-              <a href={`/reviews/${(winner as any).id}`} class="px-6 py-3 rounded-xl border-2 border-primary text-primary font-bold text-label-sm uppercase tracking-widest hover:bg-primary/5 transition-colors">
-                Full Review
+
+            <!-- Trial / warranty / firmness row -->
+            <div class="flex flex-wrap gap-4 text-body-sm text-on-surface-variant border-y border-outline-variant/20 py-3">
+              <span><strong class="text-on-surface">{winner.trialNights}-Night</strong> Trial</span>
+              <span class="text-outline-variant">·</span>
+              <span><strong class="text-on-surface">{winner.warrantyYears}-Year</strong> Warranty</span>
+              <span class="text-outline-variant">·</span>
+              <span><strong class="text-on-surface">{winner.firmness}</strong> ({winner.firmnessScale}/10)</span>
+            </div>
+
+            <div class="flex gap-3 flex-wrap">
+              <a href={`/reviews/${winner.id}`} class="px-6 py-3 rounded-xl border-2 border-primary text-primary font-bold text-label-sm uppercase tracking-widest hover:bg-primary/5 transition-colors">
+                Read Full Review
               </a>
-              <a href={(winner as any).affiliateUrl} target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-primary text-on-primary font-bold text-label-sm uppercase tracking-widest hover:bg-primary/90 transition-colors shadow-sm">
+              <a href={winner.affiliateUrl} target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-primary text-on-primary font-bold text-label-sm uppercase tracking-widest hover:bg-primary/90 transition-colors shadow-sm">
                 Check Latest Price →
               </a>
             </div>
@@ -134,54 +184,137 @@ const jsonLd = [
       </section>
     )}
 
-    <section class="flex flex-col gap-8">
-      <h2 class="text-headline-md font-headline-md text-primary font-bold border-b border-outline-variant/30 pb-4">All Top Picks</h2>
+    <!-- Quick comparison table -->
+    <section class="flex flex-col gap-4">
+      <h2 class="text-headline-md font-headline-md text-primary font-bold">Quick Comparison</h2>
+      <p class="text-body-md text-on-surface-variant">All picks ranked by our 7-metric overall score. Scores derive from hands-on testing — not manufacturer data.</p>
+      <div class="overflow-x-auto rounded-2xl border border-outline-variant/20">
+        <table class="w-full text-body-sm min-w-[680px]">
+          <thead>
+            <tr class="bg-surface border-b border-outline-variant/20">
+              <th class="text-left px-5 py-4 text-label-sm font-bold uppercase tracking-widest text-on-surface-variant">Rank</th>
+              <th class="text-left px-5 py-4 text-label-sm font-bold uppercase tracking-widest text-on-surface-variant">Mattress</th>
+              <th class="text-center px-4 py-4 text-label-sm font-bold uppercase tracking-widest text-on-surface-variant">Overall</th>
+              <th class="text-center px-4 py-4 text-label-sm font-bold uppercase tracking-widest text-on-surface-variant">Value</th>
+              <th class="text-center px-4 py-4 text-label-sm font-bold uppercase tracking-widest text-on-surface-variant">Trial</th>
+              <th class="text-center px-4 py-4 text-label-sm font-bold uppercase tracking-widest text-on-surface-variant">Warranty</th>
+              <th class="text-center px-4 py-4 text-label-sm font-bold uppercase tracking-widest text-on-surface-variant">Review</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pickModels.map((m: any, i: number) => m && (
+              <tr class={`border-b border-outline-variant/10 hover:bg-surface/50 transition-colors ${i === 0 ? 'bg-secondary/5' : ''}`}>
+                <td class="px-5 py-4">
+                  <span class={`inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold ${i === 0 ? 'bg-primary text-on-primary' : 'bg-surface border border-outline-variant/30 text-on-surface-variant'}`}>
+                    {i + 1}
+                  </span>
+                </td>
+                <td class="px-5 py-4">
+                  <div class="font-bold text-on-surface">{m.name}</div>
+                  <div class="text-xs text-on-surface-variant">{m.firmness}</div>
+                </td>
+                <td class="px-4 py-4 text-center">
+                  <span class={`font-bold text-base ${m.scores.overall >= 10 ? 'text-secondary' : 'text-primary'}`}>{m.scores.overall}</span>
+                </td>
+                <td class="px-4 py-4 text-center text-on-surface-variant font-medium">{m.scores.value}</td>
+                <td class="px-4 py-4 text-center text-on-surface-variant">{m.trialNights}n</td>
+                <td class="px-4 py-4 text-center text-on-surface-variant">{m.warrantyYears}yr</td>
+                <td class="px-4 py-4 text-center">
+                  <a href={`/reviews/${m.id}`} class="text-primary font-bold hover:text-secondary transition-colors underline underline-offset-2 text-xs uppercase tracking-widest">
+                    Review →
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       {cat.filterNote && (
         <div class="bg-secondary/5 border border-secondary/20 rounded-2xl p-5 text-body-md text-on-surface-variant">
-          <strong class="text-on-surface">Editorial Note: </strong>{cat.filterNote}
+          <strong class="text-on-surface">Editorial note: </strong>{cat.filterNote}
         </div>
       )}
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    </section>
+
+    <!-- All picks cards -->
+    <section class="flex flex-col gap-6">
+      <h2 class="text-headline-md font-headline-md text-primary font-bold border-b border-outline-variant/30 pb-4">
+        All Top Picks — Detailed Breakdown
+      </h2>
+      <div class="flex flex-col gap-6">
         {pickModels.map((m: any, i: number) => m && (
-          <article class="glass-panel flex flex-col rounded-3xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all border border-white/60">
-            <div class="relative w-full h-44 overflow-hidden">
-              <img src={m.image} alt={`${m.name} mattress`} class="w-full h-full object-cover" />
-              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-on-surface">
-                #{i + 1}
+          <article class="glass-panel rounded-3xl border border-white/60 overflow-hidden hover:shadow-md transition-shadow" id={`pick-${i + 1}`}>
+            <div class="flex flex-col md:flex-row">
+              <!-- Image -->
+              <div class="w-full md:w-52 flex-shrink-0 relative">
+                <img src={m.image} alt={`${m.name} mattress`} class="w-full h-48 md:h-full object-cover" loading="lazy" />
+                <div class="absolute top-3 left-3 flex flex-col gap-1.5">
+                  <span class={`px-3 py-1 rounded-full text-xs font-bold ${i === 0 ? 'bg-primary text-on-primary' : 'bg-white/90 text-on-surface'}`}>
+                    #{i + 1}
+                  </span>
+                  {i === 0 && <span class="px-3 py-1 rounded-full text-xs font-bold bg-secondary text-white">Top Pick</span>}
+                </div>
               </div>
-              <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1">
-                <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Score</span>
-                <span class="font-bold text-secondary text-sm">{m.scores.overall}</span>
-              </div>
-            </div>
-            <div class="p-6 flex flex-col gap-4 flex-1">
-              <div>
-                <h3 class="text-title-lg font-title-lg text-primary font-bold">{m.name}</h3>
-                <span class="text-body-sm text-on-surface-variant">by {m.brand}</span>
-              </div>
-              <div class="flex flex-col gap-2">
-                {([
-                  ['Value', m.scores.value],
-                  ['Edge Support', m.scores.edgeSupport],
-                  ['Cooling', m.scores.coolingBreathability],
-                ] as [string, number][]).map(([label, score]) => (
-                  <div class="flex items-center gap-3">
-                    <span class="text-xs text-on-surface-variant w-24 font-medium">{label}</span>
-                    <div class="flex-1 bg-outline-variant/20 h-1.5 rounded-full overflow-hidden">
-                      <div class="bg-secondary h-full rounded-full" style={`width: ${score * 10}%`}></div>
-                    </div>
-                    <span class="text-xs font-bold text-primary w-8 text-right">{score}/10</span>
+
+              <!-- Content -->
+              <div class="p-6 md:p-8 flex flex-col gap-4 flex-1">
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
+                  <div>
+                    <h3 class="text-title-lg font-title-lg text-primary font-bold">{m.name}</h3>
+                    <span class="text-body-sm text-on-surface-variant">by {m.brand}</span>
                   </div>
-                ))}
-              </div>
-              <p class="text-body-sm text-on-surface-variant line-clamp-2">{m.verdict}</p>
-              <div class="mt-auto pt-4 flex gap-2">
-                <a href={`/reviews/${m.id}`} class="flex-1 text-center py-2.5 rounded-xl border border-primary text-primary font-bold text-xs uppercase tracking-widest hover:bg-primary/5 transition-colors">
-                  Review
-                </a>
-                <a href={m.affiliateUrl} target="_blank" rel="noopener noreferrer" class="flex-1 text-center py-2.5 rounded-xl bg-primary text-on-primary font-bold text-xs uppercase tracking-widest hover:bg-primary/90 transition-colors">
-                  Price →
-                </a>
+                  <div class="flex items-baseline gap-1.5 flex-shrink-0">
+                    <span class="text-2xl font-bold text-secondary">{m.scores.overall}</span>
+                    <span class="text-on-surface-variant text-sm">/10</span>
+                  </div>
+                </div>
+
+                <p class="text-body-md text-on-surface-variant leading-relaxed">{m.verdict}</p>
+
+                <!-- Score bars (4 key metrics) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {([
+                    ['Value', m.scores.value],
+                    ['Edge Support', m.scores.edgeSupport],
+                    ['Motion Transfer', m.scores.motionTransfer],
+                    ['Cooling', m.scores.coolingBreathability],
+                  ] as [string, number][]).map(([label, score]) => (
+                    <div class="flex items-center gap-3">
+                      <span class="text-xs text-on-surface-variant w-28 font-medium flex-shrink-0">{label}</span>
+                      <div class="flex-1 bg-outline-variant/20 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-secondary h-full rounded-full" style={`width: ${score * 10}%`}></div>
+                      </div>
+                      <span class="text-xs font-bold text-primary w-8 text-right flex-shrink-0">{score}/10</span>
+                    </div>
+                  ))}
+                </div>
+
+                <!-- Tags + Trial/Warranty -->
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider rounded-lg border border-primary/20">
+                    {m.firmness} ({m.firmnessScale}/10)
+                  </span>
+                  {m.bestFor.slice(0, 2).map((tag: string) => (
+                    <span class="px-3 py-1 bg-surface border border-outline-variant/30 text-on-surface-variant text-xs font-medium rounded-lg">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div class="flex flex-wrap gap-4 text-xs text-on-surface-variant border-t border-outline-variant/20 pt-3">
+                  <span><strong class="text-on-surface">{m.trialNights}-Night</strong> Trial</span>
+                  <span class="text-outline-variant">·</span>
+                  <span><strong class="text-on-surface">{m.warrantyYears}-Year</strong> Warranty</span>
+                </div>
+
+                <!-- CTAs -->
+                <div class="flex gap-3 flex-wrap pt-2">
+                  <a href={`/reviews/${m.id}`} class="px-5 py-2.5 rounded-xl border-2 border-primary text-primary font-bold text-xs uppercase tracking-widest hover:bg-primary/5 transition-colors">
+                    Full Review
+                  </a>
+                  <a href={m.affiliateUrl} target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-primary text-on-primary font-bold text-xs uppercase tracking-widest hover:bg-primary/90 transition-colors shadow-sm">
+                    Check Price →
+                  </a>
+                </div>
               </div>
             </div>
           </article>
@@ -189,24 +322,90 @@ const jsonLd = [
       </div>
     </section>
 
-    <section class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-col gap-4">
-      <h2 class="text-headline-sm font-headline-sm text-primary font-bold">How These Were Selected</h2>
+    <!-- Methodology -->
+    <section class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-col gap-5">
+      <h2 class="text-headline-sm font-headline-sm text-primary font-bold">How We Selected These Picks</h2>
       <p class="text-body-md text-on-surface-variant leading-relaxed">
-        All picks above were evaluated hands-on by the PureSleep Testing Team using our standardized 7-metric scoring system: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability. Scores come only from our testing data — never from manufacturer claims or third-party databases.
+        All picks above were evaluated hands-on by the PureSleep Testing Team using a standardized 7-metric scoring system: <strong class="text-on-surface">Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability</strong>. Every score on this page comes from our testing data — never from manufacturer claims, press releases, or third-party databases.
       </p>
       <p class="text-body-md text-on-surface-variant leading-relaxed">
-        PureSleep earns no commission and accepts no paid placements. Rankings are editorially independent.
+        PureSleep is an editorially independent review publication. We earn no commission from any links on this site and have no financial relationship with the brands we review. Rankings reflect our scoring outcomes only.
       </p>
-      <a href="/methodology" class="text-primary hover:text-secondary font-bold underline underline-offset-4 w-fit transition-colors">Read our full testing methodology →</a>
+      <div class="flex flex-wrap gap-3">
+        <a href="/methodology" class="text-primary hover:text-secondary font-bold underline underline-offset-4 transition-colors text-body-md">
+          Read our full testing methodology →
+        </a>
+        <span class="text-outline-variant hidden md:inline self-center">·</span>
+        <a href="/reviews" class="text-primary hover:text-secondary font-bold underline underline-offset-4 transition-colors text-body-md hidden md:inline">
+          Browse all 58 reviews →
+        </a>
+      </div>
     </section>
 
-    <nav class="flex flex-wrap gap-3" aria-label="Other categories">
-      <span class="text-body-sm text-on-surface-variant font-medium self-center">Other categories:</span>
-      {Object.entries(BEST_CATEGORIES).filter(([k]) => k !== category).map(([k, c]) => (
-        <a href={`/best/${k}`} class="px-4 py-2 rounded-full bg-surface border border-outline-variant/30 text-primary text-body-sm font-bold hover:border-primary/30 transition-colors">
-          {c.h1.replace(' of 2026', '').replace(' 2026', '')}
+    <!-- Comparison links -->
+    {relatedComparisons.length > 0 && (
+      <section class="flex flex-col gap-4">
+        <h2 class="text-headline-sm font-headline-sm text-primary font-bold">Head-to-Head Comparisons</h2>
+        <p class="text-body-md text-on-surface-variant">See how these mattresses stack up directly against each other and against competing brands.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {relatedComparisons.map(c => {
+            const mA = allMattresses.find((m: any) => m.id === c.mattressAId) as any;
+            const mB = allMattresses.find((m: any) => m.id === c.mattressBId) as any;
+            if (!mA || !mB) return null;
+            return (
+              <a
+                href={`/comparison/${c.slug}`}
+                class="glass-panel flex flex-col gap-2 p-5 rounded-2xl border border-white/60 hover:border-primary/30 hover:shadow-md transition-all group"
+              >
+                <div class="flex items-center justify-between">
+                  <span class="text-body-sm font-bold text-on-surface group-hover:text-primary transition-colors">{c.title}</span>
+                  <span class="text-secondary text-body-sm font-bold flex-shrink-0">→</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs text-on-surface-variant">
+                  <span class="font-medium">{mA.scores.overall}/10</span>
+                  <span>vs</span>
+                  <span class="font-medium">{mB.scores.overall}/10</span>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+        <a href="/comparison" class="text-primary font-bold hover:text-secondary transition-colors text-body-md underline underline-offset-4 w-fit">
+          View all comparison pages →
         </a>
-      ))}
+      </section>
+    )}
+
+    <!-- FAQ -->
+    {faqs.length > 0 && (
+      <section class="flex flex-col gap-6">
+        <h2 class="text-headline-md font-headline-md text-primary font-bold">Frequently Asked Questions</h2>
+        <div class="flex flex-col gap-3">
+          {faqs.map((faq: any, i: number) => (
+            <details class="glass-panel rounded-2xl border border-white/60 group" open={i === 0}>
+              <summary class="px-6 py-5 cursor-pointer flex items-center justify-between gap-4 text-title-sm font-title-sm text-on-surface font-bold list-none select-none hover:text-primary transition-colors">
+                <span>{faq.question}</span>
+                <span class="text-secondary text-lg flex-shrink-0 group-open:rotate-45 transition-transform duration-200">+</span>
+              </summary>
+              <div class="px-6 pb-6 pt-0 text-body-md text-on-surface-variant leading-relaxed">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Other categories nav -->
+    <nav class="flex flex-col gap-4" aria-label="Other categories">
+      <h3 class="text-title-md font-title-md text-primary font-bold">Explore More Categories</h3>
+      <div class="flex flex-wrap gap-3">
+        {Object.entries(BEST_CATEGORIES).filter(([k]) => k !== category).map(([k, c]) => (
+          <a href={`/best/${k}`} class="px-4 py-2 rounded-full bg-surface border border-outline-variant/30 text-primary text-body-sm font-bold hover:border-primary/30 hover:shadow-sm transition-all">
+            {c.h1.replace(' of 2026', '').replace(' 2026', '')}
+          </a>
+        ))}
+      </div>
     </nav>
 
   </main>
