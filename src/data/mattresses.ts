@@ -1,4 +1,4 @@
-﻿export interface MattressScore {
+export interface MattressScore {
   overall: number;
   value: number;
   edgeSupport: number;

@@ -1,4 +1,4 @@
-﻿import type { BlogPost } from './blogSchema';
+import type { BlogPost } from './blogSchema';
 
 export const blogPosts: BlogPost[] = [
   {
