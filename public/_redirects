@@ -2,5 +2,3 @@
 /sitemap.xml /sitemap-index.xml 301
 /blog/category/buying-guide/ /blog/category/buying-guides/ 301
 /blog/how-to-evaluate-a-mattress-during-the-trial-period/ /blog/how-to-evaluate-a-mattress-trial-period/ 301
-/admin/* /404 404
-/admin /404 404
