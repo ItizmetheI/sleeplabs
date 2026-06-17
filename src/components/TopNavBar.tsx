@@ -26,24 +26,36 @@ const navItems: NavItem[] = [
     href: '/best-mattress',
     columns: [
       {
-        title: 'Top Picks 2026',
+        title: 'By Sleeper Type',
         items: [
-          { label: '⭐ Best Overall: AS3', href: '/best/overall' },
-          { label: 'Best for Back Sleepers: AS2', href: '/best/back-sleepers' },
-          { label: 'Best for Side Sleepers: AS5', href: '/best/side-sleepers' },
-          { label: 'Best for Couples: AS6', href: '/best/couples' },
-          { label: 'Best Organic: Organica', href: '/best/organic' },
-          { label: 'Best Value: AS2', href: '/best/value' },
+          { label: 'Best Overall', href: '/best/overall' },
+          { label: 'Back Sleepers', href: '/best/back-sleepers' },
+          { label: 'Side Sleepers', href: '/best/side-sleepers' },
+          { label: 'Stomach Sleepers', href: '/best/stomach-sleepers' },
+          { label: 'Combination Sleepers', href: '/best/combination-sleepers' },
+          { label: 'Heavy Sleepers', href: '/best/heavy-sleepers' },
+          { label: 'Couples', href: '/best/couples' },
         ]
       },
       {
-        title: 'By Concern',
+        title: 'By Sleep Concern',
         items: [
-          { label: 'Best for Back Pain', href: '/best/back-pain' },
-          { label: 'Best Cooling', href: '/best/cooling' },
-          { label: 'Best Hybrid', href: '/best/hybrid' },
+          { label: 'Back Pain', href: '/best/back-pain' },
+          { label: 'Hip Pain', href: '/best/hip-pain' },
+          { label: 'Shoulder Pain', href: '/best/shoulder-pain' },
+          { label: 'Hot Sleepers / Cooling', href: '/best/cooling' },
+          { label: 'Motion Isolation', href: '/best/motion-isolation' },
+          { label: 'Pressure Relief', href: '/best/pressure-relief' },
+        ]
+      },
+      {
+        title: 'By Type & Budget',
+        items: [
           { label: 'Best Luxury', href: '/best/luxury' },
-          { label: 'Best Pressure Relief', href: '/best/pressure-relief' },
+          { label: 'Best Hybrid', href: '/best/hybrid' },
+          { label: 'Best Organic', href: '/best/organic' },
+          { label: 'Best Memory Foam', href: '/best/memory-foam' },
+          { label: 'Best Value', href: '/best/value' },
           { label: 'All Categories →', href: '/best-mattress' },
         ]
       }
