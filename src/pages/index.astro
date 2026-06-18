@@ -91,6 +91,40 @@ const jsonLd = [
 
       <UseCases client:visible />
       <LatestGuides />
+
+<!-- Head-to-Head Comparisons -->
+<section class="py-16 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+  <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+    <div>
+      <h2 class="text-display-lg font-display-lg text-primary mb-3">Head-to-head comparisons</h2>
+      <p class="text-body-lg text-on-surface-variant max-w-2xl">How does Amerisleep stack up against the competition? We scored 30 matchups across 7 metrics.</p>
+    </div>
+    <a href="/comparison" class="shrink-0 text-secondary font-label-sm font-bold uppercase tracking-widest hover:text-primary transition-colors">
+      All 30 comparisons →
+    </a>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {[
+      { a: "AS3", b: "Saatva Classic", href: "/comparison/amerisleep-as3-vs-saatva-classic", verdict: "AS3 wins on value & warranty. Saatva wins on trial (365 nights)." },
+      { a: "AS3", b: "Helix Midnight Luxe", href: "/comparison/amerisleep-as3-vs-helix-midnight-luxe", verdict: "AS3 wins on motion isolation & cooling. Helix wins on customisation." },
+      { a: "AS3", b: "Purple RestorePlus Hybrid", href: "/comparison/amerisleep-as3-vs-purple-restoreplus-hybrid", verdict: "AS3 wins overall (10 vs 9). Purple wins on unique grid feel." },
+      { a: "AS3", b: "Nolah Evolution 15", href: "/comparison/amerisleep-as3-vs-nolah-evolution-15", verdict: "Both 10/10 overall. AS3 wins on warranty; Nolah on value score." },
+      { a: "AS2", b: "Brooklyn Bedding Plank Firm", href: "/comparison/amerisleep-as2-vs-brooklyn-bedding-plank-firm", verdict: "AS2 wins on motion isolation. Plank Firm wins on firmness options." },
+      { a: "Organica", b: "Avocado Green", href: "/comparison/amerisleep-organica-vs-avocado-green", verdict: "Both 9/10. Organica wins on value; Avocado wins on trial period." },
+    ].map(c => (
+      <a href={c.href} class="glass-panel rounded-2xl p-5 border border-outline-variant/30 hover:border-secondary/40 hover:-translate-y-0.5 transition-all group flex flex-col gap-3">
+        <div class="flex items-center gap-2 font-bold text-primary">
+          <span class="text-title-md">{c.a}</span>
+          <span class="text-on-surface-variant font-normal text-body-md">vs</span>
+          <span class="text-title-md">{c.b}</span>
+        </div>
+        <p class="text-body-md text-on-surface-variant flex-1">{c.verdict}</p>
+        <span class="text-secondary text-label-sm font-bold uppercase tracking-widest group-hover:text-primary transition-colors">Compare →</span>
+      </a>
+    ))}
+  </div>
+</section>
+
       <Methodology client:visible />
       
 <!-- Homepage FAQ -->

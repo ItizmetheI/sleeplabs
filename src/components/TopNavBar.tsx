@@ -204,21 +204,32 @@ const navItems: NavItem[] = [
         items: [
           { label: 'AS2 vs AS3', href: '/comparison/amerisleep-as2-vs-as3' },
           { label: 'AS3 vs AS5', href: '/comparison/amerisleep-as3-vs-as5' },
-          { label: 'AS3 vs AS6', href: '/comparison/amerisleep-as3-vs-as6' },
+          { label: 'AS3 vs AS6 Black Series', href: '/comparison/amerisleep-as3-vs-as6' },
           { label: 'AS3 vs Organica', href: '/comparison/amerisleep-as3-vs-organica' },
           { label: 'AS2 vs AS5', href: '/comparison/amerisleep-as2-vs-as5' },
           { label: 'AS6 vs Organica', href: '/comparison/amerisleep-as6-vs-organica' }
         ]
       },
       {
-        title: 'vs Other Brands',
+        title: 'AS3 vs Other Brands',
         items: [
           { label: 'AS3 vs Saatva Classic', href: '/comparison/amerisleep-as3-vs-saatva-classic' },
-          { label: 'AS3 vs Nolah Evolution 15', href: '/comparison/amerisleep-as3-vs-nolah-evolution-15' },
           { label: 'AS3 vs Helix Midnight Luxe', href: '/comparison/amerisleep-as3-vs-helix-midnight-luxe' },
+          { label: 'AS3 vs Purple RestorePlus Hybrid', href: '/comparison/amerisleep-as3-vs-purple-restoreplus-hybrid' },
+          { label: 'AS3 vs Nolah Evolution 15', href: '/comparison/amerisleep-as3-vs-nolah-evolution-15' },
+          { label: 'AS3 vs Casper Dream Hybrid', href: '/comparison/amerisleep-as3-vs-casper-dream-hybrid' },
+          { label: 'AS3 vs Leesa Sapira Hybrid', href: '/comparison/amerisleep-as3-vs-leesa-sapira-hybrid' },
+        ]
+      },
+      {
+        title: 'AS2 · AS5 · AS6 · Organica',
+        items: [
+          { label: 'AS2 vs Brooklyn Bedding Plank Firm', href: '/comparison/amerisleep-as2-vs-brooklyn-bedding-plank-firm' },
+          { label: 'AS2 vs Helix Dawn Luxe', href: '/comparison/amerisleep-as2-vs-helix-dawn-luxe' },
           { label: 'AS5 Hybrid vs Leesa Sapira Chill', href: '/comparison/amerisleep-as5-hybrid-vs-leesa-sapira-chill-hybrid' },
+          { label: 'AS6 vs Saatva RX', href: '/comparison/amerisleep-as6-black-series-vs-saatva-rx' },
           { label: 'Organica vs Avocado Green', href: '/comparison/amerisleep-organica-vs-avocado-green' },
-          { label: 'All Comparisons →', href: '/comparison' }
+          { label: 'All 30 Comparisons →', href: '/comparison' }
         ]
       }
     ]
