@@ -2,6 +2,7 @@
 import { comparisons } from '../../data/comparisons';
 import { allMattresses } from '../../data/mattresses';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
 
 export function getStaticPaths() {
   return comparisons.map(c => ({
@@ -106,12 +107,6 @@ if (comparison.faqs && comparison.faqs.length > 0) {
     }))
   });
 }
-
-const formattedDateModified = new Date(comparison.dateModified).toLocaleDateString('en-US', {
-  month: 'long',
-  day: 'numeric',
-  year: 'numeric'
-});
 ---
 
 <BaseLayout
@@ -127,16 +122,7 @@ const formattedDateModified = new Date(comparison.dateModified).toLocaleDateStri
       <h1 class="text-headline-lg font-headline-lg  text-primary font-bold">
         {mattressA.name} vs {mattressB.name} (2026): Which Is Better?
       </h1>
-      <div class="flex justify-center mt-4">
-        <span class="text-body-md text-on-surface-variant bg-surface px-6 py-2 rounded-full shadow-sm border border-outline-variant/30">
-          <strong class="text-on-background">Last Updated:</strong> {new Date(comparison.dateModified).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-        </span>
-      </div>
-      <div class="flex flex-col md:flex-row gap-4 items-center justify-center text-body-md text-on-surface-variant bg-surface px-6 py-3 rounded-full shadow-sm border border-outline-variant/30">
-        <span><strong class="text-on-background">Reviewed By:</strong> PureSleep Testing Team</span>
-        <span class="hidden md:inline-block w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
-        <span><strong class="text-on-background">Last Updated:</strong> {formattedDateModified}</span>
-      </div>
+      <TrustSignals dateModified={comparison.dateModified} />
     </header>
 
     <div class="flex flex-col lg:flex-row gap-12 items-start">
@@ -167,6 +153,7 @@ const formattedDateModified = new Date(comparison.dateModified).toLocaleDateStri
                 <a href={mattressB.affiliateUrl} target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-primary text-on-primary font-bold font-label-md uppercase shadow-md hover:bg-primary/90 transition-colors">Check Price</a>
             </div>
          </section>
+         <p class="text-xs text-on-surface-variant text-center">PureSleep earns no commission and accepts no paid placements. Both links go directly to the manufacturer.</p>
 
         <!-- Stats Comparison Table -->
         <section class="overflow-hidden glass-panel rounded-3xl border border-white/60">
@@ -179,6 +166,8 @@ const formattedDateModified = new Date(comparison.dateModified).toLocaleDateStri
                     </tr>
                 </thead>
                 <tbody class="text-body-md text-on-surface-variant">
+                    <tr class="bg-primary/5 border-y-2 border-primary/20"><td colspan="3" class="p-6 text-center text-label-lg font-bold text-primary uppercase tracking-widest">Specs at a Glance</td></tr>
+
                     {/* Basic Stats */}
                     {[
                         { label: 'Price (Queen)', a: mattressA.priceRange, b: mattressB.priceRange },
@@ -263,6 +252,23 @@ const formattedDateModified = new Date(comparison.dateModified).toLocaleDateStri
              
              <h3 class="text-title-lg font-title-lg text-primary mt-4">5. Policies & Value Proposition</h3>
              <p>Beyond physical comfort, let's consider the practical, long-term aspects of your purchase. The {mattressA.name} backs its structural integrity with a {mattressA.trialNights}-night sleep trial and a {mattressA.warrantyYears}-year warranty, offering significant peace of mind. Meanwhile, the {mattressB.name} brand offers a {mattressB.trialNights}-night trial combined with a {mattressB.warrantyYears}-year warranty. Pricing remains a defining differentiator: a queen size {mattressA.name} is generally listed around ${mattressA.price}, compared to the ${mattressB.price} price tag of the {mattressB.name}. Evaluating your absolute priorities—whether it be upfront budget, specific orthopedic pain points, or thermal comfort needs—will ultimately guide you to the right choice. {comparison.verdict}</p>
+        </section>
+
+        <!-- Expert Verdict -->
+        <section class="glass-panel-heavy p-8 rounded-3xl border border-secondary/20">
+          <h2 class="text-headline-md font-headline-md text-primary italic mb-4">Expert Verdict</h2>
+          <p class="text-body-lg text-on-surface-variant leading-relaxed mb-6">{comparison.verdict}</p>
+          <div class="flex gap-3 flex-wrap">
+            <a href={mattressA.affiliateUrl} target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center bg-primary text-white px-6 py-3 rounded-full font-bold text-label-sm uppercase tracking-widest hover:bg-primary/90 transition-colors shadow-lg">
+              Check {mattressA.name} Price →
+            </a>
+            <a href={mattressB.affiliateUrl} target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center bg-primary text-white px-6 py-3 rounded-full font-bold text-label-sm uppercase tracking-widest hover:bg-primary/90 transition-colors shadow-lg">
+              Check {mattressB.name} Price →
+            </a>
+          </div>
+          <p class="text-xs text-on-surface-variant mt-3">PureSleep earns no commission and accepts no paid placements. Both links go directly to the manufacturer.</p>
         </section>
 
         <!-- FAQs -->

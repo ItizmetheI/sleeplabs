@@ -1,0 +1,26 @@
+---
+export interface Props {
+  dateModified: string;
+}
+
+const { dateModified } = Astro.props;
+
+const formattedDate = new Date(dateModified).toLocaleDateString('en-US', {
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric',
+});
+---
+
+<div class="flex flex-wrap gap-x-4 gap-y-2 items-center justify-center text-body-md text-on-surface-variant bg-surface px-6 py-3 rounded-full shadow-sm border border-outline-variant/30">
+  <span>
+    <strong class="text-on-background">Reviewed By:</strong>
+    <a href="/about/#testing-team" class="hover:text-secondary transition-colors">PureSleep Testing Team</a>
+  </span>
+  <span class="hidden md:inline-block w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+  <span><strong class="text-on-background">Last Updated:</strong> {formattedDate}</span>
+  <span class="hidden md:inline-block w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+  <a href="/methodology" class="text-secondary hover:text-primary underline underline-offset-4 font-bold transition-colors">Methodology</a>
+  <span class="hidden md:inline-block w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+  <a href="/disclosure" class="text-secondary hover:text-primary underline underline-offset-4 font-bold transition-colors">Disclosure</a>
+</div>

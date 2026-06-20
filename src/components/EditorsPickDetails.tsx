@@ -10,7 +10,7 @@ export default function EditorsPickDetails() {
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter relative z-10">
         <motion.div 
-          initial={{ opacity: 0, x: -30 }}
+          initial={false}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
@@ -27,7 +27,7 @@ export default function EditorsPickDetails() {
           </div>
         </motion.div>
         <motion.div 
-          initial={{ opacity: 0, x: 30 }}
+          initial={false}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}

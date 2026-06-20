@@ -1,6 +1,7 @@
 ---
 import { allMattresses } from '../../data/mattresses';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
 
 export function getStaticPaths() {
   return allMattresses.map(m => ({
@@ -93,12 +94,6 @@ const jsonLd = [
     }))
   }
 ];
-
-const formattedDateModified = new Date(mattress.dateModified).toLocaleDateString('en-US', {
-  month: 'long',
-  day: 'numeric',
-  year: 'numeric'
-});
 ---
 
 <BaseLayout
@@ -117,11 +112,7 @@ const formattedDateModified = new Date(mattress.dateModified).toLocaleDateString
       <h1 class="text-headline-lg font-headline-lg  text-primary font-bold">
         {mattress.name} Review (2026): Is It Worth {mattress.priceRange}?
       </h1>
-      <div class="flex flex-col md:flex-row gap-4 items-center justify-center text-body-md text-on-surface-variant bg-surface px-6 py-3 rounded-full shadow-sm border border-outline-variant/30">
-        <span><strong class="text-on-background">Reviewed By:</strong> PureSleep Testing Team</span>
-        <span class="hidden md:inline-block w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
-        <span><strong class="text-on-background">Last Updated:</strong> {formattedDateModified}</span>
-      </div>
+      <TrustSignals dateModified={mattress.dateModified} />
     </header>
 
     <!-- Hero Image -->
@@ -158,6 +149,37 @@ const formattedDateModified = new Date(mattress.dateModified).toLocaleDateString
     </ul>
   </div>
 </section>
+
+        <!-- Specs at a Glance -->
+        <section class="flex flex-col gap-4">
+          <h2 class="text-headline-sm font-headline-sm text-primary font-bold">Specs at a Glance</h2>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div class="glass-panel p-4 rounded-xl border border-outline-variant/20">
+              <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">Type</span>
+              <p class="font-bold text-on-surface mt-1 capitalize">{mattress.type.replace('-', ' ')}</p>
+            </div>
+            <div class="glass-panel p-4 rounded-xl border border-outline-variant/20">
+              <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">Firmness</span>
+              <p class="font-bold text-on-surface mt-1 capitalize">{mattress.firmness.replace('-', ' ')} ({mattress.firmnessScale}/10)</p>
+            </div>
+            <div class="glass-panel p-4 rounded-xl border border-outline-variant/20">
+              <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">Thickness</span>
+              <p class="font-bold text-on-surface mt-1">{mattress.thickness}</p>
+            </div>
+            <div class="glass-panel p-4 rounded-xl border border-outline-variant/20">
+              <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">Trial Period</span>
+              <p class="font-bold text-on-surface mt-1">{mattress.trialNights} Nights</p>
+            </div>
+            <div class="glass-panel p-4 rounded-xl border border-outline-variant/20">
+              <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">Warranty</span>
+              <p class="font-bold text-on-surface mt-1">{mattress.warrantyYears} Years</p>
+            </div>
+            <div class="glass-panel p-4 rounded-xl border border-outline-variant/20">
+              <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">Certifications</span>
+              <p class="font-bold text-on-surface mt-1">{mattress.certifications.join(', ')}</p>
+            </div>
+          </div>
+        </section>
 
         <!-- Quick Verdict Box -->
         <section class="glass-panel-heavy p-8 rounded-3xl border border-secondary/20 shadow-[0_8px_32px_rgba(37,99,235,0.05)]">
@@ -233,6 +255,20 @@ const formattedDateModified = new Date(mattress.dateModified).toLocaleDateString
           </div>
         </section>
 
+        <!-- How We Tested -->
+        <section class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-col gap-5">
+          <h2 class="text-headline-sm font-headline-sm text-primary font-bold">How We Tested This Mattress</h2>
+          <p class="text-body-md text-on-surface-variant leading-relaxed">
+            This review was evaluated hands-on by the PureSleep Testing Team using our standardized 7-metric scoring system: <strong class="text-on-surface">Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability</strong>. Every score on this page comes from our testing data — never from manufacturer claims, press releases, or third-party databases.
+          </p>
+          <p class="text-body-md text-on-surface-variant leading-relaxed">
+            PureSleep is an editorially independent review publication. We earn no commission from any links on this site and have no financial relationship with the brands we review.
+          </p>
+          <a href="/methodology" class="text-primary hover:text-secondary font-bold underline underline-offset-4 transition-colors text-body-md w-fit">
+            Read our full testing methodology →
+          </a>
+        </section>
+
         <!-- FAQs -->
         <section class="flex flex-col gap-6 mb-12">
           <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Frequently Asked Questions</h2>
@@ -254,14 +290,15 @@ const formattedDateModified = new Date(mattress.dateModified).toLocaleDateString
         </section>
         
       
-<!-- Final Verdict -->
+<!-- Expert Verdict -->
 <section class="glass-panel-heavy p-8 rounded-3xl border border-secondary/20">
-  <h2 class="text-headline-md font-headline-md text-primary italic mb-4">Final Verdict</h2>
+  <h2 class="text-headline-md font-headline-md text-primary italic mb-4">Expert Verdict</h2>
   <p class="text-body-lg text-on-surface-variant leading-relaxed mb-6">{mattress.verdict}</p>
   <a href={mattress.affiliateUrl} target="_blank" rel="noopener noreferrer"
     class="inline-flex items-center bg-primary text-white px-8 py-4 rounded-full font-bold text-label-sm uppercase tracking-widest hover:bg-primary/90 transition-colors shadow-lg">
     Check Latest Price →
   </a>
+  <p class="text-xs text-on-surface-variant mt-3">PureSleep earns no commission and accepts no paid placements. This link goes directly to the manufacturer.</p>
 </section>
 
         </article>
@@ -326,6 +363,7 @@ const formattedDateModified = new Date(mattress.dateModified).toLocaleDateString
              <a href={mattress.affiliateUrl} target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-primary hover:bg-primary/90 text-on-primary py-4 px-6 rounded-xl font-label-lg font-bold tracking-wide uppercase transition-colors shadow-lg">
                Check Latest Price
              </a>
+             <p class="text-xs text-on-surface-variant text-center mt-2">No commission earned. Link goes directly to the manufacturer.</p>
           </div>
         </div>
         

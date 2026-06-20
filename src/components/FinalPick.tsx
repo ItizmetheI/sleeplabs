@@ -10,7 +10,7 @@ export default function FinalPick() {
 
       <div className="max-w-4xl mx-auto flex flex-col items-center relative z-10">
          <motion.h3 
-           initial={{ opacity: 0, y: 20 }}
+           initial={false}
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
            className="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-4"
@@ -18,7 +18,7 @@ export default function FinalPick() {
            Our Highest-Rated Mattress
          </motion.h3>
          <motion.h2 
-           initial={{ opacity: 0, y: 20 }}
+           initial={false}
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
            transition={{ delay: 0.1 }}
@@ -28,7 +28,7 @@ export default function FinalPick() {
             The Amerisleep AS3 earns its spot at #1
          </motion.h2>
          <motion.p 
-           initial={{ opacity: 0, y: 20 }}
+           initial={false}
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
            transition={{ delay: 0.2 }}
@@ -37,7 +37,7 @@ export default function FinalPick() {
             Bio-Pur® plant memory foam runs measurably cooler than petroleum foam. HIVE® 5-zone support delivers lumbar alignment. 20-year warranty. 100-night trial. Five Amerisleep models — AS2, AS3, AS5, AS6, and Organica — cover every sleep type and budget.
          </motion.p>
          <motion.div 
-           initial={{ opacity: 0, y: 20 }}
+           initial={false}
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
            transition={{ delay: 0.3 }}
@@ -60,7 +60,7 @@ export default function FinalPick() {
          </motion.div>
 
          <motion.div 
-           initial={{ opacity: 0, scale: 0.95 }}
+           initial={false}
            whileInView={{ opacity: 1, scale: 1 }}
            viewport={{ once: true }}
            transition={{ delay: 0.4, duration: 0.6 }}

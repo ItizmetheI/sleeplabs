@@ -1,6 +1,6 @@
 ---
 import { topics } from '../../data/topics';
-import { mattresses, reviewer_drsmith } from '../../data/mattresses';
+import { mattresses, reviewer_editorial } from '../../data/mattresses';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export function getStaticPaths() {
@@ -25,11 +25,10 @@ const jsonLd = [
     "description": topic.description,
     "dateModified": topic.dateModified,
     "author": {
-      "@type": "Person",
-      "name": reviewer_drsmith.name,
-      "jobTitle": reviewer_drsmith.role,
-      "description": reviewer_drsmith.credentials,
-      "sameAs": reviewer_drsmith.sameAs,
+      "@type": "Organization",
+      "name": reviewer_editorial.name,
+      "description": reviewer_editorial.credentials,
+      "sameAs": reviewer_editorial.sameAs,
       "url": `${SITE_URL}/methodology/`
     },
     "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },

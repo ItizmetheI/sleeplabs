@@ -13,7 +13,7 @@ export default function UseCases() {
     <section className="py-stack-lg max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 gap-4 relative z-10">
         <motion.div
-           initial={{ opacity: 0, x: -20 }}
+           initial={false}
            whileInView={{ opacity: 1, x: 0 }}
            viewport={{ once: true }}
         >
@@ -26,7 +26,7 @@ export default function UseCases() {
         {categories.map((cat, idx) => (
           <motion.div 
             key={idx} 
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1, duration: 0.5 }}

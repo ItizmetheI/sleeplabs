@@ -254,7 +254,7 @@ const DesktopDropdownItem = ({ link }: { link: DropdownItem }) => {
       <AnimatePresence>
         {hovered && link.subItems && (
           <motion.div
-            initial={{ opacity: 0, x: -8 }}
+            initial={false}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -8 }}
             transition={{ duration: 0.18 }}
@@ -354,7 +354,7 @@ export default function TopNavBar({ currentPath = '/' }: { currentPath?: string 
                 <AnimatePresence>
                   {hoveredNav === item.label && item.columns && (
                     <motion.div
-                      initial={{ opacity: 0, y: -8 }}
+                      initial={false}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -8 }}
                       transition={{ duration: 0.18 }}
@@ -404,7 +404,7 @@ export default function TopNavBar({ currentPath = '/' }: { currentPath?: string 
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}

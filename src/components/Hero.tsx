@@ -13,14 +13,14 @@ export default function Hero() {
       <div className="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center relative z-10">
         {/* Left Col */}
         <motion.div 
-          initial={{ opacity: 0, x: -30 }} 
+          initial={false} 
           animate={{ opacity: 1, x: 0 }} 
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="md:col-span-7 flex flex-col gap-stack-md pr-0 md:pr-12"
         >
           <div className="inline-flex">
             <motion.span 
-              initial={{ opacity: 0, scale: 0.9 }} 
+              initial={false} 
               animate={{ opacity: 1, scale: 1 }} 
               transition={{ delay: 0.2, duration: 0.5 }}
               className="glass-panel text-secondary text-label-sm font-label-sm px-4 py-1.5 rounded-full uppercase tracking-wider font-bold"
@@ -57,7 +57,7 @@ export default function Hero() {
 
         {/* Right Col */}
         <motion.div 
-          initial={{ opacity: 0, y: 40 }} 
+          initial={false} 
           animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="md:col-span-5 relative mt-12 md:mt-0 flex flex-col gap-stack-md"
@@ -83,7 +83,7 @@ export default function Hero() {
 
           {/* Product Score Card */}
           <motion.div 
-            initial={{ opacity: 0, x: 20 }}
+            initial={false}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
             className="glass-panel-heavy rounded-3xl p-7 flex flex-col gap-stack-sm relative z-30 -mt-20 ml-8 lg:-ml-8 lg:-mt-16 border border-white"

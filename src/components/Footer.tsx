@@ -23,7 +23,9 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-4 items-center md:items-start">
             <h4 className="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Legal</h4>
-            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/methodology">Editorial Policy</a>
+            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/methodology">Methodology</a>
+            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/editorial-policy">Editorial Policy</a>
+            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/disclosure">Disclosure</a>
             <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/privacy-policy">Privacy Policy</a>
             <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/terms-of-service">Terms of Service</a>
           </div>
