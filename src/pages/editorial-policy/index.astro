@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+const lastUpdated = "2026-05-01";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Editorial Policy",
+    "url": `${SITE_URL}/editorial-policy/`,
+    "description": "PureSleep's editorial standards: how scores are produced, how brand coverage is decided, and what keeps reviews independent.",
+    "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL }
+  }
+];
+---
+
+<BaseLayout
+  title="Editorial Policy — PureSleep"
+  description="PureSleep's editorial standards: how scores are produced, how brand coverage is decided, and what keeps reviews independent."
+  canonicalUrl={`${SITE_URL}/editorial-policy/`}
+  lastUpdated={lastUpdated}
+  jsonLd={jsonLd}
+>
+  <main class="max-w-[760px] mx-auto px-margin-mobile md:px-0 py-16 relative z-10 flex flex-col gap-16">
+
+    <header class="flex flex-col gap-6">
+      <h1 class="text-headline-lg font-headline-lg text-primary font-bold">Editorial Policy</h1>
+      <p class="text-body-lg text-on-surface-variant leading-relaxed">
+        PureSleep is editorially independent: no commission, no paid placements, no affiliate relationships. This page lays out the standards behind every score and recommendation on the site.
+      </p>
+    </header>
+
+    <section class="flex flex-col gap-6">
+      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Our Standards</h2>
+      <div class="glass-panel p-8 rounded-3xl border border-white/60">
+        <ul class="flex flex-col gap-3 text-body-md text-on-surface-variant">
+          <li class="flex gap-3"><span class="text-secondary font-bold">—</span> We do not make medical claims. Mattresses address sleep comfort and support only, not health conditions.</li>
+          <li class="flex gap-3"><span class="text-secondary font-bold">—</span> PureSleep earns no commission and accepts no paid placements. Scores are editorially independent.</li>
+          <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Scores reflect hands-on testing, not manufacturer-provided data.</li>
+          <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Reviews are updated when product specifications change or on a regular re-evaluation cycle.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-6">
+      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">How Brand Coverage Is Decided</h2>
+      <div class="flex flex-col gap-4 text-body-md text-on-surface-variant leading-relaxed">
+        <p>Our 7-metric scoring system applies identically across all 58 models we cover: overall, value, edge support, trial period, response time, motion transfer, and cooling &amp; breathability. The same rubric means every model is genuinely comparable across brands.</p>
+        <p>Scores are finalized from hands-on testing before any product link is placed. No brand receives more favorable scoring because of its market position. Amerisleep wins categories where the data supports it; competitors lead where they do.</p>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-4">
+      <div class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-wrap gap-3">
+        <a href="/methodology" class="text-primary hover:text-secondary underline underline-offset-4 font-bold transition-colors">Read our full testing methodology →</a>
+        <span class="text-outline-variant hidden md:inline self-center">·</span>
+        <a href="/disclosure" class="text-primary hover:text-secondary underline underline-offset-4 font-bold transition-colors">Read our disclosure →</a>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

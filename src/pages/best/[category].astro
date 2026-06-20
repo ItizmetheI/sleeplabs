@@ -143,7 +143,10 @@ if (faqs.length > 0) {
               <span class="text-display-sm font-bold text-secondary">{winner.scores.overall}</span>
               <span class="text-on-surface-variant text-body-md">/ 10 Overall Score</span>
             </div>
-            <p class="text-body-md text-on-surface-variant leading-relaxed">{cat.winnerNote}</p>
+            <div>
+              <span class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Expert Verdict</span>
+              <p class="text-body-md text-on-surface-variant leading-relaxed mt-1">{cat.winnerNote}</p>
+            </div>
 
             <!-- Score grid -->
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -162,13 +165,16 @@ if (faqs.length > 0) {
               ))}
             </div>
 
-            <!-- Trial / warranty / firmness row -->
-            <div class="flex flex-wrap gap-4 text-body-sm text-on-surface-variant border-y border-outline-variant/20 py-3">
+            <!-- Specs at a Glance -->
+            <div class="flex flex-col gap-2 border-y border-outline-variant/20 py-3">
+              <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">Specs at a Glance</span>
+              <div class="flex flex-wrap gap-4 text-body-sm text-on-surface-variant">
               <span><strong class="text-on-surface">{winner.trialNights}-Night</strong> Trial</span>
               <span class="text-outline-variant">·</span>
               <span><strong class="text-on-surface">{winner.warrantyYears}-Year</strong> Warranty</span>
               <span class="text-outline-variant">·</span>
               <span><strong class="text-on-surface">{winner.firmness}</strong> ({winner.firmnessScale}/10)</span>
+              </div>
             </div>
 
             <div class="flex gap-3 flex-wrap">
@@ -269,7 +275,10 @@ if (faqs.length > 0) {
                   </div>
                 </div>
 
-                <p class="text-body-md text-on-surface-variant leading-relaxed">{m.verdict}</p>
+                <div>
+                  <span class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Expert Verdict</span>
+                  <p class="text-body-md text-on-surface-variant leading-relaxed mt-1">{m.verdict}</p>
+                </div>
 
                 <!-- Score bars (4 key metrics) -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -289,7 +298,8 @@ if (faqs.length > 0) {
                   ))}
                 </div>
 
-                <!-- Tags + Trial/Warranty -->
+                <!-- Specs at a Glance -->
+                <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">Specs at a Glance</span>
                 <div class="flex flex-wrap items-center gap-2">
                   <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider rounded-lg border border-primary/20">
                     {m.firmness} ({m.firmnessScale}/10)

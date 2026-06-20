@@ -17,7 +17,7 @@ export default function FindYourMatch() {
     <section className="py-stack-lg max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative">
       <div className="mb-12 max-w-2xl relative z-10">
         <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-display-lg font-display-lg text-primary  mb-4"
@@ -25,7 +25,7 @@ export default function FindYourMatch() {
           Find your match
         </motion.h2>
         <motion.h3 
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
@@ -34,7 +34,7 @@ export default function FindYourMatch() {
           Browse by Sleep Need
         </motion.h3>
         <motion.p 
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
@@ -49,7 +49,7 @@ export default function FindYourMatch() {
           <motion.a 
             key={need.num} 
             href={need.href} 
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.05, duration: 0.5 }}

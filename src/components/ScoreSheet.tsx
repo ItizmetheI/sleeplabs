@@ -46,7 +46,7 @@ export default function ScoreSheet() {
       
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mb-12"
@@ -73,7 +73,7 @@ export default function ScoreSheet() {
                 {rankings.map((item, index) => (
                   <motion.tr 
                     key={item.rank}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={false}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05, duration: 0.5 }}

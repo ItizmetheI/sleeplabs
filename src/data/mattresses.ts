@@ -59,9 +59,6 @@ export const reviewer_editorial: Reviewer = {
   sameAs: ["https://puresleep.com/methodology/"]
 };
 
-// Alias for backwards compatibility with any remaining imports
-export const reviewer_drsmith = reviewer_editorial;
-
 export const mattresses: Mattress[] = [
   {
     id: "amerisleep-as3",
