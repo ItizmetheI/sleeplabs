@@ -4,12 +4,12 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import node from '@astrojs/node';
 
+import cloudflare from "@astrojs/cloudflare";
+
 export default defineConfig({
   site: process.env.SITE_URL || 'https://puresleep.com',
   output: 'static',
-  adapter: node({
-    mode: 'standalone',
-  }),
+  adapter: cloudflare(),
   integrations: [
     react(),
     sitemap({
