@@ -92,6 +92,12 @@ const topPicks = [
   },
 ];
 
+// Scores must come from the tested dataset, not be hand-typed — keep them in sync automatically.
+topPicks.forEach(pick => {
+  const real = allMattresses.find(m => m.id === pick.id);
+  if (real) pick.score = real.scores.overall;
+});
+
 const comparisons = [
   { label: "AS3 vs Saatva Classic", href: "/comparison/amerisleep-as3-vs-saatva-classic", desc: "Plant-based foam vs luxury innerspring. Which wins for most sleepers?" },
   { label: "AS3 vs Purple RestorePlus", href: "/comparison/amerisleep-as3-vs-purple-restoreplus-hybrid", desc: "HIVE® zoning vs Grid technology. Which cools and contours better?" },

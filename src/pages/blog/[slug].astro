@@ -17,6 +17,9 @@ if ((post as any).redirectTo) {
 
 const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
 
+const HEALTH_TOPICS = ['pain-and-health', 'back-pain', 'hip-pain', 'shoulder-pain', 'sciatica', 'arthritis', 'fibromyalgia'];
+const isHealthAdjacent = HEALTH_TOPICS.includes(post.category) || (post.tags ?? []).some((t: string) => HEALTH_TOPICS.includes(t));
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": post.schemaType === 'HowTo' ? 'HowTo' : 'Article',
@@ -143,6 +146,12 @@ const formatProse = (text: string) => {
       <p class="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-2 font-bold">Quick Answer</p>
       <p class="text-body-lg text-on-background leading-relaxed">{post.directAnswer}</p>
     </div>
+
+    {isHealthAdjacent && (
+      <div class="bg-amber-50 border border-amber-300 rounded-2xl p-5 mb-8 text-body-md text-amber-900">
+        <strong>Note:</strong> No mattress can diagnose, treat, or cure any health condition. This article is for general comfort and sleep-product information only — talk to a doctor about pain or medical concerns.
+      </div>
+    )}
 
     <!-- Byline & Social Share -->
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 pb-8 border-b border-outline-variant/30">

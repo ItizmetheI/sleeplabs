@@ -139,7 +139,7 @@ export const mattresses: Mattress[] = [
     faqs: [
       {
         question: "Is the Amerisleep AS3 good for side sleepers?",
-        answer: "Yes. The AS3's medium firmness (5/10) and HIVE® zoned support are specifically optimized for side sleepers. The shoulder zone has softer hexagonal cutouts to reduce pressure at the shoulder joint, while the hip zone is firmer to maintain spinal alignment. Our testing team rated it 9.3/10 for pressure relief in side sleeping position across testers of varied body weights."
+        answer: "Yes. The AS3's medium firmness (5/10) and HIVE® zoned support are specifically optimized for side sleepers. The shoulder zone has softer hexagonal cutouts to reduce pressure at the shoulder joint, while the hip zone is firmer to maintain spinal alignment. Our testing team evaluated it across testers of varied body weights in the side sleeping position."
       },
       {
         question: "How does Bio-Pur® foam differ from regular memory foam?",
@@ -281,18 +281,18 @@ export const mattresses: Mattress[] = [
     bestFor: ["Side Sleepers", "Shoulder Pain", "Hip Pain", "Light Sleepers", "Pressure Relief"],
     tags: ["memory-foam", "soft", "pressure-relief", "side-sleepers", "shoulder-pain", "hip-pain"],
     pros: [
-      "Maximum pressure relief in the lineup — 9.8/10 in our hands-on pressure testing",
+      "Softest feel in the lineup (3/10), designed to maximize pressure relief for side sleepers",
       "Active Flex layer adds bounce, preventing the 'stuck' feeling of soft foam",
       "14-inch profile is the tallest in the AS lineup",
       "4-layer construction with dedicated transition foam for better support than typical soft mattresses",
-      "Outstanding motion isolation (9.4/10) for light sleeper couples"
+      "Strong motion transfer score (9/10) for light sleeper couples"
     ],
     cons: [
       "Soft feel (3/10) not suitable for back or stomach sleepers",
       "Most expensive AS foam model",
       "Lighter sleepers under 130 lbs may find it too soft"
     ],
-    summary: "The Amerisleep AS5 is the softest and tallest mattress in the lineup at 14 inches with a soft feel (3/10). The exclusive Active Flex layer adds responsive bounce to prevent the heavy sinking feel common in soft foam mattresses. Pressure relief scored 9.8/10 — the highest of any Amerisleep model — making it our top recommendation for side sleepers with shoulder or hip pain.",
+    summary: "The Amerisleep AS5 is the softest and tallest mattress in the lineup at 14 inches with a soft feel (3/10). The exclusive Active Flex layer adds responsive bounce to prevent the heavy sinking feel common in soft foam mattresses. Its soft feel and thick comfort layers make it our top recommendation for side sleepers who want maximum pressure relief.",
     verdict: "Best Amerisleep mattress for side sleepers and those with shoulder or hip pressure pain.",
     layers: [
       {
@@ -379,18 +379,17 @@ export const mattresses: Mattress[] = [
     bestFor: ["Luxury Sleepers", "Hot Sleepers", "Couples", "Back Sleepers", "Combination Sleepers", "Heavy Sleepers"],
     tags: ["hybrid", "luxury", "cooling", "edge-support", "couples", "premium"],
     pros: [
-      "Highest overall score (9.7/10) in the entire Amerisleep lineup",
-      "Pocketed coil base adds bounce, airflow, and best-in-class edge support (9.6/10)",
+      "Top overall score (10/10), tied with the AS3 for the highest in the Amerisleep lineup",
+      "Pocketed coil base adds bounce, airflow, and strong edge support (9/10)",
       "15-inch profile — the tallest and most substantial Amerisleep mattress",
-      "Superior cooling from coil airflow plus Bio-Pur® open-cell foam (9.4/10)",
+      "Excellent cooling from coil airflow plus Bio-Pur® open-cell foam (10/10)",
       "Named best recovery mattress by Mashable, best memory foam by Newsweek"
     ],
     cons: [
       "Highest price in the lineup — significant investment",
-      "Heavier than all-foam models — harder to set up solo",
-      "Hybrid construction is slightly less effective for motion isolation than pure foam (9.0 vs 9.1 for AS3)"
+      "Heavier than all-foam models — harder to set up solo"
     ],
-    summary: "The Amerisleep AS6 Black Series is the flagship of the lineup — a 15-inch luxury hybrid combining Bio-Pur® plant foam with a pocketed coil support base. The coil layer adds exceptional edge support (9.6/10), superior airflow for cooling (9.4/10), and a responsive bounce that all-foam models can't match. Named best recovery mattress by Mashable and best memory foam by Newsweek.",
+    summary: "The Amerisleep AS6 Black Series is the flagship of the lineup — a 15-inch luxury hybrid combining Bio-Pur® plant foam with a pocketed coil support base. The coil layer adds strong edge support (9/10), excellent airflow for cooling (10/10), and a responsive bounce that all-foam models can't match. Named best recovery mattress by Mashable and best memory foam by Newsweek.",
     verdict: "The pinnacle of the Amerisleep lineup — the best-performing mattress for couples, hot sleepers, and luxury seekers.",
     layers: [
       {
@@ -435,11 +434,11 @@ export const mattresses: Mattress[] = [
     faqs: [
       {
         question: "What makes the AS6 different from the AS3?",
-        answer: "The fundamental difference is construction type. The AS3 is an all-foam mattress; the AS6 is a hybrid with a pocketed coil base. This gives the AS6 better edge support (9.6 vs 8.5), better cooling (9.4 vs 8.8 due to coil airflow), more responsiveness (9.3 vs 8.2), and a taller 15\" profile vs 12\". The tradeoff is cost — the AS6 starts at $2,399 vs $999 for the AS3."
+        answer: "The fundamental difference is construction type, not test scores — the two are tied on Overall (10/10), Cooling (10/10), and Motion Transfer (10/10), and the AS3 actually scores higher on Edge Support (10/10 vs 9/10). The AS3 is an all-foam mattress; the AS6 is a hybrid with a pocketed coil base, giving it a bouncier feel and a taller 15\" profile vs 12\". The tradeoff is cost — the AS6 starts at $2,399 vs $999 for the AS3."
       },
       {
         question: "Is the AS6 good for hot sleepers?",
-        answer: "Yes — it's our top Amerisleep pick for hot sleepers. The pocketed coil base creates a large air chamber beneath the foam layers, continuously circulating cool air. Combined with the Bio-Pur® open-cell foam and Refresh cover, the AS6 scored 9.4/10 for cooling — our highest in the lineup."
+        answer: "Yes — it's one of our top Amerisleep picks for hot sleepers. The pocketed coil base creates a large air chamber beneath the foam layers, continuously circulating cool air. Combined with the Bio-Pur® open-cell foam and Refresh cover, the AS6 scored 10/10 for cooling & breathability — tied with the AS3 for the highest in the lineup."
       },
       {
         question: "Why is it called the Black Series?",
@@ -478,8 +477,8 @@ export const mattresses: Mattress[] = [
     pros: [
       "100% GOTS certified organic cotton cover and GOLS certified organic latex",
       "Natural latex is inherently hypoallergenic, antimicrobial, and dust-mite resistant",
-      "Best cooling in the lineup (9.5/10) — organic wool wicks moisture, latex breathes",
-      "Most responsive mattress in the lineup (9.6/10) — latex bounces back instantly",
+      "Strong cooling (9/10) — organic wool wicks moisture, latex breathes",
+      "Tied for the fastest response time in the lineup (10/10) — latex bounces back instantly",
       "Organic wool fire barrier eliminates chemical fire retardants",
       "Rainforest Alliance certified — responsibly sourced materials"
     ],
@@ -488,7 +487,7 @@ export const mattresses: Mattress[] = [
       "Heavier than all-foam models due to latex and coil construction",
       "Not available in Twin or Split King sizes"
     ],
-    summary: "The Amerisleep Organica is the fully natural option in the lineup — GOTS certified organic cotton, GOLS certified organic latex, and organic wool, all over a pocketed coil support system. No synthetic foams, no petroleum-based materials. At 13 inches with a medium feel, it scores the best for cooling (9.5/10) and responsiveness (9.6/10) of any Amerisleep mattress, making it ideal for eco-conscious shoppers and hot sleepers.",
+    summary: "The Amerisleep Organica is the fully natural option in the lineup — GOTS certified organic cotton, GOLS certified organic latex, and organic wool, all over a pocketed coil support system. No synthetic foams, no petroleum-based materials. At 13 inches with a medium feel, it scores 9/10 for cooling & breathability and 10/10 for response time, making it a strong choice for eco-conscious shoppers and hot sleepers.",
     verdict: "The best Amerisleep mattress for eco-conscious shoppers and those who prefer natural latex over memory foam.",
     layers: [
       {
@@ -536,7 +535,7 @@ export const mattresses: Mattress[] = [
       },
       {
         question: "How does latex feel compared to memory foam?",
-        answer: "Latex feels noticeably different from memory foam. Where memory foam slowly contours and has a 'hug' feel, latex bounces back instantly and has a buoyant, springy quality. You float on top of latex rather than sinking into it. The Organica scored 9.6/10 for responsiveness — the highest in our lineup — vs 8.2 for the AS3. Most sleepers find the adjustment period is 1-2 weeks."
+        answer: "Latex feels noticeably different from memory foam. Where memory foam slowly contours and has a 'hug' feel, latex bounces back instantly and has a buoyant, springy quality. You float on top of latex rather than sinking into it. The Organica scored 10/10 for response time — tied for the highest in our lineup — vs 9/10 for the AS3. Most sleepers find the adjustment period is 1-2 weeks."
       },
       {
         question: "Is the Organica good for allergy sufferers?",

@@ -36,7 +36,9 @@ const jsonLd = [
       "url": SITE_URL
     },
     "image": mattress.heroImage,
-    "mainEntityOfPage": `${SITE_URL}/reviews/${mattress.id}`
+    "mainEntityOfPage": `${SITE_URL}/reviews/${mattress.id}`,
+    "isPartOf": { "@type": "CollectionPage", "name": "PureSleep Reviews", "url": `${SITE_URL}/reviews/` },
+    "about": { "@type": "Article", "name": "PureSleep Testing Methodology", "url": `${SITE_URL}/methodology/` }
   },
   {
     "@context": "https://schema.org",

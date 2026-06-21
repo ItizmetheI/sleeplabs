@@ -1,8 +1,11 @@
 import { Star, StarHalf } from 'lucide-react';
 import { motion } from 'motion/react';
 import heroImg from '../assets/images/regenerated_image_1780219880901.png';
+import { mattresses } from '../data/mattresses';
 
 export default function Hero() {
+  const as3 = mattresses.find(m => m.id === 'amerisleep-as3')!;
+
   return (
     <header className="relative pt-[100px] pb-[100px] px-margin-mobile md:px-margin-desktop overflow-hidden">
       {/* Specific Hero liquid background blobs to ensure extra brightness here */}
@@ -106,11 +109,11 @@ export default function Hero() {
             {/* Stats Grid */}
             <div className="grid grid-cols-4 gap-3 mt-4 text-center">
               <div className="flex flex-col bg-white/80 shadow-sm border border-outline-variant/30 p-3 rounded-2xl transition-transform hover:scale-105">
-                <span className="text-headline-md font-headline-md text-primary font-bold">9.5</span>
+                <span className="text-headline-md font-headline-md text-primary font-bold">{as3.scores.overall}</span>
                 <span className="text-[10px] font-label-sm uppercase tracking-wider text-on-surface-variant mt-1">Overall</span>
               </div>
               <div className="flex flex-col bg-white/80 shadow-sm border border-outline-variant/30 p-3 rounded-2xl transition-transform hover:scale-105">
-                <span className="text-headline-md font-headline-md text-secondary font-bold">100</span>
+                <span className="text-headline-md font-headline-md text-secondary font-bold">{as3.trialNights}</span>
                 <span className="text-[10px] font-label-sm uppercase tracking-wider text-on-surface-variant mt-1">Night Trial</span>
               </div>
               <div className="flex flex-col bg-white/80 shadow-sm border border-outline-variant/30 p-3 rounded-2xl transition-transform hover:scale-105">
@@ -118,33 +121,33 @@ export default function Hero() {
                 <span className="text-[10px] font-label-sm uppercase tracking-wider text-on-surface-variant mt-1">Models</span>
               </div>
               <div className="flex flex-col bg-white/80 shadow-sm border border-outline-variant/30 p-3 rounded-2xl transition-transform hover:scale-105">
-                <span className="text-headline-md font-headline-md text-primary font-bold">20</span>
+                <span className="text-headline-md font-headline-md text-primary font-bold">{as3.warrantyYears}</span>
                 <span className="text-[10px] font-label-sm uppercase tracking-wider text-on-surface-variant mt-1">Years</span>
               </div>
             </div>
 
-            {/* Rating Bars */}
+            {/* Rating Bars — real 7-metric scores, not invented numbers */}
             <div className="flex flex-col gap-3.5 mt-5">
-              <div className="flex items-center justify-between">
-                <span className="text-label-sm font-label-sm w-28 text-on-surface-variant">Support</span>
-                <div className="flex-grow mx-4 h-1.5 bg-outline-variant/40 rounded-full overflow-hidden">
-                  <motion.div initial={{ width: 0 }} animate={{ width: '96%' }} transition={{ delay: 1, duration: 1 }} className="bg-tertiary h-full rounded-full shadow-[0_0_10px_rgba(251,191,36,0.5)]"></motion.div>
-                </div>
-                <span className="text-label-sm font-label-sm text-primary font-bold">9.6</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-label-sm font-label-sm w-28 text-on-surface-variant">Pressure Relief</span>
-                <div className="flex-grow mx-4 h-1.5 bg-outline-variant/40 rounded-full overflow-hidden">
-                  <motion.div initial={{ width: 0 }} animate={{ width: '93%' }} transition={{ delay: 1.1, duration: 1 }} className="bg-tertiary h-full rounded-full shadow-[0_0_10px_rgba(251,191,36,0.5)]"></motion.div>
-                </div>
-                <span className="text-label-sm font-label-sm text-primary font-bold">9.3</span>
-              </div>
               <div className="flex items-center justify-between">
                 <span className="text-label-sm font-label-sm w-28 text-on-surface-variant">Edge Support</span>
                 <div className="flex-grow mx-4 h-1.5 bg-outline-variant/40 rounded-full overflow-hidden">
-                  <motion.div initial={{ width: 0 }} animate={{ width: '85%' }} transition={{ delay: 1.2, duration: 1 }} className="bg-tertiary h-full rounded-full shadow-[0_0_10px_rgba(251,191,36,0.5)]"></motion.div>
+                  <motion.div initial={{ width: 0 }} animate={{ width: `${as3.scores.edgeSupport * 10}%` }} transition={{ delay: 1, duration: 1 }} className="bg-tertiary h-full rounded-full shadow-[0_0_10px_rgba(251,191,36,0.5)]"></motion.div>
                 </div>
-                <span className="text-label-sm font-label-sm text-primary font-bold">8.5</span>
+                <span className="text-label-sm font-label-sm text-primary font-bold">{as3.scores.edgeSupport}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-label-sm font-label-sm w-28 text-on-surface-variant">Cooling</span>
+                <div className="flex-grow mx-4 h-1.5 bg-outline-variant/40 rounded-full overflow-hidden">
+                  <motion.div initial={{ width: 0 }} animate={{ width: `${as3.scores.coolingBreathability * 10}%` }} transition={{ delay: 1.1, duration: 1 }} className="bg-tertiary h-full rounded-full shadow-[0_0_10px_rgba(251,191,36,0.5)]"></motion.div>
+                </div>
+                <span className="text-label-sm font-label-sm text-primary font-bold">{as3.scores.coolingBreathability}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-label-sm font-label-sm w-28 text-on-surface-variant">Value</span>
+                <div className="flex-grow mx-4 h-1.5 bg-outline-variant/40 rounded-full overflow-hidden">
+                  <motion.div initial={{ width: 0 }} animate={{ width: `${as3.scores.value * 10}%` }} transition={{ delay: 1.2, duration: 1 }} className="bg-tertiary h-full rounded-full shadow-[0_0_10px_rgba(251,191,36,0.5)]"></motion.div>
+                </div>
+                <span className="text-label-sm font-label-sm text-primary font-bold">{as3.scores.value}</span>
               </div>
             </div>
 

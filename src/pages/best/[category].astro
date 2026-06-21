@@ -105,9 +105,15 @@ if (faqs.length > 0) {
         <span class="hidden md:inline text-outline-variant">·</span>
         <span><strong class="text-on-surface">Updated:</strong> June 2026</span>
         <span class="hidden md:inline text-outline-variant">·</span>
-        <span>58 models tested across 24 brands</span>
+        <span>58 models tested across 23 brands</span>
       </div>
     </header>
+
+    {['back-pain', 'hip-pain', 'shoulder-pain'].includes(category) && (
+      <div class="bg-amber-50 border border-amber-300 rounded-2xl p-5 text-body-md text-amber-900">
+        <strong>Note:</strong> No mattress can diagnose, treat, or cure any health condition. This page is for general comfort and sleep-product information only — talk to a doctor about pain or medical concerns.
+      </div>
+    )}
 
     <!-- Trust bar -->
     <div class="flex flex-wrap gap-3">

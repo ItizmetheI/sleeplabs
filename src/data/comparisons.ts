@@ -30,9 +30,9 @@ export const comparisons: Comparison[] = [
       { category: "Side Sleepers", winnerId: "amerisleep-as3", reason: "Softer 3\" comfort layer relieves shoulder and hip pressure better than the AS2's 2\" layer." },
       { category: "Back Sleepers", winnerId: "amerisleep-as2", reason: "Medium-firm (6/10) prevents lumbar sinkage that strains the lower back." },
       { category: "Stomach Sleepers", winnerId: "amerisleep-as2", reason: "Firmer feel keeps hips elevated to maintain spinal alignment." },
-      { category: "Back Pain (Support)", winnerId: "amerisleep-as2", reason: "Higher support score (9.7 vs 9.6) with firmer feel prevents the hip sinkage that causes lower back pain." },
+      { category: "Back Pain (Firm Support)", winnerId: "amerisleep-as2", reason: "Medium-firm (6/10) feel keeps the hips elevated and reduces the sinkage that can aggravate lower back pain." },
       { category: "Best Value", winnerId: "amerisleep-as2", reason: "Lower starting price ($799 vs $999) with the same core technology." },
-      { category: "Pressure Relief", winnerId: "amerisleep-as3", reason: "Thicker comfort layer and softer feel scores 9.3/10 vs 8.8/10 for the AS2." }
+      { category: "Pressure Relief", winnerId: "amerisleep-as3", reason: "Thicker 3-inch comfort layer and softer (5/10) feel cushions shoulders and hips more than the AS2's 2-inch layer." }
     ],
     faqs: [
       {
@@ -62,12 +62,12 @@ export const comparisons: Comparison[] = [
     verdict: "The AS3 wins for most sleepers due to its versatile medium feel. The AS5 wins specifically for side sleepers with shoulder or hip pain, or anyone who sleeps predominantly on their side and prefers a plush, cloud-like surface.",
     dateModified: "2026-05-01",
     winnerFor: [
-      { category: "Side Sleepers (Pressure Pain)", winnerId: "amerisleep-as5", reason: "Maximum pressure relief score (9.8/10) — best in the entire lineup for shoulder and hip pain." },
+      { category: "Side Sleepers (Pressure Relief)", winnerId: "amerisleep-as5", reason: "Soft feel (3/10) and thick comfort layers are designed to cushion shoulders and hips for side sleepers." },
       { category: "Back Sleepers", winnerId: "amerisleep-as3", reason: "Medium feel maintains spinal alignment; AS5's soft feel can cause lumbar sinkage for back sleepers." },
       { category: "Combination Sleepers", winnerId: "amerisleep-as3", reason: "Medium feel suits both side and back positions; AS5 is too soft for back sleeping." },
-      { category: "Responsiveness", winnerId: "amerisleep-as5", reason: "Active Flex layer in the AS5 adds bounce, making position changes easier despite the soft feel (8.8 vs 8.2)." },
+      { category: "Response Time", winnerId: "amerisleep-as3", reason: "AS3 scores higher for response time (9/10 vs 8/10) — the firmer feel returns to shape faster." },
       { category: "Value", winnerId: "amerisleep-as3", reason: "Lower price ($999 vs $1,599 queen) for a more versatile mattress." },
-      { category: "Motion Isolation", winnerId: "amerisleep-as5", reason: "Deeper comfort layers absorb more motion (9.4 vs 9.1)." }
+      { category: "Motion Transfer", winnerId: "amerisleep-as3", reason: "AS3 scores higher for motion transfer (10/10 vs 9/10) — less movement carries across the bed." }
     ],
     faqs: [
       {
@@ -90,24 +90,22 @@ export const comparisons: Comparison[] = [
     mattressBId: "amerisleep-as6",
     title: "Amerisleep AS3 vs AS6 Black Series",
     description: "All-foam vs hybrid — the AS3 and AS6 share DNA but differ fundamentally in construction and performance.",
-    verdict: "The AS3 wins on value and motion isolation. The AS6 wins on every performance metric — edge support, cooling, responsiveness, and overall score — making it the right choice for those who can invest in the flagship.",
+    verdict: "These two are closer on tested performance than the price gap suggests — the AS3 actually edges out the AS6 on edge support, and the two are tied on Overall, Cooling, and Motion Transfer. The real difference is construction and feel: the AS6 is a luxury hybrid with pocketed coils for a taller, bouncier build, while the AS3 matches it on nearly every tested metric at well under half the price.",
     dateModified: "2026-05-01",
     winnerFor: [
-      { category: "Overall Score", winnerId: "amerisleep-as6", reason: "9.7 vs 9.5 — the highest-scoring mattress in the lineup." },
-      { category: "Cooling", winnerId: "amerisleep-as6", reason: "Pocketed coil airflow chamber scores 9.4 vs 8.8 for the all-foam AS3." },
-      { category: "Edge Support", winnerId: "amerisleep-as6", reason: "Pocketed coil perimeter scores 9.6 vs 8.5 — significant real-world difference for couples." },
-      { category: "Value", winnerId: "amerisleep-as3", reason: "$999 vs $2,399 — the AS3 delivers 97% of the performance at 42% of the cost." },
-      { category: "Motion Isolation", winnerId: "amerisleep-as3", reason: "All-foam construction absorbs motion better (9.1 vs 9.0) — though the difference is minimal." },
-      { category: "Hot Sleepers", winnerId: "amerisleep-as6", reason: "Coil airflow makes it measurably cooler for those who sleep especially warm." }
+      { category: "Edge Support", winnerId: "amerisleep-as3", reason: "AS3 scores higher for edge support (10/10 vs 9/10)." },
+      { category: "Value", winnerId: "amerisleep-as3", reason: "$999 vs $2,399 — the AS3 matches the AS6 on Overall, Cooling, and Motion Transfer at well under half the price." },
+      { category: "Couples Wanting a Bouncier Feel", winnerId: "amerisleep-as6", reason: "Pocketed coil construction gives a bouncier, more responsive feel that some couples prefer over all-foam." },
+      { category: "Tallest Profile", winnerId: "amerisleep-as6", reason: "15 inches vs 12 inches for the AS3 — a noticeably taller, more substantial-feeling mattress." }
     ],
     faqs: [
       {
         question: "Is the AS6 worth the extra $1,400 over the AS3?",
-        answer: "It depends on your priorities. If cooling, edge support, and bounce are important — especially for couples or hot sleepers — the AS6's coil-based construction delivers measurably better performance (9.7 vs 9.5 overall). If value is the priority and you don't sleep especially hot, the AS3 delivers exceptional performance for $999. Most people choose the AS3; those who upgrade to the AS6 consistently rate it higher."
+        answer: "Only if you specifically want the hybrid coil feel or the taller 15-inch profile — on our tested metrics the two are tied on Overall, Cooling, and Motion Transfer, and the AS3 actually scores higher on Edge Support. The AS6's case is construction and feel, not a higher score. Most people choose the AS3 for that reason; those who upgrade to the AS6 are usually after the bouncier hybrid feel specifically."
       },
       {
         question: "Which is better for couples?",
-        answer: "The AS6 is better for couples for two reasons: edge support (9.6/10 means both partners can sleep to the full edge without roll-off) and cooling (coil airflow keeps both partners cooler). The only advantage the AS3 has is marginally better motion isolation (9.1 vs 9.0), but both are excellent."
+        answer: "It comes down to feel, not test scores — the two are tied on Motion Transfer (10/10 each) and Cooling (10/10 each), and the AS3 actually scores higher on Edge Support (10/10 vs 9/10). Couples who want a bouncier, more substantial hybrid feel tend to prefer the AS6; couples who want the classic all-foam feel at a lower price tend to prefer the AS3."
       },
       {
         question: "Does the AS6 feel like a foam mattress or a coil mattress?",
@@ -125,11 +123,11 @@ export const comparisons: Comparison[] = [
     dateModified: "2026-05-01",
     winnerFor: [
       { category: "Eco-Conscious / Natural Materials", winnerId: "amerisleep-organica", reason: "GOTS, GOLS, and Rainforest Alliance certified. No synthetic foams, no petroleum materials." },
-      { category: "Cooling", winnerId: "amerisleep-organica", reason: "9.5 vs 8.8 — organic wool moisture wicking plus latex breathability outperforms foam." },
-      { category: "Responsiveness / Bounce", winnerId: "amerisleep-organica", reason: "9.6 vs 8.2 — natural latex bounces back instantly vs memory foam's slow response." },
+      { category: "Cooling", winnerId: "amerisleep-as3", reason: "AS3 scores higher for cooling & breathability (10/10 vs 9/10) — Bio-Pur® open-cell foam edges out the latex build here." },
+      { category: "Response Time", winnerId: "amerisleep-organica", reason: "Organica scores higher for response time (10/10 vs 9/10) — natural latex bounces back faster than memory foam." },
       { category: "Allergy Sufferers", winnerId: "amerisleep-organica", reason: "Natural latex is inherently hypoallergenic, antimicrobial, and dust-mite resistant without chemical treatments." },
       { category: "Value", winnerId: "amerisleep-as3", reason: "$999 vs $1,199 queen, plus broader size availability including Twin." },
-      { category: "Motion Isolation", winnerId: "amerisleep-as3", reason: "All-foam construction absorbs motion better (9.1 vs 8.7) — relevant for light sleeper couples." }
+      { category: "Motion Transfer", winnerId: "amerisleep-as3", reason: "AS3 scores higher for motion transfer (10/10 vs 9/10) — relevant for light sleeper couples." }
     ],
     faqs: [
       {
@@ -152,12 +150,12 @@ export const comparisons: Comparison[] = [
     mattressBId: "amerisleep-as5",
     title: "Amerisleep AS2 vs AS5",
     description: "The firmest vs the softest in the Amerisleep foam lineup — opposite ends of the comfort spectrum.",
-    verdict: "These two mattresses serve opposite sleep needs. The AS2 is for back and stomach sleepers who need firm support. The AS5 is for side sleepers who need maximum pressure relief. There is minimal overlap in ideal users.",
+    verdict: "These two mattresses serve opposite sleep needs. The AS2 is for back and stomach sleepers who need firm support. The AS5 is for side sleepers who prefer a soft, pressure-relieving feel. There is minimal overlap in ideal users.",
     dateModified: "2026-05-01",
     winnerFor: [
-      { category: "Back Sleepers", winnerId: "amerisleep-as2", reason: "Medium-firm (6/10) maintains lumbar alignment; AS5's soft feel (3/10) allows harmful hip sinkage for back sleepers." },
-      { category: "Stomach Sleepers", winnerId: "amerisleep-as2", reason: "Firmer feel keeps hips elevated. AS5 is completely unsuitable for stomach sleeping." },
-      { category: "Side Sleepers (Pressure Pain)", winnerId: "amerisleep-as5", reason: "Maximum pressure relief score (9.8/10) specifically targets shoulder and hip pain." },
+      { category: "Back Sleepers", winnerId: "amerisleep-as2", reason: "Medium-firm (6/10) maintains lumbar alignment; AS5's soft feel (3/10) allows more hip sinkage for back sleepers." },
+      { category: "Stomach Sleepers", winnerId: "amerisleep-as2", reason: "Firmer feel keeps hips elevated. AS5 is not recommended for stomach sleeping." },
+      { category: "Side Sleepers (Pressure Relief)", winnerId: "amerisleep-as5", reason: "Soft feel (3/10) and thick comfort layers are designed to cushion shoulders and hips for side sleepers." },
       { category: "Heavier Sleepers (230+ lbs)", winnerId: "amerisleep-as2", reason: "Firmer feel and thicker base core prevents excessive sinkage at higher body weights." },
       { category: "Value", winnerId: "amerisleep-as2", reason: "$799 vs $1,599 queen — significant price difference for opposite use cases." }
     ],
@@ -182,13 +180,13 @@ export const comparisons: Comparison[] = [
     mattressBId: "amerisleep-organica",
     title: "Amerisleep AS6 vs Organica",
     description: "Two hybrid mattresses at the premium tier — synthetic foam vs natural latex, compared in detail.",
-    verdict: "The AS6 wins on overall performance score and is better for hot sleepers and luxury seekers. The Organica wins for eco-conscious buyers and those who specifically prefer natural materials and the responsive feel of latex.",
+    verdict: "The AS6 scores higher overall and is better for hot sleepers; edge support is actually tied between the two. The Organica wins for eco-conscious buyers and those who specifically prefer natural materials and the responsive feel of latex.",
     dateModified: "2026-05-01",
     winnerFor: [
-      { category: "Overall Score", winnerId: "amerisleep-as6", reason: "9.7 vs 9.3 — the AS6 leads in support, pressure relief, and edge support." },
+      { category: "Overall Score", winnerId: "amerisleep-as6", reason: "AS6 scores higher overall (10/10 vs 9/10)." },
       { category: "Natural / Organic Materials", winnerId: "amerisleep-organica", reason: "GOTS, GOLS, Rainforest Alliance certified. No synthetic foams whatsoever." },
-      { category: "Responsiveness", winnerId: "amerisleep-organica", reason: "Natural latex bounces back faster (9.6 vs 9.3)." },
-      { category: "Edge Support", winnerId: "amerisleep-as6", reason: "Reinforced coil perimeter scores 9.6 vs 9.0 for the Organica." },
+      { category: "Response Time", winnerId: "amerisleep-organica", reason: "Natural latex bounces back faster (10/10 vs 9/10)." },
+      { category: "Cooling", winnerId: "amerisleep-as6", reason: "Coil airflow chamber scores higher for cooling & breathability (10/10 vs 9/10)." },
       { category: "Allergy Sufferers", winnerId: "amerisleep-organica", reason: "Natural latex is inherently hypoallergenic; organic cotton and wool are chemical-free." }
     ],
     faqs: [
@@ -198,7 +196,7 @@ export const comparisons: Comparison[] = [
       },
       {
         question: "Which is better for a couple where one partner sleeps hot?",
-        answer: "Both are excellent for hot sleepers due to their hybrid construction. The AS6 has a slight edge in our cooling tests (9.4 vs 9.5 for the Organica), but the difference is minimal. The deciding factor should be feel preference: memory foam (AS6) vs natural latex (Organica)."
+        answer: "The AS6 scores higher in our cooling tests (10/10 vs 9/10 for the Organica) thanks to its coil airflow chamber, though both perform well. The deciding factor should be feel preference: memory foam (AS6) vs natural latex (Organica)."
       },
       {
         question: "Does the Organica smell when unpacked?",

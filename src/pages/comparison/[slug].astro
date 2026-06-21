@@ -43,7 +43,9 @@ const jsonLd = [
       "name": "PureSleep",
       "url": SITE_URL
     },
-    "mainEntityOfPage": `${SITE_URL}/comparison/${comparison.slug}`
+    "mainEntityOfPage": `${SITE_URL}/comparison/${comparison.slug}`,
+    "isPartOf": { "@type": "CollectionPage", "name": "PureSleep Comparisons", "url": `${SITE_URL}/comparison/` },
+    "about": { "@type": "Article", "name": "PureSleep Testing Methodology", "url": `${SITE_URL}/methodology/` }
   },
   {
     "@context": "https://schema.org",
