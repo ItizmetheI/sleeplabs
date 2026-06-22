@@ -1,4 +1,6 @@
-User-agent: *
+const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+
+const body = `User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /api/
@@ -24,4 +26,11 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://puresleep.com/sitemap-index.xml
+Sitemap: ${SITE_URL}/sitemap-index.xml
+`;
+
+export const GET = () =>
+  new Response(body, {
+    status: 200,
+    headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+  });

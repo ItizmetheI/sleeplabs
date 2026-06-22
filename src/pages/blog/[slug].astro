@@ -11,8 +11,8 @@ export function getStaticPaths() {
 
 const { post } = Astro.props;
 
-if ((post as any).redirectTo) {
-  return Astro.redirect((post as any).redirectTo, 301);
+if (post.redirectTo) {
+  return Astro.redirect(post.redirectTo, 301);
 }
 
 const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
@@ -29,7 +29,7 @@ const articleSchema = {
   "author": {
     "@type": "Organization",
     "name": post.author.name,
-    "url": post.author.url
+    "url": post.author.url?.startsWith('http') ? post.author.url : `${SITE_URL}${post.author.url}`
   },
   "publisher": {
     "@type": "Organization",
@@ -38,13 +38,13 @@ const articleSchema = {
   },
   "datePublished": post.datePublished,
   "dateModified": post.dateModified,
-  "mainEntityOfPage": post.canonicalUrl,
+  "mainEntityOfPage": `${SITE_URL}/blog/${post.slug}/`,
   "articleBody": post.sections.map(s => s.content).join(' '),
   ...(post.reviewedBy ? {
     "reviewedBy": {
       "@type": "Organization",
       "name": "PureSleep Testing Team",
-      "url": "https://puresleep.com/methodology/"
+      "url": `${SITE_URL}/methodology/`
     }
   } : {})
 };
@@ -69,7 +69,7 @@ const breadcrumbSchema = {
       "name": "Blog", "item": SITE_URL + "/blog/" },
     { "@type": "ListItem", "position": 3, 
       "name": post.title, 
-      "item": SITE_URL + "/blog/" + post.slug }
+      "item": SITE_URL + "/blog/" + post.slug + "/" }
   ]
 };
 
@@ -116,7 +116,7 @@ const formatProse = (text: string) => {
   ogDescription={post.ogDescription}
   ogImage={post.ogImage}
   ogType="article"
-  canonicalUrl={`${SITE_URL}/blog/${post.slug}`}
+  canonicalUrl={`${SITE_URL}/blog/${post.slug}/`}
   lastUpdated={post.dateModified}
   jsonLd={jsonLd}
 >

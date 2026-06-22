@@ -15,8 +15,8 @@ export function getStaticPaths() {
   });
 
   return Array.from(tags).map(tag => {
-    const filteredPosts = blogPosts.filter((post: any) => 
-      post.tags && post.tags.some((t: string) => t.toLowerCase().replace(/\s+/g, '-') === tag)
+    const filteredPosts = blogPosts.filter((post: any) =>
+      !post.redirectTo && post.tags && post.tags.some((t: string) => t.toLowerCase().replace(/\s+/g, '-') === tag)
     );
     return {
       params: { tag },

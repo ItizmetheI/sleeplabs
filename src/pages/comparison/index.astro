@@ -23,7 +23,7 @@ const jsonLd = {
     "itemListElement": comparisons.map((c, index) => ({
       "@type": "ListItem",
       "position": index + 1,
-      "url": `${SITE_URL}/comparison/${c.slug}`,
+      "url": `${SITE_URL}/comparison/${c.slug}/`,
       "name": `${mattresses.find(m => m.id === c.mattressAId)?.name ?? ''} vs ${mattresses.find(m => m.id === c.mattressBId)?.name ?? ''}`
     }))
   }

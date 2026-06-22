@@ -43,7 +43,7 @@ const jsonLd = [
       "name": "PureSleep",
       "url": SITE_URL
     },
-    "mainEntityOfPage": `${SITE_URL}/comparison/${comparison.slug}`,
+    "mainEntityOfPage": `${SITE_URL}/comparison/${comparison.slug}/`,
     "isPartOf": { "@type": "CollectionPage", "name": "PureSleep Comparisons", "url": `${SITE_URL}/comparison/` },
     "about": { "@type": "Article", "name": "PureSleep Testing Methodology", "url": `${SITE_URL}/methodology/` }
   },
@@ -114,7 +114,7 @@ if (comparison.faqs && comparison.faqs.length > 0) {
 <BaseLayout
   title={`${mattressA.name} vs ${mattressB.name} (2026): Which Is Better? | PureSleep`}
   description={comparison.description}
-  canonicalUrl={`${SITE_URL}/comparison/${comparison.slug}`}
+  canonicalUrl={`${SITE_URL}/comparison/${comparison.slug}/`}
   lastUpdated={comparison.dateModified}
   jsonLd={jsonLd}
 >

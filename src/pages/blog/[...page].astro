@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export function getStaticPaths() {
   const postsPerPage = 10;
-  const sortedPosts = [...blogPosts].sort((a, b) => new Date(b.datePublished).valueOf() - new Date(a.datePublished).valueOf());
+  const sortedPosts = blogPosts.filter(post => !post.redirectTo).sort((a, b) => new Date(b.datePublished).valueOf() - new Date(a.datePublished).valueOf());
   const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
   return Array.from({ length: totalPages }, (_, i) => ({
     params: { page: i === 0 ? undefined : String(i + 1) },

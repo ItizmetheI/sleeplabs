@@ -13,8 +13,8 @@ export function getStaticPaths() {
   });
 
   return Array.from(categories).map(category => {
-    const filteredPosts = blogPosts.filter((post: any) => 
-      post.category && post.category.toLowerCase().replace(/\s+/g, '-') === category
+    const filteredPosts = blogPosts.filter((post: any) =>
+      !post.redirectTo && post.category && post.category.toLowerCase().replace(/\s+/g, '-') === category
     );
     return {
       params: { category },
