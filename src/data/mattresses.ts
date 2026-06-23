@@ -90,7 +90,7 @@ export const mattresses: Mattress[] = [
     tags: ["memory-foam", "cooling", "back-pain", "pressure-relief", "plant-based", "most-popular"],
     pros: [
       "Bio-Pur® plant-based memory foam runs measurably cooler than petroleum foam",
-      "HIVE® 5-zone support delivers true lumbar alignment across all sleep positions",
+      "HIVE® 5-zone support is designed to help support lumbar alignment across sleep positions",
       "CertiPUR-US certified — low VOC, no harmful chemicals",
       "20-year warranty is the longest in the industry",
       "100-night home trial with fully free returns",
@@ -202,7 +202,7 @@ export const mattresses: Mattress[] = [
       "Less pressure relief than the AS3 or AS5 for shoulder-heavy sleepers",
       "All-foam edge support is average compared to hybrid options"
     ],
-    summary: "The Amerisleep AS2 is the best-value pick in the lineup — same Bio-Pur® and HIVE® technology as the AS3 but firmer at 6/10, targeting back sleepers, stomach sleepers, and heavier individuals who need more pushback. At 12 inches with a medium-firm feel, it prevents the lumbar sinkage that causes lower back pain in softer mattresses.",
+    summary: "The Amerisleep AS2 is the best-value pick in the lineup — same Bio-Pur® and HIVE® technology as the AS3 but firmer at 6/10, targeting back sleepers, stomach sleepers, and heavier individuals who need more pushback. At 12 inches with a medium-firm feel, it helps resist the lumbar sinkage that can contribute to lower back discomfort in softer mattresses.",
     verdict: "Best value Amerisleep mattress — ideal for back sleepers and stomach sleepers who need firmer support.",
     layers: [
       {
@@ -242,7 +242,7 @@ export const mattresses: Mattress[] = [
     faqs: [
       {
         question: "Is the AS2 good for back pain?",
-        answer: "Yes — the AS2 is our recommended pick for back pain caused by insufficient support. Its medium-firm feel (6/10) prevents the hip sinkage that strains the lumbar region. HIVE® zoning adds extra firmness under the lower back specifically. If your back pain comes from pressure points rather than lack of support, the AS3 may be better."
+        answer: "Yes — the AS2 is our recommended pick for back discomfort linked to insufficient support. Its medium-firm feel (6/10) helps resist the hip sinkage that can strain the lumbar region. HIVE® zoning adds extra firmness under the lower back specifically. If your back pain comes from pressure points rather than lack of support, the AS3 may be better."
       },
       {
         question: "How does the AS2 compare to the AS3?",
@@ -319,7 +319,7 @@ export const mattresses: Mattress[] = [
         name: "Transition Layer",
         thickness: "1 inch",
         material: "Affinity™ Foam with HIVE® Technology",
-        description: "HIVE® 5-zone hexagonal zoning provides targeted support even within the AS5's soft profile. Maintains spinal alignment despite the deep comfort layers above."
+        description: "HIVE® 5-zone hexagonal zoning provides targeted support even within the AS5's soft profile. Designed to help support spinal alignment despite the deep comfort layers above."
       },
       {
         name: "Support Core",

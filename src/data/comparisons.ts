@@ -24,13 +24,13 @@ export const comparisons: Comparison[] = [
     mattressBId: "amerisleep-as3",
     title: "Amerisleep AS2 vs AS3",
     description: "The two most popular Amerisleep mattresses compared head-to-head. Same technology, different firmness — how to choose.",
-    verdict: "The AS3 wins for side sleepers and combination sleepers who need pressure relief. The AS2 wins for back sleepers, stomach sleepers, and heavier individuals who need firmer support to prevent lumbar sinkage.",
+    verdict: "The AS3 wins for side sleepers and combination sleepers who need pressure relief. The AS2 wins for back sleepers, stomach sleepers, and heavier individuals who need firmer support to help resist lumbar sinkage.",
     dateModified: "2026-05-01",
     winnerFor: [
       { category: "Side Sleepers", winnerId: "amerisleep-as3", reason: "Softer 3\" comfort layer relieves shoulder and hip pressure better than the AS2's 2\" layer." },
-      { category: "Back Sleepers", winnerId: "amerisleep-as2", reason: "Medium-firm (6/10) prevents lumbar sinkage that strains the lower back." },
-      { category: "Stomach Sleepers", winnerId: "amerisleep-as2", reason: "Firmer feel keeps hips elevated to maintain spinal alignment." },
-      { category: "Back Pain (Firm Support)", winnerId: "amerisleep-as2", reason: "Medium-firm (6/10) feel keeps the hips elevated and reduces the sinkage that can aggravate lower back pain." },
+      { category: "Back Sleepers", winnerId: "amerisleep-as2", reason: "Medium-firm (6/10) helps resist lumbar sinkage that can strain the lower back." },
+      { category: "Stomach Sleepers", winnerId: "amerisleep-as2", reason: "Firmer feel helps keep hips elevated to support spinal alignment." },
+      { category: "Back Pain (Firm Support)", winnerId: "amerisleep-as2", reason: "Medium-firm (6/10) feel helps keep the hips elevated and reduces the sinkage that can aggravate lower back pain." },
       { category: "Best Value", winnerId: "amerisleep-as2", reason: "Lower starting price ($799 vs $999) with the same core technology." },
       { category: "Pressure Relief", winnerId: "amerisleep-as3", reason: "Thicker 3-inch comfort layer and softer (5/10) feel cushions shoulders and hips more than the AS2's 2-inch layer." }
     ],
@@ -63,7 +63,7 @@ export const comparisons: Comparison[] = [
     dateModified: "2026-05-01",
     winnerFor: [
       { category: "Side Sleepers (Pressure Relief)", winnerId: "amerisleep-as5", reason: "Soft feel (3/10) and thick comfort layers are designed to cushion shoulders and hips for side sleepers." },
-      { category: "Back Sleepers", winnerId: "amerisleep-as3", reason: "Medium feel maintains spinal alignment; AS5's soft feel can cause lumbar sinkage for back sleepers." },
+      { category: "Back Sleepers", winnerId: "amerisleep-as3", reason: "Medium feel helps support spinal alignment; AS5's soft feel can lead to more lumbar sinkage for back sleepers." },
       { category: "Combination Sleepers", winnerId: "amerisleep-as3", reason: "Medium feel suits both side and back positions; AS5 is too soft for back sleeping." },
       { category: "Response Time", winnerId: "amerisleep-as3", reason: "AS3 scores higher for response time (9/10 vs 8/10) — the firmer feel returns to shape faster." },
       { category: "Value", winnerId: "amerisleep-as3", reason: "Lower price ($999 vs $1,599 queen) for a more versatile mattress." },
@@ -153,8 +153,8 @@ export const comparisons: Comparison[] = [
     verdict: "These two mattresses serve opposite sleep needs. The AS2 is for back and stomach sleepers who need firm support. The AS5 is for side sleepers who prefer a soft, pressure-relieving feel. There is minimal overlap in ideal users.",
     dateModified: "2026-05-01",
     winnerFor: [
-      { category: "Back Sleepers", winnerId: "amerisleep-as2", reason: "Medium-firm (6/10) maintains lumbar alignment; AS5's soft feel (3/10) allows more hip sinkage for back sleepers." },
-      { category: "Stomach Sleepers", winnerId: "amerisleep-as2", reason: "Firmer feel keeps hips elevated. AS5 is not recommended for stomach sleeping." },
+      { category: "Back Sleepers", winnerId: "amerisleep-as2", reason: "Medium-firm (6/10) helps support lumbar alignment; AS5's soft feel (3/10) allows more hip sinkage for back sleepers." },
+      { category: "Stomach Sleepers", winnerId: "amerisleep-as2", reason: "Firmer feel helps keep hips elevated. AS5 is not recommended for stomach sleeping." },
       { category: "Side Sleepers (Pressure Relief)", winnerId: "amerisleep-as5", reason: "Soft feel (3/10) and thick comfort layers are designed to cushion shoulders and hips for side sleepers." },
       { category: "Heavier Sleepers (230+ lbs)", winnerId: "amerisleep-as2", reason: "Firmer feel and thicker base core prevents excessive sinkage at higher body weights." },
       { category: "Value", winnerId: "amerisleep-as2", reason: "$799 vs $1,599 queen — significant price difference for opposite use cases." }
@@ -162,7 +162,7 @@ export const comparisons: Comparison[] = [
     faqs: [
       {
         question: "Who should never buy the AS5?",
-        answer: "Back sleepers, stomach sleepers, and heavy sleepers over 250 lbs should avoid the AS5. The soft feel (3/10) with a 4\" comfort layer allows too much sinkage for proper spinal alignment in back and stomach positions. The AS2 or AS3 is more appropriate for these groups."
+        answer: "Back sleepers, stomach sleepers, and heavy sleepers over 250 lbs should avoid the AS5. The soft feel (3/10) with a 4\" comfort layer allows more sinkage than is ideal for spinal alignment in back and stomach positions. The AS2 or AS3 is more appropriate for these groups."
       },
       {
         question: "Who should never buy the AS2?",
@@ -478,7 +478,7 @@ export const comparisons: Comparison[] = [
       { category: "Pressure Relief", winnerId: "amerisleep-as2", reason: "AS2's Bio-Pur foam provides contouring pressure relief even at medium-firm. Plank Firm's ultra-firm profile provides minimal contouring." }
     ],
     faqs: [
-      { question: "Which is better for stomach sleepers?", answer: "Both are well-suited for stomach sleepers who need a firm surface to keep hips elevated. The Plank Firm is extremely firm — it is specifically engineered for stomach sleepers and those who prefer the absolute firmest feel. The AS2 at medium-firm (6/10) provides some contouring that strict stomach sleepers may or may not prefer." },
+      { question: "Which is better for stomach sleepers?", answer: "Both are well-suited for stomach sleepers who need a firm surface to help keep hips elevated. The Plank Firm is extremely firm — it is specifically engineered for stomach sleepers and those who prefer the absolute firmest feel. The AS2 at medium-firm (6/10) provides some contouring that strict stomach sleepers may or may not prefer." },
       { question: "Which is better for couples?", answer: "The AS2 scores 10/10 on motion transfer vs Plank Firm's 8/10. For couples, the AS2 is clearly better at isolating movement. Plank Firm's better edge support (10/10 vs 8/10) is a partial offset." },
       { question: "What is the difference in feel?", answer: "The AS2 is medium-firm foam with HIVE® zoning that provides some body contouring. The Brooklyn Bedding Plank Firm is designed to be one of the flattest, firmest mattresses on the market — minimal contouring, maximum support. Try both if possible." }
     ]
