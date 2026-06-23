@@ -11,7 +11,7 @@ import Methodology from '../components/Methodology';
 import FinalPick from '../components/FinalPick';
 import { allMattresses } from '../data/mattresses';
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
 const realScore = (id: string) => allMattresses.find(m => m.id === id)?.scores.overall;
 
 const jsonLd = [

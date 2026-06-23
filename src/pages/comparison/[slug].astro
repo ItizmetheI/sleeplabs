@@ -20,7 +20,7 @@ if (!mattressA || !mattressB) {
   throw new Error(`Mattresses not found for comparison ${comparison.slug}`);
 }
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
 
 const jsonLd = [
   {

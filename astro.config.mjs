@@ -7,7 +7,7 @@ import node from '@astrojs/node';
 import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://puresleep.com',
+  site: process.env.SITE_URL || 'https://production-domain-not-set.example',
   output: 'static',
   adapter: cloudflare(),
   integrations: [
