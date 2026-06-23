@@ -1,4 +1,4 @@
-const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
 
 const body = `User-agent: *
 Allow: /

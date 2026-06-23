@@ -4,7 +4,7 @@ import { comparisons } from '../../data/comparisons';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { BEST_CATEGORIES } from '../../lib/bestCategories';
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
 
 export function getStaticPaths() {
   return Object.keys(BEST_CATEGORIES).map(category => ({
