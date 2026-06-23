@@ -151,10 +151,10 @@ export const blogPosts: BlogPost[] = [
     "slug": "best-mattress-for-back-pain",
     "title": "The Best Mattress for Back Pain",
     "metaTitle": "Best Mattress for Back Pain Relief | PureSleep",
-    "metaDescription": "Stop waking up with pain. We review the best mattresses engineered specifically to halt heavy lower back pain by helping support your spine in alignment.",
+    "metaDescription": "We review mattresses that may help support your spine and ease lower back discomfort.",
     "canonicalUrl": "/blog/best-mattress-for-back-pain",
     "ogTitle": "The Best Mattress for Back Pain",
-    "ogDescription": "Stop waking up with pain. We review the best mattresses engineered specifically to halt heavy lower back pain by helping support your spine in alignment.",
+    "ogDescription": "We review mattresses that may help support your spine and ease lower back discomfort.",
     "ogImage": "https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as2-listing.jpg",
     "category": "buying-guides",
     "tags": [
