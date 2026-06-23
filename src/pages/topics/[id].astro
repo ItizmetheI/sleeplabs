@@ -32,7 +32,7 @@ const jsonLd = [
       "url": `${SITE_URL}/methodology/`
     },
     "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
-    "mainEntityOfPage": `${SITE_URL}/topics/${topic.id}`
+    "mainEntityOfPage": `${SITE_URL}/topics/${topic.id}/`
   },
   {
     "@context": "https://schema.org",
@@ -51,7 +51,7 @@ const formattedDate = new Date(topic.dateModified).toLocaleDateString('en-US', {
 <BaseLayout
   title={`${topic.title} — PureSleep Sleep Science Guide`}
   description={topic.description}
-  canonicalUrl={`${SITE_URL}/topics/${topic.id}`}
+  canonicalUrl={`${SITE_URL}/topics/${topic.id}/`}
   lastUpdated={topic.dateModified}
   jsonLd={jsonLd}
 >

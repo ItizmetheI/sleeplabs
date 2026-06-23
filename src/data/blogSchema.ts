@@ -14,6 +14,11 @@ export interface BlogPost {
   slug: string;
   // Same as id. Duplicated intentionally for template clarity.
 
+  redirectTo?: string;
+  // Optional. Set only on superseded/duplicate posts. When present, the post
+  // page 301-redirects here instead of rendering, and is excluded from the
+  // blog index, category pages, tag pages, and the sitemap.
+
   // ─── METADATA ───────────────────────────────────────────
   title: string;
   // 50-70 characters. Sentence case (not Title Case every word).

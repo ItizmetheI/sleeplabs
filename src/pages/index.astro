@@ -9,8 +9,10 @@ import UseCases from '../components/UseCases';
 import LatestGuides from '../components/LatestGuides';
 import Methodology from '../components/Methodology';
 import FinalPick from '../components/FinalPick';
+import { allMattresses } from '../data/mattresses';
 
 const SITE_URL = import.meta.env.SITE_URL || 'https://puresleep.com';
+const realScore = (id: string) => allMattresses.find(m => m.id === id)?.scores.overall;
 
 const jsonLd = [
   {
@@ -66,12 +68,12 @@ const jsonLd = [
   <p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl">The right Amerisleep depends on how you sleep. Here's our top recommendation for each sleeper type.</p>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     {[
-      { label: "Best Overall", model: "AS3", href: "/reviews/amerisleep-as3", badge: "#1 Pick", desc: "Medium feel. Best for side and combination sleepers.", score: "9.5" },
-      { label: "Best for Back Sleepers", model: "AS2", href: "/reviews/amerisleep-as2", badge: "Most Supportive", desc: "Medium-firm. Prevents lumbar sinkage.", score: "9.2" },
-      { label: "Best for Side Sleepers", model: "AS5", href: "/reviews/amerisleep-as5", badge: "Best Pressure Relief", desc: "Soft. Maximum shoulder and hip relief.", score: "9.2" },
-      { label: "Best for Couples", model: "AS6", href: "/reviews/amerisleep-as6", badge: "Top Performer", desc: "Hybrid. Best edge support and cooling.", score: "9.7" },
-      { label: "Best Organic", model: "Organica", href: "/reviews/amerisleep-organica", badge: "GOLS Certified", desc: "Latex hybrid. Certified organic throughout.", score: "9.4" },
-      { label: "Best Value", model: "AS2", href: "/reviews/amerisleep-as2", badge: "From $799", desc: "Same Bio-Pur® tech at the lowest entry price.", score: "9.2" },
+      { label: "Best Overall", model: "AS3", href: "/reviews/amerisleep-as3", badge: "#1 Pick", desc: "Medium feel. Best for side and combination sleepers.", score: realScore('amerisleep-as3') },
+      { label: "Best for Back Sleepers", model: "AS2", href: "/reviews/amerisleep-as2", badge: "Most Supportive", desc: "Medium-firm. Prevents lumbar sinkage.", score: realScore('amerisleep-as2') },
+      { label: "Best for Side Sleepers", model: "AS5", href: "/reviews/amerisleep-as5", badge: "Best Pressure Relief", desc: "Soft. Maximum shoulder and hip relief.", score: realScore('amerisleep-as5') },
+      { label: "Best for Couples", model: "AS6", href: "/reviews/amerisleep-as6", badge: "Top Performer", desc: "Hybrid. Best edge support and cooling.", score: realScore('amerisleep-as6') },
+      { label: "Best Organic", model: "Organica", href: "/reviews/amerisleep-organica", badge: "GOLS Certified", desc: "Latex hybrid. Certified organic throughout.", score: realScore('amerisleep-organica') },
+      { label: "Best Value", model: "AS2", href: "/reviews/amerisleep-as2", badge: "From $799", desc: "Same Bio-Pur® tech at the lowest entry price.", score: realScore('amerisleep-as2') },
     ].map(pick => (
       <a href={pick.href} class="glass-panel p-6 rounded-2xl border border-outline-variant/30 hover:border-secondary/40 transition-all group flex flex-col gap-3">
         <div class="flex items-center justify-between">

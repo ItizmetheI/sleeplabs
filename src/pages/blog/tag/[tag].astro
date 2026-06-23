@@ -15,8 +15,8 @@ export function getStaticPaths() {
   });
 
   return Array.from(tags).map(tag => {
-    const filteredPosts = blogPosts.filter((post: any) => 
-      post.tags && post.tags.some((t: string) => t.toLowerCase().replace(/\s+/g, '-') === tag)
+    const filteredPosts = blogPosts.filter((post: any) =>
+      !post.redirectTo && post.tags && post.tags.some((t: string) => t.toLowerCase().replace(/\s+/g, '-') === tag)
     );
     return {
       params: { tag },
@@ -51,7 +51,7 @@ const jsonLd = {
   description={`Explore our expert sleep and mattress guides tagged with ${tag}.`}
   canonicalUrl={`${SITE_URL}/blog/tag/${tag}/`}
   jsonLd={jsonLd}
-  noindex={posts.length === 0}
+  noindex={posts.length === 0 || ['pain-and-health','back-pain','hip-pain','shoulder-pain','sciatica','arthritis','fibromyalgia','lower-back-pain','upper-back-pain','neck-pain'].includes(tag ?? '')}
 >
   <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
 

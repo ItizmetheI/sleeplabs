@@ -8,7 +8,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Mattress Reviews 2026 — 58 Models, Expert Tested & Editorially Independent | PureSleep",
-  "description": "Independent mattress reviews across 24 brands. 58 models hands-on evaluated using our 7-metric scoring system. Tested by the PureSleep Testing Team.",
+  "description": "Independent mattress reviews across 23 brands. 58 models hands-on evaluated using our 7-metric scoring system. Tested by the PureSleep Testing Team.",
   "url": `${SITE_URL}/reviews/`,
   "mainEntity": {
     "@type": "ItemList",
@@ -16,7 +16,7 @@ const jsonLd = {
       "@type": "ListItem",
       "position": index + 1,
       "name": m.name,
-      "url": `${SITE_URL}/reviews/${m.id}`
+      "url": `${SITE_URL}/reviews/${m.id}/`
     }))
   }
 };
@@ -31,7 +31,7 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
 
 <BaseLayout
   title="Mattress Reviews 2026 — 58 Models, 24 Brands | PureSleep"
-  description="Independent mattress reviews across 24 brands. 58 models hands-on evaluated using our 7-metric scoring system. Editorially independent."
+  description="Independent mattress reviews across 23 brands. 58 models hands-on evaluated using our 7-metric scoring system. Editorially independent."
   canonicalUrl={`${SITE_URL}/reviews/`}
   lastUpdated={lastUpdated}
   ogImage="https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg"
@@ -45,7 +45,7 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
         Mattress Reviews 2026
       </h1>
       <p class="text-body-lg font-body-lg text-on-surface-variant max-w-3xl">
-        Independent mattress reviews across 24 brands and 58 models, hands-on evaluated by the PureSleep Testing Team using our 7-metric scoring system.
+        Independent mattress reviews across 23 brands and 58 models, hands-on evaluated by the PureSleep Testing Team using our 7-metric scoring system.
       </p>
       <div class="flex flex-col md:flex-row gap-4 items-center justify-center text-body-md text-on-surface-variant bg-surface px-6 py-3 rounded-full shadow-sm border border-outline-variant/30">
         <span><strong class="text-on-background">Reviewed By:</strong> PureSleep Testing Team</span>
@@ -177,7 +177,7 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
     </section>
 
     <section class="max-w-2xl mx-auto mt-8 glass-panel p-6 rounded-2xl border border-white/60">
-      <h3 class="text-title-md font-title-md text-primary font-bold mb-3">How we cover 24 brands</h3>
+      <h3 class="text-title-md font-title-md text-primary font-bold mb-3">How we cover 23 brands</h3>
       <p class="text-body-md text-on-surface-variant leading-relaxed">
         Every model above is scored using the same 7-metric system: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability. Scores come from hands-on testing by the PureSleep Testing Team — never from manufacturer data. <a href="/methodology" class="text-primary hover:underline font-bold">Read our full methodology →</a>
       </p>
