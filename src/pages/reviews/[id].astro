@@ -181,6 +181,11 @@ const jsonLd = [
               <p class="font-bold text-on-surface mt-1">{mattress.certifications.join(', ')}</p>
             </div>
           </div>
+          {mattress.certifications.length > 0 && (
+            <p class="text-xs text-on-surface-variant italic">
+              Certifications are self-reported by the manufacturer. Verify current certification status on the brand's official site or the certifying body's database before purchasing.
+            </p>
+          )}
         </section>
 
         <!-- Quick Verdict Box -->

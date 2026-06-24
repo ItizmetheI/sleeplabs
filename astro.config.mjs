@@ -20,6 +20,16 @@ export default defineConfig({
         if (page.includes('/blog/how-to-evaluate-a-mattress-during-the-trial-period')) return false;
         // Exclude superseded Amerisleep-only best-mattress page (301-redirects to /best/overall/)
         if (page.includes('/best-mattress/')) return false;
+        // Exclude superseded single-brand /blog/best-*/ listicles (301-redirect to multi-brand /best/ pages)
+        const supersededBestSlugs = [
+          'best-luxury-mattress', 'best-mattress-for-back-pain', 'best-mattress-for-back-sleepers',
+          'best-mattress-for-combination-sleepers', 'best-mattress-for-couples', 'best-mattress-for-heavy-sleepers',
+          'best-mattress-for-hip-pain', 'best-mattress-for-hot-sleepers', 'best-mattress-for-shoulder-pain',
+          'best-mattress-for-side-sleepers', 'best-mattress-for-stomach-sleepers', 'best-memory-foam-mattress',
+          'best-organic-mattress', 'best-mattress-under-1000', 'best-mattress-for-lower-back-pain',
+          'best-mattress-for-upper-back-pain', 'best-mattress-for-back-pain-side-sleepers'
+        ];
+        if (supersededBestSlugs.some(slug => page.includes(`/blog/${slug}/`))) return false;
         // Exclude machine-readable LLM files
         if (page.includes('/llms/')) return false;
         // Exclude admin

@@ -23,7 +23,7 @@ export const BEST_CATEGORIES: Record<string, CategoryConfig> = {
     intro: 'Our best-overall ranking sorts by composite 7-metric score. Models tying at 10/10 overall are ranked by value, warranty, and breadth of sleeper suitability.',
     winner: 'amerisleep-as3',
     winnerNote: 'The AS3 earns the top overall pick for most sleepers: 10/10 composite score, medium firmness that works for side, back, and combination sleepers, Bio-Pur® plant-based foam, and a 20-year warranty. No other model in our database combines its breadth of suitability with its score.',
-    picks: ['amerisleep-as3', 'amerisleep-as6', 'amerisleep-as3-hybrid', 'zoma-boost', 'plushbeds-signature-bliss', 'nest-bedding-owl'],
+    picks: ['amerisleep-as3', 'amerisleep-as6', 'nest-bedding-sparrow', 'leesa-sapira-chill-hybrid', 'plushbeds-signature-bliss', 'nest-bedding-owl'],
     faqs: [
       {
         question: 'What is the best mattress overall for 2026?',
@@ -69,7 +69,7 @@ export const BEST_CATEGORIES: Record<string, CategoryConfig> = {
     intro: 'Cooling rankings use the Cooling & Breathability metric from our 7-metric system. Hybrids with coil bases generally score higher because airflow moves through the coil layer alongside the comfort foam.',
     winner: 'amerisleep-as6',
     winnerNote: 'The AS6 Black Series scores 10/10 on Cooling & Breathability. Its Refresh Cooling Cover works alongside a pocketed coil base that allows airflow through the mattress, not just across the surface. At 10/10 overall it is also the strongest all-around performer in the hot-sleeper category.',
-    picks: ['amerisleep-as6', 'amerisleep-as3', 'amerisleep-as3-hybrid', 'amerisleep-as5-hybrid', 'glacier-original-hybrid', 'glacier-summit-hybrid'],
+    picks: ['amerisleep-as6', 'amerisleep-as3', 'leesa-sapira-chill-hybrid', 'brooklyn-bedding-aurora-luxe', 'glacier-original-hybrid', 'glacier-summit-hybrid'],
     faqs: [
       {
         question: 'What type of mattress is best for hot sleepers?',
@@ -115,8 +115,8 @@ export const BEST_CATEGORIES: Record<string, CategoryConfig> = {
     intro: 'Our back pain category covers mattresses with medium-firm to firm support designed to promote neutral spinal alignment. This is a general sleep comfort category — consult a healthcare provider for mattress advice related to specific medical conditions.',
     winner: 'amerisleep-as2',
     winnerNote: 'The AS2 is medium-firm (6/10 firmness) and earns 9/10 overall. Its HIVE® lumbar zone technology provides differentiated support across 7 zones, with a firmer response in the lumbar region. With 10/10 on both Response Time and Motion Transfer, it suits active sleepers who change position during the night.',
-    picks: ['amerisleep-as2', 'amerisleep-as3', 'zoma-boost', 'glacier-summit-hybrid', 'saatva-classic'],
-    filterNote: 'Saatva Classic scores 10/10 overall and is a strong innerspring option for back sleepers. The AS2 is our editorial pick for this category because of its specifically designed HIVE® lumbar zone and medium-firm profile.',
+    picks: ['amerisleep-as2', 'amerisleep-as3', 'glacier-summit-hybrid', 'saatva-classic', 'helix-dawn-luxe', 'brooklyn-bedding-plank-firm'],
+    filterNote: 'Saatva Classic scores 10/10 overall and is a strong innerspring option for back sleepers. Brooklyn Bedding Plank Firm is flippable between firm and extra-firm for sleepers who need more support than medium-firm provides. The AS2 is our editorial pick for this category because of its specifically designed HIVE® lumbar zone and medium-firm profile.',
     faqs: [
       {
         question: 'What mattress firmness is recommended for back pain?',
@@ -139,7 +139,7 @@ export const BEST_CATEGORIES: Record<string, CategoryConfig> = {
     intro: 'Memory foam picks are all-foam models (no coil base). They score highest on motion isolation and pressure distribution, at the trade-off of slightly less edge support and responsiveness compared to hybrids.',
     winner: 'amerisleep-as3',
     winnerNote: 'The AS3 is our top foam pick: 10/10 overall using Bio-Pur® plant-based memory foam — a meaningful upgrade over standard petroleum-based foam. HIVE® zoning provides differentiated lumbar and shoulder support across 7 zones. A 20-year warranty makes it the most durable purchase in the foam category.',
-    picks: ['amerisleep-as3', 'amerisleep-as5', 'amerisleep-as2', 'form-prime', 'zoma-start', 'vaya-foam'],
+    picks: ['amerisleep-as3', 'amerisleep-as2', 'nest-bedding-raven', 'plushbeds-organic-bliss', 'leesa-original', 'casper-the-one'],
     faqs: [
       {
         question: 'What is the difference between plant-based and standard memory foam?',
@@ -162,7 +162,7 @@ export const BEST_CATEGORIES: Record<string, CategoryConfig> = {
     intro: 'Hybrid picks combine foam comfort layers over pocketed coil support systems. They score higher on edge support and cooling than all-foam models, at the trade-off of slightly higher prices.',
     winner: 'amerisleep-as6',
     winnerNote: 'The AS6 Black Series is our top hybrid: 10/10 overall with Bio-Pur® foam, HIVE® zoning, pocketed coil support, and a Refresh Cooling Cover. With a 20-year warranty and 10/10 Motion Transfer and Cooling scores, it leads on both comfort and longevity.',
-    picks: ['amerisleep-as6', 'amerisleep-as3-hybrid', 'zoma-boost', 'form-core-hybrid', 'plushbeds-signature-bliss', 'nest-bedding-owl'],
+    picks: ['amerisleep-as6', 'nest-bedding-sparrow', 'leesa-sapira-chill-hybrid', 'plushbeds-signature-bliss', 'nest-bedding-owl', 'naturepedic-eos-classic'],
     faqs: [
       {
         question: 'What is a hybrid mattress?',
@@ -207,14 +207,14 @@ export const BEST_CATEGORIES: Record<string, CategoryConfig> = {
     h1: 'Best Value Mattress of 2026',
     description: 'Best value mattress picks for 2026. Top scores on our Value metric at the lowest price. Tested by the PureSleep Testing Team.',
     intro: 'Value rankings use the Value metric from our 7-metric system, weighted by overall score. A 10/10 value score at 7/10 overall is not the same as a 10/10 value score at 10/10 overall.',
-    winner: 'vaya-hybrid',
-    winnerNote: 'The Vaya Hybrid scores 10/10 value and 10/10 response time at one of the lowest price points in the hybrid category. Within the Amerisleep lineup, the AS2 earns the top value designation with a 9/10 value score, HIVE® lumbar zone technology, and a 20-year warranty — best overall value for a zoned-support mattress.',
-    picks: ['vaya-hybrid', 'zoma-boost', 'zoma-hybrid', 'zoma-start', 'amerisleep-as2', 'sweetnight-coolnest'],
-    filterNote: 'Best Value in the Amerisleep Line: Amerisleep AS2 (9/10 overall, 9/10 value, HIVE® lumbar zone, 20-year warranty). For strictly price-optimized picks, Vaya Hybrid and Zoma Start lead.',
+    winner: 'eco-terra-hybrid-latex',
+    winnerNote: 'The Eco Terra Hybrid Latex scores 10/10 value and 9/10 overall — a higher overall score than any other 10/10-value pick in our database — at a queen price starting around $999. Its GOLS-certified organic latex comfort layer and 10/10 response time make it the strongest value-to-performance ratio we have tested. Within the Amerisleep lineup, the AS2 earns the top value designation with a 9/10 value score, HIVE® lumbar zone technology, and a 20-year warranty — best overall value for a zoned-support mattress.',
+    picks: ['eco-terra-hybrid-latex', 'bear-original', 'glacier-summit-hybrid', 'amerisleep-as2', 'sweetnight-coolnest', 'vaya-hybrid'],
+    filterNote: 'Best Value in the Amerisleep Line: Amerisleep AS2 (9/10 overall, 9/10 value, HIVE® lumbar zone, 20-year warranty). For strictly price-optimized picks, Eco Terra Hybrid Latex and Vaya Hybrid lead.',
     faqs: [
       {
         question: 'What is the best budget mattress for 2026?',
-        answer: 'The Vaya Hybrid scores 10/10 on value and 10/10 on response time at a queen price typically under $600. The Zoma Start is the top all-foam value pick. Both score well overall without the premium price tag of higher-end models. For a mid-price value option with premium technology, the Amerisleep AS2 scores 9/10 overall and 9/10 value with HIVE® zoning and a 20-year warranty.'
+        answer: 'The Eco Terra Hybrid Latex scores 10/10 on value and 9/10 overall at a queen price typically starting around $999, making it the strongest value-to-performance combination in our database. The Vaya Hybrid scores 10/10 on value and 10/10 on response time at an even lower price point under $600, though its overall score (8/10) trails Eco Terra. For a mid-price value option with premium technology, the Amerisleep AS2 scores 9/10 overall and 9/10 value with HIVE® zoning and a 20-year warranty.'
       },
       {
         question: 'How do you measure value in a mattress?',
@@ -222,7 +222,7 @@ export const BEST_CATEGORIES: Record<string, CategoryConfig> = {
       },
       {
         question: 'Do I need to spend more than $1,000 for a good mattress?',
-        answer: 'No. Several models in our database score 9–10/10 overall at queen prices under $1,000. The Vaya Hybrid, Zoma models, and Sweetnight CoolNest all score strong overall ratings at accessible price points. The main trade-off at lower price points is often warranty length (10 years vs 20 years) and material quality (standard foam vs plant-based foam).'
+        answer: 'No. Several models in our database score 9–10/10 overall at queen prices under $1,000. The Eco Terra Hybrid Latex, Bear Original, Vaya Hybrid, and Sweetnight CoolNest all score strong overall ratings at accessible price points. The main trade-off at lower price points is often warranty length (10 years vs 20 years) and material quality (standard foam vs plant-based foam or certified latex).'
       }
     ]
   },
