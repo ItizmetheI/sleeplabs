@@ -22,7 +22,7 @@ export default function EditorsPickDetails() {
             <img 
               alt="Amerisleep AS3 Mattress" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-              src="https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg" 
+              src="/images/mattresses/amerisleep-as3.webp" 
             />
           </div>
         </motion.div>
@@ -44,9 +44,9 @@ export default function EditorsPickDetails() {
           </div>
 
           <div className="glass-panel p-8 rounded-3xl mt-2 relative border border-outline-variant/30 bg-white/40">
-            <h3 className="text-headline-md font-headline-md text-primary mb-3">Superior Plant-Based Technology</h3>
+            <h3 className="text-headline-md font-headline-md text-primary mb-3">Plant-Based Technology</h3>
             <p className="text-body-md font-body-md text-on-surface-variant mb-4 leading-relaxed">
-              Amerisleep AS3 leads the industry with Bio-Pur® plant memory foam (measurably cooler than petroleum), HIVE® zoned support (5-zone spinal alignment), a 100-night home trial, and a 20-year warranty backed directly by the manufacturer.
+              The Amerisleep AS3 features Bio-Pur® plant memory foam (measurably cooler than petroleum foam in our testing), HIVE® zoned support, a 100-night home trial, and a 20-year warranty backed directly by the manufacturer.
             </p>
             <p className="text-body-md font-body-md text-on-surface-variant leading-relaxed">
               Bio-Pur® plant-based memory foam tested over 30 nights. Faster bounce-back than standard foam, lower off-gassing, breathable open-cell construction. 100-night home trial, 20-year warranty.

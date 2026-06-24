@@ -7,16 +7,16 @@ const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.
 
 const getTopicImage = (id: string) => {
   const images = {
-    'memory-foam': 'https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg',
-    'cooling-technology': 'https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg',
-    'pocketed-coils': 'https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg',
-    'spinal-alignment': 'https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg',
-    'motion-isolation': 'https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg',
-    'edge-support': 'https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg',
-    'certipur-us': 'https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg',
-    'sleep-cycles': 'https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg',
+    'memory-foam': '/images/mattresses/amerisleep-as3.webp',
+    'cooling-technology': '/images/mattresses/amerisleep-as3.webp',
+    'pocketed-coils': '/images/mattresses/amerisleep-as3.webp',
+    'spinal-alignment': '/images/mattresses/amerisleep-as3.webp',
+    'motion-isolation': '/images/mattresses/amerisleep-as3.webp',
+    'edge-support': '/images/mattresses/amerisleep-as3.webp',
+    'certipur-us': '/images/mattresses/amerisleep-as3.webp',
+    'sleep-cycles': '/images/mattresses/amerisleep-as3.webp',
   };
-  return images[id as keyof typeof images] || 'https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg';
+  return images[id as keyof typeof images] || '/images/mattresses/amerisleep-as3.webp';
 };
 
 const jsonLd = {
@@ -43,7 +43,7 @@ const jsonLd = {
   description="From understanding memory foam densities to navigating hybrid coils, our deep-dive guides equip you with the knowledge to make the right mattress investment."
   canonicalUrl={`${SITE_URL}/guides/`}
   lastUpdated={lastUpdated}
-  ogImage="https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg"
+  ogImage="/images/mattresses/amerisleep-as3.webp"
   jsonLd={jsonLd}
 >
   <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 relative z-10 w-full flex flex-col gap-16">

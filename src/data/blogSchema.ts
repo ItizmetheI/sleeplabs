@@ -35,7 +35,7 @@ export interface BlogPost {
   // 140-160 characters exactly. One sentence. No clickbait.
   // Must summarize the ACTUAL content of the post.
   // Must include primary keyword naturally.
-  // Example: "Learn which mattress firmness level works best for back sleepers, with expert-backed guidance and our top picks for 2026."
+  // Example: "Learn which mattress firmness level works best for back sleepers, with hands-on testing guidance and our top picks for 2026."
 
   canonicalUrl: string;
   // Always: "https://[YOUR-SITE-DOMAIN]/blog/{slug}"

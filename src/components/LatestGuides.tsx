@@ -9,7 +9,7 @@ export default function LatestGuides() {
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 gap-6 border-b border-outline-variant/30 pb-8">
           <div>
-            <h3 className="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-3 font-bold drop-shadow-sm">Expert Coverage</h3>
+            <h3 className="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-3 font-bold drop-shadow-sm">Editorial Coverage</h3>
             <h2 className="text-display-lg font-display-lg text-primary drop-shadow-sm">Latest Guides & Reviews</h2>
           </div>
           <a href="/blog" className="inline-flex items-center text-label-sm font-label-sm uppercase tracking-widest border border-outline-variant px-6 py-3 hover:bg-outline-variant/20 hover:text-primary text-on-surface-variant transition-colors group rounded-full font-bold">
@@ -22,7 +22,7 @@ export default function LatestGuides() {
           <div className="md:col-span-7 flex flex-col gap-6 group">
             <a href="/reviews/amerisleep-as3" className="w-full h-64 md:h-96 glass-panel rounded-3xl overflow-hidden relative shadow-md border border-outline-variant/30 block">
                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 transition-opacity duration-300 opacity-30 group-hover:opacity-60" />
-               <img src="https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg" alt="Amerisleep AS3 Review" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+               <img src="/images/mattresses/amerisleep-as3.webp" alt="Amerisleep AS3 Review" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="bg-white/90 text-primary border border-white/50 backdrop-blur-md px-6 py-2 rounded-full text-label-sm uppercase tracking-widest font-bold">Read Article</span>
                </div>

@@ -4,7 +4,7 @@ const stats = [
   { value: "5", label: "Amerisleep Models Reviewed" },
   { value: "7", label: "Metrics Scored Per Mattress" },
   { value: "100", label: "Night Trial on All Models" },
-  { value: "20", label: "Year Warranty — Industry Leading" },
+  { value: "20", label: "Year Warranty" },
 ];
 
 export default function StatsRow() {

@@ -8,7 +8,7 @@ export default function Footer() {
             PureSleep
           </a>
           <p className="text-body-md font-body-md text-on-surface-variant max-w-sm text-center md:text-left">
-            The Science of Sleep. Expert-led reviews to help you find your best night's rest.
+            The Science of Sleep. Testing team reviews to help you find your best night's rest.
           </p>
           <p className="text-body-sm text-on-surface-variant/50 mt-4">
             © 2026 PureSleep. All rights reserved.

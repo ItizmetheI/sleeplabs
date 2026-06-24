@@ -23,7 +23,7 @@ const navItems: NavItem[] = [
   { label: 'HOME', href: '/' },
   {
     label: 'BEST MATTRESS',
-    href: '/best-mattress',
+    href: '/best/overall',
     columns: [
       {
         title: 'By Sleeper Type',
@@ -56,7 +56,7 @@ const navItems: NavItem[] = [
           { label: 'Best Organic', href: '/best/organic' },
           { label: 'Best Memory Foam', href: '/best/memory-foam' },
           { label: 'Best Value', href: '/best/value' },
-          { label: 'All Categories →', href: '/best-mattress' },
+          { label: 'All Categories →', href: '/best/overall' },
         ]
       }
     ]
@@ -95,7 +95,7 @@ const navItems: NavItem[] = [
           { label: 'Best Organic: Organica', href: '/reviews/amerisleep-organica' },
           { label: 'Best Value: AS2', href: '/reviews/amerisleep-as2' },
           { label: 'Best Soft: AS5', href: '/reviews/amerisleep-as5' },
-          { label: 'All 58 Reviews →', href: '/reviews' }
+          { label: 'All 59 Reviews →', href: '/reviews' }
         ]
       }
     ]
