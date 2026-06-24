@@ -1,4 +1,3 @@
-import { Star, StarHalf } from 'lucide-react';
 import { motion } from 'motion/react';
 import heroImg from '../assets/images/regenerated_image_1780219880901.png';
 import { mattresses } from '../data/mattresses';
@@ -92,12 +91,9 @@ export default function Hero() {
             className="glass-panel-heavy rounded-3xl p-7 flex flex-col gap-stack-sm relative z-30 -mt-20 ml-8 lg:-ml-8 lg:-mt-16 border border-white"
           >
             <div className="flex justify-between items-center border-b border-outline-variant/50 pb-4">
-              <div className="flex items-center gap-1 text-tertiary drop-shadow-[0_0_8px_rgba(251,191,36,0.3)]">
-                <Star size={18} fill="currentColor" strokeWidth={0} />
-                <Star size={18} fill="currentColor" strokeWidth={0} />
-                <Star size={18} fill="currentColor" strokeWidth={0} />
-                <Star size={18} fill="currentColor" strokeWidth={0} />
-                <StarHalf size={18} fill="currentColor" strokeWidth={0} />
+              <div className="flex items-baseline gap-1 text-tertiary">
+                <span className="text-headline-sm font-headline-sm font-bold">{as3.scores.overall}</span>
+                <span className="text-label-sm font-label-sm uppercase tracking-wider text-on-surface-variant">/10 Overall</span>
               </div>
               <span className="text-label-sm font-label-sm text-tertiary uppercase tracking-widest bg-tertiary/10 px-3 py-1 rounded-full border border-tertiary/20 font-bold">
                 OUR TOP PICK
