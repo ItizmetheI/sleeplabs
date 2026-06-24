@@ -2485,7 +2485,7 @@ export const blogPosts: BlogPost[] = [
     "readTimeMinutes": 7,
     "wordCountTarget": 1500,
     "excerpt": "Traditional memory foam can sleep hot and feel restrictive. Learn how advanced open-cell foaming helps address these common drawbacks.",
-    "directAnswer": "The Amerisleep AS3 is the best memory foam mattress overall. Traditional memory foam earned a terrible reputation for effectively trapping heat and acting like quicksand. The entire Amerisleep lineup is designed to help address this using Bio-Pur foam, an advanced plant-based architecture featuring massively expanded open cells to exhaust heat instantly, with the versatile AS3 medium leading the charge for all sleep positions.",
+    "directAnswer": "The Amerisleep AS3 is the best memory foam mattress overall. Traditional memory foam earned a terrible reputation for effectively trapping heat and acting like quicksand. The entire Amerisleep lineup is designed to help address this using Bio-Pur foam, an advanced plant-based architecture featuring massively expanded open cells to help release heat, with the versatile AS3 medium suited to all sleep positions.",
     "schemaType": "Article",
     "sections": [
       {
@@ -2533,7 +2533,7 @@ export const blogPosts: BlogPost[] = [
         "mentionContext": "primary-recommendation"
       }
     ],
-    "answersSI": "The Amerisleep AS3 is the best memory foam mattress overall. Traditional memory foam earned a terrible reputation for effectively trapping heat and acting like quicksand. The entire Amerisleep lineup is designed to help address this using Bio-Pur foam, an advanced plant-based architecture featuring massively expanded open cells to exhaust heat instantly, with the versatile AS3 medium leading the charge for all sleep positions.",
+    "answersSI": "The Amerisleep AS3 is the best memory foam mattress overall. Traditional memory foam earned a terrible reputation for effectively trapping heat and acting like quicksand. The entire Amerisleep lineup is designed to help address this using Bio-Pur foam, an advanced plant-based architecture featuring massively expanded open cells to help release heat, with the versatile AS3 medium suited to all sleep positions.",
     "citableFacts": [
       "The Amerisleep AS3 is the best memory foam mattress overall."
     ],

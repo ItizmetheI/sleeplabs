@@ -800,20 +800,25 @@ export const competitorMattresses: any[] = [
     thickness: "10 inches",
     trialNights: 120,
     warrantyYears: 20,
-    certifications: ["GOLS", "GOTS", "MADE SAFE®", "EWG Verified®", "GREENGUARD Gold"],
-    technology: ["GOLS Certified Organic Latex", "GOTS Organic Cotton & Wool Cover", "Individually Wrapped Coils", "Glueless Construction"],
+    certifications: ["GOLS", "GOTS", "OCS", "FSC®", "MADE SAFE®", "EWG Verified®", "GREENGUARD Gold", "Formaldehyde Free (UL)"],
+    technology: ["GOLS Certified Organic Latex", "GOTS Organic Cotton & Wool Cover", "Individually Wrapped U.S.-Made Coils", "Glueless Construction", "No Fiberglass Fire Barrier"],
     scores: { overall: 9, value: 8, edgeSupport: 10, trialPeriod: 9, responseTime: 8, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
     dateReviewed: "2026-06-24", dateModified: "2026-06-24", testedNights: 30,
     bestFor: ["Eco-Conscious Buyers", "Budget-Minded Organic Shoppers", "Medium-Firm Preference"],
     tags: ["latex", "organic", "eco-friendly", "medium-firm"],
-    pros: ["Broad certification stack: GOLS, GOTS, MADE SAFE®, EWG Verified®, GREENGUARD Gold", "Glueless construction — no adhesives anywhere in the build", "Lower entry price than most certified-organic competitors", "Available in Medium Firm or Plush"],
-    cons: ["20-year warranty is prorated after the first 10 years, unlike some competitors' full-term coverage", "10-inch profile is thinner than some premium organic hybrids", "Only two firmness options"],
-    summary: "The Happsy Organic Mattress pairs a GOLS-certified organic latex comfort layer with individually wrapped coils, built without any glues or adhesives. It carries one of the broader certification stacks among organic mattresses at a lower entry price than most certified-organic competitors.",
-    verdict: "Happsy and the Amerisleep Organica are both certified-organic latex builds with matching 9/10 overall scores in our testing. Happsy edges ahead on edge support (10 vs 9); the Organica scores higher on value and response time. Happsy's lower entry price and broader certification stack (MADE SAFE®, EWG Verified®, GREENGUARD Gold) may matter more to budget-conscious or certification-focused organic shoppers.",
-    layers: [{ name: "Latex & Coil System", thickness: "10 inches", material: "GOLS Latex + GOTS Cotton/Wool + Wrapped Coils", description: "Organic latex comfort layer over individually wrapped coils, glueless construction throughout." }],
+    pros: ["One of the broadest certification stacks among organic mattresses: GOLS, GOTS, OCS, FSC®, MADE SAFE®, EWG Verified®, GREENGUARD Gold, and UL-verified formaldehyde-free", "Glueless construction — no adhesives anywhere in the build", "Naturally flame-resistant without fiberglass, hydrated silica, boric acid, or rayon fire barriers", "Lower entry price than most certified-organic competitors", "Available in Medium Firm or Plush, with a 120-night trial"],
+    cons: ["20-year warranty is prorated after the first 10 years, unlike some competitors' full-term coverage", "10-inch profile is thinner than some premium organic hybrids", "Happsy is a budget sub-brand of Naturepedic — sister-company products share some sourcing, which is worth knowing if comparing the two as fully independent options", "Only two firmness options"],
+    summary: "The Happsy Organic Mattress pairs a GOLS-certified organic latex comfort layer with individually wrapped, U.S.-made coils, built without any glues or adhesives. It avoids fiberglass and other synthetic fire-barrier chemicals entirely, and carries one of the broadest certification stacks among organic mattresses at a lower entry price than most certified-organic competitors. Happsy is a budget-focused sister brand of Naturepedic, sharing supply-chain and certification practices.",
+    verdict: "Happsy and the Amerisleep Organica are both certified-organic latex builds with matching 9/10 overall scores in our testing. Happsy edges ahead on edge support (10 vs 9); the Organica scores higher on value and response time. Happsy's lower entry price and broader certification stack (OCS, FSC®, MADE SAFE®, EWG Verified®, GREENGUARD Gold) may matter more to budget-conscious or certification-focused organic shoppers. Worth noting: Happsy and Naturepedic (also reviewed on this site) are sister brands under the same parent company.",
+    layers: [{ name: "Latex & Coil System", thickness: "10 inches", material: "GOTS Cotton + GOLS Latex + Organic Wool + Wrapped Coils", description: "Organic cotton fabric and quilted batting over individually pocketed, glueless U.S.-made coils with an organic cotton insulator, topped with GOTS-approved latex and organic wool batting." }],
     sizePricing: [{ size: "Queen", dimensions: "60\" × 80\"", priceOriginal: "$899", priceSale: "$899" }],
-    faqs: [{ question: "Happsy vs Amerisleep Organica — which organic mattress is the better value?", answer: "Both score 9/10 overall in our testing. Happsy's entry price is lower and its certification stack is broader (it adds MADE SAFE®, EWG Verified®, and GREENGUARD Gold to the GOLS/GOTS both share). The Organica scores higher on response time and is available in a wider range of firmness/model variants." }]
+    faqs: [
+      { question: "Happsy vs Amerisleep Organica — which organic mattress is the better value?", answer: "Both score 9/10 overall in our testing. Happsy's entry price is lower and its certification stack is broader (it adds OCS, FSC®, MADE SAFE®, EWG Verified®, and GREENGUARD Gold to the GOLS/GOTS both share). The Organica scores higher on response time and is available in a wider range of firmness/model variants." },
+      { question: "Is Happsy related to Naturepedic?", answer: "Yes — Happsy is a budget-focused sister brand under the same parent company as Naturepedic, which is also reviewed on this site. The two share sourcing and certification practices, with Happsy positioned at a lower price point." },
+      { question: "Does the Happsy mattress use fiberglass?", answer: "No. Happsy states its mattresses achieve flame resistance naturally, without fiberglass, hydrated silica, boric acid treatments, or rayon-based fire barriers." },
+      { question: "Does Happsy require a box spring?", answer: "No. Happsy mattresses work on any flat surface, the Happsy Organic Foundation, platform beds with slats no more than 2-3 inches apart, or adjustable bases." }
+    ]
   },
   {
     id: "purple-restoreplus-hybrid",
