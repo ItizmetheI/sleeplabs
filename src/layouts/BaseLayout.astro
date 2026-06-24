@@ -19,7 +19,7 @@ export interface Props {
 
 const {
   title,
-  description = "PureSleep: Expert mattress reviews and sleep guides.",
+  description = "PureSleep: Testing team mattress reviews and sleep guides.",
   ogTitle,
   ogDescription,
   ogImage,
@@ -31,6 +31,9 @@ const {
 } = Astro.props;
 
 const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const absoluteOgImage = ogImage
+  ? (ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`)
+  : `${SITE_URL}/og-default.jpg`;
 ---
 
 <html lang="en">
@@ -43,12 +46,12 @@ const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.
     
     <meta property="og:title" content={ogTitle ?? title} />
     <meta property="og:description" content={ogDescription ?? description} />
-    <meta property="og:image" content={ogImage ?? `${SITE_URL}/og-default.jpg`} />
+    <meta property="og:image" content={absoluteOgImage} />
     <meta property="og:type" content={ogType ?? "website"} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={ogTitle ?? title} />
     <meta name="twitter:description" content={ogDescription ?? description} />
-    <meta name="twitter:image" content={ogImage ?? `${SITE_URL}/og-default.jpg`} />
+    <meta name="twitter:image" content={absoluteOgImage} />
     
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
     
@@ -61,8 +64,7 @@ const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://cdn11.bigcommerce.com">
-    
+
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
   <body>

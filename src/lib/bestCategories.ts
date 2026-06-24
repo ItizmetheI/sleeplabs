@@ -27,7 +27,7 @@ export const BEST_CATEGORIES: Record<string, CategoryConfig> = {
     faqs: [
       {
         question: 'What is the best mattress overall for 2026?',
-        answer: 'Based on our 7-metric scoring system across 58 models, the Amerisleep AS3 ranks #1 overall. It scores 10/10 composite, works for side, back, and combination sleepers at medium firmness (5/10), and carries a 20-year warranty — the strongest combination of scores and suitability breadth in our database.'
+        answer: 'Based on our 7-metric scoring system across 59 models, the Amerisleep AS3 ranks #1 overall. It scores 10/10 composite, works for side, back, and combination sleepers at medium firmness (5/10), and carries a 20-year warranty — the strongest combination of scores and suitability breadth in our database.'
       },
       {
         question: 'How does PureSleep score mattresses?',

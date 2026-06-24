@@ -46,7 +46,7 @@ const jsonLd = {
 
 <BaseLayout
   title={`${category!.replace(/-/g, ' ')} | PureSleep Blog`}
-  description={`Explore our expert sleep and mattress guides in the ${category!.replace(/-/g, ' ')} category.`}
+  description={`Explore our sleep and mattress guides in the ${category!.replace(/-/g, ' ')} category.`}
   canonicalUrl={`${SITE_URL}/blog/category/${category}/`}
   jsonLd={jsonLd}
   noindex={posts.length === 0 || ['pain-and-health','health-and-sleep','back-pain','hip-pain','shoulder-pain','sciatica','arthritis','fibromyalgia'].includes(category ?? '')}

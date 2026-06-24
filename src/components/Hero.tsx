@@ -35,7 +35,7 @@ export default function Hero() {
             The Mattress Review You Can Actually <span className="text-secondary drop-shadow-sm">Trust.</span>
           </h1>
           <p className="text-body-lg font-body-lg text-on-surface-variant max-w-lg leading-relaxed">
-            Independent, expert-led reviews to help you find your best night's sleep.
+            Independent, hands-on testing team reviews to help you find your best night's sleep.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
             <a 

@@ -22,7 +22,7 @@ export default function EditorsPickDetails() {
             <img 
               alt="Amerisleep AS3 Mattress" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-              src="https://cdn11.bigcommerce.com/s-36im9ihtig/content/assets/mattress-category-listing/amerisleep-as3-listing.jpg" 
+              src="/images/mattresses/amerisleep-as3.webp" 
             />
           </div>
         </motion.div>

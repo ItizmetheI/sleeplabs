@@ -18,6 +18,8 @@ export default defineConfig({
         if (page.includes('/blog/category/pain') || page.includes('/blog/category/health-and-sleep') || page.includes('/blog/tag/back-pain') || page.includes('/blog/tag/hip-pain') || page.includes('/blog/tag/shoulder-pain') || page.includes('/blog/tag/sciatica') || page.includes('/blog/tag/arthritis') || page.includes('/blog/tag/fibromyalgia') || page.includes('/blog/tag/lower-back-pain') || page.includes('/blog/tag/upper-back-pain') || page.includes('/blog/tag/neck-pain')) return false;
         // Exclude superseded duplicate post (301-redirects to how-to-evaluate-a-mattress-trial-period)
         if (page.includes('/blog/how-to-evaluate-a-mattress-during-the-trial-period')) return false;
+        // Exclude superseded Amerisleep-only best-mattress page (301-redirects to /best/overall/)
+        if (page.includes('/best-mattress/')) return false;
         // Exclude machine-readable LLM files
         if (page.includes('/llms/')) return false;
         // Exclude admin
