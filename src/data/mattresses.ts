@@ -1549,7 +1549,7 @@ export const competitorMattresses: any[] = [
     cons: ["Edge support score of 5 — notably weak at the perimeter","9-inch profile is thin vs most competitors","Less overall support depth than thicker alternatives"],
     summary: "The Latex For Less Hybrid Latex delivers GOLS-certified organic latex construction at an unusually accessible price. The main trade-off is weak edge support.",
     verdict: "Exceptional value for certified organic latex, but the 5/10 edge support is a meaningful limitation for edge-of-bed sitting and couples needing full surface use.",
-    layers: [{ name: "Organic Latex Hybrid", thickness: "9 inches", material: "GOLS Natural Latex + Pocketed Coils", description: "Organic latex comfort layer over pocketed coil support." }],
+    layers: [{ name: "Natural Latex Comfort Layer", thickness: "9 inches", material: "GOLS Natural Latex + Pocketed Coils", description: "Organic latex comfort layer over pocketed coil support." }],
     sizePricing: [{ size: "Queen", dimensions: "60\" × 80\"", priceOriginal: "$1,149", priceSale: "$849" }],
     faqs: [{ question: "Latex For Less vs Amerisleep Organica for natural latex?", answer: "The Organica scores higher overall (9 vs 8) and edge support (9 vs 5), and includes organic cotton and wool certifications alongside the latex. The Latex For Less wins on value (10 vs 9) and costs significantly less, making it the budget path to certified latex." }]
   },
@@ -1687,7 +1687,7 @@ export const competitorMattresses: any[] = [
     cons: ["Overall score 8 — below the Nolah Evolution lineup","Motion transfer 8/10","15-year warranty vs 20-year market leaders"],
     summary: "The Nolah Natural 11 uses GOLS-certified organic Talalay latex with organic cotton and a Rainforest Alliance certification for the eco-conscious buyer.",
     verdict: "Strong organic option with class-leading response time. For buyers who want certified natural latex at a good value, it is a strong contender despite an 8/10 overall.",
-    layers: [{ name: "Organic Latex Hybrid", thickness: "11 inches", material: "GOLS Organic Talalay Latex + Coil Base", description: "Certified organic Talalay latex comfort layer over coil support base." }],
+    layers: [{ name: "Organic Talalay Latex Comfort Layer", thickness: "11 inches", material: "GOLS Organic Talalay Latex + Coil Base", description: "Certified organic Talalay latex comfort layer over coil support base." }],
     sizePricing: [{ size: "Queen", dimensions: "60\" × 80\"", priceOriginal: "$1,599", priceSale: "$1,299" }],
     faqs: [{ question: "Nolah Natural 11 vs Amerisleep Organica?", answer: "The Organica scores higher overall (9 vs 8) and includes GOTS wool and organic cotton alongside the latex. The Nolah Natural adds a Rainforest Alliance certification and hits a lower starting price. Both carry similar trial terms." }]
   },

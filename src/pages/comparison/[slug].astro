@@ -188,6 +188,14 @@ if (comparison.faqs && comparison.faqs.length > 0) {
                         </tr>
                     ))}
 
+                    {(mattressA.certifications.length > 0 || mattressB.certifications.length > 0) && (
+                        <tr class="border-b border-outline-variant/20 bg-transparent">
+                            <td colspan="3" class="p-6 text-xs text-on-surface-variant italic">
+                                Certifications are self-reported by the manufacturer. Verify current certification status on the brand's official site or the certifying body's database before purchasing.
+                            </td>
+                        </tr>
+                    )}
+
                     <tr class="bg-primary/5 border-y-2 border-primary/20"><td colspan="3" class="p-6 text-center text-label-lg font-bold text-primary uppercase tracking-widest">Performance Scores</td></tr>
 
                     {/* Scores */}

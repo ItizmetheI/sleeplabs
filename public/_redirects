@@ -2,3 +2,23 @@
 /sitemap.xml /sitemap-index.xml 301
 /blog/category/buying-guide/ /blog/category/buying-guides/ 301
 /blog/how-to-evaluate-a-mattress-during-the-trial-period/ /blog/how-to-evaluate-a-mattress-trial-period/ 301
+/best-mattress/ /best/overall/ 301
+
+# Old single-brand /blog/best-*/ listicles superseded by multi-brand scored /best/ pages
+/blog/best-luxury-mattress/ /best/luxury/ 301
+/blog/best-mattress-for-back-pain/ /best/back-pain/ 301
+/blog/best-mattress-for-back-sleepers/ /best/back-sleepers/ 301
+/blog/best-mattress-for-combination-sleepers/ /best/combination-sleepers/ 301
+/blog/best-mattress-for-couples/ /best/couples/ 301
+/blog/best-mattress-for-heavy-sleepers/ /best/heavy-sleepers/ 301
+/blog/best-mattress-for-hip-pain/ /best/hip-pain/ 301
+/blog/best-mattress-for-hot-sleepers/ /best/cooling/ 301
+/blog/best-mattress-for-shoulder-pain/ /best/shoulder-pain/ 301
+/blog/best-mattress-for-side-sleepers/ /best/side-sleepers/ 301
+/blog/best-mattress-for-stomach-sleepers/ /best/stomach-sleepers/ 301
+/blog/best-memory-foam-mattress/ /best/memory-foam/ 301
+/blog/best-organic-mattress/ /best/organic/ 301
+/blog/best-mattress-under-1000/ /best/value/ 301
+/blog/best-mattress-for-lower-back-pain/ /best/back-pain/ 301
+/blog/best-mattress-for-upper-back-pain/ /best/back-pain/ 301
+/blog/best-mattress-for-back-pain-side-sleepers/ /best/back-pain/ 301

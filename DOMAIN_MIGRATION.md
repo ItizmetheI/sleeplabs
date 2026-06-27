@@ -9,7 +9,9 @@ where, so nothing gets missed.
 
 Every canonical tag, JSON-LD schema URL, sitemap entry, and `robots.txt`'s
 `Sitemap:` line are generated dynamically from one source: the `SITE_URL`
-environment variable (falls back to `https://puresleep.com` only when unset).
+environment variable (falls back to `https://production-domain-not-set.example`
+— a deliberately-unresolvable RFC 2606 placeholder — only when unset, so an
+unset env var can never be confused with a real live site).
 
 **To cut over:** set `SITE_URL=https://<real-domain>` in the hosting platform's
 dashboard env vars, then redeploy. Verified working end-to-end by rebuilding
@@ -55,12 +57,12 @@ sitewide, which would need a project of its own.
 
 ## Separate ops items, not code
 
-- **Cloudflare adapter PR (#2, `cloudflare/workers-autoconfig`, currently
-  open/unmerged):** Cloudflare auto-generated this proposing a swap from the
+- **Cloudflare adapter PR (#2, `cloudflare/workers-autoconfig`) — merged
+  2026-06-23.** Cloudflare auto-generated this proposing a swap from the
   `@astrojs/node` adapter to `@astrojs/cloudflare`, plus committing a real
   `wrangler.jsonc` (confirms the live worker is named `finalize`, no custom
-  domain attached yet). Reasonable to merge, but it's an infra decision —
-  hasn't been merged here.
+  domain attached yet). This is what fixed the Workers Builds CI failures
+  that had been silently blocking redeploys.
 - **`claude/repo-overview-alpy9p` branch — do not merge.** Diverged from the
   very first commit in this repo's history (missing the entire multi-brand
   build: all 52 competitor brands, every comparison page, the trust/disclosure

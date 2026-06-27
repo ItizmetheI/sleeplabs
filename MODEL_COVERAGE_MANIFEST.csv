@@ -1,0 +1,60 @@
+workbook_model_name,source_id,source_name,brand,live_review_url,overall,value,edgeSupport,trialPeriod,responseTime,motionTransfer,coolingBreathability,in_best_page,in_comparison_page
+Amerisleep AS3,amerisleep-as3,Amerisleep AS3,Amerisleep,/reviews/amerisleep-as3/,10,9,10,9,9,10,10,Yes,Yes
+Amerisleep AS2,amerisleep-as2,Amerisleep AS2,Amerisleep,/reviews/amerisleep-as2/,9,9,8,9,10,10,10,Yes,Yes
+Amerisleep AS5,amerisleep-as5,Amerisleep AS5,Amerisleep,/reviews/amerisleep-as5/,9,8,10,9,8,9,10,Yes,Yes
+Amerisleep AS6 Black Series,amerisleep-as6,Amerisleep AS6 Black Series,Amerisleep,/reviews/amerisleep-as6/,10,9,9,9,9,10,10,Yes,Yes
+Amerisleep Organica,amerisleep-organica,Amerisleep Organica,Amerisleep,/reviews/amerisleep-organica/,9,9,9,9,10,9,9,Yes,Yes
+Saatva Classic,saatva-classic,Saatva Classic,Saatva,/reviews/saatva-classic/,10,7,10,10,10,9,9,Yes,Yes
+"Nolah Evolution 15""",nolah-evolution-15,Nolah Evolution 15,Nolah,/reviews/nolah-evolution-15/,10,10,10,9,9,10,9,No,Yes
+Brooklyn Bedding Aurora Luxe,brooklyn-bedding-aurora-luxe,Brooklyn Bedding Aurora Luxe,Brooklyn Bedding,/reviews/brooklyn-bedding-aurora-luxe/,9,9,8,9,8,9,10,Yes,Yes
+Glacier Apex Hybrid,glacier-apex-hybrid,Glacier Apex Hybrid,Glacier,/reviews/glacier-apex-hybrid/,9,10,9,10,8,9,10,No,Yes
+Birch Natural,birch-natural,Birch Natural Mattress,Birch,/reviews/birch-natural/,8,9,9,9,10,8,9,No,Yes
+Bear Star Hybrid,bear-star-hybrid,Bear Star Hybrid,Bear,/reviews/bear-star-hybrid/,9,9,9,9,8,9,9,Yes,Yes
+Avocado Green,avocado-green,Avocado Green Mattress,Avocado,/reviews/avocado-green/,9,7,9,10,9,9,9,No,Yes
+Happsy,happsy,Happsy Organic Mattress,Happsy,/reviews/happsy/,9,8,10,9,8,9,9,No,No
+Purple RestorePlus Hybrid,purple-restoreplus-hybrid,Purple RestorePlus Hybrid,Purple,/reviews/purple-restoreplus-hybrid/,9,7,9,9,10,9,9,Yes,Yes
+Nest Bedding Sparrow,nest-bedding-sparrow,Nest Bedding Sparrow,Nest Bedding,/reviews/nest-bedding-sparrow/,10,8,10,10,9,10,9,Yes,Yes
+Helix Midnight Luxe,helix-midnight-luxe,Helix Midnight Luxe,Helix,/reviews/helix-midnight-luxe/,9,7,10,9,9,9,10,Yes,Yes
+Leesa Original Mattress,leesa-original,Leesa Original,Leesa,/reviews/leesa-original/,8,8,7,9,9,9,8,Yes,Yes
+Leesa Sapira Hybrid,leesa-sapira-hybrid,Leesa Sapira Hybrid,Leesa,/reviews/leesa-sapira-hybrid/,9,8,8,9,9,9,9,Yes,Yes
+Brooklyn Plank Firm,brooklyn-bedding-plank-firm,Brooklyn Bedding Plank Firm,Brooklyn Bedding,/reviews/brooklyn-bedding-plank-firm/,9,9,10,9,9,8,8,Yes,Yes
+Bear Original,bear-original,Bear Original,Bear,/reviews/bear-original/,9,10,10,9,9,8,9,Yes,Yes
+GhostBed Flex,ghostbed-flex,GhostBed Flex,GhostBed,/reviews/ghostbed-flex/,9,8,8,9,8,10,10,Yes,Yes
+Helix Dawn Luxe,helix-dawn-luxe,Helix Dawn Luxe,Helix,/reviews/helix-dawn-luxe/,9,7,8,9,9,9,9,Yes,Yes
+Leesa Sapira Chill Hybrid,leesa-sapira-chill-hybrid,Leesa Sapira Chill Hybrid,Leesa,/reviews/leesa-sapira-chill-hybrid/,10,8,10,9,10,9,10,Yes,Yes
+Helix Sunset Luxe,helix-sunset-luxe,Helix Sunset Luxe,Helix,/reviews/helix-sunset-luxe/,9,7,8,9,9,10,9,Yes,Yes
+GhostBed Luxe,ghostbed-luxe,GhostBed Luxe,GhostBed,/reviews/ghostbed-luxe/,7,8,8,9,6,10,9,Yes,Yes
+"Casper ""The One"" Mattress",casper-the-one,Casper The One,Casper,/reviews/casper-the-one/,8,8,7,9,7,10,8,Yes,Yes
+Casper Dream Hybrid,casper-dream-hybrid,Casper Dream Hybrid,Casper,/reviews/casper-dream-hybrid/,9,8,8,9,9,9,9,Yes,Yes
+Saatva RX,saatva-rx,Saatva RX,Saatva,/reviews/saatva-rx/,10,7,9,10,10,10,9,Yes,Yes
+Amerisleep AS3 Hybrid,amerisleep-as3-hybrid,Amerisleep AS3 Hybrid,Amerisleep,/reviews/amerisleep-as3-hybrid/,10,9,10,9,9,9,10,Yes,No
+Amerisleep AS5 Hybrid,amerisleep-as5-hybrid,Amerisleep AS5 Hybrid,Amerisleep,/reviews/amerisleep-as5-hybrid/,9,8,9,9,8,9,10,Yes,Yes
+Amerisleep Organica (Plush),amerisleep-organica-plush,Amerisleep Organica Plush,Amerisleep,/reviews/amerisleep-organica-plush/,9,8,10,9,9,9,9,Yes,No
+Eco Terra Hybrid Latex,eco-terra-hybrid-latex,Eco Terra Hybrid Latex,Eco Terra,/reviews/eco-terra-hybrid-latex/,9,10,8,8,10,9,9,Yes,No
+FORM Core,form-core,FORM Core,FORM,/reviews/form-core/,9,8,9,10,9,10,9,No,No
+FORM Core Hybrid,form-core-hybrid,FORM Core Hybrid,FORM,/reviews/form-core-hybrid/,10,8,10,10,10,10,9,No,No
+FORM Prime,form-prime,FORM Prime,FORM,/reviews/form-prime/,10,8,10,10,9,10,9,No,No
+FORM Prime X,form-prime-x,FORM Prime X,FORM,/reviews/form-prime-x/,10,8,10,10,10,10,9,No,No
+Glacier Original Hybrid,glacier-original-hybrid,Glacier Original Hybrid,Glacier,/reviews/glacier-original-hybrid/,8,10,9,10,9,8,10,Yes,No
+Glacier Summit Hybrid,glacier-summit-hybrid,Glacier Summit Hybrid,Glacier,/reviews/glacier-summit-hybrid/,8,10,9,10,9,8,10,Yes,No
+Latex For Less Hybrid Latex Mattress,latex-for-less-hybrid-latex-mattress,Latex For Less Hybrid Latex Mattress,Latex For Less,/reviews/latex-for-less-hybrid-latex-mattress/,8,10,5,9,10,9,9,No,No
+Naturepedic EOS Classic,naturepedic-eos-classic,Naturepedic EOS Classic,Naturepedic,/reviews/naturepedic-eos-classic/,9,6,9,9,9,8,9,Yes,No
+Naturepedic Concerto Plush,naturepedic-concerto-plush,Naturepedic Concerto Plush,Naturepedic,/reviews/naturepedic-concerto-plush/,9,6,8,9,9,8,9,Yes,No
+Nest Bedding Owl,nest-bedding-owl,Nest Bedding Owl,Nest Bedding,/reviews/nest-bedding-owl/,10,8,9,10,10,9,9,Yes,No
+Nest Bedding Puffin Kids,nest-bedding-puffin-kids,Nest Bedding Puffin Kids,Nest Bedding,/reviews/nest-bedding-puffin-kids/,9,10,9,5,9,8,8,No,No
+Nest Bedding Raven,nest-bedding-raven,Nest Bedding Raven,Nest Bedding,/reviews/nest-bedding-raven/,9,9,9,10,10,9,8,Yes,No
+"Nolah Natural 11""",nolah-natural-11,"Nolah Natural 11""",Nolah,/reviews/nolah-natural-11/,8,9,9,9,10,8,9,Yes,No
+Nolah Original Hybrid,nolah-original-hybrid,Nolah Original Hybrid,Nolah,/reviews/nolah-original-hybrid/,8,9,8,9,10,8,8,No,No
+PlushBeds Botanical Bliss,plushbeds-botanical-bliss,PlushBeds Botanical Bliss,PlushBeds,/reviews/plushbeds-botanical-bliss/,9,7,8,9,8,10,9,Yes,No
+PlushBeds Luxury Bliss,plushbeds-luxury-bliss,PlushBeds Luxury Bliss,PlushBeds,/reviews/plushbeds-luxury-bliss/,8,8,7,9,10,7,9,Yes,No
+PlushBeds Organic Bliss,plushbeds-organic-bliss,PlushBeds Organic Bliss,PlushBeds,/reviews/plushbeds-organic-bliss/,9,8,9,9,9,9,9,Yes,No
+PlushBeds Organic Kids Mattress,plushbeds-organic-kids,PlushBeds Organic Kids Mattress,PlushBeds,/reviews/plushbeds-organic-kids/,9,8,9,9,10,9,9,No,No
+PlushBeds Signature Bliss,plushbeds-signature-bliss,PlushBeds Signature Bliss,PlushBeds,/reviews/plushbeds-signature-bliss/,10,9,10,9,10,9,9,Yes,No
+SweetNight CoolNest Memory Foam Mattress,sweetnight-coolnest,SweetNight CoolNest Memory Foam Mattress,SweetNight,/reviews/sweetnight-coolnest/,8,10,7,9,8,10,9,Yes,No
+SweetNight Prime Memory Foam Mattress,sweetnight-prime,SweetNight Prime Memory Foam Mattress,SweetNight,/reviews/sweetnight-prime/,7,10,5,9,7,10,8,No,No
+Vaya Foam,vaya-foam,Vaya Foam,Vaya,/reviews/vaya-foam/,8,10,7,9,9,9,8,No,No
+Vaya Hybrid,vaya-hybrid,Vaya Hybrid,Vaya,/reviews/vaya-hybrid/,8,10,8,9,10,8,8,Yes,No
+Westin Heavenly Bed,westin-heavenly-bed,Westin Heavenly Bed,Westin,/reviews/westin-heavenly-bed/,10,8,10,0,10,9,9,Yes,No
+Zoma Boost,zoma-boost,Zoma Boost,Zoma,/reviews/zoma-boost/,10,10,10,9,9,10,9,Yes,No
+Zoma Hybrid,zoma-hybrid,Zoma Hybrid,Zoma,/reviews/zoma-hybrid/,9,10,10,9,9,9,9,No,No
+Zoma Start,zoma-start,Zoma Start,Zoma,/reviews/zoma-start/,9,10,10,9,8,9,9,No,No
