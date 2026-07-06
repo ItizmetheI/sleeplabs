@@ -52,7 +52,7 @@ export interface Mattress {
   relatedTopics?: string[];
 }
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
 export const reviewer_editorial: Reviewer = {
   name: "PureSleep Testing Team",

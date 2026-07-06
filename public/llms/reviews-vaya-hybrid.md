@@ -1,5 +1,5 @@
 # Vaya Hybrid Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/vaya-hybrid/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/vaya-hybrid/
 
 ## Verdict
 PureSleep hands-on tested the Vaya Hybrid across 7 metrics. Overall editorial score: 8.0/10.

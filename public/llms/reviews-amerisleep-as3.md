@@ -1,5 +1,5 @@
 # Amerisleep AS3 Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/amerisleep-as3/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/amerisleep-as3/
 
 ## Verdict
 PureSleep hands-on tested the Amerisleep AS3 across 7 metrics. Overall editorial score: 10.0/10.

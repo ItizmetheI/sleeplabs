@@ -1,5 +1,5 @@
 # Purple RestorePlus Hybrid Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/purple-restoreplus-hybrid/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/purple-restoreplus-hybrid/
 
 ## Verdict
 PureSleep hands-on tested the Purple RestorePlus Hybrid across 7 metrics. Overall editorial score: 9.0/10.

@@ -1,5 +1,5 @@
 # Westin Heavenly Bed Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/westin-heavenly-bed/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/westin-heavenly-bed/
 
 ## Verdict
 PureSleep hands-on tested the Westin Heavenly Bed across 7 metrics. Overall editorial score: 10.0/10.

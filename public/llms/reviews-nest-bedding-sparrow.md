@@ -1,5 +1,5 @@
 # Nest Bedding Sparrow Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/nest-bedding-sparrow/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/nest-bedding-sparrow/
 
 ## Verdict
 PureSleep hands-on tested the Nest Bedding Sparrow across 7 metrics. Overall editorial score: 10.0/10.

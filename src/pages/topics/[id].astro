@@ -11,7 +11,7 @@ export function getStaticPaths() {
 }
 
 const { topic } = Astro.props;
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
 const relatedMattressData = topic.relatedMattresses
   .map(id => mattresses.find(m => m.id === id))

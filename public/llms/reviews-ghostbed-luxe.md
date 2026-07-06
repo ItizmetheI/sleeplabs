@@ -1,5 +1,5 @@
 # GhostBed Luxe Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/ghostbed-luxe/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/ghostbed-luxe/
 
 ## Verdict
 PureSleep hands-on tested the GhostBed Luxe across 7 metrics. Overall editorial score: 7.0/10.

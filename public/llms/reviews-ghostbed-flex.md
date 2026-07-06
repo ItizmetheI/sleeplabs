@@ -1,5 +1,5 @@
 # GhostBed Flex Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/ghostbed-flex/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/ghostbed-flex/
 
 ## Verdict
 PureSleep hands-on tested the GhostBed Flex across 7 metrics. Overall editorial score: 9.0/10.

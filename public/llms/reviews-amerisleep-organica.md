@@ -1,5 +1,5 @@
 # Amerisleep Organica Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/amerisleep-organica/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/amerisleep-organica/
 
 ## Verdict
 PureSleep hands-on tested the Amerisleep Organica across 7 metrics. Overall editorial score: 9.0/10.

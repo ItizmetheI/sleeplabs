@@ -1,5 +1,5 @@
 # Zoma Hybrid Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/zoma-hybrid/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/zoma-hybrid/
 
 ## Verdict
 PureSleep hands-on tested the Zoma Hybrid across 7 metrics. Overall editorial score: 9.0/10.

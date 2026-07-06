@@ -1,5 +1,5 @@
 # PlushBeds Botanical Bliss Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/plushbeds-botanical-bliss/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/plushbeds-botanical-bliss/
 
 ## Verdict
 PureSleep hands-on tested the PlushBeds Botanical Bliss across 7 metrics. Overall editorial score: 9.0/10.

@@ -1,5 +1,5 @@
 # Amerisleep AS5 Hybrid Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/amerisleep-as5-hybrid/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/amerisleep-as5-hybrid/
 
 ## Verdict
 PureSleep hands-on tested the Amerisleep AS5 Hybrid across 7 metrics. Overall editorial score: 9.0/10.

@@ -1,5 +1,5 @@
 # Nolah Evolution 15" Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/nolah-evolution-15/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/nolah-evolution-15/
 
 ## Verdict
 PureSleep hands-on tested the Nolah Evolution 15" across 7 metrics. Overall editorial score: 10.0/10.

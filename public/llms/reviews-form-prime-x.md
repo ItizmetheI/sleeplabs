@@ -1,5 +1,5 @@
 # FORM Prime X Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/form-prime-x/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/form-prime-x/
 
 ## Verdict
 PureSleep hands-on tested the FORM Prime X across 7 metrics. Overall editorial score: 10.0/10.

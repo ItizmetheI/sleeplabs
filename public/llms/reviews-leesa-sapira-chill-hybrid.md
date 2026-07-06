@@ -1,5 +1,5 @@
 # Leesa Sapira Chill Hybrid Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/leesa-sapira-chill-hybrid/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/leesa-sapira-chill-hybrid/
 
 ## Verdict
 PureSleep hands-on tested the Leesa Sapira Chill Hybrid across 7 metrics. Overall editorial score: 10.0/10.

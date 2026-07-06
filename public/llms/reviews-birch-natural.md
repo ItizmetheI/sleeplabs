@@ -1,5 +1,5 @@
 # Birch Natural Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/birch-natural/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/birch-natural/
 
 ## Verdict
 PureSleep hands-on tested the Birch Natural across 7 metrics. Overall editorial score: 8.0/10.
