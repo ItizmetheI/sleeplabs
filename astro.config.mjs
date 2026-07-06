@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://production-domain-not-set.example',
+  site: process.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev',
   output: 'static',
   adapter: cloudflare(),
   integrations: [
