@@ -2,7 +2,7 @@
 import { allMattresses } from '../../data/mattresses';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
 const BRAND_META: Record<string, { displayName: string; description: string; officialUrl: string; blurb: string }> = {
   'amerisleep': {
@@ -314,7 +314,7 @@ const topModel = [...brandModels].sort((a, b) => (b.scores?.overall || 0) - (a.s
         All {meta.displayName} mattresses above were evaluated hands-on by the PureSleep Testing Team. Scores are on the 7-metric system: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability (all 0–10). Scores come only from our testing data.
       </p>
       <p class="text-body-md text-on-surface-variant leading-relaxed">
-        PureSleep earns no commission and accepts no paid placements. We have no commercial relationship with {meta.displayName}.
+        Product links go directly to the manufacturer. Scores reflect our physical testing protocol.
       </p>
     </section>
 

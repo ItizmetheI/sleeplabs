@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4 items-center md:items-start">
             <h4 className="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Company</h4>
             <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/about">About Us</a>
-            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="mailto:support@puresleep.com">Contact</a>
+            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/about">Contact</a>
           </div>
           <div className="flex flex-col gap-4 items-center md:items-start">
             <h4 className="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Legal</h4>
@@ -33,7 +33,7 @@ export default function Footer() {
       </div>
       <div className="mt-12 pt-6 border-t border-outline-variant/20 text-center relative z-10 max-w-container-max mx-auto">
         <p className="text-xs text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-          <strong>Editorial Independence:</strong> PureSleep earns no commission and accepts no paid placements. Scores are editorially independent. Product links go directly to manufacturers.
+          Product links go directly to the manufacturer. Scores reflect our physical testing protocol.
         </p>
       </div>
     </footer>

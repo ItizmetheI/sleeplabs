@@ -28,7 +28,7 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="glass-panel text-secondary text-label-sm font-label-sm px-4 py-1.5 rounded-full uppercase tracking-wider font-bold"
             >
-              INDEPENDENT · HANDS-ON TESTED · EDITORIALLY INDEPENDENT
+              HANDS-ON TESTED · 59 MODELS · 7 METRICS
             </motion.span>
           </div>
           <h1 className="text-display-lg font-display-lg  text-primary leading-tight">
@@ -52,7 +52,7 @@ export default function Hero() {
             </a>
           </div>
           <div className="flex flex-wrap gap-4 mt-4 text-label-sm font-label-sm text-secondary uppercase tracking-widest">
-            <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-secondary block"></span> Editorially independent</span>
+            <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-secondary block"></span> Physically tested</span>
             <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-secondary block"></span> Hands-on tested</span>
             <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-secondary block"></span> Updated monthly</span>
           </div>

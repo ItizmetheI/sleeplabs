@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 const lastUpdated = "2026-05-01";
 
 const jsonLd = [
@@ -10,7 +10,7 @@ const jsonLd = [
     "@type": "WebPage",
     "name": "Disclosure",
     "url": `${SITE_URL}/disclosure/`,
-    "description": "PureSleep's disclosure: no commission, no paid placements, no affiliate relationships. Product links go directly to manufacturers.",
+    "description": "PureSleep's disclosure: how product links work and how scores are produced.",
     "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL }
   }
 ];
@@ -18,7 +18,7 @@ const jsonLd = [
 
 <BaseLayout
   title="Disclosure — PureSleep"
-  description="PureSleep's disclosure: no commission, no paid placements, no affiliate relationships. Product links go directly to manufacturers."
+  description="PureSleep's disclosure: how product links work and how scores are produced. Scores reflect our physical testing protocol."
   canonicalUrl={`${SITE_URL}/disclosure/`}
   lastUpdated={lastUpdated}
   jsonLd={jsonLd}
@@ -28,7 +28,7 @@ const jsonLd = [
     <header class="flex flex-col gap-6">
       <h1 class="text-headline-lg font-headline-lg text-primary font-bold">Disclosure</h1>
       <p class="text-body-lg text-on-surface-variant leading-relaxed">
-        PureSleep earns no commission and accepts no paid placements. We have no affiliate relationships and no financial relationship with the brands we review.
+        Product links on PureSleep go directly to the manufacturer. Scores reflect our physical testing protocol.
       </p>
     </header>
 
@@ -36,7 +36,7 @@ const jsonLd = [
       <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">How Links Work On This Site</h2>
       <div class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-col gap-4">
         <p class="text-body-md text-on-surface-variant leading-relaxed">
-          Product links on PureSleep go directly to manufacturer pages. We earn no commission from any link on this site. Scores are finalized independently before any product link is placed.
+          Product links on PureSleep go directly to manufacturer pages. Scores are finalized from hands-on testing before any product link is placed.
         </p>
         <p class="text-body-md text-on-surface-variant leading-relaxed">
           No brand receives more favorable scoring because of its market position. Amerisleep wins categories where the data supports it; competitors lead where they do. If a model underperforms in testing, we say so clearly.
@@ -48,7 +48,7 @@ const jsonLd = [
       <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Who Writes Our Reviews</h2>
       <div class="glass-panel p-8 rounded-3xl border border-white/60">
         <p class="text-body-md text-on-surface-variant leading-relaxed">
-          Reviews are written and scored by the <a href="/about/#testing-team" class="text-secondary hover:text-primary underline underline-offset-4 font-bold transition-colors">PureSleep Testing Team</a>, evaluated hands-on using our standardized 7-metric scoring system. For questions, contact us at <a href="mailto:support@puresleep.com" class="text-secondary hover:text-primary underline underline-offset-4 transition-colors">support@puresleep.com</a>.
+          Reviews are written and scored by the <a href="/about/#testing-team" class="text-secondary hover:text-primary underline underline-offset-4 font-bold transition-colors">PureSleep Testing Team</a>, evaluated hands-on using our standardized 7-metric scoring system. For questions, visit our <a href="/about" class="text-secondary hover:text-primary underline underline-offset-4 transition-colors">About page</a>.
         </p>
       </div>
     </section>

@@ -2,13 +2,13 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const lastUpdated = "2026-05-01";
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "How We Test Mattresses at PureSleep",
-  "description": "Our mattress testing methodology: 7-metric scoring, hands-on evaluation, editorially independent reviews.",
+  "description": "Our mattress testing methodology: 7-metric scoring, hands-on evaluation. Scores reflect our physical testing protocol.",
   "author": { "@type": "Organization", "name": "PureSleep" },
   "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
   "datePublished": "2024-01-01",
@@ -21,7 +21,7 @@ const formattedDate = new Date(lastUpdated).toLocaleDateString('en-US', { month:
 
 <BaseLayout
   title="How We Test Mattresses — PureSleep Testing Methodology"
-  description="Our mattress testing methodology: 7-metric scoring, hands-on evaluation, and editorially independent reviews of the full Amerisleep lineup."
+  description="Our mattress testing methodology: 7-metric scoring, hands-on evaluation. Scores reflect our physical testing protocol."
   canonicalUrl={`${SITE_URL}/methodology/`}
   lastUpdated={lastUpdated}
   jsonLd={jsonLd}
@@ -36,7 +36,7 @@ const formattedDate = new Date(lastUpdated).toLocaleDateString('en-US', { month:
         </span>
       </div>
       <p class="text-body-lg text-on-surface-variant leading-relaxed text-left mt-4 glass-panel p-8 rounded-3xl border border-white/60">
-        PureSleep evaluates Amerisleep mattresses using a standardized 7-metric scoring system. Every score comes from hands-on testing — we do not accept manufacturer PR samples in exchange for reviews. PureSleep earns no commission and accepts no paid placements. Scores are editorially independent.
+        PureSleep evaluates Amerisleep mattresses using a standardized 7-metric scoring system. Every score comes from hands-on testing — we do not accept manufacturer PR samples in exchange for reviews. Product links go directly to the manufacturer. Scores reflect our physical testing protocol.
       </p>
     </header>
 
@@ -48,7 +48,7 @@ const formattedDate = new Date(lastUpdated).toLocaleDateString('en-US', { month:
           { n: "2", title: "Sleep Testing", desc: "Each mattress is tested across multiple sleep positions — back, side, and stomach — by multiple testers covering different body weights and sleep preferences." },
           { n: "3", title: "7-Metric Scoring", desc: "Each mattress is scored on Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. All scores are 0–10." },
           { n: "4", title: "Overall Score", desc: "The overall score is a hands-on composite evaluation. Scores reflect the testing team's direct assessment, not lab measurements or manufacturer data." },
-          { n: "5", title: "Editorial Independence", desc: "PureSleep earns no commission and accepts no paid placements. No commercial relationship affects which model ranks higher." }
+          { n: "5", title: "Editorial Independence", desc: "Product links go directly to the manufacturer. No commercial relationship affects which model ranks higher." }
         ].map(step => (
           <div class="flex gap-6 items-start">
             <div class="bg-primary/10 text-primary font-bold text-xl rounded-full w-12 h-12 flex items-center justify-center shrink-0 border border-primary/20">{step.n}</div>
@@ -85,7 +85,7 @@ const formattedDate = new Date(lastUpdated).toLocaleDateString('en-US', { month:
       <h2 class="text-headline-md font-headline-md text-primary mb-2">Editorial Standards</h2>
       <ul class="flex flex-col gap-3 text-body-md text-on-surface-variant">
         <li class="flex gap-3"><span class="text-secondary font-bold">—</span> We do not make medical claims. Mattresses address sleep comfort and support only, not health conditions.</li>
-        <li class="flex gap-3"><span class="text-secondary font-bold">—</span> PureSleep earns no commission and accepts no paid placements. Scores are editorially independent.</li>
+        <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Product links go directly to the manufacturer. Scores reflect our physical testing protocol.</li>
         <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Scores reflect hands-on testing, not manufacturer-provided data.</li>
         <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Reviews are updated when product specifications change or on a regular re-evaluation cycle.</li>
       </ul>
