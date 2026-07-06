@@ -1,5 +1,5 @@
 # SweetNight Prime Memory Foam Mattress Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/sweetnight-prime-memory-foam-mattress/
+Last updated: 2026-07-06 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/sweetnight-prime/
 
 ## Verdict
 PureSleep hands-on tested the SweetNight Prime Memory Foam Mattress across 7 metrics. Overall editorial score: 7.0/10.

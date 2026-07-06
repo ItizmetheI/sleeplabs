@@ -1,5 +1,5 @@
 # PlushBeds Organic Kids Mattress Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/plushbeds-organic-kids-mattress/
+Last updated: 2026-07-06 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/plushbeds-organic-kids/
 
 ## Verdict
 PureSleep hands-on tested the PlushBeds Organic Kids Mattress across 7 metrics. Overall editorial score: 9.0/10.

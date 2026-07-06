@@ -40,13 +40,6 @@ const articleSchema = {
   "dateModified": post.dateModified,
   "mainEntityOfPage": `${SITE_URL}/blog/${post.slug}/`,
   "articleBody": post.sections.map(s => s.content).join(' '),
-  ...(post.reviewedBy ? {
-    "reviewedBy": {
-      "@type": "Organization",
-      "name": "PureSleep Testing Team",
-      "url": `${SITE_URL}/methodology/`
-    }
-  } : {})
 };
 
 const faqSchema = {
@@ -160,9 +153,6 @@ const formatProse = (text: string) => {
           <div class="w-10 h-10 rounded-full bg-secondary text-primary flex items-center justify-center font-bold text-lg font-serif">P</div>
           <span>By {post.author.name}</span>
         </div>
-        {post.reviewedBy && (
-          <span>· Reviewed by <a href={post.reviewedBy.url} class="text-secondary hover:text-primary transition-colors">{post.reviewedBy.name}</a>, {post.reviewedBy.role}</span>
-        )}
         <span>· <time datetime={post.dateModified}>Updated: {new Date(post.dateModified).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time></span>
         <span>· {post.readTimeMinutes} min read</span>
       </div>

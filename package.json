@@ -15,10 +15,8 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "12",
-    "@astrojs/node": "9.5.5",
     "@astrojs/react": "^4.2.0",
     "@astrojs/sitemap": "^3.2.0",
-    "@astrojs/tailwind": "5.1.5",
     "@tailwindcss/vite": "^4.0.0",
     "astro": "5.18.2",
     "lucide-react": "^0.546.0",
@@ -38,10 +36,5 @@
     "tsx": "^4.21.0",
     "typescript": "~5.8.2",
     "wrangler": "^4.103.0"
-  },
-  "overrides": {
-    "@astrojs/tailwind": {
-      "tailwindcss": "$tailwindcss"
-    }
   }
 }

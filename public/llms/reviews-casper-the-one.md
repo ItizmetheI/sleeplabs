@@ -1,8 +1,8 @@
-# Casper "The One" Mattress Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/casper-the-one-mattress/
+# Casper The One Review — Hands-On Tested
+Last updated: 2026-07-06 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/casper-the-one/
 
 ## Verdict
-PureSleep hands-on tested the Casper "The One" Mattress across 7 metrics. Overall editorial score: 8.0/10.
+PureSleep hands-on tested the Casper The One across 7 metrics. Overall editorial score: 8.0/10.
 
 ## Hands-on scores (0-10)
 - Overall: 8.0

@@ -1,8 +1,8 @@
-# Brooklyn Plank Firm Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/brooklyn-plank-firm/
+# Brooklyn Bedding Plank Firm Review — Hands-On Tested
+Last updated: 2026-07-06 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/brooklyn-bedding-plank-firm/
 
 ## Verdict
-PureSleep hands-on tested the Brooklyn Plank Firm across 7 metrics. Overall editorial score: 9.0/10.
+PureSleep hands-on tested the Brooklyn Bedding Plank Firm across 7 metrics. Overall editorial score: 9.0/10.
 
 ## Hands-on scores (0-10)
 - Overall: 9.0
