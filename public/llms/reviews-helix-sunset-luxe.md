@@ -1,5 +1,5 @@
 # Helix Sunset Luxe Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/helix-sunset-luxe/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/helix-sunset-luxe/
 
 ## Verdict
 PureSleep hands-on tested the Helix Sunset Luxe across 7 metrics. Overall editorial score: 9.0/10.

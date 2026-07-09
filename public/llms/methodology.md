@@ -1,5 +1,5 @@
 # PureSleep Scoring Methodology
-Last updated: 2026-06-11 | Canonical: https://puresleep.com/methodology/
+Last updated: 2026-06-11 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/methodology/
 
 ## What the scores are
 PureSleep scores every Amerisleep model on 7 metrics, each 0-10: Support, Pressure Relief, Cooling, Motion Isolation, Edge Support, Responsiveness, Value. The overall score is a weighted average with Support and Pressure Relief each weighted 1.5x. Scores are editorial evaluations, not laboratory measurements and not manufacturer data.

@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 const lastUpdated = "2026-05-01";
 
 const jsonLd = [
@@ -18,7 +18,7 @@ const jsonLd = [
 
 <BaseLayout
   title="About PureSleep — Independent Mattress Reviews Across 24 Brands"
-  description="PureSleep is an independent mattress review publication covering 59 models across 24 brands. Editorially independent, no commission, no paid placements."
+  description="PureSleep covers 59 mattress models across 24 brands. Scores reflect our physical testing protocol. Product links go directly to the manufacturer."
   canonicalUrl={`${SITE_URL}/about/`}
   lastUpdated={lastUpdated}
   jsonLd={jsonLd}
@@ -28,7 +28,7 @@ const jsonLd = [
     <header class="flex flex-col gap-6">
       <h1 class="text-headline-lg font-headline-lg text-primary font-bold">About PureSleep</h1>
       <p class="text-body-lg text-on-surface-variant leading-relaxed">
-        PureSleep is an independent mattress review publication covering 59 models across 24 brands. Every score comes from our standardized 7-metric system. We are editorially independent: no commission, no paid placements, no affiliate relationships.
+        PureSleep covers 59 mattress models across 24 brands. Every score comes from our standardized 7-metric system. Product links go directly to the manufacturer.
       </p>
     </header>
 
@@ -39,7 +39,7 @@ const jsonLd = [
           We test mattresses from 24 brands using a standardized 7-metric scoring system. Each model is evaluated hands-on before any score is published.
         </p>
         <p class="text-body-md text-on-surface-variant leading-relaxed">
-          PureSleep earns no commission and accepts no paid placements. Scores are editorially independent. If a model underperforms in testing, we say so clearly.
+          Scores are finalized from hands-on testing before any product link is placed. If a model underperforms in testing, we say so clearly.
         </p>
         <a href="/methodology" class="text-primary hover:text-secondary underline underline-offset-4 font-bold transition-colors w-fit">Read our full testing methodology →</a>
       </div>
@@ -49,7 +49,7 @@ const jsonLd = [
       <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Our Testing Team</h2>
       <div class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-col gap-4">
         <p class="text-body-md text-on-surface-variant leading-relaxed">
-          Reviews are written and scored by the PureSleep Testing Team — sleep product testers who evaluate mattresses across different body weights, sleep positions, and comfort preferences. All reviews are editorially independent.
+          Reviews are written and scored by the PureSleep Testing Team — sleep product testers who evaluate mattresses across different body weights, sleep positions, and comfort preferences.
         </p>
         <a href="/methodology" class="text-primary hover:text-secondary underline underline-offset-4 font-bold transition-colors w-fit">How we test →</a>
       </div>
@@ -65,10 +65,10 @@ const jsonLd = [
     </section>
 
     <section class="flex flex-col gap-6">
-      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Editorial Independence</h2>
+      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">How We Score</h2>
       <div class="glass-panel p-8 rounded-3xl border border-white/60">
         <p class="text-body-md text-on-surface-variant leading-relaxed">
-          PureSleep earns no commission and accepts no paid placements. Scores are finalized independently before any product links are placed. For questions, contact us at <a href="mailto:support@puresleep.com" class="text-secondary hover:text-primary transition-colors underline underline-offset-4">support@puresleep.com</a>.
+          Scores are finalized from hands-on testing before any product link is placed. Product links go directly to the manufacturer. For questions, visit our <a href="/about" class="text-secondary hover:text-primary transition-colors underline underline-offset-4">About page</a>.
         </p>
       </div>
     </section>

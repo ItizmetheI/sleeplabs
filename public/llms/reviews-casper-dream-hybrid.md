@@ -1,5 +1,5 @@
 # Casper Dream Hybrid Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/casper-dream-hybrid/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/casper-dream-hybrid/
 
 ## Verdict
 PureSleep hands-on tested the Casper Dream Hybrid across 7 metrics. Overall editorial score: 9.0/10.

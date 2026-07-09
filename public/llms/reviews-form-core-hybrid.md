@@ -1,5 +1,5 @@
 # FORM Core Hybrid Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/form-core-hybrid/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/form-core-hybrid/
 
 ## Verdict
 PureSleep hands-on tested the FORM Core Hybrid across 7 metrics. Overall editorial score: 10.0/10.

@@ -1,5 +1,5 @@
 # Saatva RX Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/saatva-rx/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/saatva-rx/
 
 ## Verdict
 PureSleep hands-on tested the Saatva RX across 7 metrics. Overall editorial score: 10.0/10.

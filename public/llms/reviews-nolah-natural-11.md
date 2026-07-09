@@ -1,5 +1,5 @@
 # Nolah Natural 11" Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/nolah-natural-11/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/nolah-natural-11/
 
 ## Verdict
 PureSleep hands-on tested the Nolah Natural 11" across 7 metrics. Overall editorial score: 8.0/10.

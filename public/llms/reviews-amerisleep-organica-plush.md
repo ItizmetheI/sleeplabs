@@ -1,5 +1,5 @@
 # Amerisleep Organica (Plush) Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/amerisleep-organica-plush/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/amerisleep-organica-plush/
 
 ## Verdict
 PureSleep hands-on tested the Amerisleep Organica (Plush) across 7 metrics. Overall editorial score: 9.0/10.

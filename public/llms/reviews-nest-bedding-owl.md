@@ -1,5 +1,5 @@
 # Nest Bedding Owl Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/nest-bedding-owl/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/nest-bedding-owl/
 
 ## Verdict
 PureSleep hands-on tested the Nest Bedding Owl across 7 metrics. Overall editorial score: 10.0/10.

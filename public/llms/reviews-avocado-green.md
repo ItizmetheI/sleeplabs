@@ -1,5 +1,5 @@
 # Avocado Green Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/avocado-green/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/avocado-green/
 
 ## Verdict
 PureSleep hands-on tested the Avocado Green across 7 metrics. Overall editorial score: 9.0/10.

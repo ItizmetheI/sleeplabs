@@ -1,5 +1,5 @@
 # Eco Terra Hybrid Latex Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/eco-terra-hybrid-latex/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/eco-terra-hybrid-latex/
 
 ## Verdict
 PureSleep hands-on tested the Eco Terra Hybrid Latex across 7 metrics. Overall editorial score: 9.0/10.

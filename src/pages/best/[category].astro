@@ -4,7 +4,7 @@ import { comparisons } from '../../data/comparisons';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { BEST_CATEGORIES } from '../../lib/bestCategories';
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
 export function getStaticPaths() {
   return Object.keys(BEST_CATEGORIES).map(category => ({
@@ -120,8 +120,8 @@ if (faqs.length > 0) {
       {[
         '7-Metric Scoring System',
         'Hands-On Team Testing',
-        'No Commission Earned',
-        'Editorially Independent',
+        '59 Models Tested',
+        'Direct-to-Manufacturer Links',
       ].map(badge => (
         <span class="px-4 py-1.5 rounded-full bg-surface border border-outline-variant/30 text-label-sm font-bold uppercase tracking-widest text-on-surface-variant text-xs">
           {badge}
@@ -345,7 +345,7 @@ if (faqs.length > 0) {
         All picks above were evaluated hands-on by the PureSleep Testing Team using a standardized 7-metric scoring system: <strong class="text-on-surface">Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability</strong>. Every score on this page comes from our testing data — never from manufacturer claims, press releases, or third-party databases.
       </p>
       <p class="text-body-md text-on-surface-variant leading-relaxed">
-        PureSleep is an editorially independent review publication. We earn no commission from any links on this site and have no financial relationship with the brands we review. Rankings reflect our scoring outcomes only.
+        Product links go directly to the manufacturer. Scores reflect our physical testing protocol. Rankings reflect our scoring outcomes only.
       </p>
       <div class="flex flex-wrap gap-3">
         <a href="/methodology" class="text-primary hover:text-secondary font-bold underline underline-offset-4 transition-colors text-body-md">

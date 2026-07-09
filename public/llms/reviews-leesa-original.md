@@ -1,8 +1,8 @@
-# Leesa Original Mattress Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/leesa-original-mattress/
+# Leesa Original Review — Hands-On Tested
+Last updated: 2026-07-06 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/leesa-original/
 
 ## Verdict
-PureSleep hands-on tested the Leesa Original Mattress across 7 metrics. Overall editorial score: 8.0/10.
+PureSleep hands-on tested the Leesa Original across 7 metrics. Overall editorial score: 8.0/10.
 
 ## Hands-on scores (0-10)
 - Overall: 8.0

@@ -20,7 +20,7 @@ if (!mattressA || !mattressB) {
   throw new Error(`Mattresses not found for comparison ${comparison.slug}`);
 }
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
 const jsonLd = [
   {
@@ -31,10 +31,6 @@ const jsonLd = [
       "@type": "Organization",
       "name": "PureSleep",
       "url": SITE_URL
-    },
-    "reviewedBy": {
-      "@type": "Organization",
-      "name": "PureSleep Testing Team"
     },
     "dateModified": comparison.dateModified,
     "datePublished": comparison.dateModified,
@@ -66,8 +62,8 @@ const jsonLd = [
       "reviewRating": { "@type": "Rating", "ratingValue": mattressA.scores.overall, "bestRating": "10" },
       "author": { "@type": "Organization", "name": "PureSleep Testing Team" },
       "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
-      "datePublished": "2026-06-16",
-      "dateModified": "2026-06-16"
+      "datePublished": comparison.dateModified,
+      "dateModified": comparison.dateModified
     }
   },
   {
@@ -89,8 +85,8 @@ const jsonLd = [
       "reviewRating": { "@type": "Rating", "ratingValue": mattressB.scores.overall, "bestRating": "10" },
       "author": { "@type": "Organization", "name": "PureSleep Testing Team" },
       "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
-      "datePublished": "2026-06-16",
-      "dateModified": "2026-06-16"
+      "datePublished": comparison.dateModified,
+      "dateModified": comparison.dateModified
     }
   }
 ];
@@ -155,7 +151,7 @@ if (comparison.faqs && comparison.faqs.length > 0) {
                 <a href={mattressB.affiliateUrl} target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-primary text-on-primary font-bold font-label-md uppercase shadow-md hover:bg-primary/90 transition-colors">Check Price</a>
             </div>
          </section>
-         <p class="text-xs text-on-surface-variant text-center">PureSleep earns no commission and accepts no paid placements. Both links go directly to the manufacturer.</p>
+         <p class="text-xs text-on-surface-variant text-center">Both links go directly to the manufacturer.</p>
 
         <!-- Stats Comparison Table -->
         <section class="overflow-hidden glass-panel rounded-3xl border border-white/60">
@@ -278,7 +274,7 @@ if (comparison.faqs && comparison.faqs.length > 0) {
               Check {mattressB.name} Price →
             </a>
           </div>
-          <p class="text-xs text-on-surface-variant mt-3">PureSleep earns no commission and accepts no paid placements. Both links go directly to the manufacturer.</p>
+          <p class="text-xs text-on-surface-variant mt-3">Both links go directly to the manufacturer.</p>
         </section>
 
         <!-- FAQs -->

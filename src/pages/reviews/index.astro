@@ -2,12 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { allMattresses } from '../../data/mattresses';
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Mattress Reviews 2026 — 59 Models, Hands-On Tested & Editorially Independent | PureSleep",
+  "name": "Mattress Reviews 2026 — 59 Models, Hands-On Tested | PureSleep",
   "description": "Independent mattress reviews across 24 brands. 59 models hands-on evaluated using our 7-metric scoring system. Tested by the PureSleep Testing Team.",
   "url": `${SITE_URL}/reviews/`,
   "mainEntity": {
@@ -31,7 +31,7 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
 
 <BaseLayout
   title="Mattress Reviews 2026 — 59 Models, 24 Brands | PureSleep"
-  description="Independent mattress reviews across 24 brands. 59 models hands-on evaluated using our 7-metric scoring system. Editorially independent."
+  description="Mattress reviews across 24 brands. 59 models hands-on evaluated using our 7-metric scoring system. Product links go directly to the manufacturer."
   canonicalUrl={`${SITE_URL}/reviews/`}
   lastUpdated={lastUpdated}
   ogImage="/images/mattresses/amerisleep-as3.webp"

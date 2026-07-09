@@ -2,12 +2,10 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
-import node from '@astrojs/node';
-
 import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://production-domain-not-set.example',
+  site: process.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev',
   output: 'static',
   adapter: cloudflare(),
   integrations: [

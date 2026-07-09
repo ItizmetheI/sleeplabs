@@ -1,5 +1,5 @@
 # Amerisleep AS2 Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/amerisleep-as2/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/amerisleep-as2/
 
 ## Verdict
 PureSleep hands-on tested the Amerisleep AS2 across 7 metrics. Overall editorial score: 9.0/10.

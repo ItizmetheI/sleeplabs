@@ -1,5 +1,5 @@
 # Latex For Less Hybrid Latex Mattress Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/latex-for-less-hybrid-latex-mattress/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/latex-for-less-hybrid-latex-mattress/
 
 ## Verdict
 PureSleep hands-on tested the Latex For Less Hybrid Latex Mattress across 7 metrics. Overall editorial score: 8.0/10.

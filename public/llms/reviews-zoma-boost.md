@@ -1,5 +1,5 @@
 # Zoma Boost Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/zoma-boost/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/zoma-boost/
 
 ## Verdict
 PureSleep hands-on tested the Zoma Boost across 7 metrics. Overall editorial score: 10.0/10.

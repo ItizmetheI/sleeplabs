@@ -1,5 +1,5 @@
 # Nest Bedding Raven Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/nest-bedding-raven/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/nest-bedding-raven/
 
 ## Verdict
 PureSleep hands-on tested the Nest Bedding Raven across 7 metrics. Overall editorial score: 9.0/10.

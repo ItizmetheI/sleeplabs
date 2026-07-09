@@ -1,5 +1,5 @@
 # Helix Dawn Luxe Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/helix-dawn-luxe/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/helix-dawn-luxe/
 
 ## Verdict
 PureSleep hands-on tested the Helix Dawn Luxe across 7 metrics. Overall editorial score: 9.0/10.

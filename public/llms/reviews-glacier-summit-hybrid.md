@@ -1,5 +1,5 @@
 # Glacier Summit Hybrid Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/glacier-summit-hybrid/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/glacier-summit-hybrid/
 
 ## Verdict
 PureSleep hands-on tested the Glacier Summit Hybrid across 7 metrics. Overall editorial score: 8.0/10.

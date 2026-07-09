@@ -1,5 +1,5 @@
 # PlushBeds Luxury Bliss Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/plushbeds-luxury-bliss/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/plushbeds-luxury-bliss/
 
 ## Verdict
 PureSleep hands-on tested the PlushBeds Luxury Bliss across 7 metrics. Overall editorial score: 8.0/10.

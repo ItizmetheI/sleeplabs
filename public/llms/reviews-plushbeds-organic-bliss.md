@@ -1,5 +1,5 @@
 # PlushBeds Organic Bliss Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/plushbeds-organic-bliss/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/plushbeds-organic-bliss/
 
 ## Verdict
 PureSleep hands-on tested the PlushBeds Organic Bliss across 7 metrics. Overall editorial score: 9.0/10.

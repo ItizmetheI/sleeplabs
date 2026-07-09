@@ -1,5 +1,5 @@
 # Zoma Start Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/zoma-start/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/zoma-start/
 
 ## Verdict
 PureSleep hands-on tested the Zoma Start across 7 metrics. Overall editorial score: 9.0/10.

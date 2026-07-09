@@ -1,5 +1,5 @@
 # Naturepedic Concerto Plush Review — Hands-On Tested
-Last updated: 2026-06-16 | Canonical: https://puresleep.com/reviews/naturepedic-concerto-plush/
+Last updated: 2026-06-16 | Canonical: https://finalize.ahmedbarkat1067.workers.dev/reviews/naturepedic-concerto-plush/
 
 ## Verdict
 PureSleep hands-on tested the Naturepedic Concerto Plush across 7 metrics. Overall editorial score: 9.0/10.
