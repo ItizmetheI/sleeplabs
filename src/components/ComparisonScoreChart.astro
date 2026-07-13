@@ -1,0 +1,85 @@
+---
+import type { Mattress } from '../data/mattresses';
+
+interface Props {
+  mattressA: Mattress;
+  mattressB: Mattress;
+}
+
+const { mattressA, mattressB } = Astro.props;
+
+const metrics = [
+  { label: 'Overall', key: 'overall' },
+  { label: 'Value', key: 'value' },
+  { label: 'Edge Support', key: 'edgeSupport' },
+  { label: 'Trial Period', key: 'trialPeriod' },
+  { label: 'Response Time', key: 'responseTime' },
+  { label: 'Motion Transfer', key: 'motionTransfer' },
+  { label: 'Cooling & Breathability', key: 'coolingBreathability' },
+] as const;
+
+const chartId = `score-chart-${mattressA.id}-${mattressB.id}`;
+---
+
+<figure
+  class="border-y border-outline-variant/40 py-8 md:py-10"
+  data-comparison-score-chart
+  aria-labelledby={`${chartId}-title`}
+  aria-describedby={`${chartId}-caption`}
+>
+  <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between mb-7">
+    <div>
+      <p class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold mb-2">Seven-Metric Score Chart</p>
+      <h2 id={`${chartId}-title`} class="text-headline-md font-headline-md text-primary font-bold">
+        {mattressA.name} vs {mattressB.name}
+      </h2>
+    </div>
+    <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-on-surface-variant" aria-label="Chart legend">
+      <span class="inline-flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-primary" aria-hidden="true"></span>{mattressA.name}</span>
+      <span class="inline-flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-secondary" aria-hidden="true"></span>{mattressB.name}</span>
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-6">
+    {metrics.map(metric => {
+      const scoreA = mattressA.scores[metric.key];
+      const scoreB = mattressB.scores[metric.key];
+      const leader = scoreA === scoreB ? 'Tie' : scoreA > scoreB ? mattressA.name : mattressB.name;
+
+      return (
+        <div class="grid gap-3 md:grid-cols-[170px_1fr] md:gap-6" data-score-metric={metric.key}>
+          <div class="flex items-center justify-between md:block">
+            <h3 class="font-bold text-on-surface">{metric.label}</h3>
+            <span class="text-xs text-on-surface-variant md:mt-1 md:block">Leader: {leader}</span>
+          </div>
+          <div class="grid gap-3">
+            <div class="grid grid-cols-[minmax(0,1fr)_44px] items-center gap-3">
+              <div
+                class="h-3 bg-surface-container-high rounded-sm overflow-hidden"
+                role="img"
+                aria-label={`${mattressA.name}: ${scoreA} out of 10 for ${metric.label}`}
+              >
+                <div class="h-full bg-primary rounded-sm" style={`width:${scoreA * 10}%`}></div>
+              </div>
+              <span class="font-bold text-primary text-right tabular-nums">{scoreA}/10</span>
+            </div>
+            <div class="grid grid-cols-[minmax(0,1fr)_44px] items-center gap-3">
+              <div
+                class="h-3 bg-surface-container-high rounded-sm overflow-hidden"
+                role="img"
+                aria-label={`${mattressB.name}: ${scoreB} out of 10 for ${metric.label}`}
+              >
+                <div class="h-full bg-secondary rounded-sm" style={`width:${scoreB * 10}%`}></div>
+              </div>
+              <span class="font-bold text-secondary text-right tabular-nums">{scoreB}/10</span>
+            </div>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+
+  <figcaption id={`${chartId}-caption`} class="mt-7 text-sm leading-relaxed text-on-surface-variant">
+    Scores use PureSleep's published 0-10 editorial rubric. They are comparative editorial evaluations, not laboratory measurements or manufacturer ratings. See the full score table and methodology below.
+  </figcaption>
+</figure>

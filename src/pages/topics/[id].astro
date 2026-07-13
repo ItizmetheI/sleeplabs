@@ -1,127 +1,208 @@
 ---
-import { topics } from '../../data/topics';
-import { mattresses, reviewer_editorial } from '../../data/mattresses';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { allMattresses } from '../../data/mattresses';
+import { topics } from '../../data/topics';
+import { articleTable, toArticleBody } from '../../lib/schemaArticleBody';
+import { COMMERCIAL_RELATIONSHIP_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
 
 export function getStaticPaths() {
-  return topics.map(topic => ({
+  return topics.map((topic) => ({
     params: { id: topic.id },
-    props: { topic }
+    props: { topic },
   }));
 }
 
 const { topic } = Astro.props;
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
-
-const relatedMattressData = topic.relatedMattresses
-  .map(id => mattresses.find(m => m.id === id))
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
+const canonicalUrl = `${SITE_URL}/topics/${topic.id}/`;
+const relatedMattresses = topic.relatedMattresses
+  .map((id: string) => allMattresses.find((mattress) => mattress.id === id))
   .filter(Boolean);
+const heroImage = relatedMattresses[0]?.heroImage || '/og-default.jpg';
+const medicalAdjacent = topic.id === 'spinal-alignment' || topic.id === 'sleep-cycles';
+const medicalNote = medicalAdjacent
+  ? 'This article provides general sleep-product and comfort information. It is not medical advice, and no mattress can diagnose, treat, or cure a health condition.'
+  : null;
 
-const jsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": topic.title,
-    "description": topic.description,
-    "dateModified": topic.dateModified,
-    "author": {
-      "@type": "Organization",
-      "name": reviewer_editorial.name,
-      "description": reviewer_editorial.credentials,
-      "sameAs": reviewer_editorial.sameAs,
-      "url": `${SITE_URL}/methodology/`
-    },
-    "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
-    "mainEntityOfPage": `${SITE_URL}/topics/${topic.id}/`
+const articleBody = toArticleBody(
+  topic.title,
+  'Quick Answer',
+  topic.description,
+  medicalNote,
+  'What to Know',
+  topic.body.split('\n\n'),
+  relatedMattresses.length
+    ? articleTable(
+      'Related Mattress Reviews',
+      ['Mattress', 'Overall', 'Value', 'Edge Support', 'Response Time', 'Motion Transfer', 'Cooling & Breathability'],
+      relatedMattresses.map((mattress) => [
+        mattress.name,
+        `${mattress.scores.overall}/10`,
+        `${mattress.scores.value}/10`,
+        `${mattress.scores.edgeSupport}/10`,
+        `${mattress.scores.responseTime}/10`,
+        `${mattress.scores.motionTransfer}/10`,
+        `${mattress.scores.coolingBreathability}/10`,
+      ]),
+    )
+    : null,
+  topic.sources?.length ? ['Sources', topic.sources.map((source) => `${source.name}: ${source.url}`)] : null,
+  'About PureSleep',
+  `${COMMERCIAL_RELATIONSHIP_DISCLOSURE} ${LINK_DISCLOSURE}`,
+);
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: topic.title,
+  description: topic.description,
+  image: heroImage.startsWith('http') ? heroImage : `${SITE_URL}${heroImage}`,
+  author: { '@type': 'Organization', name: 'PureSleep Editorial Team', url: `${SITE_URL}/about/` },
+  publisher: {
+    '@type': 'Organization',
+    name: 'PureSleep',
+    url: SITE_URL,
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "DefinedTerm",
-    "name": topic.title,
-    "description": topic.description,
-    "inDefinedTermSet": { "@type": "DefinedTermSet", "name": "PureSleep Sleep & Mattress Glossary" }
-  }
-];
+  datePublished: topic.dateModified,
+  dateModified: topic.dateModified,
+  mainEntityOfPage: canonicalUrl,
+  articleBody,
+  citation: topic.sources?.map((source) => source.url),
+};
 
-const formattedDate = new Date(topic.dateModified).toLocaleDateString('en-US', {
-  month: 'long', day: 'numeric', year: 'numeric'
-});
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+    { '@type': 'ListItem', position: 2, name: 'Topics', item: `${SITE_URL}/topics/` },
+    { '@type': 'ListItem', position: 3, name: topic.title, item: canonicalUrl },
+  ],
+};
 ---
 
 <BaseLayout
-  title={`${topic.title} — PureSleep Sleep Science Guide`}
+  title={`${topic.title} Guide | PureSleep`}
   description={topic.description}
-  canonicalUrl={`${SITE_URL}/topics/${topic.id}/`}
+  canonicalUrl={canonicalUrl}
+  machineReadableUrl={`${SITE_URL}/llms/topic-${topic.id}.md`}
+  ogType="article"
+  ogImage={heroImage}
   lastUpdated={topic.dateModified}
-  jsonLd={jsonLd}
+  jsonLd={[articleSchema, breadcrumbSchema]}
 >
-  <main class="max-w-[760px] mx-auto px-margin-mobile md:px-0 py-12 relative z-10 flex flex-col gap-12">
-
-    <nav class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest">
-      <a href="/" class="hover:text-secondary transition-colors">Home</a>
-      <span class="mx-2">·</span>
-      <a href="/topics" class="hover:text-secondary transition-colors">Topics</a>
-      <span class="mx-2">·</span>
-      <span class="text-primary">{topic.title}</span>
-    </nav>
-
-    <header class="flex flex-col gap-4">
-      <h1 class="text-headline-lg font-headline-lg text-primary font-bold">{topic.title}</h1>
-      <p class="text-title-md font-title-md text-on-surface-variant italic">{topic.description}</p>
-      <div class="text-label-sm font-label-sm text-on-surface-variant bg-surface px-4 py-2 rounded-full border border-outline-variant/30 w-fit">
-        Last Updated: {formattedDate}
+  <main class="w-full">
+    <header class="border-b border-outline-variant/30 bg-white">
+      <div class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop py-10 md:py-14">
+        <nav aria-label="Breadcrumb" class="text-label-sm text-on-surface-variant mb-6">
+          <a href="/topics/" class="hover:text-primary underline underline-offset-4">Topics</a>
+          <span aria-hidden="true"> / </span>
+          <span>{topic.title}</span>
+        </nav>
+        <p class="text-label-sm uppercase text-secondary font-bold mb-3">Mattress and Sleep Topic</p>
+        <h1 class="text-headline-lg font-headline-lg text-primary font-bold max-w-3xl">{topic.title}</h1>
+        <p class="text-body-lg text-on-surface-variant max-w-3xl mt-5">{topic.description}</p>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 mt-6 text-body-sm text-on-surface-variant">
+          <span>By PureSleep Editorial Team</span>
+          <span>Updated {topic.dateModified}</span>
+          <a href="/disclosure/" class="underline underline-offset-4 hover:text-primary">Commercial disclosure</a>
+        </div>
       </div>
     </header>
 
-    <article class="flex flex-col gap-6 text-body-lg text-on-surface-variant leading-relaxed">
-      {topic.body.split('\n\n').map((paragraph: string) => (
-        <p>{paragraph}</p>
-      ))}
-    </article>
-
-    {relatedMattressData.length > 0 && (
-      <section class="flex flex-col gap-6 pt-8 border-t border-outline-variant/20">
-        <h2 class="text-headline-md font-headline-md text-primary italic">Related Mattress Reviews</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {relatedMattressData.map((mattress: any) => (
-            <a href={`/reviews/${mattress.id}`} class="glass-panel p-6 rounded-2xl hover:border-secondary transition-all group flex flex-col gap-3">
-              <div class="flex justify-between items-start">
-                <h3 class="text-title-md font-title-md text-primary group-hover:text-secondary transition-colors">{mattress.name}</h3>
-                <span class="text-secondary font-bold text-title-md">{mattress.scores.overall}/10</span>
-              </div>
-              <p class="text-label-sm text-on-surface-variant">{mattress.firmness} · from {mattress.priceSale}</p>
-              <span class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold mt-auto">Read Review →</span>
-            </a>
-          ))}
-        </div>
+    <article class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop py-10 md:py-14">
+      <section aria-labelledby="quick-answer" class="border-l-4 border-secondary pl-5 py-1 mb-10 max-w-3xl">
+        <h2 id="quick-answer" class="text-title-lg font-bold text-primary mb-2">Quick Answer</h2>
+        <p class="text-body-lg text-on-surface-variant">{topic.description}</p>
       </section>
-    )}
 
-    {topic.relatedGuides.length > 0 && (
-      <section class="flex flex-col gap-4 pt-8 border-t border-outline-variant/20">
-        <h2 class="text-headline-md font-headline-md text-primary italic">Related Guides</h2>
-        <div class="flex flex-col gap-2">
-          {topic.relatedGuides.map((slug: string) => (
-            <a href={`/blog/${slug}`} class="text-primary hover:text-secondary underline underline-offset-4 font-bold text-body-md transition-colors">
-              {slug.replace(/-/g, ' ').split(' ').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')} →
-            </a>
-          ))}
+      {medicalNote && (
+        <aside class="border-y border-outline-variant/30 py-4 mb-10 max-w-3xl text-body-sm text-on-surface-variant">
+          <strong class="text-on-surface">Health note:</strong> {medicalNote}
+        </aside>
+      )}
+
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_280px] gap-10 items-start">
+        <div class="max-w-3xl">
+          <div class="space-y-6 text-body-lg text-on-surface-variant leading-relaxed">
+            {topic.body.split('\n\n').map((paragraph: string) => <p>{paragraph}</p>)}
+          </div>
+
+          {topic.sources?.length > 0 && (
+            <section aria-labelledby="sources" class="border-t border-outline-variant/30 mt-10 pt-8">
+              <h2 id="sources" class="text-headline-sm font-bold text-primary mb-4">Sources</h2>
+              <ul class="space-y-3">
+                {topic.sources.map((source) => (
+                  <li>
+                    <a href={source.url} rel="noopener noreferrer" class="text-primary underline underline-offset-4 hover:text-secondary">
+                      {source.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
         </div>
-      </section>
-    )}
 
-    <div class="bg-primary rounded-3xl p-8 text-center mt-4">
-      <h3 class="text-headline-md font-headline-md text-white italic mb-4">Ready to find your mattress?</h3>
-      <p class="text-blue-200 text-body-md mb-6">100-night trial · 20-year warranty · Free shipping</p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="/reviews" class="inline-flex items-center justify-center bg-white text-primary px-8 py-4 rounded-full text-label-sm font-label-sm uppercase tracking-widest hover:bg-blue-50 transition-colors font-bold">
-          View All Reviews →
-        </a>
-        <a href="https://amerisleep.com/sale/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center border-2 border-white text-white px-8 py-4 rounded-full text-label-sm font-label-sm uppercase tracking-widest hover:bg-white/10 transition-colors font-bold">
-          Shop Amerisleep Sale →
-        </a>
+        <aside class="border-t-2 border-primary pt-5">
+          <h2 class="text-title-md font-bold text-primary mb-4">Related Guides</h2>
+          <div class="flex flex-col gap-3">
+            {topic.relatedGuides.map((guide: string) => (
+              <a href="/guides/" class="text-body-sm text-primary underline underline-offset-4 hover:text-secondary">
+                {guide.replace(/-/g, ' ').replace(/\b\w/g, (letter: string) => letter.toUpperCase())}
+              </a>
+            ))}
+          </div>
+        </aside>
       </div>
-    </div>
 
+      {relatedMattresses.length > 0 && (
+        <section aria-labelledby="related-reviews" class="mt-14 border-t border-outline-variant/30 pt-10">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-6">
+            <div>
+              <p class="text-label-sm uppercase text-secondary font-bold mb-2">Same Published Rubric</p>
+              <h2 id="related-reviews" class="text-headline-md font-bold text-primary">Related Mattress Reviews</h2>
+            </div>
+            <a href="/methodology/" class="text-body-sm text-primary underline underline-offset-4 hover:text-secondary">How scores work</a>
+          </div>
+
+          <div class="overflow-x-auto border-y border-outline-variant/30">
+            <table class="w-full min-w-[720px] text-left">
+              <thead class="bg-surface">
+                <tr class="text-label-sm text-on-surface-variant">
+                  <th class="p-4">Mattress</th>
+                  <th class="p-4">Overall</th>
+                  <th class="p-4">Value</th>
+                  <th class="p-4">Edge</th>
+                  <th class="p-4">Response</th>
+                  <th class="p-4">Motion</th>
+                  <th class="p-4">Cooling</th>
+                </tr>
+              </thead>
+              <tbody>
+                {relatedMattresses.map((mattress) => (
+                  <tr class="border-t border-outline-variant/20">
+                    <td class="p-4 font-bold">
+                      <a href={`/reviews/${mattress.id}/`} class="text-primary underline underline-offset-4 hover:text-secondary">{mattress.name}</a>
+                    </td>
+                    <td class="p-4">{mattress.scores.overall}/10</td>
+                    <td class="p-4">{mattress.scores.value}/10</td>
+                    <td class="p-4">{mattress.scores.edgeSupport}/10</td>
+                    <td class="p-4">{mattress.scores.responseTime}/10</td>
+                    <td class="p-4">{mattress.scores.motionTransfer}/10</td>
+                    <td class="p-4">{mattress.scores.coolingBreathability}/10</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )}
+
+      <aside class="border-t border-outline-variant/30 mt-12 pt-6 text-body-sm text-on-surface-variant">
+        <p><strong class="text-on-surface">Material relationships:</strong> {COMMERCIAL_RELATIONSHIP_DISCLOSURE}</p>
+        <p class="mt-2">{LINK_DISCLOSURE}</p>
+      </aside>
+    </article>
   </main>
 </BaseLayout>

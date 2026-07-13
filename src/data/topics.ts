@@ -5,6 +5,7 @@ export interface Topic {
   body: string;
   relatedMattresses: string[];
   relatedGuides: string[];
+  sources?: { name: string; url: string }[];
   dateModified: string;
 }
 
@@ -12,73 +13,82 @@ export const topics: Topic[] = [
   {
     id: 'memory-foam',
     title: 'Memory Foam',
-    description: 'How memory foam works, its history, and which mattresses use the best formulations.',
-    body: `Memory foam (viscoelastic polyurethane foam) was developed by NASA in the 1960s to absorb impact energy in aircraft seats. It entered the consumer mattress market in the 1990s. The core property of memory foam is viscoelasticity: it deforms slowly under pressure and recovers slowly when pressure is removed. This creates the characteristic "hug" and pressure relief memory foam is known for.\n\nStandard petroleum-based memory foam has one major drawback: it traps body heat. The closed-cell structure slows airflow, raising sleep surface temperature over the course of a night. Multiple innovations have addressed this: open-cell memory foam (faster airflow), gel-infused memory foam (heat dispersion), and plant-based memory foam (Bio-Pur® replaces a portion of petroleum with plant-derived materials, creating a more open cell structure).\n\nFor mattress shoppers, memory foam excels at pressure relief and motion isolation — both near-perfect in well-formulated foams. It underperforms on responsiveness (slow to spring back, making position changes harder) and edge support (foam compresses at the perimeter). Cooling varies significantly by formulation — plant-based and open-cell versions sleep measurably cooler than standard memory foam in our temperature tests.\n\nOur top-rated memory foam mattress is the Amerisleep AS3, which uses Bio-Pur® plant-based memory foam and scores 9.5/10 overall.`,
-    relatedMattresses: ['amerisleep-as3', 'amerisleep-as2', 'amerisleep-as5'],
+    description: 'How memory foam works, how formulations differ, and how to compare scored models.',
+    body: `Memory foam is viscoelastic polyurethane foam: it deforms under heat and pressure, then recovers after pressure is removed. NASA-funded researchers developed an early form of the material in the late 1960s for aircraft cushioning. Consumer mattress formulations now vary considerably in density, cell structure, additives, and response.\n\nMemory foam is known for contouring and motion isolation. Common tradeoffs include slower response, softer perimeter support, and greater heat retention in some dense formulations. Open-cell structures, perforations, gel infusions, and hybrid coil bases are different design approaches intended to improve airflow or surface feel; none guarantees a particular temperature outcome for every sleeper.\n\nPureSleep evaluates complete mattresses rather than treating a single foam label as proof of performance. In the current 59-model dataset, the Amerisleep AS3 scores 10/10 overall. The Casper The One and Leesa Original provide non-affiliated memory-foam comparisons using the same seven-metric rubric. Scores are editorial evaluations, not laboratory measurements.`,
+    relatedMattresses: ['amerisleep-as3', 'casper-the-one', 'leesa-original'],
     relatedGuides: ['memory-foam-vs-hybrid-mattress', 'how-to-choose-mattress-firmness'],
-    dateModified: '2026-05-01'
+    sources: [
+      { name: 'NASA: Memory Foam', url: 'https://www.nasa.gov/image-article/memory-foam/' }
+    ],
+    dateModified: '2026-07-13'
   },
   {
     id: 'cooling-technology',
     title: 'Cooling Technology',
     description: 'The science of thermal regulation in mattresses and how different materials dissipate body heat.',
-    body: `Cooling is a critical performance metric, as the human body needs to drop in temperature by 1-2 degrees Fahrenheit to initiate and sustain deep sleep. Mattresses handle heat in two distinct ways: passive breathability and active heat dissipation.\n\nPassive breathability relies on airflow. Innerspring and hybrid mattresses naturally excel here, as the coil layers act as large air chambers. Materials like latex and open-cell foams also offer passive breathability by allowing air to move through their structures.\n\nActive heat dissipation involves materials engineered to pull heat away from the body. Gel infusions in memory foam aim to do this, though their effectiveness often wanes after the mattress reaches thermal equilibrium. Phase Change Materials (PCMs) change state (from solid to liquid) to absorb heat, providing longer-lasting cooling. For hot sleepers, hybrid constructions like the Amerisleep AS6 (9.4/10 cooling) use pocketed coil air chambers beneath the foam layers to continuously circulate cool air. Natural latex mattresses like the Organica (9.5/10 cooling) are inherently breathable — latex's open-cell structure allows airflow that synthetic foam cannot match.`,
-    relatedMattresses: ['amerisleep-as6', 'amerisleep-organica', 'amerisleep-as3'],
+    body: `Mattress cooling is better understood as a combination of airflow, surface heat management, room conditions, bedding, and individual physiology. Coil layers leave more open space for air movement than solid foam cores. Latex and open-cell foams may also permit more airflow, while dense foams can retain more heat.\n\nCooling covers, gel infusions, and phase-change materials are designed to change initial surface feel or manage heat near the sleeper. Their real-world effect depends on the full mattress and bedding system, so a material name alone should not be treated as a guaranteed result.\n\nPureSleep's Cooling & Breathability score is a standardized editorial evaluation, not a thermal-camera or laboratory measurement. The Amerisleep AS6 scores 10/10 on this metric in the current dataset. The Brooklyn Bedding Aurora Luxe and Leesa Sapira Chill Hybrid are non-affiliated alternatives evaluated on the same scale.`,
+    relatedMattresses: ['amerisleep-as6', 'brooklyn-bedding-aurora-luxe', 'leesa-sapira-chill-hybrid'],
     relatedGuides: ['best-mattress-for-hot-sleepers', 'how-to-sleep-cooler'],
-    dateModified: '2026-05-01'
+    dateModified: '2026-07-13'
   },
   {
     id: 'pocketed-coils',
     title: 'Pocketed Coils',
     description: 'Understanding individually wrapped coils and why they replaced traditional continuous coil systems.',
-    body: `Pocketed coils, also known as individually wrapped or Marshall coils, represent a massive leap forward from older continuous coil systems. In a pocketed coil system, each steel spring is individually wrapped in its own fabric sleeve.\n\nBecause the coils are not wired together, they act independently. When you press down on one coil, the surrounding coils are unaffected. This yields two major benefits: contoured pressure relief (the coils map to your body shape rather than sinking as a flat unit) and superior motion isolation (a restless partner's movement isn't transferred across a wire grid).\n\nModern hybrids often feature zoned pocketed coil systems. Denser, firmer coils are placed in the center third of the mattress to support the heavier lumbar and hip regions, while softer coils are used near the shoulders to allow for compression. Most premium hybrids like the Amerisleep AS6 utilize some form of pocketed coil technology.`,
-    relatedMattresses: ['amerisleep-as6', 'amerisleep-organica'],
+    body: `Pocketed coils, also called individually wrapped coils, place each steel spring in a fabric sleeve instead of joining the full unit with a continuous wire grid. This lets sections of the support core respond more locally to weight and movement.\n\nBrands may vary coil gauge, count, height, perimeter reinforcement, and zoning. Those specifications do not translate directly into comfort or durability without considering the comfort layers and complete construction. Pocketed coils also leave open space through the support core, which can aid airflow compared with a solid foam base.\n\nThe Amerisleep AS6, Saatva Classic, and Nolah Evolution 15 are three differently constructed coil-based models in PureSleep's current dataset. Each is scored with the same seven-metric rubric so shoppers can compare the complete mattress rather than relying on coil terminology alone.`,
+    relatedMattresses: ['amerisleep-as6', 'saatva-classic', 'nolah-evolution-15'],
     relatedGuides: ['memory-foam-vs-hybrid-mattress', 'best-hybrid-mattress'],
-    dateModified: '2026-05-01'
+    dateModified: '2026-07-13'
   },
   {
     id: 'spinal-alignment',
     title: 'Spinal Alignment',
     description: 'The importance of maintaining neutral spine posture during sleep and how mattresses facilitate it.',
-    body: `Neutral spinal alignment means your spine maintains its natural curvature while you sleep—the same posture you should have when standing with good posture. For a mattress to provide proper spinal alignment, it must offer a careful balance of support (keeping the heavy parts of the body, like hips, from sinking too far) and pressure relief (allowing lighter or protruding parts, like shoulders, to sink in).\n\nIf a mattress is too soft, the hips can sink too deeply, creating a hammock effect that may strain the lower back. If it's too firm, the hips and shoulders don't sink enough, which can push the spine out of alignment and contribute to pressure point discomfort.\n\nZoned support systems—whether achieved through variable foam densities (like Amerisleep's HIVE® technology across the AS lineup) or targeted core layers—are designed specifically to optimize spinal alignment for the widest range of body types and sleep positions.`,
-    relatedMattresses: ['amerisleep-as3', 'amerisleep-as2', 'amerisleep-as6'],
+    body: `Neutral spinal alignment is a comfort concept: the mattress should support the body's natural curves without allowing one area to sink much farther than another. The appropriate balance of contouring and support varies by sleep position, body type, and personal preference.\n\nA surface that feels too soft may allow excessive hip sinkage for some sleepers. A surface that feels too firm may concentrate pressure near the shoulders or hips, especially in side sleeping. Firmness labels are not standardized across brands, so the trial period remains important.\n\nZoned foams and coils are designed to vary response by body area, but they are not medical devices and do not guarantee pain relief. The Amerisleep AS2, Saatva Rx, and Helix Dawn Luxe provide three construction approaches to compare. Persistent pain or neurological symptoms should be discussed with a healthcare professional.`,
+    relatedMattresses: ['amerisleep-as2', 'saatva-rx', 'helix-dawn-luxe'],
     relatedGuides: ['best-mattress-for-back-pain', 'best-mattress-firmness-for-back-sleepers'],
-    dateModified: '2026-05-01'
+    dateModified: '2026-07-13'
   },
   {
     id: 'motion-isolation',
     title: 'Motion Isolation',
     description: 'How mattresses absorb kinetic energy and why it matters for couples sharing a bed.',
-    body: `Motion isolation refers to a mattress's ability to localize movement. If one person changes positions or gets out of bed, a mattress with good motion isolation prevents that kinetic energy from transferring across the bed and disturbing their partner.\n\nMemory foam is widely considered the gold standard for motion isolation. Its viscoelastic properties naturally absorb and dissipate energy rather than transferring it. Traditional continuous coil mattresses are generally the worst performers, as the interconnected wire grid acts as a conduit for movement. To combat this, modern hybrids and innersprings use pocketed coils, which operate independently.\n\nThe Amerisleep AS5 and AS3 score 9.4 and 9.1/10 respectively in our motion isolation tests, making them highly recommended for light sleepers who share a bed.`,
-    relatedMattresses: ['amerisleep-as5', 'amerisleep-as3', 'amerisleep-as2'],
+    body: `Motion isolation describes how well a mattress limits movement from spreading across its surface. It can matter when partners keep different schedules or one sleeper changes position frequently.\n\nFoam comfort layers often absorb movement, while connected coil systems can transmit more of it. Pocketed coils respond more independently than a continuous wire unit, although the complete construction still determines the result. Bed frame stability and mattress size also affect how much movement a partner notices.\n\nPureSleep scores Motion Transfer as an editorial evaluation, not a sensor-based laboratory measurement. The Amerisleep AS3 scores 10/10 on the current dataset. The Casper The One and Leesa Original provide non-affiliated all-foam comparisons using the same rubric.`,
+    relatedMattresses: ['amerisleep-as3', 'casper-the-one', 'leesa-original'],
     relatedGuides: ['best-mattress-for-couples', 'best-mattress-for-light-sleepers'],
-    dateModified: '2026-05-01'
+    dateModified: '2026-07-13'
   },
   {
     id: 'edge-support',
     title: 'Edge Support',
     description: 'Evaluating the perimeter stability of a mattress and its impact on the usable sleep surface.',
-    body: `Edge support measures the structural integrity of the mattress perimeter. Good edge support prevents the sensation of 'rolling off' when sleeping near the side of the bed, and it provides a stable sitting surface when getting in or out of bed.\n\nMattresses achieve edge support through various methods. Innerspring and hybrid models often use high-density foam encasements around the coil unit or deploy thicker, firmer coils along the perimeter. All-foam mattresses historically struggle with edge support, as standard foams compress heavily under targeted weight. However, higher-end foam mattresses combat this by utilizing very dense base foams that extend to the edges.\n\nStrong edge support effectively widens the usable sleep surface, allowing couples to use the entire width of the mattress without feeling unstable. The Amerisleep AS6's pocketed coil perimeter consistently leads our edge support tests (9.6/10).`,
-    relatedMattresses: ['amerisleep-as6', 'amerisleep-organica', 'amerisleep-as3'],
+    body: `Edge support describes how stable the mattress feels near its perimeter. It affects sitting at the side, getting in and out of bed, and how usable the outer portion feels to sleepers.\n\nBrands reinforce edges with firmer perimeter coils, foam rails, denser base materials, or combinations of those methods. Construction type alone does not guarantee the result: some all-foam models score well, while some hybrids provide only moderate perimeter stability.\n\nPureSleep's Edge Support score is an editorial evaluation on the same 0-10 scale used for all 59 models. The Amerisleep AS3 and Happsy each score 10/10 in the current dataset; the Saatva Classic offers another non-affiliated coil-based comparison.`,
+    relatedMattresses: ['amerisleep-as3', 'happsy', 'saatva-classic'],
     relatedGuides: ['best-mattress-for-couples', 'best-mattress-for-heavy-sleepers'],
-    dateModified: '2026-05-01'
+    dateModified: '2026-07-13'
   },
   {
     id: 'certipur-us',
     title: 'CertiPUR-US Certification',
     description: 'What this standard means for foam safety, emissions, and environmental impact in mattresses.',
-    body: `The CertiPUR-US® program is a rigorous, third-party certification designed to ensure the safety and environmental responsibility of polyurethane foams used in bedding and furniture. Foams that earn this certification are tested by independent, accredited laboratories.\n\nA CertiPUR-US certified foam is guaranteed to be made without ozone depleters, PBDEs, TDCPP, or TCEP ('Tris') flame retardants, mercury, lead, heavy metals, and formaldehyde. Furthermore, it is certified to have low VOC (Volatile Organic Compound) emissions for indoor air quality (less than 0.5 parts per million).\n\nWhen buying a foam-based or hybrid mattress, looking for this certification is an essential baseline to ensure you aren't breathing in harmful chemicals while you sleep. Amerisleep's full AS lineup utilize CertiPUR-US certified foams.`,
-    relatedMattresses: ['amerisleep-as3', 'amerisleep-as2', 'amerisleep-as5'],
+    body: `CertiPUR-US is a certification program for flexible polyurethane foam used in products such as mattresses and upholstered furniture. The certification belongs to the foam manufacturer, so a mattress described as containing certified foam is not necessarily certified as a complete product.\n\nAccording to CertiPUR-US, certified foam is tested by independent, accredited laboratories against program criteria for content, emissions, and durability. The program states that certified foam has low VOC emissions below its stated limit and is made without several specified substances. Shoppers should use the program's current directory to verify participating companies and should not extend a foam certification to unrelated mattress components.\n\nThe Amerisleep AS3, Bear Original, and Casper The One are examples in PureSleep's dataset that list CertiPUR-US among their foam certifications. Verify current model-level claims with each brand and the certification directory before purchase.`,
+    relatedMattresses: ['amerisleep-as3', 'bear-original', 'casper-the-one'],
     relatedGuides: ['non-toxic-mattress-guide', 'best-organic-mattress'],
-    dateModified: '2026-05-01'
+    sources: [
+      { name: 'CertiPUR-US: Frequently Asked Questions', url: 'https://certipur.us/about-the-certification/frequently-asked-questions/' }
+    ],
+    dateModified: '2026-07-13'
   },
   {
     id: 'sleep-cycles',
     title: 'Sleep Cycles',
     description: 'The science of sleep architecture and the progression through NREM and REM stages.',
-    body: `Sleep is not a uniform state of rest; it's a dynamic, structured process characterized by distinct stages. A typical night of sleep involves cycling through these stages 4 to 6 times, with each cycle lasting roughly 90 to 110 minutes.\n\nNon-Rapid Eye Movement (NREM) sleep constitutes the first three stages. Stage 1 is the transition from wakefulness to light sleep. Stage 2 is slightly deeper, featuring brain wave activity known as sleep spindles. Stage 3 is deep, slow-wave sleep (SWS), vital for physical restoration, muscle growth, and immune system strengthening.\n\nFollowing deep sleep, the brain enters Rapid Eye Movement (REM) sleep. REM sleep is characterized by high brain activity (similar to wakefulness), rapid eye movements, and temporary muscle paralysis to prevent acting out dreams. REM sleep is crucial for cognitive functions, emotional regulation, and memory consolidation. A mattress that contributes to pressure discomfort or sleeps hot can disrupt these essential cycles.`,
-    relatedMattresses: [],
+    body: `Sleep cycles through rapid eye movement (REM) and non-REM phases. The National Heart, Lung, and Blood Institute describes three non-REM stages: the transition from wakefulness, a deeper stage with characteristic brain activity, and deep or slow-wave sleep. REM sleep involves active brain patterns, rapid eye movement, and normally reduced muscle activity.\n\nThe sequence repeats several times during a typical night, and the amount of time spent in each stage changes as the night progresses. Sleep studies use physiological measurements to classify stages; a consumer mattress review cannot measure or diagnose a person's sleep architecture.\n\nA mattress can affect comfort, temperature perception, and disturbance from movement, but PureSleep does not claim that any mattress guarantees a specific amount of REM or deep sleep. Persistent sleep disruption, daytime sleepiness, gasping, or suspected sleep disorders should be discussed with a healthcare professional.`,
+    relatedMattresses: ['amerisleep-as3', 'casper-the-one', 'leesa-original'],
     relatedGuides: ['how-to-improve-sleep-quality', 'sleep-hygiene-tips'],
-    dateModified: '2026-05-01'
+    sources: [
+      { name: 'NHLBI: Sleep Phases and Stages', url: 'https://www.nhlbi.nih.gov/health/sleep/stages-of-sleep' }
+    ],
+    dateModified: '2026-07-13'
   }
 ];

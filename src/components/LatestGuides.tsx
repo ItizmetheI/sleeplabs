@@ -1,11 +1,8 @@
 import { ArrowRight } from 'lucide-react';
-import as2Img from '../assets/images/regenerated_image_1780219890458.jpg';
 
 export default function LatestGuides() {
   return (
     <section className="py-stack-lg bg-transparent relative overflow-hidden border-t border-outline-variant/30 mt-10">
-      <div className="liquid-blob bg-[#3b82f6] w-[600px] h-[600px] right-[-300px] top-[-100px] opacity-[0.03]" />
-
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 gap-6 border-b border-outline-variant/30 pb-8">
           <div>
@@ -29,7 +26,7 @@ export default function LatestGuides() {
             </a>
             <div>
               <div className="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-3 font-bold drop-shadow-sm">
-                Review · Updated May 2026
+                Review · Updated July 2026
               </div>
               <h3 className="text-headline-lg font-headline-lg mb-4 text-primary hover:text-secondary transition-colors cursor-pointer">
                 <a href="/reviews/amerisleep-as3">Amerisleep AS3 Review (2026): Our #1 Rated Mattress</a>
@@ -46,18 +43,18 @@ export default function LatestGuides() {
           {/* Secondary articles */}
           <div className="md:col-span-5 flex flex-col gap-8 md:pl-8 md:border-l border-outline-variant/30">
             <div className="flex flex-col gap-5 group cursor-pointer">
-              <a href="/comparison/amerisleep-as2-vs-as3" className="w-full h-48 glass-panel rounded-3xl overflow-hidden relative border border-outline-variant/30 block">
+              <a href="/comparison/amerisleep-as3-vs-leesa-original" className="w-full h-48 glass-panel rounded-3xl overflow-hidden relative border border-outline-variant/30 block">
                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors z-10" />
-                 <img src={typeof as2Img === 'string' ? as2Img : as2Img.src} alt="AS2 vs AS3 Comparison" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                 <img src="/images/mattresses/leesa-original.webp" alt="Amerisleep AS3 and Leesa Original comparison" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </a>
               <div>
                 <div className="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant mb-2">
-                  Comparison · May 2026
+                  Cross-Brand Comparison · July 2026
                 </div>
                 <h4 className="text-headline-md font-headline-md mb-3 text-primary group-hover:text-secondary transition-colors leading-snug">
-                  <a href="/comparison/amerisleep-as2-vs-as3">Amerisleep AS2 vs AS3: Which Is Right for You?</a>
+                  <a href="/comparison/amerisleep-as3-vs-leesa-original">Amerisleep AS3 vs Leesa Original</a>
                 </h4>
-                <a href="/comparison/amerisleep-as2-vs-as3" className="inline-flex items-center text-label-sm font-label-sm uppercase tracking-widest group-hover:text-primary transition-colors text-secondary font-bold">
+                <a href="/comparison/amerisleep-as3-vs-leesa-original" className="inline-flex items-center text-label-sm font-label-sm uppercase tracking-widest group-hover:text-primary transition-colors text-secondary font-bold">
                   Read Comparison <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
@@ -68,12 +65,12 @@ export default function LatestGuides() {
             <div className="flex flex-col gap-5 group cursor-pointer">
               <div>
                 <div className="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant mb-2">
-                  Guide · May 2026
+                  Multi-Brand Guide · July 2026
                 </div>
                 <h4 className="text-headline-md font-headline-md mb-3 text-primary group-hover:text-secondary transition-colors leading-snug">
-                  <a href="/topics">Memory Foam vs Latex vs Hybrid: Which Type Is Best?</a>
+                  <a href="/topics/memory-foam/">Memory Foam: How It Works and What to Compare</a>
                 </h4>
-                <a href="/topics" className="inline-flex items-center text-label-sm font-label-sm uppercase tracking-widest group-hover:text-primary transition-colors text-secondary font-bold">
+                <a href="/topics/memory-foam/" className="inline-flex items-center text-label-sm font-label-sm uppercase tracking-widest group-hover:text-primary transition-colors text-secondary font-bold">
                   Read Guide <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>

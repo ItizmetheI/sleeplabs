@@ -1,4 +1,4 @@
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
 const body = `User-agent: *
 Allow: /

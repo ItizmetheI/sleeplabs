@@ -119,13 +119,13 @@ export const comparisons: Comparison[] = [
     mattressBId: "amerisleep-organica",
     title: "Amerisleep AS3 vs Organica",
     description: "Memory foam vs natural latex — the fundamental material difference between Amerisleep's most popular and most natural mattresses.",
-    verdict: "The AS3 wins for those who prefer the classic memory foam feel, want the widest size selection, or are on a tighter budget. The Organica wins for eco-conscious buyers, allergy sufferers, and those who prefer the responsive bouncy feel of natural latex.",
+    verdict: "The AS3 wins for those who prefer the classic memory foam feel, want the widest size selection, or are on a tighter budget. The Organica wins for eco-conscious buyers, sensitive-material shoppers, and those who prefer the responsive bouncy feel of natural latex.",
     dateModified: "2026-05-01",
     winnerFor: [
       { category: "Eco-Conscious / Natural Materials", winnerId: "amerisleep-organica", reason: "GOTS, GOLS, and Rainforest Alliance certified. No synthetic foams, no petroleum materials." },
       { category: "Cooling", winnerId: "amerisleep-as3", reason: "AS3 scores higher for cooling & breathability (10/10 vs 9/10) — Bio-Pur® open-cell foam edges out the latex build here." },
       { category: "Response Time", winnerId: "amerisleep-organica", reason: "Organica scores higher for response time (10/10 vs 9/10) — natural latex bounces back faster than memory foam." },
-      { category: "Allergy Sufferers", winnerId: "amerisleep-organica", reason: "Natural latex is inherently hypoallergenic, antimicrobial, and dust-mite resistant without chemical treatments." },
+      { category: "Certified Materials", winnerId: "amerisleep-organica", reason: "Uses GOLS-certified latex plus GOTS-certified cotton and wool; verify current material details with the brand if you have sensitivities." },
       { category: "Value", winnerId: "amerisleep-as3", reason: "$999 vs $1,199 queen, plus broader size availability including Twin." },
       { category: "Motion Transfer", winnerId: "amerisleep-as3", reason: "AS3 scores higher for motion transfer (10/10 vs 9/10) — relevant for light sleeper couples." }
     ],
@@ -187,7 +187,7 @@ export const comparisons: Comparison[] = [
       { category: "Natural / Organic Materials", winnerId: "amerisleep-organica", reason: "GOTS, GOLS, Rainforest Alliance certified. No synthetic foams whatsoever." },
       { category: "Response Time", winnerId: "amerisleep-organica", reason: "Natural latex bounces back faster (10/10 vs 9/10)." },
       { category: "Cooling", winnerId: "amerisleep-as6", reason: "Coil airflow chamber scores higher for cooling & breathability (10/10 vs 9/10)." },
-      { category: "Allergy Sufferers", winnerId: "amerisleep-organica", reason: "Natural latex is inherently hypoallergenic; organic cotton and wool are chemical-free." }
+      { category: "Certified Materials", winnerId: "amerisleep-organica", reason: "Uses GOLS-certified latex plus GOTS-certified cotton and wool; verify current material details with the brand if you have sensitivities." }
     ],
     faqs: [
       {

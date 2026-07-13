@@ -1,14 +1,47 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { articleList, toArticleBody } from '../../lib/schemaArticleBody';
+import { COMMERCIAL_RELATIONSHIP_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
 
 const lastUpdated = "2026-05-01";
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
+
+const methodologyArticleBody = toArticleBody(
+  'How We Test Mattresses at PureSleep',
+  `PureSleep evaluates 59 mattresses across 24 brands using a standardized 7-metric scoring system. ${COMMERCIAL_RELATIONSHIP_DISCLOSURE} ${LINK_DISCLOSURE}`,
+  'Our Testing Process',
+  articleList('Process Steps', [
+    'PureSleep does not publish a product-by-product acquisition log and does not claim that every mattress was purchased at retail. The same testing rubric is applied regardless of how a product was obtained.',
+    'Each mattress is evaluated across back, side, and stomach-sleeping considerations using the same published rubric.',
+    'Each mattress is scored on Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability.',
+    'The overall score is a hands-on composite evaluation, not a lab measurement or manufacturer data point.',
+    'Material business relationships are disclosed. The same published rubric is used across every covered brand.',
+  ]),
+  'The 7 Scoring Criteria',
+  articleList('Scoring Criteria', [
+    'Overall: composite hands-on evaluation score reflecting total sleep experience.',
+    'Value: overall quality relative to price, warranty, and trial terms.',
+    'Edge Support: firmness and usability at the mattress perimeter.',
+    'Trial Period: quality and length of the home trial policy.',
+    'Response Time: how quickly the surface responds to movement and position changes.',
+    'Motion Transfer: how much movement carries from one side of the mattress to the other.',
+    'Cooling & Breathability: airflow and heat dissipation across the sleep surface.',
+  ]),
+  'Editorial Standards',
+  articleList('Standards', [
+    'We do not make medical claims. Mattresses address sleep comfort and support only, not health conditions.',
+    `${COMMERCIAL_RELATIONSHIP_DISCLOSURE} ${LINK_DISCLOSURE}`,
+    'Scores reflect hands-on testing, not manufacturer-provided data.',
+    'Reviews are updated when product specifications change or on a regular re-evaluation cycle.',
+  ])
+);
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "How We Test Mattresses at PureSleep",
-  "description": "Our mattress testing methodology: 7-metric scoring, hands-on evaluation, editorially independent reviews.",
+  "description": "Our mattress testing methodology: 7-metric scoring, hands-on evaluation, material-relationship disclosure, and cross-brand coverage.",
+  "articleBody": methodologyArticleBody,
   "author": { "@type": "Organization", "name": "PureSleep" },
   "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
   "datePublished": "2024-01-01",
@@ -21,8 +54,9 @@ const formattedDate = new Date(lastUpdated).toLocaleDateString('en-US', { month:
 
 <BaseLayout
   title="How We Test Mattresses — PureSleep Testing Methodology"
-  description="Our mattress testing methodology: 7-metric scoring, hands-on evaluation, and editorially independent reviews of the full Amerisleep lineup."
+  description="Our mattress testing methodology: 7-metric scoring, hands-on evaluation, material-relationship disclosure, and 59-model cross-brand coverage."
   canonicalUrl={`${SITE_URL}/methodology/`}
+  machineReadableUrl={`${SITE_URL}/llms/methodology.md`}
   lastUpdated={lastUpdated}
   jsonLd={jsonLd}
 >
@@ -36,7 +70,7 @@ const formattedDate = new Date(lastUpdated).toLocaleDateString('en-US', { month:
         </span>
       </div>
       <p class="text-body-lg text-on-surface-variant leading-relaxed text-left mt-4 glass-panel p-8 rounded-3xl border border-white/60">
-        PureSleep evaluates Amerisleep mattresses using a standardized 7-metric scoring system. Every score comes from hands-on testing — we do not accept manufacturer PR samples in exchange for reviews. PureSleep earns no commission and accepts no paid placements. Scores are editorially independent.
+        PureSleep evaluates 59 mattresses across 24 brands using a standardized 7-metric scoring system. {COMMERCIAL_RELATIONSHIP_DISCLOSURE} {LINK_DISCLOSURE}
       </p>
     </header>
 
@@ -44,11 +78,11 @@ const formattedDate = new Date(lastUpdated).toLocaleDateString('en-US', { month:
       <h2 class="text-headline-md font-headline-md text-primary border-b border-outline-variant/30 pb-4 italic">Our Testing Process</h2>
       <div class="grid grid-cols-1 gap-6">
         {[
-          { n: "1", title: "Mattress Acquisition", desc: "Mattresses are purchased or sourced independently. We never accept hand-picked review units from manufacturers, ensuring we test the same product a consumer receives." },
-          { n: "2", title: "Sleep Testing", desc: "Each mattress is tested across multiple sleep positions — back, side, and stomach — by multiple testers covering different body weights and sleep preferences." },
+          { n: "1", title: "Product Sourcing", desc: "PureSleep does not publish a product-by-product acquisition log and does not claim every mattress was purchased at retail. The same testing rubric is applied regardless of source." },
+          { n: "2", title: "Sleep-Position Evaluation", desc: "Each mattress is evaluated across back, side, and stomach-sleeping considerations using the same published rubric. Body-weight guidance is treated as fit guidance, not as a clinical or laboratory measurement." },
           { n: "3", title: "7-Metric Scoring", desc: "Each mattress is scored on Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. All scores are 0–10." },
           { n: "4", title: "Overall Score", desc: "The overall score is a hands-on composite evaluation. Scores reflect the testing team's direct assessment, not lab measurements or manufacturer data." },
-          { n: "5", title: "Editorial Independence", desc: "PureSleep earns no commission and accepts no paid placements. No commercial relationship affects which model ranks higher." }
+          { n: "5", title: "Material-Relationship Disclosure", desc: "PureSleep discloses material business relationships and outbound-link economics so readers can assess recommendations with the relevant context." }
         ].map(step => (
           <div class="flex gap-6 items-start">
             <div class="bg-primary/10 text-primary font-bold text-xl rounded-full w-12 h-12 flex items-center justify-center shrink-0 border border-primary/20">{step.n}</div>
@@ -85,7 +119,7 @@ const formattedDate = new Date(lastUpdated).toLocaleDateString('en-US', { month:
       <h2 class="text-headline-md font-headline-md text-primary mb-2">Editorial Standards</h2>
       <ul class="flex flex-col gap-3 text-body-md text-on-surface-variant">
         <li class="flex gap-3"><span class="text-secondary font-bold">—</span> We do not make medical claims. Mattresses address sleep comfort and support only, not health conditions.</li>
-        <li class="flex gap-3"><span class="text-secondary font-bold">—</span> PureSleep earns no commission and accepts no paid placements. Scores are editorially independent.</li>
+        <li class="flex gap-3"><span class="text-secondary font-bold">—</span> {COMMERCIAL_RELATIONSHIP_DISCLOSURE} {LINK_DISCLOSURE}</li>
         <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Scores reflect hands-on testing, not manufacturer-provided data.</li>
         <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Reviews are updated when product specifications change or on a regular re-evaluation cycle.</li>
       </ul>

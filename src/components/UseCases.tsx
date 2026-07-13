@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 const categories = [
   { emoji: '🦴', title: 'Hip & Joint Pain', desc: 'Side sleepers especially. Zoned support changes everything.', href: '/reviews/amerisleep-as5' },
-  { emoji: '🌟', title: 'Back Pain', desc: 'Spinal alignment starts with your mattress. Testing team picks.', href: '/reviews/amerisleep-as2' },
+  { emoji: '🌟', title: 'Back Discomfort', desc: 'Support-focused testing-team picks. General comfort guidance only.', href: '/best/back-pain' },
   { emoji: '🌡️', title: 'Sleeping Hot', desc: 'Gel, copper, and airflow coil systems that actually stay cool.', href: '/reviews/amerisleep-as6' },
   { emoji: '🌙', title: 'Partner Disturbance', desc: 'Motion isolation and edge support for two different sleepers.', href: '/reviews/amerisleep-as6' }
 ];
@@ -18,7 +18,7 @@ export default function UseCases() {
            viewport={{ once: true }}
         >
            <h3 className="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-3 font-bold">Browse by category</h3>
-           <h2 className="text-display-lg font-display-lg text-primary  drop-shadow-sm">Find your fix</h2>
+           <h2 className="text-display-lg font-display-lg text-primary drop-shadow-sm">Find your fit</h2>
         </motion.div>
       </div>
 

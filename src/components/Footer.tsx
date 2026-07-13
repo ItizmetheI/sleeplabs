@@ -1,3 +1,5 @@
+import { RANKING_DISCLOSURE } from '../lib/disclosure';
+
 export default function Footer() {
   return (
     <footer className="bg-white/80 border-t border-outline-variant/30 mt-auto relative overflow-hidden backdrop-blur-xl w-full py-20 px-margin-mobile md:px-margin-desktop shadow-sm">
@@ -19,7 +21,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4 items-center md:items-start">
             <h4 className="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Company</h4>
             <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/about">About Us</a>
-            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="mailto:support@puresleep.com">Contact</a>
+            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/about">About &amp; Contact</a>
           </div>
           <div className="flex flex-col gap-4 items-center md:items-start">
             <h4 className="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Legal</h4>
@@ -33,7 +35,7 @@ export default function Footer() {
       </div>
       <div className="mt-12 pt-6 border-t border-outline-variant/20 text-center relative z-10 max-w-container-max mx-auto">
         <p className="text-xs text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-          <strong>Editorial Independence:</strong> PureSleep earns no commission and accepts no paid placements. Scores are editorially independent. Product links go directly to manufacturers.
+          <strong>Commercial Disclosure:</strong> {RANKING_DISCLOSURE}
         </p>
       </div>
     </footer>

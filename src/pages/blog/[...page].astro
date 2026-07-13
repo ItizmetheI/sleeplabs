@@ -1,10 +1,13 @@
 ---
 import { blogPosts } from '../../data/blogs-generated';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getLegacyBestBlogRedirect } from '../../lib/legacyBlogRedirects';
 
 export function getStaticPaths() {
   const postsPerPage = 10;
-  const sortedPosts = blogPosts.filter(post => !post.redirectTo).sort((a, b) => new Date(b.datePublished).valueOf() - new Date(a.datePublished).valueOf());
+  const sortedPosts = blogPosts
+    .filter(post => !post.redirectTo && !getLegacyBestBlogRedirect(post.slug))
+    .sort((a, b) => new Date(b.datePublished).valueOf() - new Date(a.datePublished).valueOf());
   const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
   return Array.from({ length: totalPages }, (_, i) => ({
     params: { page: i === 0 ? undefined : String(i + 1) },
@@ -17,7 +20,7 @@ export function getStaticPaths() {
 }
 
 const { posts, currentPage, totalPages } = Astro.props;
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -39,7 +42,7 @@ const jsonLd = {
 
 <BaseLayout
   title="Sleep & Mattress Blog 2026 — Guides & Reviews"
-  description="Editorial sleep tips, mattress guides, and buying advice. Editorially Independent where applicable. All product links go to Amerisleep."
+  description="Sleep tips, mattress guides, and buying advice from PureSleep's multi-brand editorial team."
   canonicalUrl={currentPage === 1 ? `${SITE_URL}/blog/` : `${SITE_URL}/blog/${currentPage}/`}
   lastUpdated="2026-05-01"
   jsonLd={jsonLd}
@@ -49,8 +52,7 @@ const jsonLd = {
     <header class="text-center mb-16">
       <h1 class="text-display-lg font-display-lg italic text-primary mb-4">Sleep & Mattress Guides</h1>
       <p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-        Editorial guides on sleep science, mattress buying, and bedroom setup.
-        Editorially Independent where applicable.
+        Guides on sleep science, mattress buying, and bedroom setup from PureSleep's multi-brand editorial team.
       </p>
     </header>
 

@@ -1,6 +1,9 @@
 ---
 import { blogPosts } from '../../data/blogs-generated';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { articleList, articleTable, toArticleBody } from '../../lib/schemaArticleBody';
+import { COMMERCIAL_RELATIONSHIP_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
+import { getLegacyBestBlogRedirect } from '../../lib/legacyBlogRedirects';
 
 export function getStaticPaths() {
   return blogPosts.map(post => ({
@@ -11,21 +14,58 @@ export function getStaticPaths() {
 
 const { post } = Astro.props;
 
-if (post.redirectTo) {
-  return Astro.redirect(post.redirectTo, 301);
+const redirectTo = post.redirectTo || getLegacyBestBlogRedirect(post.slug);
+if (redirectTo) {
+  return Astro.redirect(redirectTo, 301);
 }
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
-const HEALTH_TOPICS = ['pain-and-health', 'back-pain', 'hip-pain', 'shoulder-pain', 'sciatica', 'arthritis', 'fibromyalgia'];
+const HEALTH_TOPICS = ['pain-and-health', 'health-and-sleep', 'back-pain', 'hip-pain', 'shoulder-pain', 'sciatica', 'arthritis', 'fibromyalgia'];
 const isHealthAdjacent = HEALTH_TOPICS.includes(post.category) || (post.tags ?? []).some((t: string) => HEALTH_TOPICS.includes(t));
+
+const blogArticleBody = toArticleBody(
+  post.title,
+  'Quick Answer',
+  post.directAnswer,
+  isHealthAdjacent
+    ? 'No mattress can diagnose, treat, or cure any health condition. This article provides general comfort and sleep-product information only; talk to a doctor about pain or medical concerns.'
+    : null,
+  post.sections.map((section: any) => [
+    section.heading,
+    section.content,
+    section.hasBulletList && section.bulletItems
+      ? articleList(section.heading ? `${section.heading} - Key Points` : 'Key Points', section.bulletItems)
+      : null,
+    section.hasTable && section.tableData
+      ? articleTable(
+        section.heading ? `${section.heading} - Table` : 'Comparison Table',
+        section.tableData.headers,
+        section.tableData.rows,
+      )
+      : null,
+  ]),
+  post.productRefs?.length
+    ? articleTable(
+      'Referenced Products - prices are recorded reference values, not live offers; verify current terms on the official product page',
+      ['Product', 'Recorded Reference Price', 'Product URL'],
+      post.productRefs.map((product: any) => [product.productName, product.salePrice, product.productUrl]),
+    )
+    : null,
+  'Multi-Brand Context',
+  'Product examples in this article are not a complete category ranking. See the Best Mattress rankings and Reviews index for the full 59-model, 24-brand scored dataset.',
+  'Frequently Asked Questions',
+  post.faqs.map((faq: any) => [`Question: ${faq.question}`, `Answer: ${faq.answer}`]),
+  'About PureSleep',
+  `${COMMERCIAL_RELATIONSHIP_DISCLOSURE} ${LINK_DISCLOSURE}`,
+);
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": post.schemaType === 'HowTo' ? 'HowTo' : 'Article',
+  "@type": post.schemaType === 'HowTo' ? ['Article', 'HowTo'] : 'Article',
   "headline": post.title,
   "description": post.metaDescription,
-  "image": post.ogImage,
+  "image": post.ogImage.startsWith('http') ? post.ogImage : `${SITE_URL}${post.ogImage}`,
   "author": {
     "@type": "Organization",
     "name": post.author.name,
@@ -39,14 +79,7 @@ const articleSchema = {
   "datePublished": post.datePublished,
   "dateModified": post.dateModified,
   "mainEntityOfPage": `${SITE_URL}/blog/${post.slug}/`,
-  "articleBody": post.sections.map(s => s.content).join(' '),
-  ...(post.reviewedBy ? {
-    "reviewedBy": {
-      "@type": "Organization",
-      "name": "PureSleep Testing Team",
-      "url": `${SITE_URL}/methodology/`
-    }
-  } : {})
+  "articleBody": blogArticleBody
 };
 
 const faqSchema = {
@@ -74,10 +107,6 @@ const breadcrumbSchema = {
 };
 
 const jsonLd = [articleSchema, faqSchema, breadcrumbSchema];
-
-const isAmerisleePost = (post.productRefs && post.productRefs.length > 0) &&
-(post.tags?.some((t: string) => ['amerisleep','bio-pur','hive-technology','as2','as3','as5','as6','organica'].includes(t.toLowerCase())) ||
-post.entityMentions?.some((e: string) => /amerisleep/i.test(e)));
 
 const formatProse = (text: string) => {
   let formatted = text || '';
@@ -120,7 +149,7 @@ const formatProse = (text: string) => {
   lastUpdated={post.dateModified}
   jsonLd={jsonLd}
 >
-  <article class="max-w-[760px] mx-auto px-margin-mobile md:px-0 py-stack-lg">
+  <article class="w-full min-w-0 max-w-[760px] mx-auto px-margin-mobile md:px-0 py-stack-lg">
 
     <!-- Breadcrumb -->
     <nav class="text-label-sm font-label-sm text-on-surface-variant mb-8 uppercase tracking-widest">
@@ -160,9 +189,6 @@ const formatProse = (text: string) => {
           <div class="w-10 h-10 rounded-full bg-secondary text-primary flex items-center justify-center font-bold text-lg font-serif">P</div>
           <span>By {post.author.name}</span>
         </div>
-        {post.reviewedBy && (
-          <span>· Reviewed by <a href={post.reviewedBy.url} class="text-secondary hover:text-primary transition-colors">{post.reviewedBy.name}</a>, {post.reviewedBy.role}</span>
-        )}
         <span>· <time datetime={post.dateModified}>Updated: {new Date(post.dateModified).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time></span>
         <span>· {post.readTimeMinutes} min read</span>
       </div>
@@ -190,8 +216,7 @@ const formatProse = (text: string) => {
 
     <!-- Table of Contents -->
     {post.sections.filter(s => s.heading).length > 0 && (
-      <div class="glass-panel p-8 rounded-[2rem] mb-12 border border-outline-variant/40 shadow-sm relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none"></div>
+      <div class="w-full min-w-0 glass-panel p-5 sm:p-8 rounded-2xl sm:rounded-[2rem] mb-12 border border-outline-variant/40 shadow-sm overflow-hidden">
         <h2 class="text-label-sm font-label-sm uppercase tracking-widest text-primary font-bold mb-5 flex items-center gap-2">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
           Table of Contents
@@ -200,7 +225,7 @@ const formatProse = (text: string) => {
           {post.sections.filter(s => s.heading).map((section, idx) => (
             <li class="pl-4 border-l-2 border-outline-variant/30 hover:border-secondary transition-colors relative">
               <div class="absolute w-1.5 h-1.5 rounded-full bg-secondary/50 -left-[4px] top-2 border border-white"></div>
-              <a href={`#section-${idx}`} class="text-body-md text-on-surface-variant hover:text-primary transition-colors font-medium">
+              <a href={`#section-${idx}`} class="block min-w-0 break-words text-body-md text-on-surface-variant hover:text-primary transition-colors font-medium">
                 {section.heading}
               </a>
             </li>
@@ -267,8 +292,8 @@ const formatProse = (text: string) => {
 
           <!-- High-Contrast Table formatting -->
           {section.hasTable && section.tableData && (
-            <div class="mt-8 mb-6 glass-panel rounded-2xl overflow-hidden shadow-md">
-              <table class="w-full text-left">
+            <div class="mt-8 mb-6 glass-panel rounded-2xl overflow-x-auto shadow-md">
+              <table class="w-full min-w-[640px] text-left">
                 <thead class="bg-primary text-white border-b border-primary-container/20">
                   <tr>
                     {section.tableData.headers.map(h => (
@@ -294,86 +319,30 @@ const formatProse = (text: string) => {
             </div>
           )}
           
-          <!-- Multiple Mid-content CTAs -->
-          {isAmerisleePost && post.productRefs.length > 0 && index > 0 && index % 2 !== 0 && index !== post.sections.length - 1 && (
-            <div class="my-10 text-center py-8 px-6 glass-panel rounded-[2rem] border border-secondary/20 bg-secondary/[0.03] shadow-inner relative overflow-hidden group hover:border-secondary/40 transition-colors">
-              <div class="absolute inset-0 bg-gradient-to-r from-secondary/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <span class="inline-block p-2 bg-secondary/10 text-secondary rounded-full mb-3 shadow-sm border border-secondary/20 relative z-10">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </span>
-              <h4 class="text-headline-md font-headline-md text-primary mb-3 relative z-10">Upgrade Your Sleep Today</h4>
-              <p class="text-body-lg text-on-surface-variant max-w-lg mx-auto mb-6 relative z-10">Experience the pressure-relieving comfort of the {post.productRefs[Math.floor(index / 2) % post.productRefs.length].productName} risk-free for 100 nights.</p>
-              <a href={post.productRefs[Math.floor(index / 2) % post.productRefs.length].productUrl} target="_blank" rel="noopener noreferrer" class="relative z-10 inline-flex items-center justify-center bg-primary text-white px-8 py-4 rounded-full font-bold text-label-sm uppercase tracking-widest hover:bg-blue-800 hover:scale-105 active:scale-95 transition-all shadow-[0_5px_15px_rgba(29,78,216,0.3)]">
-                Check Latest Price <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-              </a>
-            </div>
-          )}
         </div>
       );
     })}
 
-    <!-- *** PRODUCT CTA BOX — ALL LINKS GO TO AMERISLEEP.COM *** -->
-    {isAmerisleePost && post.productRefs.length > 0 && (
-      <div class="glass-panel-heavy p-8 md:p-10 rounded-[2rem] border-2 border-outline-variant/50 my-12 relative overflow-hidden shadow-xl shadow-primary/5">
-        <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[80px] -mr-20 -mt-20 pointer-events-none"></div>
-        <div class="relative z-10">
-          <p class="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-4 font-bold flex items-center gap-2">
-            <span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
-            Our Top Pick
-          </p>
-          <h3 class="text-display-sm font-display-sm text-primary mb-3 leading-tight">{post.productRefs[0].productName}</h3>
-          <p class="text-body-lg text-on-surface-variant mb-8 font-medium">
-            On sale from {post.productRefs[0].salePrice} · 100-night trial · 20-year warranty · Free shipping
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 mb-2">
-            <a
-              href={post.productRefs[0].productUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center bg-primary text-white px-8 py-5 rounded-full text-label-sm font-label-sm uppercase tracking-widest hover:bg-blue-800 hover:scale-[1.02] active:scale-[0.98] transition-all font-bold shadow-[0_10px_25px_rgba(29,78,216,0.4)]"
-            >
-              Shop on Amerisleep <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+    {post.productRefs.length > 0 && (
+      <section class="my-12 border-y border-outline-variant/30 py-8" aria-labelledby="referenced-products">
+        <h2 id="referenced-products" class="text-headline-sm font-bold text-primary mb-3">Referenced Products</h2>
+        <p class="text-body-sm text-on-surface-variant mb-5">
+          {COMMERCIAL_RELATIONSHIP_DISCLOSURE} These links go to official product pages; verify current price, shipping, return, trial, and warranty terms before purchase.
+        </p>
+        <div class="flex flex-col divide-y divide-outline-variant/20 border-y border-outline-variant/20">
+          {post.productRefs.map(ref => (
+            <a href={ref.productUrl} target="_blank" rel="noopener noreferrer" class="flex items-center justify-between gap-4 py-4 text-primary hover:text-secondary">
+              <span class="font-bold">{ref.productName}</span>
+              <span class="text-label-sm uppercase tracking-widest">Official product page →</span>
             </a>
-            <a
-              href="https://amerisleep.com/sale/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center glass-panel text-primary border border-outline-variant/50 px-8 py-5 rounded-full text-label-sm font-label-sm uppercase tracking-widest hover:bg-white hover:shadow-md transition-all font-bold"
-            >
-              See All Sale Prices
-            </a>
-          </div>
-          <p class="text-[12px] text-on-surface-variant mt-6 bg-surface px-4 py-2 rounded-lg inline-block border border-outline-variant/30">
-            Shop all Amerisleep mattresses at
-            <a href="https://amerisleep.com/sale/" target="_blank" rel="noopener noreferrer" class="text-primary font-bold hover:underline ml-1">amerisleep.com/sale</a>
-          </p>
+          ))}
         </div>
-      </div>
+      </section>
     )}
 
-    <!-- If post has multiple product refs, show secondary ones too -->
-    {isAmerisleePost && post.productRefs.length > 1 && (
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 my-10">
-        {post.productRefs.slice(1).map(ref => (
-          <a
-            href={ref.productUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="glass-panel p-6 rounded-[2rem] border border-outline-variant/30 hover:border-secondary/50 hover:shadow-lg transition-all group relative overflow-hidden"
-          >
-            <div class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <p class="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-2 font-bold flex items-center gap-2">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-              Also Consider
-            </p>
-            <p class="text-headline-sm font-headline-sm text-primary font-bold group-hover:text-blue-800 transition-colors mb-2">{ref.productName}</p>
-            <p class="text-body-sm text-on-surface-variant group-hover:text-primary transition-colors flex items-center font-medium">From {ref.salePrice} at amerisleep.com <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span></p>
-          </a>
-        ))}
-      </div>
-    )}
+    <aside class="my-10 border-l-4 border-secondary pl-5 py-1 text-body-sm text-on-surface-variant">
+      <strong class="text-on-surface">Multi-brand context:</strong> Product examples in this article are not a complete category ranking. See the <a href="/best/overall/" class="text-primary underline underline-offset-4">Best Mattress rankings</a> and <a href="/reviews/" class="text-primary underline underline-offset-4">Reviews index</a> for the full 59-model, 24-brand scored dataset.
+    </aside>
 
     <!-- Author Box -->
     <div class="my-16 glass-panel rounded-[2rem] p-8 border border-outline-variant/40 flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left shadow-sm">
@@ -384,7 +353,7 @@ const formatProse = (text: string) => {
       <div>
         <h3 class="text-headline-sm font-headline-sm text-primary mb-2 font-bold">{post.author.name}</h3>
         <p class="text-body-md text-on-surface-variant leading-relaxed mb-4">
-          The PureSleep editorial team consists of independent product testers who hands-on test mattresses and sleep accessories to help you find better support and comfort.
+          PureSleep's testing team evaluates mattresses and sleep accessories using published scoring criteria. See our disclosure for the complete material-relationship and outbound-link policy.
         </p>
         <div class="flex items-center justify-center sm:justify-start gap-4 text-label-sm uppercase tracking-widest font-bold">
           <a href="/about/" class="text-secondary hover:text-primary transition-colors">Read Our Story</a>
@@ -420,23 +389,6 @@ const formatProse = (text: string) => {
         ))}
       </div>
     </div>
-
-    <!-- Bottom CTA banner — only on Amerisleep product posts -->
-    {isAmerisleePost && (
-    <div class="mt-16 bg-primary rounded-3xl p-8 text-center">
-      <p class="text-label-sm font-label-sm uppercase tracking-widest text-blue-200 mb-3">Ready to buy?</p>
-      <h3 class="text-headline-lg font-headline-lg text-white italic mb-4">Shop Amerisleep — 100-Night Trial</h3>
-      <p class="text-blue-200 text-body-md mb-6">Free shipping · 20-year warranty · </p>
-      <a
-        href="https://amerisleep.com/sale/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center bg-white text-primary px-8 py-4 rounded-full text-label-sm font-label-sm uppercase tracking-widest hover:bg-blue-50 transition-colors font-bold shadow-lg"
-      >
-        Shop Amerisleep Sale →
-      </a>
-    </div>
-    )}
 
   </article>
 </BaseLayout>

@@ -11,6 +11,12 @@
     ],
     "skipLibCheck": true,
     "moduleResolution": "bundler",
+    "types": [
+      "astro/client",
+      "node",
+      "react",
+      "react-dom"
+    ],
     "isolatedModules": true,
     "moduleDetection": "force",
     "allowJs": true,

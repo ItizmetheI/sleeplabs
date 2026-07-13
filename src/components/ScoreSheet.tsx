@@ -1,15 +1,15 @@
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
-import { mattresses } from '../data/mattresses';
-import imgOrganica from '../assets/images/regenerated_image_1780219884937.png';
-import imgAS2 from '../assets/images/regenerated_image_1780219887684.jpg';
+import { allMattresses } from '../data/mattresses';
+import { BEST_CATEGORIES } from '../lib/bestCategories';
 
 export default function ScoreSheet() {
-  // Sort by overall score descending and take top 5
-  const rankings = [...mattresses]
-    .sort((a, b) => b.scores.overall - a.scores.overall)
+  const rankings = BEST_CATEGORIES.overall.picks
     .slice(0, 5)
+    .map(id => allMattresses.find(mattress => mattress.id === id))
+    .filter(Boolean)
     .map((m, index) => {
+      if (!m) return null;
       let rating = '';
       if (m.scores.overall >= 9.5) rating = 'Outstanding';
       else if (m.scores.overall >= 9.0) rating = 'Excellent';
@@ -23,10 +23,6 @@ export default function ScoreSheet() {
       else if (m.id === 'amerisleep-as2') badge = 'Best Value';
       else if (m.id === 'amerisleep-as5') badge = 'Best Soft';
 
-      let resolvedImg = m.image;
-      if (m.id === 'amerisleep-organica') resolvedImg = typeof imgOrganica === 'string' ? imgOrganica : imgOrganica.src;
-      if (m.id === 'amerisleep-as2') resolvedImg = typeof imgAS2 === 'string' ? imgAS2 : imgAS2.src;
-
       return {
         rank: index + 1,
         name: m.name,
@@ -35,15 +31,13 @@ export default function ScoreSheet() {
         rating,
         href: `/reviews/${m.id}`,
         badge,
-        img: resolvedImg
+        img: m.image
       };
-    });
+    })
+    .filter(Boolean);
 
   return (
     <section className="py-stack-lg relative overflow-hidden">
-      <div className="liquid-blob bg-[#3b82f6] w-[600px] h-[400px] -right-[100px] top-[10%] opacity-[0.03]" />
-      <div className="liquid-blob bg-[#fbbf24] w-[500px] h-[300px] left-[5%] top-[40%] opacity-[0.04]" />
-      
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
         <motion.div 
           initial={false}
@@ -53,7 +47,7 @@ export default function ScoreSheet() {
         >
           <h2 className="text-display-lg font-display-lg text-primary mb-4">The score sheet</h2>
           <p className="text-body-lg font-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
-            Amerisleep mattresses ranked by composite testing score across comfort, support, cooling, motion isolation, and value. Updated May 2026.
+            Our leading mattresses across multiple brands, ranked with the same 7-metric scoring system. Updated July 2026.
           </p>
         </motion.div>
 
@@ -70,7 +64,7 @@ export default function ScoreSheet() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-outline-variant/30">
-                {rankings.map((item, index) => (
+                {rankings.map((item, index) => item && (
                   <motion.tr 
                     key={item.rank}
                     initial={false}

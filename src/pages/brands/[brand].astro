@@ -1,8 +1,10 @@
 ---
 import { allMattresses } from '../../data/mattresses';
+import { articleList, articleTable, toArticleBody } from '../../lib/schemaArticleBody';
+import { RANKING_DISCLOSURE } from '../../lib/disclosure';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
 const BRAND_META: Record<string, { displayName: string; description: string; officialUrl: string; blurb: string }> = {
   'amerisleep': {
@@ -183,12 +185,46 @@ const meta = BRAND_META[brand] || {
 
 const lastUpdated = "2026-06-16";
 
+const topModel = [...brandModels].sort((a, b) => (b.scores?.overall || 0) - (a.scores?.overall || 0))[0];
+
+const brandArticleBody = toArticleBody(
+  `${meta.displayName} Mattress Reviews 2026`,
+  meta.description,
+  meta.blurb,
+  `${brandModels.length} model${brandModels.length !== 1 ? 's' : ''} reviewed by the PureSleep Testing Team. Updated: June 2026.`,
+  topModel
+    ? [
+      `Top Rated ${meta.displayName} Model`,
+      `${topModel.name}. Overall Score: ${topModel.scores.overall}/10.`,
+      topModel.verdict,
+    ]
+    : null,
+  articleTable(
+    'Reviewed Models',
+    ['Mattress', 'Overall', 'Firmness', 'Price', 'Trial', 'Warranty'],
+    brandModels.map((model: any) => [
+      model.name,
+      `${model.scores.overall}/10`,
+      `${model.firmness} (${model.firmnessScale}/10)`,
+      model.priceSale,
+      `${model.trialNights} nights`,
+      `${model.warrantyYears} years`,
+    ])
+  ),
+  articleList('Brand Review Notes', [
+    'Scores are editorial, hands-on evaluations from the PureSleep Testing Team.',
+    RANKING_DISCLOSURE,
+    'Certification and material labels should be verified on the brand official site or certifying body database before purchase.',
+  ])
+);
+
 const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": `${meta.displayName} Mattress Reviews 2026`,
     "description": meta.description,
+    "articleBody": brandArticleBody,
     "author": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
     "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
     "datePublished": "2026-01-01",
@@ -205,14 +241,13 @@ const jsonLd = [
     ]
   }
 ];
-
-const topModel = [...brandModels].sort((a, b) => (b.scores?.overall || 0) - (a.scores?.overall || 0))[0];
 ---
 
 <BaseLayout
   title={`${meta.displayName} Mattress Reviews 2026 | PureSleep`}
   description={meta.description}
   canonicalUrl={`${SITE_URL}/brands/${brand}/`}
+  machineReadableUrl={`${SITE_URL}/llms/brand-${brand}.md`}
   lastUpdated={lastUpdated}
   jsonLd={jsonLd}
 >
@@ -314,7 +349,7 @@ const topModel = [...brandModels].sort((a, b) => (b.scores?.overall || 0) - (a.s
         All {meta.displayName} mattresses above were evaluated hands-on by the PureSleep Testing Team. Scores are on the 7-metric system: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability (all 0–10). Scores come only from our testing data.
       </p>
       <p class="text-body-md text-on-surface-variant leading-relaxed">
-        PureSleep earns no commission and accepts no paid placements. We have no commercial relationship with {meta.displayName}.
+        {RANKING_DISCLOSURE}
       </p>
     </section>
 

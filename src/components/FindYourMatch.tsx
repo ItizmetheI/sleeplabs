@@ -3,10 +3,10 @@ import { motion } from 'motion/react';
 
 const needs = [
   { num: '01', title: 'Side Sleepers', desc: 'AS3 and AS5 relieve shoulder and hip pressure with HIVE® zoning', href: '/reviews/amerisleep-as3' },
-  { num: '02', title: 'Back Sleepers', desc: 'AS2 medium-firm support prevents lumbar sinkage and lower back strain', href: '/reviews/amerisleep-as2' },
+  { num: '02', title: 'Back Sleepers', desc: 'AS2 has a medium-firm feel designed to limit excessive hip sinkage', href: '/reviews/amerisleep-as2' },
   { num: '03', title: 'Hot Sleepers', desc: 'AS6 pocketed coils and Bio-Pur® open-cell foam tested 9.4/10 for cooling', href: '/reviews/amerisleep-as6' },
   { num: '04', title: 'Couples', desc: 'Motion isolation 9.0–9.4/10 across the lineup. AS6 best for edge support', href: '/reviews/amerisleep-as6' },
-  { num: '05', title: 'Back Pain', desc: 'AS2 medium-firm prevents sinkage. AS3 relieves pressure-point back pain', href: '/reviews/amerisleep-as2' },
+  { num: '05', title: 'Back Discomfort', desc: 'Compare firmer support and pressure-distributing options; not medical advice', href: '/best/back-pain' },
   { num: '06', title: 'Pressure Relief', desc: 'AS5 scores maximum 9.8/10 for shoulder and hip pressure relief', href: '/reviews/amerisleep-as5' },
   { num: '07', title: 'Eco-Conscious', desc: 'Organica uses GOLS latex, GOTS cotton, organic wool — no synthetic foams', href: '/reviews/amerisleep-organica' },
   { num: '08', title: 'Combination Sleepers', desc: 'AS3 medium feel suits both side and back positions equally well', href: '/reviews/amerisleep-as3' }

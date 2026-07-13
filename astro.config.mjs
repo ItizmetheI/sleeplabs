@@ -7,7 +7,7 @@ import node from '@astrojs/node';
 import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://production-domain-not-set.example',
+  site: process.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev',
   output: 'static',
   adapter: cloudflare(),
   integrations: [
@@ -22,16 +22,25 @@ export default defineConfig({
         if (page.includes('/best-mattress/')) return false;
         // Exclude superseded single-brand /blog/best-*/ listicles (301-redirect to multi-brand /best/ pages)
         const supersededBestSlugs = [
-          'best-luxury-mattress', 'best-mattress-for-back-pain', 'best-mattress-for-back-sleepers',
-          'best-mattress-for-combination-sleepers', 'best-mattress-for-couples', 'best-mattress-for-heavy-sleepers',
-          'best-mattress-for-hip-pain', 'best-mattress-for-hot-sleepers', 'best-mattress-for-shoulder-pain',
-          'best-mattress-for-side-sleepers', 'best-mattress-for-stomach-sleepers', 'best-memory-foam-mattress',
-          'best-organic-mattress', 'best-mattress-under-1000', 'best-mattress-for-lower-back-pain',
-          'best-mattress-for-upper-back-pain', 'best-mattress-for-back-pain-side-sleepers'
+          'best-adjustable-bed-base', 'best-bamboo-sheets', 'best-bed-frame-for-heavy-people',
+          'best-cooling-mattress-topper', 'best-luxury-mattress', 'best-mattress-for-arthritis',
+          'best-mattress-for-athletes', 'best-mattress-for-back-pain', 'best-mattress-for-back-pain-side-sleepers',
+          'best-mattress-for-back-sleepers', 'best-mattress-for-college-students', 'best-mattress-for-combination-sleepers',
+          'best-mattress-for-couples', 'best-mattress-for-fibromyalgia', 'best-mattress-for-guest-bedroom',
+          'best-mattress-for-heavy-sleepers', 'best-mattress-for-hip-pain', 'best-mattress-for-hot-sleepers',
+          'best-mattress-for-lower-back-pain', 'best-mattress-for-petite-sleepers', 'best-mattress-for-pregnancy',
+          'best-mattress-for-sciatica', 'best-mattress-for-seniors', 'best-mattress-for-shoulder-pain',
+          'best-mattress-for-side-sleepers', 'best-mattress-for-stomach-sleepers', 'best-mattress-for-upper-back-pain',
+          'best-mattress-protector', 'best-mattress-topper-for-back-pain', 'best-mattress-topper-for-pressure-relief',
+          'best-mattress-under-1000', 'best-memory-foam-mattress', 'best-organic-mattress',
+          'best-pillow-for-neck-pain', 'best-pillow-for-side-sleepers', 'best-sleep-position-for-back-pain',
+          'best-sleep-position-for-digestion', 'best-sleep-position-for-hip-pain', 'best-upholstered-bed-frame'
         ];
         if (supersededBestSlugs.some(slug => page.includes(`/blog/${slug}/`))) return false;
         // Exclude machine-readable LLM files
-        if (page.includes('/llms/')) return false;
+        if (page.includes('/llms/') || page.endsWith('/llms.txt') || page.endsWith('/llms-full.txt')) return false;
+        // Exclude QA-only manifest endpoints
+        if (page.includes('/model-coverage.json')) return false;
         // Exclude admin
         if (page.includes('/admin')) return false;
         // Exclude API routes

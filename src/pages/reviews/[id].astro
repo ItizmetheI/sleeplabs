@@ -1,5 +1,7 @@
 ---
 import { allMattresses } from '../../data/mattresses';
+import { articleList, articleTable, toArticleBody } from '../../lib/schemaArticleBody';
+import { COMMERCIAL_RELATIONSHIP_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TrustSignals from '../../components/TrustSignals.astro';
 
@@ -12,21 +14,63 @@ export function getStaticPaths() {
 
 const { mattress } = Astro.props;
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
+const canonicalUrl = `${SITE_URL}/reviews/${mattress.id}/`;
+const absoluteHeroImage = mattress.heroImage.startsWith('http') ? mattress.heroImage : `${SITE_URL}${mattress.heroImage}`;
+const productId = `${canonicalUrl}#product`;
+const reviewId = `${canonicalUrl}#review`;
+
+const reviewArticleBody = toArticleBody(
+  `${mattress.name} Review (2026): Scores, Construction, Pros and Cons`,
+  articleList('Best For', mattress.bestFor),
+  articleList('Not Ideal For', mattress.cons.slice(0, 3)),
+  articleTable('Specs at a Glance', ['Spec', 'Value'], [
+    ['Type', mattress.type.replace('-', ' ')],
+    ['Firmness', `${mattress.firmness.replace('-', ' ')} (${mattress.firmnessScale}/10)`],
+    ['Thickness', mattress.thickness],
+    ['Trial Period', `${mattress.trialNights} Nights`],
+    ['Warranty', `${mattress.warrantyYears} Years`],
+    ['Certifications', mattress.certifications.join(', ')],
+  ]),
+  'Quick Verdict',
+  mattress.verdict,
+  mattress.summary,
+  articleList('What We Loved', mattress.pros),
+  articleList('Points to Consider', mattress.cons),
+  'Detailed Performance Analysis',
+  `Our team evaluated the ${mattress.name} across back, side, and stomach positions. This ${mattress.firmnessScale}/10 (${mattress.firmness}) mattress is best suited to ${mattress.bestFor.slice(0, 3).join(', ')} sleepers.`,
+  `Scores: Overall ${mattress.scores.overall}/10. Value ${mattress.scores.value}/10. Edge Support ${mattress.scores.edgeSupport}/10. Trial Period ${mattress.scores.trialPeriod}/10. Response Time ${mattress.scores.responseTime}/10. Motion Transfer ${mattress.scores.motionTransfer}/10. Cooling & Breathability ${mattress.scores.coolingBreathability}/10.`,
+  `Certification labels listed for this model: ${mattress.certifications.join(', ')}. Verify current certification status on the brand's official site or the certifying body's database before purchasing.`,
+  'Inside the Mattress',
+  mattress.layers.map((layer: any, index: number) =>
+    `${index + 1}. ${layer.name} (${layer.thickness}). ${layer.material}. ${layer.description}`
+  ),
+  'How We Tested This Mattress',
+  `This review was evaluated hands-on by the PureSleep Testing Team using our standardized 7-metric scoring system. Scores are editorial evaluations, not lab measurements or manufacturer data. ${COMMERCIAL_RELATIONSHIP_DISCLOSURE} ${LINK_DISCLOSURE}`,
+  'Frequently Asked Questions',
+  mattress.faqs.map((faq: any) => [`Question: ${faq.question}`, `Answer: ${faq.answer}`]),
+  'Our Verdict',
+  mattress.verdict,
+  'Price note: Prices below are reference values captured in the source dataset, not live offers. Verify current pricing, shipping, return, trial, and warranty terms on the brand site before purchase.',
+  articleTable(
+    'Sizes & Reference Pricing',
+    ['Size', 'Dimensions', 'Recorded Original Price', 'Recorded Sale Price'],
+    mattress.sizePricing.map((sp: any) => [sp.size, sp.dimensions, sp.priceOriginal, sp.priceSale])
+  )
+);
 
 const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${canonicalUrl}#article`,
     "headline": `${mattress.name} Review: Is It Worth It in 2026?`,
+    "description": mattress.summary,
+    "articleBody": reviewArticleBody,
     "author": {
       "@type": "Organization",
       "name": "PureSleep",
       "url": SITE_URL
-    },
-    "reviewedBy": {
-      "@type": "Organization",
-      "name": "PureSleep Testing Team"
     },
     "dateModified": mattress.dateModified,
     "datePublished": mattress.dateReviewed,
@@ -35,27 +79,32 @@ const jsonLd = [
       "name": "PureSleep",
       "url": SITE_URL
     },
-    "image": mattress.heroImage,
-    "mainEntityOfPage": `${SITE_URL}/reviews/${mattress.id}/`,
+    "image": absoluteHeroImage,
+    "mainEntityOfPage": canonicalUrl,
+    "mainEntity": { "@id": productId },
     "isPartOf": { "@type": "CollectionPage", "name": "PureSleep Reviews", "url": `${SITE_URL}/reviews/` },
-    "about": { "@type": "Article", "name": "PureSleep Testing Methodology", "url": `${SITE_URL}/methodology/` }
+    "about": [
+      { "@id": productId },
+      { "@type": "Article", "name": "PureSleep Testing Methodology", "url": `${SITE_URL}/methodology/` }
+    ],
+    "citation": [mattress.affiliateUrl, `${SITE_URL}/methodology/`]
   },
   {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": productId,
+    "url": canonicalUrl,
     "name": mattress.name,
     "brand": { "@type": "Brand", "name": mattress.brand },
     "description": mattress.summary,
-    "image": mattress.heroImage,
-    "offers": {
-      "@type": "Offer",
-      "price": mattress.price,
-      "priceCurrency": "USD",
-      "url": mattress.affiliateUrl
-    },
+    "image": absoluteHeroImage,
     "sameAs": mattress.affiliateUrl,
     "review": {
       "@type": "Review",
+      "@id": reviewId,
+      "name": `${mattress.name} Editorial Review`,
+      "url": canonicalUrl,
+      "reviewBody": mattress.verdict,
       "reviewRating": {
         "@type": "Rating",
         "ratingValue": mattress.scores.overall,
@@ -70,8 +119,8 @@ const jsonLd = [
         "name": "PureSleep",
         "url": SITE_URL
       },
-      "datePublished": "2026-06-16",
-      "dateModified": "2026-06-16"
+      "datePublished": mattress.dateReviewed,
+      "dateModified": mattress.dateModified
     }
   },
   {
@@ -104,7 +153,8 @@ const jsonLd = [
   ogTitle={`${mattress.name} Review (2026)`}
   ogImage={mattress.heroImage}
   ogType="article"
-  canonicalUrl={`${SITE_URL}/reviews/${mattress.id}/`}
+  canonicalUrl={canonicalUrl}
+  machineReadableUrl={`${SITE_URL}/llms/reviews-${mattress.id}.md`}
   lastUpdated={mattress.dateModified}
   jsonLd={jsonLd}
 >
@@ -112,7 +162,7 @@ const jsonLd = [
     
     <header class="flex flex-col gap-6 items-center text-center max-w-4xl mx-auto">
       <h1 class="text-headline-lg font-headline-lg  text-primary font-bold">
-        {mattress.name} Review (2026): Is It Worth {mattress.priceRange}?
+        {mattress.name} Review (2026): Scores, Construction, Pros &amp; Cons
       </h1>
       <TrustSignals dateModified={mattress.dateModified} />
     </header>
@@ -269,7 +319,7 @@ const jsonLd = [
             This review was evaluated hands-on by the PureSleep Testing Team using our standardized 7-metric scoring system: <strong class="text-on-surface">Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability</strong>. Every score on this page comes from our testing data — never from manufacturer claims, press releases, or third-party databases.
           </p>
           <p class="text-body-md text-on-surface-variant leading-relaxed">
-            PureSleep is an editorially independent review publication. We earn no commission from any links on this site and have no financial relationship with the brands we review.
+            {COMMERCIAL_RELATIONSHIP_DISCLOSURE} {LINK_DISCLOSURE} The same published scoring rubric is used across every covered brand.
           </p>
           <a href="/methodology" class="text-primary hover:text-secondary font-bold underline underline-offset-4 transition-colors text-body-md w-fit">
             Read our full testing methodology →
@@ -305,7 +355,7 @@ const jsonLd = [
     class="inline-flex items-center bg-primary text-white px-8 py-4 rounded-full font-bold text-label-sm uppercase tracking-widest hover:bg-primary/90 transition-colors shadow-lg">
     Check Latest Price →
   </a>
-  <p class="text-xs text-on-surface-variant mt-3">PureSleep earns no commission and accepts no paid placements. This link goes directly to the manufacturer.</p>
+  <p class="text-xs text-on-surface-variant mt-3">{LINK_DISCLOSURE}</p>
 </section>
 
         </article>
@@ -318,9 +368,9 @@ const jsonLd = [
           <!-- Overall Score -->
           <div class="flex flex-col items-center justify-center pt-4 pb-6 border-b border-outline-variant/30">
             <span class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold mb-2">Overall Score</span>
-            <div class="text-[80px] font-headline-lg font-bold italic text-primary leading-none relative">
-              {mattress.scores.overall}
-              <span class="text-title-md absolute bottom-2 -right-10 text-on-surface-variant font-normal">/10</span>
+            <div class="flex items-baseline justify-center gap-2 leading-none">
+              <span class="text-[64px] sm:text-[80px] font-headline-lg font-bold italic text-primary">{mattress.scores.overall}</span>
+              <span class="text-title-md text-on-surface-variant font-normal">/10</span>
             </div>
           </div>
 
@@ -348,7 +398,8 @@ const jsonLd = [
 
           <!-- Sizes & Pricing Table -->
           <div class="flex flex-col gap-3 pt-6 border-t border-outline-variant/30">
-            <h3 class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Sizes & Pricing</h3>
+            <h3 class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Sizes & Reference Pricing</h3>
+            <p class="text-xs text-on-surface-variant">Recorded dataset values, not live offers. Verify current price and policies on the brand site.</p>
             <div class="flex flex-col gap-0 border border-outline-variant/20 rounded-2xl overflow-hidden text-sm">
               {mattress.sizePricing.map((sp, i) => (
                 <div class={`flex flex-col px-4 py-3 ${i % 2 === 0 ? 'bg-transparent' : 'bg-surface/50'} border-b border-outline-variant/10 last:border-b-0`}>
@@ -370,7 +421,7 @@ const jsonLd = [
              <a href={mattress.affiliateUrl} target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-primary hover:bg-primary/90 text-on-primary py-4 px-6 rounded-xl font-label-lg font-bold tracking-wide uppercase transition-colors shadow-lg">
                Check Latest Price
              </a>
-             <p class="text-xs text-on-surface-variant text-center mt-2">No commission earned. Link goes directly to the manufacturer.</p>
+             <p class="text-xs text-on-surface-variant text-center mt-2">{LINK_DISCLOSURE}</p>
           </div>
         </div>
         

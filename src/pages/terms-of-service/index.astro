@@ -1,20 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Terms of Service — PureSleep",
   "url": `${SITE_URL}/terms-of-service/`,
-  "description": "PureSleep terms of service. Terms governing use of puresleep.com.",
+  "description": "PureSleep terms of service and commercial relationship disclosure.",
   "dateModified": "2026-05-01"
 };
 ---
 
 <BaseLayout
   title="Terms of Service — PureSleep"
-  description="PureSleep terms of service. Terms governing use of puresleep.com."
+  description="PureSleep terms of service and commercial relationship disclosure."
   canonicalUrl={`${SITE_URL}/terms-of-service/`}
   jsonLd={jsonLd}
 >
@@ -29,17 +29,17 @@ const jsonLd = {
 
       <section>
         <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">1. Acceptance of Terms</h2>
-        <p>By accessing puresleep.com, you agree to these terms. If you do not agree, do not use this site.</p>
+        <p>By accessing this PureSleep website, you agree to these terms. If you do not agree, do not use this site.</p>
       </section>
 
       <section>
         <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">2. Content & Editorial Purpose</h2>
-        <p>PureSleep publishes independent mattress reviews and buying guides for informational purposes. Content is not a substitute for professional medical advice. Mattress recommendations are general in nature. Consult a healthcare professional for mattress advice related to specific medical conditions.</p>
+        <p>PureSleep publishes mattress reviews and buying guides for informational purposes. PureSleep is owned and operated by Amerisleep, which is also affiliated with Zoma, Vaya, and FORM through One Sleep Group. Content is not a substitute for professional medical advice. Mattress recommendations are general in nature. Consult a healthcare professional for mattress advice related to specific medical conditions.</p>
       </section>
 
       <section>
         <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">3. Commercial Relationships</h2>
-        <p>PureSleep earns no commission and accepts no paid placements. Product links on this site go directly to manufacturer pages. All purchases are subject to the terms and policies of the respective retailer. PureSleep is not a party to any transaction.</p>
+        <p>PureSleep does not receive per-click or per-sale affiliate commissions from outbound links. Amerisleep, Zoma, Vaya, and FORM may benefit when readers purchase their products. All purchases are subject to the terms and policies of the respective retailer.</p>
       </section>
 
       <section>

@@ -11,7 +11,7 @@ import Methodology from '../components/Methodology';
 import FinalPick from '../components/FinalPick';
 import { allMattresses } from '../data/mattresses';
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 const realScore = (id: string) => allMattresses.find(m => m.id === id)?.scores.overall;
 
 const jsonLd = [
@@ -20,26 +20,27 @@ const jsonLd = [
     "@type": "WebSite",
     "name": "PureSleep",
     "url": SITE_URL,
-    "description": "Independent mattress reviews, rankings, and buying guides. Editorially Independent. Updated monthly."
+    "description": "Multi-brand mattress reviews, rankings, and buying guides covering 59 models across 24 brands. Updated July 2026."
   },
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "PureSleep",
     "url": SITE_URL,
-    "logo": SITE_URL + "/logo.svg"
+    "logo": SITE_URL + "/logo.svg",
+    "parentOrganization": { "@type": "Organization", "name": "Amerisleep" }
   }
 ];
 ---
 
 <BaseLayout 
   title="Best Mattress of 2026 — PureSleep Testing Team Reviews"
-  description="Independent, Editorially Independent Amerisleep mattress rankings. Tested by the PureSleep testing team. Find your best night's sleep."
+  description="Hands-on mattress rankings across 24 brands, scored by the PureSleep testing team using one published rubric."
   ogTitle="Best Mattress of 2026 — PureSleep"
   ogImage="/images/mattresses/amerisleep-as3.webp"
   ogType="website"
   canonicalUrl={`${SITE_URL}/`}
-  lastUpdated="2026-05-01"
+  lastUpdated="2026-07-13"
   jsonLd={jsonLd}
 >
   <div>
@@ -51,7 +52,7 @@ const jsonLd = [
         EDITOR'S PICK — BEST MEMORY FOAM MATTRESS 2026
       </span>
       <span class="text-on-secondary-container/80 text-label-sm font-label-sm uppercase tracking-widest mt-2 bg-white/40 px-3 py-1 rounded-full border border-white/50 shadow-sm font-bold">
-        Last Updated: {new Date("2026-05-01").toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+        Last Updated: {new Date("2026-07-13").toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
       </span>
     </div>
     
@@ -160,6 +161,3 @@ const jsonLd = [
     </main>
   </div>
 </BaseLayout>
-
-
-

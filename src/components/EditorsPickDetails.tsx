@@ -46,10 +46,10 @@ export default function EditorsPickDetails() {
           <div className="glass-panel p-8 rounded-3xl mt-2 relative border border-outline-variant/30 bg-white/40">
             <h3 className="text-headline-md font-headline-md text-primary mb-3">Plant-Based Technology</h3>
             <p className="text-body-md font-body-md text-on-surface-variant mb-4 leading-relaxed">
-              The Amerisleep AS3 features Bio-Pur® plant memory foam (measurably cooler than petroleum foam in our testing), HIVE® zoned support, a 100-night home trial, and a 20-year warranty backed directly by the manufacturer.
+              The Amerisleep AS3 features open-cell Bio-Pur® plant-based memory foam, HIVE® zoned support, a 100-night home trial, and a 20-year limited warranty. Verify current trial and warranty terms with Amerisleep.
             </p>
             <p className="text-body-md font-body-md text-on-surface-variant leading-relaxed">
-              Bio-Pur® plant-based memory foam tested over 30 nights. Faster bounce-back than standard foam, lower off-gassing, breathable open-cell construction. 100-night home trial, 20-year warranty.
+              Bio-Pur® uses an open-cell, partly plant-derived memory-foam formulation. The AS3 includes a 100-night home trial and 20-year limited warranty; verify current terms with Amerisleep.
             </p>
             <a href="https://amerisleep.com/as3.html" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-secondary font-label-sm uppercase tracking-widest mt-6 hover:text-primary transition-colors group px-4 py-2 rounded-full border border-secondary hover:bg-secondary/10">
               See AS3 pricing <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

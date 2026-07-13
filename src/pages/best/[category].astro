@@ -3,8 +3,10 @@ import { allMattresses } from '../../data/mattresses';
 import { comparisons } from '../../data/comparisons';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { BEST_CATEGORIES } from '../../lib/bestCategories';
+import { articleList, articleTable, toArticleBody } from '../../lib/schemaArticleBody';
+import { RANKING_DISCLOSURE } from '../../lib/disclosure';
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
 export function getStaticPaths() {
   return Object.keys(BEST_CATEGORIES).map(category => ({
@@ -23,6 +25,10 @@ const pickModels = cat.picks
 
 const winner = pickModels[0] as any;
 const lastUpdated = "2026-06-16";
+const canonicalUrl = `${SITE_URL}/best/${category}/`;
+const winnerImage = winner?.heroImage
+  ? (winner.heroImage.startsWith('http') ? winner.heroImage : `${SITE_URL}${winner.heroImage}`)
+  : `${SITE_URL}/og-default.jpg`;
 
 const faqs = (cat as any).faqs || [];
 
@@ -30,17 +36,93 @@ const relatedComparisons = comparisons
   .filter(c => cat.picks.includes(c.mattressAId) || cat.picks.includes(c.mattressBId))
   .slice(0, 6);
 
+const isHealthCategory = ['back-pain', 'hip-pain', 'shoulder-pain'].includes(category);
+
+const bestArticleBody = toArticleBody(
+  cat.h1,
+  cat.intro,
+  'Reviewed by: PureSleep Testing Team. Updated: June 2026. 59 models tested across 24 brands.',
+  isHealthCategory
+    ? 'Note: No mattress can diagnose, treat, or cure any health condition. This page is for general comfort and sleep-product information only; talk to a doctor about pain or medical concerns.'
+    : null,
+  articleList('Trust Signals', [
+    '7-Metric Scoring System',
+    'Hands-On Team Testing',
+    'Relationships Disclosed',
+    'One Published Rubric',
+  ]),
+  winner
+    ? [
+      "#1 Editor's Pick",
+      `${winner.name} by ${winner.brand}. Overall Score: ${winner.scores.overall}/10.`,
+      `Our Verdict: ${cat.winnerNote}`,
+      articleTable('Top Pick Score Grid', ['Metric', 'Score'], [
+        ['Value', `${winner.scores.value}/10`],
+        ['Edge Support', `${winner.scores.edgeSupport}/10`],
+        ['Trial Period', `${winner.scores.trialPeriod}/10`],
+        ['Response Time', `${winner.scores.responseTime}/10`],
+        ['Motion Transfer', `${winner.scores.motionTransfer}/10`],
+        ['Cooling', `${winner.scores.coolingBreathability}/10`],
+      ]),
+      `Specs at a Glance: ${winner.trialNights}-night trial. ${winner.warrantyYears}-year warranty. ${winner.firmness} (${winner.firmnessScale}/10).`,
+    ]
+    : null,
+  'Quick Comparison',
+  'All picks ranked by our 7-metric overall score. Scores derive from hands-on testing, not manufacturer data.',
+  articleTable(
+    'Quick Comparison Table',
+    ['Rank', 'Mattress', 'Overall', 'Value', 'Trial', 'Warranty'],
+    pickModels.map((m: any, i: number) => [
+      `#${i + 1}`,
+      `${m.name} by ${m.brand}`,
+      `${m.scores.overall}/10`,
+      `${m.scores.value}/10`,
+      `${m.trialNights} nights`,
+      `${m.warrantyYears} years`,
+    ])
+  ),
+  cat.filterNote ? `Editorial note: ${cat.filterNote}` : null,
+  'All Top Picks - Detailed Breakdown',
+  pickModels.map((m: any, i: number) => [
+    `#${i + 1}: ${m.name} by ${m.brand}. Overall score: ${m.scores.overall}/10.`,
+    `Our Verdict: ${m.verdict}`,
+    `Scores: Value ${m.scores.value}/10. Edge Support ${m.scores.edgeSupport}/10. Motion Transfer ${m.scores.motionTransfer}/10. Cooling ${m.scores.coolingBreathability}/10.`,
+    `Specs at a Glance: ${m.firmness} (${m.firmnessScale}/10). Best for ${m.bestFor.slice(0, 2).join(', ')}. ${m.trialNights}-night trial. ${m.warrantyYears}-year warranty.`,
+  ]),
+  'How We Selected These Picks',
+  'All picks above were evaluated hands-on by the PureSleep Testing Team using a standardized 7-metric scoring system: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. Every score on this page comes from our testing data, never from manufacturer claims, press releases, or third-party databases.',
+  RANKING_DISCLOSURE,
+  relatedComparisons.length > 0
+    ? [
+      'Head-to-Head Comparisons',
+      relatedComparisons.map((c: any) => {
+        const mA = allMattresses.find((m: any) => m.id === c.mattressAId) as any;
+        const mB = allMattresses.find((m: any) => m.id === c.mattressBId) as any;
+        return mA && mB ? `${c.title}: ${mA.scores.overall}/10 vs ${mB.scores.overall}/10.` : null;
+      }),
+    ]
+    : null,
+  faqs.length > 0
+    ? ['Frequently Asked Questions', faqs.map((faq: any) => [`Question: ${faq.question}`, `Answer: ${faq.answer}`])]
+    : null
+);
+
 const jsonLd: any[] = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${canonicalUrl}#article`,
     "headline": cat.h1,
     "description": cat.description,
+    "articleBody": bestArticleBody,
+    "image": winnerImage,
     "author": { "@type": "Organization", "name": "PureSleep Testing Team", "url": SITE_URL },
     "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
     "datePublished": "2026-01-01",
     "dateModified": lastUpdated,
-    "mainEntityOfPage": `${SITE_URL}/best/${category}/`,
+    "mainEntityOfPage": canonicalUrl,
+    "about": pickModels.map((m: any) => ({ "@id": `${SITE_URL}/reviews/${m.id}/#product` })),
+    "citation": [...pickModels.map((m: any) => m.affiliateUrl), `${SITE_URL}/methodology/`],
   },
   {
     "@context": "https://schema.org",
@@ -55,7 +137,7 @@ const jsonLd: any[] = [
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": cat.h1,
-    "url": `${SITE_URL}/best/${category}/`,
+    "url": canonicalUrl,
     "itemListElement": pickModels.map((m: any, i: number) => ({
       "@type": "ListItem",
       "position": i + 1,
@@ -81,7 +163,8 @@ if (faqs.length > 0) {
 <BaseLayout
   title={cat.title}
   description={cat.description}
-  canonicalUrl={`${SITE_URL}/best/${category}/`}
+  canonicalUrl={canonicalUrl}
+  machineReadableUrl={`${SITE_URL}/llms/best-${category}.md`}
   lastUpdated={lastUpdated}
   jsonLd={jsonLd}
 >
@@ -120,8 +203,8 @@ if (faqs.length > 0) {
       {[
         '7-Metric Scoring System',
         'Hands-On Team Testing',
-        'No Commission Earned',
-        'Editorially Independent',
+        'Relationships Disclosed',
+        'One Published Rubric',
       ].map(badge => (
         <span class="px-4 py-1.5 rounded-full bg-surface border border-outline-variant/30 text-label-sm font-bold uppercase tracking-widest text-on-surface-variant text-xs">
           {badge}
@@ -345,7 +428,7 @@ if (faqs.length > 0) {
         All picks above were evaluated hands-on by the PureSleep Testing Team using a standardized 7-metric scoring system: <strong class="text-on-surface">Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability</strong>. Every score on this page comes from our testing data — never from manufacturer claims, press releases, or third-party databases.
       </p>
       <p class="text-body-md text-on-surface-variant leading-relaxed">
-        PureSleep is an editorially independent review publication. We earn no commission from any links on this site and have no financial relationship with the brands we review. Rankings reflect our scoring outcomes only.
+        {RANKING_DISCLOSURE}
       </p>
       <div class="flex flex-wrap gap-3">
         <a href="/methodology" class="text-primary hover:text-secondary font-bold underline underline-offset-4 transition-colors text-body-md">

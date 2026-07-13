@@ -12,6 +12,7 @@ export interface Props {
   ogImage?: string;
   ogType?: string;
   canonicalUrl?: string;
+  machineReadableUrl?: string;
   jsonLd?: object;
   lastUpdated?: string;
   noindex?: boolean;
@@ -25,12 +26,13 @@ const {
   ogImage,
   ogType,
   canonicalUrl,
+  machineReadableUrl,
   jsonLd,
   lastUpdated,
   noindex,
 } = Astro.props;
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 const absoluteOgImage = ogImage
   ? (ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`)
   : `${SITE_URL}/og-default.jpg`;
@@ -54,6 +56,7 @@ const absoluteOgImage = ogImage
     <meta name="twitter:image" content={absoluteOgImage} />
     
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    {machineReadableUrl && <link rel="alternate" type="text/markdown" href={machineReadableUrl} title="Machine-readable page summary" />}
     
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="32x32" />
@@ -69,13 +72,6 @@ const absoluteOgImage = ogImage
   </head>
   <body>
     <div class="bg-background text-on-background font-body-md text-body-md antialiased pt-[60px] min-h-screen flex flex-col selection:bg-secondary/20 selection:text-secondary relative overflow-hidden">
-      <!-- Global Liquid Background -->
-      <div class="fixed inset-0 pointer-events-none -z-10 bg-white overflow-hidden">
-        <div class="liquid-blob bg-[#1d4ed8] w-[80vw] h-[80vh] opacity-[0.05] top-[-20%] left-[-10%]"></div>
-        <div class="liquid-blob bg-[#3b82f6] w-[60vw] h-[60vh] opacity-[0.03] bottom-[-10%] right-[-10%]"></div>
-        <div class="liquid-blob bg-[#fbbf24] w-[40vw] h-[40vh] opacity-[0.04] top-[30%] right-[20%]"></div>
-      </div>
-      
       <TopNavBar client:idle currentPath={Astro.url.pathname} />
       
       <slot />

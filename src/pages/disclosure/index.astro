@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { COMMERCIAL_RELATIONSHIP_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 const lastUpdated = "2026-05-01";
 
 const jsonLd = [
@@ -10,15 +11,19 @@ const jsonLd = [
     "@type": "WebPage",
     "name": "Disclosure",
     "url": `${SITE_URL}/disclosure/`,
-    "description": "PureSleep's disclosure: no commission, no paid placements, no affiliate relationships. Product links go directly to manufacturers.",
-    "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL }
+    "description": "PureSleep's material-relationship, outbound-link, and ranking disclosure.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "PureSleep",
+      "url": SITE_URL
+    }
   }
 ];
 ---
 
 <BaseLayout
   title="Disclosure — PureSleep"
-  description="PureSleep's disclosure: no commission, no paid placements, no affiliate relationships. Product links go directly to manufacturers."
+  description="PureSleep's material-relationship, outbound-link, and ranking disclosure."
   canonicalUrl={`${SITE_URL}/disclosure/`}
   lastUpdated={lastUpdated}
   jsonLd={jsonLd}
@@ -28,7 +33,7 @@ const jsonLd = [
     <header class="flex flex-col gap-6">
       <h1 class="text-headline-lg font-headline-lg text-primary font-bold">Disclosure</h1>
       <p class="text-body-lg text-on-surface-variant leading-relaxed">
-        PureSleep earns no commission and accepts no paid placements. We have no affiliate relationships and no financial relationship with the brands we review.
+        {COMMERCIAL_RELATIONSHIP_DISCLOSURE} {LINK_DISCLOSURE}
       </p>
     </header>
 
@@ -36,10 +41,10 @@ const jsonLd = [
       <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">How Links Work On This Site</h2>
       <div class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-col gap-4">
         <p class="text-body-md text-on-surface-variant leading-relaxed">
-          Product links on PureSleep go directly to manufacturer pages. We earn no commission from any link on this site. Scores are finalized independently before any product link is placed.
+          Product links go to manufacturer or retailer pages. PureSleep does not receive per-click or per-sale affiliate commissions from those links. Amerisleep, Zoma, Vaya, or FORM may benefit when a reader purchases one of their products.
         </p>
         <p class="text-body-md text-on-surface-variant leading-relaxed">
-          No brand receives more favorable scoring because of its market position. Amerisleep wins categories where the data supports it; competitors lead where they do. If a model underperforms in testing, we say so clearly.
+          No brand receives more favorable scoring because of its market position. Rankings follow the locked score data and stated category criteria. If a model underperforms in testing, we say so clearly.
         </p>
       </div>
     </section>
@@ -48,7 +53,7 @@ const jsonLd = [
       <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Who Writes Our Reviews</h2>
       <div class="glass-panel p-8 rounded-3xl border border-white/60">
         <p class="text-body-md text-on-surface-variant leading-relaxed">
-          Reviews are written and scored by the <a href="/about/#testing-team" class="text-secondary hover:text-primary underline underline-offset-4 font-bold transition-colors">PureSleep Testing Team</a>, evaluated hands-on using our standardized 7-metric scoring system. For questions, contact us at <a href="mailto:support@puresleep.com" class="text-secondary hover:text-primary underline underline-offset-4 transition-colors">support@puresleep.com</a>.
+          Reviews are written and scored under the <a href="/about/#testing-team" class="text-secondary hover:text-primary underline underline-offset-4 font-bold transition-colors">PureSleep Testing Team</a> organizational byline using our standardized 7-metric scoring system. PureSleep does not present a named clinician as a medical reviewer.
         </p>
       </div>
     </section>

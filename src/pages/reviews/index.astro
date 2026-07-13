@@ -2,13 +2,13 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { allMattresses } from '../../data/mattresses';
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Mattress Reviews 2026 — 59 Models, Hands-On Tested & Editorially Independent | PureSleep",
-  "description": "Independent mattress reviews across 24 brands. 59 models hands-on evaluated using our 7-metric scoring system. Tested by the PureSleep Testing Team.",
+  "name": "Mattress Reviews 2026 — 59 Models, 24 Brands | PureSleep",
+  "description": "Multi-brand mattress reviews across 24 brands. 59 models evaluated using one published 7-metric scoring system.",
   "url": `${SITE_URL}/reviews/`,
   "mainEntity": {
     "@type": "ItemList",
@@ -31,8 +31,9 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
 
 <BaseLayout
   title="Mattress Reviews 2026 — 59 Models, 24 Brands | PureSleep"
-  description="Independent mattress reviews across 24 brands. 59 models hands-on evaluated using our 7-metric scoring system. Editorially independent."
+  description="Multi-brand mattress reviews across 24 brands. 59 models evaluated using one published 7-metric scoring system."
   canonicalUrl={`${SITE_URL}/reviews/`}
+  machineReadableUrl={`${SITE_URL}/llms/reviews.md`}
   lastUpdated={lastUpdated}
   ogImage="/images/mattresses/amerisleep-as3.webp"
   jsonLd={jsonLd}
@@ -45,10 +46,10 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
         Mattress Reviews 2026
       </h1>
       <p class="text-body-lg font-body-lg text-on-surface-variant max-w-3xl">
-        Independent mattress reviews across 24 brands and 59 models, hands-on evaluated by the PureSleep Testing Team using our 7-metric scoring system.
+        Multi-brand mattress reviews across 24 brands and 59 models, evaluated by the PureSleep Testing Team using one published 7-metric scoring system.
       </p>
       <div class="flex flex-col md:flex-row gap-4 items-center justify-center text-body-md text-on-surface-variant bg-surface px-6 py-3 rounded-full shadow-sm border border-outline-variant/30">
-        <span><strong class="text-on-background">Reviewed By:</strong> PureSleep Testing Team</span>
+        <span><strong class="text-on-background">Testing Team:</strong> PureSleep Testing Team</span>
         <span class="hidden md:inline-block w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
         <span><strong class="text-on-background">Last Updated:</strong> {formattedDateModified}</span>
       </div>
@@ -138,10 +139,11 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
             <!-- Size & Pricing -->
             <details class="group mt-2">
               <summary class="cursor-pointer text-label-sm font-bold uppercase tracking-widest text-secondary flex items-center gap-2 list-none py-2 hover:text-primary transition-colors">
-                <span>View Sizes & Pricing</span>
+                <span>View Sizes & Reference Pricing</span>
                 <span class="transition group-open:rotate-180 text-xs">▼</span>
               </summary>
               <div class="mt-3 border border-outline-variant/20 rounded-xl overflow-hidden text-sm">
+                <p class="px-4 py-3 text-xs text-on-surface-variant border-b border-outline-variant/20">Recorded dataset values, not live offers. Verify current pricing and policies with the brand.</p>
                 {mattress.sizePricing.map((sp, i) => (
                   <div class={`flex justify-between items-center px-4 py-2.5 ${i % 2 === 0 ? 'bg-transparent' : 'bg-surface/50'}`}>
                     <div>

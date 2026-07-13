@@ -1,22 +1,20 @@
 ---
 import { blogPosts } from '../../../data/blogs-generated';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getLegacyBestBlogRedirect } from '../../../lib/legacyBlogRedirects';
 
 export function getStaticPaths() {
-  const tags = new Set<string>([
-    'amerisleep', 'back-sleepers', 'stomach-sleepers', 'memory-foam',
-    'combination-sleepers', 'pressure-relief', 'side-sleepers', 'hip-pain',
-    'cooling', 'couples'
-  ]);
-  blogPosts.forEach((post: any) => {
+  const activePosts = blogPosts.filter((post: any) => !post.redirectTo && !getLegacyBestBlogRedirect(post.slug));
+  const tags = new Set<string>();
+  activePosts.forEach((post: any) => {
     if (post.tags) {
       post.tags.forEach((tag: string) => tags.add(tag.toLowerCase().replace(/\s+/g, '-')));
     }
   });
 
   return Array.from(tags).map(tag => {
-    const filteredPosts = blogPosts.filter((post: any) =>
-      !post.redirectTo && post.tags && post.tags.some((t: string) => t.toLowerCase().replace(/\s+/g, '-') === tag)
+    const filteredPosts = activePosts.filter((post: any) =>
+      post.tags && post.tags.some((t: string) => t.toLowerCase().replace(/\s+/g, '-') === tag)
     );
     return {
       params: { tag },
@@ -27,7 +25,7 @@ export function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
 const jsonLd = {
   "@context": "https://schema.org",

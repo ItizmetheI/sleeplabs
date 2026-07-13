@@ -38,7 +38,6 @@ export interface Mattress {
   reviewer: Reviewer;
   dateReviewed: string;
   dateModified: string;
-  testedNights: number;
   bestFor: string[];
   tags: string[];
   pros: string[];
@@ -52,12 +51,12 @@ export interface Mattress {
   relatedTopics?: string[];
 }
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env?.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
 export const reviewer_editorial: Reviewer = {
   name: "PureSleep Testing Team",
   role: "Sleep Product Testers",
-  credentials: "Independent sleep product testing team.",
+  credentials: "Organizational byline for PureSleep mattress evaluations.",
   sameAs: [`${SITE_URL}/methodology/`]
 };
 
@@ -85,15 +84,14 @@ export const mattresses: Mattress[] = [
     reviewer: reviewer_editorial,
     dateReviewed: "2026-01-15",
     dateModified: "2026-05-01",
-    testedNights: 30,
     bestFor: ["Side Sleepers", "Back Sleepers", "Couples", "Back Pain", "Combination Sleepers", "Hot Sleepers"],
     tags: ["memory-foam", "cooling", "back-pain", "pressure-relief", "plant-based", "most-popular"],
     pros: [
-      "Bio-Pur® plant-based memory foam runs measurably cooler than petroleum foam",
-      "HIVE® 5-zone support is designed to help support lumbar alignment across sleep positions",
-      "CertiPUR-US certified — low VOC, no harmful chemicals",
-      "20-year warranty is the longest in the industry",
-      "100-night home trial with fully free returns",
+      "Bio-Pur® uses an open-cell, partly plant-derived memory-foam formulation designed for breathability",
+      "HIVE® 5-zone support is designed to provide firmer and softer response by body area",
+      "Uses CertiPUR-US certified polyurethane foam; verify current certification scope with the brand",
+      "20-year limited warranty",
+      "100-night home trial; verify current return terms with Amerisleep",
       "Made in the USA with domestic and imported components"
     ],
     cons: [
@@ -101,32 +99,32 @@ export const mattresses: Mattress[] = [
       "Strict stomach sleepers may prefer the firmer AS2",
       "No pillow-top option at this price tier"
     ],
-    summary: "The Amerisleep AS3 is our #1 rated mattress for 2026. Bio-Pur® plant-based memory foam replaces petroleum with a cooler, more breathable open-cell structure that sleeps 25% cooler in our tests. HIVE® zoned support maps five pressure zones across the mattress — firmer under hips and lumbar, softer at shoulders. At 12 inches tall with a medium feel (5/10), it suits the widest range of sleepers we've tested.",
+    summary: "The Amerisleep AS3 is our #1 rated mattress for 2026. Its Bio-Pur® comfort layer uses an open-cell, partly plant-derived memory-foam formulation, while HIVE® creates five response zones across the mattress. At 12 inches tall with a medium feel (5/10), it is a versatile option for several sleep positions and comfort preferences.",
     verdict: "The best all-around memory foam mattress for 2026 — especially for side and back sleepers who sleep hot.",
     layers: [
       {
         name: "Refresh Cooling Cover",
         thickness: "0.5 inches",
         material: "Celliant® Fiber Fabric",
-        description: "Converts body heat into far infrared energy. Keeps sleep surface 7°F cooler than standard polyester covers. Moisture-wicking and removable for washing."
+        description: "Amerisleep describes this fabric as a cooling, moisture-wicking cover. Verify current material details and care instructions on the brand's product page."
       },
       {
         name: "Comfort Layer",
         thickness: "3 inches",
         material: "Bio-Pur® Plant-Based Memory Foam",
-        description: "Open-cell plant-based memory foam replacing a portion of petroleum with renewable plant oils. 25% more breathable than standard memory foam in our airflow tests. Contours to pressure points without heat trapping."
+        description: "Open-cell memory foam that replaces a portion of petroleum-derived material with plant-derived oils. It is designed to contour while allowing more airflow than a closed-cell construction."
       },
       {
         name: "Transition Layer",
         thickness: "2 inches",
         material: "Affinity™ Foam with HIVE® Technology",
-        description: "Hexagonal cutouts create five distinct support zones. Softer hexagons under shoulders and legs, firmer under hips, lower back, and head. Mapped by our testing team across 9 anatomical pressure points."
+        description: "Hexagonal cutouts create five response zones, with more give near the shoulders and legs and a firmer response near the hips and lower back."
       },
       {
         name: "Support Core",
         thickness: "7 inches",
         material: "Bio-Core® High-Density Support Foam",
-        description: "High-density base foam provides structural foundation and long-term durability. Prevents sagging and soft spots for the full 20-year warranty period. CertiPUR-US certified."
+        description: "High-density base foam provides the structural foundation. Amerisleep lists a 20-year limited warranty; coverage and indentation thresholds are governed by the current warranty terms."
       }
     ],
     sizePricing: [
@@ -141,11 +139,11 @@ export const mattresses: Mattress[] = [
     faqs: [
       {
         question: "Is the Amerisleep AS3 good for side sleepers?",
-        answer: "Yes. The AS3's medium firmness (5/10) and HIVE® zoned support are specifically optimized for side sleepers. The shoulder zone has softer hexagonal cutouts to reduce pressure at the shoulder joint, while the hip zone is firmer to maintain spinal alignment. Our testing team evaluated it across testers of varied body weights in the side sleeping position."
+        answer: "The AS3's medium firmness (5/10) and zoned construction may suit many side sleepers. The shoulder area is designed with more give while the hip area has a firmer response. Comfort still varies by body type and preference, so use the trial period to evaluate fit."
       },
       {
         question: "How does Bio-Pur® foam differ from regular memory foam?",
-        answer: "Bio-Pur® replaces a portion of petroleum-based chemicals with plant-derived oils. This produces a more open-cell foam structure allowing greater airflow — sleeping measurably cooler in our temperature mapping tests. It also off-gasses significantly less than standard memory foam due to its open-cell structure. Standard petroleum memory foam is closed-cell, trapping body heat throughout the night."
+        answer: "Bio-Pur® replaces a portion of petroleum-derived material with plant-derived oils and uses an open-cell structure designed to allow airflow. Cooling and initial odor vary by the complete mattress construction, room conditions, and individual sensitivity; PureSleep does not claim laboratory temperature or emissions measurements."
       },
       {
         question: "What sizes does the AS3 come in?",
@@ -153,11 +151,11 @@ export const mattresses: Mattress[] = [
       },
       {
         question: "Does the AS3 work with an adjustable base?",
-        answer: "Yes. The AS3's all-foam construction is fully flexible and compatible with adjustable bed frames. Amerisleep sells its own Adjustable Bed Base and Adjustable Bed+ specifically designed to pair with AS3. The foam layers articulate with the base without damage or delamination."
+        answer: "Amerisleep lists the AS3 as compatible with adjustable bed frames, including its own bases. Confirm current compatibility and setup requirements with the manufacturer before purchase."
       },
       {
         question: "What is the AS3's trial and return policy?",
-        answer: "Amerisleep offers a 100-night home trial. If unsatisfied after the first 30 nights, returns are fully free — Amerisleep arranges pickup at no cost. The 20-year warranty covers sagging greater than 3/4 inch and physical defects for the first 10 years (full replacement), then prorated coverage for years 11-20."
+        answer: "Amerisleep lists a 100-night home trial and a 20-year limited warranty. Return windows, pickup terms, fees, exclusions, indentation thresholds, and prorated coverage can change, so verify the current policies on Amerisleep's official site before purchase."
       }
     ],
     relatedComparisons: ['amerisleep-as2-vs-as3', 'amerisleep-as3-vs-as5', 'amerisleep-as3-vs-as6', 'amerisleep-as3-vs-organica'],
@@ -186,16 +184,15 @@ export const mattresses: Mattress[] = [
     reviewer: reviewer_editorial,
     dateReviewed: "2026-01-20",
     dateModified: "2026-05-01",
-    testedNights: 30,
     bestFor: ["Back Sleepers", "Stomach Sleepers", "Back Pain", "Heavier Sleepers", "Combination Sleepers"],
     tags: ["memory-foam", "firm", "back-pain", "support", "best-value", "plant-based"],
     pros: [
       "Best value in the Amerisleep lineup — strong performance at lowest price",
       "Medium-firm feel (6/10) ideal for back and stomach sleepers",
-      "HIVE® zoned support prevents lumbar sinkage",
+      "HIVE® zoned support is designed to limit excessive lumbar-area sinkage",
       "Same Bio-Pur® and HIVE® technology as the AS3 at a lower price",
       "20-year warranty and 100-night free trial",
-      "CertiPUR-US certified — low VOC, no harmful chemicals"
+      "Uses CertiPUR-US certified polyurethane foam; verify current certification scope with the brand"
     ],
     cons: [
       "Firmer feel not ideal for strict side sleepers under 150 lbs",
@@ -209,13 +206,13 @@ export const mattresses: Mattress[] = [
         name: "Refresh Cooling Cover",
         thickness: "0.5 inches",
         material: "Celliant® Fiber Fabric",
-        description: "Same Refresh cover as all Amerisleep mattresses. Converts body heat into far infrared energy, keeping the sleep surface 7°F cooler than standard polyester."
+        description: "Amerisleep describes the Refresh fabric as a cooling cover. Verify current material details on the brand's product page."
       },
       {
         name: "Comfort Layer",
         thickness: "2 inches",
         material: "Bio-Pur® Plant-Based Memory Foam",
-        description: "Thinner comfort layer than the AS3 (2\" vs 3\") creates the firmer medium-firm feel. Still open-cell plant-based memory foam for breathability and low off-gassing."
+        description: "A thinner comfort layer than the AS3 (2\" vs 3\") contributes to the firmer, medium-firm feel. The open-cell, partly plant-derived memory foam is designed for contouring and airflow."
       },
       {
         name: "Transition Layer",
@@ -242,7 +239,7 @@ export const mattresses: Mattress[] = [
     faqs: [
       {
         question: "Is the AS2 good for back pain?",
-        answer: "Yes — the AS2 is our recommended pick for back discomfort linked to insufficient support. Its medium-firm feel (6/10) helps resist the hip sinkage that can strain the lumbar region. HIVE® zoning adds extra firmness under the lower back specifically. If your back pain comes from pressure points rather than lack of support, the AS3 may be better."
+        answer: "The AS2 is our firmer pick for sleepers who prefer more support beneath the hips and lower back. Its medium-firm feel (6/10) and zoned construction may help some sleepers maintain a more neutral position, but a mattress does not diagnose, treat, or cure back pain. Consult a healthcare professional about persistent symptoms."
       },
       {
         question: "How does the AS2 compare to the AS3?",
@@ -250,7 +247,7 @@ export const mattresses: Mattress[] = [
       },
       {
         question: "Can heavier sleepers use the AS2?",
-        answer: "Yes. The AS2 is one of our top recommendations for heavier sleepers (above 230 lbs) because the firmer feel prevents excessive sinkage. The thicker 8\" Bio-Core® base also provides more long-term structural durability under higher weight loads."
+        answer: "The AS2 may suit sleepers above 230 pounds who prefer a firmer surface. Its 6/10 feel and 8-inch support core are designed to limit excessive sinkage, but comfort and durability vary by body type, use, and foundation."
       }
     ],
     relatedComparisons: ['amerisleep-as2-vs-as3', 'amerisleep-as2-vs-as5'],
@@ -279,7 +276,6 @@ export const mattresses: Mattress[] = [
     reviewer: reviewer_editorial,
     dateReviewed: "2026-02-01",
     dateModified: "2026-05-01",
-    testedNights: 30,
     bestFor: ["Side Sleepers", "Shoulder Pain", "Hip Pain", "Light Sleepers", "Pressure Relief"],
     tags: ["memory-foam", "soft", "pressure-relief", "side-sleepers", "shoulder-pain", "hip-pain"],
     pros: [
@@ -325,7 +321,7 @@ export const mattresses: Mattress[] = [
         name: "Support Core",
         thickness: "7 inches",
         material: "Bio-Core® High-Density Support Foam",
-        description: "Same Bio-Core® base as other AS models. High-density foundation prevents sagging for the full 20-year warranty."
+        description: "The high-density Bio-Core® base provides the structural foundation. Amerisleep lists a 20-year limited warranty; verify current coverage and indentation thresholds with the manufacturer."
       }
     ],
     sizePricing: [
@@ -344,7 +340,7 @@ export const mattresses: Mattress[] = [
       },
       {
         question: "Is the AS5 too soft for back sleepers?",
-        answer: "Generally yes. The AS5's soft feel (3/10) allows the hips to sink too deeply for most back sleepers, which can cause lower back strain. Back sleepers who prefer a softer feel should consider the AS3 (medium, 5/10) or the Organica. Strict back sleepers should look at the AS2."
+        answer: "The AS5's soft feel (3/10) allows deeper sinkage, so many back sleepers may prefer the more supportive feel of the AS3, Organica, or AS2. Comfort and alignment vary by body type and preference."
       },
       {
         question: "How thick is the AS5 compared to other Amerisleep mattresses?",
@@ -377,7 +373,6 @@ export const mattresses: Mattress[] = [
     reviewer: reviewer_editorial,
     dateReviewed: "2026-02-15",
     dateModified: "2026-05-01",
-    testedNights: 30,
     bestFor: ["Luxury Sleepers", "Hot Sleepers", "Couples", "Back Sleepers", "Combination Sleepers", "Heavy Sleepers"],
     tags: ["hybrid", "luxury", "cooling", "edge-support", "couples", "premium"],
     pros: [
@@ -398,7 +393,7 @@ export const mattresses: Mattress[] = [
         name: "Refresh Cooling Cover",
         thickness: "0.5 inches",
         material: "Celliant® Fiber Fabric",
-        description: "Same Refresh cover as all AS models. Far infrared conversion keeps sleep surface 7°F cooler than standard polyester."
+        description: "Amerisleep describes the Refresh fabric as a cooling cover. Verify current material details on the brand's product page."
       },
       {
         name: "Comfort Layer",
@@ -410,13 +405,13 @@ export const mattresses: Mattress[] = [
         name: "Transition Layer",
         thickness: "2 inches",
         material: "Affinity™ Foam with HIVE® Technology",
-        description: "HIVE® 5-zone hexagonal support system bridges the memory foam and coil layers. Prevents the sleeper from 'bottoming out' onto the coils."
+        description: "The HIVE® 5-zone transition layer bridges the memory-foam and coil layers and is designed to distribute support by body area."
       },
       {
         name: "Pocketed Coil System",
         thickness: "8 inches",
         material: "Individually Wrapped Tempered Steel Coils",
-        description: "The key differentiator from all-foam AS models. Individually wrapped coils act independently for targeted support, superior edge reinforcement, and maximum airflow. The coil chamber beneath the foam layers continuously circulates air, keeping the sleep surface cooler throughout the night."
+        description: "Individually wrapped coils distinguish the AS6 from the all-foam AS models. The coil layer is designed to add response, edge reinforcement, and open space for airflow."
       },
       {
         name: "Foundation Layer",
@@ -473,12 +468,11 @@ export const mattresses: Mattress[] = [
     reviewer: reviewer_editorial,
     dateReviewed: "2026-02-20",
     dateModified: "2026-05-01",
-    testedNights: 30,
-    bestFor: ["Eco-Conscious Shoppers", "Hot Sleepers", "Allergy Sufferers", "Natural Materials", "Back Sleepers", "Side Sleepers"],
-    tags: ["latex", "organic", "natural", "eco-friendly", "cooling", "hypoallergenic"],
+    bestFor: ["Eco-Conscious Shoppers", "Hot Sleepers", "Sensitive-Material Shoppers", "Natural Materials", "Back Sleepers", "Side Sleepers"],
+    tags: ["latex", "organic", "natural", "eco-friendly", "cooling", "certified-materials"],
     pros: [
       "100% GOTS certified organic cotton cover and GOLS certified organic latex",
-      "Natural latex is inherently hypoallergenic, antimicrobial, and dust-mite resistant",
+      "Certified organic latex, cotton, and wool for shoppers prioritizing material transparency",
       "Strong cooling (9/10) — organic wool wicks moisture, latex breathes",
       "Tied for the fastest response time in the lineup (10/10) — latex bounces back instantly",
       "Organic wool fire barrier eliminates chemical fire retardants",
@@ -508,7 +502,7 @@ export const mattresses: Mattress[] = [
         name: "Latex Comfort Layer",
         thickness: "3 inches",
         material: "GOLS Certified Organic Talalay Latex",
-        description: "Global Organic Latex Standard certified latex. Talalay latex is processed for a more consistent, breathable cell structure than Dunlop latex. Provides immediate responsive pressure relief — no slow sink of memory foam. Naturally hypoallergenic, antimicrobial, and resistant to dust mites."
+        description: "Global Organic Latex Standard certified latex. Talalay latex is processed for a more consistent, breathable cell structure than Dunlop latex. Provides immediate responsive pressure relief — no slow sink of memory foam. Verify current certifications and material details with the brand before purchasing."
       },
       {
         name: "Pocketed Coil System",
@@ -540,8 +534,8 @@ export const mattresses: Mattress[] = [
         answer: "Latex feels noticeably different from memory foam. Where memory foam slowly contours and has a 'hug' feel, latex bounces back instantly and has a buoyant, springy quality. You float on top of latex rather than sinking into it. The Organica scored 10/10 for response time — tied for the highest in our lineup — vs 9/10 for the AS3. Most sleepers find the adjustment period is 1-2 weeks."
       },
       {
-        question: "Is the Organica good for allergy sufferers?",
-        answer: "Yes. Natural latex is inherently hypoallergenic, antimicrobial, and dust-mite resistant — without any chemical treatments. The GOTS organic cotton and wool are processed without synthetic pesticides or chemicals. This makes the Organica our top recommendation for allergy and asthma sufferers."
+        question: "Is the Organica a good option for sensitive-material shoppers?",
+        answer: "The Organica may appeal to shoppers who prioritize certified organic materials because it uses GOLS-certified latex plus GOTS-certified cotton and wool. Allergy and asthma needs are individual medical concerns, so verify current material details with the brand and talk to a clinician if you have a diagnosed sensitivity."
       },
       {
         question: "Does the Organica come in Twin size?",
@@ -580,7 +574,7 @@ export const competitorMattresses: any[] = [
     technology: ["Dual Steel Coil System", "Lumbar Zone Support", "Organic Cotton Cover"],
     scores: { overall: 10, value: 7, edgeSupport: 10, trialPeriod: 10, responseTime: 10, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Back Sleepers", "Hot Sleepers", "Luxury Buyers"],
     tags: ["innerspring", "luxury", "cooling"],
     pros: ["Dual coil system for strong support", "365-night trial", "White-glove delivery included"],
@@ -612,7 +606,7 @@ export const competitorMattresses: any[] = [
     technology: ["AirFoam™ HDMax", "HDMax Tri-Zone Coils", "Cooling Organic Cover"],
     scores: { overall: 10, value: 10, edgeSupport: 10, trialPeriod: 9, responseTime: 9, motionTransfer: 10, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Hot Sleepers", "Side Sleepers", "Couples"],
     tags: ["hybrid", "cooling", "side-sleepers"],
     pros: ["Excellent cooling performance", "Zoned coil system", "120-night trial"],
@@ -644,7 +638,7 @@ export const competitorMattresses: any[] = [
     technology: ["TitanCool™ Cooling Foam", "TitanFlex™ Foam", "Ascension Coil System"],
     scores: { overall: 9, value: 9, edgeSupport: 8, trialPeriod: 9, responseTime: 8, motionTransfer: 9, coolingBreathability: 10 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Hot Sleepers", "Combination Sleepers"],
     tags: ["hybrid", "cooling"],
     pros: ["Strong cooling performance", "Good value at entry price", "120-night trial"],
@@ -676,7 +670,7 @@ export const competitorMattresses: any[] = [
     technology: ["Cooling Gel Foam", "Pocketed Coil Support"],
     scores: { overall: 9, value: 10, edgeSupport: 9, trialPeriod: 10, responseTime: 8, motionTransfer: 9, coolingBreathability: 10 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Budget Buyers", "Hot Sleepers"],
     tags: ["hybrid", "cooling", "value"],
     pros: ["Competitive price point", "Decent cooling", "100-night trial"],
@@ -708,7 +702,7 @@ export const competitorMattresses: any[] = [
     technology: ["Talalay Latex", "Organic Wool Fire Barrier", "GOTS Organic Cotton Cover", "Pocketed Coils"],
     scores: { overall: 8, value: 9, edgeSupport: 9, trialPeriod: 9, responseTime: 10, motionTransfer: 8, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Eco-Conscious Buyers", "Hot Sleepers", "Natural Materials"],
     tags: ["latex", "organic", "eco-friendly", "cooling"],
     pros: ["GOLS and GOTS certified organic materials", "25-year warranty", "Rainforest Alliance certified latex", "Excellent cooling"],
@@ -740,7 +734,7 @@ export const competitorMattresses: any[] = [
     technology: ["Celliant® Cover", "Copper-Infused Memory Foam", "Pocketed Coil System"],
     scores: { overall: 9, value: 9, edgeSupport: 9, trialPeriod: 9, responseTime: 8, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Active Sleepers", "Hot Sleepers", "Couples"],
     tags: ["hybrid", "cooling", "active"],
     pros: ["Celliant® cover for recovery-focused marketing", "20-year warranty matches AS3", "120-night trial", "Copper-infused foam for cooling"],
@@ -772,7 +766,7 @@ export const competitorMattresses: any[] = [
     technology: ["GOLS Certified Dunlop Latex", "GOTS Organic Cotton", "Organic Wool Fire Barrier", "Upcycled Steel Coils"],
     scores: { overall: 9, value: 7, edgeSupport: 9, trialPeriod: 10, responseTime: 9, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Eco-Conscious Buyers", "Hot Sleepers", "Firm Preference"],
     tags: ["latex", "organic", "eco-friendly", "firm"],
     pros: ["Industry-leading certification stack", "25-year warranty and 365-night trial", "Genuinely firm feel for back and stomach sleepers", "Transparent supply chain"],
@@ -804,7 +798,7 @@ export const competitorMattresses: any[] = [
     technology: ["GOLS Certified Organic Latex", "GOTS Organic Cotton & Wool Cover", "Individually Wrapped U.S.-Made Coils", "Glueless Construction", "No Fiberglass Fire Barrier"],
     scores: { overall: 9, value: 8, edgeSupport: 10, trialPeriod: 9, responseTime: 8, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-06-24", dateModified: "2026-06-24", testedNights: 30,
+    dateReviewed: "2026-06-24", dateModified: "2026-06-24",
     bestFor: ["Eco-Conscious Buyers", "Budget-Minded Organic Shoppers", "Medium-Firm Preference"],
     tags: ["latex", "organic", "eco-friendly", "medium-firm"],
     pros: ["One of the broadest certification stacks among organic mattresses: GOLS, GOTS, OCS, FSC®, MADE SAFE®, EWG Verified®, GREENGUARD Gold, and UL-verified formaldehyde-free", "Glueless construction — no adhesives anywhere in the build", "Naturally flame-resistant without fiberglass, hydrated silica, boric acid, or rayon fire barriers", "Lower entry price than most certified-organic competitors", "Available in Medium Firm or Plush, with a 120-night trial"],
@@ -841,7 +835,7 @@ export const competitorMattresses: any[] = [
     technology: ["Purple Grid™ Technology", "Responsive Coil System"],
     scores: { overall: 9, value: 7, edgeSupport: 9, trialPeriod: 9, responseTime: 10, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Hot Sleepers", "Pressure Relief", "Unique Feel Preference"],
     tags: ["hybrid", "cooling", "unique-feel"],
     pros: ["Purple Grid™ offers a distinctly different feel from foam", "Excellent cooling and pressure relief scores", "Good responsiveness"],
@@ -873,7 +867,7 @@ export const competitorMattresses: any[] = [
     technology: ["SmartFlow Support™ Coils", "QE Foam", "Organic Cotton Cover"],
     scores: { overall: 10, value: 8, edgeSupport: 10, trialPeriod: 10, responseTime: 9, motionTransfer: 10, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Combination Sleepers", "Value Buyers", "Trial-Focused Buyers"],
     tags: ["hybrid", "value", "long-trial"],
     pros: ["365-night trial is exceptional", "20-year warranty matches AS3", "Solid all-around scores"],
@@ -905,7 +899,7 @@ export const competitorMattresses: any[] = [
     technology: ["Memory Plus Foam", "Zoned Pocketed Coils", "Tencel™ Cover"],
     scores: { overall: 9, value: 7, edgeSupport: 10, trialPeriod: 9, responseTime: 9, motionTransfer: 9, coolingBreathability: 10 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Side Sleepers", "Couples", "Pressure Relief"],
     tags: ["hybrid", "side-sleepers", "couples"],
     pros: ["Strong motion isolation for a hybrid", "Excellent pressure relief", "Tencel™ cover for softness"],
@@ -937,7 +931,7 @@ export const competitorMattresses: any[] = [
     technology: ["LSA200™ Foam", "Memory Foam Comfort Layer", "Dense Support Core"],
     scores: { overall: 8, value: 8, edgeSupport: 7, trialPeriod: 9, responseTime: 9, motionTransfer: 9, coolingBreathability: 8 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Value Buyers", "Side Sleepers", "Motion Isolation"],
     tags: ["memory-foam", "value", "side-sleepers"],
     pros: ["Lower price than AS3", "Good motion isolation", "100-night trial"],
@@ -969,7 +963,7 @@ export const competitorMattresses: any[] = [
     technology: ["LSA200™ Foam", "Pocketed Spring System", "Memory Foam Layer"],
     scores: { overall: 9, value: 8, edgeSupport: 8, trialPeriod: 9, responseTime: 9, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Combination Sleepers", "Couples", "Value Hybrid Buyers"],
     tags: ["hybrid", "couples", "combination-sleepers"],
     pros: ["Balanced hybrid feel", "Good motion isolation for a hybrid", "Solid edge support"],
@@ -1001,7 +995,7 @@ export const competitorMattresses: any[] = [
     technology: ["Firm Foam Layers", "High-Density Support Core", "Flippable Design"],
     scores: { overall: 9, value: 9, edgeSupport: 10, trialPeriod: 9, responseTime: 9, motionTransfer: 8, coolingBreathability: 8 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Stomach Sleepers", "Back Sleepers", "Very Firm Preference", "Budget Firm"],
     tags: ["firm", "stomach-sleepers", "back-sleepers", "value"],
     pros: ["Flippable — two firmness options in one mattress", "Very high support score", "Good value for firm preference", "120-night trial"],
@@ -1033,7 +1027,7 @@ export const competitorMattresses: any[] = [
     technology: ["Celliant® Cover", "Cooling Graphite Foam", "Support Core"],
     scores: { overall: 9, value: 10, edgeSupport: 10, trialPeriod: 9, responseTime: 9, motionTransfer: 8, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Budget Buyers", "Back Sleepers", "Value Foam"],
     tags: ["memory-foam", "value", "back-sleepers"],
     pros: ["Lowest price point in the firm foam category", "Celliant® cover", "120-night trial", "OEKO-TEX certified"],
@@ -1065,7 +1059,7 @@ export const competitorMattresses: any[] = [
     technology: ["Ghost Ice™ Cover", "Ghost Bounce™ Foam", "Ghost Comfort™ Foam", "Pocketed Coils"],
     scores: { overall: 9, value: 8, edgeSupport: 8, trialPeriod: 9, responseTime: 8, motionTransfer: 10, coolingBreathability: 10 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Hot Sleepers", "Combination Sleepers", "Couples"],
     tags: ["hybrid", "cooling", "combination-sleepers"],
     pros: ["20-year warranty matches AS3", "Ghost Ice™ cover for active cooling", "101-night trial", "Good responsiveness"],
@@ -1097,7 +1091,7 @@ export const competitorMattresses: any[] = [
     technology: ["Firm Helix Foam", "Zoned Pocketed Coils", "Cashmere Pillow Top"],
     scores: { overall: 9, value: 7, edgeSupport: 8, trialPeriod: 9, responseTime: 9, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Back Sleepers", "Stomach Sleepers", "Firm Hybrid Preference"],
     tags: ["hybrid", "firm", "back-sleepers"],
     pros: ["High support score for back sleepers", "Cashmere pillow top adds comfort layer to firm base", "Good edge support"],
@@ -1129,7 +1123,7 @@ export const competitorMattresses: any[] = [
     technology: ["Cooling Foam", "Pocketed Coil System", "Phase Change Cover"],
     scores: { overall: 10, value: 8, edgeSupport: 10, trialPeriod: 9, responseTime: 10, motionTransfer: 9, coolingBreathability: 10 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Hot Sleepers", "Couples", "Luxury Buyers"],
     tags: ["hybrid", "cooling", "hot-sleepers"],
     pros: ["Phase change cover for active cooling", "Good pressure relief", "Balanced hybrid feel"],
@@ -1161,7 +1155,7 @@ export const competitorMattresses: any[] = [
     technology: ["Memory Plus Foam", "Zoned Pocketed Coils", "Tencel™ Cover", "Pillow Top"],
     scores: { overall: 9, value: 7, edgeSupport: 8, trialPeriod: 9, responseTime: 9, motionTransfer: 10, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Side Sleepers", "Pressure Relief", "Lightweight Sleepers"],
     tags: ["hybrid", "soft", "side-sleepers", "pressure-relief"],
     pros: ["Excellent pressure relief for a hybrid", "Good motion isolation for coil construction", "Pillow top adds plush feel"],
@@ -1193,7 +1187,7 @@ export const competitorMattresses: any[] = [
     technology: ["Ghost Ice™ Cooling Fabric", "Cooling Gel Foam", "Memory Foam", "Dense Support Core"],
     scores: { overall: 7, value: 8, edgeSupport: 8, trialPeriod: 9, responseTime: 6, motionTransfer: 10, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Hot Sleepers", "Side Sleepers", "Pressure Relief"],
     tags: ["memory-foam", "cooling", "soft", "side-sleepers"],
     pros: ["Exceptional cooling scores — among the best in all-foam", "25-year warranty exceeds AS5's 20-year", "Strong pressure relief"],
@@ -1225,7 +1219,7 @@ export const competitorMattresses: any[] = [
     technology: ["AirScape™ Foam", "Zoned Support", "Support Core"],
     scores: { overall: 8, value: 8, edgeSupport: 7, trialPeriod: 9, responseTime: 7, motionTransfer: 10, coolingBreathability: 8 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Budget Buyers", "First-Time Buyers", "Side Sleepers"],
     tags: ["memory-foam", "value", "side-sleepers"],
     pros: ["Accessible price", "Casper brand recognition", "100-night trial", "Decent zoned support"],
@@ -1257,7 +1251,7 @@ export const competitorMattresses: any[] = [
     technology: ["AirScape™ Foam", "Zoned Pocketed Coils", "Ergonomic Zones"],
     scores: { overall: 9, value: 8, edgeSupport: 8, trialPeriod: 9, responseTime: 9, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Combination Sleepers", "Couples", "Casper Brand Loyalists"],
     tags: ["hybrid", "combination-sleepers", "couples"],
     pros: ["Casper brand trust", "Balanced hybrid feel", "Good support and edge support scores"],
@@ -1289,7 +1283,7 @@ export const competitorMattresses: any[] = [
     technology: ["Micro Coil Comfort Layer", "Lumbar Zone Quilting", "Dual Coil Support", "Organic Cotton Cover"],
     scores: { overall: 10, value: 7, edgeSupport: 9, trialPeriod: 10, responseTime: 10, motionTransfer: 10, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-05-01", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Luxury Buyers", "Pressure Pain", "Hot Sleepers with Back Concerns"],
     tags: ["hybrid", "luxury", "pressure-relief"],
     pros: ["365-night trial", "20-year warranty", "Premium micro-coil comfort layer", "High pressure relief and edge support scores"],
@@ -1312,7 +1306,7 @@ export const competitorMattresses: any[] = [
     technology: ["Bio-Pur® Plant-Based Foam","HIVE® Zoning","Pocketed Coil Base"],
     scores: { overall: 10, value: 9, edgeSupport: 10, trialPeriod: 9, responseTime: 9, motionTransfer: 9, coolingBreathability: 10 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Side Sleepers","Combination Sleepers","Hot Sleepers","Couples"],
     tags: ["hybrid","medium","cooling"],
     pros: ["Scores 10/10 overall","Bio-Pur® plant-based foam comfort layer","Coil base adds cooling and edge support vs all-foam AS3","20-year warranty"],
@@ -1335,7 +1329,7 @@ export const competitorMattresses: any[] = [
     technology: ["Bio-Pur® Plant-Based Foam","Active Flex Transition Layer","Pocketed Coil Base"],
     scores: { overall: 9, value: 8, edgeSupport: 9, trialPeriod: 9, responseTime: 8, motionTransfer: 9, coolingBreathability: 10 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Side Sleepers","Light Sleepers","Hot Sleepers","Shoulder and Hip Pressure"],
     tags: ["hybrid","soft","pressure-relief","cooling"],
     pros: ["Soft plush feel with coil support underneath","Excellent cooling (10/10)","Better edge support than AS5 all-foam","20-year warranty"],
@@ -1358,7 +1352,7 @@ export const competitorMattresses: any[] = [
     technology: ["GOLS-Certified Organic Latex","GOTS-Certified Organic Cotton","Organic Wool","Pocketed Coil Base"],
     scores: { overall: 9, value: 8, edgeSupport: 10, trialPeriod: 9, responseTime: 9, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Eco-Conscious Shoppers","Side Sleepers","Hot Sleepers","Chemical Sensitivities"],
     tags: ["organic","latex","hybrid","natural"],
     pros: ["Fully certified organic throughout","GOLS latex + GOTS cotton + organic wool","10/10 edge support","No synthetic foams"],
@@ -1381,7 +1375,7 @@ export const competitorMattresses: any[] = [
     technology: ["GOLS-Certified Latex","Pocketed Coil Base","Organic Cotton Cover"],
     scores: { overall: 9, value: 10, edgeSupport: 8, trialPeriod: 8, responseTime: 10, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Value-Seekers","Natural Material Preference","Combination Sleepers","Eco-Conscious Buyers"],
     tags: ["latex","hybrid","value","organic"],
     pros: ["Outstanding value for latex hybrid (10/10 Value)","GOLS-certified organic latex","Fast response time (10/10)","Lower price than most organic competitors"],
@@ -1404,7 +1398,7 @@ export const competitorMattresses: any[] = [
     technology: ["FORM Responsive Foam","Base Support Foam"],
     scores: { overall: 9, value: 8, edgeSupport: 9, trialPeriod: 10, responseTime: 9, motionTransfer: 10, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Budget Foam Seekers","Couples Sensitive to Motion","Side Sleepers","Combination Sleepers"],
     tags: ["foam","medium","value","motion-isolation"],
     pros: ["Excellent motion transfer score (10/10)","100-night trial","Competitive price for foam construction","9/10 edge support for foam"],
@@ -1427,7 +1421,7 @@ export const competitorMattresses: any[] = [
     technology: ["FORM Responsive Foam","Pocketed Coil System"],
     scores: { overall: 10, value: 8, edgeSupport: 10, trialPeriod: 10, responseTime: 10, motionTransfer: 10, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Couples","Combination Sleepers","Hot Sleepers","Edge-to-Edge Support Seekers"],
     tags: ["hybrid","medium","cooling","edge-support"],
     pros: ["10/10 overall score","Perfect edge support and response time scores","100-night trial with 10/10 trial period score","Hybrid airflow over all-foam models"],
@@ -1450,7 +1444,7 @@ export const competitorMattresses: any[] = [
     technology: ["FORM Prime Foam","Zoned Support Layer","Base Support Foam"],
     scores: { overall: 10, value: 8, edgeSupport: 10, trialPeriod: 10, responseTime: 9, motionTransfer: 10, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Side Sleepers","Couples","Combination Sleepers","Premium Foam Seekers"],
     tags: ["foam","medium","premium","motion-isolation"],
     pros: ["10/10 overall","Perfect edge support and motion transfer","Premium foam construction","100-night trial"],
@@ -1473,7 +1467,7 @@ export const competitorMattresses: any[] = [
     technology: ["FORM Prime X Foam","Advanced Zoned Coil System","Cooling Cover"],
     scores: { overall: 10, value: 8, edgeSupport: 10, trialPeriod: 10, responseTime: 10, motionTransfer: 10, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Couples","Combination Sleepers","Hot Sleepers","Premium Hybrid Seekers"],
     tags: ["hybrid","premium","motion-isolation","edge-support"],
     pros: ["10/10 across most metrics","Top-of-line FORM build","14-inch profile with coil base","100-night trial"],
@@ -1496,7 +1490,7 @@ export const competitorMattresses: any[] = [
     technology: ["Glacier Cooling Foam","Pocketed Coil Base"],
     scores: { overall: 8, value: 10, edgeSupport: 9, trialPeriod: 10, responseTime: 9, motionTransfer: 8, coolingBreathability: 10 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Hot Sleepers","Value Seekers","Combination Sleepers"],
     tags: ["hybrid","cooling","value"],
     pros: ["10/10 value and cooling scores","365-night trial","Strong edge support (9/10)"],
@@ -1519,7 +1513,7 @@ export const competitorMattresses: any[] = [
     technology: ["Glacier Summit Foam","Zoned Pocketed Coil Base"],
     scores: { overall: 8, value: 10, edgeSupport: 9, trialPeriod: 10, responseTime: 9, motionTransfer: 8, coolingBreathability: 10 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Hot Sleepers","Back Sleepers","Value Seekers"],
     tags: ["hybrid","cooling","medium-firm","value"],
     pros: ["10/10 value and cooling scores","365-night trial","Medium-firm feel for back sleepers","Strong edge support"],
@@ -1542,7 +1536,7 @@ export const competitorMattresses: any[] = [
     technology: ["GOLS-Certified Natural Latex","Pocketed Coil Base"],
     scores: { overall: 8, value: 10, edgeSupport: 5, trialPeriod: 9, responseTime: 10, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Budget Latex Seekers","Natural Material Preference","Hot Sleepers"],
     tags: ["latex","hybrid","value","organic"],
     pros: ["10/10 value — best-in-class price for GOLS latex","Excellent response time (10/10)","20-year warranty at budget price","120-night trial"],
@@ -1565,7 +1559,7 @@ export const competitorMattresses: any[] = [
     technology: ["GOLS-Certified Organic Latex","GOTS Organic Cotton","Organic Wool","Coil Base"],
     scores: { overall: 9, value: 6, edgeSupport: 9, trialPeriod: 9, responseTime: 9, motionTransfer: 8, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Eco-Conscious Shoppers","Families","Chemical Sensitivities","Hot Sleepers"],
     tags: ["organic","latex","family","eco"],
     pros: ["GOLS + GOTS + Made Safe certified","Non-toxic organic construction","20-year warranty","Strong edge support (9/10)"],
@@ -1588,7 +1582,7 @@ export const competitorMattresses: any[] = [
     technology: ["GOLS-Certified Organic Latex","GOTS Organic Cotton Cover","Organic Wool Comfort Layer","Coil Base"],
     scores: { overall: 9, value: 6, edgeSupport: 8, trialPeriod: 9, responseTime: 9, motionTransfer: 8, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Side Sleepers","Eco-Conscious Shoppers","Chemical Sensitivities","Plush Preference"],
     tags: ["organic","latex","soft","eco"],
     pros: ["Plush soft feel in certified organic construction","GOLS + GOTS + Made Safe","20-year warranty","Good response time (9/10)"],
@@ -1611,7 +1605,7 @@ export const competitorMattresses: any[] = [
     technology: ["Smart Foam","Quantum Edge Coil System"],
     scores: { overall: 10, value: 8, edgeSupport: 9, trialPeriod: 10, responseTime: 10, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Combination Sleepers","Couples","Hot Sleepers","Those Wanting Exceptional Trial Period"],
     tags: ["hybrid","medium","trial-period"],
     pros: ["10/10 overall and response time","365-night trial (class-leading)","Lifetime warranty (up to 99 years)","Strong edge support for hybrid"],
@@ -1634,7 +1628,7 @@ export const competitorMattresses: any[] = [
     technology: ["OEKO-TEX Certified Comfort Foam","Support Base Foam"],
     scores: { overall: 9, value: 10, edgeSupport: 9, trialPeriod: 5, responseTime: 9, motionTransfer: 8, coolingBreathability: 8 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Children and Kids","Value-Conscious Parents","Safe Non-Toxic Materials"],
     tags: ["kids","foam","value","certified"],
     pros: ["10/10 value for a certified kids mattress","OEKO-TEX certified materials","9/10 overall for a children's mattress","Strong edge support for small frames"],
@@ -1657,7 +1651,7 @@ export const competitorMattresses: any[] = [
     technology: ["Phase Change Foam","Support Base Foam"],
     scores: { overall: 9, value: 9, edgeSupport: 9, trialPeriod: 10, responseTime: 10, motionTransfer: 9, coolingBreathability: 8 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Side Sleepers","Hot Sleepers","Those Wanting Exceptional Trial Period"],
     tags: ["foam","medium-soft","pressure-relief","trial-period"],
     pros: ["365-night trial","Lifetime warranty (99 years)","Strong value (9/10)","Excellent response time (10/10)"],
@@ -1680,7 +1674,7 @@ export const competitorMattresses: any[] = [
     technology: ["GOLS-Certified Organic Talalay Latex","Organic Cotton Cover","Coil Base"],
     scores: { overall: 8, value: 9, edgeSupport: 9, trialPeriod: 9, responseTime: 10, motionTransfer: 8, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Natural Material Preference","Hot Sleepers","Eco-Conscious Shoppers","Back Sleepers"],
     tags: ["natural","latex","organic","hybrid"],
     pros: ["GOLS-certified organic Talalay latex","Excellent response time (10/10)","Good value for organic (9/10)","Rainforest Alliance certification"],
@@ -1703,7 +1697,7 @@ export const competitorMattresses: any[] = [
     technology: ["AirFoam™","Pocketed Coil Base"],
     scores: { overall: 8, value: 9, edgeSupport: 8, trialPeriod: 9, responseTime: 10, motionTransfer: 8, coolingBreathability: 8 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Side Sleepers","Value Seekers","Combination Sleepers"],
     tags: ["hybrid","foam","value"],
     pros: ["Strong value score (9/10) at accessible price","Excellent response time (10/10)","120-night trial"],
@@ -1726,7 +1720,7 @@ export const competitorMattresses: any[] = [
     technology: ["GOLS-Certified Organic Dunlop Latex","GOTS Organic Cotton Cover","Organic Wool Fire Barrier"],
     scores: { overall: 9, value: 7, edgeSupport: 8, trialPeriod: 9, responseTime: 8, motionTransfer: 10, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Eco-Conscious Shoppers","Side Sleepers","Chemical Sensitivities","Those Seeking Organic Certifications"],
     tags: ["organic","latex","motion-isolation","eco"],
     pros: ["Perfect motion transfer (10/10)","GOLS + GOTS + OEKO-TEX + eco-INSTITUT","25-year warranty","All-latex construction"],
@@ -1749,7 +1743,7 @@ export const competitorMattresses: any[] = [
     technology: ["Luxury Gel Memory Foam","Base Support Foam"],
     scores: { overall: 8, value: 8, edgeSupport: 7, trialPeriod: 9, responseTime: 10, motionTransfer: 7, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Combination Sleepers","Hot Sleepers Who Prefer Memory Foam","Value Memory Foam Seekers"],
     tags: ["foam","gel-foam","medium"],
     pros: ["Excellent response time (10/10)","Good cooling for memory foam (9/10)","25-year warranty at lower price","100-night trial"],
@@ -1772,7 +1766,7 @@ export const competitorMattresses: any[] = [
     technology: ["GOTS Organic Cotton Cover","Organic Wool Layer","CertiPUR-US Foam"],
     scores: { overall: 9, value: 8, edgeSupport: 9, trialPeriod: 9, responseTime: 9, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Eco-Conscious Shoppers","Couples","Chemical Sensitivities","Balanced Sleepers"],
     tags: ["organic","foam","balanced","eco"],
     pros: ["Balanced 9/10 scores across all metrics","GOTS organic cotton and wool","25-year warranty","Strong edge support (9/10) for organic category"],
@@ -1795,7 +1789,7 @@ export const competitorMattresses: any[] = [
     technology: ["GOTS Organic Cotton Cover","Organic Wool","CertiPUR-US Foam"],
     scores: { overall: 9, value: 8, edgeSupport: 9, trialPeriod: 9, responseTime: 10, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Children","Eco-Conscious Parents","Non-Toxic Material Seekers"],
     tags: ["kids","organic","foam","eco"],
     pros: ["GOTS + OEKO-TEX + eco-INSTITUT certified","10/10 response time — easy position changes for active kids","25-year warranty on a children's mattress","100-night trial"],
@@ -1818,7 +1812,7 @@ export const competitorMattresses: any[] = [
     technology: ["GOLS-Certified Organic Latex","GOTS Organic Cotton Cover","Organic Wool","Pocketed Coil Base"],
     scores: { overall: 10, value: 9, edgeSupport: 10, trialPeriod: 9, responseTime: 10, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Eco-Conscious Shoppers","Couples","Hot Sleepers","All Sleep Positions"],
     tags: ["organic","latex","hybrid","premium","eco"],
     pros: ["10/10 overall, edge support, and response time","GOLS + GOTS + OEKO-TEX + eco-INSTITUT certified","25-year warranty","Organic latex hybrid construction"],
@@ -1841,7 +1835,7 @@ export const competitorMattresses: any[] = [
     technology: ["Gel-Infused Cooling Memory Foam","Base Support Foam"],
     scores: { overall: 8, value: 10, edgeSupport: 7, trialPeriod: 9, responseTime: 8, motionTransfer: 10, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Budget Shoppers","Couples Needing Motion Isolation","Hot Sleepers on a Budget"],
     tags: ["foam","budget","motion-isolation","value"],
     pros: ["10/10 value — most affordable option in the tested set","Perfect motion isolation (10/10)","Gel-infused cooling foam","100-night trial"],
@@ -1864,7 +1858,7 @@ export const competitorMattresses: any[] = [
     technology: ["Memory Foam","Base Support Foam"],
     scores: { overall: 7, value: 10, edgeSupport: 5, trialPeriod: 9, responseTime: 7, motionTransfer: 10, coolingBreathability: 8 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Extreme Budget Buyers","Guest Rooms","Temporary Mattress Needs"],
     tags: ["foam","budget","motion-isolation","entry-level"],
     pros: ["10/10 value — lowest price in the tested lineup","Perfect motion isolation (10/10)","100-night trial","CertiPUR-US certified foam"],
@@ -1887,7 +1881,7 @@ export const competitorMattresses: any[] = [
     technology: ["Vaya Foam Comfort Layer","Base Support Foam"],
     scores: { overall: 8, value: 10, edgeSupport: 7, trialPeriod: 9, responseTime: 9, motionTransfer: 9, coolingBreathability: 8 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Budget Foam Seekers","Side Sleepers on a Budget","First-Time Mattress Buyers"],
     tags: ["foam","budget","value","medium"],
     pros: ["10/10 value — strong budget pick","Good response time (9/10)","Good motion isolation (9/10)","100-night trial"],
@@ -1910,7 +1904,7 @@ export const competitorMattresses: any[] = [
     technology: ["Vaya Foam Comfort Layer","Pocketed Coil Base"],
     scores: { overall: 8, value: 10, edgeSupport: 8, trialPeriod: 9, responseTime: 10, motionTransfer: 8, coolingBreathability: 8 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Budget Hybrid Seekers","Combination Sleepers","Hot Sleepers on a Budget"],
     tags: ["hybrid","budget","value","response-time"],
     pros: ["10/10 value — best value hybrid in the tested set","Excellent response time (10/10)","Better edge support than Vaya Foam","Hybrid airflow"],
@@ -1933,7 +1927,7 @@ export const competitorMattresses: any[] = [
     technology: ["Euro Pillow-Top","Coil-on-Coil Support System","Cotton Damask Cover"],
     scores: { overall: 10, value: 8, edgeSupport: 10, trialPeriod: 0, responseTime: 10, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Hotel Sleep Experience Fans","Hotel-Style Feel at Home","Back Sleepers","Pillow-Top Preference"],
     tags: ["innerspring","luxury","hotel","pillow-top"],
     pros: ["10/10 overall — matches the best in the tested set","Perfect edge support and response time","Recognized hotel luxury feel","Euro pillow-top plush comfort"],
@@ -1956,7 +1950,7 @@ export const competitorMattresses: any[] = [
     technology: ["Triangulex™ Foam","Reactiv™ Layer","AirCloth Cover","Pocketed Coil Base"],
     scores: { overall: 10, value: 10, edgeSupport: 10, trialPeriod: 9, responseTime: 9, motionTransfer: 10, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Performance Sleepers","Couples","Hot Sleepers","Value Seekers"],
     tags: ["hybrid","performance","value","motion-isolation"],
     pros: ["10/10 overall, value, edge support, and motion transfer","Triangulex™ zoned pressure relief","Strong value despite premium features","100-night trial"],
@@ -1979,7 +1973,7 @@ export const competitorMattresses: any[] = [
     technology: ["Triangulex™ Zoned Foam","Pocketed Coil Base"],
     scores: { overall: 9, value: 10, edgeSupport: 10, trialPeriod: 9, responseTime: 9, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Value-Seeking Couples","Combination Sleepers","Hot Sleepers"],
     tags: ["hybrid","value","edge-support"],
     pros: ["10/10 value and edge support","Zoned Triangulex™ foam pressure relief","100-night trial","Strong motion isolation (9/10)"],
@@ -2002,7 +1996,7 @@ export const competitorMattresses: any[] = [
     technology: ["Triangulex™ Zoned Foam","Base Support Foam"],
     scores: { overall: 9, value: 10, edgeSupport: 10, trialPeriod: 9, responseTime: 8, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
-    dateReviewed: "2026-01-01", dateModified: "2026-06-16", testedNights: 30,
+    dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Budget Foam Seekers","Side Sleepers","First-Time Buyers","Value-Conscious Shoppers"],
     tags: ["foam","budget","value","edge-support"],
     pros: ["10/10 value and edge support for a foam mattress","Zoned Triangulex™ pressure relief","100-night trial","Accessible entry price"],

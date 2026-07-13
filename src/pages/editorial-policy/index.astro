@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { COMMERCIAL_RELATIONSHIP_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://production-domain-not-set.example';
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 const lastUpdated = "2026-05-01";
 
 const jsonLd = [
@@ -10,7 +11,7 @@ const jsonLd = [
     "@type": "WebPage",
     "name": "Editorial Policy",
     "url": `${SITE_URL}/editorial-policy/`,
-    "description": "PureSleep's editorial standards: how scores are produced, how brand coverage is decided, and what keeps reviews independent.",
+    "description": "PureSleep's editorial standards: material relationships, scoring, evidence, and brand coverage.",
     "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL }
   }
 ];
@@ -18,7 +19,7 @@ const jsonLd = [
 
 <BaseLayout
   title="Editorial Policy — PureSleep"
-  description="PureSleep's editorial standards: how scores are produced, how brand coverage is decided, and what keeps reviews independent."
+  description="PureSleep's editorial standards: material relationships, scoring, evidence, and brand coverage."
   canonicalUrl={`${SITE_URL}/editorial-policy/`}
   lastUpdated={lastUpdated}
   jsonLd={jsonLd}
@@ -28,7 +29,7 @@ const jsonLd = [
     <header class="flex flex-col gap-6">
       <h1 class="text-headline-lg font-headline-lg text-primary font-bold">Editorial Policy</h1>
       <p class="text-body-lg text-on-surface-variant leading-relaxed">
-        PureSleep is editorially independent: no commission, no paid placements, no affiliate relationships. This page lays out the standards behind every score and recommendation on the site.
+        {COMMERCIAL_RELATIONSHIP_DISCLOSURE} This page explains how material relationships are disclosed and how the same scoring standard is applied across every covered brand.
       </p>
     </header>
 
@@ -37,7 +38,7 @@ const jsonLd = [
       <div class="glass-panel p-8 rounded-3xl border border-white/60">
         <ul class="flex flex-col gap-3 text-body-md text-on-surface-variant">
           <li class="flex gap-3"><span class="text-secondary font-bold">—</span> We do not make medical claims. Mattresses address sleep comfort and support only, not health conditions.</li>
-          <li class="flex gap-3"><span class="text-secondary font-bold">—</span> PureSleep earns no commission and accepts no paid placements. Scores are editorially independent.</li>
+          <li class="flex gap-3"><span class="text-secondary font-bold">—</span> {LINK_DISCLOSURE}</li>
           <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Scores reflect hands-on testing, not manufacturer-provided data.</li>
           <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Reviews are updated when product specifications change or on a regular re-evaluation cycle.</li>
         </ul>
@@ -48,7 +49,7 @@ const jsonLd = [
       <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">How Brand Coverage Is Decided</h2>
       <div class="flex flex-col gap-4 text-body-md text-on-surface-variant leading-relaxed">
         <p>Our 7-metric scoring system applies identically across all 59 models we cover: overall, value, edge support, trial period, response time, motion transfer, and cooling &amp; breathability. The same rubric means every model is genuinely comparable across brands.</p>
-        <p>Scores are finalized from hands-on testing before any product link is placed. No brand receives more favorable scoring because of its market position. Amerisleep wins categories where the data supports it; competitors lead where they do.</p>
+        <p>Scores are finalized from hands-on testing before any product link is placed. No brand receives more favorable scoring because of its market position; rankings follow the locked score data and stated category criteria.</p>
       </div>
     </section>
 

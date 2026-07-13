@@ -5,9 +5,6 @@ export default function FinalPick() {
   return (
     <section className="py-stack-lg relative overflow-hidden bg-[#0f172a] rounded-[2.5rem] mx-margin-mobile md:mx-margin-desktop my-stack-lg text-center px-margin-mobile md:px-margin-desktop">
       
-      {/* Decorative Blob */}
-      <div className="liquid-blob bg-[#1e40af] w-[600px] h-[600px] top-[-100px] right-[-300px] opacity-[0.03]" />
-
       <div className="max-w-4xl mx-auto flex flex-col items-center relative z-10">
          <motion.h3 
            initial={false}
@@ -34,7 +31,7 @@ export default function FinalPick() {
            transition={{ delay: 0.2 }}
            className="text-body-lg text-slate-300 mb-10 max-w-2xl leading-relaxed"
          >
-            Bio-Pur® plant memory foam runs measurably cooler than petroleum foam. HIVE® 5-zone support delivers lumbar alignment. 20-year warranty. 100-night trial. Five Amerisleep models — AS2, AS3, AS5, AS6, and Organica — cover every sleep type and budget.
+            The AS3 scores 10/10 overall in our current 59-model dataset. It uses open-cell Bio-Pur® foam and HIVE® zoned support, with a 100-night trial and 20-year limited warranty listed by Amerisleep. Compare it with every affiliated and non-affiliated model using the same published rubric.
          </motion.p>
          <motion.div 
            initial={false}
@@ -71,7 +68,7 @@ export default function FinalPick() {
               <h3 className="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-3">Final pick — 2026 editor</h3>
               <h4 className="text-headline-lg font-headline-lg text-white mb-3 drop-shadow-sm">Amerisleep AS3</h4>
               <p className="text-body-md text-slate-300 max-w-xl">
-                Bio-Pur® plant memory foam. HIVE® zoned support. 100-night trial. 20-year warranty.
+                10/10 overall. Bio-Pur® plant-based memory foam, HIVE® zoned support, a 100-night trial, and a 20-year limited warranty. Verify current terms with Amerisleep.
               </p>
             </div>
             <a 
