@@ -83,6 +83,9 @@ const MANIFEST = [
   { id: 'naturepedic-eos-classic',   url: 'https://www.naturepedic.com/media/catalog/product/e/o/eosclassic_lifestyle_dsc_2172_1000x1000.jpg' },
   { id: 'naturepedic-concerto-plush',url: 'https://www.naturepedic.com/media/catalog/product/n/p/np1_0671-enr-edit3_1000x1000.jpg' },
 
+  // ── Happsy (happsy.com, Magento CDN) ──────────────────────────────────────
+  { id: 'happsy', url: 'https://happsy.com/media/catalog/product/n/p/np_happsy6361_1000x1000.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=1200&width=1200&canvas=1200:1200' },
+
   // ── Avocado (avocadogreenmattress.com) ───────────────────────────────────
   { id: 'avocado-green', url: 'https://www.avocadogreenmattress.com/cdn/shop/files/Avocado_Green_Mattress_Standard_Print-171_2000w_800x.jpg?v=1773845481' },
 
