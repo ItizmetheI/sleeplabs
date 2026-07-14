@@ -1,4 +1,5 @@
-import { readFile } from 'node:fs/promises';
+import { access, readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 
 import { allMattresses } from '../src/data/mattresses';
@@ -7,6 +8,9 @@ import { comparisons } from '../src/data/comparisons';
 import { topics } from '../src/data/topics';
 import { BEST_CATEGORIES } from '../src/lib/bestCategories';
 import { LEGACY_BEST_BLOG_REDIRECTS } from '../src/lib/legacyBlogRedirects';
+import { requiresBlogSourceReview } from '../src/lib/blogSourceReview';
+import { FIRDOUS_FARHAD } from '../src/lib/editorialPeople';
+import { orderFullScoreField } from '../src/lib/scoreFieldOrder';
 import {
   buildAllLlmDocuments,
   buildGeneratedLlmDocuments,
@@ -21,9 +25,47 @@ const assert = (condition: unknown, message: string) => {
   if (!condition) failures.push(message);
 };
 
+const prohibitedActiveToolPaths = [
+  'check_urls.cjs',
+  'fix_404_images.cjs',
+  'update_images.cjs',
+  'app/applet/check_urls.cjs',
+  'app/applet/fix-images.cjs',
+  'app/scrape.js',
+  'scripts/150-titles.json',
+  'scripts/check-comparisons.js',
+  'scripts/check-fixed.js',
+  'scripts/count-blogs.ts',
+  'scripts/fix_6.js',
+  'scripts/fix_blog_schema.js',
+  'scripts/fix_blogs.js',
+  'scripts/gen-batch-5-test.mjs',
+  'scripts/generate-blogs.ts',
+  'scripts/list-models.ts',
+  'scripts/t11_t12.js',
+  'scripts/t1_to_t6.js',
+  'scripts/t7_t12.js',
+  'src/data/products_amerisleep.json',
+];
+for (const file of prohibitedActiveToolPaths) {
+  let exists = true;
+  try {
+    await access(path.join(root, file));
+  } catch {
+    exists = false;
+  }
+  assert(!exists, `${file} is obsolete or unsafe and must remain outside the active build and tooling paths.`);
+}
+
 const mattressById = new Map(allMattresses.map(mattress => [mattress.id, mattress]));
 const expectedReviewIds = [...mattressById.keys()].sort();
 const brandCount = new Set(allMattresses.map(mattress => mattress.brand)).size;
+const lockedScoreDataset = [...allMattresses]
+  .sort((a, b) => a.id.localeCompare(b.id))
+  .map(mattress => [mattress.id, ...SCORE_METRICS.map(metric => mattress.scores[metric.key])].join('|'))
+  .join('\n');
+const lockedScoreDatasetHash = createHash('sha256').update(lockedScoreDataset).digest('hex');
+const approvedScoreDatasetHash = '44dfcd275bb4b20a5b6001703ca9bebb8871d702f4a0cd0ccea0f84c17e3caf8';
 const siteUrl = 'https://finalize.ahmedbarkat1067.workers.dev';
 const reviewDocuments = buildReviewLlmDocuments(siteUrl);
 const generatedDocuments = buildGeneratedLlmDocuments(siteUrl);
@@ -35,6 +77,19 @@ const reviewFileIds = reviewDocuments
 
 assert(expectedReviewIds.length === 59, `Expected 59 mattress records; found ${expectedReviewIds.length}.`);
 assert(brandCount === 24, `Expected 24 brands; found ${brandCount}.`);
+const orderedScoreField = orderFullScoreField(allMattresses);
+assert(
+  orderedScoreField.every((model, index) => index === 0 || orderedScoreField[index - 1].scores.overall >= model.scores.overall),
+  'The full score field is not ordered by Overall score.',
+);
+assert(
+  new Set(orderedScoreField.slice(0, 12).map(model => model.brand)).size >= 8,
+  'The first 12 full-score-field rows do not present enough brand diversity.',
+);
+assert(
+  lockedScoreDatasetHash === approvedScoreDatasetHash,
+  'The approved 59-model, seven-metric score dataset changed. Reconcile every edit against the source ranking sheet before updating the locked hash.',
+);
 assert(reviewFileIds.length === 59, `Expected 59 generated LLM review files; found ${reviewFileIds.length}.`);
 assert(
   reviewFileIds.length === expectedReviewIds.length && expectedReviewIds.every(id => reviewFileIds.includes(id)),
@@ -90,6 +145,18 @@ for (const document of allLlmDocuments) {
   assert(document.content.includes(`${siteUrl}${document.canonicalPath}`), `${document.slug}.md is missing its canonical HTML URL.`);
 }
 
+for (const document of generatedDocuments.filter(document => document.kind === 'best')) {
+  const scoreField = document.content.split('## Full 59-model score field')[1]?.split('## Evidence and limits')[0] ?? '';
+  const scoreFieldIds = [...scoreField.matchAll(/\/reviews\/([a-z0-9-]+)\//g)].map(match => match[1]);
+  assert(scoreField.length > 0, `${document.slug}.md is missing the full score-field section.`);
+  assert(scoreFieldIds.length === 59, `${document.slug}.md must list 59 full-field model rows; found ${scoreFieldIds.length}.`);
+  assert(new Set(scoreFieldIds).size === 59, `${document.slug}.md contains duplicate full-field model rows.`);
+  assert(
+    expectedReviewIds.every(id => scoreFieldIds.includes(id)),
+    `${document.slug}.md does not include every approved mattress model.`,
+  );
+}
+
 const methodologyDocument = generatedDocuments.find(document => document.kind === 'methodology')?.content ?? '';
 for (const metric of SCORE_METRICS) {
   assert(methodologyDocument.includes(metric.label), `Methodology machine file is missing ${metric.label}.`);
@@ -111,13 +178,13 @@ for (const mattress of allMattresses) {
 
   let productUrl: URL | null = null;
   try {
-    productUrl = new URL(mattress.affiliateUrl);
+    productUrl = new URL(mattress.productUrl);
   } catch {
     // The assertion below reports the record ID and malformed value.
   }
   assert(
     productUrl?.protocol === 'https:' && productUrl.pathname !== '/' && productUrl.pathname !== '',
-    `${mattress.id} must use an exact HTTPS product or official archived-model source URL; found ${mattress.affiliateUrl}.`,
+    `${mattress.id} must use an exact HTTPS product or official archived-model source URL; found ${mattress.productUrl}.`,
   );
 
   if (mattress.brand !== 'Amerisleep') {
@@ -137,15 +204,15 @@ for (const id of ['bear-star-hybrid', 'ghostbed-flex', 'sweetnight-prime', 'nola
   assert(Boolean(mattressById.get(id)?.availabilityNote), `${id} is missing its archived-model or construction-change notice.`);
 }
 
-const osgBrands = new Set(['Amerisleep', 'Zoma', 'Vaya', 'FORM']);
+const concentrationGuardBrands = new Set(['Amerisleep', 'Zoma', 'Vaya', 'FORM']);
 for (const [category, config] of Object.entries(BEST_CATEGORIES)) {
   const models = config.picks.map(id => mattressById.get(id));
   assert(config.picks.length === 6, `/best/${category}/ must contain 6 ranked models; found ${config.picks.length}.`);
   assert(models.every(Boolean), `/best/${category}/ contains an unknown mattress ID.`);
   const validModels = models.filter(Boolean) as typeof allMattresses;
-  const osgCount = validModels.filter(model => osgBrands.has(model.brand)).length;
+  const guardedBrandCount = validModels.filter(model => concentrationGuardBrands.has(model.brand)).length;
   const categoryBrandCount = new Set(validModels.map(model => model.brand)).size;
-  assert(osgCount <= 3, `/best/${category}/ contains ${osgCount} OSG models; maximum is 3 of 6.`);
+  assert(guardedBrandCount <= 3, `/best/${category}/ contains ${guardedBrandCount} models from the concentration-guard set; maximum is 3 of 6.`);
   assert(categoryBrandCount >= 4, `/best/${category}/ contains only ${categoryBrandCount} distinct brands; minimum is 4.`);
 }
 
@@ -172,31 +239,48 @@ for (const [source, destination] of Object.entries(LEGACY_BEST_BLOG_REDIRECTS)) 
   );
 }
 
-const activeBlogPosts = blogPosts.filter(post => !LEGACY_BEST_BLOG_REDIRECTS[`/blog/${post.slug}/`]);
+const activeBlogPosts = blogPosts.filter(post => !post.redirectTo && !LEGACY_BEST_BLOG_REDIRECTS[`/blog/${post.slug}/`]);
 assert(blogPosts.length === 151, `Expected 151 source blog records; found ${blogPosts.length}.`);
-assert(activeBlogPosts.length === 112, `Expected 112 active blog articles after redirect consolidation; found ${activeBlogPosts.length}.`);
+assert(activeBlogPosts.length === 111, `Expected 111 active blog articles after redirect consolidation; found ${activeBlogPosts.length}.`);
+for (const post of activeBlogPosts) {
+  assert(post.author.name === 'PureSleep Editorial Team', `${post.slug} must use the PureSleep Editorial Team organizational byline.`);
+  assert(post.reviewedBy === null, `${post.slug} contains an unverified reviewer attribution.`);
+}
+const sourceReviewPendingPosts = activeBlogPosts.filter(requiresBlogSourceReview);
+assert(sourceReviewPendingPosts.length === 67, `Expected 67 source-review-pending blog articles; found ${sourceReviewPendingPosts.length}.`);
+assert(FIRDOUS_FARHAD.name === 'Firdous Farhad', 'The approved health and sleep content reviewer name changed.');
+assert(
+  FIRDOUS_FARHAD.credentials === 'Licensed massage therapist and certified sleep science coach.',
+  'The approved Firdous Farhad credential statement changed.',
+);
 
 const surfaceFiles = [
+  'AGENTS.md',
   'README.md',
   'DOMAIN_MIGRATION.md',
+  'metadata.json',
   'src/pages/about/index.astro',
   'src/pages/disclosure/index.astro',
   'src/pages/editorial-policy/index.astro',
   'src/pages/methodology/index.astro',
+  'src/pages/contributors/firdous-farhad/index.astro',
   'src/pages/reviews/[id].astro',
   'src/pages/comparison/[slug].astro',
   'src/pages/best/[category].astro',
   'src/pages/blog/[slug].astro',
   'src/components/Hero.tsx',
   'src/components/Footer.tsx',
+  'src/data/blogSchema.ts',
   'src/lib/disclosure.ts',
+  'src/lib/editorialPeople.ts',
   'src/lib/llmDocuments.ts',
 ];
 const publicSurface = (await Promise.all(
   surfaceFiles.map(file => readFile(path.join(root, file), 'utf8')),
 )).join('\n');
 for (const [label, pattern] of [
-  ['false independence language', /editorially independent|independent review publication|no financial relationship/i],
+  ['unsupported financial-independence promise', /no financial relationship/i],
+  ['prohibited relationship language', /One[-\s]+Sleep[-\s]+Group|material[-\s]+business[-\s]+relationship|affiliated[-\s]+and[-\s]+non-affiliated|non-affiliated|family[-\s]+of[-\s]+brands/i],
   ['inactive support address', /support@puresleep\.com/i],
   ['named reviewer schema', /"reviewedBy"|post\.reviewedBy/i],
   ['Amerisleep owner language', /Amerisleep[- ]owned|owned and operated by Amerisleep|owned by Amerisleep|Amerisleep owns|operated by Amerisleep|parentOrganization[^\n]+Amerisleep/i],
@@ -204,11 +288,17 @@ for (const [label, pattern] of [
 ] as const) {
   assert(!pattern.test(publicSurface), `Public surfaces still contain ${label}.`);
 }
-assert(publicSurface.includes('material business relationship with Amerisleep'), 'Material-business-relationship disclosure is missing.');
+assert(publicSurface.includes('independently operated editorial publication'), 'Editorial-independence disclosure is missing.');
+assert(publicSurface.includes('does not receive per-click or per-sale commissions'), 'Outbound-link compensation disclosure is missing.');
+assert(publicSurface.includes(FIRDOUS_FARHAD.name), 'Firdous Farhad is missing from the public editorial surfaces.');
+assert(publicSurface.includes(FIRDOUS_FARHAD.role), 'Firdous Farhad\'s reviewer role is missing from the public editorial surfaces.');
+assert(publicSurface.includes(FIRDOUS_FARHAD.credentials), 'Firdous Farhad\'s approved credential statement is missing from the public editorial surfaces.');
+assert(publicSurface.includes(FIRDOUS_FARHAD.path), 'Firdous Farhad\'s contributor profile is not linked from the public editorial surfaces.');
 const publishedContent = JSON.stringify({
   mattresses: allMattresses,
   comparisons,
   topics,
+  bestCategories: BEST_CATEGORIES,
   blogPosts: activeBlogPosts,
   publicSurface,
 });
@@ -218,9 +308,12 @@ for (const [label, pattern] of [
   ['unsupported quantified cooling claim', /\b7\s*°?F cooler|\b25% (?:cooler|more breathable)/i],
   ['unsupported medical language', /medical brace|permanently stop morning stiffness|shuts it down immediately|fix(?:es|ed|ing)? (?:spinal|disc) inflammation|mechanical airway fix/i],
   ['false independent-testing claim', /independently tested alternatives|independent sleep product testing team/i],
+  ['prohibited relationship language', /One[-\s]+Sleep[-\s]+Group|material[-\s]+business[-\s]+relationship|affiliated[-\s]+and[-\s]+non-affiliated|non-affiliated|family[-\s]+of[-\s]+brands/i],
   ['unsupported PureSleep hands-on claim', /PureSleep (?:Testing Team|testing team)|evaluated hands-on by PureSleep|scores (?:come|derive) from hands-on testing|scores are editorial, hands-on evaluations|our hands-on testing|hands-on mattress (?:reviews|rankings)|Hands-On Team Testing|quantified by our testing team|Hands-on testing and practical analysis/i],
   ['Amerisleep owner language', /Amerisleep[- ]owned|owned and operated by Amerisleep|owned by Amerisleep|Amerisleep owns|operated by Amerisleep|parentOrganization[^\n]+Amerisleep/i],
   ['unsupported performance guarantee', /measurably cooler than petroleum foam|prevent(?:s|ing)? sagging for the full 20-year warranty/i],
+  ['unsupported first-person test attribution', /\bin (?:our|PureSleep's) test(?:ing|s)\b|across tested mattresses/i],
+  ['unsupported comparative superlative', /class-leading|best-in-class|industry-leading/i],
 ] as const) {
   assert(!pattern.test(publishedContent), `Published source content still contains ${label}.`);
 }
@@ -241,6 +334,7 @@ console.log(JSON.stringify({
   status: 'pass',
   mattressRecords: expectedReviewIds.length,
   brands: brandCount,
+  approvedScoreDatasetHash: lockedScoreDatasetHash,
   exactProductOrOfficialArchiveUrls: allMattresses.length,
   recordsWithAtLeastThreeFaqs: allMattresses.filter(mattress => mattress.faqs.length >= 3).length,
   archivedOrChangedModelNotices: allMattresses.filter(mattress => mattress.availabilityNote).length,
@@ -251,6 +345,10 @@ console.log(JSON.stringify({
   comparisons: comparisons.length,
   standaloneTopics: topics.length,
   activeBlogArticles: activeBlogPosts.length,
+  sourceReviewPendingBlogArticles: sourceReviewPendingPosts.length,
   legacyRedirects: Object.keys(LEGACY_BEST_BLOG_REDIRECTS).length,
-  categoryRule: '6 models, at least 4 brands, no more than 3 OSG models',
+  bestMachineDocumentsWithFullScoreField: generatedDocuments.filter(document => document.kind === 'best').length,
+  modelsPerBestScoreField: expectedReviewIds.length,
+  prohibitedActiveTools: 0,
+  categoryRule: '6 models, at least 4 brands, no more than 3 models from the concentration-guard set',
 }, null, 2));

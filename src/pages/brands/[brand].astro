@@ -11,25 +11,25 @@ const BRAND_META: Record<string, { displayName: string; description: string; off
     displayName: 'Amerisleep',
     officialUrl: 'https://amerisleep.com',
     description: 'All Amerisleep mattress reviews. 8 models across the AS series, hybrid, and organic lineup.',
-    blurb: 'Amerisleep is a direct-to-consumer mattress brand known for Bio-Pur® plant-based memory foam, HIVE® zoning technology, and 20-year warranties. Part of the One Sleep Group (OSG).'
+    blurb: 'Amerisleep is a direct-to-consumer mattress brand with foam, hybrid, and latex-hybrid models. PureSleep records Bio-Pur® foam and HIVE® zoning on applicable models; verify current materials and policy terms on the official product page.'
   },
   'zoma': {
     displayName: 'Zoma',
     officialUrl: 'https://zomasleep.com',
     description: 'All Zoma mattress reviews. Performance-focused models including the Boost, Hybrid, and Start.',
-    blurb: 'Zoma is a performance-focused mattress brand using Triangulex™ zoned foam and Reactiv™ technology. Part of the One Sleep Group (OSG). Known for strong value-to-performance ratio.'
+    blurb: 'Zoma offers foam and hybrid mattresses positioned around responsive comfort. PureSleep records Triangulex™ and Reactiv™ materials on applicable models; verify the current construction on the official product page.'
   },
   'vaya': {
     displayName: 'Vaya',
     officialUrl: 'https://vayasleep.com',
-    description: 'All Vaya mattress reviews. Budget-friendly foam and hybrid models from the One Sleep Group.',
-    blurb: 'Vaya is the budget-focused brand in the One Sleep Group (OSG) family, offering CertiPUR-US certified foam and hybrid mattresses at accessible price points with 100-night trials.'
+    description: 'All Vaya mattress reviews. Foam and hybrid models compared with the same seven-metric scorecard.',
+    blurb: 'Vaya offers foam and hybrid mattresses positioned at lower recorded price points. PureSleep records CertiPUR-US labels and trial fields where applicable; verify current scope and terms with the official sources.'
   },
   'form': {
     displayName: 'FORM',
     officialUrl: 'https://formsleep.com',
     description: 'All FORM mattress reviews. Core, Core Hybrid, Prime, and Prime X models.',
-    blurb: 'FORM Sleep is a premium foam and hybrid mattress brand. Part of the One Sleep Group (OSG). Known for top performance scores across the 7-metric system at mid-to-premium pricing.'
+    blurb: 'FORM Sleep offers foam and hybrid mattress models. PureSleep compares Core, Core Hybrid, Prime, and Prime X with the same seven score fields used for every covered brand.'
   },
   'plushbeds': {
     displayName: 'PlushBeds',
@@ -183,7 +183,7 @@ const meta = BRAND_META[brand] || {
   blurb: `${brandModels[0]?.brand || brand} mattresses, reviewed with PureSleep's seven-metric editorial scorecard.`
 };
 
-const lastUpdated = "2026-07-13";
+const lastUpdated = "2026-07-14";
 
 const topModel = [...brandModels].sort((a, b) => (b.scores?.overall || 0) - (a.scores?.overall || 0))[0];
 
@@ -191,7 +191,7 @@ const brandArticleBody = toArticleBody(
   `${meta.displayName} Mattress Reviews 2026`,
   meta.description,
   meta.blurb,
-  `${brandModels.length} model${brandModels.length !== 1 ? 's' : ''} reviewed by the PureSleep Editorial Team. Updated: July 13, 2026.`,
+  `${brandModels.length} model${brandModels.length !== 1 ? 's' : ''} covered by the PureSleep Editorial Team. Updated: July 14, 2026.`,
   topModel
     ? [
       `Top Rated ${meta.displayName} Model`,
@@ -212,7 +212,7 @@ const brandArticleBody = toArticleBody(
     ])
   ),
   articleList('Brand Review Notes', [
-    'Scores are editorial comparisons from the approved seven-metric source dataset.',
+    'Scores are editorial comparisons from the published PureSleep seven-metric score dataset.',
     RANKING_DISCLOSURE,
     'Certification and material labels should be verified on the brand official site or certifying body database before purchase.',
   ])
@@ -225,8 +225,8 @@ const jsonLd = [
     "headline": `${meta.displayName} Mattress Reviews 2026`,
     "description": meta.description,
     "articleBody": brandArticleBody,
-    "author": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
-    "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
+    "author": { "@type": "Organization", "@id": `${SITE_URL}/about/#editorial-team`, "name": "PureSleep Editorial Team", "url": `${SITE_URL}/about/#editorial-team` },
+    "publisher": { "@type": "Organization", "@id": `${SITE_URL}/#organization`, "name": "PureSleep", "url": SITE_URL },
     "datePublished": "2026-01-01",
     "dateModified": lastUpdated,
     "mainEntityOfPage": `${SITE_URL}/brands/${brand}/`,
@@ -263,26 +263,26 @@ const jsonLd = [
 
     <header class="flex flex-col gap-6 max-w-4xl">
       <h1 class="text-headline-lg font-headline-lg text-primary font-bold">{meta.displayName} Mattress Reviews</h1>
-      <div class="glass-panel p-6 rounded-2xl border border-white/60">
+      <div class="glass-panel p-6 rounded-lg border border-white/60">
         <p class="text-body-lg text-on-surface-variant leading-relaxed">{meta.blurb}</p>
         <a href={meta.officialUrl} target="_blank" rel="noopener noreferrer" class="text-body-sm text-primary hover:text-secondary underline underline-offset-4 font-medium mt-3 inline-block transition-colors">
           Official site: {meta.officialUrl.replace('https://', '')} →
         </a>
       </div>
       <div class="flex gap-4 items-center text-body-sm text-on-surface-variant">
-        <span><strong class="text-on-surface">{brandModels.length} model{brandModels.length !== 1 ? 's' : ''}</strong> reviewed</span>
+        <span><strong class="text-on-surface">{brandModels.length} model{brandModels.length !== 1 ? 's' : ''}</strong> covered</span>
         <span>·</span>
-        <span>Reviewed by: PureSleep Editorial Team</span>
+        <span>By: PureSleep Editorial Team</span>
         <span>·</span>
-        <span>Updated: July 13, 2026</span>
+        <span>Updated: July 14, 2026</span>
       </div>
     </header>
 
     {topModel && (
-      <section class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-col gap-4">
-        <span class="bg-primary text-on-primary text-label-sm font-bold uppercase tracking-widest px-4 py-1.5 rounded-full w-fit">Top Rated {meta.displayName} Model</span>
+      <section class="glass-panel p-8 rounded-lg border border-white/60 flex flex-col gap-4">
+        <span class="bg-primary text-on-primary text-label-sm font-bold uppercase tracking-normal px-4 py-1.5 rounded-full w-fit">Top Rated {meta.displayName} Model</span>
         <div class="flex flex-col md:flex-row gap-6 items-start">
-          <img src={topModel.heroImage} alt={`${topModel.name}`} class="w-full md:w-52 h-40 object-contain bg-white p-2 rounded-2xl flex-shrink-0" />
+          <img src={topModel.heroImage} alt={`${topModel.name}`} class="w-full md:w-52 h-40 object-contain bg-white p-2 rounded-lg flex-shrink-0" />
           <div class="flex flex-col gap-3">
             <div>
               <h2 class="text-headline-md font-headline-md text-primary font-bold">{topModel.name}</h2>
@@ -293,8 +293,8 @@ const jsonLd = [
             </div>
             <p class="text-body-md text-on-surface-variant">{topModel.verdict}</p>
             <div class="flex gap-3 flex-wrap">
-              <a href={`/reviews/${topModel.id}`} class="px-5 py-2.5 rounded-xl border-2 border-primary text-primary font-bold text-label-sm uppercase tracking-widest hover:bg-primary/5 transition-colors">Full Review</a>
-              <a href={topModel.affiliateUrl} target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-primary text-on-primary font-bold text-label-sm uppercase tracking-widest hover:bg-primary/90 transition-colors">Check Price →</a>
+              <a href={`/reviews/${topModel.id}`} class="px-5 py-2.5 rounded-lg border-2 border-primary text-primary font-bold text-label-sm uppercase tracking-normal hover:bg-primary/5 transition-colors">Full Review</a>
+              <a href={topModel.productUrl} target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-lg bg-primary text-on-primary font-bold text-label-sm uppercase tracking-normal hover:bg-primary/90 transition-colors">Official Product Page →</a>
             </div>
           </div>
         </div>
@@ -305,8 +305,8 @@ const jsonLd = [
       <h2 class="text-headline-md font-headline-md text-primary font-bold border-b border-outline-variant/30 pb-4">All {meta.displayName} Models Reviewed</h2>
       <div class="flex flex-col gap-4">
         {brandModels.sort((a, b) => (b.scores?.overall || 0) - (a.scores?.overall || 0)).map(m => (
-          <article class="glass-panel flex flex-col sm:flex-row gap-6 p-6 rounded-2xl border border-white/60 hover:border-primary/20 transition-all">
-            <img src={m.image} alt={`${m.name}`} class="w-full sm:w-32 h-28 object-contain bg-white p-2 rounded-xl flex-shrink-0" />
+          <article class="glass-panel flex flex-col sm:flex-row gap-6 p-6 rounded-lg border border-white/60 hover:border-primary/20 transition-all">
+            <img src={m.image} alt={`${m.name}`} class="w-full sm:w-32 h-28 object-contain bg-white p-2 rounded-lg flex-shrink-0" />
             <div class="flex flex-col gap-3 flex-1">
               <div class="flex justify-between items-start gap-4">
                 <div>
@@ -328,14 +328,14 @@ const jsonLd = [
                   ['Cooling', m.scores?.coolingBreathability],
                 ].map(([label, score]) => (
                   <div class="bg-surface rounded-lg p-2 border border-outline-variant/20 text-center">
-                    <div class="text-xs text-on-surface-variant font-bold uppercase tracking-wider">{label}</div>
+                    <div class="text-xs text-on-surface-variant font-bold uppercase tracking-normal">{label}</div>
                     <div class="font-bold text-primary text-sm">{score}</div>
                   </div>
                 ))}
               </div>
               <div class="flex gap-2 mt-1">
-                <a href={`/reviews/${m.id}`} class="px-4 py-2 rounded-lg border border-primary text-primary font-bold text-xs uppercase tracking-widest hover:bg-primary/5 transition-colors">Review</a>
-                <a href={m.affiliateUrl} target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-primary text-on-primary font-bold text-xs uppercase tracking-widest hover:bg-primary/90 transition-colors">Price →</a>
+                <a href={`/reviews/${m.id}`} class="px-4 py-2 rounded-lg border border-primary text-primary font-bold text-xs uppercase tracking-normal hover:bg-primary/5 transition-colors">Review</a>
+                <a href={m.productUrl} target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-primary text-on-primary font-bold text-xs uppercase tracking-normal hover:bg-primary/90 transition-colors">Price →</a>
               </div>
             </div>
           </article>
@@ -343,7 +343,7 @@ const jsonLd = [
       </div>
     </section>
 
-    <section class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-col gap-4">
+    <section class="glass-panel p-8 rounded-lg border border-white/60 flex flex-col gap-4">
       <h2 class="text-headline-sm font-headline-sm text-primary font-bold">About These Scores</h2>
       <p class="text-body-md text-on-surface-variant leading-relaxed">
         All {meta.displayName} mattresses above use the same seven-metric editorial scorecard: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability (all 0–10). Scores are not laboratory findings, manufacturer ratings, or collected customer ratings.

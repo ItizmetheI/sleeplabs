@@ -2,7 +2,7 @@
 import { comparisons } from '../../data/comparisons';
 import { allMattresses } from '../../data/mattresses';
 import { articleTable, toArticleBody } from '../../lib/schemaArticleBody';
-import { COMMERCIAL_RELATIONSHIP_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
+import { EDITORIAL_INDEPENDENCE_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ComparisonScoreChart from '../../components/ComparisonScoreChart.astro';
 import TrustSignals from '../../components/TrustSignals.astro';
@@ -35,11 +35,14 @@ const absoluteImageB = mattressB.heroImage.startsWith('http') ? mattressB.heroIm
 const constructionHeading = '1. Construction & Build Quality';
 const constructionText = `When selecting a new mattress, understanding the recorded materials and structural differences between the ${mattressA.name} and ${mattressB.name} helps clarify how each may feel and respond to movement. The ${mattressA.name} uses a ${mattressA.type} design and has a recorded ${mattressA.firmness} feel (${mattressA.firmnessScale}/10). The ${mattressB.name} uses a ${mattressB.type} construction with a recorded ${mattressB.firmness} feel (${mattressB.firmnessScale}/10). Construction can influence contouring, airflow, edge stability, and ease of movement, but individual comfort will vary.`;
 const firmnessHeading = `2. Firmness, Feel & Overall Score (${mattressA.scores.overall}/10 vs ${mattressB.scores.overall}/10)`;
-const firmnessText = `The approved PureSleep editorial dataset gives the ${mattressA.name} an overall score of ${mattressA.scores.overall}/10, with edge support at ${mattressA.scores.edgeSupport}/10 and response time at ${mattressA.scores.responseTime}/10. The ${mattressB.name} scores ${mattressB.scores.overall}/10 overall, with edge support at ${mattressB.scores.edgeSupport}/10 and response time at ${mattressB.scores.responseTime}/10. The ${mattressA.scores.overall >= mattressB.scores.overall ? mattressA.name : mattressB.name} leads on the composite score. These are editorial scores, not laboratory measurements, customer ratings, or manufacturer scores.`;
+const overallComparison = mattressA.scores.overall === mattressB.scores.overall
+  ? `The models tie on the published Overall field at ${mattressA.scores.overall}/10.`
+  : `${mattressA.scores.overall > mattressB.scores.overall ? mattressA.name : mattressB.name} leads on the published Overall field.`;
+const firmnessText = `The published PureSleep score dataset gives the ${mattressA.name} an Overall score of ${mattressA.scores.overall}/10, with Edge Support at ${mattressA.scores.edgeSupport}/10 and Response Time at ${mattressA.scores.responseTime}/10. The ${mattressB.name} records ${mattressB.scores.overall}/10 Overall, with Edge Support at ${mattressB.scores.edgeSupport}/10 and Response Time at ${mattressB.scores.responseTime}/10. ${overallComparison} These are editorial scores, not laboratory measurements, customer ratings, or manufacturer scores.`;
 const motionHeading = '3. Motion Transfer & Cooling';
-const motionText = `For couples and light sleepers, motion transfer matters. The ${mattressA.name} scored ${mattressA.scores.motionTransfer}/10 for motion transfer, making it ${mattressA.scores.motionTransfer >= 9 ? 'an excellent' : 'a solid'} choice for co-sleepers. The ${mattressB.name} rated ${mattressB.scores.motionTransfer}/10. For thermal comfort, the ${mattressA.name} earned ${mattressA.scores.coolingBreathability}/10 for cooling & breathability while the ${mattressB.name} scored ${mattressB.scores.coolingBreathability}/10. The ${mattressA.scores.coolingBreathability >= mattressB.scores.coolingBreathability ? mattressA.name : mattressB.name} is the better choice for hot sleepers.`;
+const motionText = `The ${mattressA.name} records ${mattressA.scores.motionTransfer}/10 for Motion Transfer and ${mattressA.scores.coolingBreathability}/10 for Cooling & Breathability. The ${mattressB.name} records ${mattressB.scores.motionTransfer}/10 and ${mattressB.scores.coolingBreathability}/10 for the same fields. These scores are comparative editorial ratings, not sensor measurements or temperature tests.`;
 const valueHeading = '4. Value & Trial Period';
-const valueText = `Value scores capture overall quality relative to price, warranty, and trial terms. The ${mattressA.name} scored ${mattressA.scores.value}/10 for value, with a ${mattressA.trialNights}-night trial (scored ${mattressA.scores.trialPeriod}/10 for trial quality). The ${mattressB.name} earned ${mattressB.scores.value}/10 for value, backed by a ${mattressB.trialNights}-night trial (scored ${mattressB.scores.trialPeriod}/10).`;
+const valueText = `The published scorecard records ${mattressA.name} at ${mattressA.scores.value}/10 for Value and ${mattressA.scores.trialPeriod}/10 for Trial Period, with a ${mattressA.trialNights}-night trial in the source dataset. ${mattressB.name} records ${mattressB.scores.value}/10 for Value and ${mattressB.scores.trialPeriod}/10 for Trial Period, with a ${mattressB.trialNights}-night trial. Verify current eligibility, exclusions, fees, and return terms with each manufacturer.`;
 const policyHeading = '5. Policies & Recorded Pricing';
 const policyText = `The source dataset lists a ${mattressA.trialNights}-night trial and ${mattressA.warrantyYears}-year warranty for the ${mattressA.name}, and a ${mattressB.trialNights}-night trial with a ${mattressB.warrantyYears}-year warranty for the ${mattressB.name}. These terms and the price fields above can change. Verify the current price, shipping, return, trial, and warranty terms on each brand's official site before purchasing. ${comparison.verdict}`;
 
@@ -47,7 +50,7 @@ const comparisonArticleBody = toArticleBody(
   `${mattressA.name} vs ${mattressB.name} (2026): Which Is Better?`,
   'Quick Verdict',
   comparison.verdict,
-  `${COMMERCIAL_RELATIONSHIP_DISCLOSURE} ${LINK_DISCLOSURE}`,
+  `${EDITORIAL_INDEPENDENCE_DISCLOSURE} ${LINK_DISCLOSURE}`,
   'Price note: Price fields are reference values captured in the source dataset, not live offers. Verify current pricing and policies on each brand site.',
   articleTable('Specs at a Glance', ['Feature', mattressA.name, mattressB.name], [
     ['Recorded Price Range', mattressA.priceRange, mattressB.priceRange],
@@ -102,13 +105,15 @@ const jsonLd: any[] = [
     "image": [absoluteImageA, absoluteImageB],
     "author": {
       "@type": "Organization",
-      "name": "PureSleep",
-      "url": SITE_URL
+      "@id": `${SITE_URL}/about/#editorial-team`,
+      "name": "PureSleep Editorial Team",
+      "url": `${SITE_URL}/about/#editorial-team`
     },
     "dateModified": comparison.dateModified,
     "datePublished": comparison.dateModified,
     "publisher": {
       "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
       "name": "PureSleep",
       "url": SITE_URL
     },
@@ -126,7 +131,7 @@ const jsonLd: any[] = [
       { "@id": productIdB },
       { "@type": "Article", "name": "PureSleep Scoring Methodology", "url": `${SITE_URL}/methodology/` }
     ],
-    "citation": [mattressA.affiliateUrl, mattressB.affiliateUrl, `${SITE_URL}/methodology/`]
+    "citation": [mattressA.productUrl, mattressB.productUrl, `${SITE_URL}/methodology/`]
   },
   {
     "@context": "https://schema.org",
@@ -137,7 +142,7 @@ const jsonLd: any[] = [
     "brand": { "@type": "Brand", "name": mattressA.brand },
     "description": mattressA.summary,
     "image": absoluteImageA,
-    "sameAs": mattressA.affiliateUrl,
+    "sameAs": mattressA.productUrl,
     "review": {
       "@type": "Review",
       "@id": `${reviewUrlA}#review`,
@@ -160,7 +165,7 @@ const jsonLd: any[] = [
     "brand": { "@type": "Brand", "name": mattressB.brand },
     "description": mattressB.summary,
     "image": absoluteImageB,
-    "sameAs": mattressB.affiliateUrl,
+    "sameAs": mattressB.productUrl,
     "review": {
       "@type": "Review",
       "@id": `${reviewUrlB}#review`,
@@ -222,7 +227,7 @@ if (comparison.faqs && comparison.faqs.length > 0) {
       <article class="flex-1 flex flex-col gap-12 w-full">
         
         <!-- Quick Verdict -->
-        <section class="glass-panel-heavy p-8 rounded-3xl border border-secondary/20 shadow-lg">
+        <section class="glass-panel-heavy p-8 rounded-lg border border-secondary/20 shadow-lg">
           <h2 class="text-title-lg font-title-lg text-primary mb-4 italic">Quick Verdict</h2>
           <p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
             {comparison.verdict}
@@ -234,24 +239,24 @@ if (comparison.faqs && comparison.faqs.length > 0) {
         <!-- Product Images Side by Side -->
          <section class="grid grid-cols-2 gap-8 items-center">
             <div class="flex flex-col gap-4 text-center">
-                <div class="w-full h-[250px] rounded-3xl overflow-hidden border border-white/60 shadow-lg">
+                <div class="w-full h-[250px] rounded-lg overflow-hidden border border-white/60 shadow-lg">
                     <img src={mattressA.image} alt={mattressA.name} class="w-full h-full object-contain bg-white p-3" />
                 </div>
                 <h3 class="font-title-lg text-primary font-bold">{mattressA.name}</h3>
-                <a href={mattressA.affiliateUrl} target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-primary text-on-primary font-bold font-label-md uppercase shadow-md hover:bg-primary/90 transition-colors">Check Price</a>
+                <a href={mattressA.productUrl} target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-lg bg-primary text-on-primary font-bold font-label-md uppercase shadow-md hover:bg-primary/90 transition-colors">Official Product Page</a>
             </div>
             <div class="flex flex-col gap-4 text-center">
-                 <div class="w-full h-[250px] rounded-3xl overflow-hidden border border-white/60 shadow-lg">
+                 <div class="w-full h-[250px] rounded-lg overflow-hidden border border-white/60 shadow-lg">
                     <img src={mattressB.image} alt={mattressB.name} class="w-full h-full object-contain bg-white p-3" />
                 </div>
                 <h3 class="font-title-lg text-primary font-bold">{mattressB.name}</h3>
-                <a href={mattressB.affiliateUrl} target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-primary text-on-primary font-bold font-label-md uppercase shadow-md hover:bg-primary/90 transition-colors">Check Price</a>
+                <a href={mattressB.productUrl} target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-lg bg-primary text-on-primary font-bold font-label-md uppercase shadow-md hover:bg-primary/90 transition-colors">Official Product Page</a>
             </div>
          </section>
          <p class="text-xs text-on-surface-variant text-center">{LINK_DISCLOSURE}</p>
 
         <!-- Stats Comparison Table -->
-        <section class="overflow-x-auto glass-panel rounded-3xl border border-white/60">
+        <section class="overflow-x-auto glass-panel rounded-lg border border-white/60">
             <table class="w-full min-w-[680px] text-left border-collapse">
                 <thead>
                     <tr class="bg-surface/50 border-b border-outline-variant/30 text-title-md text-primary font-bold">
@@ -261,7 +266,7 @@ if (comparison.faqs && comparison.faqs.length > 0) {
                     </tr>
                 </thead>
                 <tbody class="text-body-md text-on-surface-variant">
-                    <tr class="bg-primary/5 border-y-2 border-primary/20"><td colspan="3" class="p-6 text-center text-label-lg font-bold text-primary uppercase tracking-widest">Specs at a Glance</td></tr>
+                    <tr class="bg-primary/5 border-y-2 border-primary/20"><td colspan="3" class="p-6 text-center text-label-lg font-bold text-primary uppercase tracking-normal">Specs at a Glance</td></tr>
 
                     <tr><td colspan="3" class="px-6 pt-5 pb-3 text-xs text-on-surface-variant">Prices are recorded dataset values, not live offers. Verify current prices and policies on each brand site.</td></tr>
 
@@ -291,7 +296,7 @@ if (comparison.faqs && comparison.faqs.length > 0) {
                         </tr>
                     )}
 
-                    <tr class="bg-primary/5 border-y-2 border-primary/20"><td colspan="3" class="p-6 text-center text-label-lg font-bold text-primary uppercase tracking-widest">Performance Scores</td></tr>
+                    <tr class="bg-primary/5 border-y-2 border-primary/20"><td colspan="3" class="p-6 text-center text-label-lg font-bold text-primary uppercase tracking-normal">Performance Scores</td></tr>
 
                     {/* Scores */}
                     {[
@@ -327,9 +332,9 @@ if (comparison.faqs && comparison.faqs.length > 0) {
                 {comparison.winnerFor.map(winner => {
                     const winningMattress = winner.winnerId === mattressA.id ? mattressA : mattressB;
                     return (
-                        <div class="glass-panel p-6 rounded-2xl flex flex-col md:flex-row gap-6 items-start border border-white/50 border-l-4 border-l-secondary">
+                        <div class="glass-panel p-6 rounded-lg flex flex-col md:flex-row gap-6 items-start border border-white/50 border-l-4 border-l-secondary">
                             <div class="flex flex-col gap-2 flex-1">
-                                <span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest border-b border-outline-variant/30 pb-2 mb-2">Best For {winner.category}</span>
+                                <span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-normal border-b border-outline-variant/30 pb-2 mb-2">Best For {winner.category}</span>
                                 <h3 class="text-title-lg font-title-lg text-primary">{winningMattress.name}</h3>
                                 <p class="text-on-surface-variant leading-relaxed mt-1">{winner.reason}</p>
                             </div>
@@ -360,16 +365,16 @@ if (comparison.faqs && comparison.faqs.length > 0) {
         </section>
 
         <!-- Our Verdict -->
-        <section class="glass-panel-heavy p-8 rounded-3xl border border-secondary/20">
+        <section class="glass-panel-heavy p-8 rounded-lg border border-secondary/20">
           <h2 class="text-headline-md font-headline-md text-primary italic mb-4">Our Verdict</h2>
           <p class="text-body-lg text-on-surface-variant leading-relaxed mb-6">{comparison.verdict}</p>
           <div class="flex gap-3 flex-wrap">
-            <a href={mattressA.affiliateUrl} target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center bg-primary text-white px-6 py-3 rounded-full font-bold text-label-sm uppercase tracking-widest hover:bg-primary/90 transition-colors shadow-lg">
+            <a href={mattressA.productUrl} target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center bg-primary text-white px-6 py-3 rounded-full font-bold text-label-sm uppercase tracking-normal hover:bg-primary/90 transition-colors shadow-lg">
               Check {mattressA.name} Price →
             </a>
-            <a href={mattressB.affiliateUrl} target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center bg-primary text-white px-6 py-3 rounded-full font-bold text-label-sm uppercase tracking-widest hover:bg-primary/90 transition-colors shadow-lg">
+            <a href={mattressB.productUrl} target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center bg-primary text-white px-6 py-3 rounded-full font-bold text-label-sm uppercase tracking-normal hover:bg-primary/90 transition-colors shadow-lg">
               Check {mattressB.name} Price →
             </a>
           </div>
@@ -382,7 +387,7 @@ if (comparison.faqs && comparison.faqs.length > 0) {
               <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Frequently Asked Questions</h2>
               <div class="flex flex-col gap-4">
                   {comparison.faqs.map(faq => (
-                      <details class="group glass-panel rounded-2xl border border-white/50 overflow-hidden shadow-sm">
+                      <details class="group glass-panel rounded-lg border border-white/50 overflow-hidden shadow-sm">
                           <summary class="flex justify-between items-center cursor-pointer p-6 font-title-md text-primary font-bold list-none">
                               {faq.question}
                               <span class="transition group-open:rotate-180 text-primary">

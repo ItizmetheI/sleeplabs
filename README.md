@@ -1,6 +1,6 @@
 # PureSleep
 
-Multi-brand mattress reviews, rankings, comparisons, and buying guides covering 59 models across 24 brands. Scores use one published 7-metric rubric. Updated monthly.
+Multi-brand mattress reviews, rankings, comparisons, and buying guides covering 59 models across 24 brands. Scores use one published 7-metric editorial rubric.
 
 ## Tech Stack
 - Astro SSG (static HTML on first byte)
@@ -11,7 +11,7 @@ Multi-brand mattress reviews, rankings, comparisons, and buying guides covering 
 ## Run Locally
 Prerequisites: Node.js 18+
 
-1. npm install
+1. npm ci
 2. npm run dev
 
 ## Build

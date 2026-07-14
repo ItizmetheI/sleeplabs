@@ -20,18 +20,18 @@ export const BEST_CATEGORIES: Record<string, CategoryConfig> = {
     title: 'Best Mattress 2026 — Top Overall Picks | PureSleep',
     h1: 'Best Mattress of 2026',
     description: 'Best overall mattress picks for 2026, ranked with PureSleep\'s seven-metric editorial scorecard.',
-    intro: 'Our best-overall ranking sorts by composite 7-metric score. Models tying at 10/10 overall are ranked by value, warranty, and breadth of sleeper suitability.',
+    intro: 'The best-overall ranking sorts first by the published Overall field. Models tying at 10/10 Overall follow the documented tie-break sequence using Value, recorded warranty length, and breadth of listed fit categories.',
     winner: 'amerisleep-as3',
-    winnerNote: 'The AS3 earns the top overall pick for most sleepers: 10/10 composite score, medium firmness that works for side, back, and combination sleepers, Bio-Pur® plant-based foam, and a 20-year warranty. No other model in our database combines its breadth of suitability with its score.',
+    winnerNote: 'The AS3 records 10/10 on the published Overall field. Its medium firmness, construction, trial, warranty, and certification references should be verified on Amerisleep\'s current product and policy pages before purchase.',
     picks: ['amerisleep-as3', 'amerisleep-as6', 'nest-bedding-sparrow', 'leesa-sapira-chill-hybrid', 'plushbeds-signature-bliss', 'nest-bedding-owl'],
     faqs: [
       {
         question: 'What is the best mattress overall for 2026?',
-        answer: 'Based on our 7-metric scoring system across 59 models, the Amerisleep AS3 ranks #1 overall. It scores 10/10 composite, works for side, back, and combination sleepers at medium firmness (5/10), and carries a 20-year warranty — the strongest combination of scores and suitability breadth in our database.'
+        answer: 'The Amerisleep AS3 ranks first in the current Overall category after sorting by the published Overall field and the documented tie-break sequence. It records 10/10 Overall, Edge Support, Motion Transfer, and Cooling & Breathability. These are editorial scores, not laboratory measurements.'
       },
       {
         question: 'How does PureSleep score mattresses?',
-        answer: 'We use a standardized 7-metric system: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. Every field is scored 0–10 in the approved editorial dataset. The scores are not laboratory findings, manufacturer ratings, or collected customer ratings.'
+        answer: 'We use a standardized 7-metric system: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. Every field is scored 0–10 in the published PureSleep score dataset. The scores are not laboratory findings, manufacturer ratings, or collected customer ratings.'
       },
       {
         question: 'Is an expensive mattress always better?',
@@ -73,7 +73,7 @@ export const BEST_CATEGORIES: Record<string, CategoryConfig> = {
     faqs: [
       {
         question: 'What type of mattress is best for hot sleepers?',
-        answer: 'Hybrids with pocketed coil bases score higher on cooling in our testing because the coil layer allows air to circulate through the mattress. All-foam models rely on open-cell foam construction. Among all-foam models, Bio-Pur® plant-based foam performs better than standard polyurethane foam due to its open-cell structure. All picks in this list score 9–10/10 on Cooling & Breathability.'
+        answer: 'Hybrids with pocketed coil bases score higher on cooling in the approved editorial scorecard because the coil layer allows air to circulate through the mattress. All-foam models rely on open-cell foam construction. Among all-foam models, Bio-Pur® plant-based foam performs better than standard polyurethane foam due to its open-cell structure. All picks in this list score 9–10/10 on Cooling & Breathability.'
       },
       {
         question: 'Do cooling covers actually work?',
@@ -403,7 +403,7 @@ export const BEST_CATEGORIES: Record<string, CategoryConfig> = {
     faqs: [
       {
         question: 'Which mattresses have the best motion isolation?',
-        answer: 'All-foam mattresses consistently score highest on motion isolation because foam absorbs movement at the source. In our testing, the AS3, AS6, Casper The One, Ghostbed Luxe, Helix Sunset Luxe, and Leesa Sapira Chill Hybrid all score 10/10 on motion transfer. Among these, the AS3 and AS6 score higher overall, making them the strongest all-around picks for couples who prioritize motion isolation.'
+        answer: 'All-foam mattresses consistently score highest on motion isolation because foam absorbs movement at the source. In the approved editorial scorecard, the AS3, AS6, Casper The One, Ghostbed Luxe, Helix Sunset Luxe, and Leesa Sapira Chill Hybrid all score 10/10 on motion transfer. Among these, the AS3 and AS6 score higher overall, making them the strongest all-around picks for couples who prioritize motion isolation.'
       },
       {
         question: 'Is memory foam or innerspring better for motion isolation?',

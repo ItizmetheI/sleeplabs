@@ -2,8 +2,11 @@
 import { blogPosts } from '../../data/blogs-generated';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { articleList, articleTable, toArticleBody } from '../../lib/schemaArticleBody';
-import { COMMERCIAL_RELATIONSHIP_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
+import { EDITORIAL_INDEPENDENCE_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
+import { formatDateOnly } from '../../lib/dateFormat';
 import { getLegacyBestBlogRedirect } from '../../lib/legacyBlogRedirects';
+import { requiresBlogSourceReview } from '../../lib/blogSourceReview';
+import { FIRDOUS_FARHAD } from '../../lib/editorialPeople';
 
 export function getStaticPaths() {
   return blogPosts.map(post => ({
@@ -21,15 +24,17 @@ if (redirectTo) {
 
 const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
-const HEALTH_TOPICS = ['pain-and-health', 'health-and-sleep', 'back-pain', 'hip-pain', 'shoulder-pain', 'sciatica', 'arthritis', 'fibromyalgia'];
-const isHealthAdjacent = HEALTH_TOPICS.includes(post.category) || (post.tags ?? []).some((t: string) => HEALTH_TOPICS.includes(t));
+const sourceReviewPending = requiresBlogSourceReview(post);
 
 const blogArticleBody = toArticleBody(
   post.title,
   'Quick Answer',
   post.directAnswer,
-  isHealthAdjacent
+  sourceReviewPending
     ? 'No mattress can diagnose, treat, or cure any health condition. This article provides general comfort and sleep-product information only; talk to a doctor about pain or medical concerns.'
+    : null,
+  sourceReviewPending
+    ? ['Reviewer Assignment', `${FIRDOUS_FARHAD.name}, ${FIRDOUS_FARHAD.role.toLowerCase()}. ${FIRDOUS_FARHAD.credentials} This page does not carry completed review attribution until article-specific sources and final reviewer approval are complete.`]
     : null,
   post.sections.map((section: any) => [
     section.heading,
@@ -57,7 +62,7 @@ const blogArticleBody = toArticleBody(
   'Frequently Asked Questions',
   post.faqs.map((faq: any) => [`Question: ${faq.question}`, `Answer: ${faq.answer}`]),
   'About PureSleep',
-  `${COMMERCIAL_RELATIONSHIP_DISCLOSURE} ${LINK_DISCLOSURE}`,
+  `${EDITORIAL_INDEPENDENCE_DISCLOSURE} ${LINK_DISCLOSURE}`,
 );
 
 const articleSchema = {
@@ -68,18 +73,24 @@ const articleSchema = {
   "image": post.ogImage.startsWith('http') ? post.ogImage : `${SITE_URL}${post.ogImage}`,
   "author": {
     "@type": "Organization",
-    "name": post.author.name,
-    "url": post.author.url?.startsWith('http') ? post.author.url : `${SITE_URL}${post.author.url}`
+    "@id": `${SITE_URL}/about/#editorial-team`,
+    "name": "PureSleep Editorial Team",
+    "url": `${SITE_URL}/about/#editorial-team`
   },
   "publisher": {
     "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
     "name": "PureSleep",
     "url": SITE_URL
   },
   "datePublished": post.datePublished,
   "dateModified": post.dateModified,
   "mainEntityOfPage": `${SITE_URL}/blog/${post.slug}/`,
-  "articleBody": blogArticleBody
+  "articleBody": blogArticleBody,
+  "citation": [
+    ...post.productRefs.map(product => product.productUrl),
+    `${SITE_URL}/editorial-policy/`
+  ]
 };
 
 const faqSchema = {
@@ -148,11 +159,12 @@ const formatProse = (text: string) => {
   canonicalUrl={`${SITE_URL}/blog/${post.slug}/`}
   lastUpdated={post.dateModified}
   jsonLd={jsonLd}
+  noindex={sourceReviewPending}
 >
   <article class="w-full min-w-0 max-w-[760px] mx-auto px-margin-mobile md:px-0 py-stack-lg">
 
     <!-- Breadcrumb -->
-    <nav class="text-label-sm font-label-sm text-on-surface-variant mb-8 uppercase tracking-widest">
+    <nav class="text-label-sm font-label-sm text-on-surface-variant mb-8 uppercase tracking-normal">
       <a href="/" class="hover:text-secondary transition-colors">Home</a>
       <span class="mx-2">·</span>
       <a href="/blog/" class="hover:text-secondary transition-colors">Blog</a>
@@ -161,64 +173,50 @@ const formatProse = (text: string) => {
     </nav>
 
     <!-- Category pill -->
-    <div class="inline-block text-label-sm font-label-sm uppercase tracking-widest text-secondary bg-secondary/10 px-4 py-1.5 rounded-full mb-6 font-bold">
+    <div class="inline-block text-label-sm font-label-sm uppercase tracking-normal text-secondary bg-secondary/10 px-3 py-1.5 rounded-md mb-6 font-bold">
       {post.category.replace(/-/g, ' ')}
     </div>
 
     <!-- H1 -->
-    <h1 class="text-display-lg font-display-lg text-primary italic leading-tight mb-6">
+    <h1 class="text-display-lg font-display-lg text-primary leading-tight mb-6">
       {post.title}
     </h1>
 
     <!-- Direct Answer Box — LLM signal -->
-    <div class="glass-panel p-6 rounded-2xl border-l-4 border-secondary mb-8">
-      <p class="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-2 font-bold">Quick Answer</p>
+    <div class="bg-white p-6 rounded-lg border border-outline-variant border-l-4 border-l-secondary mb-8">
+      <p class="text-label-sm font-label-sm uppercase tracking-normal text-secondary mb-2 font-bold">Quick Answer</p>
       <p class="text-body-lg text-on-background leading-relaxed">{post.directAnswer}</p>
     </div>
 
-    {isHealthAdjacent && (
-      <div class="bg-amber-50 border border-amber-300 rounded-2xl p-5 mb-8 text-body-md text-amber-900">
-        <strong>Note:</strong> No mattress can diagnose, treat, or cure any health condition. This article is for general comfort and sleep-product information only — talk to a doctor about pain or medical concerns.
+    {sourceReviewPending && (
+      <div class="bg-amber-50 border border-amber-300 rounded-lg p-5 mb-8 text-body-md text-amber-950" role="note">
+        <p class="font-bold mb-2">Editorial status: source review pending</p>
+        <p>This page is excluded from search indexing until its health or sleep-science claims have explicit citations and final review. It provides general information only. A mattress cannot diagnose, treat, or cure a health condition; talk to a qualified professional about medical concerns.</p>
+        <p class="mt-3"><strong>Reviewer assigned:</strong> <a href={FIRDOUS_FARHAD.path} class="font-bold underline underline-offset-4">{FIRDOUS_FARHAD.name}</a>, {FIRDOUS_FARHAD.role.toLowerCase()}. {FIRDOUS_FARHAD.credentials} Assignment is not presented as completed review.</p>
       </div>
     )}
 
-    <!-- Byline & Social Share -->
-    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 pb-8 border-b border-outline-variant/30">
-      <div class="flex flex-wrap items-center gap-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest">
+    <!-- Byline -->
+    <div class="flex items-start mb-8 pb-8 border-b border-outline-variant/30">
+      <div class="flex flex-wrap items-center gap-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-normal">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-secondary text-primary flex items-center justify-center font-bold text-lg font-serif">P</div>
+          <div class="w-10 h-10 rounded-md bg-primary text-white flex items-center justify-center font-bold text-lg">P</div>
           <span>By {post.author.name}</span>
         </div>
-        <span>· <time datetime={post.dateModified}>Updated: {new Date(post.dateModified).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time></span>
+        <span>· <time datetime={post.dateModified}>Updated: {formatDateOnly(post.dateModified)}</time></span>
         <span>· {post.readTimeMinutes} min read</span>
-      </div>
-      
-      <!-- Social Share Buttons -->
-      <div class="flex items-center gap-2">
-        <span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest mr-2">Share:</span>
-        <button class="w-8 h-8 rounded-full bg-surface border border-outline-variant/50 hover:border-primary flex items-center justify-center hover:bg-primary/5 transition-all" aria-label="Share on Twitter" onclick={`window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(window.location.href)+'&text='+encodeURIComponent(document.title), '_blank')`}>
-          <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.054 10.054 0 01-3.127 1.195 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-        </button>
-        <button class="w-8 h-8 rounded-full bg-surface border border-outline-variant/50 hover:border-primary flex items-center justify-center hover:bg-primary/5 transition-all" aria-label="Share on Facebook" onclick={`window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href), '_blank')`}>
-          <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        </button>
       </div>
     </div>
 
     <!-- Hero image -->
-    <div class="w-full h-[400px] rounded-[2rem] overflow-hidden mb-12 glass-panel shadow-xl shadow-primary/5 relative group border border-outline-variant/20 bg-surface-variant">
-      <div class="absolute inset-0 flex items-center justify-center text-outline-variant/30">
-        <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0V19a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v6"/></svg>
-      </div>
-      <img src={post.ogImage} alt={post.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 absolute inset-0 z-10" loading="lazy" onerror="this.onerror=null; this.src='/og-default.jpg';" />
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent z-20"></div>
+    <div class="w-full aspect-[16/9] rounded-lg overflow-hidden mb-12 border border-outline-variant bg-surface-variant">
+      <img src={post.ogImage} alt={post.title} class="w-full h-full object-cover" loading="lazy" onerror="this.onerror=null; this.src='/og-default.jpg';" />
     </div>
 
     <!-- Table of Contents -->
     {post.sections.filter(s => s.heading).length > 0 && (
-      <div class="w-full min-w-0 glass-panel p-5 sm:p-8 rounded-2xl sm:rounded-[2rem] mb-12 border border-outline-variant/40 shadow-sm overflow-hidden">
-        <h2 class="text-label-sm font-label-sm uppercase tracking-widest text-primary font-bold mb-5 flex items-center gap-2">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
+      <div class="w-full min-w-0 bg-white p-5 sm:p-8 rounded-lg mb-12 border border-outline-variant overflow-hidden">
+        <h2 class="text-label-sm font-label-sm uppercase tracking-normal text-primary font-bold mb-5 flex items-center gap-2">
           Table of Contents
         </h2>
         <ul class="space-y-3">
@@ -247,8 +245,8 @@ const formatProse = (text: string) => {
         <div id={sectionId} class="mb-12 scroll-mt-24 border-b border-outline-variant/10 pb-10 last:border-b-0">
           <!-- Heading -->
           {section.heading && section.headingLevel === 2 && (
-            <h2 class="text-headline-lg font-headline-lg text-primary italic mb-6 leading-tight tracking-tight flex items-center gap-3">
-              <span class="w-1.5 h-8 bg-gradient-to-b from-secondary to-orange-400 rounded-full inline-block shadow-sm"></span>
+            <h2 class="text-headline-lg font-headline-lg text-primary mb-6 leading-tight flex items-center gap-3">
+              <span class="w-1.5 h-8 bg-secondary rounded-sm inline-block"></span>
               {section.heading}
             </h2>
           )}
@@ -260,9 +258,8 @@ const formatProse = (text: string) => {
 
           <!-- Score Badge Accent -->
           {firstScore && (
-            <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-800 rounded-xl px-3.5 py-1.5 mb-4 text-xs font-bold uppercase tracking-wider shadow-sm">
-              <span class="text-amber-500">★</span> 
-              <span>PureSleep Certified:</span>
+            <div class="inline-flex items-center gap-2 bg-amber-50 border border-amber-300 text-amber-900 rounded-md px-3.5 py-1.5 mb-4 text-xs font-bold uppercase tracking-normal">
+              <span>Score referenced:</span>
               <span class="text-amber-600 font-extrabold text-sm">{firstScore}/10</span>
             </div>
           )}
@@ -280,7 +277,7 @@ const formatProse = (text: string) => {
           {section.hasBulletList && section.bulletItems && (
             <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
               {section.bulletItems.map(item => (
-                <div class="flex items-start gap-3 bg-surface border border-outline-variant/30 rounded-2xl p-4 shadow-sm hover:border-secondary/20 hover:shadow-md transition-all duration-300">
+                <div class="flex items-start gap-3 bg-surface border border-outline-variant rounded-lg p-4">
                   <span class="p-1 rounded-full bg-secondary/10 text-secondary shrink-0 text-[10px] mt-0.5 font-sans font-extrabold w-5 h-5 flex items-center justify-center border border-secondary/15">
                     ✓
                   </span>
@@ -292,26 +289,23 @@ const formatProse = (text: string) => {
 
           <!-- High-Contrast Table formatting -->
           {section.hasTable && section.tableData && (
-            <div class="mt-8 mb-6 glass-panel rounded-2xl overflow-x-auto shadow-md">
+            <div class="mt-8 mb-6 bg-white border border-outline-variant rounded-lg overflow-x-auto">
               <table class="w-full min-w-[640px] text-left">
                 <thead class="bg-primary text-white border-b border-primary-container/20">
                   <tr>
                     {section.tableData.headers.map(h => (
-                      <th class="py-4 px-5 text-[11px] font-label-sm uppercase tracking-widest font-extrabold">{h}</th>
+                      <th class="py-4 px-5 text-[11px] font-label-sm uppercase tracking-normal font-extrabold">{h}</th>
                     ))}
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-outline-variant/10 bg-white">
                   {section.tableData.rows.map(row => (
                     <tr class="hover:bg-primary/[0.02] transition-colors duration-200">
-                      {row.map((cell, cellIdx) => {
-                        const containsModel = cell.includes("AS2") || cell.includes("AS3") || cell.includes("AS5") || cell.includes("AS6") || cell.includes("Organica");
-                        return (
-                          <td class={`py-4 px-5 text-body-md text-on-surface-variant ${cellIdx === 0 || containsModel ? 'font-bold text-primary' : ''}`}>
-                            {cell}
-                          </td>
-                        )
-                      })}
+                      {row.map((cell, cellIdx) => (
+                        <td class={`py-4 px-5 text-body-md text-on-surface-variant ${cellIdx === 0 ? 'font-bold text-primary' : ''}`}>
+                          {cell}
+                        </td>
+                      ))}
                     </tr>
                   ))}
                 </tbody>
@@ -327,13 +321,13 @@ const formatProse = (text: string) => {
       <section class="my-12 border-y border-outline-variant/30 py-8" aria-labelledby="referenced-products">
         <h2 id="referenced-products" class="text-headline-sm font-bold text-primary mb-3">Referenced Products</h2>
         <p class="text-body-sm text-on-surface-variant mb-5">
-          {COMMERCIAL_RELATIONSHIP_DISCLOSURE} These links go to official product pages; verify current price, shipping, return, trial, and warranty terms before purchase.
+          {EDITORIAL_INDEPENDENCE_DISCLOSURE} These links go to official product pages; verify current price, shipping, return, trial, and warranty terms before purchase.
         </p>
         <div class="flex flex-col divide-y divide-outline-variant/20 border-y border-outline-variant/20">
           {post.productRefs.map(ref => (
             <a href={ref.productUrl} target="_blank" rel="noopener noreferrer" class="flex items-center justify-between gap-4 py-4 text-primary hover:text-secondary">
               <span class="font-bold">{ref.productName}</span>
-              <span class="text-label-sm uppercase tracking-widest">Official product page →</span>
+              <span class="text-label-sm uppercase tracking-normal">Official product page →</span>
             </a>
           ))}
         </div>
@@ -345,30 +339,29 @@ const formatProse = (text: string) => {
     </aside>
 
     <!-- Author Box -->
-    <div class="my-16 glass-panel rounded-[2rem] p-8 border border-outline-variant/40 flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left shadow-sm">
-      <div class="w-24 h-24 rounded-full bg-primary text-white flex items-center justify-center font-bold text-4xl font-serif shrink-0 shadow-lg relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent"></div>
+    <div class="my-16 bg-white rounded-lg p-8 border border-outline-variant flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
+      <div class="w-20 h-20 rounded-lg bg-primary text-white flex items-center justify-center font-bold text-3xl shrink-0">
         <span>{post.author.name.charAt(0)}</span>
       </div>
       <div>
         <h3 class="text-headline-sm font-headline-sm text-primary mb-2 font-bold">{post.author.name}</h3>
         <p class="text-body-md text-on-surface-variant leading-relaxed mb-4">
-          PureSleep's testing team evaluates mattresses and sleep accessories using published scoring criteria. See our disclosure for the complete material-relationship and outbound-link policy.
+          PureSleep Editorial Team is the organizational byline for multi-editor articles. The team organizes source records, maintains scorecards, and publishes corrections without claiming laboratory or clinical testing.
         </p>
-        <div class="flex items-center justify-center sm:justify-start gap-4 text-label-sm uppercase tracking-widest font-bold">
+        <div class="flex items-center justify-center sm:justify-start gap-4 text-label-sm uppercase tracking-normal font-bold">
           <a href="/about/" class="text-secondary hover:text-primary transition-colors">Read Our Story</a>
           <span class="text-outline-variant">|</span>
-          <a href="/methodology/" class="text-secondary hover:text-primary transition-colors">How We Test</a>
+          <a href="/methodology/" class="text-secondary hover:text-primary transition-colors">How We Score</a>
         </div>
       </div>
     </div>
 
     <!-- FAQ section -->
     <div class="mt-12 border-t border-outline-variant/30 pt-12">
-      <h2 class="text-headline-lg font-headline-lg text-primary italic mb-8">Frequently Asked Questions</h2>
+      <h2 class="text-headline-lg font-headline-lg text-primary mb-8">Frequently Asked Questions</h2>
       <div class="space-y-4">
         {post.faqs.map(faq => (
-          <div class="glass-panel rounded-2xl p-6 border-l-4 border-l-secondary">
+          <div class="bg-white rounded-lg p-6 border border-outline-variant border-l-4 border-l-secondary">
             <h3 class="text-body-lg font-bold text-primary mb-3">
               {faq.question}
             </h3>
@@ -380,10 +373,10 @@ const formatProse = (text: string) => {
 
     <!-- Related reading (internal links) -->
     <div class="mt-12 border-t border-outline-variant/30 pt-12">
-      <h3 class="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-6 font-bold">Related Reading</h3>
+      <h3 class="text-label-sm font-label-sm uppercase tracking-normal text-secondary mb-6 font-bold">Related Reading</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {post.internalLinks.map(link => (
-          <a href={link.url} class="glass-panel p-5 rounded-2xl hover:border-secondary transition-all group">
+          <a href={link.url} class="bg-white border border-outline-variant p-5 rounded-lg hover:border-secondary transition-colors group">
             <span class="text-body-md text-primary font-bold group-hover:text-secondary transition-colors">{link.anchorText} →</span>
           </a>
         ))}

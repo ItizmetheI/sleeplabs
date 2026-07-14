@@ -1,112 +1,85 @@
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { allMattresses } from '../data/mattresses';
-import { BEST_CATEGORIES } from '../lib/bestCategories';
+
+const leaderConfig = [
+  { id: 'amerisleep-as3', category: 'Overall' },
+  { id: 'plushbeds-signature-bliss', category: 'Organic' },
+  { id: 'vaya-hybrid', category: 'Value' },
+  { id: 'nest-bedding-sparrow', category: 'Trial period' },
+  { id: 'ghostbed-luxe', category: 'Cooling foam' },
+  { id: 'westin-heavenly-bed', category: 'Hotel-style feel' },
+];
 
 export default function ScoreSheet() {
-  const rankings = BEST_CATEGORIES.overall.picks
-    .slice(0, 5)
-    .map(id => allMattresses.find(mattress => mattress.id === id))
-    .filter(Boolean)
-    .map((m, index) => {
-      if (!m) return null;
-      let rating = '';
-      if (m.scores.overall >= 9.5) rating = 'Outstanding';
-      else if (m.scores.overall >= 9.0) rating = 'Excellent';
-      else if (m.scores.overall >= 8.5) rating = 'Very Good';
-      else rating = 'Good';
-
-      let badge = '';
-      if (index === 0) badge = '#1 Pick';
-      else if (m.id === 'amerisleep-as6') badge = 'Top Performer';
-      else if (m.id === 'amerisleep-organica') badge = 'Best Natural';
-      else if (m.id === 'amerisleep-as2') badge = 'Best Value';
-      else if (m.id === 'amerisleep-as5') badge = 'Best Soft';
-
-      return {
-        rank: index + 1,
-        name: m.name,
-        desc: m.summary.split('.')[0] + '.',
-        score: m.scores.overall.toFixed(1),
-        rating,
-        href: `/reviews/${m.id}`,
-        badge,
-        img: m.image
-      };
-    })
-    .filter(Boolean);
+  const leaders = leaderConfig.map(config => {
+    const mattress = allMattresses.find(item => item.id === config.id);
+    if (!mattress) throw new Error(`Missing score-sheet model: ${config.id}`);
+    return { ...config, mattress };
+  });
 
   return (
     <section className="py-stack-lg relative overflow-hidden">
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
-        <motion.div 
-          initial={false}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-12"
-        >
-          <h2 className="text-display-lg font-display-lg text-primary mb-4">The score sheet</h2>
-          <p className="text-body-lg font-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
-            Our leading mattresses across multiple brands, ranked with the same 7-metric scoring system. Updated July 2026.
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <motion.div initial={false} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10">
+          <p className="text-label-sm font-label-sm uppercase text-secondary font-bold mb-3">Cross-brand starting points</p>
+          <h2 className="text-display-lg font-display-lg text-primary mb-4">Selected category leaders</h2>
+          <p className="text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+            Six models illustrating different strengths. These are category entry points, not one overall ranking. Open the full score field to compare every model.
           </p>
         </motion.div>
 
-        <div className="glass-panel rounded-3xl overflow-hidden">
+        <div className="bg-white border border-outline-variant rounded-lg overflow-hidden shadow-sm">
           <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse min-w-[700px]">
+            <table className="w-full text-left border-collapse min-w-[760px]">
               <thead>
-                <tr className="border-b border-outline-variant/30 text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant backdrop-blur-sm">
-                  <th className="py-6 px-6 font-bold">Rank</th>
-                  <th className="py-6 px-6 w-24 font-bold text-center">Photo</th>
-                  <th className="py-6 px-6 font-bold">Mattress</th>
-                  <th className="py-6 px-6 font-bold">Score</th>
-                  <th className="py-6 px-6 text-right font-bold">Action</th>
+                <tr className="border-b border-outline-variant bg-surface-container-low text-label-sm font-label-sm uppercase text-on-surface-variant">
+                  <th className="py-4 px-5 font-bold">Category</th>
+                  <th className="py-4 px-5 w-24 font-bold">Product</th>
+                  <th className="py-4 px-5 font-bold">Mattress</th>
+                  <th className="py-4 px-5 font-bold">Overall</th>
+                  <th className="py-4 px-5 text-right font-bold">Review</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-outline-variant/30">
-                {rankings.map((item, index) => item && (
-                  <motion.tr 
-                    key={item.rank}
+              <tbody className="divide-y divide-outline-variant">
+                {leaders.map(({ category, mattress }, index) => (
+                  <motion.tr
+                    key={mattress.id}
                     initial={false}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.05, duration: 0.5 }}
-                    className="hover:bg-primary/5 transition-colors group"
+                    transition={{ delay: index * 0.04, duration: 0.3 }}
+                    className="hover:bg-surface-container-low transition-colors group"
                   >
-                    <td className="py-7 px-6 text-headline-md font-headline-md text-secondary w-16 text-center">{item.rank}</td>
-                    <td className="py-7 px-6">
-                      <div className="w-20 h-14 rounded-xl overflow-hidden border border-outline-variant/30 shadow-sm">
-                        <img
-                          src={item.img}
-                          alt={item.name}
-                          className="w-full h-full object-contain bg-white p-1 transition-transform group-hover:scale-[1.02] duration-300"
-                        />
+                    <td className="py-5 px-5 text-body-md font-bold text-secondary">{category}</td>
+                    <td className="py-5 px-5">
+                      <div className="w-20 h-14 bg-white overflow-hidden">
+                        <img src={mattress.image} alt="" className="w-full h-full object-contain" />
                       </div>
                     </td>
-                    <td className="py-7 px-6">
-                      <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          <h4 className="text-body-lg font-bold text-primary group-hover:text-secondary transition-colors">{item.name}</h4>
-                          <span className="text-[10px] font-bold uppercase tracking-widest bg-secondary/10 text-secondary px-2 py-0.5 rounded-full border border-secondary/20">{item.badge}</span>
-                        </div>
-                        <p className="text-body-sm text-on-surface-variant">{item.desc}</p>
-                      </div>
+                    <td className="py-5 px-5">
+                      <h3 className="text-body-lg font-bold text-primary group-hover:text-secondary transition-colors">{mattress.name}</h3>
+                      <p className="text-body-sm text-on-surface-variant mt-1">{mattress.type.replaceAll('-', ' ')} · {mattress.firmness.replaceAll('-', ' ')}</p>
                     </td>
-                    <td className="py-7 px-6">
-                      <div className="flex flex-col">
-                        <span className="text-headline-md font-headline-md text-primary tracking-tight group-hover:text-secondary">{item.score}</span>
-                        <span className="text-[10px] font-label-sm text-secondary uppercase tracking-widest mt-1 font-bold">{item.rating}</span>
-                      </div>
+                    <td className="py-5 px-5">
+                      <span className="text-headline-md font-bold text-primary">{mattress.scores.overall}</span>
+                      <span className="text-body-sm text-on-surface-variant">/10</span>
                     </td>
-                    <td className="py-7 px-6 text-right">
-                      <a href={item.href} className="inline-flex items-center justify-center text-[11px] font-label-sm uppercase tracking-widest text-primary bg-white/80 hover:bg-secondary hover:text-white transition-all rounded-full border border-primary/20 hover:border-transparent px-6 py-3 shadow-sm hover:shadow-md font-bold">
-                        Read review <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <td className="py-5 px-5 text-right">
+                      <a href={`/reviews/${mattress.id}/`} aria-label={`Read the ${mattress.name} review`} className="inline-flex w-10 h-10 items-center justify-center rounded-lg border border-outline-variant text-primary hover:bg-secondary hover:text-white hover:border-secondary transition-colors">
+                        <ArrowRight className="w-4 h-4" aria-hidden="true" />
                       </a>
                     </td>
                   </motion.tr>
                 ))}
               </tbody>
             </table>
+          </div>
+          <div className="p-5 border-t border-outline-variant bg-surface-container-low flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+            <p className="text-body-sm text-on-surface-variant">Every category page includes all 59 models and all seven score fields.</p>
+            <a href="/best/overall/" className="inline-flex items-center gap-2 text-secondary font-bold hover:text-primary transition-colors">
+              Compare the complete field <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </a>
           </div>
         </div>
       </div>

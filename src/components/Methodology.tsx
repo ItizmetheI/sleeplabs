@@ -13,12 +13,12 @@ export default function Methodology() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-3">Our Methodology</h3>
+            <h3 className="text-label-sm font-label-sm uppercase tracking-normal text-secondary mb-3">Our Methodology</h3>
             <h2 className="text-display-lg font-display-lg text-primary  mb-6">How We Score Mattresses</h2>
             <p className="text-body-lg text-on-surface-variant mb-8 leading-relaxed">
               Every review uses the same locked editorial scorecard: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability. Scores are comparative editorial ratings, not laboratory findings or collected customer ratings.
             </p>
-            <a href="/methodology" className="inline-flex items-center text-label-sm font-label-sm uppercase tracking-widest text-primary border border-primary/20 rounded-full px-8 py-4 hover:bg-white transition-all group shadow-sm hover:shadow-md glass-panel font-bold">
+            <a href="/methodology" className="inline-flex items-center text-label-sm font-label-sm uppercase tracking-normal text-primary border border-primary/20 rounded-full px-8 py-4 hover:bg-white transition-all group shadow-sm hover:shadow-md glass-panel font-bold">
               Read Our Full Methodology <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </motion.div>
@@ -26,7 +26,7 @@ export default function Methodology() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
             {[
               { stat: "7", title: "Scoring Criteria", desc: "Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability — each scored 0–10." },
-              { stat: "59", title: "Models Reviewed", desc: "Mattresses from 24 brands, including affiliated One Sleep Group brands and their competitors." },
+              { stat: "59", title: "Models Reviewed", desc: "Mattresses from 24 brands, with every model using the same published fields." },
               { stat: "24", title: "Brands Covered", desc: "Each brand is evaluated using the same seven scoring criteria and 0–10 scale." },
               { stat: "1", title: "Published Rubric", desc: "Every covered mattress uses the same seven score fields, 0–10 scale, and evidence limits." }
             ].map((item, i) => (
@@ -40,7 +40,7 @@ export default function Methodology() {
               >
                 <div className="absolute top-0 left-0 h-[2px] w-0 bg-secondary transition-all duration-500 group-hover:w-full shadow-[0_0_8px_rgba(37,99,235,0.4)]" />
                 <span className="text-display-lg font-display-lg text-secondary mb-2">{item.stat}</span>
-                <span className="text-label-sm font-label-sm text-primary uppercase tracking-widest mb-3 font-bold">{item.title}</span>
+                <span className="text-label-sm font-label-sm text-primary uppercase tracking-normal mb-3 font-bold">{item.title}</span>
                 <span className="text-body-md text-on-surface-variant leading-relaxed">{item.desc}</span>
               </motion.div>
             ))}

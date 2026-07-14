@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { allMattresses } from '../../data/mattresses';
 
 const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
-const UPDATED = '2026-07-13';
+const UPDATED = '2026-07-14';
 
 const toBrandSlug = (brand: string) => brand
   .toLowerCase()
@@ -45,7 +45,7 @@ const jsonLd = {
     {
       '@type': 'CollectionPage',
       '@id': `${SITE_URL}/brands/#webpage`,
-      name: 'Mattress Brands Reviewed by PureSleep',
+      name: 'Mattress Brands Covered by PureSleep',
       description: `Browse ${brands.length} mattress brands and ${allMattresses.length} scored models covered by PureSleep's seven-metric editorial dataset.`,
       url: `${SITE_URL}/brands/`,
       dateModified: UPDATED,
@@ -91,7 +91,7 @@ const jsonLd = {
     <header class="border-b border-outline-variant/30 bg-surface">
       <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-16">
         <p class="text-label-sm uppercase font-bold text-secondary mb-3">Complete brand coverage</p>
-        <h1 class="text-headline-lg font-headline-lg text-primary font-bold mb-5">Mattress Brands Reviewed by PureSleep</h1>
+        <h1 class="text-headline-lg font-headline-lg text-primary font-bold mb-5">Mattress Brands Covered by PureSleep</h1>
         <p class="text-body-lg text-on-surface-variant max-w-3xl">
           PureSleep covers {brands.length} brands and {allMattresses.length} mattress models with one published seven-metric editorial scorecard. Open any brand to see every included model, its recorded score, and its full review.
         </p>

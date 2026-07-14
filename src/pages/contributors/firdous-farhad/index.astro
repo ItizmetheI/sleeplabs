@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { FIRDOUS_FARHAD, firdousFarhadSchemaId } from '../../../lib/editorialPeople';
+
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
+const CONTACT_EMAIL = import.meta.env.PUBLIC_CONTACT_EMAIL;
+const canonicalUrl = `${SITE_URL}${FIRDOUS_FARHAD.path}`;
+const lastUpdated = '2026-07-14';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': firdousFarhadSchemaId(SITE_URL),
+  name: FIRDOUS_FARHAD.name,
+  url: canonicalUrl,
+  jobTitle: FIRDOUS_FARHAD.role,
+  description: FIRDOUS_FARHAD.credentials,
+  knowsAbout: ['massage therapy', 'sleep science', 'health and sleep content review'],
+};
+---
+
+<BaseLayout
+  title={`${FIRDOUS_FARHAD.name} | Health and Sleep Content Reviewer`}
+  description={`${FIRDOUS_FARHAD.name} is PureSleep's health and sleep content reviewer and a licensed massage therapist and certified sleep science coach.`}
+  canonicalUrl={canonicalUrl}
+  lastUpdated={lastUpdated}
+  jsonLd={jsonLd}
+>
+  <main class="max-w-[760px] mx-auto px-margin-mobile md:px-0 py-16 flex flex-col gap-14">
+    <header class="flex flex-col sm:flex-row gap-6 items-start border-b border-outline-variant/40 pb-10">
+      <div class="w-20 h-20 rounded-lg bg-primary text-white flex items-center justify-center text-2xl font-bold shrink-0" aria-hidden="true">FF</div>
+      <div class="flex flex-col gap-3">
+        <p class="text-label-sm uppercase text-secondary font-bold">{FIRDOUS_FARHAD.role}</p>
+        <h1 class="text-headline-lg font-headline-lg text-primary font-bold">{FIRDOUS_FARHAD.name}</h1>
+        <p class="text-body-lg text-on-surface-variant leading-relaxed">{FIRDOUS_FARHAD.firstPersonBio}</p>
+      </div>
+    </header>
+
+    <section class="flex flex-col gap-5">
+      <h2 class="text-headline-md font-headline-md text-primary">Review Scope</h2>
+      <p class="text-body-md text-on-surface-variant leading-relaxed">
+        Firdous reviews health- and sleep-related editorial content for claim clarity, appropriate scope, and clear separation between general sleep-product information and medical advice.
+      </p>
+      <p class="text-body-md text-on-surface-variant leading-relaxed">
+        Her role does not imply that she personally tested every mattress, performed clinical or laboratory testing, or provides diagnosis or treatment through PureSleep.
+      </p>
+    </section>
+
+    <section class="flex flex-col gap-5 border-t border-outline-variant/40 pt-10">
+      <h2 class="text-headline-md font-headline-md text-primary">Attribution Standard</h2>
+      <p class="text-body-md text-on-surface-variant leading-relaxed">
+        An article displays a "Reviewed by Firdous Farhad" attribution only after her article-level review is complete. Pages still awaiting sources or final approval remain labeled as pending and excluded from search indexing.
+      </p>
+      <div class="flex flex-wrap gap-4 text-label-sm font-bold">
+        <a href="/editorial-policy/" class="text-primary underline underline-offset-4 hover:text-secondary">Editorial policy</a>
+        <a href="/methodology/" class="text-primary underline underline-offset-4 hover:text-secondary">Scoring methodology</a>
+        {CONTACT_EMAIL && <a href={`mailto:${CONTACT_EMAIL}`} class="text-primary underline underline-offset-4 hover:text-secondary">Editorial contact</a>}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

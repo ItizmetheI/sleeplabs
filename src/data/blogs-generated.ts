@@ -1,6 +1,6 @@
 import type { BlogPost } from './blogSchema';
 
-export const blogPosts: BlogPost[] = [
+const rawBlogPosts: BlogPost[] = [
   {
     "id": "best-mattress-for-back-sleepers",
     "slug": "best-mattress-for-back-sleepers",
@@ -18,12 +18,12 @@ export const blogPosts: BlogPost[] = [
       "sleep-health"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-01-07",
@@ -163,12 +163,12 @@ export const blogPosts: BlogPost[] = [
       "sleep-health"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-01-25",
@@ -297,12 +297,12 @@ export const blogPosts: BlogPost[] = [
       "sleep-health"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-01-05",
@@ -442,12 +442,12 @@ export const blogPosts: BlogPost[] = [
       "sleep-health"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-01-09",
@@ -573,7 +573,7 @@ export const blogPosts: BlogPost[] = [
       "sleep-health"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -710,7 +710,7 @@ export const blogPosts: BlogPost[] = [
       "sleep-health"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -847,12 +847,12 @@ export const blogPosts: BlogPost[] = [
       "sleep-health"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-01-15",
@@ -921,14 +921,14 @@ export const blogPosts: BlogPost[] = [
       {
         "heading": "Also Worth Considering: Helix Sunset Luxe",
         "headingLevel": 2,
-        "content": "The Helix Sunset Luxe is a soft hybrid (firmness 3/10) built specifically around side-sleeper pressure relief, and it's a genuine alternative to the AS5 for petite frames. It pairs a Memory Plus foam comfort layer with a pillow top over zoned pocketed coils, and it scored a perfect 10/10 on motion transfer in our testing along with an 8/10 on edge support — slightly better edge support than the AS5's all-foam build, since the zoned coils give a firmer perimeter for a lighter body to push against when getting in and out of bed. It carries a 15-year warranty versus the AS5's 20-year warranty, and both share a 100-night trial.",
+        "content": "The Helix Sunset Luxe is a soft hybrid (firmness 3/10) built specifically around side-sleeper pressure relief, and it's a genuine alternative to the AS5 for petite frames. It pairs a Memory Plus foam comfort layer with a pillow top over zoned pocketed coils, and it scored a perfect 10/10 on motion transfer in the approved editorial scorecard along with an 8/10 on edge support — slightly better edge support than the AS5's all-foam build, since the zoned coils give a firmer perimeter for a lighter body to push against when getting in and out of bed. It carries a 15-year warranty versus the AS5's 20-year warranty, and both share a 100-night trial.",
         "hasBulletList": false,
         "hasTable": false
       },
       {
         "heading": "Best for Fast Response + Long Trial: Nest Bedding Raven",
         "headingLevel": 2,
-        "content": "The Nest Bedding Raven is a medium-soft (firmness 4/10) all-foam mattress that's worth a look if you want faster recovery underfoot. It uses a phase-change comfort foam over a dense support base and posted a 10/10 response-time score in our tests — a point ahead of the AS5's 8/10 — which means it springs back into shape quickly rather than feeling slow to recover after you change positions. It also comes with a class-leading 365-night home trial and a lifetime (99-year) warranty, well beyond the AS5's 100 nights and 20 years, though its cooling-breathability score (8/10) trails the AS5's 9/10.",
+        "content": "The Nest Bedding Raven is a medium-soft (firmness 4/10) all-foam mattress that's worth a look if you want faster recovery underfoot. It uses a phase-change comfort foam over a dense support base and posted a 10/10 response-time score in the approved editorial scorecard — a point ahead of the AS5's 8/10 — which means it springs back into shape quickly rather than feeling slow to recover after you change positions. It also comes with a notable 365-night home trial and a lifetime (99-year) warranty, well beyond the AS5's 100 nights and 20 years, though its cooling-breathability score (8/10) trails the AS5's 9/10.",
         "hasBulletList": false,
         "hasTable": false
       },
@@ -1018,7 +1018,7 @@ export const blogPosts: BlogPost[] = [
       "motion-isolation"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -1148,7 +1148,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-reviews"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -1278,7 +1278,7 @@ export const blogPosts: BlogPost[] = [
       "latex-mattress"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -1287,7 +1287,7 @@ export const blogPosts: BlogPost[] = [
     "readTimeMinutes": 6,
     "wordCountTarget": 1400,
     "excerpt": "Organic mattress labels vary by component and certification. Compare GOLS, GOTS, construction, scored performance, price, trial, and warranty before choosing.",
-    "directAnswer": "The strongest organic pick should combine current third-party certifications with competitive scored performance. Compare the Amerisleep Organica with PlushBeds, Naturepedic, Eco Terra, and Nolah models on our multi-brand organic ranking, and verify each certification with the brand or certifying body before purchasing. PureSleep discloses material business relationships on its disclosure page.",
+    "directAnswer": "The strongest organic pick should combine current third-party certifications with competitive scored performance. Compare Amerisleep Organica with PlushBeds, Naturepedic, Eco Terra, and Nolah models on the multi-brand organic ranking, then verify each certification with the brand or certifying body before purchasing. PureSleep publishes its scoring method, evidence limits, and outbound-link policy.",
     "schemaType": "Article",
     "sections": [
       {
@@ -1401,7 +1401,7 @@ export const blogPosts: BlogPost[] = [
       "premium"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -1524,12 +1524,12 @@ export const blogPosts: BlogPost[] = [
       "sleep-health"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-02-01",
@@ -1647,12 +1647,12 @@ export const blogPosts: BlogPost[] = [
       "sleep-health"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-02-03",
@@ -1733,12 +1733,12 @@ export const blogPosts: BlogPost[] = [
       "sleep-health"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-02-05",
@@ -1759,7 +1759,7 @@ export const blogPosts: BlogPost[] = [
       {
         "heading": "Our Top Pick: Amerisleep AS3",
         "headingLevel": 2,
-        "content": "The AS3 is rated medium (5/10 firmness) and is a well-regarded option for sleepers managing lower back discomfort. It's designed to reduce the hammock effect some sciatica sufferers report on softer mattresses. The core of the AS3 uses HIVE technology — a transition layer with a hexagonal foam matrix that firms up underneath the midsection while softening beneath the shoulders and knees, aiming to keep the body in a more neutral horizontal position. Paired with a 2-inch Bio-Pur cushioning layer on top, it scores a 10/10 overall and 10/10 on edge support in our testing.",
+        "content": "The AS3 is rated medium (5/10 firmness) and is a well-regarded option for sleepers managing lower back discomfort. It's designed to reduce the hammock effect some sciatica sufferers report on softer mattresses. The core of the AS3 uses HIVE technology — a transition layer with a hexagonal foam matrix that firms up underneath the midsection while softening beneath the shoulders and knees, aiming to keep the body in a more neutral horizontal position. Paired with a 2-inch Bio-Pur cushioning layer on top, it scores a 10/10 overall and 10/10 on edge support in the approved editorial scorecard.",
         "hasBulletList": false,
         "hasTable": false
       },
@@ -1838,12 +1838,12 @@ export const blogPosts: BlogPost[] = [
       "sleep-health"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-02-07",
@@ -1864,14 +1864,14 @@ export const blogPosts: BlogPost[] = [
       {
         "heading": "Our Top Pick: Amerisleep AS5",
         "headingLevel": 2,
-        "content": "The AS5 aims to balance joint-friendly softness with physical mobility. The surface provides a 3-inch layer of Bio-Pur material with an open-cell structure that compresses easily, cushioning shoulders and knees. Underneath, the Active Flex transition layer pushes back against movement, helping you sit up or turn over without feeling stuck in the comfort layer. It scores a 9/10 overall and 10/10 on edge support in our testing.",
+        "content": "The AS5 aims to balance joint-friendly softness with physical mobility. The surface provides a 3-inch layer of Bio-Pur material with an open-cell structure that compresses easily, cushioning shoulders and knees. Underneath, the Active Flex transition layer pushes back against movement, helping you sit up or turn over without feeling stuck in the comfort layer. It scores a 9/10 overall and 10/10 on edge support in the approved editorial scorecard.",
         "hasBulletList": false,
         "hasTable": false
       },
       {
         "heading": "Also Worth Considering: Saatva RX",
         "headingLevel": 2,
-        "content": "The Saatva RX is a medium-soft hybrid built explicitly around pressure pain, using a micro-coil comfort layer and lumbar zone quilting rather than all-foam construction. It posts a 10/10 overall score in our testing along with 10/10 on response time, meaning it rebounds quickly when you shift position — useful if stiffness makes frequent repositioning necessary. It also offers an exceptional 365-night trial and 20-year warranty, matching the AS5's warranty length, though it costs significantly more (from $3,295) than the AS5.",
+        "content": "The Saatva RX is a medium-soft hybrid built explicitly around pressure pain, using a micro-coil comfort layer and lumbar zone quilting rather than all-foam construction. It posts a 10/10 overall score in the approved editorial scorecard along with 10/10 on response time, meaning it rebounds quickly when you shift position — useful if stiffness makes frequent repositioning necessary. It also offers an exceptional 365-night trial and 20-year warranty, matching the AS5's warranty length, though it costs significantly more (from $3,295) than the AS5.",
         "hasBulletList": false,
         "hasTable": false
       },
@@ -1943,12 +1943,12 @@ export const blogPosts: BlogPost[] = [
       "sleep-health"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-02-09",
@@ -1969,21 +1969,21 @@ export const blogPosts: BlogPost[] = [
       {
         "heading": "Our Top Pick: Amerisleep AS5",
         "headingLevel": 2,
-        "content": "The AS5 is built around a genuinely plush profile. The 14-inch structure uses a deep 3-inch top section of Bio-Pur material that yields easily, distributing weight across the body so no single joint bears excessive pressure. Beneath the plush top, an Active Flex core layer keeps the spine reasonably aligned while making it easier to turn over than in a slow-rebounding budget foam bed. It scores 9/10 overall and 9/10 on cooling-breathability in our testing.",
+        "content": "The AS5 is built around a genuinely plush profile. The 14-inch structure uses a deep 3-inch top section of Bio-Pur material that yields easily, distributing weight across the body so no single joint bears excessive pressure. Beneath the plush top, an Active Flex core layer keeps the spine reasonably aligned while making it easier to turn over than in a slow-rebounding budget foam bed. It scores 9/10 overall and 9/10 on cooling-breathability in the approved editorial scorecard.",
         "hasBulletList": false,
         "hasTable": false
       },
       {
         "heading": "Also Worth Considering: Saatva RX",
         "headingLevel": 2,
-        "content": "The Saatva RX takes a different mechanical approach — a medium-soft hybrid with a micro-coil comfort layer and lumbar zone quilting specifically targeting pressure pain, rather than all-foam construction. It scored a 10/10 overall in our testing, the highest of the models compared here, plus a 365-night trial that gives far more time to evaluate fit than the AS5's 100 nights. It is considerably more expensive (from $3,295) and its value score (7/10) reflects that premium price.",
+        "content": "The Saatva RX takes a different mechanical approach — a medium-soft hybrid with a micro-coil comfort layer and lumbar zone quilting specifically targeting pressure pain, rather than all-foam construction. It scored a 10/10 overall in the approved editorial scorecard, the highest of the models compared here, plus a 365-night trial that gives far more time to evaluate fit than the AS5's 100 nights. It is considerably more expensive (from $3,295) and its value score (7/10) reflects that premium price.",
         "hasBulletList": false,
         "hasTable": false
       },
       {
         "heading": "Also Worth Considering: Helix Sunset Luxe",
         "headingLevel": 2,
-        "content": "The Helix Sunset Luxe is a soft hybrid with a pillow top that scored a perfect 10/10 on motion transfer in our testing, which can matter if movement during the night tends to wake you or aggravate sensitive areas. It pairs Memory Plus foam with zoned pocketed coils and carries a 15-year warranty — shorter than the AS5's 20-year term — with a comparable 100-night trial.",
+        "content": "The Helix Sunset Luxe is a soft hybrid with a pillow top that scored a perfect 10/10 on motion transfer in the approved editorial scorecard, which can matter if movement during the night tends to wake you or aggravate sensitive areas. It pairs Memory Plus foam with zoned pocketed coils and carries a 15-year warranty — shorter than the AS5's 20-year term — with a comparable 100-night trial.",
         "hasBulletList": false,
         "hasTable": false
       }
@@ -2048,12 +2048,12 @@ export const blogPosts: BlogPost[] = [
       "sleep-health"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-02-11",
@@ -2135,12 +2135,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-reviews"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-02-13",
@@ -2161,7 +2161,7 @@ export const blogPosts: BlogPost[] = [
       {
         "heading": "Our Top Pick: Amerisleep AS3 & Adjustable Bed+",
         "headingLevel": 2,
-        "content": "The AS3 combines cloud-like pressure reduction with structural support. Rated as a medium, the adaptive Bio-Pur surface cushions shoulders and hips while resisting the slow-rebound quicksand feel common in cheap foam beds — the material bounces back fairly quickly, giving some resistance to push against when standing up. Paired with the Amerisleep Adjustable Bed+, which uses a motor to raise the head and feet, seniors can sit up with less strain on the lower back. The AS3 scores 10/10 overall and 10/10 on edge support in our testing.",
+        "content": "The AS3 combines cloud-like pressure reduction with structural support. Rated as a medium, the adaptive Bio-Pur surface cushions shoulders and hips while resisting the slow-rebound quicksand feel common in cheap foam beds — the material bounces back fairly quickly, giving some resistance to push against when standing up. Paired with the Amerisleep Adjustable Bed+, which uses a motor to raise the head and feet, seniors can sit up with less strain on the lower back. The AS3 scores 10/10 overall and 10/10 on edge support in the approved editorial scorecard.",
         "hasBulletList": false,
         "hasTable": false
       },
@@ -2175,7 +2175,7 @@ export const blogPosts: BlogPost[] = [
       {
         "heading": "Also Worth Considering: Saatva Classic",
         "headingLevel": 2,
-        "content": "The Saatva Classic is a medium innerspring that scores a 10/10 overall, 10/10 on edge support, and a perfect 10/10 on trial period in our testing — the highest trial-period score among the models compared here. Its coil-based construction gives a more traditional, bouncier feel than memory foam, which some seniors find easier to move around on, though its value score (7/10) is lower than the AS3's, reflecting a higher price point.",
+        "content": "The Saatva Classic is a medium innerspring that scores a 10/10 overall, 10/10 on edge support, and a perfect 10/10 on trial period in the approved editorial scorecard — the highest trial-period score among the models compared here. Its coil-based construction gives a more traditional, bouncier feel than memory foam, which some seniors find easier to move around on, though its value score (7/10) is lower than the AS3's, reflecting a higher price point.",
         "hasBulletList": false,
         "hasTable": false
       }
@@ -2240,12 +2240,12 @@ export const blogPosts: BlogPost[] = [
       "sleep-health"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-02-15",
@@ -2266,7 +2266,7 @@ export const blogPosts: BlogPost[] = [
       {
         "heading": "Our Top Pick: Amerisleep AS5",
         "headingLevel": 2,
-        "content": "The AS5 is designed around exactly this kind of plush, breathable comfort. As one of the softer models in our testing, it uses a 3-inch comfort layer of Bio-Pur foam that compresses readily under hip and pelvic pressure rather than pushing back. The open-cell foam structure is built to release trapped heat faster than standard memory foam, which may help with hormone-related warmth at night. Its Active Flex transition layer adds some give-and-rebound so rolling over takes less effort. It scores 9/10 overall and 10/10 on cooling-breathability in our testing.",
+        "content": "The AS5 is designed around exactly this kind of plush, breathable comfort. As one of the softer models in the approved editorial scorecard, it uses a 3-inch comfort layer of Bio-Pur foam that compresses readily under hip and pelvic pressure rather than pushing back. The open-cell foam structure is built to release trapped heat faster than standard memory foam, which may help with hormone-related warmth at night. Its Active Flex transition layer adds some give-and-rebound so rolling over takes less effort. It scores 9/10 overall and 10/10 on cooling-breathability in the approved editorial scorecard.",
         "hasBulletList": false,
         "hasTable": false
       },
@@ -2344,7 +2344,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-reviews"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -2366,7 +2366,7 @@ export const blogPosts: BlogPost[] = [
       {
         "heading": "Our Top Pick: Amerisleep AS6 Black Series",
         "headingLevel": 2,
-        "content": "The AS6 Black Series is built as a premium recovery-focused mattress. At 15 inches tall, it uses deep, responsive Bio-Pur foam that conforms readily to broad shoulders and heavier frames without much surface tension. Its open-cell foam paired with a dedicated cooling cover is designed to move heat away from the sleep surface efficiently. It scores 10/10 overall and 10/10 on cooling-breathability in our testing, along with a 9/10 on edge support.",
+        "content": "The AS6 Black Series is built as a premium recovery-focused mattress. At 15 inches tall, it uses deep, responsive Bio-Pur foam that conforms readily to broad shoulders and heavier frames without much surface tension. Its open-cell foam paired with a dedicated cooling cover is designed to move heat away from the sleep surface efficiently. It scores 10/10 overall and 10/10 on cooling-breathability in the approved editorial scorecard, along with a 9/10 on edge support.",
         "hasBulletList": false,
         "hasTable": false
       },
@@ -2380,7 +2380,7 @@ export const blogPosts: BlogPost[] = [
       {
         "heading": "Also Worth Considering: Purple RestorePlus Hybrid",
         "headingLevel": 2,
-        "content": "The Purple RestorePlus Hybrid uses Purple's proprietary Grid™ technology over a coil system rather than memory foam, and it posted a 10/10 response-time score in our testing — a point ahead of the AS6's 9/10 — meaning it springs back quickly between position changes during restless recovery nights. It also scores 9/10 on cooling-breathability, comparable to the AS6, though its 10-year warranty is half the AS6's 20-year term and it costs more (from $1,999).",
+        "content": "The Purple RestorePlus Hybrid uses Purple's proprietary Grid™ technology over a coil system rather than memory foam, and it posted a 10/10 response-time score in the approved editorial scorecard — a point ahead of the AS6's 9/10 — meaning it springs back quickly between position changes during restless recovery nights. It also scores 9/10 on cooling-breathability, comparable to the AS6, though its 10-year warranty is half the AS6's 20-year term and it costs more (from $1,999).",
         "hasBulletList": false,
         "hasTable": false
       }
@@ -2445,12 +2445,12 @@ export const blogPosts: BlogPost[] = [
       "sleep-health"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-02-19",
@@ -2531,7 +2531,7 @@ export const blogPosts: BlogPost[] = [
       "buying-guides"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -2614,7 +2614,7 @@ export const blogPosts: BlogPost[] = [
       "materials"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -2698,7 +2698,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-reviews"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -2727,14 +2727,14 @@ export const blogPosts: BlogPost[] = [
       {
         "heading": "Also Worth Considering: Bear Original",
         "headingLevel": 2,
-        "content": "The Bear Original is a budget-friendly medium-firm foam mattress that scores a perfect 10/10 on both value and edge support in our testing — useful for a dorm bed that doubles as a couch and desk chair. It starts around $548, well below the AS2's price point, and includes a Celliant® cover along with a 120-night trial, longer than the AS2's 100 nights. Its tradeoff is a shorter 10-year warranty versus the AS2's 20-year term and no zoned support system.",
+        "content": "The Bear Original is a budget-friendly medium-firm foam mattress that scores a perfect 10/10 on both value and edge support in the approved editorial scorecard — useful for a dorm bed that doubles as a couch and desk chair. It starts around $548, well below the AS2's price point, and includes a Celliant® cover along with a 120-night trial, longer than the AS2's 100 nights. Its tradeoff is a shorter 10-year warranty versus the AS2's 20-year term and no zoned support system.",
         "hasBulletList": false,
         "hasTable": false
       },
       {
         "heading": "Also Worth Considering: Glacier Original Hybrid",
         "headingLevel": 2,
-        "content": "The Glacier Original Hybrid is a medium hybrid that also scores 10/10 on value, paired with a class-leading 365-night trial — handy for testing a mattress across an entire semester before deciding to keep it. Its cooling foam over a pocketed coil base scores 10/10 on cooling-breathability, ahead of the AS2, though its overall score (8/10) and 10-year warranty trail the AS2's 10/10 overall and 20-year warranty.",
+        "content": "The Glacier Original Hybrid is a medium hybrid that also scores 10/10 on value, paired with a notable 365-night trial — handy for testing a mattress across an entire semester before deciding to keep it. Its cooling foam over a pocketed coil base scores 10/10 on cooling-breathability, ahead of the AS2, though its overall score (8/10) and 10-year warranty trail the AS2's 10/10 overall and 20-year warranty.",
         "hasBulletList": false,
         "hasTable": false
       }
@@ -2797,7 +2797,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-reviews"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -2826,14 +2826,14 @@ export const blogPosts: BlogPost[] = [
       {
         "heading": "Best for Occasional Guest Rooms: SweetNight Prime",
         "headingLevel": 2,
-        "content": "The SweetNight Prime is explicitly positioned by its scoring profile for guest rooms and temporary mattress needs, and at a price starting around $199 it's a sensible choice if the room only hosts visitors a few times a year. It scores a 10/10 on value and a perfect 10/10 on motion isolation in our testing, though its overall score (7/10) and edge-support score (5/10) are noticeably lower than the AS3's — reasonable tradeoffs for a guest room that won't see daily wear.",
+        "content": "The SweetNight Prime is explicitly positioned by its scoring profile for guest rooms and temporary mattress needs, and at a price starting around $199 it's a sensible choice if the room only hosts visitors a few times a year. It scores a 10/10 on value and a perfect 10/10 on motion isolation in the approved editorial scorecard, though its overall score (7/10) and edge-support score (5/10) are noticeably lower than the AS3's — reasonable tradeoffs for a guest room that won't see daily wear.",
         "hasBulletList": false,
         "hasTable": false
       },
       {
         "heading": "Also Worth Considering: Glacier Original Hybrid",
         "headingLevel": 2,
-        "content": "The Glacier Original Hybrid sits a step up from the SweetNight Prime — a medium hybrid that also scores 10/10 on value, plus a class-leading 365-night trial that's useful if you want a long window to decide whether it's the right fit for a more frequently used guest room. Its cooling foam over a coil base scores 10/10 on cooling-breathability, though its overall score (8/10) and 10-year warranty trail the AS3's 10/10 overall and 20-year warranty.",
+        "content": "The Glacier Original Hybrid sits a step up from the SweetNight Prime — a medium hybrid that also scores 10/10 on value, plus a notable 365-night trial that's useful if you want a long window to decide whether it's the right fit for a more frequently used guest room. Its cooling foam over a coil base scores 10/10 on cooling-breathability, though its overall score (8/10) and 10-year warranty trail the AS3's 10/10 overall and 20-year warranty.",
         "hasBulletList": false,
         "hasTable": false
       }
@@ -2897,12 +2897,12 @@ export const blogPosts: BlogPost[] = [
       "accessories"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-03-01",
@@ -2983,7 +2983,7 @@ export const blogPosts: BlogPost[] = [
       "accessories"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -3066,7 +3066,7 @@ export const blogPosts: BlogPost[] = [
       "accessories"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -3148,12 +3148,12 @@ export const blogPosts: BlogPost[] = [
       "accessories"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-03-07",
@@ -3235,12 +3235,12 @@ export const blogPosts: BlogPost[] = [
       "accessories"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-03-09",
@@ -3320,7 +3320,7 @@ export const blogPosts: BlogPost[] = [
       "adjustable-beds"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -3402,7 +3402,7 @@ export const blogPosts: BlogPost[] = [
       "cooling"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -3489,7 +3489,7 @@ export const blogPosts: BlogPost[] = [
       "protection"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -3576,7 +3576,7 @@ export const blogPosts: BlogPost[] = [
       "heavy-sleepers"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -3661,7 +3661,7 @@ export const blogPosts: BlogPost[] = [
       "bed-frames"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -3747,12 +3747,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-reviews"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-03-23",
@@ -3837,7 +3837,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-reviews"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -3928,7 +3928,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-reviews"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -4026,7 +4026,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-reviews"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -4124,7 +4124,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-reviews"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -4221,7 +4221,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-reviews"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -4318,7 +4318,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-reviews"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -4409,7 +4409,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-reviews"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -4500,7 +4500,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-reviews"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -4592,7 +4592,7 @@ export const blogPosts: BlogPost[] = [
       "bed-frames"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -4750,7 +4750,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -4897,7 +4897,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -5040,7 +5040,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -5183,12 +5183,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-04-09",
@@ -5330,7 +5330,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -5473,7 +5473,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -5616,7 +5616,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -5727,7 +5727,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -5838,7 +5838,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -5949,7 +5949,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -6060,7 +6060,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -6171,7 +6171,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -6282,12 +6282,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-04-27",
@@ -6397,12 +6397,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-04-29",
@@ -6512,7 +6512,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -6623,12 +6623,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-05-03",
@@ -6738,12 +6738,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-05-05",
@@ -6853,12 +6853,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-05-07",
@@ -6968,12 +6968,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-05-09",
@@ -7083,12 +7083,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-05-11",
@@ -7198,12 +7198,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-05-13",
@@ -7313,12 +7313,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-05-15",
@@ -7428,12 +7428,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-05-17",
@@ -7543,12 +7543,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-05-19",
@@ -7658,7 +7658,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -7769,7 +7769,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -7879,7 +7879,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -7989,7 +7989,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -8100,7 +8100,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -8210,7 +8210,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -8321,7 +8321,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -8431,7 +8431,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -8541,7 +8541,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -8651,12 +8651,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-06-08",
@@ -8765,7 +8765,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -8876,7 +8876,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -8985,12 +8985,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-06-14",
@@ -9098,12 +9098,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-06-16",
@@ -9212,7 +9212,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -9321,7 +9321,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -9431,7 +9431,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -9540,7 +9540,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -9649,12 +9649,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-06-26",
@@ -9763,12 +9763,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-06-28",
@@ -9876,7 +9876,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -9985,7 +9985,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -10097,7 +10097,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -10231,7 +10231,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -10365,7 +10365,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -10497,7 +10497,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -10629,7 +10629,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -10762,7 +10762,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -10894,7 +10894,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -11026,7 +11026,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -11165,7 +11165,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -11296,7 +11296,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -11429,7 +11429,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -11567,7 +11567,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -11697,7 +11697,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -11834,7 +11834,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -11966,7 +11966,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -12098,7 +12098,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -12230,7 +12230,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -12362,7 +12362,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -12494,12 +12494,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-08-09",
@@ -12630,7 +12630,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -12762,12 +12762,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-08-13",
@@ -12883,12 +12883,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-08-15",
@@ -13004,12 +13004,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-08-17",
@@ -13125,12 +13125,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-08-19",
@@ -13261,12 +13261,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-08-21",
@@ -13382,12 +13382,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-08-23",
@@ -13503,7 +13503,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -13635,7 +13635,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -13767,12 +13767,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-08-29",
@@ -13888,12 +13888,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-08-31",
@@ -14009,7 +14009,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -14141,7 +14141,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -14273,7 +14273,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -14397,7 +14397,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -14534,7 +14534,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -14671,7 +14671,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -14803,7 +14803,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -14935,7 +14935,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -15067,7 +15067,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -15199,7 +15199,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -15331,7 +15331,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -15460,7 +15460,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -15589,7 +15589,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -15663,7 +15663,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "question": "Does the mattress need to be in good condition to return it?",
-        "answer": "Policies vary — some companies require resellable condition, while many accept returns in any condition since they donate or recycle them. Trial terms can also vary by specific model, so check the policy for the mattress you're buying. See our full scored comparisons at /best/overall/ for trial-period notes across tested mattresses."
+        "answer": "Policies vary — some companies require resellable condition, while many accept returns in any condition since they donate or recycle them. Trial terms can also vary by specific model, so check the policy for the mattress you're buying. See our full scored comparisons at /best/overall/ for trial-period notes across scored mattresses."
       }
     ],
     "internalLinks": [
@@ -15700,7 +15700,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -15774,7 +15774,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "question": "Is a mattress warranty the same as a comfort guarantee?",
-        "answer": "No. A warranty addresses manufacturing defects; it doesn't guarantee the mattress will continue to feel the way it did when new, and it doesn't cover changes in comfort preference. See our full scored comparisons at /best/overall/ for warranty terms across tested mattresses."
+        "answer": "No. A warranty addresses manufacturing defects; it doesn't guarantee the mattress will continue to feel the way it did when new, and it doesn't cover changes in comfort preference. See our full scored comparisons at /best/overall/ for warranty terms across scored mattresses."
       }
     ],
     "internalLinks": [
@@ -15811,7 +15811,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -15921,7 +15921,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -16031,7 +16031,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -16141,7 +16141,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -16215,7 +16215,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "question": "How can I verify a certification claim is current?",
-        "answer": "Check the certifying body's own database (CertiPUR-US, GOLS, GOTS, and OEKO-TEX each maintain one) rather than relying solely on the brand's marketing materials. See our full scored comparisons at /best/overall/ for certification notes across tested mattresses."
+        "answer": "Check the certifying body's own database (CertiPUR-US, GOLS, GOTS, and OEKO-TEX each maintain one) rather than relying solely on the brand's marketing materials. See our full scored comparisons at /best/overall/ for certification notes across scored mattresses."
       }
     ],
     "internalLinks": [
@@ -16252,7 +16252,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -16363,7 +16363,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -16437,7 +16437,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "question": "Which sleepers benefit most from deep contouring?",
-        "answer": "Side sleepers and people sensitive to a partner's movement tend to benefit most from deeper, slower contouring, since it relieves pressure points and isolates motion well. Combination sleepers who change positions often may prefer a faster-response foam instead. See our full scored comparisons at /best/overall/ for foam type breakdowns across tested mattresses."
+        "answer": "Side sleepers and people sensitive to a partner's movement tend to benefit most from deeper, slower contouring, since it relieves pressure points and isolates motion well. Combination sleepers who change positions often may prefer a faster-response foam instead. See our full scored comparisons at /best/overall/ for foam type breakdowns across scored mattresses."
       }
     ],
     "internalLinks": [
@@ -16474,7 +16474,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -16583,7 +16583,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -16692,7 +16692,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -16804,12 +16804,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-10-18",
@@ -16920,12 +16920,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-10-20",
@@ -17034,12 +17034,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-10-22",
@@ -17148,7 +17148,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -17259,12 +17259,12 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": {
       "name": "PureSleep Editorial Team",
-      "role": "Sleep Product Testers",
+      "role": "Mattress Review Editors",
       "url": "/methodology/"
     },
     "datePublished": "2026-10-26",
@@ -17374,7 +17374,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -17483,7 +17483,7 @@ export const blogPosts: BlogPost[] = [
       "mattress-tips"
     ],
     "author": {
-      "name": "Editorial Team",
+      "name": "PureSleep Editorial Team",
       "url": "/about/"
     },
     "reviewedBy": null,
@@ -17539,7 +17539,7 @@ export const blogPosts: BlogPost[] = [
       {
         "heading": "AS6 Black Series — Premium Hybrid, Best Cooling and Edge Support",
         "headingLevel": 2,
-        "content": "The AS6 Black Series is the lineup's premium tier — a 15-inch hybrid pairing the same Bio-Pur® comfort foam with a pocketed coil support base instead of an all-foam core. That coil base is what gives it strong edge support (9/10) and class-leading airflow, tying the AS3 for the lineup's best cooling score (10/10) and tying it on overall score (10/10) as well. The tradeoff is price — it starts meaningfully higher than the AS3 — and it's heavier, since the coil base adds weight an all-foam mattress doesn't have. It's worth the upgrade if cooling, edge support for sitting/sleeping near the edge, or a bouncier hybrid feel matter most to you; otherwise the AS3 delivers comparable scores at a lower cost.",
+        "content": "The AS6 Black Series is the lineup's premium tier — a 15-inch hybrid pairing the same Bio-Pur® comfort foam with a pocketed coil support base instead of an all-foam core. That coil base is what gives it strong edge support (9/10) and notable airflow, tying the AS3 for the lineup's best cooling score (10/10) and tying it on overall score (10/10) as well. The tradeoff is price — it starts meaningfully higher than the AS3 — and it's heavier, since the coil base adds weight an all-foam mattress doesn't have. It's worth the upgrade if cooling, edge support for sitting/sleeping near the edge, or a bouncier hybrid feel matter most to you; otherwise the AS3 delivers comparable scores at a lower cost.",
         "hasBulletList": true,
         "hasTable": false,
         "bulletItems": [
@@ -17586,3 +17586,12 @@ export const blogPosts: BlogPost[] = [
     ]
   }
 ];
+
+export const blogPosts: BlogPost[] = rawBlogPosts.map(post => ({
+  ...post,
+  author: {
+    name: 'PureSleep Editorial Team',
+    url: '/about/',
+  },
+  reviewedBy: null,
+}));

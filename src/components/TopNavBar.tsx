@@ -1,6 +1,6 @@
-import { Search, Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 type DropdownItem = {
   label: string;
@@ -40,9 +40,9 @@ const navItems: NavItem[] = [
       {
         title: 'By Sleep Concern',
         items: [
-          { label: 'Back Pain', href: '/best/back-pain' },
-          { label: 'Hip Pain', href: '/best/hip-pain' },
-          { label: 'Shoulder Pain', href: '/best/shoulder-pain' },
+          { label: 'Back Comfort', href: '/best/back-pain' },
+          { label: 'Hip Comfort', href: '/best/hip-pain' },
+          { label: 'Shoulder Comfort', href: '/best/shoulder-pain' },
           { label: 'Hot Sleepers / Cooling', href: '/best/cooling' },
           { label: 'Motion Isolation', href: '/best/motion-isolation' },
           { label: 'Pressure Relief', href: '/best/pressure-relief' },
@@ -66,36 +66,36 @@ const navItems: NavItem[] = [
     href: '/reviews',
     columns: [
       {
-        title: 'By Sleeper Type',
+        title: 'Popular Reviews',
         items: [
-          { label: 'Best for Side Sleepers: AS5', href: '/reviews/amerisleep-as5' },
-          { label: 'Best for Back Sleepers: AS2', href: '/reviews/amerisleep-as2' },
-          { label: 'Best for Stomach Sleepers: AS2', href: '/reviews/amerisleep-as2' },
-          { label: 'Best for Combo Sleepers: AS3', href: '/reviews/amerisleep-as3' },
-          { label: 'Best for Heavy Sleepers: AS2', href: '/reviews/amerisleep-as2' },
-          { label: 'Best for Couples: AS6', href: '/reviews/amerisleep-as6' }
+          { label: 'Amerisleep AS3', href: '/reviews/amerisleep-as3' },
+          { label: 'Saatva Classic', href: '/reviews/saatva-classic' },
+          { label: 'Helix Midnight Luxe', href: '/reviews/helix-midnight-luxe' },
+          { label: 'Avocado Green', href: '/reviews/avocado-green' },
+          { label: 'PlushBeds Signature Bliss', href: '/reviews/plushbeds-signature-bliss' },
+          { label: 'GhostBed Flex', href: '/reviews/ghostbed-flex' }
         ]
       },
       {
-        title: 'By Concern',
+        title: 'Shop by Need',
         items: [
-          { label: 'Back Pain', href: '/reviews/amerisleep-as2' },
-          { label: 'Hip Pain', href: '/reviews/amerisleep-as5' },
-          { label: 'Shoulder Pain', href: '/reviews/amerisleep-as5' },
-          { label: 'Hot Sleepers', href: '/reviews/amerisleep-as6' },
-          { label: 'Motion Isolation', href: '/reviews/amerisleep-as5' },
-          { label: 'Pressure Relief', href: '/reviews/amerisleep-as5' }
+          { label: 'Side Sleepers', href: '/best/side-sleepers' },
+          { label: 'Back Sleepers', href: '/best/back-sleepers' },
+          { label: 'Hot Sleepers', href: '/best/cooling' },
+          { label: 'Couples', href: '/best/couples' },
+          { label: 'Organic Mattresses', href: '/best/organic' },
+          { label: 'Value Mattresses', href: '/best/value' }
         ]
       },
       {
-        title: 'Top Picks 2026',
+        title: 'Browse the Library',
         items: [
-          { label: 'Best Overall: AS3', href: '/reviews/amerisleep-as3' },
-          { label: 'Best Luxury: AS6 Black Series', href: '/reviews/amerisleep-as6' },
-          { label: 'Best Organic: Organica', href: '/reviews/amerisleep-organica' },
-          { label: 'Best Value: AS2', href: '/reviews/amerisleep-as2' },
-          { label: 'Best Soft: AS5', href: '/reviews/amerisleep-as5' },
-          { label: 'All 59 Reviews →', href: '/reviews' }
+          { label: 'All 59 Reviews', href: '/reviews' },
+          { label: 'Browse 24 Brands', href: '/brands' },
+          { label: 'Ranked Categories', href: '/best/overall' },
+          { label: 'Head-to-Head Comparisons', href: '/comparison' },
+          { label: 'Scoring Methodology', href: '/methodology' },
+          { label: 'Sleep Topics', href: '/topics' }
         ]
       }
     ]
@@ -107,11 +107,11 @@ const navItems: NavItem[] = [
       {
         title: 'Buying Guides',
         items: [
-          { label: 'How to Choose a Mattress', href: '/guides' },
-          { label: 'Mattress Sizes Explained', href: '/guides' },
-          { label: 'Firmness Guide', href: '/guides' },
-          { label: 'Best Mattress for Back Pain', href: '/guides' },
-          { label: 'Memory Foam vs Hybrid', href: '/guides' },
+          { label: 'First-Time Buyer Guide', href: '/blog/mattress-buying-guide-for-first-time-buyers' },
+          { label: 'How to Read a Spec Sheet', href: '/blog/how-to-read-a-mattress-spec-sheet' },
+          { label: 'Firm vs Soft Mattress', href: '/blog/firm-vs-soft-mattress' },
+          { label: 'Memory Foam vs Latex', href: '/blog/memory-foam-vs-latex-mattress' },
+          { label: 'Evaluate a Home Trial', href: '/blog/how-to-evaluate-a-mattress-trial-period' },
           { label: 'All Guides', href: '/guides' },
         ]
       }
@@ -122,50 +122,25 @@ const navItems: NavItem[] = [
     href: '/blog',
     columns: [
       {
-        title: 'By Mattress',
+        title: 'Popular Articles',
         items: [
-          {
-            label: 'AS2 Blogs',
-            href: '/blog/tag/amerisleep',
-            subItems: [
-              { label: 'Best for Back Sleepers', href: '/blog/tag/back-sleepers' },
-              { label: 'Stomach Sleepers Guide', href: '/blog/tag/stomach-sleepers' }
-            ]
-          },
-          {
-            label: 'AS3 Blogs',
-            href: '/blog/tag/memory-foam',
-            subItems: [
-              { label: 'Combo Sleepers Guide', href: '/blog/tag/combination-sleepers' },
-              { label: 'Memory Foam Deep Dive', href: '/blog/tag/memory-foam' }
-            ]
-          },
-          {
-            label: 'AS5 Blogs',
-            href: '/blog/tag/pressure-relief',
-            subItems: [
-              { label: 'Side Sleepers Tips', href: '/blog/tag/side-sleepers' },
-              { label: 'Hip Pain Relief', href: '/blog/tag/hip-pain' }
-            ]
-          },
-          {
-            label: 'AS6 Blogs',
-            href: '/blog/tag/cooling',
-            subItems: [
-              { label: 'Cooling Technology', href: '/blog/tag/cooling' },
-              { label: 'Best for Couples', href: '/blog/tag/couples' }
-            ]
-          }
+          { label: 'How Memory Foam Works', href: '/blog/how-does-memory-foam-work' },
+          { label: 'Mattress Certifications', href: '/blog/what-mattress-certifications-actually-mean' },
+          { label: 'Compare Two Mattresses', href: '/blog/how-to-choose-between-two-mattresses' },
+          { label: 'Mattress Trial Guide', href: '/blog/what-the-100-night-trial-actually-covers' },
+          { label: 'Build a Sleep Routine', href: '/blog/how-to-build-a-sleep-routine-that-works' },
+          { label: 'All Posts', href: '/blog' }
         ]
       },
       {
-        title: 'Categories',
+        title: 'Categories & Tags',
         items: [
           { label: 'Sleep Science', href: '/blog/category/sleep-science' },
-          { label: 'Buying Guides', href: '/blog/category/buying-guides' },
+          { label: 'Product Comparisons', href: '/blog/category/product-comparison' },
           { label: 'Mattress Care', href: '/blog/category/mattress-care' },
-          { label: 'Bedroom Design', href: '/blog/category/bedroom-design' },
-          { label: 'All Posts →', href: '/blog' }
+          { label: 'Mattress Reviews', href: '/blog/tag/mattress-reviews' },
+          { label: 'Adjustable Beds', href: '/blog/tag/adjustable-beds' },
+          { label: 'Bed Frames', href: '/blog/tag/bed-frames' }
         ]
       }
     ]
@@ -177,20 +152,20 @@ const navItems: NavItem[] = [
       {
         title: 'Sleep Science',
         items: [
-          { label: 'Sleep Cycles Explained', href: '/topics#sleep-cycles' },
-          { label: 'Spinal Alignment', href: '/topics#spinal-alignment' },
-          { label: 'Motion Isolation', href: '/topics#motion-isolation' },
-          { label: 'Edge Support', href: '/topics#edge-support' },
+          { label: 'Sleep Cycles Explained', href: '/topics/sleep-cycles' },
+          { label: 'Spinal Alignment', href: '/topics/spinal-alignment' },
+          { label: 'Motion Isolation', href: '/topics/motion-isolation' },
+          { label: 'Edge Support', href: '/topics/edge-support' },
           { label: 'All Topics', href: '/topics' }
         ]
       },
       {
         title: 'Materials & Certifications',
         items: [
-          { label: 'Memory Foam Explained', href: '/topics#memory-foam' },
-          { label: 'Cooling Technology', href: '/topics#cooling-technology' },
-          { label: 'Pocketed Coils Guide', href: '/topics#pocketed-coils' },
-          { label: 'CertiPUR-US Explained', href: '/topics#certipur-us' }
+          { label: 'Memory Foam Explained', href: '/topics/memory-foam' },
+          { label: 'Cooling Technology', href: '/topics/cooling-technology' },
+          { label: 'Pocketed Coils Guide', href: '/topics/pocketed-coils' },
+          { label: 'CertiPUR-US Explained', href: '/topics/certipur-us' }
         ]
       }
     ]
@@ -200,36 +175,25 @@ const navItems: NavItem[] = [
     href: '/comparison',
     columns: [
       {
-        title: 'Amerisleep vs Amerisleep',
-        items: [
-          { label: 'AS2 vs AS3', href: '/comparison/amerisleep-as2-vs-as3' },
-          { label: 'AS3 vs AS5', href: '/comparison/amerisleep-as3-vs-as5' },
-          { label: 'AS3 vs AS6 Black Series', href: '/comparison/amerisleep-as3-vs-as6' },
-          { label: 'AS3 vs Organica', href: '/comparison/amerisleep-as3-vs-organica' },
-          { label: 'AS2 vs AS5', href: '/comparison/amerisleep-as2-vs-as5' },
-          { label: 'AS6 vs Organica', href: '/comparison/amerisleep-as6-vs-organica' }
-        ]
-      },
-      {
-        title: 'AS3 vs Other Brands',
+        title: 'Popular Comparisons',
         items: [
           { label: 'AS3 vs Saatva Classic', href: '/comparison/amerisleep-as3-vs-saatva-classic' },
-          { label: 'AS3 vs Helix Midnight Luxe', href: '/comparison/amerisleep-as3-vs-helix-midnight-luxe' },
-          { label: 'AS3 vs Purple RestorePlus Hybrid', href: '/comparison/amerisleep-as3-vs-purple-restoreplus-hybrid' },
-          { label: 'AS3 vs Nolah Evolution 15', href: '/comparison/amerisleep-as3-vs-nolah-evolution-15' },
-          { label: 'AS3 vs Casper Dream Hybrid', href: '/comparison/amerisleep-as3-vs-casper-dream-hybrid' },
-          { label: 'AS3 vs Leesa Sapira Hybrid', href: '/comparison/amerisleep-as3-vs-leesa-sapira-hybrid' },
+          { label: 'Organica vs Avocado Green', href: '/comparison/amerisleep-organica-vs-avocado-green' },
+          { label: 'AS5 Hybrid vs Leesa Sapira Chill', href: '/comparison/amerisleep-as5-hybrid-vs-leesa-sapira-chill-hybrid' },
+          { label: 'AS6 vs Saatva RX', href: '/comparison/amerisleep-as6-black-series-vs-saatva-rx' },
+          { label: 'AS2 vs Brooklyn Bedding Plank Firm', href: '/comparison/amerisleep-as2-vs-brooklyn-bedding-plank-firm' },
+          { label: 'All 30 Comparisons', href: '/comparison' }
         ]
       },
       {
-        title: 'AS2 · AS5 · AS6 · Organica',
+        title: 'Compare and Verify',
         items: [
-          { label: 'AS2 vs Brooklyn Bedding Plank Firm', href: '/comparison/amerisleep-as2-vs-brooklyn-bedding-plank-firm' },
-          { label: 'AS2 vs Helix Dawn Luxe', href: '/comparison/amerisleep-as2-vs-helix-dawn-luxe' },
-          { label: 'AS5 Hybrid vs Leesa Sapira Chill', href: '/comparison/amerisleep-as5-hybrid-vs-leesa-sapira-chill-hybrid' },
-          { label: 'AS6 vs Saatva RX', href: '/comparison/amerisleep-as6-black-series-vs-saatva-rx' },
-          { label: 'Organica vs Avocado Green', href: '/comparison/amerisleep-organica-vs-avocado-green' },
-          { label: 'All 30 Comparisons →', href: '/comparison' }
+          { label: 'All 59 Reviews', href: '/reviews' },
+          { label: 'Browse 24 Brands', href: '/brands' },
+          { label: 'Full Score Field', href: '/best/overall' },
+          { label: 'Scoring Methodology', href: '/methodology' },
+          { label: 'Editorial Policy', href: '/editorial-policy' },
+          { label: 'Published Model Manifest', href: '/model-coverage.json' }
         ]
       }
     ]
@@ -258,7 +222,7 @@ const DesktopDropdownItem = ({ link }: { link: DropdownItem }) => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -8 }}
             transition={{ duration: 0.18 }}
-            className="absolute top-0 right-0 translate-x-[90%] -mt-4 ml-2 bg-white rounded-2xl p-6 shadow-xl border border-outline-variant/20 z-[80] w-64 cursor-default"
+            className="absolute top-0 right-0 translate-x-[90%] -mt-4 ml-2 bg-white rounded-lg p-6 shadow-xl border border-outline-variant/20 z-[80] w-64 cursor-default"
           >
             <div className="flex flex-col">
               {link.subItems.map((subLink, subIdx) => (
@@ -284,9 +248,8 @@ export default function TopNavBar({ currentPath = '/' }: { currentPath?: string 
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
 
   const { scrollY } = useScroll();
-  const navBackground = useTransform(scrollY, [0, 50], ["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 0.8)"]);
+  const navBackground = useTransform(scrollY, [0, 50], ["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 0.98)"]);
   const navBlur = useTransform(scrollY, [0, 50], ["blur(0px)", "blur(24px)"]);
-  const navBorder = useTransform(scrollY, [0, 50], ["border-transparent", "border-[rgba(15,23,42,0.1)]"]);
   
   const [hoveredNav, setHoveredNav] = useState<string | null>(null);
 
@@ -295,6 +258,22 @@ export default function TopNavBar({ currentPath = '/' }: { currentPath?: string 
       setScrolled(latest > 50);
     });
   }, [scrollY]);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMobileMenuOpen(false);
+    };
+
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', closeOnEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [mobileMenuOpen]);
 
   const handleMouseEnter = (label: string) => {
     setHoveredNav(label);
@@ -306,8 +285,8 @@ export default function TopNavBar({ currentPath = '/' }: { currentPath?: string 
 
   const getNavClass = ({ isActive }: { isActive: boolean }) => 
     isActive 
-      ? "text-primary border-b-2 border-secondary pb-1 text-[11px] font-label-sm uppercase tracking-[0.15em] transition-colors duration-200"
-      : "text-on-surface-variant text-[11px] font-label-sm uppercase tracking-[0.15em] hover:text-secondary hover:transform hover:scale-105 transition-all duration-200";
+      ? "text-primary border-b-2 border-secondary pb-1 text-[11px] font-label-sm uppercase tracking-normal transition-colors duration-200"
+      : "text-on-surface-variant text-[11px] font-label-sm uppercase tracking-normal hover:text-secondary hover:transform hover:scale-105 transition-all duration-200";
 
   const getGridColsClass = (num: number) => {
     if (num === 1) return 'grid-cols-1 min-w-[320px]';
@@ -343,6 +322,10 @@ export default function TopNavBar({ currentPath = '/' }: { currentPath?: string 
                 className="relative flex items-center h-full group"
                 onMouseEnter={() => handleMouseEnter(item.label)}
                 onMouseLeave={handleMouseLeave}
+                onFocus={() => handleMouseEnter(item.label)}
+                onBlur={(event) => {
+                  if (!event.currentTarget.contains(event.relatedTarget as Node)) handleMouseLeave();
+                }}
               >
                 <a 
                   href={item.href} 
@@ -358,12 +341,12 @@ export default function TopNavBar({ currentPath = '/' }: { currentPath?: string 
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -8 }}
                       transition={{ duration: 0.18 }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white rounded-2xl p-8 shadow-xl border border-outline-variant/20 z-[70] cursor-default"
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white rounded-lg p-8 shadow-xl border border-outline-variant/20 z-[70] cursor-default"
                     >
                       <div className={`grid ${getGridColsClass(item.columns.length)}`}>
                         {item.columns.map((col, idx) => (
                           <div key={idx} className="flex flex-col">
-                            <h4 className="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold mb-4">
+                            <h4 className="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold mb-4">
                               {col.title}
                             </h4>
                             <div className="flex flex-col">
@@ -379,20 +362,16 @@ export default function TopNavBar({ currentPath = '/' }: { currentPath?: string 
                 </AnimatePresence>
               </div>
             ))}
-            
-            <button className="ml-2 text-on-surface-variant hover:text-secondary transition-colors">
-              <Search size={20} />
-            </button>
           </div>
 
           {/* Mobile Nav Toggle */}
-          <div className="flex lg:hidden items-center gap-4 relative z-[60]">
-            <button className="text-on-surface-variant hover:text-secondary transition-colors">
-              <Search size={22} />
-            </button>
+          <div className="flex lg:hidden items-center relative z-[60]">
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-on-surface-variant hover:text-secondary transition-colors p-1"
+              aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation"
             >
               {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -408,6 +387,7 @@ export default function TopNavBar({ currentPath = '/' }: { currentPath?: string 
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
+            id="mobile-navigation"
             className="fixed inset-0 z-40 lg:hidden glass-panel-heavy pt-[90px] px-margin-mobile overflow-y-auto pb-12"
           >
             <div className="flex flex-col gap-2">
@@ -417,7 +397,9 @@ export default function TopNavBar({ currentPath = '/' }: { currentPath?: string 
                     <div>
                       <button 
                         onClick={() => toggleAccordion(item.label)}
-                        className="w-full flex items-center justify-between py-3 text-left font-label-lg font-bold tracking-widest text-primary uppercase"
+                        className="w-full flex items-center justify-between py-3 text-left font-label-lg font-bold tracking-normal text-primary uppercase"
+                        aria-expanded={openAccordion === item.label}
+                        aria-controls={`mobile-nav-${item.label.toLowerCase().replaceAll(' ', '-')}`}
                       >
                         {item.label}
                         {openAccordion === item.label ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
@@ -425,6 +407,7 @@ export default function TopNavBar({ currentPath = '/' }: { currentPath?: string 
                       <AnimatePresence>
                         {openAccordion === item.label && (
                           <motion.div
+                            id={`mobile-nav-${item.label.toLowerCase().replaceAll(' ', '-')}`}
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
@@ -433,7 +416,7 @@ export default function TopNavBar({ currentPath = '/' }: { currentPath?: string 
                             <div className="py-2 flex flex-col gap-6 pl-2 pb-6">
                               {item.columns.map((col, idx) => (
                                 <div key={idx} className="flex flex-col gap-2">
-                                  <h4 className="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold mb-2">
+                                  <h4 className="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold mb-2">
                                     {col.title}
                                   </h4>
                                   {col.items.map((link, linkIdx) => (
@@ -465,7 +448,7 @@ export default function TopNavBar({ currentPath = '/' }: { currentPath?: string 
                   ) : (
                     <a 
                       href={item.href}
-                      className="block py-3 font-label-lg font-bold tracking-widest text-primary uppercase"
+                      className="block py-3 font-label-lg font-bold tracking-normal text-primary uppercase"
                     >
                       {item.label}
                     </a>

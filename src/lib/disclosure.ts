@@ -1,8 +1,8 @@
-export const COMMERCIAL_RELATIONSHIP_DISCLOSURE =
-  'PureSleep has a material business relationship with Amerisleep and with Zoma, Vaya, and FORM through One Sleep Group.';
+export const EDITORIAL_INDEPENDENCE_DISCLOSURE =
+  'PureSleep is an independently operated editorial publication.';
 
 export const LINK_DISCLOSURE =
-  'PureSleep does not receive per-click or per-sale affiliate commissions from outbound links. These brands may benefit when readers purchase their products.';
+  'Product links go directly to manufacturer or retailer pages. PureSleep does not receive per-click or per-sale commissions from those links.';
 
 export const RANKING_DISCLOSURE =
-  `${COMMERCIAL_RELATIONSHIP_DISCLOSURE} ${LINK_DISCLOSURE} Rankings use the same published 7-metric rubric across every covered brand.`;
+  `${EDITORIAL_INDEPENDENCE_DISCLOSURE} ${LINK_DISCLOSURE} Rankings use the same published 7-metric rubric across every covered brand.`;

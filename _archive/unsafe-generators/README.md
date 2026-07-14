@@ -10,6 +10,11 @@ content again, including:
 
 - Fake-expert / fake-doctor citations (e.g. "Dr. Sarah", "chiropractor")
   presented as medical-sounding authority claims.
+- Fabricated first-person or hands-on testing language without supporting proof.
+- Hardcoded prices, promotions, trials, warranties, and product claims that can
+  become inaccurate or imply live offers.
+- Amerisleep-only product sets and ranking logic that conflict with the approved
+  59-model, 24-brand, seven-metric source dataset.
 - Hotlinked Unsplash image URLs used as placeholder imagery instead of
   licensed/owned assets.
 

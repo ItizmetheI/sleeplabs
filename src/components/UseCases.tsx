@@ -1,45 +1,39 @@
-import { ArrowRight } from 'lucide-react';
+import { Activity, ArrowRight, Moon, Thermometer, Users } from 'lucide-react';
 import { motion } from 'motion/react';
 
 const categories = [
-  { emoji: '🦴', title: 'Hip & Joint Discomfort', desc: 'Compare soft-to-medium comfort options. General comfort guidance only.', href: '/best/hip-pain' },
-  { emoji: '🌟', title: 'Back Discomfort', desc: 'Compare support-focused picks across brands. Not medical advice.', href: '/best/back-pain' },
-  { emoji: '🌡️', title: 'Sleeping Hot', desc: 'Compare cooling and breathability scores across construction types.', href: '/best/cooling' },
-  { emoji: '🌙', title: 'Partner Disturbance', desc: 'Compare motion transfer and edge support for shared beds.', href: '/best/couples' }
+  { Icon: Activity, title: 'Hip & Joint Comfort', desc: 'Compare soft-to-medium comfort options. General comfort guidance only.', href: '/best/hip-pain/' },
+  { Icon: Moon, title: 'Back Comfort', desc: 'Compare support-focused picks across brands. Not medical advice.', href: '/best/back-pain/' },
+  { Icon: Thermometer, title: 'Sleeping Hot', desc: 'Compare cooling and breathability scores across construction types.', href: '/best/cooling/' },
+  { Icon: Users, title: 'Shared Beds', desc: 'Compare motion transfer and edge support for partner sleep.', href: '/best/couples/' },
 ];
 
 export default function UseCases() {
   return (
-    <section className="py-stack-lg max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 gap-4 relative z-10">
-        <motion.div
-           initial={false}
-           whileInView={{ opacity: 1, x: 0 }}
-           viewport={{ once: true }}
-        >
-           <h3 className="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-3 font-bold">Browse by category</h3>
-           <h2 className="text-display-lg font-display-lg text-primary drop-shadow-sm">Find your fit</h2>
-        </motion.div>
-      </div>
+    <section className="py-stack-lg max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <motion.div initial={false} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="mb-10">
+        <p className="text-label-sm font-label-sm uppercase text-secondary mb-3 font-bold">Browse by category</p>
+        <h2 className="text-display-lg font-display-lg text-primary">Find a relevant comparison</h2>
+      </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-        {categories.map((cat, idx) => (
-          <motion.div 
-            key={idx} 
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {categories.map(({ Icon, title, desc, href }, index) => (
+          <motion.a
+            key={href}
+            href={href}
             initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: idx * 0.1, duration: 0.5 }}
-            whileHover={{ y: -5 }}
-            className="glass-panel border-outline-variant/30 p-8 rounded-3xl flex flex-col gap-4 shadow-sm hover:shadow-lg transition-all group bg-white/40"
+            transition={{ delay: index * 0.05, duration: 0.3 }}
+            className="bg-white border border-outline-variant p-6 rounded-lg flex flex-col gap-4 shadow-sm hover:border-secondary transition-colors group"
           >
-            <div className="text-5xl mb-2 drop-shadow-sm transform transition-transform group-hover:scale-110 origin-bottom-left">{cat.emoji}</div>
-            <h4 className="text-headline-md font-headline-md text-primary group-hover:text-secondary transition-colors">{cat.title}</h4>
-            <p className="text-body-md text-on-surface-variant flex-grow leading-relaxed">{cat.desc}</p>
-            <a href={cat.href} className="inline-flex items-center w-max px-4 py-2 rounded-full border border-secondary hover:bg-secondary/10 text-label-sm font-label-sm uppercase tracking-widest text-secondary mt-4 hover:text-primary transition-colors group">
-              See Picks <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </motion.div>
+            <Icon className="w-6 h-6 text-secondary" aria-hidden="true" />
+            <h3 className="text-headline-md font-headline-md text-primary group-hover:text-secondary transition-colors">{title}</h3>
+            <p className="text-body-md text-on-surface-variant flex-grow leading-relaxed">{desc}</p>
+            <span className="inline-flex items-center gap-2 text-label-sm uppercase font-bold text-secondary">
+              See picks <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+            </span>
+          </motion.a>
         ))}
       </div>
     </section>
