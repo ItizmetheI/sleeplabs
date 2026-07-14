@@ -31,7 +31,7 @@ const MANIFEST = [
 
   // ── Vaya (vayasleep.com CDN) ──────────────────────────────────────────────
   { id: 'vaya-foam',   url: 'https://cdn11.bigcommerce.com/s-e777fdx13v/products/112/images/392/mattress_1-4_1920__copy2x__87302.1599504001.386.513.jpg' },
-  { id: 'vaya-hybrid', url: 'https://cdn11.bigcommerce.com/s-e777fdx13v/products/112/images/392/mattress_1-4_1920__copy2x__87302.1599504001.386.513.jpg' },
+  { id: 'vaya-hybrid', url: 'https://cdn11.bigcommerce.com/s-e777fdx13v/images/stencil/1920w/products/115/408/carousel-1920-12x__52684.1654629633.jpg?c=2' },
 
   // ── Saatva (saatva.com) ───────────────────────────────────────────────────
   { id: 'saatva-classic', url: 'https://saatva.imgix.net/products/saatva-classic/lifestyle/standard/11.5/saatva-classic-lifestyle-standard-11.5-3-2.jpg' },
@@ -46,7 +46,7 @@ const MANIFEST = [
 
   // ── Leesa (leesa.com / contentstack CDN) ─────────────────────────────────
   { id: 'leesa-original',          url: 'https://images.contentstack.io/v3/assets/bltdab0c7b06198f4c2/bltd8eff0c7403584dc/698b460b162d1dab61c3e06e/leesa-16-9-mattress-original_(2).jpg' },
-  { id: 'leesa-sapira-hybrid',     url: 'https://images.contentstack.io/v3/assets/bltdab0c7b06198f4c2/blt0e8a3f0af2219f7e/698b460bc6afdc0bf3f6549d/leesa-16-9-mattress-sapirahybrid_(2).jpg' },
+  { id: 'leesa-sapira-hybrid',     url: 'https://images.contentstack.io/v3/assets/bltdab0c7b06198f4c2/blta67592bd0f2a933b/6a31a8bcdca328000829214e/leesa-mattress-sapira-hybrid-01.jpg' },
   { id: 'leesa-sapira-chill-hybrid',url: 'https://images.contentstack.io/v3/assets/bltdab0c7b06198f4c2/blt7240d1f8f2c85e41/668eb4cd3d793f19f776de81/col-sapira-chill.jpg' },
 
   // ── Nolah (nolahsleep.com) ───────────────────────────────────────────────
@@ -66,11 +66,11 @@ const MANIFEST = [
 
   // ── Bear (bearmattress.com) ───────────────────────────────────────────────
   { id: 'bear-original',    url: 'https://www.bearmattress.com/cdn/shop/files/Nav-Dropdown-Hover-Bear-Original-Front-Angle.jpg?v=1778266343' },
-  { id: 'bear-star-hybrid', url: 'https://www.bearmattress.com/cdn/shop/files/Nav-Dropdown-Hover-Bear-Original-Front-Angle.jpg?v=1778266343' },
+  { id: 'bear-star-hybrid', url: 'https://www.bearmattress.com/cdn/shop/files/StarHybrid-Silho-FrontHero-2068x1163.jpg?v=1680618319' },
 
   // ── GhostBed (ghostbed.com) ───────────────────────────────────────────────
-  { id: 'ghostbed-flex', url: 'https://www.ghostbed.com/cdn/shop/products/gb-luxe-1-front-lg_1200x.jpg?v=1617909756' },
-  { id: 'ghostbed-luxe', url: 'https://www.ghostbed.com/cdn/shop/products/gb-luxe-1-front-lg_1200x.jpg?v=1617909756' },
+  { id: 'ghostbed-flex', url: 'https://ghostbed-cdn.imgix.net/ghostbed-global/generic/products/ghostbed-flex-mattress-queen-base-pillows.webp?w=1280&fm=webp' },
+  { id: 'ghostbed-luxe', url: 'https://cdn.shopify.com/s/files/1/0307/1167/7063/files/gb-luxe-foam-queen-main-image.webp?v=1773843852&width=900' },
 
   // ── PlushBeds (plushbeds.com) ─────────────────────────────────────────────
   { id: 'plushbeds-botanical-bliss', url: 'https://www.plushbeds.com/cdn/shop/products/the-botanical-bliss-organic-latex-mattress-618537_1024x1024.jpg?v=1773002381' },
@@ -84,15 +84,15 @@ const MANIFEST = [
   { id: 'naturepedic-concerto-plush',url: 'https://www.naturepedic.com/media/catalog/product/n/p/np1_0671-enr-edit3_1000x1000.jpg' },
 
   // ── Avocado (avocadogreenmattress.com) ───────────────────────────────────
-  { id: 'avocado-green', url: 'https://cdn.shopify.com/s/files/1/0444/9488/0918/t/2/assets/881525ae7e6b--Find-Your-Organic-Mattress-112216.jpg?v=1719423678' },
+  { id: 'avocado-green', url: 'https://www.avocadogreenmattress.com/cdn/shop/files/Avocado_Green_Mattress_Standard_Print-171_2000w_800x.jpg?v=1773845481' },
 
   // ── Birch (birchliving.com / Helix brand) ────────────────────────────────
-  { id: 'birch-natural', url: 'https://birchliving.com/cdn/shop/products/birch-natural-mattress-hero.jpg?v=1655312345' },
+  { id: 'birch-natural', url: 'https://res.cloudinary.com/helixsleep/image/upload/f_auto/c_scale,w_1200/Birch-Natural-Mattress-Carousel-1-JULY25_smtpv9?_a=BAAAV6E0' },
 
   // ── Helix (helixsleep.com) ────────────────────────────────────────────────
-  { id: 'helix-midnight-luxe', url: 'https://helixsleep.com/cdn/shop/products/midnight-luxe-mattress-angle.jpg?v=1668785342' },
-  { id: 'helix-dawn-luxe',     url: 'https://helixsleep.com/cdn/shop/products/dawn-luxe-mattress-angle.jpg?v=1668785342' },
-  { id: 'helix-sunset-luxe',   url: 'https://helixsleep.com/cdn/shop/products/sunset-luxe-mattress-angle.jpg?v=1668785342' },
+  { id: 'helix-midnight-luxe', url: 'https://res.cloudinary.com/helixsleep/image/upload/f_auto/c_scale,w_1200/Helix-Midnight-Luxe-Mattress-Carousel-1-JULY25_szy7xr?_a=BAAAV6E0' },
+  { id: 'helix-dawn-luxe',     url: 'https://res.cloudinary.com/helixsleep/image/upload/f_auto/c_scale,w_1200/Helix-Dawn-Luxe-Mattress-Carousel-1-JULY25_wafxdm?_a=BAAAV6E0' },
+  { id: 'helix-sunset-luxe',   url: 'https://res.cloudinary.com/helixsleep/image/upload/f_auto/c_scale,w_1200/Helix-Sunset-Luxe-Mattress-Carousel-1-JULY25_jjvogq?_a=BAAAV6E0' },
 
   // ── Eco Terra (ecoterra.life) ─────────────────────────────────────────────
   { id: 'eco-terra-hybrid-latex', url: 'https://ecoterra.life/cdn/shop/products/eco-terra-hybrid-latex-mattress.jpg?v=1643826745' },
@@ -101,7 +101,7 @@ const MANIFEST = [
   { id: 'latex-for-less-hybrid-latex-mattress', url: 'https://www.latexforless.com/cdn/shop/products/3_800x.jpg?v=1775144609' },
 
   // ── SweetNight (sweetnight.com) ───────────────────────────────────────────
-  { id: 'sweetnight-prime',    url: 'https://www.sweetnight.com/cdn/shop/products/prime-memory-foam-mattress.jpg?v=1642524601' },
+  { id: 'sweetnight-prime',    url: 'https://cdn.shopify.com/s/files/1/0365/1973/9437/files/prime-mattress-2_600x600.webp?v=1753238021' },
   { id: 'sweetnight-coolnest', url: 'https://www.sweetnight.com/cdn/shop/files/2400x1080-1_1.png?v=1780656767' },
 
   // ── Glacier (glaciersleep.com) ────────────────────────────────────────────
@@ -110,13 +110,13 @@ const MANIFEST = [
   { id: 'glacier-apex-hybrid',     url: 'https://glaciersleep.com/cdn/shop/files/Comparison_Apex_web_1200_x_1200-01.jpg?v=1750363491' },
 
   // ── Westin (shop.westin.com) ──────────────────────────────────────────────
-  { id: 'westin-heavenly-bed', url: 'https://assets.marriott.com/image/upload/w_1024/l_mapping:wi-fi,g_south_east,x_10,y_10/v1/hotel-products/westin-heavenly-bed.jpg' },
+  { id: 'westin-heavenly-bed', url: 'https://shop.marriott.com/dw/image/v2/BLCS_PRD/on/demandware.static/-/Sites-productCatalog_MBB/default/dw8c34cf0e/images/main/WESTINH2-HB-124-01_A_00449.jpg?sw=1680&sh=2124' },
 
-  // ── FORM (getform.co) ─────────────────────────────────────────────────────
-  { id: 'form-core',        url: 'https://getform.co/cdn/shop/products/form-core-mattress.jpg?v=1643000000' },
-  { id: 'form-core-hybrid', url: 'https://getform.co/cdn/shop/products/form-core-hybrid-mattress.jpg?v=1643000000' },
-  { id: 'form-prime',       url: 'https://getform.co/cdn/shop/products/form-prime-mattress.jpg?v=1643000000' },
-  { id: 'form-prime-x',     url: 'https://getform.co/cdn/shop/products/form-prime-x-mattress.jpg?v=1643000000' },
+  // ── FORM (formsleep.com CDN) ──────────────────────────────────────────────
+  { id: 'form-core',        url: 'https://cdn11.bigcommerce.com/s-hfpsckbbuw/images/stencil/1920w/content/assets/pdp/temp/core/FORM_Core10_V1-hero34R_Brand_6000.jpg?compression=lossy' },
+  { id: 'form-core-hybrid', url: 'https://cdn11.bigcommerce.com/s-hfpsckbbuw/images/stencil/1920w/content/assets/pdp/temp/core-hybrid/FORM_CoreHybrid12_V1-hero34R_Brand_6000.jpg?compression=lossy' },
+  { id: 'form-prime',       url: 'https://cdn11.bigcommerce.com/s-hfpsckbbuw/images/stencil/1920w/content/assets/pdp/temp/prime/FORM_Prime14_V1-hero34R_Brand_6000.jpg?compression=lossy' },
+  { id: 'form-prime-x',     url: 'https://cdn11.bigcommerce.com/s-hfpsckbbuw/images/stencil/1920w/content/assets/pdp/temp/prime-x-mattress/FORM_Prime15_V1-hero34R_Brand_6000.jpg?compression=lossy' },
 ];
 
 async function downloadAndConvert(id, url) {

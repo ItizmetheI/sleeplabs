@@ -140,6 +140,7 @@ const expectedMachineSlug = (route) => {
   if (route === 'comparison/index.html') return 'comparisons';
   if (route.startsWith('comparison/')) return `comparison-${route.split('/')[1]}`;
   if (route.startsWith('best/')) return `best-${route.split('/')[1]}`;
+  if (route === 'brands/index.html') return null;
   if (route.startsWith('brands/')) return `brand-${route.split('/')[1]}`;
   if (route === 'topics/index.html') return 'topics';
   if (route.startsWith('topics/')) return `topic-${route.split('/')[1]}`;

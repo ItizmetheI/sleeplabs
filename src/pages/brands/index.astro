@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { allMattresses } from '../../data/mattresses';
+
+const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
+const UPDATED = '2026-07-13';
+
+const toBrandSlug = (brand: string) => brand
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, '-')
+  .replace(/^-|-$/g, '');
+
+const brands = [...new Set(allMattresses.map(mattress => mattress.brand))]
+  .map(brand => {
+    const models = allMattresses
+      .filter(mattress => mattress.brand === brand)
+      .sort((a, b) => b.scores.overall - a.scores.overall || a.name.localeCompare(b.name));
+    return {
+      name: brand,
+      slug: toBrandSlug(brand),
+      models,
+      topModel: models[0],
+    };
+  })
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const faqs = [
+  {
+    question: 'How many mattress brands does PureSleep cover?',
+    answer: `PureSleep currently covers ${brands.length} mattress brands and ${allMattresses.length} scored models in its published editorial dataset.`,
+  },
+  {
+    question: 'Are all brands scored with the same system?',
+    answer: 'Yes. Every covered model uses the same seven fields: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability.',
+  },
+  {
+    question: 'Where can I compare models from different brands?',
+    answer: 'Use the head-to-head comparison library or the ranked category pages to compare model scores, construction, fit, trial fields, and warranty fields across brands.',
+  },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': `${SITE_URL}/brands/#webpage`,
+      name: 'Mattress Brands Reviewed by PureSleep',
+      description: `Browse ${brands.length} mattress brands and ${allMattresses.length} scored models covered by PureSleep's seven-metric editorial dataset.`,
+      url: `${SITE_URL}/brands/`,
+      dateModified: UPDATED,
+      mainEntity: {
+        '@type': 'ItemList',
+        numberOfItems: brands.length,
+        itemListElement: brands.map((brand, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: brand.name,
+          url: `${SITE_URL}/brands/${brand.slug}/`,
+        })),
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: 'Brands', item: `${SITE_URL}/brands/` },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(faq => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Mattress Brands Reviewed: 24 Brands, 59 Models | PureSleep"
+  description="Browse 24 mattress brands and 59 scored models using PureSleep's shared seven-metric editorial scorecard."
+  canonicalUrl={`${SITE_URL}/brands/`}
+  lastUpdated={UPDATED}
+  jsonLd={jsonLd}
+>
+  <main class="w-full">
+    <header class="border-b border-outline-variant/30 bg-surface">
+      <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-16">
+        <p class="text-label-sm uppercase font-bold text-secondary mb-3">Complete brand coverage</p>
+        <h1 class="text-headline-lg font-headline-lg text-primary font-bold mb-5">Mattress Brands Reviewed by PureSleep</h1>
+        <p class="text-body-lg text-on-surface-variant max-w-3xl">
+          PureSleep covers {brands.length} brands and {allMattresses.length} mattress models with one published seven-metric editorial scorecard. Open any brand to see every included model, its recorded score, and its full review.
+        </p>
+      </div>
+    </header>
+
+    <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-10 md:py-14" aria-labelledby="brand-directory-heading">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-6">
+        <div>
+          <h2 id="brand-directory-heading" class="text-title-lg font-bold text-primary">Brand directory</h2>
+          <p class="text-body-md text-on-surface-variant mt-1">Alphabetical coverage with model counts and each brand's highest recorded overall score.</p>
+        </div>
+        <a href="/reviews/" class="text-primary font-bold hover:underline">Browse all 59 model reviews</a>
+      </div>
+
+      <div class="overflow-x-auto border border-outline-variant/40 rounded-lg bg-surface">
+        <table class="w-full min-w-[680px] border-collapse text-left">
+          <thead class="bg-primary text-on-primary">
+            <tr>
+              <th scope="col" class="px-5 py-3 text-label-sm uppercase">Brand</th>
+              <th scope="col" class="px-5 py-3 text-label-sm uppercase">Models covered</th>
+              <th scope="col" class="px-5 py-3 text-label-sm uppercase">Top recorded model</th>
+              <th scope="col" class="px-5 py-3 text-label-sm uppercase text-right">Overall score</th>
+            </tr>
+          </thead>
+          <tbody>
+            {brands.map((brand, index) => (
+              <tr class={index % 2 === 0 ? 'bg-background' : 'bg-surface'}>
+                <th scope="row" class="px-5 py-4 border-t border-outline-variant/30">
+                  <a href={`/brands/${brand.slug}/`} class="text-primary font-bold hover:underline">{brand.name}</a>
+                </th>
+                <td class="px-5 py-4 border-t border-outline-variant/30 text-on-surface-variant">{brand.models.length}</td>
+                <td class="px-5 py-4 border-t border-outline-variant/30">
+                  <a href={`/reviews/${brand.topModel.id}/`} class="text-on-surface font-semibold hover:text-primary hover:underline">{brand.topModel.name}</a>
+                </td>
+                <td class="px-5 py-4 border-t border-outline-variant/30 text-right font-bold text-secondary">{brand.topModel.scores.overall}/10</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-on-surface-variant mt-4">Scores are editorial values from the approved dataset, not laboratory findings, manufacturer ratings, or collected customer ratings. Product terms and availability can change.</p>
+    </section>
+
+    <section class="border-y border-outline-variant/30 bg-surface" aria-labelledby="brand-faq-heading">
+      <div class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop py-10 md:py-14">
+        <h2 id="brand-faq-heading" class="text-title-lg font-bold text-primary mb-6">Brand coverage questions</h2>
+        <div class="divide-y divide-outline-variant/30">
+          {faqs.map(faq => (
+            <article class="py-5 first:pt-0 last:pb-0">
+              <h3 class="text-title-md font-bold text-on-surface mb-2">{faq.question}</h3>
+              <p class="text-body-md text-on-surface-variant leading-relaxed">{faq.answer}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
