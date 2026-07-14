@@ -13,6 +13,7 @@
     "lint": "tsc --noEmit",
     "qa:content": "node --import tsx scripts/verify-content-integrity.ts",
     "qa:dist": "node scripts/verify-build-output.mjs",
+    "qa:external": "node --import tsx scripts/verify-external-product-links.mjs",
     "qa": "npm run lint && npm run qa:content && npm run build && npm run qa:dist",
     "deploy": "npm run build && wrangler deploy",
     "cf-typegen": "wrangler types"

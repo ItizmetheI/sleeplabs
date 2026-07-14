@@ -23,7 +23,7 @@ export interface Mattress {
   price: number;
   priceRange: string;
   priceSale: string;
-  affiliateUrl: string;
+  productUrl: string;
   availabilityNote?: string;
   image: string;
   heroImage: string;
@@ -61,7 +61,6 @@ export const reviewer_editorial: Reviewer = {
   sameAs: [`${SITE_URL}/methodology/`]
 };
 
-const COMPETITOR_BIAS_PATTERN = /\b(?:Amerisleep|AS2|AS3|AS5|AS6|Organica)\b/i;
 const SCORE_LABELS: Array<[keyof MattressScore, string]> = [
   ['value', 'Value'],
   ['edgeSupport', 'Edge Support'],
@@ -71,7 +70,16 @@ const SCORE_LABELS: Array<[keyof MattressScore, string]> = [
   ['coolingBreathability', 'Cooling & Breathability'],
 ];
 
-const neutralizeCompetitorReview = (mattress: Mattress): Mattress => {
+const normalizeFitLabel = (value: string) => value
+  .replace(/back pain/gi, 'back comfort')
+  .replace(/hip pain/gi, 'hip comfort')
+  .replace(/shoulder pain/gi, 'shoulder comfort')
+  .replace(/joint pain/gi, 'joint comfort')
+  .replace(/fibromyalgia/gi, 'pressure-sensitive sleepers')
+  .replace(/arthritis/gi, 'joint-comfort preferences')
+  .replace(/sciatica/gi, 'lower-body comfort preferences');
+
+const normalizeMattressReview = (mattress: Mattress): Mattress => {
   const rankedMetrics = SCORE_LABELS
     .map(([key, label]) => ({ label, score: mattress.scores[key] }))
     .sort((a, b) => b.score - a.score || a.label.localeCompare(b.label));
@@ -80,27 +88,17 @@ const neutralizeCompetitorReview = (mattress: Mattress): Mattress => {
   const trialText = mattress.trialNights > 0
     ? `${mattress.trialNights}-night trial`
     : 'no home-trial period';
-  const cleanItems = (items: string[]) => items.filter(item => !COMPETITOR_BIAS_PATTERN.test(item));
-
-  const pros = cleanItems(mattress.pros);
-  for (const item of [
+  const bestFor = mattress.bestFor.map(normalizeFitLabel);
+  const pros = [
     `${strongest[0].label}: ${strongest[0].score}/10 in the locked scorecard`,
     `${strongest[1].label}: ${strongest[1].score}/10 in the locked scorecard`,
     `Source dataset records a ${trialText} and ${mattress.warrantyYears}-year warranty; verify current terms`,
-  ]) {
-    if (pros.length >= 3) break;
-    pros.push(item);
-  }
-
-  const cons = cleanItems(mattress.cons);
-  for (const item of [
+  ];
+  const cons = [
     `${weakest.label}: ${weakest.score}/10, the model's lowest recorded metric`,
     'Recorded prices, trial terms, warranties, and availability can change',
     `Firmness is recorded at ${mattress.firmnessScale}/10 and may feel different by body type and sleep position`,
-  ]) {
-    if (cons.length >= 3) break;
-    cons.push(item);
-  }
+  ];
 
   const generatedFaqs = [
     {
@@ -109,30 +107,20 @@ const neutralizeCompetitorReview = (mattress: Mattress): Mattress => {
     },
     {
       question: `Who is the ${mattress.name} best suited to?`,
-      answer: `The recorded fit profile is strongest for ${mattress.bestFor.slice(0, 3).join(', ')}. It is a ${mattress.type.replaceAll('-', ' ')} model with a ${mattress.firmness.replaceAll('-', ' ')} feel (${mattress.firmnessScale}/10), but comfort varies by body type and preference.`,
+      answer: `The recorded fit profile is strongest for ${bestFor.slice(0, 3).join(', ')}. It is a ${mattress.type.replaceAll('-', ' ')} model with a ${mattress.firmness.replaceAll('-', ' ')} feel (${mattress.firmnessScale}/10), but comfort varies by body type and preference.`,
     },
     {
       question: `What trial and warranty terms are recorded for the ${mattress.name}?`,
       answer: `The source dataset records a ${trialText} and ${mattress.warrantyYears}-year warranty. These are reference fields, not live offers; verify current eligibility, fees, exclusions, and availability with ${mattress.brand} before purchasing.`,
     },
   ];
-  const faqs = mattress.faqs.filter(faq => !COMPETITOR_BIAS_PATTERN.test(`${faq.question} ${faq.answer}`));
-  for (const faq of generatedFaqs) {
-    if (faqs.length >= 3) break;
-    faqs.push(faq);
-  }
+  const summary = `${mattress.name} is a ${mattress.type.replaceAll('-', ' ')} mattress with a ${mattress.firmness.replaceAll('-', ' ')} feel (${mattress.firmnessScale}/10). It records ${mattress.scores.overall}/10 Overall, with its strongest fields in ${strongest[0].label} and ${strongest[1].label}.`;
+  const verdict = `${mattress.name} records ${mattress.scores.overall}/10 Overall. Its strongest scorecard fields are ${strongest[0].label} (${strongest[0].score}/10) and ${strongest[1].label} (${strongest[1].score}/10). Fit guidance is editorial and individual comfort can vary.`;
 
-  const summary = COMPETITOR_BIAS_PATTERN.test(mattress.summary)
-    ? `${mattress.name} is a ${mattress.type.replaceAll('-', ' ')} mattress with a ${mattress.firmness.replaceAll('-', ' ')} feel (${mattress.firmnessScale}/10). It scores ${mattress.scores.overall}/10 overall, with its strongest recorded fields in ${strongest[0].label} and ${strongest[1].label}.`
-    : mattress.summary;
-  const verdict = COMPETITOR_BIAS_PATTERN.test(mattress.verdict)
-    ? `With an overall score of ${mattress.scores.overall}/10, ${mattress.name} stands out for ${strongest[0].label.toLowerCase()} and ${strongest[1].label.toLowerCase()}. Its recorded fit is strongest for ${mattress.bestFor.slice(0, 3).join(', ')}.`
-    : mattress.verdict;
-
-  return { ...mattress, summary, verdict, pros, cons, faqs };
+  return { ...mattress, bestFor, summary, verdict, pros, cons, faqs: generatedFaqs };
 };
 
-export const mattresses: Mattress[] = [
+const amerisleepMattressRecords: Mattress[] = [
   {
     id: "amerisleep-as3",
     name: "Amerisleep AS3",
@@ -141,7 +129,7 @@ export const mattresses: Mattress[] = [
     price: 1499,
     priceRange: "$999 – $1,799",
     priceSale: "from $999",
-    affiliateUrl: "https://amerisleep.com/as3.html",
+    productUrl: "https://amerisleep.com/as3.html",
     image: "/images/mattresses/amerisleep-as3.webp",
     heroImage: "/images/mattresses/amerisleep-as3.webp",
     type: "memory-foam",
@@ -241,7 +229,7 @@ export const mattresses: Mattress[] = [
     price: 1299,
     priceRange: "$799 – $1,499",
     priceSale: "from $799",
-    affiliateUrl: "https://amerisleep.com/as2.html",
+    productUrl: "https://amerisleep.com/as2.html",
     image: "/images/mattresses/amerisleep-as2.webp",
     heroImage: "/images/mattresses/amerisleep-as2.webp",
     type: "memory-foam",
@@ -333,7 +321,7 @@ export const mattresses: Mattress[] = [
     price: 2099,
     priceRange: "$1,599 – $2,299",
     priceSale: "from $1,599",
-    affiliateUrl: "https://amerisleep.com/as5.html",
+    productUrl: "https://amerisleep.com/as5.html",
     image: "/images/mattresses/amerisleep-as5.webp",
     heroImage: "/images/mattresses/amerisleep-as5.webp",
     type: "memory-foam",
@@ -430,7 +418,7 @@ export const mattresses: Mattress[] = [
     price: 3399,
     priceRange: "$2,399 – $3,999",
     priceSale: "from $2,399",
-    affiliateUrl: "https://amerisleep.com/as6/",
+    productUrl: "https://amerisleep.com/as6/",
     image: "/images/mattresses/amerisleep-as6.webp",
     heroImage: "/images/mattresses/amerisleep-as6.webp",
     type: "hybrid",
@@ -525,7 +513,7 @@ export const mattresses: Mattress[] = [
     price: 1699,
     priceRange: "$1,199 – $1,999",
     priceSale: "from $1,199",
-    affiliateUrl: "https://amerisleep.com/organica/organic-mattress/",
+    productUrl: "https://amerisleep.com/organica/organic-mattress/",
     image: "/images/mattresses/amerisleep-organica.webp",
     heroImage: "/images/mattresses/amerisleep-organica.webp",
     type: "latex",
@@ -633,7 +621,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 1995,
     priceRange: "$1,595 – $2,995",
     priceSale: "from $1,595",
-    affiliateUrl: "https://saatva.com/products/saatva-classic",
+    productUrl: "https://www.saatva.com/mattresses/saatva-classic",
     image: "/images/mattresses/saatva-classic.webp",
     heroImage: "/images/mattresses/saatva-classic.webp",
     type: "innerspring",
@@ -665,7 +653,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 1999,
     priceRange: "$1,699 – $2,999",
     priceSale: "from $1,699",
-    affiliateUrl: "https://nolah.com/mattresses/evolution/",
+    productUrl: "https://www.nolahsleep.com/products/nolah-evolution-15",
     image: "/images/mattresses/nolah-evolution-15.webp",
     heroImage: "/images/mattresses/nolah-evolution-15.webp",
     type: "hybrid",
@@ -697,7 +685,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 1499,
     priceRange: "$1,099 – $1,999",
     priceSale: "from $1,099",
-    affiliateUrl: "https://brooklynbedding.com/products/aurora-hybrid-mattress",
+    productUrl: "https://brooklynbedding.com/products/aurora",
     image: "/images/mattresses/brooklyn-bedding-aurora-luxe.webp",
     heroImage: "/images/mattresses/brooklyn-bedding-aurora-luxe.webp",
     type: "hybrid",
@@ -729,7 +717,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 1299,
     priceRange: "$999 – $1,799",
     priceSale: "from $999",
-    affiliateUrl: "https://glaciersleep.com/products/glacier-apex",
+    productUrl: "https://glaciersleep.com/products/glacier-apex",
     image: "/images/mattresses/glacier-apex-hybrid.webp",
     heroImage: "/images/mattresses/glacier-apex-hybrid.webp",
     type: "hybrid",
@@ -761,7 +749,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 1699,
     priceRange: "$1,499 – $2,499",
     priceSale: "from $1,499",
-    affiliateUrl: "https://birchliving.com/products/birch-natural-organic-mattress",
+    productUrl: "https://birchliving.com/products/birch-natural-organic-mattress",
     image: "/images/mattresses/birch-natural.webp",
     heroImage: "/images/mattresses/birch-natural.webp",
     type: "latex",
@@ -793,7 +781,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 1748,
     priceRange: "$1,498 – $2,498",
     priceSale: "from $1,498",
-    affiliateUrl: "https://www.bearmattress.com/pages/healthcare-discount",
+    productUrl: "https://www.bearmattress.com/pages/healthcare-discount",
     availabilityNote: "Bear no longer lists the Star Hybrid in its current mattress collection. This review preserves the locked scorecard for the archived model and links to an official Bear page that still identifies it.",
     image: "/images/mattresses/bear-star-hybrid.webp",
     heroImage: "/images/mattresses/bear-star-hybrid.webp",
@@ -826,7 +814,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 1899,
     priceRange: "$1,399 – $2,799",
     priceSale: "from $1,399",
-    affiliateUrl: "https://www.avocadogreenmattress.com/products/green-natural-organic-mattress",
+    productUrl: "https://www.avocadogreenmattress.com/products/green-natural-organic-mattress",
     image: "/images/mattresses/avocado-green.webp",
     heroImage: "/images/mattresses/avocado-green.webp",
     type: "latex",
@@ -842,10 +830,10 @@ const competitorMattressRecords: Mattress[] = [
     dateReviewed: "2026-01-01", dateModified: "2026-05-01",
     bestFor: ["Eco-Conscious Buyers", "Hot Sleepers", "Firm Preference"],
     tags: ["latex", "organic", "eco-friendly", "firm"],
-    pros: ["Industry-leading certification stack", "25-year warranty and 365-night trial", "Genuinely firm feel for back and stomach sleepers", "Transparent supply chain"],
+    pros: ["Broad certification stack", "25-year warranty and 365-night trial", "Genuinely firm feel for back and stomach sleepers", "Transparent supply chain"],
     cons: ["Firm feel is too much for most side sleepers", "Heavy — harder to move", "Higher price point"],
     summary: "The Avocado Green Mattress carries one of the deepest organic certification stacks in the industry. Firm, responsive, and naturally cool.",
-    verdict: "Best-in-class for organic certifications. Amerisleep Organica is softer and more side-sleeper-friendly; Avocado Green wins on certification depth and firmness.",
+    verdict: "Strong for organic certifications. Amerisleep Organica is softer and more side-sleeper-friendly; Avocado Green wins on certification depth and firmness.",
     layers: [{ name: "Latex System", thickness: "11 inches", material: "Dunlop Latex + Organic Wool + Coils", description: "Certified Dunlop latex over upcycled steel coils." }],
     sizePricing: [{ size: "Queen", dimensions: "60\" × 80\"", priceOriginal: "$2,199", priceSale: "$1,899" }],
     faqs: [{ question: "Avocado Green vs Amerisleep Organica — which is greener?", answer: "Avocado holds a deeper certification stack (MADE SAFE®, Rainforest Alliance, 365-night trial) vs the Organica's GOLS/GOTS. However, the Organica is softer and better for side sleepers. If organic certification depth is the primary driver, Avocado leads. If sleep feel matters equally, compare both." }]
@@ -858,7 +846,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 899,
     priceRange: "$899 – $1,699",
     priceSale: "from $899",
-    affiliateUrl: "https://happsy.com/happsy-organic-mattress",
+    productUrl: "https://happsy.com/happsy-organic-mattress",
     image: "/images/mattresses/happsy.webp",
     heroImage: "/images/mattresses/happsy.webp",
     type: "latex",
@@ -877,11 +865,11 @@ const competitorMattressRecords: Mattress[] = [
     pros: ["One of the broadest certification stacks among organic mattresses: GOLS, GOTS, OCS, FSC®, MADE SAFE®, EWG Verified®, GREENGUARD Gold, and UL-verified formaldehyde-free", "Glueless construction — no adhesives anywhere in the build", "Naturally flame-resistant without fiberglass, hydrated silica, boric acid, or rayon fire barriers", "Lower entry price than most certified-organic competitors", "Available in Medium Firm or Plush, with a 120-night trial"],
     cons: ["20-year warranty is prorated after the first 10 years, unlike some competitors' full-term coverage", "10-inch profile is thinner than some premium organic hybrids", "Happsy is a budget sub-brand of Naturepedic — sister-company products share some sourcing, which is worth knowing if comparing the two as fully independent options", "Only two firmness options"],
     summary: "The Happsy Organic Mattress pairs a GOLS-certified organic latex comfort layer with individually wrapped, U.S.-made coils, built without any glues or adhesives. It avoids fiberglass and other synthetic fire-barrier chemicals entirely, and carries one of the broadest certification stacks among organic mattresses at a lower entry price than most certified-organic competitors. Happsy is a budget-focused sister brand of Naturepedic, sharing supply-chain and certification practices.",
-    verdict: "Happsy and the Amerisleep Organica are both certified-organic latex builds with matching 9/10 overall scores in our testing. Happsy edges ahead on edge support (10 vs 9); the Organica scores higher on value and response time. Happsy's lower entry price and broader certification stack (OCS, FSC®, MADE SAFE®, EWG Verified®, GREENGUARD Gold) may matter more to budget-conscious or certification-focused organic shoppers. Worth noting: Happsy and Naturepedic (also reviewed on this site) are sister brands under the same parent company.",
+    verdict: "Happsy and the Amerisleep Organica are both certified-organic latex builds with matching 9/10 overall scores in the approved editorial scorecard. Happsy edges ahead on edge support (10 vs 9); the Organica scores higher on value and response time. Happsy's lower entry price and broader certification stack (OCS, FSC®, MADE SAFE®, EWG Verified®, GREENGUARD Gold) may matter more to budget-conscious or certification-focused organic shoppers. Worth noting: Happsy and Naturepedic (also reviewed on this site) are sister brands under the same parent company.",
     layers: [{ name: "Latex & Coil System", thickness: "10 inches", material: "GOTS Cotton + GOLS Latex + Organic Wool + Wrapped Coils", description: "Organic cotton fabric and quilted batting over individually pocketed, glueless U.S.-made coils with an organic cotton insulator, topped with GOTS-approved latex and organic wool batting." }],
     sizePricing: [{ size: "Queen", dimensions: "60\" × 80\"", priceOriginal: "$899", priceSale: "$899" }],
     faqs: [
-      { question: "Happsy vs Amerisleep Organica — which organic mattress is the better value?", answer: "Both score 9/10 overall in our testing. Happsy's entry price is lower and its certification stack is broader (it adds OCS, FSC®, MADE SAFE®, EWG Verified®, and GREENGUARD Gold to the GOLS/GOTS both share). The Organica scores higher on response time and is available in a wider range of firmness/model variants." },
+      { question: "Happsy vs Amerisleep Organica — which organic mattress is the better value?", answer: "Both score 9/10 overall in the approved editorial scorecard. Happsy's entry price is lower and its certification stack is broader (it adds OCS, FSC®, MADE SAFE®, EWG Verified®, and GREENGUARD Gold to the GOLS/GOTS both share). The Organica scores higher on response time and is available in a wider range of firmness/model variants." },
       { question: "Is Happsy related to Naturepedic?", answer: "Yes — Happsy is a budget-focused sister brand under the same parent company as Naturepedic, which is also reviewed on this site. The two share sourcing and certification practices, with Happsy positioned at a lower price point." },
       { question: "Does the Happsy mattress use fiberglass?", answer: "No. Happsy states its mattresses achieve flame resistance naturally, without fiberglass, hydrated silica, boric acid treatments, or rayon-based fire barriers." },
       { question: "Does Happsy require a box spring?", answer: "No. Happsy mattresses work on any flat surface, the Happsy Organic Foundation, platform beds with slats no more than 2-3 inches apart, or adjustable bases." }
@@ -895,7 +883,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 2399,
     priceRange: "$1,999 – $3,499",
     priceSale: "from $1,999",
-    affiliateUrl: "https://purple.com/mattresses/restoreplus",
+    productUrl: "https://purple.com/mattresses/restore-plus",
     image: "/images/mattresses/purple-restoreplus-hybrid.webp",
     heroImage: "/images/mattresses/purple-restoreplus-hybrid.webp",
     type: "hybrid",
@@ -927,7 +915,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 1799,
     priceRange: "$1,299 – $2,499",
     priceSale: "from $1,299",
-    affiliateUrl: "https://nestbedding.com/products/sparrow-hybrid-mattress",
+    productUrl: "https://www.nestbedding.com/products/sparrow-signature-hybrid-mattress",
     image: "/images/mattresses/nest-bedding-sparrow.webp",
     heroImage: "/images/mattresses/nest-bedding-sparrow.webp",
     type: "hybrid",
@@ -959,7 +947,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 1999,
     priceRange: "$1,699 – $2,999",
     priceSale: "from $1,699",
-    affiliateUrl: "https://helixsleep.com/products/midnight-luxe",
+    productUrl: "https://helixsleep.com/products/midnight-luxe",
     image: "/images/mattresses/helix-midnight-luxe.webp",
     heroImage: "/images/mattresses/helix-midnight-luxe.webp",
     type: "hybrid",
@@ -991,7 +979,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 1099,
     priceRange: "$799 – $1,499",
     priceSale: "from $799",
-    affiliateUrl: "https://leesa.com/products/leesa-mattress",
+    productUrl: "https://leesa.com/products/leesa-mattress",
     image: "/images/mattresses/leesa-original.webp",
     heroImage: "/images/mattresses/leesa-original.webp",
     type: "memory-foam",
@@ -1023,7 +1011,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 1699,
     priceRange: "$1,299 – $2,299",
     priceSale: "from $1,299",
-    affiliateUrl: "https://www.leesa.com/products/leesa-hybrid-mattress",
+    productUrl: "https://www.leesa.com/products/leesa-hybrid-mattress",
     image: "/images/mattresses/leesa-sapira-hybrid.webp",
     heroImage: "/images/mattresses/leesa-sapira-hybrid.webp",
     type: "hybrid",
@@ -1055,7 +1043,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 1149,
     priceRange: "$849 – $1,649",
     priceSale: "from $849",
-    affiliateUrl: "https://brooklynbedding.com/products/plank-firm-natural-mattress",
+    productUrl: "https://plankmattress.com/products/plank",
     image: "/images/mattresses/brooklyn-bedding-plank-firm.webp",
     heroImage: "/images/mattresses/brooklyn-bedding-plank-firm.webp",
     type: "innerspring",
@@ -1087,7 +1075,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 748,
     priceRange: "$548 – $1,148",
     priceSale: "from $548",
-    affiliateUrl: "https://bearmattress.com/products/bear-original-mattress",
+    productUrl: "https://bearmattress.com/products/bear-original-mattress",
     image: "/images/mattresses/bear-original.webp",
     heroImage: "/images/mattresses/bear-original.webp",
     type: "memory-foam",
@@ -1119,7 +1107,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 1745,
     priceRange: "$1,495 – $2,495",
     priceSale: "from $1,495",
-    affiliateUrl: "https://www.ghostbed.com/pages/our-story",
+    productUrl: "https://www.ghostbed.com/pages/our-story",
     availabilityNote: "GhostBed no longer lists the Flex in its current mattress collection. This review preserves the locked Flex scorecard and links to GhostBed's official history page, which documents the model.",
     image: "/images/mattresses/ghostbed-flex.webp",
     heroImage: "/images/mattresses/ghostbed-flex.webp",
@@ -1152,7 +1140,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 1999,
     priceRange: "$1,699 – $2,999",
     priceSale: "from $1,699",
-    affiliateUrl: "https://helixsleep.com/products/dawn-luxe",
+    productUrl: "https://helixsleep.com/products/dawn-luxe",
     image: "/images/mattresses/helix-dawn-luxe.webp",
     heroImage: "/images/mattresses/helix-dawn-luxe.webp",
     type: "hybrid",
@@ -1184,7 +1172,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 2099,
     priceRange: "$1,699 – $2,799",
     priceSale: "from $1,699",
-    affiliateUrl: "https://leesa.com/products/sapira-chill-hybrid",
+    productUrl: "https://www.leesa.com/products/sapira-chill-mattress",
     image: "/images/mattresses/leesa-sapira-chill-hybrid.webp",
     heroImage: "/images/mattresses/leesa-sapira-chill-hybrid.webp",
     type: "hybrid",
@@ -1216,7 +1204,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 1999,
     priceRange: "$1,699 – $2,999",
     priceSale: "from $1,699",
-    affiliateUrl: "https://helixsleep.com/products/sunset-luxe",
+    productUrl: "https://helixsleep.com/products/sunset-luxe",
     image: "/images/mattresses/helix-sunset-luxe.webp",
     heroImage: "/images/mattresses/helix-sunset-luxe.webp",
     type: "hybrid",
@@ -1248,7 +1236,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 1995,
     priceRange: "$1,745 – $2,995",
     priceSale: "from $1,745",
-    affiliateUrl: "https://www.ghostbed.com/products/luxe-memory-foam-mattress",
+    productUrl: "https://www.ghostbed.com/products/luxe-memory-foam-mattress",
     image: "/images/mattresses/ghostbed-luxe.webp",
     heroImage: "/images/mattresses/ghostbed-luxe.webp",
     type: "memory-foam",
@@ -1267,7 +1255,7 @@ const competitorMattressRecords: Mattress[] = [
     pros: ["Exceptional cooling scores — among the best in all-foam", "25-year warranty exceeds AS5's 20-year", "Strong pressure relief"],
     cons: ["Expensive for all-foam construction", "Poor edge support vs hybrid alternatives", "Slow responsiveness"],
     summary: "The GhostBed Luxe targets hot side sleepers with premium cooling foam layers and a 25-year warranty.",
-    verdict: "Best-in-class cooling for an all-foam mattress. The AS5 competes on pressure relief; the Luxe wins on cooling and warranty (25 vs 20 years), but costs more.",
+    verdict: "Strong cooling for an all-foam mattress. The AS5 competes on pressure relief; the Luxe wins on cooling and warranty (25 vs 20 years), but costs more.",
     layers: [{ name: "Cooling Foam System", thickness: "13 inches", material: "Ghost Ice + Gel Foam + Memory Foam + Core", description: "Multi-layer cooling foam construction." }],
     sizePricing: [{ size: "Queen", dimensions: "60\" × 80\"", priceOriginal: "$2,245", priceSale: "$1,995" }],
     faqs: [{ question: "GhostBed Luxe vs Amerisleep AS5 for hot side sleepers?", answer: "Both target hot side sleepers. The GhostBed Luxe wins on cooling scores and has a longer warranty (25 vs 20 years). The AS5's Active Flex layer gives it better responsiveness. The Luxe is more expensive." }]
@@ -1280,7 +1268,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 1095,
     priceRange: "$795 – $1,595",
     priceSale: "from $795",
-    affiliateUrl: "https://casper.com/mattresses/the-one/",
+    productUrl: "https://casper.com/products/casper-one-foam",
     image: "/images/mattresses/casper-the-one.webp",
     heroImage: "/images/mattresses/casper-the-one.webp",
     type: "memory-foam",
@@ -1312,7 +1300,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 1695,
     priceRange: "$1,295 – $2,295",
     priceSale: "from $1,295",
-    affiliateUrl: "https://casper.com/mattresses/dream-hybrid/",
+    productUrl: "https://casper.com/products/casper-dream-hybrid",
     image: "/images/mattresses/casper-dream-hybrid.webp",
     heroImage: "/images/mattresses/casper-dream-hybrid.webp",
     type: "hybrid",
@@ -1344,7 +1332,7 @@ const competitorMattressRecords: Mattress[] = [
     price: 3995,
     priceRange: "$3,295 – $5,295",
     priceSale: "from $3,295",
-    affiliateUrl: "https://saatva.com/products/saatva-rx",
+    productUrl: "https://www.saatva.com/mattresses/saatva-rx",
     image: "/images/mattresses/saatva-rx.webp",
     heroImage: "/images/mattresses/saatva-rx.webp",
     type: "hybrid",
@@ -1363,7 +1351,7 @@ const competitorMattressRecords: Mattress[] = [
     pros: ["365-night trial", "20-year warranty", "Premium micro-coil comfort layer", "High pressure relief and edge support scores"],
     cons: ["Very high price (from $3,295 queen)", "Overkill for most sleepers", "Saatva doesn't offer returns after 30 days without a restocking fee"],
     summary: "The Saatva RX is Saatva's ultra-premium mattress targeting sleepers with pressure pain concerns. Dual coil system with micro-coil comfort layer.",
-    verdict: "Best-in-class pressure relief and luxury build. The AS6 delivers comparable performance for most sleepers at roughly 60% of the cost.",
+    verdict: "Strong pressure relief and luxury build. The AS6 delivers comparable performance for most sleepers at roughly 60% of the cost.",
     layers: [{ name: "Premium Hybrid System", thickness: "15 inches", material: "Micro Coils + Foam + Dual Coil Base", description: "Micro-coil comfort layer over foam and dual coil support." }],
     sizePricing: [{ size: "Queen", dimensions: "60\" × 80\"", priceOriginal: "$4,295", priceSale: "$3,995" }],
     faqs: [{ question: "Saatva RX vs Amerisleep AS6 Black Series?", answer: "The Saatva RX uses a micro-coil comfort layer for exceptional pressure relief; the AS6 uses Bio-Pur® foam. Both have 20-year warranties. The RX scores slightly higher on pressure relief but costs significantly more." }]
@@ -1371,7 +1359,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "amerisleep-as3-hybrid", name: "Amerisleep AS3 Hybrid", brand: "Amerisleep", model: "AS3 Hybrid",
     price: 1349, priceRange: "$1,149 – $2,099", priceSale: "from $1,149",
-    affiliateUrl: "https://amerisleep.com/as3-hybrid.html",
+    productUrl: "https://amerisleep.com/as3-hybrid.html",
     image: "/images/mattresses/amerisleep-as3-hybrid.webp",
     heroImage: "/images/mattresses/amerisleep-as3-hybrid.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
@@ -1394,7 +1382,8 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "amerisleep-as5-hybrid", name: "Amerisleep AS5 Hybrid", brand: "Amerisleep", model: "AS5 Hybrid",
     price: 1649, priceRange: "$1,449 – $2,399", priceSale: "from $1,449",
-    affiliateUrl: "https://amerisleep.com/as5-hybrid.html",
+    productUrl: "https://amerisleep.com/blog/what-is-a-hybrid-mattress/",
+    availabilityNote: "Amerisleep no longer exposes a working AS5 Hybrid product page in its current catalog. This review preserves the locked AS5 Hybrid scorecard and links to Amerisleep's official hybrid guide, which documents the model.",
     image: "/images/mattresses/amerisleep-as5-hybrid.webp",
     heroImage: "/images/mattresses/amerisleep-as5-hybrid.webp",
     type: "hybrid", firmness: "soft", firmnessScale: 3, thickness: "14 inches",
@@ -1417,7 +1406,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "amerisleep-organica-plush", name: "Amerisleep Organica Plush", brand: "Amerisleep", model: "Organica Plush",
     price: 1699, priceRange: "$1,499 – $2,699", priceSale: "from $1,499",
-    affiliateUrl: "https://amerisleep.com/organica/organic-mattress/",
+    productUrl: "https://amerisleep.com/organica/organic-mattress/",
     image: "/images/mattresses/amerisleep-organica-plush.webp",
     heroImage: "/images/mattresses/amerisleep-organica-plush.webp",
     type: "hybrid", firmness: "medium-soft", firmnessScale: 4, thickness: "13 inches",
@@ -1440,7 +1429,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "eco-terra-hybrid-latex", name: "Eco Terra Hybrid Latex", brand: "Eco Terra", model: "Hybrid Latex",
     price: 1249, priceRange: "$999 – $1,999", priceSale: "from $999",
-    affiliateUrl: "https://ecoterrabeds.com/products/hybrid-latex-mattress",
+    productUrl: "https://ecoterrabeds.com/products/hybrid-latex-mattress",
     image: "/images/mattresses/eco-terra-hybrid-latex.webp",
     heroImage: "/images/mattresses/eco-terra-hybrid-latex.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "11 inches",
@@ -1455,7 +1444,7 @@ const competitorMattressRecords: Mattress[] = [
     pros: ["Outstanding value for latex hybrid (10/10 Value)","GOLS-certified organic latex","Fast response time (10/10)","Lower price than most organic competitors"],
     cons: ["90-night trial shorter than most competitors","Edge support below average (8/10)","Less brand recognition than major names"],
     summary: "The Eco Terra Hybrid Latex uses GOLS-certified organic latex over pocketed coils at a price point well below most organic mattresses. Strong value score and fast response time.",
-    verdict: "Best budget path to certified organic latex. Lower edge support and shorter trial than top competitors, but the value score and response time are class-leading.",
+    verdict: "Best budget path to certified organic latex. Lower edge support and shorter trial than top competitors, but the value score and response time are notable.",
     layers: [{ name: "Latex Hybrid System", thickness: "11 inches", material: "GOLS Latex + Pocketed Coils", description: "GOLS-certified organic latex comfort layer over pocketed coil support base." }],
     sizePricing: [{ size: "Queen", dimensions: "60\" × 80\"", priceOriginal: "$1,499", priceSale: "$1,249" }],
     faqs: [{ question: "How does Eco Terra compare to Amerisleep Organica?", answer: "The Eco Terra Hybrid Latex scores higher on value and response time. The Amerisleep Organica scores higher on overall, edge support, and trial period, and includes GOTS-certified organic cotton and wool alongside the latex." }]
@@ -1463,7 +1452,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "form-core", name: "FORM Core", brand: "FORM", model: "Core",
     price: 699, priceRange: "$599 – $1,299", priceSale: "from $599",
-    affiliateUrl: "https://formsleep.com/mattresses/form-core",
+    productUrl: "https://formsleep.com/mattresses/form-core",
     image: "/images/mattresses/form-core.webp",
     heroImage: "/images/mattresses/form-core.webp",
     type: "foam", firmness: "medium", firmnessScale: 5, thickness: "10 inches",
@@ -1486,7 +1475,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "form-core-hybrid", name: "FORM Core Hybrid", brand: "FORM", model: "Core Hybrid",
     price: 899, priceRange: "$799 – $1,599", priceSale: "from $799",
-    affiliateUrl: "https://formsleep.com/mattresses/form-core-hybrid",
+    productUrl: "https://formsleep.com/mattresses/form-core-hybrid",
     image: "/images/mattresses/form-core-hybrid.webp",
     heroImage: "/images/mattresses/form-core-hybrid.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
@@ -1500,7 +1489,7 @@ const competitorMattressRecords: Mattress[] = [
     tags: ["hybrid","medium","cooling","edge-support"],
     pros: ["10/10 overall score","Perfect edge support and response time scores","100-night trial with 10/10 trial period score","Hybrid airflow over all-foam models"],
     cons: ["10-year warranty below the category average","Value score of 8 reflects mid-tier pricing"],
-    summary: "The FORM Core Hybrid combines foam comfort with pocketed coil support for class-leading edge support, response time, and motion isolation simultaneously.",
+    summary: "The FORM Core Hybrid combines foam comfort with pocketed coil support for notable edge support, response time, and motion isolation simultaneously.",
     verdict: "Exceptional all-around hybrid performance. The only meaningful gap vs top-tier competitors is the 10-year warranty.",
     layers: [{ name: "Hybrid System", thickness: "12 inches", material: "Responsive Foam + Pocketed Coils", description: "Foam comfort layer over pocketed coil base for airflow and responsiveness." }],
     sizePricing: [{ size: "Queen", dimensions: "60\" × 80\"", priceOriginal: "$1,199", priceSale: "$899" }],
@@ -1509,7 +1498,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "form-prime", name: "FORM Prime", brand: "FORM", model: "Prime",
     price: 1099, priceRange: "$899 – $1,899", priceSale: "from $899",
-    affiliateUrl: "https://formsleep.com/mattresses/form-prime",
+    productUrl: "https://formsleep.com/mattresses/form-prime",
     image: "/images/mattresses/form-prime.webp",
     heroImage: "/images/mattresses/form-prime.webp",
     type: "foam", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
@@ -1532,7 +1521,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "form-prime-x", name: "FORM Prime X", brand: "FORM", model: "Prime X",
     price: 1399, priceRange: "$1,199 – $2,199", priceSale: "from $1,199",
-    affiliateUrl: "https://formsleep.com/mattresses/form-prime-x",
+    productUrl: "https://formsleep.com/mattresses/form-prime-x",
     image: "/images/mattresses/form-prime-x.webp",
     heroImage: "/images/mattresses/form-prime-x.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "14 inches",
@@ -1555,7 +1544,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "glacier-original-hybrid", name: "Glacier Original Hybrid", brand: "Glacier", model: "Original Hybrid",
     price: 1099, priceRange: "$899 – $1,799", priceSale: "from $899",
-    affiliateUrl: "https://glaciersleep.com/products/glacier-original",
+    productUrl: "https://glaciersleep.com/products/glacier-original",
     image: "/images/mattresses/glacier-original-hybrid.webp",
     heroImage: "/images/mattresses/glacier-original-hybrid.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
@@ -1569,7 +1558,7 @@ const competitorMattressRecords: Mattress[] = [
     tags: ["hybrid","cooling","value"],
     pros: ["10/10 value and cooling scores","365-night trial","Strong edge support (9/10)"],
     cons: ["Overall score of 8 below top-tier competitors","Motion transfer score of 8 — less effective for couples than foam options"],
-    summary: "The Glacier Original Hybrid delivers strong cooling and value at an accessible price with a class-leading 365-night trial period.",
+    summary: "The Glacier Original Hybrid delivers strong cooling and value at an accessible price with a notable 365-night trial period.",
     verdict: "Best choice when cooling and value are the top priorities. Motion isolation is average; overall build doesn't reach the top tier.",
     layers: [{ name: "Cooling Hybrid System", thickness: "12 inches", material: "Cooling Foam + Pocketed Coils", description: "Cooling foam comfort layer over pocketed coil support base." }],
     sizePricing: [{ size: "Queen", dimensions: "60\" × 80\"", priceOriginal: "$1,399", priceSale: "$1,099" }],
@@ -1578,7 +1567,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "glacier-summit-hybrid", name: "Glacier Summit Hybrid", brand: "Glacier", model: "Summit Hybrid",
     price: 1299, priceRange: "$1,099 – $2,099", priceSale: "from $1,099",
-    affiliateUrl: "https://glaciersleep.com/products/glacier-summit",
+    productUrl: "https://glaciersleep.com/products/glacier-summit",
     image: "/images/mattresses/glacier-summit-hybrid.webp",
     heroImage: "/images/mattresses/glacier-summit-hybrid.webp",
     type: "hybrid", firmness: "medium-firm", firmnessScale: 6, thickness: "13 inches",
@@ -1593,7 +1582,7 @@ const competitorMattressRecords: Mattress[] = [
     pros: ["10/10 value and cooling scores","365-night trial","Medium-firm feel for back sleepers","Strong edge support"],
     cons: ["Overall score 8 — strong but not top-tier","Motion isolation average at 8/10"],
     summary: "The Glacier Summit Hybrid is the medium-firm model in the Glacier lineup, targeting back sleepers who want excellent cooling and value.",
-    verdict: "Strong value and cooling with a firmer feel than the Original. Motion isolation trails best-in-class, but value and cooling hold up well.",
+    verdict: "Strong value and cooling with a firmer feel than the Original. Motion isolation trails strong, but value and cooling hold up well.",
     layers: [{ name: "Medium-Firm Cooling Hybrid", thickness: "13 inches", material: "Summit Foam + Zoned Pocketed Coils", description: "Firmer foam comfort layer over zoned pocketed coil base for back sleeper support." }],
     sizePricing: [{ size: "Queen", dimensions: "60\" × 80\"", priceOriginal: "$1,699", priceSale: "$1,299" }],
     faqs: [{ question: "Glacier Summit vs Amerisleep AS2 for back sleepers?", answer: "The AS2 scores higher overall (9 vs 8) with better response time and motion transfer. The Glacier Summit wins on value (10 vs 9) and trial length (365 vs 100 nights). The AS2 has a 20-year warranty vs Summit's 10-year." }]
@@ -1601,7 +1590,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "latex-for-less-hybrid-latex-mattress", name: "Latex For Less Hybrid Latex Mattress", brand: "Latex For Less", model: "Hybrid Latex",
     price: 849, priceRange: "$749 – $1,499", priceSale: "from $749",
-    affiliateUrl: "https://www.latexforless.com/products/hybrid-latex-mattress",
+    productUrl: "https://www.latexforless.com/products/hybrid-latex-mattress",
     image: "/images/mattresses/latex-for-less-hybrid-latex-mattress.webp",
     heroImage: "/images/mattresses/latex-for-less-hybrid-latex-mattress.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "9 inches",
@@ -1613,7 +1602,7 @@ const competitorMattressRecords: Mattress[] = [
     dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Budget Latex Seekers","Natural Material Preference","Hot Sleepers"],
     tags: ["latex","hybrid","value","organic"],
-    pros: ["10/10 value — best-in-class price for GOLS latex","Excellent response time (10/10)","20-year warranty at budget price","120-night trial"],
+    pros: ["10/10 value — strong price for GOLS latex","Excellent response time (10/10)","20-year warranty at budget price","120-night trial"],
     cons: ["Edge support score of 5 — notably weak at the perimeter","9-inch profile is thin vs most competitors","Less overall support depth than thicker alternatives"],
     summary: "The Latex For Less Hybrid Latex delivers GOLS-certified organic latex construction at an unusually accessible price. The main trade-off is weak edge support.",
     verdict: "Exceptional value for certified organic latex, but the 5/10 edge support is a meaningful limitation for edge-of-bed sitting and couples needing full surface use.",
@@ -1624,7 +1613,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "naturepedic-eos-classic", name: "Naturepedic EOS Classic", brand: "Naturepedic", model: "EOS Classic",
     price: 2399, priceRange: "$1,999 – $3,799", priceSale: "from $1,999",
-    affiliateUrl: "https://www.naturepedic.com/adult/mattresses/eos-classic-organic-mattress-buy",
+    productUrl: "https://www.naturepedic.com/adult/mattresses/eos-classic-organic-mattress-buy",
     image: "/images/mattresses/naturepedic-eos-classic.webp",
     heroImage: "/images/mattresses/naturepedic-eos-classic.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "11 inches",
@@ -1639,7 +1628,7 @@ const competitorMattressRecords: Mattress[] = [
     pros: ["GOLS + GOTS + Made Safe certified","Non-toxic organic construction","20-year warranty","Strong edge support (9/10)"],
     cons: ["Value score 6 — premium price for the category","90-night trial shorter than most","Motion transfer 8 — less effective for couples"],
     summary: "The Naturepedic EOS Classic is one of the most rigorously certified organic mattresses available, combining GOLS latex, GOTS cotton, organic wool, and Made Safe certification.",
-    verdict: "Best-in-class organic certifications at a premium price. For the truly non-toxic-first buyer, there are few better options. Value score reflects the certification premium.",
+    verdict: "Strong organic certifications at a premium price. For the truly non-toxic-first buyer, there are few better options. Value score reflects the certification premium.",
     layers: [{ name: "Certified Organic Hybrid System", thickness: "11 inches", material: "GOLS Latex + Organic Wool + Coil Base", description: "Multiple layers of certified organic latex and wool over coil base." }],
     sizePricing: [{ size: "Queen", dimensions: "60\" × 80\"", priceOriginal: "$2,799", priceSale: "$2,399" }],
     faqs: [{ question: "Naturepedic EOS Classic vs Amerisleep Organica?", answer: "Both are certified organic hybrids. The EOS Classic adds Made Safe certification at a higher price. The Organica scores the same overall at significantly lower cost, making it the better value for most shoppers." }]
@@ -1647,7 +1636,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "naturepedic-concerto-plush", name: "Naturepedic Concerto Plush", brand: "Naturepedic", model: "Concerto Plush",
     price: 2299, priceRange: "$1,899 – $3,599", priceSale: "from $1,899",
-    affiliateUrl: "https://www.naturepedic.com/concerto-organic-pillowtop-mattress-buy",
+    productUrl: "https://www.naturepedic.com/concerto-organic-pillowtop-mattress-buy",
     image: "/images/mattresses/naturepedic-concerto-plush.webp",
     heroImage: "/images/mattresses/naturepedic-concerto-plush.webp",
     type: "hybrid", firmness: "soft", firmnessScale: 3, thickness: "13 inches",
@@ -1670,7 +1659,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "nest-bedding-owl", name: "Nest Bedding Owl", brand: "Nest Bedding", model: "Owl",
     price: 1299, priceRange: "$999 – $2,099", priceSale: "from $999",
-    affiliateUrl: "https://www.nestbedding.com/products/owl-natural-latex-hybrid-mattress",
+    productUrl: "https://www.nestbedding.com/products/owl-natural-latex-hybrid-mattress",
     image: "/images/mattresses/nest-bedding-owl.webp",
     heroImage: "/images/mattresses/nest-bedding-owl.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
@@ -1682,9 +1671,9 @@ const competitorMattressRecords: Mattress[] = [
     dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Combination Sleepers","Couples","Hot Sleepers","Those Wanting Exceptional Trial Period"],
     tags: ["hybrid","medium","trial-period"],
-    pros: ["10/10 overall and response time","365-night trial (class-leading)","Lifetime warranty (up to 99 years)","Strong edge support for hybrid"],
+    pros: ["10/10 overall and response time","365-night trial in the source dataset","Lifetime warranty (up to 99 years)","Strong edge support for hybrid"],
     cons: ["Value score 8 at mid-premium pricing","Less motion isolation than top foam options"],
-    summary: "The Nest Bedding Owl is a versatile hybrid with class-leading trial period and warranty terms. Strong overall performance with a 365-night trial and lifetime warranty.",
+    summary: "The Nest Bedding Owl is a versatile hybrid with notable trial period and warranty terms. Strong overall performance with a 365-night trial and lifetime warranty.",
     verdict: "Exceptional trial and warranty terms make this the lowest-risk premium hybrid purchase. Performance is strong across all metrics.",
     layers: [{ name: "Smart Hybrid System", thickness: "12 inches", material: "Smart Foam + Quantum Edge Coils", description: "Responsive foam comfort layer over Quantum Edge coil system for edge support." }],
     sizePricing: [{ size: "Queen", dimensions: "60\" × 80\"", priceOriginal: "$1,599", priceSale: "$1,299" }],
@@ -1693,7 +1682,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "nest-bedding-puffin-kids", name: "Nest Bedding Puffin Kids", brand: "Nest Bedding", model: "Puffin Kids",
     price: 699, priceRange: "$549 – $1,099", priceSale: "from $549",
-    affiliateUrl: "https://www.nestbedding.com/products/puffin-memory-foam-kids-mattress",
+    productUrl: "https://www.nestbedding.com/products/puffin-memory-foam-kids-mattress",
     image: "/images/mattresses/nest-bedding-puffin-kids.webp",
     heroImage: "/images/mattresses/nest-bedding-puffin-kids.webp",
     type: "foam", firmness: "medium", firmnessScale: 5, thickness: "8 inches",
@@ -1716,7 +1705,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "nest-bedding-raven", name: "Nest Bedding Raven", brand: "Nest Bedding", model: "Raven",
     price: 1099, priceRange: "$899 – $1,799", priceSale: "from $899",
-    affiliateUrl: "https://www.nestbedding.com/products/raven-flippable-memory-foam-hybrid-mattress",
+    productUrl: "https://www.nestbedding.com/products/raven-flippable-memory-foam-hybrid-mattress",
     image: "/images/mattresses/nest-bedding-raven.webp",
     heroImage: "/images/mattresses/nest-bedding-raven.webp",
     type: "foam", firmness: "medium-soft", firmnessScale: 4, thickness: "12 inches",
@@ -1730,7 +1719,7 @@ const competitorMattressRecords: Mattress[] = [
     tags: ["foam","medium-soft","pressure-relief","trial-period"],
     pros: ["365-night trial","Lifetime warranty (99 years)","Strong value (9/10)","Excellent response time (10/10)"],
     cons: ["Cooling score 8/10 — lower than hybrid alternatives despite cooling foam","All-foam edge support limitations"],
-    summary: "The Nest Bedding Raven is a medium-soft all-foam mattress using phase change cooling foam with Nest Bedding's class-leading 365-night trial and lifetime warranty.",
+    summary: "The Nest Bedding Raven is a medium-soft all-foam mattress using phase change cooling foam with a recorded 365-night trial and lifetime warranty.",
     verdict: "Strong all-foam option with the best trial terms in the category. Cooling performance doesn't fully match hybrid competitors despite the phase change materials.",
     layers: [{ name: "Cooling Foam System", thickness: "12 inches", material: "Phase Change Foam + Base Support Foam", description: "Phase change cooling foam comfort layer over dense base support foam." }],
     sizePricing: [{ size: "Queen", dimensions: "60\" × 80\"", priceOriginal: "$1,399", priceSale: "$1,099" }],
@@ -1739,7 +1728,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "nolah-natural-11", name: 'Nolah Natural 11"', brand: "Nolah", model: 'Natural 11"',
     price: 1299, priceRange: "$1,099 – $1,999", priceSale: "from $1,099",
-    affiliateUrl: "https://www.nolahsleep.com/products/nolah-natural-11",
+    productUrl: "https://www.nolahsleep.com/products/nolah-natural-11",
     image: "/images/mattresses/nolah-natural-11.webp",
     heroImage: "/images/mattresses/nolah-natural-11.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "11 inches",
@@ -1754,7 +1743,7 @@ const competitorMattressRecords: Mattress[] = [
     pros: ["GOLS-certified organic Talalay latex","Excellent response time (10/10)","Good value for organic (9/10)","Rainforest Alliance certification"],
     cons: ["Overall score 8 — below the Nolah Evolution lineup","Motion transfer 8/10","15-year warranty vs 20-year market leaders"],
     summary: "The Nolah Natural 11 uses GOLS-certified organic Talalay latex with organic cotton and a Rainforest Alliance certification for the eco-conscious buyer.",
-    verdict: "Strong organic option with class-leading response time. For buyers who want certified natural latex at a good value, it is a strong contender despite an 8/10 overall.",
+    verdict: "Strong organic option with notable response time. For buyers who want certified natural latex at a good value, it is a strong contender despite an 8/10 overall.",
     layers: [{ name: "Organic Talalay Latex Comfort Layer", thickness: "11 inches", material: "GOLS Organic Talalay Latex + Coil Base", description: "Certified organic Talalay latex comfort layer over coil support base." }],
     sizePricing: [{ size: "Queen", dimensions: "60\" × 80\"", priceOriginal: "$1,599", priceSale: "$1,299" }],
     faqs: [{ question: "Nolah Natural 11 vs Amerisleep Organica?", answer: "The Organica scores higher overall (9 vs 8) and includes GOTS wool and organic cotton alongside the latex. The Nolah Natural adds a Rainforest Alliance certification and hits a lower starting price. Both carry similar trial terms." }]
@@ -1762,7 +1751,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "nolah-original-hybrid", name: "Nolah Original Hybrid", brand: "Nolah", model: "Original Hybrid",
     price: 999, priceRange: "$849 – $1,699", priceSale: "from $849",
-    affiliateUrl: "https://www.nolahsleep.com/pages/limited-warranty-information",
+    productUrl: "https://www.nolahsleep.com/pages/limited-warranty-information",
     availabilityNote: "Nolah no longer lists the Original Hybrid as a standalone product in its current mattress collection. This review preserves the locked Original Hybrid scorecard and links to Nolah's official warranty page, which still identifies the model.",
     image: "/images/mattresses/nolah-original-hybrid.webp",
     heroImage: "/images/mattresses/nolah-original-hybrid.webp",
@@ -1786,7 +1775,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "plushbeds-botanical-bliss", name: "PlushBeds Botanical Bliss", brand: "PlushBeds", model: "Botanical Bliss",
     price: 1699, priceRange: "$1,499 – $2,999", priceSale: "from $1,499",
-    affiliateUrl: "https://www.plushbeds.com/products/the-botanical-bliss-organic-latex-mattress",
+    productUrl: "https://www.plushbeds.com/products/the-botanical-bliss-organic-latex-mattress",
     image: "/images/mattresses/plushbeds-botanical-bliss.webp",
     heroImage: "/images/mattresses/plushbeds-botanical-bliss.webp",
     type: "latex", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
@@ -1809,7 +1798,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "plushbeds-luxury-bliss", name: "PlushBeds Luxury Bliss", brand: "PlushBeds", model: "Luxury Bliss",
     price: 1299, priceRange: "$999 – $1,999", priceSale: "from $999",
-    affiliateUrl: "https://www.plushbeds.com/products/12-luxury-bliss-natural-latex-mattress-with-encased-coils",
+    productUrl: "https://www.plushbeds.com/products/12-luxury-bliss-natural-latex-mattress-with-encased-coils",
     image: "/images/mattresses/plushbeds-luxury-bliss.webp",
     heroImage: "/images/mattresses/plushbeds-luxury-bliss.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
@@ -1832,7 +1821,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "plushbeds-organic-bliss", name: "PlushBeds Organic Bliss", brand: "PlushBeds", model: "Organic Bliss",
     price: 1499, priceRange: "$1,299 – $2,499", priceSale: "from $1,299",
-    affiliateUrl: "https://www.plushbeds.com/products/organic-mattress",
+    productUrl: "https://www.plushbeds.com/products/organic-mattress",
     image: "/images/mattresses/plushbeds-organic-bliss.webp",
     heroImage: "/images/mattresses/plushbeds-organic-bliss.webp",
     type: "latex", firmness: "medium", firmnessScale: 5, thickness: "14 inches",
@@ -1855,7 +1844,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "plushbeds-organic-kids", name: "PlushBeds Organic Kids Mattress", brand: "PlushBeds", model: "Organic Kids",
     price: 899, priceRange: "$699 – $1,299", priceSale: "from $699",
-    affiliateUrl: "https://www.plushbeds.com/products/healthy-child-organic-latex-mattress",
+    productUrl: "https://www.plushbeds.com/products/healthy-child-organic-latex-mattress",
     image: "/images/mattresses/plushbeds-organic-kids.webp",
     heroImage: "/images/mattresses/plushbeds-organic-kids.webp",
     type: "latex", firmness: "medium-firm", firmnessScale: 8, thickness: "8 inches",
@@ -1870,7 +1859,7 @@ const competitorMattressRecords: Mattress[] = [
     pros: ["GOTS + OEKO-TEX + eco-INSTITUT certified","10/10 response time — easy position changes for active kids","25-year warranty on a children's mattress","100-night trial"],
     cons: ["Value 8 — premium for a kids mattress","8-inch profile thinner than adult options"],
     summary: "The PlushBeds Organic Kids Mattress provides multi-certified organic materials in a firm-medium kids mattress with an exceptional 25-year warranty.",
-    verdict: "Best-in-class certifications for a children's mattress. The 25-year warranty is unusually strong for the kids category. Worth the premium for parents who prioritize organic materials.",
+    verdict: "Strong certifications for a children's mattress. The 25-year warranty is unusually strong for the kids category. Worth the premium for parents who prioritize organic materials.",
     layers: [{ name: "Organic Kids Latex System", thickness: "8 inches", material: "GOLS Latex + GOTS Organic Cotton + Organic Wool", description: "Six inches of organic latex with organic wool and an organic cotton cover, sized for children." }],
     sizePricing: [{ size: "Twin", dimensions: "38\" × 75\"", priceOriginal: "$1,099", priceSale: "$899" }],
     faqs: [{ question: "PlushBeds Organic Kids vs Nest Bedding Puffin Kids?", answer: "The Puffin Kids scores higher on value (10 vs 8). The PlushBeds Organic Kids has deeper organic certifications (GOTS + OEKO-TEX + eco-INSTITUT) and a longer warranty (25 vs 10 years). Choose PlushBeds for organic credentials; Nest for maximum value." }]
@@ -1878,7 +1867,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "plushbeds-signature-bliss", name: "PlushBeds Signature Bliss", brand: "PlushBeds", model: "Signature Bliss",
     price: 1999, priceRange: "$1,799 – $3,299", priceSale: "from $1,799",
-    affiliateUrl: "https://www.plushbeds.com/products/pillowtop-mattress",
+    productUrl: "https://www.plushbeds.com/products/pillowtop-mattress",
     image: "/images/mattresses/plushbeds-signature-bliss.webp",
     heroImage: "/images/mattresses/plushbeds-signature-bliss.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "14 inches",
@@ -1892,7 +1881,7 @@ const competitorMattressRecords: Mattress[] = [
     tags: ["organic","latex","hybrid","premium","eco"],
     pros: ["10/10 overall, edge support, and response time","GOLS + GOTS + OEKO-TEX + eco-INSTITUT certified","25-year warranty","Organic latex hybrid construction"],
     cons: ["Value 9 — premium pricing across all certifications","Higher price than the Botanical Bliss"],
-    summary: "The PlushBeds Signature Bliss is the brand's flagship hybrid, combining GOLS organic latex, GOTS organic cotton, organic wool, and a pocketed coil base with class-leading scores and certifications.",
+    summary: "The PlushBeds Signature Bliss is the brand's flagship hybrid, combining GOLS organic latex, GOTS organic cotton, organic wool, and a pocketed coil base with notable scores and certifications.",
     verdict: "The strongest certified organic hybrid available, scoring 10/10 overall. Best for buyers who want the deepest organic credentials with flagship performance.",
     layers: [{ name: "Certified Organic Hybrid System", thickness: "13 inches", material: "GOLS Latex + GOTS Cotton + Wool + Pocketed Coils", description: "Multi-certified organic latex and wool comfort layers over pocketed coil support base." }],
     sizePricing: [{ size: "Queen", dimensions: "60\" × 80\"", priceOriginal: "$2,399", priceSale: "$1,999" }],
@@ -1901,7 +1890,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "sweetnight-coolnest", name: "SweetNight CoolNest Memory Foam Mattress", brand: "SweetNight", model: "CoolNest",
     price: 399, priceRange: "$299 – $699", priceSale: "from $299",
-    affiliateUrl: "https://www.sweetnight.com/products/sweetnight-coolnest-mattress",
+    productUrl: "https://www.sweetnight.com/products/sweetnight-coolnest-mattress",
     image: "/images/mattresses/sweetnight-coolnest.webp",
     heroImage: "/images/mattresses/sweetnight-coolnest.webp",
     type: "foam", firmness: "medium", firmnessScale: 5, thickness: "10 inches",
@@ -1924,7 +1913,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "sweetnight-prime", name: "SweetNight Prime Memory Foam Mattress", brand: "SweetNight", model: "Prime",
     price: 299, priceRange: "$199 – $549", priceSale: "from $199",
-    affiliateUrl: "https://www.sweetnight.com/blogs/news/best-mattress-2025-complete-buying-guide-expert-rankings",
+    productUrl: "https://www.sweetnight.com/blogs/news/best-mattress-2025-complete-buying-guide-expert-rankings",
     availabilityNote: "SweetNight's Prime product page now redirects away from the model. This review preserves the locked Prime scorecard and links to an official SweetNight article that still documents the archived mattress.",
     image: "/images/mattresses/sweetnight-prime.webp",
     heroImage: "/images/mattresses/sweetnight-prime.webp",
@@ -1948,7 +1937,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "vaya-foam", name: "Vaya Foam", brand: "Vaya", model: "Foam",
     price: 399, priceRange: "$299 – $699", priceSale: "from $299",
-    affiliateUrl: "https://vayasleep.com/mattresses/vaya/",
+    productUrl: "https://vayasleep.com/mattresses/vaya/",
     image: "/images/mattresses/vaya-foam.webp",
     heroImage: "/images/mattresses/vaya-foam.webp",
     type: "foam", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
@@ -1971,7 +1960,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "vaya-hybrid", name: "Vaya Hybrid", brand: "Vaya", model: "Hybrid",
     price: 599, priceRange: "$499 – $999", priceSale: "from $499",
-    affiliateUrl: "https://vayasleep.com/mattresses/hybrid/",
+    productUrl: "https://vayasleep.com/mattresses/hybrid/",
     image: "/images/mattresses/vaya-hybrid.webp",
     heroImage: "/images/mattresses/vaya-hybrid.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
@@ -1994,7 +1983,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "westin-heavenly-bed", name: "Westin Heavenly Bed", brand: "Westin", model: "Heavenly Bed",
     price: 1799, priceRange: "$1,499 – $2,999", priceSale: "from $1,499",
-    affiliateUrl: "https://shop.marriott.com/brands/westin/mattresses/heavenly-bed-mattress/HB-124-01-F-MO.html",
+    productUrl: "https://shop.marriott.com/brands/westin/mattresses/heavenly-bed-mattress/HB-124-01-F-MO.html",
     image: "/images/mattresses/westin-heavenly-bed.webp",
     heroImage: "/images/mattresses/westin-heavenly-bed.webp",
     type: "innerspring", firmness: "medium", firmnessScale: 5, thickness: "13 inches",
@@ -2017,7 +2006,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "zoma-boost", name: "Zoma Boost", brand: "Zoma", model: "Boost",
     price: 999, priceRange: "$799 – $1,699", priceSale: "from $799",
-    affiliateUrl: "https://zomasleep.com/mattresses/zoma-boost",
+    productUrl: "https://zomasleep.com/mattresses/zoma-boost",
     image: "/images/mattresses/zoma-boost.webp",
     heroImage: "/images/mattresses/zoma-boost.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "14 inches",
@@ -2040,7 +2029,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "zoma-hybrid", name: "Zoma Hybrid", brand: "Zoma", model: "Hybrid",
     price: 799, priceRange: "$599 – $1,299", priceSale: "from $599",
-    affiliateUrl: "https://zomasleep.com/mattresses/zoma-mattress?material=hybrid",
+    productUrl: "https://zomasleep.com/mattresses/zoma-mattress?material=hybrid",
     image: "/images/mattresses/zoma-hybrid.webp",
     heroImage: "/images/mattresses/zoma-hybrid.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
@@ -2063,7 +2052,7 @@ const competitorMattressRecords: Mattress[] = [
   {
     id: "zoma-start", name: "Zoma Start", brand: "Zoma", model: "Start",
     price: 499, priceRange: "$399 – $849", priceSale: "from $399",
-    affiliateUrl: "https://zomasleep.com/mattresses/zoma-start-mattress",
+    productUrl: "https://zomasleep.com/mattresses/zoma-start-mattress",
     availabilityNote: "Zoma now sells a hybrid under the Zoma Start name. This review preserves the approved scorecard for the earlier all-foam Zoma Start and links to the current official Start product page so shoppers can verify the changed construction before buying.",
     image: "/images/mattresses/zoma-start.webp",
     heroImage: "/images/mattresses/zoma-start.webp",
@@ -2086,5 +2075,6 @@ const competitorMattressRecords: Mattress[] = [
   },
 ];
 
-export const competitorMattresses = competitorMattressRecords.map(neutralizeCompetitorReview);
+export const mattresses = amerisleepMattressRecords.map(normalizeMattressReview);
+export const competitorMattresses = competitorMattressRecords.map(normalizeMattressReview);
 export const allMattresses = [...mattresses, ...competitorMattresses];

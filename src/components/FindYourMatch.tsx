@@ -29,7 +29,7 @@ export default function FindYourMatch() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-3"
+          className="text-label-sm font-label-sm uppercase tracking-normal text-secondary mb-3"
         >
           Browse by Sleep Need
         </motion.h3>
@@ -53,17 +53,13 @@ export default function FindYourMatch() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.05, duration: 0.5 }}
-            whileHover={{ y: -8, scale: 1.02 }}
-            className="group block p-7 glass-panel hover:glass-panel-heavy hover:border-secondary transition-all duration-300 rounded-3xl h-full flex flex-col relative overflow-hidden shadow-sm hover:shadow-lg"
+            className="group block p-6 bg-white border border-outline-variant hover:border-secondary transition-colors rounded-lg h-full flex flex-col shadow-sm"
           >
-            {/* Subtle glow on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
-            
-            <div className="text-label-sm font-label-sm text-secondary uppercase tracking-widest mb-4 opacity-70 group-hover:opacity-100 transition-opacity relative z-10 font-bold">{need.num}</div>
-            <h4 className="text-headline-md font-headline-md text-primary mb-2 group-hover:text-secondary transition-colors relative z-10">{need.title}</h4>
-            <p className="text-body-md font-body-md text-on-surface-variant mb-6 flex-grow relative z-10">{need.desc}</p>
-            <div className="mt-auto relative z-10">
-              <div className="w-10 h-10 rounded-full border border-secondary flex items-center justify-center group-hover:bg-secondary group-hover:border-secondary transition-colors duration-300">
+            <div className="text-label-sm font-label-sm text-secondary uppercase mb-4 font-bold">{need.num}</div>
+            <h3 className="text-headline-md font-headline-md text-primary mb-2 group-hover:text-secondary transition-colors">{need.title}</h3>
+            <p className="text-body-md font-body-md text-on-surface-variant mb-6 flex-grow">{need.desc}</p>
+            <div className="mt-auto">
+              <div className="w-10 h-10 rounded-lg border border-secondary flex items-center justify-center group-hover:bg-secondary group-hover:border-secondary transition-colors duration-300">
                 <ArrowRight className="text-secondary group-hover:text-white w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
               </div>
             </div>

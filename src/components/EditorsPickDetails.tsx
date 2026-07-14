@@ -5,9 +5,6 @@ export default function EditorsPickDetails() {
   return (
     <section className="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative overflow-hidden">
       
-      {/* Background decoration */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-secondary/40 to-transparent" />
-
       <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter relative z-10">
         <motion.div 
           initial={false}
@@ -17,7 +14,7 @@ export default function EditorsPickDetails() {
           className="md:col-span-5 flex flex-col gap-4 border-r-0 md:border-r border-outline-variant/30 pr-0 md:pr-10"
         >
           <h2 className="text-display-lg font-display-lg text-primary ">Amerisleep AS3</h2>
-          <div className="w-full h-72 glass-panel rounded-3xl mt-4 overflow-hidden shadow-sm group relative border border-outline-variant/30">
+          <div className="w-full h-72 glass-panel rounded-lg mt-4 overflow-hidden shadow-sm group relative border border-outline-variant/30">
             <img 
               alt="Amerisleep AS3 Mattress" 
               className="w-full h-full object-contain bg-white p-4 transition-transform duration-700 group-hover:scale-[1.02]" 
@@ -32,17 +29,17 @@ export default function EditorsPickDetails() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="md:col-span-7 flex flex-col gap-stack-md md:pl-10 mt-8 md:mt-0"
         >
-          <div className="glass-panel p-8 rounded-3xl border border-outline-variant/30 bg-white/40">
+          <div className="glass-panel p-8 rounded-lg border border-outline-variant/30 bg-white">
             <h3 className="text-headline-md font-headline-md text-primary mb-3">Why Amerisleep AS3 is our #1 pick</h3>
             <p className="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
               AS3 is our #1 mattress pick for 2026 — Bio-Pur® plant memory foam, HIVE® 5-zone support, and a 20-year warranty.
             </p>
-            <a href="https://amerisleep.com/as3.html" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-secondary font-label-sm uppercase tracking-widest mt-5 hover:text-primary transition-colors group px-4 py-2 rounded-full border border-secondary hover:bg-secondary/10">
+            <a href="https://amerisleep.com/as3.html" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-secondary font-label-sm uppercase tracking-normal mt-5 hover:text-primary transition-colors group px-4 py-2 rounded-full border border-secondary hover:bg-secondary/10">
               See Amerisleep AS3 pricing <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
 
-          <div className="glass-panel p-8 rounded-3xl mt-2 relative border border-outline-variant/30 bg-white/40">
+          <div className="glass-panel p-8 rounded-lg mt-2 relative border border-outline-variant/30 bg-white">
             <h3 className="text-headline-md font-headline-md text-primary mb-3">Plant-Based Technology</h3>
             <p className="text-body-md font-body-md text-on-surface-variant mb-4 leading-relaxed">
               The Amerisleep AS3 features open-cell Bio-Pur® plant-based memory foam, HIVE® zoned support, a 100-night home trial, and a 20-year limited warranty. Verify current trial and warranty terms with Amerisleep.
@@ -50,7 +47,7 @@ export default function EditorsPickDetails() {
             <p className="text-body-md font-body-md text-on-surface-variant leading-relaxed">
               Bio-Pur® uses an open-cell, partly plant-derived memory-foam formulation. The AS3 includes a 100-night home trial and 20-year limited warranty; verify current terms with Amerisleep.
             </p>
-            <a href="https://amerisleep.com/as3.html" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-secondary font-label-sm uppercase tracking-widest mt-6 hover:text-primary transition-colors group px-4 py-2 rounded-full border border-secondary hover:bg-secondary/10">
+            <a href="https://amerisleep.com/as3.html" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-secondary font-label-sm uppercase tracking-normal mt-6 hover:text-primary transition-colors group px-4 py-2 rounded-full border border-secondary hover:bg-secondary/10">
               See AS3 pricing <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>

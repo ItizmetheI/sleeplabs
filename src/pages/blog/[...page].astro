@@ -2,6 +2,7 @@
 import { blogPosts } from '../../data/blogs-generated';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getLegacyBestBlogRedirect } from '../../lib/legacyBlogRedirects';
+import { formatDateOnly } from '../../lib/dateFormat';
 
 export function getStaticPaths() {
   const postsPerPage = 10;
@@ -58,7 +59,7 @@ const jsonLd = {
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {posts.map(post => (
-        <article class="glass-panel rounded-3xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all group flex flex-col">
+        <article class="glass-panel rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all group flex flex-col">
 
           <div class="h-48 overflow-hidden bg-surface-variant relative group">
             <img
@@ -75,7 +76,7 @@ const jsonLd = {
           </div>
 
           <div class="p-6 flex flex-col flex-1 gap-4">
-            <div class="inline-block text-label-sm font-label-sm uppercase tracking-widest text-secondary bg-secondary/10 px-3 py-1 rounded-full font-bold w-fit">
+            <div class="inline-block text-label-sm font-label-sm uppercase tracking-normal text-secondary bg-secondary/10 px-3 py-1 rounded-full font-bold w-fit">
               {post.category.replace(/-/g, ' ')}
             </div>
 
@@ -87,14 +88,14 @@ const jsonLd = {
               {post.excerpt}
             </p>
 
-            <div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest border-t border-outline-variant/30 pt-4 mt-2">
-              <span>{new Date(post.datePublished).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+            <div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant uppercase tracking-normal border-t border-outline-variant/30 pt-4 mt-2">
+              <span>{formatDateOnly(post.datePublished, { month: 'short', day: 'numeric', year: 'numeric' })}</span>
               <span>{post.readTimeMinutes} min read</span>
             </div>
 
             <a
               href={`/blog/${post.slug}`}
-              class="w-full text-center py-3 rounded-xl border-2 border-primary text-primary font-label-sm uppercase tracking-widest font-bold hover:bg-primary/5 transition-colors"
+              class="w-full text-center py-3 rounded-lg border-2 border-primary text-primary font-label-sm uppercase tracking-normal font-bold hover:bg-primary/5 transition-colors"
             >
               Read Article →
             </a>
@@ -107,20 +108,20 @@ const jsonLd = {
     {totalPages > 1 && (
       <div class="flex justify-center gap-3 mt-16 flex-wrap">
         {currentPage > 1 && (
-          <a href={currentPage === 2 ? `/blog` : `/blog/${currentPage - 1}`} class="glass-panel px-6 py-3 rounded-full text-label-sm font-label-sm uppercase tracking-widest text-primary hover:text-secondary transition-colors font-bold">
+          <a href={currentPage === 2 ? `/blog` : `/blog/${currentPage - 1}`} class="glass-panel px-6 py-3 rounded-full text-label-sm font-label-sm uppercase tracking-normal text-primary hover:text-secondary transition-colors font-bold">
             ← Previous
           </a>
         )}
         {Array.from({ length: totalPages }, (_, i) => (
           <a
             href={i === 0 ? `/blog` : `/blog/${i + 1}`}
-            class={`px-4 py-3 rounded-full text-label-sm font-label-sm uppercase tracking-widest font-bold transition-colors ${currentPage === i + 1 ? 'bg-primary text-white' : 'glass-panel text-primary hover:text-secondary'}`}
+            class={`px-4 py-3 rounded-full text-label-sm font-label-sm uppercase tracking-normal font-bold transition-colors ${currentPage === i + 1 ? 'bg-primary text-white' : 'glass-panel text-primary hover:text-secondary'}`}
           >
             {i + 1}
           </a>
         ))}
         {currentPage < totalPages && (
-          <a href={`/blog/${currentPage + 1}`} class="glass-panel px-6 py-3 rounded-full text-label-sm font-label-sm uppercase tracking-widest text-primary hover:text-secondary transition-colors font-bold">
+          <a href={`/blog/${currentPage + 1}`} class="glass-panel px-6 py-3 rounded-full text-label-sm font-label-sm uppercase tracking-normal text-primary hover:text-secondary transition-colors font-bold">
             Next →
           </a>
         )}

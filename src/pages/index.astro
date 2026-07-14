@@ -9,6 +9,8 @@ import LatestGuides from '../components/LatestGuides';
 import Methodology from '../components/Methodology';
 import FinalPick from '../components/FinalPick';
 import { allMattresses } from '../data/mattresses';
+import { comparisons } from '../data/comparisons';
+import { formatDateOnly } from '../lib/dateFormat';
 
 const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 const featuredPicks = [
@@ -23,6 +25,18 @@ const featuredPicks = [
   if (!mattress) throw new Error(`Missing homepage pick: ${config.id}`);
   return { ...config, name: mattress.name, score: mattress.scores.overall, href: `/reviews/${mattress.id}` };
 });
+const featuredComparisons = [
+  'amerisleep-organica-vs-avocado-green',
+  'amerisleep-as5-hybrid-vs-leesa-sapira-chill-hybrid',
+  'amerisleep-as6-black-series-vs-saatva-rx',
+].map(slug => {
+  const comparison = comparisons.find(item => item.slug === slug);
+  if (!comparison) throw new Error(`Missing homepage comparison: ${slug}`);
+  const mattressA = allMattresses.find(item => item.id === comparison.mattressAId);
+  const mattressB = allMattresses.find(item => item.id === comparison.mattressBId);
+  if (!mattressA || !mattressB) throw new Error(`Missing homepage comparison models: ${slug}`);
+  return { comparison, mattressA, mattressB };
+});
 
 const homepageFaqs = [
   {
@@ -35,7 +49,7 @@ const homepageFaqs = [
   },
   {
     q: 'Are PureSleep scores customer ratings or laboratory results?',
-    a: 'No. The scores are editorial comparisons from the approved source dataset. They are not clinical findings, laboratory measurements, manufacturer ratings, or collected customer ratings.',
+    a: 'No. The scores are editorial comparisons from the published PureSleep score dataset. They are not clinical findings, laboratory measurements, manufacturer ratings, or collected customer ratings.',
   },
   {
     q: 'How should I use a mattress ranking?',
@@ -51,16 +65,27 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
     "name": "PureSleep",
     "url": SITE_URL,
-    "description": "Multi-brand mattress reviews, rankings, and buying guides covering 59 models across 24 brands. Updated July 2026."
+    "description": "Multi-brand mattress reviews, rankings, and buying guides covering 59 models across 24 brands. Updated July 2026.",
+    "publisher": { "@id": `${SITE_URL}/#organization` }
   },
   {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
     "name": "PureSleep",
     "url": SITE_URL,
     "logo": SITE_URL + "/logo.svg"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${SITE_URL}/about/#editorial-team`,
+    "name": "PureSleep Editorial Team",
+    "url": `${SITE_URL}/about/#editorial-team`,
+    "parentOrganization": { "@id": `${SITE_URL}/#organization` }
   },
   {
     "@context": "https://schema.org",
@@ -81,19 +106,19 @@ const jsonLd = [
   ogImage="/images/mattresses/amerisleep-as3.webp"
   ogType="website"
   canonicalUrl={`${SITE_URL}/`}
-  lastUpdated="2026-07-13"
+  lastUpdated="2026-07-14"
   jsonLd={jsonLd}
 >
   <div>
     <Hero client:load />
     
     <!-- Coverage Banner -->
-    <div class="w-full bg-secondary-container/80 py-4 flex flex-col justify-center items-center px-margin-mobile shadow-[0_0_20px_rgba(37,99,235,0.1)] relative z-10 backdrop-blur-md border-y border-secondary/20">
-      <span class="text-on-secondary-container font-headline-md text-headline-md text-center tracking-wide font-bold">
+    <div class="w-full bg-secondary-container py-4 flex flex-col justify-center items-center px-margin-mobile relative z-10 border-y border-secondary/20">
+      <span class="text-on-secondary-container font-headline-md text-headline-md text-center tracking-normal font-bold">
         59 SCORED MODELS ACROSS 24 MATTRESS BRANDS
       </span>
-      <span class="text-on-secondary-container/80 text-label-sm font-label-sm uppercase tracking-widest mt-2 bg-white/40 px-3 py-1 rounded-full border border-white/50 shadow-sm font-bold">
-        30 comparison charts · 18 ranked categories · updated {new Date("2026-07-13").toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+      <span class="text-on-secondary-container/80 text-label-sm font-label-sm uppercase tracking-normal mt-2 bg-white/40 px-3 py-1 rounded-full border border-white/50 shadow-sm font-bold">
+        30 comparison charts · 18 ranked categories · updated {formatDateOnly("2026-07-14")}
       </span>
     </div>
     
@@ -106,12 +131,12 @@ const jsonLd = [
 <!-- Top Picks By Category -->
 <section class="py-16 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
   <h2 class="text-display-lg font-display-lg text-primary mb-3">Top picks by category</h2>
-  <p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl">Cross-brand leaders from the same locked scorecard, with full reviews behind every pick.</p>
+  <p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl">Cross-brand leaders from the same published scorecard, with full reviews behind every pick.</p>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     {featuredPicks.map(pick => (
-      <a href={pick.href} class="glass-panel p-6 rounded-2xl border border-outline-variant/30 hover:border-secondary/40 transition-all group flex flex-col gap-3">
+      <a href={pick.href} class="glass-panel p-6 rounded-lg border border-outline-variant/30 hover:border-secondary/40 transition-all group flex flex-col gap-3">
         <div class="flex items-center justify-between">
-          <span class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">{pick.label}</span>
+          <span class="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold">{pick.label}</span>
           <span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded-full">{pick.badge}</span>
         </div>
         <h3 class="text-headline-md font-headline-md text-primary group-hover:text-secondary transition-colors">{pick.name}</h3>
@@ -135,27 +160,20 @@ const jsonLd = [
       <h2 class="text-display-lg font-display-lg text-primary mb-3">Head-to-head comparisons</h2>
       <p class="text-body-lg text-on-surface-variant max-w-2xl">Explore 30 matchups with a crawlable chart for all seven score fields on every comparison page.</p>
     </div>
-    <a href="/comparison" class="shrink-0 text-secondary font-label-sm font-bold uppercase tracking-widest hover:text-primary transition-colors">
+    <a href="/comparison" class="shrink-0 text-secondary font-label-sm font-bold uppercase tracking-normal hover:text-primary transition-colors">
       All 30 comparisons →
     </a>
   </div>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    {[
-      { a: "AS3", b: "Saatva Classic", href: "/comparison/amerisleep-as3-vs-saatva-classic", verdict: "AS3 wins on value & warranty. Saatva wins on trial (365 nights)." },
-      { a: "AS3", b: "Helix Midnight Luxe", href: "/comparison/amerisleep-as3-vs-helix-midnight-luxe", verdict: "AS3 wins on motion isolation & cooling. Helix wins on customisation." },
-      { a: "AS3", b: "Purple RestorePlus Hybrid", href: "/comparison/amerisleep-as3-vs-purple-restoreplus-hybrid", verdict: "AS3 wins overall (10 vs 9). Purple wins on unique grid feel." },
-      { a: "AS3", b: "Nolah Evolution 15", href: "/comparison/amerisleep-as3-vs-nolah-evolution-15", verdict: "Both 10/10 overall. AS3 wins on warranty; Nolah on value score." },
-      { a: "AS2", b: "Brooklyn Bedding Plank Firm", href: "/comparison/amerisleep-as2-vs-brooklyn-bedding-plank-firm", verdict: "AS2 wins on motion isolation. Plank Firm wins on firmness options." },
-      { a: "Organica", b: "Avocado Green", href: "/comparison/amerisleep-organica-vs-avocado-green", verdict: "Both 9/10. Organica wins on value; Avocado wins on trial period." },
-    ].map(c => (
-      <a href={c.href} class="glass-panel rounded-2xl p-5 border border-outline-variant/30 hover:border-secondary/40 hover:-translate-y-0.5 transition-all group flex flex-col gap-3">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+    {featuredComparisons.map(({ comparison, mattressA, mattressB }) => (
+      <a href={`/comparison/${comparison.slug}/`} class="glass-panel rounded-lg p-5 border border-outline-variant hover:border-secondary transition-colors group flex flex-col gap-3">
         <div class="flex items-center gap-2 font-bold text-primary">
-          <span class="text-title-md">{c.a}</span>
+          <span class="text-title-md">{mattressA.name}</span>
           <span class="text-on-surface-variant font-normal text-body-md">vs</span>
-          <span class="text-title-md">{c.b}</span>
+          <span class="text-title-md">{mattressB.name}</span>
         </div>
-        <p class="text-body-md text-on-surface-variant flex-1">{c.verdict}</p>
-        <span class="text-secondary text-label-sm font-bold uppercase tracking-widest group-hover:text-primary transition-colors">Compare →</span>
+        <p class="text-body-md text-on-surface-variant flex-1">{comparison.verdict}</p>
+        <span class="text-secondary text-label-sm font-bold uppercase tracking-normal group-hover:text-primary transition-colors">Compare →</span>
       </a>
     ))}
   </div>
@@ -169,7 +187,7 @@ const jsonLd = [
   <p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl">Direct answers about the scorecard, coverage, evidence limits, and how to use the rankings.</p>
   <div class="flex flex-col gap-3 max-w-3xl">
     {homepageFaqs.map(faq => (
-      <details class="group glass-panel rounded-2xl border border-outline-variant/30 overflow-hidden">
+      <details class="group glass-panel rounded-lg border border-outline-variant/30 overflow-hidden">
         <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-on-surface list-none text-body-lg">
           {faq.q}
           <span class="transition-transform group-open:rotate-180 shrink-0 ml-4">

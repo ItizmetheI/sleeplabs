@@ -1,8 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { allMattresses } from '../../data/mattresses';
+import { formatDateOnly } from '../../lib/dateFormat';
 
 const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
+const brandQueues = [...new Set(allMattresses.map(mattress => mattress.brand))]
+  .sort((a, b) => a.localeCompare(b))
+  .map(brand => allMattresses.filter(mattress => mattress.brand === brand));
+const reviewMattresses = Array.from(
+  { length: Math.max(...brandQueues.map(queue => queue.length)) },
+  (_, index) => brandQueues.map(queue => queue[index]).filter(Boolean),
+).flat();
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -12,7 +20,7 @@ const jsonLd = {
   "url": `${SITE_URL}/reviews/`,
   "mainEntity": {
     "@type": "ItemList",
-    "itemListElement": allMattresses.map((m, index) => ({
+    "itemListElement": reviewMattresses.map((m, index) => ({
       "@type": "ListItem",
       "position": index + 1,
       "name": m.name,
@@ -21,12 +29,8 @@ const jsonLd = {
   }
 };
 
-const lastUpdated = "2026-05-01";
-const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', {
-  month: 'long',
-  day: 'numeric',
-  year: 'numeric'
-});
+const lastUpdated = "2026-07-14";
+const formattedDateModified = formatDateOnly(lastUpdated);
 ---
 
 <BaseLayout
@@ -35,7 +39,7 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
   canonicalUrl={`${SITE_URL}/reviews/`}
   machineReadableUrl={`${SITE_URL}/llms/reviews.md`}
   lastUpdated={lastUpdated}
-  ogImage="/images/mattresses/amerisleep-as3.webp"
+  ogImage="/og-default.jpg"
   jsonLd={jsonLd}
 >
   <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 relative z-10 w-full flex flex-col gap-16">
@@ -58,29 +62,29 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
     <!-- Filter Bar -->
     <section class="flex flex-col gap-4 items-center">
       <div class="flex flex-wrap justify-center gap-2">
-        <a href="#all" class="px-5 py-2 rounded-full bg-primary text-on-primary font-bold text-label-sm uppercase tracking-widest hover:bg-primary/90 transition-colors">All</a>
-        <a href="#memory-foam" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-primary font-bold text-label-sm uppercase tracking-widest hover:border-primary/30 transition-colors">Memory Foam</a>
-        <a href="#hybrid" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-primary font-bold text-label-sm uppercase tracking-widest hover:border-primary/30 transition-colors">Hybrid</a>
-        <a href="#innerspring" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-primary font-bold text-label-sm uppercase tracking-widest hover:border-primary/30 transition-colors">Innerspring</a>
-        <a href="#latex" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-primary font-bold text-label-sm uppercase tracking-widest hover:border-primary/30 transition-colors">Latex</a>
+        <a href="#all" class="px-5 py-2 rounded-full bg-primary text-on-primary font-bold text-label-sm uppercase tracking-normal hover:bg-primary/90 transition-colors">All</a>
+        <a href="#memory-foam" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-primary font-bold text-label-sm uppercase tracking-normal hover:border-primary/30 transition-colors">Memory Foam</a>
+        <a href="#hybrid" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-primary font-bold text-label-sm uppercase tracking-normal hover:border-primary/30 transition-colors">Hybrid</a>
+        <a href="#innerspring" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-primary font-bold text-label-sm uppercase tracking-normal hover:border-primary/30 transition-colors">Innerspring</a>
+        <a href="#latex" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-primary font-bold text-label-sm uppercase tracking-normal hover:border-primary/30 transition-colors">Latex</a>
       </div>
       <div class="flex flex-wrap justify-center gap-2 mt-2">
-        <a href="#side-sleepers" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-secondary font-bold text-label-sm uppercase tracking-widest hover:border-secondary/30 transition-colors">Best for Side Sleepers</a>
-        <a href="#back-pain" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-secondary font-bold text-label-sm uppercase tracking-widest hover:border-secondary/30 transition-colors">Best for Back Pain</a>
-        <a href="#hot-sleepers" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-secondary font-bold text-label-sm uppercase tracking-widest hover:border-secondary/30 transition-colors">Best for Hot Sleepers</a>
+        <a href="#side-sleepers" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-secondary font-bold text-label-sm uppercase tracking-normal hover:border-secondary/30 transition-colors">Best for Side Sleepers</a>
+        <a href="#back-pain" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-secondary font-bold text-label-sm uppercase tracking-normal hover:border-secondary/30 transition-colors">Back Comfort</a>
+        <a href="#hot-sleepers" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-secondary font-bold text-label-sm uppercase tracking-normal hover:border-secondary/30 transition-colors">Best for Hot Sleepers</a>
       </div>
     </section>
 
     <!-- Mattress Grid -->
     <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {allMattresses.map(mattress => (
-        <article class="glass-panel flex flex-col rounded-3xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all border border-white/60">
+      {reviewMattresses.map(mattress => (
+        <article class="glass-panel flex flex-col rounded-lg overflow-hidden hover:shadow-lg transition-shadow border border-outline-variant">
           
           <!-- Image -->
           <div class="w-full h-56 overflow-hidden relative">
             <img src={mattress.image} alt={`${mattress.name} mattress`} class="w-full h-full object-contain bg-white p-3" />
-            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-md flex items-center gap-2">
-              <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface font-bold">Score</span>
+            <div class="absolute top-4 right-4 bg-white px-4 py-2 rounded-full border border-outline-variant flex items-center gap-2">
+              <span class="text-label-sm font-label-sm uppercase tracking-normal text-on-surface font-bold">Score</span>
               <span class="text-title-lg font-title-lg italic text-secondary font-bold leading-none">{mattress.scores.overall}</span>
             </div>
           </div>
@@ -90,7 +94,7 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
             
             <header>
               <h2 class="text-title-lg font-title-lg text-primary mb-1">{mattress.name}</h2>
-              <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">by {mattress.brand}</span>
+              <span class="text-label-sm font-label-sm uppercase tracking-normal text-on-surface-variant">by {mattress.brand}</span>
             </header>
 
             <!-- Top 4 Score Bars -->
@@ -115,7 +119,7 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
 
             <!-- Tags & Specs -->
             <div class="flex items-center gap-2 flex-wrap">
-              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider rounded-lg border border-primary/20">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-normal rounded-lg border border-primary/20">
                 {mattress.firmness} ({mattress.firmnessScale}/10)
               </span>
               {mattress.bestFor.slice(0, 3).map(tag => (
@@ -138,11 +142,11 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
 
             <!-- Size & Pricing -->
             <details class="group mt-2">
-              <summary class="cursor-pointer text-label-sm font-bold uppercase tracking-widest text-secondary flex items-center gap-2 list-none py-2 hover:text-primary transition-colors">
+              <summary class="cursor-pointer text-label-sm font-bold uppercase tracking-normal text-secondary flex items-center gap-2 list-none py-2 hover:text-primary transition-colors">
                 <span>View Sizes & Reference Pricing</span>
                 <span class="transition group-open:rotate-180 text-xs">▼</span>
               </summary>
-              <div class="mt-3 border border-outline-variant/20 rounded-xl overflow-hidden text-sm">
+              <div class="mt-3 border border-outline-variant/20 rounded-lg overflow-hidden text-sm">
                 <p class="px-4 py-3 text-xs text-on-surface-variant border-b border-outline-variant/20">Recorded dataset values, not live offers. Verify current pricing and policies with the brand.</p>
                 {mattress.sizePricing.map((sp, i) => (
                   <div class={`flex justify-between items-center px-4 py-2.5 ${i % 2 === 0 ? 'bg-transparent' : 'bg-surface/50'}`}>
@@ -165,11 +169,11 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
 
             <!-- Actions -->
             <div class="mt-auto flex flex-col gap-3 pt-6">
-              <a href={`/reviews/${mattress.id}`} class="w-full text-center py-3.5 rounded-xl border-2 border-primary text-primary font-label-md uppercase tracking-[0.15em] font-bold hover:bg-primary/5 transition-colors">
+              <a href={`/reviews/${mattress.id}`} class="w-full text-center py-3.5 rounded-lg border-2 border-primary text-primary font-label-md uppercase tracking-normal font-bold hover:bg-primary/5 transition-colors">
                 Read Full Review
               </a>
-              <a href={mattress.affiliateUrl} target="_blank" rel="noopener noreferrer" class="w-full text-center py-3.5 rounded-xl bg-primary text-on-primary font-label-md uppercase tracking-[0.15em] font-bold hover:bg-primary/90 transition-colors shadow-sm">
-                Check Price
+              <a href={mattress.productUrl} target="_blank" rel="noopener noreferrer" class="w-full text-center py-3.5 rounded-lg bg-primary text-on-primary font-label-md uppercase tracking-normal font-bold hover:bg-primary/90 transition-colors shadow-sm">
+                Official Product Page
               </a>
             </div>
 
@@ -178,10 +182,10 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
       ))}
     </section>
 
-    <section class="max-w-2xl mx-auto mt-8 glass-panel p-6 rounded-2xl border border-white/60">
+    <section class="max-w-2xl mx-auto mt-8 glass-panel p-6 rounded-lg border border-white/60">
       <h3 class="text-title-md font-title-md text-primary font-bold mb-3">How we cover 24 brands</h3>
       <p class="text-body-md text-on-surface-variant leading-relaxed">
-        Every model above is scored using the same 7-metric system: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability. Scores are editorial comparisons from the approved source dataset, not laboratory findings, manufacturer ratings, or collected customer ratings. <a href="/methodology" class="text-primary hover:underline font-bold">Read our full methodology →</a>
+        Every model above is scored using the same 7-metric system: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability. Scores are editorial comparisons from the published PureSleep score dataset, not laboratory findings, manufacturer ratings, or collected customer ratings. <a href="/methodology" class="text-primary hover:underline font-bold">Read our full methodology →</a>
       </p>
     </section>
   </main>

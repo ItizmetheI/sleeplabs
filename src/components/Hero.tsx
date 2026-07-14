@@ -1,157 +1,96 @@
+import { ArrowRight, BookOpen, Scale } from 'lucide-react';
 import { motion } from 'motion/react';
-import { mattresses } from '../data/mattresses';
+import { allMattresses } from '../data/mattresses';
+
+const leaderConfig = [
+  { id: 'amerisleep-as3', label: 'Overall score leader' },
+  { id: 'plushbeds-signature-bliss', label: 'Organic category leader' },
+  { id: 'nest-bedding-sparrow', label: 'Trial-period leader' },
+];
 
 export default function Hero() {
-  const as3 = mattresses.find(m => m.id === 'amerisleep-as3')!;
+  const leaders = leaderConfig.map(config => {
+    const mattress = allMattresses.find(item => item.id === config.id);
+    if (!mattress) throw new Error(`Missing homepage leader: ${config.id}`);
+    return { ...config, mattress };
+  });
 
   return (
-    <header className="relative pt-12 pb-12 md:pt-[100px] md:pb-[100px] px-margin-mobile md:px-margin-desktop overflow-hidden">
-      <div className="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center relative z-10">
-        {/* Left Col */}
-        <motion.div 
-          initial={false} 
-          animate={{ opacity: 1, x: 0 }} 
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="md:col-span-7 flex flex-col gap-stack-md pr-0 md:pr-12"
+    <header className="border-b border-outline-variant bg-surface py-14 md:py-20 px-margin-mobile md:px-margin-desktop">
+      <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <motion.div
+          initial={false}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="lg:col-span-7 flex flex-col gap-6"
         >
-          <div className="inline-flex">
-            <motion.span 
-              initial={false} 
-              animate={{ opacity: 1, scale: 1 }} 
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="glass-panel text-secondary text-label-sm font-label-sm px-4 py-1.5 rounded-full uppercase tracking-wider font-bold"
-            >
-              59 MODELS · 24 BRANDS · ONE PUBLISHED RUBRIC
-            </motion.span>
-          </div>
-          <h1 className="text-[44px] leading-[1.14] font-bold md:text-display-lg md:font-display-lg text-primary">
-            Compare 59 Mattresses Across <span className="text-secondary drop-shadow-sm">24 Brands.</span>
-          </h1>
-          <p className="text-body-lg font-body-lg text-on-surface-variant max-w-lg leading-relaxed">
-            Mattress reviews across 24 brands using one published 7-metric editorial scorecard.
+          <p className="text-label-sm font-label-sm uppercase text-secondary font-bold">
+            59 models · 24 brands · one published rubric
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 mt-4">
-            <a 
-              href="/reviews"
-              className="bg-primary text-on-primary px-8 py-4 rounded-full shadow-xl shadow-primary/20 text-label-sm font-label-sm uppercase tracking-widest hover:bg-blue-800 transition-all duration-300 font-bold text-center hover:scale-105 active:scale-95"
+          <h1 className="text-[44px] leading-[1.14] md:text-display-lg md:font-display-lg font-bold text-primary max-w-3xl">
+            Compare mattresses with every score in view.
+          </h1>
+          <p className="text-body-lg font-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+            PureSleep organizes 59 mattress models with one seven-metric editorial scorecard, complete comparison tables, and clearly labeled evidence limits.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 mt-2">
+            <a
+              href="/reviews/"
+              className="inline-flex min-h-12 items-center justify-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-lg text-label-sm font-label-sm uppercase font-bold hover:bg-primary/90 transition-colors"
             >
-              COMPARE ALL 59 MODELS
+              Explore all reviews <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
-            <a 
-              href="/reviews/amerisleep-as3"
-              className="glass-panel text-primary px-8 py-4 rounded-full text-label-sm font-label-sm uppercase tracking-widest hover:bg-primary/5 transition-colors font-bold text-center hover:scale-105 active:scale-95"
+            <a
+              href="/methodology/"
+              className="inline-flex min-h-12 items-center justify-center gap-2 bg-white text-primary px-6 py-3 rounded-lg border border-outline-variant text-label-sm font-label-sm uppercase font-bold hover:border-secondary hover:text-secondary transition-colors"
             >
-              SEE THE TOP OVERALL PICK
+              <BookOpen className="w-4 h-4" aria-hidden="true" /> Read the methodology
             </a>
           </div>
-          <div className="flex flex-wrap gap-4 mt-4 text-label-sm font-label-sm text-secondary uppercase tracking-widest">
-            <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-secondary block"></span> Relationships disclosed</span>
-            <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-secondary block"></span> 59 scored models</span>
-            <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-secondary block"></span> Updated July 2026</span>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-outline-variant text-body-sm text-on-surface-variant">
+            <span className="flex items-center gap-2"><Scale className="w-4 h-4 text-secondary shrink-0" aria-hidden="true" /> Independently operated</span>
+            <span>Scores are editorial, not lab results</span>
+            <span>Updated July 2026</span>
           </div>
         </motion.div>
 
-        {/* Right Col */}
-        <motion.div 
-          initial={false} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="md:col-span-5 relative mt-8 md:mt-0 flex flex-col gap-stack-md"
+        <motion.div
+          initial={false}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="lg:col-span-5 bg-white border border-outline-variant rounded-lg shadow-sm overflow-hidden"
         >
-          {/* Stacked Image Card */}
-          <motion.a 
-            href="/reviews/amerisleep-as3"
-            whileHover={{ y: -5 }}
-            className="relative rounded-3xl overflow-hidden glass-panel h-72 group border border-[rgba(255,255,255,1)] block"
-          >
-            <img 
-              alt="Amerisleep AS3 mattress, PureSleep's top overall pick"
-              className="w-full h-full object-contain bg-white p-4 transition-transform duration-700 group-hover:scale-[1.02]" 
-              src={as3.heroImage}
-            />
-            <div className="absolute bottom-5 left-5 z-20">
-              <span className="bg-primary/90 text-white text-label-sm font-label-sm px-5 py-2.5 rounded-full shadow-lg border border-primary/20 backdrop-blur-md font-bold">
-                AMERISLEEP AS3 — #1 PICK 2026
-              </span>
+          <div className="flex items-start justify-between gap-4 p-5 border-b border-outline-variant bg-surface-container-low">
+            <div>
+              <p className="text-label-sm font-label-sm uppercase text-secondary font-bold">Selected category leaders</p>
+              <h2 className="text-headline-md font-headline-md text-primary mt-2">Start with three different strengths</h2>
             </div>
-          </motion.a>
-
-          {/* Product Score Card */}
-          <motion.div 
-            initial={false}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="glass-panel-heavy rounded-3xl p-7 flex flex-col gap-stack-sm relative z-30 -mt-20 ml-8 lg:-ml-8 lg:-mt-16 border border-white"
-          >
-            <div className="flex justify-between items-center border-b border-outline-variant/50 pb-4">
-              <div className="flex items-baseline gap-1 text-tertiary">
-                <span className="text-headline-sm font-headline-sm font-bold">{as3.scores.overall}</span>
-                <span className="text-label-sm font-label-sm uppercase tracking-wider text-on-surface-variant">/10 Overall</span>
-              </div>
-              <span className="text-label-sm font-label-sm text-tertiary uppercase tracking-widest bg-tertiary/10 px-3 py-1 rounded-full border border-tertiary/20 font-bold">
-                OUR TOP PICK
-              </span>
-            </div>
-            
-            <h3 className="text-headline-md font-headline-md text-primary mt-2">Amerisleep AS3</h3>
-            
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mt-4 text-center">
-              <div className="min-w-0 flex flex-col bg-white/80 shadow-sm border border-outline-variant/30 p-2 sm:p-3 rounded-xl sm:rounded-2xl transition-transform hover:scale-105">
-                <span className="text-title-lg sm:text-headline-md font-headline-md text-primary font-bold">{as3.scores.overall}</span>
-                <span className="text-[9px] sm:text-[10px] leading-tight font-label-sm uppercase tracking-wider text-on-surface-variant mt-1">Overall</span>
-              </div>
-              <div className="min-w-0 flex flex-col bg-white/80 shadow-sm border border-outline-variant/30 p-2 sm:p-3 rounded-xl sm:rounded-2xl transition-transform hover:scale-105">
-                <span className="text-title-lg sm:text-headline-md font-headline-md text-secondary font-bold">{as3.trialNights}</span>
-                <span className="text-[9px] sm:text-[10px] leading-tight font-label-sm uppercase tracking-wider text-on-surface-variant mt-1">Night Trial</span>
-              </div>
-              <div className="min-w-0 flex flex-col bg-white/80 shadow-sm border border-outline-variant/30 p-2 sm:p-3 rounded-xl sm:rounded-2xl transition-transform hover:scale-105">
-                <span className="text-title-lg sm:text-headline-md font-headline-md text-primary font-bold">59</span>
-                <span className="text-[9px] sm:text-[10px] leading-tight font-label-sm uppercase tracking-wider text-on-surface-variant mt-1">Models Scored</span>
-              </div>
-              <div className="min-w-0 flex flex-col bg-white/80 shadow-sm border border-outline-variant/30 p-2 sm:p-3 rounded-xl sm:rounded-2xl transition-transform hover:scale-105">
-                <span className="text-title-lg sm:text-headline-md font-headline-md text-primary font-bold">{as3.warrantyYears}</span>
-                <span className="text-[9px] sm:text-[10px] leading-tight font-label-sm uppercase tracking-wider text-on-surface-variant mt-1">Years</span>
-              </div>
-            </div>
-
-            {/* Rating Bars — real 7-metric scores, not invented numbers */}
-            <div className="flex flex-col gap-3.5 mt-5">
-              <div className="flex items-center justify-between">
-                <span className="text-label-sm font-label-sm w-28 text-on-surface-variant">Edge Support</span>
-                <div className="flex-grow mx-4 h-1.5 bg-outline-variant/40 rounded-full overflow-hidden">
-                  <motion.div initial={{ width: 0 }} animate={{ width: `${as3.scores.edgeSupport * 10}%` }} transition={{ delay: 1, duration: 1 }} className="bg-tertiary h-full rounded-full shadow-[0_0_10px_rgba(251,191,36,0.5)]"></motion.div>
+            <span className="text-label-sm text-on-surface-variant whitespace-nowrap">July 2026</span>
+          </div>
+          <div className="divide-y divide-outline-variant">
+            {leaders.map(({ label, mattress }) => (
+              <a
+                key={mattress.id}
+                href={`/reviews/${mattress.id}/`}
+                className="grid grid-cols-[72px_1fr_auto] items-center gap-4 p-4 hover:bg-surface-container-low transition-colors group"
+              >
+                <div className="w-[72px] h-14 bg-white flex items-center justify-center overflow-hidden">
+                  <img src={mattress.image} alt="" className="w-full h-full object-contain" />
                 </div>
-                <span className="text-label-sm font-label-sm text-primary font-bold">{as3.scores.edgeSupport}</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-label-sm font-label-sm w-28 text-on-surface-variant">Cooling</span>
-                <div className="flex-grow mx-4 h-1.5 bg-outline-variant/40 rounded-full overflow-hidden">
-                  <motion.div initial={{ width: 0 }} animate={{ width: `${as3.scores.coolingBreathability * 10}%` }} transition={{ delay: 1.1, duration: 1 }} className="bg-tertiary h-full rounded-full shadow-[0_0_10px_rgba(251,191,36,0.5)]"></motion.div>
+                <div className="min-w-0">
+                  <p className="text-label-sm text-secondary font-bold">{label}</p>
+                  <h3 className="text-body-md text-primary font-bold mt-1 break-words group-hover:text-secondary transition-colors">{mattress.name}</h3>
                 </div>
-                <span className="text-label-sm font-label-sm text-primary font-bold">{as3.scores.coolingBreathability}</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-label-sm font-label-sm w-28 text-on-surface-variant">Value</span>
-                <div className="flex-grow mx-4 h-1.5 bg-outline-variant/40 rounded-full overflow-hidden">
-                  <motion.div initial={{ width: 0 }} animate={{ width: `${as3.scores.value * 10}%` }} transition={{ delay: 1.2, duration: 1 }} className="bg-tertiary h-full rounded-full shadow-[0_0_10px_rgba(251,191,36,0.5)]"></motion.div>
+                <div className="text-right">
+                  <span className="text-headline-md font-bold text-primary">{mattress.scores.overall}</span>
+                  <span className="block text-[11px] text-on-surface-variant">Overall</span>
                 </div>
-                <span className="text-label-sm font-label-sm text-primary font-bold">{as3.scores.value}</span>
-              </div>
-            </div>
-
-            <motion.a 
-              href="/reviews/amerisleep-as3"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full bg-primary text-white py-3.5 mt-5 rounded-full text-label-sm font-label-sm uppercase tracking-widest hover:bg-blue-800 transition-colors shadow-lg shadow-primary/20 font-bold text-center block"
-            >
-              READ FULL REVIEW
-            </motion.a>
-            <div className="text-center mt-3 text-label-sm font-label-sm text-on-surface-variant">
-              Price and policies can change · Verify current terms
-            </div>
-          </motion.div>
+              </a>
+            ))}
+          </div>
+          <a href="/best/overall/" className="flex items-center justify-between gap-4 p-5 border-t border-outline-variant text-primary font-bold hover:text-secondary transition-colors">
+            View the full 59-model score field <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
+          </a>
         </motion.div>
       </div>
     </header>

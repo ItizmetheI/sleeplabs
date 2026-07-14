@@ -44,7 +44,7 @@ const absoluteOgImage = ogImage
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {noindex && <meta name="robots" content="noindex, follow" />}
     
     <meta property="og:title" content={ogTitle ?? title} />
     <meta property="og:description" content={ogDescription ?? description} />
@@ -71,7 +71,7 @@ const absoluteOgImage = ogImage
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
   <body>
-    <div class="bg-background text-on-background font-body-md text-body-md antialiased pt-[60px] min-h-screen flex flex-col selection:bg-secondary/20 selection:text-secondary relative overflow-hidden">
+    <div class="bg-background text-on-background font-body-md text-body-md antialiased pt-[60px] min-h-screen flex flex-col selection:bg-secondary/20 selection:text-secondary relative overflow-x-clip">
       <TopNavBar client:idle currentPath={Astro.url.pathname} />
       
       <slot />

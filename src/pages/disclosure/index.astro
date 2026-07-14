@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { COMMERCIAL_RELATIONSHIP_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
+import { EDITORIAL_INDEPENDENCE_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
+import { FIRDOUS_FARHAD } from '../../lib/editorialPeople';
 
 const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
-const lastUpdated = "2026-05-01";
+const lastUpdated = "2026-07-14";
 
 const jsonLd = [
   {
@@ -11,7 +12,7 @@ const jsonLd = [
     "@type": "WebPage",
     "name": "Disclosure",
     "url": `${SITE_URL}/disclosure/`,
-    "description": "PureSleep's material-relationship, outbound-link, and ranking disclosure.",
+    "description": "PureSleep's editorial-independence, outbound-link, and ranking disclosure.",
     "publisher": {
       "@type": "Organization",
       "name": "PureSleep",
@@ -23,7 +24,7 @@ const jsonLd = [
 
 <BaseLayout
   title="Disclosure — PureSleep"
-  description="PureSleep's material-relationship, outbound-link, and ranking disclosure."
+  description="PureSleep's editorial-independence, outbound-link, and ranking disclosure."
   canonicalUrl={`${SITE_URL}/disclosure/`}
   lastUpdated={lastUpdated}
   jsonLd={jsonLd}
@@ -33,27 +34,30 @@ const jsonLd = [
     <header class="flex flex-col gap-6">
       <h1 class="text-headline-lg font-headline-lg text-primary font-bold">Disclosure</h1>
       <p class="text-body-lg text-on-surface-variant leading-relaxed">
-        {COMMERCIAL_RELATIONSHIP_DISCLOSURE} {LINK_DISCLOSURE}
+        {EDITORIAL_INDEPENDENCE_DISCLOSURE} {LINK_DISCLOSURE}
       </p>
     </header>
 
     <section class="flex flex-col gap-6">
       <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">How Links Work On This Site</h2>
-      <div class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-col gap-4">
+      <div class="glass-panel p-8 rounded-lg border border-white/60 flex flex-col gap-4">
         <p class="text-body-md text-on-surface-variant leading-relaxed">
-          Product links go to manufacturer or retailer pages. PureSleep does not receive per-click or per-sale affiliate commissions from those links. Amerisleep, Zoma, Vaya, or FORM may benefit when a reader purchases one of their products.
+          Product links are provided so readers can verify current specifications, availability, policies, and pricing at the source. {LINK_DISCLOSURE}
         </p>
         <p class="text-body-md text-on-surface-variant leading-relaxed">
-          Rankings follow the locked score data and stated category criteria. The same seven fields and 0-10 scale apply to affiliated and non-affiliated brands.
+          Rankings follow the published score data and stated category criteria. The same seven fields and 0-10 scale apply to every covered brand.
         </p>
       </div>
     </section>
 
     <section class="flex flex-col gap-6">
-      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Who Writes Our Reviews</h2>
-      <div class="glass-panel p-8 rounded-3xl border border-white/60">
+      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Who Writes and Reviews Our Content</h2>
+      <div class="glass-panel p-8 rounded-lg border border-white/60 flex flex-col gap-4">
         <p class="text-body-md text-on-surface-variant leading-relaxed">
-          Reviews are written and scored under the <a href="/about/#editorial-team" class="text-secondary hover:text-primary underline underline-offset-4 font-bold transition-colors">PureSleep Editorial Team</a> organizational byline using our standardized 7-metric editorial system. PureSleep does not present a named clinician as a medical reviewer.
+          Reviews are written and scored under the <a href="/about/#editorial-team" class="text-secondary hover:text-primary underline underline-offset-4 font-bold transition-colors">PureSleep Editorial Team</a> organizational byline using our standardized 7-metric editorial system.
+        </p>
+        <p class="text-body-md text-on-surface-variant leading-relaxed">
+          <a href={FIRDOUS_FARHAD.path} class="text-secondary hover:text-primary underline underline-offset-4 font-bold transition-colors">{FIRDOUS_FARHAD.name}</a> serves as PureSleep's {FIRDOUS_FARHAD.role.toLowerCase()}. {FIRDOUS_FARHAD.credentials} Her name appears in article-level review attribution only after she has reviewed and approved the final copy; the role does not imply personal testing of every mattress or clinical diagnosis.
         </p>
       </div>
     </section>

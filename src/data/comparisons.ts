@@ -1,3 +1,5 @@
+import { allMattresses, type MattressScore } from './mattresses';
+
 export interface Comparison {
   slug: string;
   mattressAId: string;
@@ -17,7 +19,7 @@ export interface Comparison {
   }[];
 }
 
-export const comparisons: Comparison[] = [
+const rawComparisons: Comparison[] = [
   {
     slug: "amerisleep-as2-vs-as3",
     mattressAId: "amerisleep-as2",
@@ -373,7 +375,7 @@ export const comparisons: Comparison[] = [
     ],
     faqs: [
       { question: "What does the Purple Grid feel like vs foam?", answer: "Purple's GelFlex Grid is a hyper-elastic polymer that collapses under pressure points and stays firm elsewhere. It feels very different from memory foam — more of a floating sensation vs foam's slow-sinking contour. Trying both is the best way to decide." },
-      { question: "Which is better for hot sleepers?", answer: "The AS3 scores 10/10 on cooling. Purple RestorePlus scores 9/10. The Purple Grid's open channels allow airflow, but the AS3's open-cell Bio-Pur foam scores marginally higher in our testing." },
+      { question: "Which is better for hot sleepers?", answer: "The AS3 scores 10/10 on cooling. Purple RestorePlus scores 9/10. The Purple Grid's open channels allow airflow, but the AS3's open-cell Bio-Pur foam scores marginally higher in the approved editorial scorecard." },
       { question: "Which offers better value?", answer: "The AS3 scores 9/10 on value vs Purple's 7/10. For comparable performance at a lower price, the AS3 is the stronger value." }
     ]
   },
@@ -718,3 +720,62 @@ export const comparisons: Comparison[] = [
   }
 
 ];
+
+const SCORE_FIELDS: Array<{ key: keyof MattressScore; label: string }> = [
+  { key: 'overall', label: 'Overall' },
+  { key: 'value', label: 'Value' },
+  { key: 'edgeSupport', label: 'Edge Support' },
+  { key: 'trialPeriod', label: 'Trial Period' },
+  { key: 'responseTime', label: 'Response Time' },
+  { key: 'motionTransfer', label: 'Motion Transfer' },
+  { key: 'coolingBreathability', label: 'Cooling & Breathability' },
+];
+
+export const comparisons: Comparison[] = rawComparisons.map(comparison => {
+  const mattressA = allMattresses.find(mattress => mattress.id === comparison.mattressAId);
+  const mattressB = allMattresses.find(mattress => mattress.id === comparison.mattressBId);
+  if (!mattressA || !mattressB) {
+    throw new Error(`Missing mattress data for comparison ${comparison.slug}`);
+  }
+
+  const winnerFor = SCORE_FIELDS
+    .filter(({ key }) => mattressA.scores[key] !== mattressB.scores[key])
+    .map(({ key, label }) => {
+      const winner = mattressA.scores[key] > mattressB.scores[key] ? mattressA : mattressB;
+      const other = winner.id === mattressA.id ? mattressB : mattressA;
+      return {
+        category: label,
+        winnerId: winner.id,
+        reason: `${winner.name} records ${winner.scores[key]}/10 for ${label}, compared with ${other.scores[key]}/10 for ${other.name}.`,
+      };
+    });
+
+  const ties = SCORE_FIELDS
+    .filter(({ key }) => mattressA.scores[key] === mattressB.scores[key])
+    .map(({ label }) => label);
+  const leadA = winnerFor.filter(item => item.winnerId === mattressA.id).map(item => item.category);
+  const leadB = winnerFor.filter(item => item.winnerId === mattressB.id).map(item => item.category);
+  const list = (items: string[]) => items.length > 0 ? items.join(', ') : 'no score fields';
+  const verdict = `${mattressA.name} leads on ${list(leadA)}. ${mattressB.name} leads on ${list(leadB)}.${ties.length > 0 ? ` They tie on ${ties.join(', ')}.` : ''} These are PureSleep editorial scores, not laboratory measurements or collected customer ratings.`;
+
+  return {
+    ...comparison,
+    description: `${mattressA.name} and ${mattressB.name} compared across Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability.`,
+    verdict,
+    winnerFor,
+    faqs: [
+      {
+        question: `How do ${mattressA.name} and ${mattressB.name} compare by score?`,
+        answer: verdict,
+      },
+      {
+        question: `What is the recorded construction difference between ${mattressA.name} and ${mattressB.name}?`,
+        answer: `${mattressA.name} is recorded as a ${mattressA.type.replaceAll('-', ' ')} mattress with a ${mattressA.firmness.replaceAll('-', ' ')} feel (${mattressA.firmnessScale}/10). ${mattressB.name} is recorded as a ${mattressB.type.replaceAll('-', ' ')} mattress with a ${mattressB.firmness.replaceAll('-', ' ')} feel (${mattressB.firmnessScale}/10). Individual comfort can vary by body type, sleep position, and preference.`,
+      },
+      {
+        question: 'Which details should I verify before choosing either mattress?',
+        answer: `Confirm current construction, available firmness options, price, stock, shipping, trial, return, certification, and warranty terms on the official ${mattressA.brand} and ${mattressB.brand} pages before purchasing.`,
+      },
+    ],
+  };
+});

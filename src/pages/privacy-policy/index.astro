@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
+const CONTACT_EMAIL = import.meta.env.PUBLIC_CONTACT_EMAIL;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -8,7 +9,7 @@ const jsonLd = {
   "name": "Privacy Policy — PureSleep",
   "url": `${SITE_URL}/privacy-policy/`,
   "description": "PureSleep privacy policy. How we collect, use, and protect your information.",
-  "dateModified": "2026-05-01"
+  "dateModified": "2026-07-14"
 };
 ---
 
@@ -22,7 +23,7 @@ const jsonLd = {
 
     <header>
       <h1 class="text-headline-lg font-headline-lg text-primary font-bold mb-4">Privacy Policy</h1>
-      <p class="text-body-md text-on-surface-variant">Last updated: May 1, 2026</p>
+      <p class="text-body-md text-on-surface-variant">Last updated: July 14, 2026</p>
     </header>
 
     <div class="flex flex-col gap-8 text-body-md text-on-surface-variant leading-relaxed">
@@ -34,7 +35,7 @@ const jsonLd = {
 
       <section>
         <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">2. External Links</h2>
-        <p>This site contains links to product pages at the brands we review. PureSleep does not receive per-click or per-sale affiliate commissions from those links. PureSleep has material business relationships with Amerisleep, Zoma, Vaya, and FORM through One Sleep Group, and those brands may benefit from purchases of their products. Third-party sites have their own privacy practices governed by their own policies — refer to each brand's official privacy policy for details.</p>
+        <p>This site contains links to manufacturer and retailer pages for the products we review. PureSleep does not receive per-click or per-sale commissions from those links. Third-party sites have their own privacy practices governed by their own policies; refer to each site's current privacy policy for details.</p>
       </section>
 
       <section>
@@ -49,12 +50,16 @@ const jsonLd = {
 
       <section>
         <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">5. Your Rights (GDPR / CCPA)</h2>
-        <p>If you are located in the European Economic Area or California, you have the right to request access to, correction of, or deletion of any personal data we hold. Since we do not collect personal data for standard site use, such requests are typically resolved by confirming no data exists. Contact us at the address below for any privacy-related requests.</p>
+        <p>If you are located in the European Economic Area or California, you may have rights to request access to, correction of, or deletion of personal data. Since PureSleep does not require accounts for standard site use, such requests may be resolved by confirming that no account data exists.</p>
       </section>
 
       <section>
         <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">6. Contact</h2>
-        <p>For privacy-related inquiries, contact us via the information on our <a href="/about" class="text-primary underline">About page</a>.</p>
+        {CONTACT_EMAIL ? (
+          <p>For privacy-related inquiries, email <a href={`mailto:${CONTACT_EMAIL}`} class="text-primary underline">{CONTACT_EMAIL}</a>.</p>
+        ) : (
+          <p>A dedicated privacy contact must be configured with the final production domain before launch.</p>
+        )}
       </section>
 
     </div>

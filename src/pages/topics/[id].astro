@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { allMattresses } from '../../data/mattresses';
 import { topics } from '../../data/topics';
 import { articleTable, toArticleBody } from '../../lib/schemaArticleBody';
-import { COMMERCIAL_RELATIONSHIP_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
+import { EDITORIAL_INDEPENDENCE_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
 
 export function getStaticPaths() {
   return topics.map((topic) => ({
@@ -48,7 +48,7 @@ const articleBody = toArticleBody(
     : null,
   topic.sources?.length ? ['Sources', topic.sources.map((source) => `${source.name}: ${source.url}`)] : null,
   'About PureSleep',
-  `${COMMERCIAL_RELATIONSHIP_DISCLOSURE} ${LINK_DISCLOSURE}`,
+  `${EDITORIAL_INDEPENDENCE_DISCLOSURE} ${LINK_DISCLOSURE}`,
 );
 
 const articleSchema = {
@@ -105,7 +105,7 @@ const breadcrumbSchema = {
         <div class="flex flex-wrap gap-x-6 gap-y-2 mt-6 text-body-sm text-on-surface-variant">
           <span>By PureSleep Editorial Team</span>
           <span>Updated {topic.dateModified}</span>
-          <a href="/disclosure/" class="underline underline-offset-4 hover:text-primary">Commercial disclosure</a>
+          <a href="/disclosure/" class="underline underline-offset-4 hover:text-primary">Editorial disclosure</a>
         </div>
       </div>
     </header>
@@ -200,7 +200,7 @@ const breadcrumbSchema = {
       )}
 
       <aside class="border-t border-outline-variant/30 mt-12 pt-6 text-body-sm text-on-surface-variant">
-        <p><strong class="text-on-surface">Material relationships:</strong> {COMMERCIAL_RELATIONSHIP_DISCLOSURE}</p>
+        <p><strong class="text-on-surface">Material relationships:</strong> {EDITORIAL_INDEPENDENCE_DISCLOSURE}</p>
         <p class="mt-2">{LINK_DISCLOSURE}</p>
       </aside>
     </article>

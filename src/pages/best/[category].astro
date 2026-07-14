@@ -5,6 +5,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { BEST_CATEGORIES } from '../../lib/bestCategories';
 import { articleList, articleTable, toArticleBody } from '../../lib/schemaArticleBody';
 import { RANKING_DISCLOSURE } from '../../lib/disclosure';
+import { orderFullScoreField } from '../../lib/scoreFieldOrder';
 
 const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
@@ -22,9 +23,10 @@ if (!cat) return Astro.redirect('/best/overall');
 const pickModels = cat.picks
   .map(id => allMattresses.find((m: any) => m.id === id))
   .filter(Boolean);
+const fullScoreField = orderFullScoreField(allMattresses);
 
 const winner = pickModels[0] as any;
-const lastUpdated = "2026-07-13";
+const lastUpdated = "2026-07-14";
 const canonicalUrl = `${SITE_URL}/best/${category}/`;
 const winnerImage = winner?.heroImage
   ? (winner.heroImage.startsWith('http') ? winner.heroImage : `${SITE_URL}${winner.heroImage}`)
@@ -41,14 +43,14 @@ const isHealthCategory = ['back-pain', 'hip-pain', 'shoulder-pain'].includes(cat
 const bestArticleBody = toArticleBody(
   cat.h1,
   cat.intro,
-  'Reviewed by: PureSleep Editorial Team. Updated: July 13, 2026. 59 models scored across 24 brands.',
+  'By: PureSleep Editorial Team. Updated: July 14, 2026. 59 models scored across 24 brands.',
   isHealthCategory
     ? 'Note: No mattress can diagnose, treat, or cure any health condition. This page is for general comfort and sleep-product information only; talk to a doctor about pain or medical concerns.'
     : null,
   articleList('Trust Signals', [
     '7-Metric Scoring System',
     'Editorial Scorecards',
-    'Relationships Disclosed',
+    'Editorial Independence',
     'One Published Rubric',
   ]),
   winner
@@ -68,7 +70,7 @@ const bestArticleBody = toArticleBody(
     ]
     : null,
   'Quick Comparison',
-  'All picks are ranked from the approved seven-metric editorial dataset. Scores are not laboratory findings, manufacturer ratings, or collected customer ratings.',
+  'All picks are ranked from the published PureSleep seven-metric score dataset. Scores are not laboratory findings, manufacturer ratings, or collected customer ratings.',
   articleTable(
     'Quick Comparison Table',
     ['Rank', 'Mattress', 'Overall', 'Value', 'Trial', 'Warranty'],
@@ -89,8 +91,25 @@ const bestArticleBody = toArticleBody(
     `Scores: Value ${m.scores.value}/10. Edge Support ${m.scores.edgeSupport}/10. Motion Transfer ${m.scores.motionTransfer}/10. Cooling ${m.scores.coolingBreathability}/10.`,
     `Specs at a Glance: ${m.firmness} (${m.firmnessScale}/10). Best for ${m.bestFor.slice(0, 2).join(', ')}. ${m.trialNights}-night trial. ${m.warrantyYears}-year warranty.`,
   ]),
+  'Full 59-Model Score Field',
+  'The six picks above are the ranked recommendations for this category. The complete table below includes every model and brand in the published PureSleep score dataset, ordered by Overall score with brands interleaved when scores tie; inclusion does not mean every model is recommended for this category.',
+  articleTable(
+    'All Model Scores',
+    ['Model', 'Brand', 'Overall', 'Value', 'Edge Support', 'Trial Period', 'Response Time', 'Motion Transfer', 'Cooling & Breathability'],
+    fullScoreField.map((m: any) => [
+      m.name,
+      m.brand,
+      `${m.scores.overall}/10`,
+      `${m.scores.value}/10`,
+      `${m.scores.edgeSupport}/10`,
+      `${m.scores.trialPeriod}/10`,
+      `${m.scores.responseTime}/10`,
+      `${m.scores.motionTransfer}/10`,
+      `${m.scores.coolingBreathability}/10`,
+    ])
+  ),
   'How We Selected These Picks',
-  'All picks use the same approved seven-metric editorial scorecard: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. The same definitions and 0-10 scale apply to every covered brand.',
+  'All picks use the same published seven-metric editorial scorecard: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. The same definitions and 0-10 scale apply to every covered brand.',
   RANKING_DISCLOSURE,
   relatedComparisons.length > 0
     ? [
@@ -122,7 +141,7 @@ const jsonLd: any[] = [
     "dateModified": lastUpdated,
     "mainEntityOfPage": canonicalUrl,
     "about": pickModels.map((m: any) => ({ "@id": `${SITE_URL}/reviews/${m.id}/#product` })),
-    "citation": [...pickModels.map((m: any) => m.affiliateUrl), `${SITE_URL}/methodology/`],
+    "citation": [...pickModels.map((m: any) => m.productUrl), `${SITE_URL}/methodology/`],
   },
   {
     "@context": "https://schema.org",
@@ -184,16 +203,16 @@ if (faqs.length > 0) {
       <h1 class="text-headline-lg font-headline-lg text-primary font-bold">{cat.h1}</h1>
       <p class="text-body-lg text-on-surface-variant leading-relaxed">{cat.intro}</p>
       <div class="flex flex-wrap gap-x-5 gap-y-2 items-center text-body-sm text-on-surface-variant border-t border-outline-variant/20 pt-4">
-        <span><strong class="text-on-surface">Reviewed by:</strong> PureSleep Editorial Team</span>
+        <span><strong class="text-on-surface">By:</strong> PureSleep Editorial Team</span>
         <span class="hidden md:inline text-outline-variant">·</span>
-        <span><strong class="text-on-surface">Updated:</strong> July 13, 2026</span>
+        <span><strong class="text-on-surface">Updated:</strong> July 14, 2026</span>
         <span class="hidden md:inline text-outline-variant">·</span>
         <span>59 models scored across 24 brands</span>
       </div>
     </header>
 
     {['back-pain', 'hip-pain', 'shoulder-pain'].includes(category) && (
-      <div class="bg-amber-50 border border-amber-300 rounded-2xl p-5 text-body-md text-amber-900">
+      <div class="bg-amber-50 border border-amber-300 rounded-lg p-5 text-body-md text-amber-900">
         <strong>Note:</strong> No mattress can diagnose, treat, or cure any health condition. This page is for general comfort and sleep-product information only — talk to a doctor about pain or medical concerns.
       </div>
     )}
@@ -203,10 +222,10 @@ if (faqs.length > 0) {
       {[
         '7-Metric Scoring System',
         'Editorial Scorecards',
-        'Relationships Disclosed',
+        'Editorial Independence',
         'One Published Rubric',
       ].map(badge => (
-        <span class="px-4 py-1.5 rounded-full bg-surface border border-outline-variant/30 text-label-sm font-bold uppercase tracking-widest text-on-surface-variant text-xs">
+        <span class="px-4 py-1.5 rounded-full bg-surface border border-outline-variant/30 text-label-sm font-bold uppercase tracking-normal text-on-surface-variant text-xs">
           {badge}
         </span>
       ))}
@@ -214,13 +233,13 @@ if (faqs.length > 0) {
 
     <!-- Winner card -->
     {winner && (
-      <section class="glass-panel p-8 md:p-10 rounded-3xl border border-white/60 flex flex-col gap-6" id="top-pick">
+      <section class="glass-panel p-8 md:p-10 rounded-lg border border-white/60 flex flex-col gap-6" id="top-pick">
         <div class="flex items-center gap-3 flex-wrap">
-          <span class="bg-primary text-on-primary text-label-sm font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">#1 Editor's Pick</span>
+          <span class="bg-primary text-on-primary text-label-sm font-bold uppercase tracking-normal px-4 py-1.5 rounded-full">#1 Editor's Pick</span>
           <span class="text-on-surface-variant text-body-sm">Scored with the same seven-field editorial rubric</span>
         </div>
         <div class="flex flex-col md:flex-row gap-8 items-start">
-          <div class="w-full md:w-64 flex-shrink-0 rounded-2xl overflow-hidden bg-surface">
+          <div class="w-full md:w-64 flex-shrink-0 rounded-lg overflow-hidden bg-surface">
             <img src={winner.heroImage || winner.image} alt={`${winner.name} mattress`} class="w-full h-48 object-contain bg-white p-3" loading="eager" />
           </div>
           <div class="flex flex-col gap-4 flex-1">
@@ -233,7 +252,7 @@ if (faqs.length > 0) {
               <span class="text-on-surface-variant text-body-md">/ 10 Overall Score</span>
             </div>
             <div>
-              <span class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Our Verdict</span>
+              <span class="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold">Our Verdict</span>
               <p class="text-body-md text-on-surface-variant leading-relaxed mt-1">{cat.winnerNote}</p>
             </div>
 
@@ -247,8 +266,8 @@ if (faqs.length > 0) {
                 ['Motion Transfer', winner.scores.motionTransfer],
                 ['Cooling', winner.scores.coolingBreathability],
               ] as [string, number][]).map(([label, score]) => (
-                <div class="bg-surface rounded-xl p-3 border border-outline-variant/20">
-                  <div class="text-xs text-on-surface-variant font-bold uppercase tracking-wider mb-1">{label}</div>
+                <div class="bg-surface rounded-lg p-3 border border-outline-variant/20">
+                  <div class="text-xs text-on-surface-variant font-bold uppercase tracking-normal mb-1">{label}</div>
                   <div class="text-title-md font-bold text-primary">{score}<span class="text-body-sm text-on-surface-variant font-normal">/10</span></div>
                 </div>
               ))}
@@ -256,7 +275,7 @@ if (faqs.length > 0) {
 
             <!-- Specs at a Glance -->
             <div class="flex flex-col gap-2 border-y border-outline-variant/20 py-3">
-              <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">Specs at a Glance</span>
+              <span class="text-label-sm font-label-sm uppercase tracking-normal text-on-surface-variant">Specs at a Glance</span>
               <div class="flex flex-wrap gap-4 text-body-sm text-on-surface-variant">
               <span><strong class="text-on-surface">{winner.trialNights}-Night</strong> Trial</span>
               <span class="text-outline-variant">·</span>
@@ -267,11 +286,11 @@ if (faqs.length > 0) {
             </div>
 
             <div class="flex gap-3 flex-wrap">
-              <a href={`/reviews/${winner.id}`} class="px-6 py-3 rounded-xl border-2 border-primary text-primary font-bold text-label-sm uppercase tracking-widest hover:bg-primary/5 transition-colors">
+              <a href={`/reviews/${winner.id}`} class="px-6 py-3 rounded-lg border-2 border-primary text-primary font-bold text-label-sm uppercase tracking-normal hover:bg-primary/5 transition-colors">
                 Read Full Review
               </a>
-              <a href={winner.affiliateUrl} target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-primary text-on-primary font-bold text-label-sm uppercase tracking-widest hover:bg-primary/90 transition-colors shadow-sm">
-                Check Latest Price →
+              <a href={winner.productUrl} target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-lg bg-primary text-on-primary font-bold text-label-sm uppercase tracking-normal hover:bg-primary/90 transition-colors shadow-sm">
+                Official Product Page →
               </a>
             </div>
           </div>
@@ -282,18 +301,18 @@ if (faqs.length > 0) {
     <!-- Quick comparison table -->
     <section class="flex flex-col gap-4">
       <h2 class="text-headline-md font-headline-md text-primary font-bold">Quick Comparison</h2>
-      <p class="text-body-md text-on-surface-variant">All picks are ranked from the approved seven-metric editorial dataset. Scores are not laboratory findings, manufacturer ratings, or collected customer ratings.</p>
-      <div class="overflow-x-auto rounded-2xl border border-outline-variant/20">
+      <p class="text-body-md text-on-surface-variant">All picks are ranked from the published PureSleep seven-metric score dataset. Scores are not laboratory findings, manufacturer ratings, or collected customer ratings.</p>
+      <div class="overflow-x-auto rounded-lg border border-outline-variant/20">
         <table class="w-full text-body-sm min-w-[680px]">
           <thead>
             <tr class="bg-surface border-b border-outline-variant/20">
-              <th class="text-left px-5 py-4 text-label-sm font-bold uppercase tracking-widest text-on-surface-variant">Rank</th>
-              <th class="text-left px-5 py-4 text-label-sm font-bold uppercase tracking-widest text-on-surface-variant">Mattress</th>
-              <th class="text-center px-4 py-4 text-label-sm font-bold uppercase tracking-widest text-on-surface-variant">Overall</th>
-              <th class="text-center px-4 py-4 text-label-sm font-bold uppercase tracking-widest text-on-surface-variant">Value</th>
-              <th class="text-center px-4 py-4 text-label-sm font-bold uppercase tracking-widest text-on-surface-variant">Trial</th>
-              <th class="text-center px-4 py-4 text-label-sm font-bold uppercase tracking-widest text-on-surface-variant">Warranty</th>
-              <th class="text-center px-4 py-4 text-label-sm font-bold uppercase tracking-widest text-on-surface-variant">Review</th>
+              <th class="text-left px-5 py-4 text-label-sm font-bold uppercase tracking-normal text-on-surface-variant">Rank</th>
+              <th class="text-left px-5 py-4 text-label-sm font-bold uppercase tracking-normal text-on-surface-variant">Mattress</th>
+              <th class="text-center px-4 py-4 text-label-sm font-bold uppercase tracking-normal text-on-surface-variant">Overall</th>
+              <th class="text-center px-4 py-4 text-label-sm font-bold uppercase tracking-normal text-on-surface-variant">Value</th>
+              <th class="text-center px-4 py-4 text-label-sm font-bold uppercase tracking-normal text-on-surface-variant">Trial</th>
+              <th class="text-center px-4 py-4 text-label-sm font-bold uppercase tracking-normal text-on-surface-variant">Warranty</th>
+              <th class="text-center px-4 py-4 text-label-sm font-bold uppercase tracking-normal text-on-surface-variant">Review</th>
             </tr>
           </thead>
           <tbody>
@@ -315,7 +334,7 @@ if (faqs.length > 0) {
                 <td class="px-4 py-4 text-center text-on-surface-variant">{m.trialNights}n</td>
                 <td class="px-4 py-4 text-center text-on-surface-variant">{m.warrantyYears}yr</td>
                 <td class="px-4 py-4 text-center">
-                  <a href={`/reviews/${m.id}`} class="text-primary font-bold hover:text-secondary transition-colors underline underline-offset-2 text-xs uppercase tracking-widest">
+                  <a href={`/reviews/${m.id}`} class="text-primary font-bold hover:text-secondary transition-colors underline underline-offset-2 text-xs uppercase tracking-normal">
                     Review →
                   </a>
                 </td>
@@ -325,7 +344,7 @@ if (faqs.length > 0) {
         </table>
       </div>
       {cat.filterNote && (
-        <div class="bg-secondary/5 border border-secondary/20 rounded-2xl p-5 text-body-md text-on-surface-variant">
+        <div class="bg-secondary/5 border border-secondary/20 rounded-lg p-5 text-body-md text-on-surface-variant">
           <strong class="text-on-surface">Editorial note: </strong>{cat.filterNote}
         </div>
       )}
@@ -338,7 +357,7 @@ if (faqs.length > 0) {
       </h2>
       <div class="flex flex-col gap-6">
         {pickModels.map((m: any, i: number) => m && (
-          <article class="glass-panel rounded-3xl border border-white/60 overflow-hidden hover:shadow-md transition-shadow" id={`pick-${i + 1}`}>
+          <article class="glass-panel rounded-lg border border-white/60 overflow-hidden hover:shadow-md transition-shadow" id={`pick-${i + 1}`}>
             <div class="flex flex-col md:flex-row">
               <!-- Image -->
               <div class="w-full md:w-52 flex-shrink-0 relative">
@@ -365,7 +384,7 @@ if (faqs.length > 0) {
                 </div>
 
                 <div>
-                  <span class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Our Verdict</span>
+                  <span class="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold">Our Verdict</span>
                   <p class="text-body-md text-on-surface-variant leading-relaxed mt-1">{m.verdict}</p>
                 </div>
 
@@ -388,9 +407,9 @@ if (faqs.length > 0) {
                 </div>
 
                 <!-- Specs at a Glance -->
-                <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">Specs at a Glance</span>
+                <span class="text-label-sm font-label-sm uppercase tracking-normal text-on-surface-variant">Specs at a Glance</span>
                 <div class="flex flex-wrap items-center gap-2">
-                  <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider rounded-lg border border-primary/20">
+                  <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-normal rounded-lg border border-primary/20">
                     {m.firmness} ({m.firmnessScale}/10)
                   </span>
                   {m.bestFor.slice(0, 2).map((tag: string) => (
@@ -407,11 +426,11 @@ if (faqs.length > 0) {
 
                 <!-- CTAs -->
                 <div class="flex gap-3 flex-wrap pt-2">
-                  <a href={`/reviews/${m.id}`} class="px-5 py-2.5 rounded-xl border-2 border-primary text-primary font-bold text-xs uppercase tracking-widest hover:bg-primary/5 transition-colors">
+                  <a href={`/reviews/${m.id}`} class="px-5 py-2.5 rounded-lg border-2 border-primary text-primary font-bold text-xs uppercase tracking-normal hover:bg-primary/5 transition-colors">
                     Full Review
                   </a>
-                  <a href={m.affiliateUrl} target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-primary text-on-primary font-bold text-xs uppercase tracking-widest hover:bg-primary/90 transition-colors shadow-sm">
-                    Check Price →
+                  <a href={m.productUrl} target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-lg bg-primary text-on-primary font-bold text-xs uppercase tracking-normal hover:bg-primary/90 transition-colors shadow-sm">
+                    Official Product Page →
                   </a>
                 </div>
               </div>
@@ -421,11 +440,66 @@ if (faqs.length > 0) {
       </div>
     </section>
 
+    <!-- Full scored field -->
+    <section class="flex flex-col gap-4" aria-labelledby="full-score-field-heading">
+      <div>
+        <h2 id="full-score-field-heading" class="text-headline-md font-headline-md text-primary font-bold">Full 59-Model Score Field</h2>
+        <p class="text-body-md text-on-surface-variant leading-relaxed mt-2 max-w-4xl">
+          The six picks above are the ranked recommendations for this category. This table includes every model and all 24 brands, ordered by Overall score with brands interleaved when scores tie. Inclusion does not mean every model is recommended for this category.
+        </p>
+      </div>
+      <details class="border border-outline-variant/30 bg-surface" data-full-score-field>
+        <summary class="cursor-pointer px-5 py-4 font-bold text-primary flex items-center justify-between gap-4">
+          <span>Compare all seven scores for all 59 models</span>
+          <span class="text-body-sm text-on-surface-variant font-normal">59 models · 24 brands</span>
+        </summary>
+        <div class="overflow-x-auto border-t border-outline-variant/20">
+          <table class="w-full text-body-sm min-w-[980px] table-fixed">
+            <colgroup>
+              <col class="w-[24%]" />
+              <col class="w-[12%]" />
+              {Array.from({ length: 7 }).map(() => <col class="w-[8%]" />)}
+              <col class="w-[8%]" />
+            </colgroup>
+            <thead>
+              <tr class="bg-white border-b border-outline-variant/20">
+                {['Model', 'Brand', 'Overall', 'Value', 'Edge', 'Trial', 'Response', 'Motion', 'Cooling', 'Review'].map((label, index) => (
+                  <th class={`${index < 2 ? 'text-left px-4' : 'text-center px-2'} py-3 text-xs font-bold uppercase tracking-normal text-on-surface-variant sticky top-0 bg-white`}>
+                    {label}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {fullScoreField.map((m: any) => (
+                <tr class="border-b border-outline-variant/10 hover:bg-white transition-colors" data-score-field-model={m.id} data-score-field-brand={m.brand}>
+                  <td class="px-4 py-3 font-bold text-on-surface whitespace-nowrap">{m.name}</td>
+                  <td class="px-4 py-3 text-on-surface-variant whitespace-nowrap">{m.brand}</td>
+                  <td class="px-2 py-3 text-center font-bold text-primary">{m.scores.overall}</td>
+                  <td class="px-2 py-3 text-center text-on-surface-variant">{m.scores.value}</td>
+                  <td class="px-2 py-3 text-center text-on-surface-variant">{m.scores.edgeSupport}</td>
+                  <td class="px-2 py-3 text-center text-on-surface-variant">{m.scores.trialPeriod}</td>
+                  <td class="px-2 py-3 text-center text-on-surface-variant">{m.scores.responseTime}</td>
+                  <td class="px-2 py-3 text-center text-on-surface-variant">{m.scores.motionTransfer}</td>
+                  <td class="px-2 py-3 text-center text-on-surface-variant">{m.scores.coolingBreathability}</td>
+                  <td class="px-2 py-3 text-center">
+                    <a href={`/reviews/${m.id}`} class="text-primary font-bold hover:text-secondary underline underline-offset-2 text-xs uppercase tracking-normal">
+                      Review
+                    </a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </section>
+
     <!-- Methodology -->
-    <section class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-col gap-5">
+    <section class="glass-panel p-8 rounded-lg border border-white/60 flex flex-col gap-5">
       <h2 class="text-headline-sm font-headline-sm text-primary font-bold">How We Selected These Picks</h2>
       <p class="text-body-md text-on-surface-variant leading-relaxed">
-        All picks use the same approved seven-metric editorial scorecard: <strong class="text-on-surface">Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability</strong>. The same definitions and 0-10 scale apply to every covered brand.
+        All picks use the same published seven-metric editorial scorecard: <strong class="text-on-surface">Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability</strong>. The same definitions and 0-10 scale apply to every covered brand.
       </p>
       <p class="text-body-md text-on-surface-variant leading-relaxed">
         {RANKING_DISCLOSURE}
@@ -454,7 +528,7 @@ if (faqs.length > 0) {
             return (
               <a
                 href={`/comparison/${c.slug}`}
-                class="glass-panel flex flex-col gap-2 p-5 rounded-2xl border border-white/60 hover:border-primary/30 hover:shadow-md transition-all group"
+                class="glass-panel flex flex-col gap-2 p-5 rounded-lg border border-white/60 hover:border-primary/30 hover:shadow-md transition-all group"
               >
                 <div class="flex items-center justify-between">
                   <span class="text-body-sm font-bold text-on-surface group-hover:text-primary transition-colors">{c.title}</span>
@@ -481,7 +555,7 @@ if (faqs.length > 0) {
         <h2 class="text-headline-md font-headline-md text-primary font-bold">Frequently Asked Questions</h2>
         <div class="flex flex-col gap-3">
           {faqs.map((faq: any, i: number) => (
-            <details class="glass-panel rounded-2xl border border-white/60 group" open={i === 0}>
+            <details class="glass-panel rounded-lg border border-white/60 group" open={i === 0}>
               <summary class="px-6 py-5 cursor-pointer flex items-center justify-between gap-4 text-title-sm font-title-sm text-on-surface font-bold list-none select-none hover:text-primary transition-colors">
                 <span>{faq.question}</span>
                 <span class="text-secondary text-lg flex-shrink-0 group-open:rotate-45 transition-transform duration-200">+</span>

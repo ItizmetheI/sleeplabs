@@ -2,14 +2,16 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { comparisons } from '../../data/comparisons';
 import { allMattresses as mattresses } from '../../data/mattresses';
+import { formatDateOnly } from '../../lib/dateFormat';
 
-const lastUpdated = "2026-05-01";
-const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', {
-  month: 'long',
-  day: 'numeric',
-  year: 'numeric'
-});
+const lastUpdated = "2026-07-14";
+const formattedDateModified = formatDateOnly(lastUpdated);
 const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
+const orderedComparisons = [...comparisons].sort((a, b) => {
+  const aInternal = mattresses.find(item => item.id === a.mattressAId)?.brand === mattresses.find(item => item.id === a.mattressBId)?.brand;
+  const bInternal = mattresses.find(item => item.id === b.mattressAId)?.brand === mattresses.find(item => item.id === b.mattressBId)?.brand;
+  return Number(aInternal) - Number(bInternal) || a.slug.localeCompare(b.slug);
+});
 const comparisonBrands = new Set(comparisons.flatMap((comparison) => [
   mattresses.find((mattress) => mattress.id === comparison.mattressAId)?.brand,
   mattresses.find((mattress) => mattress.id === comparison.mattressBId)?.brand,
@@ -24,7 +26,7 @@ const jsonLd = {
   "dateModified": lastUpdated,
   "mainEntity": {
     "@type": "ItemList",
-    "itemListElement": comparisons.map((c, index) => ({
+    "itemListElement": orderedComparisons.map((c, index) => ({
       "@type": "ListItem",
       "position": index + 1,
       "url": `${SITE_URL}/comparison/${c.slug}/`,
@@ -40,7 +42,7 @@ const jsonLd = {
   canonicalUrl={`${SITE_URL}/comparison/`}
   machineReadableUrl={`${SITE_URL}/llms/comparisons.md`}
   lastUpdated={lastUpdated}
-  ogImage="/images/mattresses/amerisleep-as3.webp"
+  ogImage="/og-default.jpg"
   jsonLd={jsonLd}
 >
   <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 relative z-10 w-full flex flex-col gap-16">
@@ -55,27 +57,27 @@ const jsonLd = {
     </header>
 
     <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {comparisons.map(comparison => {
+      {orderedComparisons.map(comparison => {
         const m1 = mattresses.find(m => m.id === comparison.mattressAId);
         const m2 = mattresses.find(m => m.id === comparison.mattressBId);
         if (!m1 || !m2) return null;
         
         return (
-          <a href={`/comparison/${comparison.slug}`} class="glass-panel flex flex-col rounded-3xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all border border-white/60 p-8 gap-6 group">
+          <a href={`/comparison/${comparison.slug}`} class="glass-panel flex flex-col rounded-lg overflow-hidden hover:shadow-lg transition-shadow border border-outline-variant p-8 gap-6 group">
             <h2 class="text-title-lg font-title-lg text-primary mb-1 group-hover:text-secondary transition-colors">
               {m1.name} vs {m2.name}
             </h2>
             <div class="flex gap-4 items-center">
-              <div class="flex-1 h-32 rounded-xl overflow-hidden border border-outline-variant/30">
+              <div class="flex-1 h-32 rounded-lg overflow-hidden border border-outline-variant/30">
                  <img src={m1.image} alt={m1.name} class="w-full h-full object-contain bg-white p-2" />
               </div>
               <span class="text-label-lg font-bold text-on-surface-variant italic font-headline-lg">VS</span>
-              <div class="flex-1 h-32 rounded-xl overflow-hidden border border-outline-variant/30">
+              <div class="flex-1 h-32 rounded-lg overflow-hidden border border-outline-variant/30">
                  <img src={m2.image} alt={m2.name} class="w-full h-full object-contain bg-white p-2" />
               </div>
             </div>
             <p class="text-body-md text-on-surface-variant">{comparison.verdict}</p>
-            <span class="text-primary font-label-sm uppercase tracking-widest font-bold mt-auto pt-4 border-t border-outline-variant/20">Read Comparison →</span>
+            <span class="text-primary font-label-sm uppercase tracking-normal font-bold mt-auto pt-4 border-t border-outline-variant/20">Read Comparison →</span>
           </a>
         );
       })}

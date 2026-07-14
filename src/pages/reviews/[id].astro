@@ -1,7 +1,7 @@
 ---
 import { allMattresses } from '../../data/mattresses';
 import { articleList, articleTable, toArticleBody } from '../../lib/schemaArticleBody';
-import { COMMERCIAL_RELATIONSHIP_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
+import { EDITORIAL_INDEPENDENCE_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TrustSignals from '../../components/TrustSignals.astro';
 
@@ -20,7 +20,7 @@ const absoluteHeroImage = mattress.heroImage.startsWith('http') ? mattress.heroI
 const productId = `${canonicalUrl}#product`;
 const reviewId = `${canonicalUrl}#review`;
 const trialLabel = mattress.trialNights > 0 ? `${mattress.trialNights} Nights` : 'No Home Trial Recorded';
-const officialSourceLabel = mattress.availabilityNote ? 'View Official Source' : 'Check Latest Price';
+const officialSourceLabel = 'View Official Product Page';
 
 const reviewArticleBody = toArticleBody(
   `${mattress.name} Review (2026): Scores, Construction, Pros and Cons`,
@@ -49,7 +49,7 @@ const reviewArticleBody = toArticleBody(
     `${index + 1}. ${layer.name} (${layer.thickness}). ${layer.material}. ${layer.description}`
   ),
   'How This Review Is Scored',
-  `This review uses PureSleep's locked seven-metric editorial scorecard: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. Scores are editorial comparisons, not clinical findings, laboratory measurements, manufacturer ratings, or collected customer ratings. ${COMMERCIAL_RELATIONSHIP_DISCLOSURE} ${LINK_DISCLOSURE}`,
+  `This review uses PureSleep's locked seven-metric editorial scorecard: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. Scores are editorial comparisons, not clinical findings, laboratory measurements, manufacturer ratings, or collected customer ratings. ${EDITORIAL_INDEPENDENCE_DISCLOSURE} ${LINK_DISCLOSURE}`,
   'Frequently Asked Questions',
   mattress.faqs.map((faq: any) => [`Question: ${faq.question}`, `Answer: ${faq.answer}`]),
   'Our Verdict',
@@ -72,13 +72,15 @@ const jsonLd = [
     "articleBody": reviewArticleBody,
     "author": {
       "@type": "Organization",
-      "name": "PureSleep",
-      "url": SITE_URL
+      "@id": `${SITE_URL}/about/#editorial-team`,
+      "name": "PureSleep Editorial Team",
+      "url": `${SITE_URL}/about/#editorial-team`
     },
     "dateModified": mattress.dateModified,
     "datePublished": mattress.dateReviewed,
     "publisher": {
       "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
       "name": "PureSleep",
       "url": SITE_URL
     },
@@ -90,7 +92,7 @@ const jsonLd = [
       { "@id": productId },
       { "@type": "Article", "name": "PureSleep Scoring Methodology", "url": `${SITE_URL}/methodology/` }
     ],
-    "citation": [mattress.affiliateUrl, `${SITE_URL}/methodology/`]
+    "citation": [mattress.productUrl, `${SITE_URL}/methodology/`, `${SITE_URL}/model-coverage.json`]
   },
   {
     "@context": "https://schema.org",
@@ -101,7 +103,7 @@ const jsonLd = [
     "brand": { "@type": "Brand", "name": mattress.brand },
     "description": mattress.summary,
     "image": absoluteHeroImage,
-    "sameAs": mattress.affiliateUrl,
+    "sameAs": mattress.productUrl,
     "review": {
       "@type": "Review",
       "@id": reviewId,
@@ -172,14 +174,14 @@ const jsonLd = [
     </header>
 
     {mattress.availabilityNote && (
-      <aside class="w-full max-w-4xl mx-auto border border-amber-300 bg-amber-50 px-6 py-5 rounded-xl text-amber-950" aria-label="Model availability note">
+      <aside class="w-full max-w-4xl mx-auto border border-amber-300 bg-amber-50 px-6 py-5 rounded-lg text-amber-950" aria-label="Model availability note">
         <strong class="block mb-1">Availability note</strong>
         <p class="text-body-md leading-relaxed">{mattress.availabilityNote}</p>
       </aside>
     )}
 
     <!-- Hero Image -->
-    <div class="w-full h-[400px] md:h-[600px] rounded-[32px] overflow-hidden shadow-2xl relative border border-white/60 bg-white">
+    <div class="w-full h-[400px] md:h-[600px] rounded-lg overflow-hidden shadow-lg relative border border-outline-variant bg-white">
       <img src={mattress.heroImage} alt={`${mattress.name} official product image`} class="w-full h-full object-contain" />
     </div>
 
@@ -191,8 +193,8 @@ const jsonLd = [
         
 <!-- Best For / Not Ideal For -->
 <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
-  <div class="glass-panel p-6 rounded-2xl border border-green-200/50">
-    <h3 class="text-label-sm font-label-sm uppercase tracking-widest text-green-700 font-bold mb-4">Best For</h3>
+  <div class="glass-panel p-6 rounded-lg border border-green-200/50">
+    <h3 class="text-label-sm font-label-sm uppercase tracking-normal text-green-700 font-bold mb-4">Best For</h3>
     <ul class="flex flex-col gap-2">
       {mattress.bestFor.map((item: string) => (
         <li class="flex items-center gap-2 text-body-md text-on-surface-variant">
@@ -201,8 +203,8 @@ const jsonLd = [
       ))}
     </ul>
   </div>
-  <div class="glass-panel p-6 rounded-2xl border border-red-200/50">
-    <h3 class="text-label-sm font-label-sm uppercase tracking-widest text-red-600 font-bold mb-4">Not Ideal For</h3>
+  <div class="glass-panel p-6 rounded-lg border border-red-200/50">
+    <h3 class="text-label-sm font-label-sm uppercase tracking-normal text-red-600 font-bold mb-4">Not Ideal For</h3>
     <ul class="flex flex-col gap-2">
       {mattress.cons.slice(0, 3).map((item: string) => (
         <li class="flex items-center gap-2 text-body-md text-on-surface-variant">
@@ -217,28 +219,28 @@ const jsonLd = [
         <section class="flex flex-col gap-4">
           <h2 class="text-headline-sm font-headline-sm text-primary font-bold">Specs at a Glance</h2>
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-            <div class="glass-panel p-4 rounded-xl border border-outline-variant/20">
-              <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">Type</span>
+            <div class="glass-panel p-4 rounded-lg border border-outline-variant/20">
+              <span class="text-label-sm font-label-sm uppercase tracking-normal text-on-surface-variant">Type</span>
               <p class="font-bold text-on-surface mt-1 capitalize">{mattress.type.replace('-', ' ')}</p>
             </div>
-            <div class="glass-panel p-4 rounded-xl border border-outline-variant/20">
-              <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">Firmness</span>
+            <div class="glass-panel p-4 rounded-lg border border-outline-variant/20">
+              <span class="text-label-sm font-label-sm uppercase tracking-normal text-on-surface-variant">Firmness</span>
               <p class="font-bold text-on-surface mt-1 capitalize">{mattress.firmness.replace('-', ' ')} ({mattress.firmnessScale}/10)</p>
             </div>
-            <div class="glass-panel p-4 rounded-xl border border-outline-variant/20">
-              <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">Thickness</span>
+            <div class="glass-panel p-4 rounded-lg border border-outline-variant/20">
+              <span class="text-label-sm font-label-sm uppercase tracking-normal text-on-surface-variant">Thickness</span>
               <p class="font-bold text-on-surface mt-1">{mattress.thickness}</p>
             </div>
-            <div class="glass-panel p-4 rounded-xl border border-outline-variant/20">
-              <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">Trial Period</span>
+            <div class="glass-panel p-4 rounded-lg border border-outline-variant/20">
+              <span class="text-label-sm font-label-sm uppercase tracking-normal text-on-surface-variant">Trial Period</span>
               <p class="font-bold text-on-surface mt-1">{trialLabel}</p>
             </div>
-            <div class="glass-panel p-4 rounded-xl border border-outline-variant/20">
-              <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">Warranty</span>
+            <div class="glass-panel p-4 rounded-lg border border-outline-variant/20">
+              <span class="text-label-sm font-label-sm uppercase tracking-normal text-on-surface-variant">Warranty</span>
               <p class="font-bold text-on-surface mt-1">{mattress.warrantyYears} Years</p>
             </div>
-            <div class="glass-panel p-4 rounded-xl border border-outline-variant/20">
-              <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">Certifications</span>
+            <div class="glass-panel p-4 rounded-lg border border-outline-variant/20">
+              <span class="text-label-sm font-label-sm uppercase tracking-normal text-on-surface-variant">Certifications</span>
               <p class="font-bold text-on-surface mt-1">{mattress.certifications.join(', ')}</p>
             </div>
           </div>
@@ -250,7 +252,7 @@ const jsonLd = [
         </section>
 
         <!-- Quick Verdict Box -->
-        <section class="glass-panel-heavy p-8 rounded-3xl border border-secondary/20 shadow-[0_8px_32px_rgba(37,99,235,0.05)]">
+        <section class="glass-panel-heavy p-8 rounded-lg border border-secondary/20 shadow-[0_8px_32px_rgba(37,99,235,0.05)]">
           <h2 class="text-title-lg font-title-lg text-primary mb-4 italic">Quick Verdict</h2>
           <p class="text-body-lg font-body-lg text-primary font-bold">{mattress.verdict}</p>
           <p class="mt-4 text-on-surface-variant leading-relaxed">
@@ -260,7 +262,7 @@ const jsonLd = [
 
         <!-- Pros and Cons -->
         <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="bg-green-50/50 p-8 rounded-3xl border border-green-200">
+          <div class="bg-green-50/50 p-8 rounded-lg border border-green-200">
             <h3 class="text-title-md font-title-md text-green-800 mb-6 flex items-center gap-2">
                <span class="text-xl">✓</span> What We Loved
             </h3>
@@ -273,7 +275,7 @@ const jsonLd = [
               ))}
             </ul>
           </div>
-          <div class="bg-red-50/50 p-8 rounded-3xl border border-red-200">
+          <div class="bg-red-50/50 p-8 rounded-lg border border-red-200">
             <h3 class="text-title-md font-title-md text-red-800 mb-6 flex items-center gap-2">
               <span class="text-xl">✗</span> Points to Consider
             </h3>
@@ -295,10 +297,10 @@ const jsonLd = [
             The locked scorecard records the {mattress.name} at {mattress.firmnessScale}/10 ({mattress.firmness}) and identifies its strongest fit for {mattress.bestFor.slice(0,3).join(', ')}. Fit guidance is editorial and varies by body type, sleep position, and comfort preference.
           </p>
           <p class="leading-relaxed text-on-surface-variant">
-            Value: {mattress.scores.value}/10. Edge Support: {mattress.scores.edgeSupport}/10. Cooling &amp; Breathability: {mattress.scores.coolingBreathability}/10. Scores are editorial comparisons from the approved source dataset, not clinical findings, laboratory measurements, manufacturer ratings, or collected customer ratings.
+            Value: {mattress.scores.value}/10. Edge Support: {mattress.scores.edgeSupport}/10. Cooling &amp; Breathability: {mattress.scores.coolingBreathability}/10. Scores are editorial comparisons from the published PureSleep score dataset, not clinical findings, laboratory measurements, manufacturer ratings, or collected customer ratings.
           </p>
           <p class="leading-relaxed text-on-surface-variant">
-            Certified {mattress.certifications.join(' and ')}. Backed by a {mattress.trialNights}-night trial and a {mattress.warrantyYears}-year warranty.
+            The dataset records {mattress.certifications.join(' and ')} certification labels, a {mattress.trialNights}-night trial, and a {mattress.warrantyYears}-year warranty. Verify the current certification scope and policy terms with the official sources before purchasing.
           </p>
         </section>
 
@@ -307,15 +309,15 @@ const jsonLd = [
           <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Inside the Mattress</h2>
           <div class="grid grid-cols-1 gap-6">
             {mattress.layers.map((layer, index) => (
-               <div class="glass-panel p-6 rounded-2xl flex flex-col md:flex-row gap-6 items-start border border-white/50">
-                 <div class="bg-primary/5 text-primary font-bold text-xl rounded-xl w-12 h-12 flex items-center justify-center shrink-0">
+               <div class="glass-panel p-6 rounded-lg flex flex-col md:flex-row gap-6 items-start border border-white/50">
+                 <div class="bg-primary/5 text-primary font-bold text-xl rounded-lg w-12 h-12 flex items-center justify-center shrink-0">
                    {index + 1}
                  </div>
                  <div class="flex flex-col gap-2">
                    <h3 class="text-title-md font-title-md text-on-surface">
                      {layer.name} <span class="text-body-md font-normal text-on-surface-variant ml-2 bg-surface px-2 py-1 rounded-md border border-outline-variant/20">{layer.thickness}</span>
                    </h3>
-                   <span class="text-label-sm font-label-sm text-secondary uppercase tracking-widest">{layer.material}</span>
+                   <span class="text-label-sm font-label-sm text-secondary uppercase tracking-normal">{layer.material}</span>
                    <p class="text-on-surface-variant leading-relaxed mt-2">{layer.description}</p>
                  </div>
                </div>
@@ -324,17 +326,25 @@ const jsonLd = [
         </section>
 
         <!-- Scoring Method -->
-        <section class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-col gap-5">
+        <section class="glass-panel p-8 rounded-lg border border-white/60 flex flex-col gap-5">
           <h2 class="text-headline-sm font-headline-sm text-primary font-bold">How This Review Is Scored</h2>
           <p class="text-body-md text-on-surface-variant leading-relaxed">
             This review uses PureSleep's locked seven-metric editorial scorecard: <strong class="text-on-surface">Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability</strong>. PureSleep does not present these ratings as laboratory measurements, clinical findings, manufacturer scores, or collected customer ratings.
           </p>
           <p class="text-body-md text-on-surface-variant leading-relaxed">
-            {COMMERCIAL_RELATIONSHIP_DISCLOSURE} {LINK_DISCLOSURE} The same published scoring rubric is used across every covered brand.
+            {EDITORIAL_INDEPENDENCE_DISCLOSURE} {LINK_DISCLOSURE} The same published scoring rubric is used across every covered brand.
           </p>
           <a href="/methodology" class="text-primary hover:text-secondary font-bold underline underline-offset-4 transition-colors text-body-md w-fit">
             Read our full scoring methodology →
           </a>
+          <div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-outline-variant">
+            <a href={mattress.productUrl} target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-primary font-bold underline underline-offset-4 transition-colors text-body-md w-fit">
+              Official product or archive source →
+            </a>
+            <a href="/model-coverage.json" class="text-secondary hover:text-primary font-bold underline underline-offset-4 transition-colors text-body-md w-fit">
+              Published model manifest →
+            </a>
+          </div>
         </section>
 
         <!-- FAQs -->
@@ -342,7 +352,7 @@ const jsonLd = [
           <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Frequently Asked Questions</h2>
           <div class="flex flex-col gap-4">
             {mattress.faqs.map(faq => (
-              <details class="group bg-white rounded-2xl border border-outline-variant/30 overflow-hidden shadow-sm">
+              <details class="group bg-white rounded-lg border border-outline-variant/30 overflow-hidden shadow-sm">
                 <summary class="flex justify-between items-center cursor-pointer p-6 font-title-md text-on-surface font-bold list-none">
                   {faq.question}
                   <span class="transition group-open:rotate-180">
@@ -359,11 +369,11 @@ const jsonLd = [
         
       
 <!-- Our Verdict -->
-<section class="glass-panel-heavy p-8 rounded-3xl border border-secondary/20">
+<section class="glass-panel-heavy p-8 rounded-lg border border-secondary/20">
   <h2 class="text-headline-md font-headline-md text-primary italic mb-4">Our Verdict</h2>
   <p class="text-body-lg text-on-surface-variant leading-relaxed mb-6">{mattress.verdict}</p>
-  <a href={mattress.affiliateUrl} target="_blank" rel="noopener noreferrer"
-    class="inline-flex items-center bg-primary text-white px-8 py-4 rounded-full font-bold text-label-sm uppercase tracking-widest hover:bg-primary/90 transition-colors shadow-lg">
+  <a href={mattress.productUrl} target="_blank" rel="noopener noreferrer"
+    class="inline-flex items-center bg-primary text-white px-8 py-4 rounded-full font-bold text-label-sm uppercase tracking-normal hover:bg-primary/90 transition-colors shadow-lg">
     {officialSourceLabel} →
   </a>
   <p class="text-xs text-on-surface-variant mt-3">{LINK_DISCLOSURE}</p>
@@ -374,11 +384,11 @@ const jsonLd = [
       <!-- Sidebar Scorecard -->
       <aside class="w-full lg:w-[400px] shrink-0 flex flex-col gap-8 sticky top-[100px]">
         
-        <div class="glass-panel-heavy p-8 rounded-3xl border border-white/60 shadow-xl flex flex-col gap-8">
+        <div class="glass-panel-heavy p-8 rounded-lg border border-white/60 shadow-xl flex flex-col gap-8">
           
           <!-- Overall Score -->
           <div class="flex flex-col items-center justify-center pt-4 pb-6 border-b border-outline-variant/30">
-            <span class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold mb-2">Overall Score</span>
+            <span class="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold mb-2">Overall Score</span>
             <div class="flex items-baseline justify-center gap-2 leading-none">
               <span class="text-[64px] sm:text-[80px] font-headline-lg font-bold italic text-primary">{mattress.scores.overall}</span>
               <span class="text-title-md text-on-surface-variant font-normal">/10</span>
@@ -409,9 +419,9 @@ const jsonLd = [
 
           <!-- Sizes & Pricing Table -->
           <div class="flex flex-col gap-3 pt-6 border-t border-outline-variant/30">
-            <h3 class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Sizes & Reference Pricing</h3>
+            <h3 class="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold">Sizes & Reference Pricing</h3>
             <p class="text-xs text-on-surface-variant">Recorded dataset values, not live offers. Verify current price and policies on the brand site.</p>
-            <div class="flex flex-col gap-0 border border-outline-variant/20 rounded-2xl overflow-hidden text-sm">
+            <div class="flex flex-col gap-0 border border-outline-variant/20 rounded-lg overflow-hidden text-sm">
               {mattress.sizePricing.map((sp, i) => (
                 <div class={`flex flex-col px-4 py-3 ${i % 2 === 0 ? 'bg-transparent' : 'bg-surface/50'} border-b border-outline-variant/10 last:border-b-0`}>
                   <div class="flex justify-between items-center">
@@ -429,7 +439,7 @@ const jsonLd = [
 
           <!-- Call to Action -->
           <div class="pt-6 border-t border-outline-variant/30 w-full">
-             <a href={mattress.affiliateUrl} target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-primary hover:bg-primary/90 text-on-primary py-4 px-6 rounded-xl font-label-lg font-bold tracking-wide uppercase transition-colors shadow-lg">
+             <a href={mattress.productUrl} target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-primary hover:bg-primary/90 text-on-primary py-4 px-6 rounded-lg font-label-lg font-bold tracking-normal uppercase transition-colors shadow-lg">
                {officialSourceLabel}
              </a>
              <p class="text-xs text-on-surface-variant text-center mt-2">{LINK_DISCLOSURE}</p>
@@ -445,7 +455,7 @@ const jsonLd = [
       <section class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-outline-variant/20">
         {mattress.relatedComparisons?.length > 0 && (
           <div class="flex flex-col gap-4">
-            <h3 class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Compare This Mattress</h3>
+            <h3 class="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold">Compare This Mattress</h3>
             <div class="flex flex-col gap-2">
               {mattress.relatedComparisons.map((slug: string) => (
                 <a href={`/comparison/${slug}`} class="text-primary hover:text-secondary underline underline-offset-4 font-bold text-body-md transition-colors">
@@ -457,7 +467,7 @@ const jsonLd = [
         )}
         {mattress.relatedTopics?.length > 0 && (
           <div class="flex flex-col gap-4">
-            <h3 class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Related Topics</h3>
+            <h3 class="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold">Related Topics</h3>
             <div class="flex flex-col gap-2">
               {mattress.relatedTopics.map((id: string) => (
                 <a href={`/topics/${id}`} class="text-primary hover:text-secondary underline underline-offset-4 font-bold text-body-md transition-colors">

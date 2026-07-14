@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { COMMERCIAL_RELATIONSHIP_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
+import { EDITORIAL_INDEPENDENCE_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
+import { FIRDOUS_FARHAD } from '../../lib/editorialPeople';
 
 const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
-const lastUpdated = "2026-07-13";
+const lastUpdated = "2026-07-14";
 
 const jsonLd = [
   {
@@ -11,7 +12,7 @@ const jsonLd = [
     "@type": "WebPage",
     "name": "Editorial Policy",
     "url": `${SITE_URL}/editorial-policy/`,
-    "description": "PureSleep's editorial standards: material relationships, scoring, evidence, and brand coverage.",
+    "description": "PureSleep's editorial standards: independence, scoring, evidence, corrections, and brand coverage.",
     "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL }
   }
 ];
@@ -19,7 +20,7 @@ const jsonLd = [
 
 <BaseLayout
   title="Editorial Policy — PureSleep"
-  description="PureSleep's editorial standards: material relationships, scoring, evidence, and brand coverage."
+  description="PureSleep's editorial standards: independence, scoring, evidence, corrections, and brand coverage."
   canonicalUrl={`${SITE_URL}/editorial-policy/`}
   lastUpdated={lastUpdated}
   jsonLd={jsonLd}
@@ -29,19 +30,28 @@ const jsonLd = [
     <header class="flex flex-col gap-6">
       <h1 class="text-headline-lg font-headline-lg text-primary font-bold">Editorial Policy</h1>
       <p class="text-body-lg text-on-surface-variant leading-relaxed">
-        {COMMERCIAL_RELATIONSHIP_DISCLOSURE} This page explains how material relationships are disclosed and how the same scoring standard is applied across every covered brand.
+        {EDITORIAL_INDEPENDENCE_DISCLOSURE} This page explains how sources, scores, updates, and outbound links are handled across every covered brand.
       </p>
     </header>
 
     <section class="flex flex-col gap-6">
       <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Our Standards</h2>
-      <div class="glass-panel p-8 rounded-3xl border border-white/60">
+      <div class="glass-panel p-8 rounded-lg border border-white/60">
         <ul class="flex flex-col gap-3 text-body-md text-on-surface-variant">
           <li class="flex gap-3"><span class="text-secondary font-bold">—</span> We do not make medical claims. Mattresses address sleep comfort and support only, not health conditions.</li>
           <li class="flex gap-3"><span class="text-secondary font-bold">—</span> {LINK_DISCLOSURE}</li>
-          <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Scores are editorial comparisons from the approved source dataset, not laboratory findings, manufacturer ratings, or collected customer ratings.</li>
-          <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Reviews are updated when product specifications change or on a regular re-evaluation cycle.</li>
+          <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Scores are editorial comparisons from the published PureSleep score dataset, not laboratory findings, manufacturer ratings, or collected customer ratings.</li>
+          <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Reviews are revised when a documented source change or correction is confirmed, with the last-modified date shown on the page.</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-6">
+      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Reviewer Assignment and Attribution</h2>
+      <div class="flex flex-col gap-4 text-body-md text-on-surface-variant leading-relaxed">
+        <p><a href={FIRDOUS_FARHAD.path} class="text-primary underline underline-offset-4 font-bold">{FIRDOUS_FARHAD.name}</a> is PureSleep's {FIRDOUS_FARHAD.role.toLowerCase()}. {FIRDOUS_FARHAD.credentials}</p>
+        <p>Her profile identifies her editorial scope. A page displays a "Reviewed by" attribution only after she has reviewed and approved that page's final copy. Assignment alone is not represented as completed review.</p>
+        <p>Medical-adjacent pages remain excluded from search indexing until article-specific sources and the required final review are complete.</p>
       </div>
     </section>
 
@@ -49,12 +59,20 @@ const jsonLd = [
       <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">How Brand Coverage Is Decided</h2>
       <div class="flex flex-col gap-4 text-body-md text-on-surface-variant leading-relaxed">
         <p>Our 7-metric scoring system applies identically across all 59 models we cover: overall, value, edge support, trial period, response time, motion transfer, and cooling &amp; breathability. The same rubric means every model is genuinely comparable across brands.</p>
-        <p>Scores are locked before category ordering and product-link placement. Rankings follow the recorded score data and stated category criteria, using the same fields for affiliated and non-affiliated brands.</p>
+        <p>Scores are locked before category ordering and product-link placement. Rankings follow the published score data and stated category criteria, using the same fields for every brand.</p>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-6">
+      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Corrections and Updates</h2>
+      <div class="flex flex-col gap-4 text-body-md text-on-surface-variant leading-relaxed">
+        <p>Product facts and policy terms are corrected when an official source changes. Material revisions update the page's visible dateModified value and matching machine-readable document.</p>
+        <p>PureSleep does not change a score to create a live promotion, satisfy a manufacturer, or improve a brand's placement. Unsupported facts are removed rather than filled with estimates.</p>
       </div>
     </section>
 
     <section class="flex flex-col gap-4">
-      <div class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-wrap gap-3">
+      <div class="glass-panel p-8 rounded-lg border border-white/60 flex flex-wrap gap-3">
         <a href="/methodology" class="text-primary hover:text-secondary underline underline-offset-4 font-bold transition-colors">Read our full scoring methodology →</a>
         <span class="text-outline-variant hidden md:inline self-center">·</span>
         <a href="/disclosure" class="text-primary hover:text-secondary underline underline-offset-4 font-bold transition-colors">Read our disclosure →</a>

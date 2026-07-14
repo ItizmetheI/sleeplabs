@@ -1,85 +1,51 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, BookOpen, FileText, Scale } from 'lucide-react';
 import { motion } from 'motion/react';
+
+const evidencePaths = [
+  {
+    href: '/best/overall/',
+    title: 'Complete score field',
+    description: 'Compare all 59 models across the same seven metrics.',
+    Icon: Scale,
+  },
+  {
+    href: '/methodology/',
+    title: 'Scoring methodology',
+    description: 'See what the scores mean, and what they do not prove.',
+    Icon: BookOpen,
+  },
+  {
+    href: '/model-coverage.json',
+    title: 'Published model manifest',
+    description: 'Inspect the model, brand, score, source, and update fields.',
+    Icon: FileText,
+  },
+];
 
 export default function FinalPick() {
   return (
-    <section className="py-stack-lg relative overflow-hidden bg-[#0f172a] rounded-[2.5rem] mx-margin-mobile md:mx-margin-desktop my-stack-lg text-center px-margin-mobile md:px-margin-desktop">
-      
-      <div className="max-w-4xl mx-auto flex flex-col items-center relative z-10">
-         <motion.h3 
-           initial={false}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
-           className="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-4"
-         >
-           Our Highest-Rated Mattress
-         </motion.h3>
-         <motion.h2 
-           initial={false}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
-           transition={{ delay: 0.1 }}
-           className="text-display-lg font-display-lg text-white mb-6 leading-tight drop-shadow-sm"
-           suppressHydrationWarning
-         >
-            The Amerisleep AS3 earns its spot at #1
-         </motion.h2>
-         <motion.p 
-           initial={false}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
-           transition={{ delay: 0.2 }}
-           className="text-body-lg text-slate-300 mb-10 max-w-2xl leading-relaxed"
-         >
-            The AS3 scores 10/10 overall in our current 59-model dataset. It uses open-cell Bio-Pur® foam and HIVE® zoned support, with a 100-night trial and 20-year limited warranty listed by Amerisleep. Compare it with every affiliated and non-affiliated model using the same published rubric.
-         </motion.p>
-         <motion.div 
-           initial={false}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
-           transition={{ delay: 0.3 }}
-           className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
-         >
-            <a 
-              href="/reviews/amerisleep-as3"
-              className="bg-secondary text-on-secondary px-8 py-4 rounded-full text-label-sm font-label-sm uppercase tracking-widest hover:bg-blue-600 transition-all shadow-[0_0_20px_rgba(251,191,36,0.3)] font-bold flex items-center justify-center hover:scale-105 active:scale-95"
-            >
-              Read the Full Review
-            </a>
-            <a 
-              href="https://amerisleep.com/as3.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-panel text-white px-8 py-4 rounded-full text-label-sm font-label-sm uppercase tracking-widest hover:bg-white/10 transition-colors inline-flex items-center justify-center group hover:scale-105 active:scale-95"
-            >
-              Check AS3 Price <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-         </motion.div>
+    <section className="py-stack-lg bg-primary text-white border-y border-primary px-margin-mobile md:px-margin-desktop">
+      <div className="max-w-container-max mx-auto">
+        <motion.div initial={false} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mb-10">
+          <p className="text-label-sm font-label-sm uppercase text-tertiary-container font-bold mb-3">Verify before you decide</p>
+          <h2 className="text-display-lg font-display-lg text-white mb-5">Follow the evidence, not the loudest claim.</h2>
+          <p className="text-body-lg text-inverse-on-surface leading-relaxed">
+            A single score cannot determine comfort. Use the full scorecard, read the evidence limits, and confirm current construction, pricing, trial, return, and warranty terms with the manufacturer.
+          </p>
+        </motion.div>
 
-         <motion.div 
-           initial={false}
-           whileInView={{ opacity: 1, scale: 1 }}
-           viewport={{ once: true }}
-           transition={{ delay: 0.4, duration: 0.6 }}
-           className="mt-20 w-full flex flex-col md:flex-row justify-between items-center glass-panel p-8 md:p-12 rounded-[2rem] text-left shadow-[0_15px_50px_rgba(0,0,0,0.6)] relative overflow-hidden"
-         >
-            <div className="absolute inset-0 bg-gradient-to-r from-secondary/10 to-transparent pointer-events-none" />
-            <div className="md:pr-8 relative z-10">
-              <h3 className="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-3">Final pick — 2026 editor</h3>
-              <h4 className="text-headline-lg font-headline-lg text-white mb-3 drop-shadow-sm">Amerisleep AS3</h4>
-              <p className="text-body-md text-slate-300 max-w-xl">
-                10/10 overall. Bio-Pur® plant-based memory foam, HIVE® zoned support, a 100-night trial, and a 20-year limited warranty. Verify current terms with Amerisleep.
-              </p>
-            </div>
-            <a 
-              href="https://amerisleep.com/as3.html"
-              target="_blank"
-              rel="noopener noreferrer" 
-              className="mt-8 md:mt-0 whitespace-nowrap bg-secondary text-on-secondary px-8 py-5 rounded-full text-label-sm font-label-sm uppercase tracking-widest hover:bg-secondary-fixed transition-all shadow-[0_0_20px_rgba(251,191,36,0.3)] group flex items-center justify-center font-bold relative z-10 hover:scale-105 active:scale-95"
-            >
-              Shop Amerisleep <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        <div className="grid grid-cols-1 md:grid-cols-3 border border-white/20 rounded-lg overflow-hidden divide-y md:divide-y-0 md:divide-x divide-white/20">
+          {evidencePaths.map(({ href, title, description, Icon }) => (
+            <a key={href} href={href} className="p-6 bg-white/5 hover:bg-white/10 transition-colors group">
+              <Icon className="w-5 h-5 text-tertiary-container mb-5" aria-hidden="true" />
+              <h3 className="text-headline-md text-white font-bold">{title}</h3>
+              <p className="text-body-md text-inverse-on-surface mt-3 min-h-14">{description}</p>
+              <span className="inline-flex items-center gap-2 mt-5 text-label-sm uppercase font-bold text-tertiary-container">
+                Open source <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </span>
             </a>
-         </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

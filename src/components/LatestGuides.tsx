@@ -1,81 +1,67 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, BookOpen } from 'lucide-react';
+
+const guides = [
+  {
+    href: '/best/organic/',
+    eyebrow: 'Multi-brand ranking',
+    title: 'Best Organic Mattresses: Full Score Field',
+    description: 'Compare six ranked picks and all 59 covered models, with certification scope clearly labeled for verification.',
+    image: '/images/mattresses/plushbeds-signature-bliss.webp',
+    imageAlt: 'PlushBeds Signature Bliss mattress',
+  },
+  {
+    href: '/reviews/ghostbed-flex/',
+    eyebrow: 'Mattress review',
+    title: 'GhostBed Flex Review and Seven-Metric Scorecard',
+    description: 'Recorded construction, firmness, policy fields, score definitions, evidence limits, and official source links.',
+    image: '/images/mattresses/ghostbed-flex.webp',
+    imageAlt: 'GhostBed Flex mattress',
+  },
+];
 
 export default function LatestGuides() {
   return (
-    <section className="py-stack-lg bg-transparent relative overflow-hidden border-t border-outline-variant/30 mt-10">
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 gap-6 border-b border-outline-variant/30 pb-8">
+    <section className="py-stack-lg border-y border-outline-variant bg-surface-container-low">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 gap-6">
           <div>
-            <h3 className="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-3 font-bold drop-shadow-sm">Editorial Coverage</h3>
-            <h2 className="text-display-lg font-display-lg text-primary drop-shadow-sm">Latest Guides & Reviews</h2>
+            <p className="text-label-sm font-label-sm uppercase text-secondary mb-3 font-bold">Editorial coverage</p>
+            <h2 className="text-display-lg font-display-lg text-primary">Guides built for comparison</h2>
           </div>
-          <a href="/blog" className="inline-flex items-center text-label-sm font-label-sm uppercase tracking-widest border border-outline-variant px-6 py-3 hover:bg-outline-variant/20 hover:text-primary text-on-surface-variant transition-colors group rounded-full font-bold">
-            All Articles <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <a href="/blog/" className="inline-flex items-center gap-2 text-label-sm font-label-sm uppercase border border-outline-variant px-5 py-3 hover:border-secondary hover:text-secondary text-primary transition-colors rounded-lg font-bold">
+            All articles <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-gutter">
-          {/* Main featured article */}
-          <div className="md:col-span-7 flex flex-col gap-6 group">
-            <a href="/reviews/amerisleep-as3" className="w-full h-64 md:h-96 glass-panel rounded-3xl overflow-hidden relative shadow-md border border-outline-variant/30 block">
-               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 transition-opacity duration-300 opacity-30 group-hover:opacity-60" />
-               <img src="/images/mattresses/amerisleep-as3.webp" alt="Amerisleep AS3 Review" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-               <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="bg-white/90 text-primary border border-white/50 backdrop-blur-md px-6 py-2 rounded-full text-label-sm uppercase tracking-widest font-bold">Read Article</span>
-               </div>
-            </a>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          {guides.map((guide, index) => (
+            <article key={guide.href} className={`${index === 0 ? 'lg:col-span-7' : 'lg:col-span-5'} bg-white border border-outline-variant rounded-lg overflow-hidden shadow-sm`}>
+              <a href={guide.href} className="block h-56 bg-white border-b border-outline-variant overflow-hidden">
+                <img src={guide.image} alt={guide.imageAlt} className="w-full h-full object-contain p-4" />
+              </a>
+              <div className="p-6">
+                <p className="text-label-sm uppercase text-secondary font-bold">{guide.eyebrow} · July 2026</p>
+                <h3 className="text-headline-md text-primary font-bold mt-3">
+                  <a href={guide.href} className="hover:text-secondary transition-colors">{guide.title}</a>
+                </h3>
+                <p className="text-body-md text-on-surface-variant mt-3 leading-relaxed">{guide.description}</p>
+                <a href={guide.href} className="inline-flex items-center gap-2 text-secondary font-bold mt-5 hover:text-primary transition-colors">
+                  Open guide <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </a>
+              </div>
+            </article>
+          ))}
+
+          <aside className="lg:col-span-12 grid grid-cols-1 md:grid-cols-[auto_1fr_auto] items-center gap-5 bg-primary text-white p-6 rounded-lg">
+            <BookOpen className="w-6 h-6 text-tertiary-container" aria-hidden="true" />
             <div>
-              <div className="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-3 font-bold drop-shadow-sm">
-                Review · Updated July 2026
-              </div>
-              <h3 className="text-headline-lg font-headline-lg mb-4 text-primary hover:text-secondary transition-colors cursor-pointer">
-                <a href="/reviews/amerisleep-as3">Amerisleep AS3 Review (2026): Our #1 Rated Mattress</a>
-              </h3>
-              <p className="text-body-lg text-on-surface-variant mb-6 max-w-xl leading-relaxed">
-                Full Bio-Pur® foam, HIVE® zoning, policy, layer, and seven-metric score breakdown.
-              </p>
-              <a href="/reviews/amerisleep-as3" className="inline-flex items-center text-label-sm font-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors group font-bold">
-                Read Full Review <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
+              <h3 className="text-headline-md font-bold">Read the evidence boundaries before using a score</h3>
+              <p className="text-body-md text-inverse-on-surface mt-2">PureSleep states what its scorecards contain, what they do not measure, and which facts require official verification.</p>
             </div>
-          </div>
-
-          {/* Secondary articles */}
-          <div className="md:col-span-5 flex flex-col gap-8 md:pl-8 md:border-l border-outline-variant/30">
-            <div className="flex flex-col gap-5 group cursor-pointer">
-              <a href="/comparison/amerisleep-as3-vs-leesa-original" className="w-full h-48 glass-panel rounded-3xl overflow-hidden relative border border-outline-variant/30 block">
-                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors z-10" />
-                 <img src="/images/mattresses/leesa-original.webp" alt="Amerisleep AS3 and Leesa Original comparison" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              </a>
-              <div>
-                <div className="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant mb-2">
-                  Cross-Brand Comparison · July 2026
-                </div>
-                <h4 className="text-headline-md font-headline-md mb-3 text-primary group-hover:text-secondary transition-colors leading-snug">
-                  <a href="/comparison/amerisleep-as3-vs-leesa-original">Amerisleep AS3 vs Leesa Original</a>
-                </h4>
-                <a href="/comparison/amerisleep-as3-vs-leesa-original" className="inline-flex items-center text-label-sm font-label-sm uppercase tracking-widest group-hover:text-primary transition-colors text-secondary font-bold">
-                  Read Comparison <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
-            </div>
-
-            <div className="w-full h-[1px] bg-outline-variant/30 my-2"></div>
-
-            <div className="flex flex-col gap-5 group cursor-pointer">
-              <div>
-                <div className="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant mb-2">
-                  Multi-Brand Guide · July 2026
-                </div>
-                <h4 className="text-headline-md font-headline-md mb-3 text-primary group-hover:text-secondary transition-colors leading-snug">
-                  <a href="/topics/memory-foam/">Memory Foam: How It Works and What to Compare</a>
-                </h4>
-                <a href="/topics/memory-foam/" className="inline-flex items-center text-label-sm font-label-sm uppercase tracking-widest group-hover:text-primary transition-colors text-secondary font-bold">
-                  Read Guide <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
-            </div>
-          </div>
+            <a href="/methodology/" className="inline-flex items-center gap-2 text-tertiary-container font-bold hover:text-white transition-colors">
+              Methodology <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </a>
+          </aside>
         </div>
       </div>
     </section>
