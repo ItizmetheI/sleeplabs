@@ -3,23 +3,23 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { articleList, toArticleBody } from '../../lib/schemaArticleBody';
 import { COMMERCIAL_RELATIONSHIP_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
 
-const lastUpdated = "2026-05-01";
+const lastUpdated = "2026-07-13";
 const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
 const methodologyArticleBody = toArticleBody(
-  'How We Test Mattresses at PureSleep',
-  `PureSleep evaluates 59 mattresses across 24 brands using a standardized 7-metric scoring system. ${COMMERCIAL_RELATIONSHIP_DISCLOSURE} ${LINK_DISCLOSURE}`,
-  'Our Testing Process',
+  'How PureSleep Scores Mattresses',
+  `PureSleep publishes editorial scorecards for 59 mattresses across 24 brands using one standardized 7-metric system. ${COMMERCIAL_RELATIONSHIP_DISCLOSURE} ${LINK_DISCLOSURE}`,
+  'Our Scoring Process',
   articleList('Process Steps', [
-    'PureSleep does not publish a product-by-product acquisition log and does not claim that every mattress was purchased at retail. The same testing rubric is applied regardless of how a product was obtained.',
-    'Each mattress is evaluated across back, side, and stomach-sleeping considerations using the same published rubric.',
-    'Each mattress is scored on Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability.',
-    'The overall score is a hands-on composite evaluation, not a lab measurement or manufacturer data point.',
+    'Every review starts with the approved source dataset and one record for each covered model. PureSleep does not present editorial scores as laboratory measurements or collected customer ratings.',
+    'Product construction, recorded firmness, policy fields, and sleep-position fit are interpreted using the same published definitions.',
+    'Each mattress is scored on Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. Every field uses a 0-10 scale.',
+    'The Overall field is the source dataset\'s editorial summary score, not a formula-derived laboratory result or manufacturer rating.',
     'Material business relationships are disclosed. The same published rubric is used across every covered brand.',
   ]),
   'The 7 Scoring Criteria',
   articleList('Scoring Criteria', [
-    'Overall: composite hands-on evaluation score reflecting total sleep experience.',
+    'Overall: the source dataset\'s editorial summary score for the complete mattress.',
     'Value: overall quality relative to price, warranty, and trial terms.',
     'Edge Support: firmness and usability at the mattress perimeter.',
     'Trial Period: quality and length of the home trial policy.',
@@ -31,7 +31,7 @@ const methodologyArticleBody = toArticleBody(
   articleList('Standards', [
     'We do not make medical claims. Mattresses address sleep comfort and support only, not health conditions.',
     `${COMMERCIAL_RELATIONSHIP_DISCLOSURE} ${LINK_DISCLOSURE}`,
-    'Scores reflect hands-on testing, not manufacturer-provided data.',
+    'Scores are editorial comparisons and are not presented as clinical findings, laboratory measurements, manufacturer ratings, or collected customer ratings.',
     'Reviews are updated when product specifications change or on a regular re-evaluation cycle.',
   ])
 );
@@ -39,8 +39,8 @@ const methodologyArticleBody = toArticleBody(
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "How We Test Mattresses at PureSleep",
-  "description": "Our mattress testing methodology: 7-metric scoring, hands-on evaluation, material-relationship disclosure, and cross-brand coverage.",
+  "headline": "How PureSleep Scores Mattresses",
+  "description": "PureSleep's seven-metric editorial scoring methodology, evidence limits, relationship disclosure, and cross-brand coverage.",
   "articleBody": methodologyArticleBody,
   "author": { "@type": "Organization", "name": "PureSleep" },
   "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
@@ -53,8 +53,8 @@ const formattedDate = new Date(lastUpdated).toLocaleDateString('en-US', { month:
 ---
 
 <BaseLayout
-  title="How We Test Mattresses — PureSleep Testing Methodology"
-  description="Our mattress testing methodology: 7-metric scoring, hands-on evaluation, material-relationship disclosure, and 59-model cross-brand coverage."
+  title="How PureSleep Scores Mattresses | Methodology"
+  description="PureSleep's seven-metric editorial scoring methodology, evidence limits, relationship disclosure, and 59-model cross-brand coverage."
   canonicalUrl={`${SITE_URL}/methodology/`}
   machineReadableUrl={`${SITE_URL}/llms/methodology.md`}
   lastUpdated={lastUpdated}
@@ -63,25 +63,25 @@ const formattedDate = new Date(lastUpdated).toLocaleDateString('en-US', { month:
   <main class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop py-16 relative z-10 w-full flex flex-col gap-16">
 
     <header class="flex flex-col gap-6 text-center">
-      <h1 class="text-headline-lg font-headline-lg text-primary font-bold">How We Test Mattresses at PureSleep</h1>
+      <h1 class="text-headline-lg font-headline-lg text-primary font-bold">How PureSleep Scores Mattresses</h1>
       <div class="flex justify-center">
         <span class="text-body-md text-on-surface-variant bg-surface px-6 py-2 rounded-full shadow-sm border border-outline-variant/30">
           <strong>Last Updated:</strong> {formattedDate}
         </span>
       </div>
       <p class="text-body-lg text-on-surface-variant leading-relaxed text-left mt-4 glass-panel p-8 rounded-3xl border border-white/60">
-        PureSleep evaluates 59 mattresses across 24 brands using a standardized 7-metric scoring system. {COMMERCIAL_RELATIONSHIP_DISCLOSURE} {LINK_DISCLOSURE}
+        PureSleep publishes editorial scorecards for 59 mattresses across 24 brands using one standardized seven-metric system. {COMMERCIAL_RELATIONSHIP_DISCLOSURE} {LINK_DISCLOSURE}
       </p>
     </header>
 
     <section class="flex flex-col gap-8">
-      <h2 class="text-headline-md font-headline-md text-primary border-b border-outline-variant/30 pb-4 italic">Our Testing Process</h2>
+      <h2 class="text-headline-md font-headline-md text-primary border-b border-outline-variant/30 pb-4 italic">Our Scoring Process</h2>
       <div class="grid grid-cols-1 gap-6">
         {[
-          { n: "1", title: "Product Sourcing", desc: "PureSleep does not publish a product-by-product acquisition log and does not claim every mattress was purchased at retail. The same testing rubric is applied regardless of source." },
-          { n: "2", title: "Sleep-Position Evaluation", desc: "Each mattress is evaluated across back, side, and stomach-sleeping considerations using the same published rubric. Body-weight guidance is treated as fit guidance, not as a clinical or laboratory measurement." },
+          { n: "1", title: "Locked Source Dataset", desc: "Every review starts with the approved source dataset and one record for each covered model. PureSleep does not present editorial scores as laboratory measurements or collected customer ratings." },
+          { n: "2", title: "Consistent Fit Analysis", desc: "Product construction, recorded firmness, policy fields, and sleep-position fit are interpreted using the same published definitions. Body-weight guidance is fit guidance, not a clinical measurement." },
           { n: "3", title: "7-Metric Scoring", desc: "Each mattress is scored on Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. All scores are 0–10." },
-          { n: "4", title: "Overall Score", desc: "The overall score is a hands-on composite evaluation. Scores reflect the testing team's direct assessment, not lab measurements or manufacturer data." },
+          { n: "4", title: "Evidence Limits", desc: "The Overall field is the source dataset's editorial summary score. It is not a formula-derived laboratory result, manufacturer rating, or collected customer rating." },
           { n: "5", title: "Material-Relationship Disclosure", desc: "PureSleep discloses material business relationships and outbound-link economics so readers can assess recommendations with the relevant context." }
         ].map(step => (
           <div class="flex gap-6 items-start">
@@ -99,7 +99,7 @@ const formattedDate = new Date(lastUpdated).toLocaleDateString('en-US', { month:
       <h2 class="text-headline-md font-headline-md text-primary border-b border-outline-variant/30 pb-4 italic">The 7 Scoring Criteria</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {[
-          { metric: "Overall", desc: "The composite hands-on evaluation score reflecting total sleep experience across all metrics." },
+          { metric: "Overall", desc: "The source dataset's editorial summary score for the complete mattress." },
           { metric: "Value", desc: "Overall quality relative to price, including warranty and trial terms." },
           { metric: "Edge Support", desc: "Firmness and usability at the perimeter — relevant for couples and getting in/out of bed." },
           { metric: "Trial Period", desc: "Quality and length of the home trial policy, scored relative to industry standard." },
@@ -120,7 +120,7 @@ const formattedDate = new Date(lastUpdated).toLocaleDateString('en-US', { month:
       <ul class="flex flex-col gap-3 text-body-md text-on-surface-variant">
         <li class="flex gap-3"><span class="text-secondary font-bold">—</span> We do not make medical claims. Mattresses address sleep comfort and support only, not health conditions.</li>
         <li class="flex gap-3"><span class="text-secondary font-bold">—</span> {COMMERCIAL_RELATIONSHIP_DISCLOSURE} {LINK_DISCLOSURE}</li>
-        <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Scores reflect hands-on testing, not manufacturer-provided data.</li>
+        <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Scores are editorial comparisons, not clinical findings, laboratory measurements, manufacturer ratings, or collected customer ratings.</li>
         <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Reviews are updated when product specifications change or on a regular re-evaluation cycle.</li>
       </ul>
     </section>

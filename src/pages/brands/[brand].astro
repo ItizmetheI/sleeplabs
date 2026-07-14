@@ -180,10 +180,10 @@ const meta = BRAND_META[brand] || {
   displayName: brandModels[0]?.brand || brand,
   officialUrl: '#',
   description: `All ${brandModels[0]?.brand || brand} mattress reviews by PureSleep.`,
-  blurb: `${brandModels[0]?.brand || brand} mattresses, reviewed and scored by the PureSleep Testing Team.`
+  blurb: `${brandModels[0]?.brand || brand} mattresses, reviewed with PureSleep's seven-metric editorial scorecard.`
 };
 
-const lastUpdated = "2026-06-16";
+const lastUpdated = "2026-07-13";
 
 const topModel = [...brandModels].sort((a, b) => (b.scores?.overall || 0) - (a.scores?.overall || 0))[0];
 
@@ -191,7 +191,7 @@ const brandArticleBody = toArticleBody(
   `${meta.displayName} Mattress Reviews 2026`,
   meta.description,
   meta.blurb,
-  `${brandModels.length} model${brandModels.length !== 1 ? 's' : ''} reviewed by the PureSleep Testing Team. Updated: June 2026.`,
+  `${brandModels.length} model${brandModels.length !== 1 ? 's' : ''} reviewed by the PureSleep Editorial Team. Updated: July 13, 2026.`,
   topModel
     ? [
       `Top Rated ${meta.displayName} Model`,
@@ -212,7 +212,7 @@ const brandArticleBody = toArticleBody(
     ])
   ),
   articleList('Brand Review Notes', [
-    'Scores are editorial, hands-on evaluations from the PureSleep Testing Team.',
+    'Scores are editorial comparisons from the approved seven-metric source dataset.',
     RANKING_DISCLOSURE,
     'Certification and material labels should be verified on the brand official site or certifying body database before purchase.',
   ])
@@ -272,9 +272,9 @@ const jsonLd = [
       <div class="flex gap-4 items-center text-body-sm text-on-surface-variant">
         <span><strong class="text-on-surface">{brandModels.length} model{brandModels.length !== 1 ? 's' : ''}</strong> reviewed</span>
         <span>·</span>
-        <span>Reviewed by: PureSleep Testing Team</span>
+        <span>Reviewed by: PureSleep Editorial Team</span>
         <span>·</span>
-        <span>Updated: June 2026</span>
+        <span>Updated: July 13, 2026</span>
       </div>
     </header>
 
@@ -282,7 +282,7 @@ const jsonLd = [
       <section class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-col gap-4">
         <span class="bg-primary text-on-primary text-label-sm font-bold uppercase tracking-widest px-4 py-1.5 rounded-full w-fit">Top Rated {meta.displayName} Model</span>
         <div class="flex flex-col md:flex-row gap-6 items-start">
-          <img src={topModel.heroImage} alt={`${topModel.name}`} class="w-full md:w-52 h-40 object-cover rounded-2xl flex-shrink-0" />
+          <img src={topModel.heroImage} alt={`${topModel.name}`} class="w-full md:w-52 h-40 object-contain bg-white p-2 rounded-2xl flex-shrink-0" />
           <div class="flex flex-col gap-3">
             <div>
               <h2 class="text-headline-md font-headline-md text-primary font-bold">{topModel.name}</h2>
@@ -306,7 +306,7 @@ const jsonLd = [
       <div class="flex flex-col gap-4">
         {brandModels.sort((a, b) => (b.scores?.overall || 0) - (a.scores?.overall || 0)).map(m => (
           <article class="glass-panel flex flex-col sm:flex-row gap-6 p-6 rounded-2xl border border-white/60 hover:border-primary/20 transition-all">
-            <img src={m.image} alt={`${m.name}`} class="w-full sm:w-32 h-28 object-cover rounded-xl flex-shrink-0" />
+            <img src={m.image} alt={`${m.name}`} class="w-full sm:w-32 h-28 object-contain bg-white p-2 rounded-xl flex-shrink-0" />
             <div class="flex flex-col gap-3 flex-1">
               <div class="flex justify-between items-start gap-4">
                 <div>
@@ -346,7 +346,7 @@ const jsonLd = [
     <section class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-col gap-4">
       <h2 class="text-headline-sm font-headline-sm text-primary font-bold">About These Scores</h2>
       <p class="text-body-md text-on-surface-variant leading-relaxed">
-        All {meta.displayName} mattresses above were evaluated hands-on by the PureSleep Testing Team. Scores are on the 7-metric system: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability (all 0–10). Scores come only from our testing data.
+        All {meta.displayName} mattresses above use the same seven-metric editorial scorecard: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability (all 0–10). Scores are not laboratory findings, manufacturer ratings, or collected customer ratings.
       </p>
       <p class="text-body-md text-on-surface-variant leading-relaxed">
         {RANKING_DISCLOSURE}

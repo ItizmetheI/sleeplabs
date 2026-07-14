@@ -32,7 +32,7 @@ export default function LatestGuides() {
                 <a href="/reviews/amerisleep-as3">Amerisleep AS3 Review (2026): Our #1 Rated Mattress</a>
               </h3>
               <p className="text-body-lg text-on-surface-variant mb-6 max-w-xl leading-relaxed">
-                Hands-on tested. Bio-Pur® foam, HIVE® zoning, 20-year warranty. Full breakdown of every layer and every score.
+                Full Bio-Pur® foam, HIVE® zoning, policy, layer, and seven-metric score breakdown.
               </p>
               <a href="/reviews/amerisleep-as3" className="inline-flex items-center text-label-sm font-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors group font-bold">
                 Read Full Review <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

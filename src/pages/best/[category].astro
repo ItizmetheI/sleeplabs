@@ -24,7 +24,7 @@ const pickModels = cat.picks
   .filter(Boolean);
 
 const winner = pickModels[0] as any;
-const lastUpdated = "2026-06-16";
+const lastUpdated = "2026-07-13";
 const canonicalUrl = `${SITE_URL}/best/${category}/`;
 const winnerImage = winner?.heroImage
   ? (winner.heroImage.startsWith('http') ? winner.heroImage : `${SITE_URL}${winner.heroImage}`)
@@ -41,13 +41,13 @@ const isHealthCategory = ['back-pain', 'hip-pain', 'shoulder-pain'].includes(cat
 const bestArticleBody = toArticleBody(
   cat.h1,
   cat.intro,
-  'Reviewed by: PureSleep Testing Team. Updated: June 2026. 59 models tested across 24 brands.',
+  'Reviewed by: PureSleep Editorial Team. Updated: July 13, 2026. 59 models scored across 24 brands.',
   isHealthCategory
     ? 'Note: No mattress can diagnose, treat, or cure any health condition. This page is for general comfort and sleep-product information only; talk to a doctor about pain or medical concerns.'
     : null,
   articleList('Trust Signals', [
     '7-Metric Scoring System',
-    'Hands-On Team Testing',
+    'Editorial Scorecards',
     'Relationships Disclosed',
     'One Published Rubric',
   ]),
@@ -68,7 +68,7 @@ const bestArticleBody = toArticleBody(
     ]
     : null,
   'Quick Comparison',
-  'All picks ranked by our 7-metric overall score. Scores derive from hands-on testing, not manufacturer data.',
+  'All picks are ranked from the approved seven-metric editorial dataset. Scores are not laboratory findings, manufacturer ratings, or collected customer ratings.',
   articleTable(
     'Quick Comparison Table',
     ['Rank', 'Mattress', 'Overall', 'Value', 'Trial', 'Warranty'],
@@ -90,7 +90,7 @@ const bestArticleBody = toArticleBody(
     `Specs at a Glance: ${m.firmness} (${m.firmnessScale}/10). Best for ${m.bestFor.slice(0, 2).join(', ')}. ${m.trialNights}-night trial. ${m.warrantyYears}-year warranty.`,
   ]),
   'How We Selected These Picks',
-  'All picks above were evaluated hands-on by the PureSleep Testing Team using a standardized 7-metric scoring system: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. Every score on this page comes from our testing data, never from manufacturer claims, press releases, or third-party databases.',
+  'All picks use the same approved seven-metric editorial scorecard: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. The same definitions and 0-10 scale apply to every covered brand.',
   RANKING_DISCLOSURE,
   relatedComparisons.length > 0
     ? [
@@ -116,7 +116,7 @@ const jsonLd: any[] = [
     "description": cat.description,
     "articleBody": bestArticleBody,
     "image": winnerImage,
-    "author": { "@type": "Organization", "name": "PureSleep Testing Team", "url": SITE_URL },
+    "author": { "@type": "Organization", "name": "PureSleep Editorial Team", "url": `${SITE_URL}/about/#editorial-team` },
     "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
     "datePublished": "2026-01-01",
     "dateModified": lastUpdated,
@@ -184,11 +184,11 @@ if (faqs.length > 0) {
       <h1 class="text-headline-lg font-headline-lg text-primary font-bold">{cat.h1}</h1>
       <p class="text-body-lg text-on-surface-variant leading-relaxed">{cat.intro}</p>
       <div class="flex flex-wrap gap-x-5 gap-y-2 items-center text-body-sm text-on-surface-variant border-t border-outline-variant/20 pt-4">
-        <span><strong class="text-on-surface">Reviewed by:</strong> PureSleep Testing Team</span>
+        <span><strong class="text-on-surface">Reviewed by:</strong> PureSleep Editorial Team</span>
         <span class="hidden md:inline text-outline-variant">·</span>
-        <span><strong class="text-on-surface">Updated:</strong> June 2026</span>
+        <span><strong class="text-on-surface">Updated:</strong> July 13, 2026</span>
         <span class="hidden md:inline text-outline-variant">·</span>
-        <span>59 models tested across 24 brands</span>
+        <span>59 models scored across 24 brands</span>
       </div>
     </header>
 
@@ -202,7 +202,7 @@ if (faqs.length > 0) {
     <div class="flex flex-wrap gap-3">
       {[
         '7-Metric Scoring System',
-        'Hands-On Team Testing',
+        'Editorial Scorecards',
         'Relationships Disclosed',
         'One Published Rubric',
       ].map(badge => (
@@ -217,11 +217,11 @@ if (faqs.length > 0) {
       <section class="glass-panel p-8 md:p-10 rounded-3xl border border-white/60 flex flex-col gap-6" id="top-pick">
         <div class="flex items-center gap-3 flex-wrap">
           <span class="bg-primary text-on-primary text-label-sm font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">#1 Editor's Pick</span>
-          <span class="text-on-surface-variant text-body-sm">Evaluated hands-on by the PureSleep Testing Team</span>
+          <span class="text-on-surface-variant text-body-sm">Scored with the same seven-field editorial rubric</span>
         </div>
         <div class="flex flex-col md:flex-row gap-8 items-start">
           <div class="w-full md:w-64 flex-shrink-0 rounded-2xl overflow-hidden bg-surface">
-            <img src={winner.heroImage || winner.image} alt={`${winner.name} mattress`} class="w-full h-48 object-cover" loading="eager" />
+            <img src={winner.heroImage || winner.image} alt={`${winner.name} mattress`} class="w-full h-48 object-contain bg-white p-3" loading="eager" />
           </div>
           <div class="flex flex-col gap-4 flex-1">
             <div>
@@ -282,7 +282,7 @@ if (faqs.length > 0) {
     <!-- Quick comparison table -->
     <section class="flex flex-col gap-4">
       <h2 class="text-headline-md font-headline-md text-primary font-bold">Quick Comparison</h2>
-      <p class="text-body-md text-on-surface-variant">All picks ranked by our 7-metric overall score. Scores derive from hands-on testing — not manufacturer data.</p>
+      <p class="text-body-md text-on-surface-variant">All picks are ranked from the approved seven-metric editorial dataset. Scores are not laboratory findings, manufacturer ratings, or collected customer ratings.</p>
       <div class="overflow-x-auto rounded-2xl border border-outline-variant/20">
         <table class="w-full text-body-sm min-w-[680px]">
           <thead>
@@ -342,7 +342,7 @@ if (faqs.length > 0) {
             <div class="flex flex-col md:flex-row">
               <!-- Image -->
               <div class="w-full md:w-52 flex-shrink-0 relative">
-                <img src={m.image} alt={`${m.name} mattress`} class="w-full h-48 md:h-full object-cover" loading="lazy" />
+                <img src={m.image} alt={`${m.name} mattress`} class="w-full h-48 md:h-full object-contain bg-white p-3" loading="lazy" />
                 <div class="absolute top-3 left-3 flex flex-col gap-1.5">
                   <span class={`px-3 py-1 rounded-full text-xs font-bold ${i === 0 ? 'bg-primary text-on-primary' : 'bg-white/90 text-on-surface'}`}>
                     #{i + 1}
@@ -425,14 +425,14 @@ if (faqs.length > 0) {
     <section class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-col gap-5">
       <h2 class="text-headline-sm font-headline-sm text-primary font-bold">How We Selected These Picks</h2>
       <p class="text-body-md text-on-surface-variant leading-relaxed">
-        All picks above were evaluated hands-on by the PureSleep Testing Team using a standardized 7-metric scoring system: <strong class="text-on-surface">Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability</strong>. Every score on this page comes from our testing data — never from manufacturer claims, press releases, or third-party databases.
+        All picks use the same approved seven-metric editorial scorecard: <strong class="text-on-surface">Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability</strong>. The same definitions and 0-10 scale apply to every covered brand.
       </p>
       <p class="text-body-md text-on-surface-variant leading-relaxed">
         {RANKING_DISCLOSURE}
       </p>
       <div class="flex flex-wrap gap-3">
         <a href="/methodology" class="text-primary hover:text-secondary font-bold underline underline-offset-4 transition-colors text-body-md">
-          Read our full testing methodology →
+          Read our full scoring methodology →
         </a>
         <span class="text-outline-variant hidden md:inline self-center">·</span>
         <a href="/reviews" class="text-primary hover:text-secondary font-bold underline underline-offset-4 transition-colors text-body-md hidden md:inline">

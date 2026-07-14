@@ -32,6 +32,17 @@ const productIdB = `${reviewUrlB}#product`;
 const absoluteImageA = mattressA.heroImage.startsWith('http') ? mattressA.heroImage : `${SITE_URL}${mattressA.heroImage}`;
 const absoluteImageB = mattressB.heroImage.startsWith('http') ? mattressB.heroImage : `${SITE_URL}${mattressB.heroImage}`;
 
+const constructionHeading = '1. Construction & Build Quality';
+const constructionText = `When selecting a new mattress, understanding the recorded materials and structural differences between the ${mattressA.name} and ${mattressB.name} helps clarify how each may feel and respond to movement. The ${mattressA.name} uses a ${mattressA.type} design and has a recorded ${mattressA.firmness} feel (${mattressA.firmnessScale}/10). The ${mattressB.name} uses a ${mattressB.type} construction with a recorded ${mattressB.firmness} feel (${mattressB.firmnessScale}/10). Construction can influence contouring, airflow, edge stability, and ease of movement, but individual comfort will vary.`;
+const firmnessHeading = `2. Firmness, Feel & Overall Score (${mattressA.scores.overall}/10 vs ${mattressB.scores.overall}/10)`;
+const firmnessText = `The approved PureSleep editorial dataset gives the ${mattressA.name} an overall score of ${mattressA.scores.overall}/10, with edge support at ${mattressA.scores.edgeSupport}/10 and response time at ${mattressA.scores.responseTime}/10. The ${mattressB.name} scores ${mattressB.scores.overall}/10 overall, with edge support at ${mattressB.scores.edgeSupport}/10 and response time at ${mattressB.scores.responseTime}/10. The ${mattressA.scores.overall >= mattressB.scores.overall ? mattressA.name : mattressB.name} leads on the composite score. These are editorial scores, not laboratory measurements, customer ratings, or manufacturer scores.`;
+const motionHeading = '3. Motion Transfer & Cooling';
+const motionText = `For couples and light sleepers, motion transfer matters. The ${mattressA.name} scored ${mattressA.scores.motionTransfer}/10 for motion transfer, making it ${mattressA.scores.motionTransfer >= 9 ? 'an excellent' : 'a solid'} choice for co-sleepers. The ${mattressB.name} rated ${mattressB.scores.motionTransfer}/10. For thermal comfort, the ${mattressA.name} earned ${mattressA.scores.coolingBreathability}/10 for cooling & breathability while the ${mattressB.name} scored ${mattressB.scores.coolingBreathability}/10. The ${mattressA.scores.coolingBreathability >= mattressB.scores.coolingBreathability ? mattressA.name : mattressB.name} is the better choice for hot sleepers.`;
+const valueHeading = '4. Value & Trial Period';
+const valueText = `Value scores capture overall quality relative to price, warranty, and trial terms. The ${mattressA.name} scored ${mattressA.scores.value}/10 for value, with a ${mattressA.trialNights}-night trial (scored ${mattressA.scores.trialPeriod}/10 for trial quality). The ${mattressB.name} earned ${mattressB.scores.value}/10 for value, backed by a ${mattressB.trialNights}-night trial (scored ${mattressB.scores.trialPeriod}/10).`;
+const policyHeading = '5. Policies & Recorded Pricing';
+const policyText = `The source dataset lists a ${mattressA.trialNights}-night trial and ${mattressA.warrantyYears}-year warranty for the ${mattressA.name}, and a ${mattressB.trialNights}-night trial with a ${mattressB.warrantyYears}-year warranty for the ${mattressB.name}. These terms and the price fields above can change. Verify the current price, shipping, return, trial, and warranty terms on each brand's official site before purchasing. ${comparison.verdict}`;
+
 const comparisonArticleBody = toArticleBody(
   `${mattressA.name} vs ${mattressB.name} (2026): Which Is Better?`,
   'Quick Verdict',
@@ -63,10 +74,16 @@ const comparisonArticleBody = toArticleBody(
     return `Best for ${winner.category}: ${winningMattress.name}. ${winner.reason}`;
   }),
   'Detailed Head-to-Head Comparison',
-  `Construction and feel: ${mattressA.name} is a ${mattressA.type} mattress with a ${mattressA.firmness} feel (${mattressA.firmnessScale}/10). ${mattressB.name} is a ${mattressB.type} mattress with a ${mattressB.firmness} feel (${mattressB.firmnessScale}/10).`,
-  `Overall score: ${mattressA.name} ${mattressA.scores.overall}/10 vs ${mattressB.name} ${mattressB.scores.overall}/10. Scores are editorial, hands-on evaluations, not lab measurements or manufacturer data.`,
-  `Motion transfer and cooling: ${mattressA.name} scored ${mattressA.scores.motionTransfer}/10 for motion transfer and ${mattressA.scores.coolingBreathability}/10 for cooling. ${mattressB.name} scored ${mattressB.scores.motionTransfer}/10 for motion transfer and ${mattressB.scores.coolingBreathability}/10 for cooling.`,
-  `Value and policies: ${mattressA.name} scored ${mattressA.scores.value}/10 for value with a ${mattressA.trialNights}-night trial and ${mattressA.warrantyYears}-year warranty. ${mattressB.name} scored ${mattressB.scores.value}/10 for value with a ${mattressB.trialNights}-night trial and ${mattressB.warrantyYears}-year warranty.`,
+  constructionHeading,
+  constructionText,
+  firmnessHeading,
+  firmnessText,
+  motionHeading,
+  motionText,
+  valueHeading,
+  valueText,
+  policyHeading,
+  policyText,
   'Our Verdict',
   comparison.verdict,
   comparison.faqs?.length
@@ -107,7 +124,7 @@ const jsonLd: any[] = [
     "about": [
       { "@id": productIdA },
       { "@id": productIdB },
-      { "@type": "Article", "name": "PureSleep Testing Methodology", "url": `${SITE_URL}/methodology/` }
+      { "@type": "Article", "name": "PureSleep Scoring Methodology", "url": `${SITE_URL}/methodology/` }
     ],
     "citation": [mattressA.affiliateUrl, mattressB.affiliateUrl, `${SITE_URL}/methodology/`]
   },
@@ -128,7 +145,7 @@ const jsonLd: any[] = [
       "url": reviewUrlA,
       "reviewBody": mattressA.verdict,
       "reviewRating": { "@type": "Rating", "ratingValue": mattressA.scores.overall, "bestRating": "10" },
-      "author": { "@type": "Organization", "name": "PureSleep Testing Team" },
+      "author": { "@type": "Organization", "name": "PureSleep Editorial Team", "url": `${SITE_URL}/about/#editorial-team` },
       "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
       "datePublished": mattressA.dateReviewed,
       "dateModified": mattressA.dateModified
@@ -151,7 +168,7 @@ const jsonLd: any[] = [
       "url": reviewUrlB,
       "reviewBody": mattressB.verdict,
       "reviewRating": { "@type": "Rating", "ratingValue": mattressB.scores.overall, "bestRating": "10" },
-      "author": { "@type": "Organization", "name": "PureSleep Testing Team" },
+      "author": { "@type": "Organization", "name": "PureSleep Editorial Team", "url": `${SITE_URL}/about/#editorial-team` },
       "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL },
       "datePublished": mattressB.dateReviewed,
       "dateModified": mattressB.dateModified
@@ -218,14 +235,14 @@ if (comparison.faqs && comparison.faqs.length > 0) {
          <section class="grid grid-cols-2 gap-8 items-center">
             <div class="flex flex-col gap-4 text-center">
                 <div class="w-full h-[250px] rounded-3xl overflow-hidden border border-white/60 shadow-lg">
-                    <img src={mattressA.image} alt={mattressA.name} class="w-full h-full object-cover" />
+                    <img src={mattressA.image} alt={mattressA.name} class="w-full h-full object-contain bg-white p-3" />
                 </div>
                 <h3 class="font-title-lg text-primary font-bold">{mattressA.name}</h3>
                 <a href={mattressA.affiliateUrl} target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-primary text-on-primary font-bold font-label-md uppercase shadow-md hover:bg-primary/90 transition-colors">Check Price</a>
             </div>
             <div class="flex flex-col gap-4 text-center">
                  <div class="w-full h-[250px] rounded-3xl overflow-hidden border border-white/60 shadow-lg">
-                    <img src={mattressB.image} alt={mattressB.name} class="w-full h-full object-cover" />
+                    <img src={mattressB.image} alt={mattressB.name} class="w-full h-full object-contain bg-white p-3" />
                 </div>
                 <h3 class="font-title-lg text-primary font-bold">{mattressB.name}</h3>
                 <a href={mattressB.affiliateUrl} target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-primary text-on-primary font-bold font-label-md uppercase shadow-md hover:bg-primary/90 transition-colors">Check Price</a>
@@ -326,20 +343,20 @@ if (comparison.faqs && comparison.faqs.length > 0) {
         <section class="flex flex-col gap-6 text-on-surface-variant leading-relaxed text-body-lg">
              <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Detailed Head-to-Head Comparison</h2>
              
-             <h3 class="text-title-lg font-title-lg text-primary mt-4">1. Construction & Build Quality</h3>
-             <p>When selecting a new mattress, understanding the exact materials and structural nuances between the {mattressA.name} and {mattressB.name} is crucial for long-term comfort. The {mattressA.name} relies on a high-quality {mattressA.type} design, which fundamentally dictates how it responds to body weight. It features a {mattressA.firmness} feel—quantified by our testing team as a {mattressA.firmnessScale}/10 on the firmness scale. Comparatively, the {mattressB.name} leverages a {mattressB.type} construction, yielding a {mattressB.firmness} feel and an equivalent firmness rating of {mattressB.firmnessScale}/10. The contrast in their primary support layers means that they handle kinetic energy and body contouring very differently.</p>
+             <h3 class="text-title-lg font-title-lg text-primary mt-4">{constructionHeading}</h3>
+             <p>{constructionText}</p>
              
-             <h3 class="text-title-lg font-title-lg text-primary mt-4">2. Firmness, Feel & Overall Score ({mattressA.scores.overall}/10 vs {mattressB.scores.overall}/10)</h3>
-             <p>Our hands-on testing evaluates each mattress across multiple sleep positions. The {mattressA.name} earned an overall score of {mattressA.scores.overall}/10, with edge support at {mattressA.scores.edgeSupport}/10 and response time at {mattressA.scores.responseTime}/10. The {mattressB.name} scored {mattressB.scores.overall}/10 overall, with edge support at {mattressB.scores.edgeSupport}/10 and response time at {mattressB.scores.responseTime}/10. The {mattressA.scores.overall >= mattressB.scores.overall ? mattressA.name : mattressB.name} leads on composite performance. Scores are editorial, hands-on evaluations — not lab measurements or manufacturer data.</p>
+             <h3 class="text-title-lg font-title-lg text-primary mt-4">{firmnessHeading}</h3>
+             <p>{firmnessText}</p>
 
-             <h3 class="text-title-lg font-title-lg text-primary mt-4">3. Motion Transfer & Cooling</h3>
-             <p>For couples and light sleepers, motion transfer matters. The {mattressA.name} scored {mattressA.scores.motionTransfer}/10 for motion transfer, making it {mattressA.scores.motionTransfer >= 9 ? 'an excellent' : 'a solid'} choice for co-sleepers. The {mattressB.name} rated {mattressB.scores.motionTransfer}/10. For thermal comfort, the {mattressA.name} earned {mattressA.scores.coolingBreathability}/10 for cooling &amp; breathability while the {mattressB.name} scored {mattressB.scores.coolingBreathability}/10. The {mattressA.scores.coolingBreathability >= mattressB.scores.coolingBreathability ? mattressA.name : mattressB.name} is the better choice for hot sleepers.</p>
+             <h3 class="text-title-lg font-title-lg text-primary mt-4">{motionHeading}</h3>
+             <p>{motionText}</p>
 
-             <h3 class="text-title-lg font-title-lg text-primary mt-4">4. Value & Trial Period</h3>
-             <p>Value scores capture overall quality relative to price, warranty, and trial terms. The {mattressA.name} scored {mattressA.scores.value}/10 for value, with a {mattressA.trialNights}-night trial (scored {mattressA.scores.trialPeriod}/10 for trial quality). The {mattressB.name} earned {mattressB.scores.value}/10 for value, backed by a {mattressB.trialNights}-night trial (scored {mattressB.scores.trialPeriod}/10).</p>
+             <h3 class="text-title-lg font-title-lg text-primary mt-4">{valueHeading}</h3>
+             <p>{valueText}</p>
              
-             <h3 class="text-title-lg font-title-lg text-primary mt-4">5. Policies &amp; Recorded Pricing</h3>
-             <p>The source dataset lists a {mattressA.trialNights}-night trial and {mattressA.warrantyYears}-year warranty for the {mattressA.name}, and a {mattressB.trialNights}-night trial with a {mattressB.warrantyYears}-year warranty for the {mattressB.name}. These terms and the price fields above can change. Verify the current price, shipping, return, trial, and warranty terms on each brand's official site before purchasing. {comparison.verdict}</p>
+             <h3 class="text-title-lg font-title-lg text-primary mt-4">{policyHeading}</h3>
+             <p>{policyText}</p>
         </section>
 
         <!-- Our Verdict -->

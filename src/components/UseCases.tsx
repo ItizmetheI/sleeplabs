@@ -2,10 +2,10 @@ import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
 const categories = [
-  { emoji: '🦴', title: 'Hip & Joint Pain', desc: 'Side sleepers especially. Zoned support changes everything.', href: '/reviews/amerisleep-as5' },
-  { emoji: '🌟', title: 'Back Discomfort', desc: 'Support-focused testing-team picks. General comfort guidance only.', href: '/best/back-pain' },
-  { emoji: '🌡️', title: 'Sleeping Hot', desc: 'Gel, copper, and airflow coil systems that actually stay cool.', href: '/reviews/amerisleep-as6' },
-  { emoji: '🌙', title: 'Partner Disturbance', desc: 'Motion isolation and edge support for two different sleepers.', href: '/reviews/amerisleep-as6' }
+  { emoji: '🦴', title: 'Hip & Joint Discomfort', desc: 'Compare soft-to-medium comfort options. General comfort guidance only.', href: '/best/hip-pain' },
+  { emoji: '🌟', title: 'Back Discomfort', desc: 'Compare support-focused picks across brands. Not medical advice.', href: '/best/back-pain' },
+  { emoji: '🌡️', title: 'Sleeping Hot', desc: 'Compare cooling and breathability scores across construction types.', href: '/best/cooling' },
+  { emoji: '🌙', title: 'Partner Disturbance', desc: 'Compare motion transfer and edge support for shared beds.', href: '/best/couples' }
 ];
 
 export default function UseCases() {

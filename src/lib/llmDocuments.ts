@@ -75,7 +75,7 @@ const evidenceLimits = [
   '- Scores are PureSleep editorial evaluations on a shared 0-10 rubric; they are not laboratory measurements or manufacturer ratings.',
   '- Price, trial, warranty, certification, and material details can change. Verify current facts on the official brand or certification source before purchase or citation.',
   '- No mattress can diagnose, treat, or cure a health condition.',
-  '- Commercial context: PureSleep is owned and operated by Amerisleep, which is also affiliated with Zoma, Vaya, and FORM through One Sleep Group. These brands may benefit when readers purchase their products; the same published rubric applies across every covered brand.',
+  '- Commercial context: PureSleep has material business relationships with Amerisleep, Zoma, Vaya, and FORM through One Sleep Group. These brands may benefit when readers purchase their products; the same published rubric applies across every covered brand.',
 ].join('\n');
 
 const scoreRows = (mattress: Mattress) => SCORE_METRICS.map(metric => [
@@ -126,6 +126,12 @@ const buildReviewDocument = (siteUrl: string, mattress: Mattress): LlmDocument =
     `- Trial: ${mattress.trialNights} nights in the source dataset`,
     `- Warranty: ${mattress.warrantyYears} years in the source dataset`,
     `- Recorded price range: ${mattress.priceRange}`,
+    ...(mattress.availabilityNote ? [
+      '',
+      '## Availability note',
+      '',
+      mattress.availabilityNote,
+    ] : []),
     '',
     evidenceLimits,
     '',

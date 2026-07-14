@@ -1,4 +1,5 @@
 import { readdir, readFile, stat } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 
 const root = process.cwd();
@@ -58,16 +59,49 @@ const typeIncludes = (value, expected) => {
 const articleNodes = schemaNodes.filter(({ value }) =>
   typeIncludes(value, 'Article') && ('headline' in value || 'mainEntityOfPage' in value)
 );
+const articleBodyLengths = [];
 for (const { value, route } of articleNodes) {
   assert(
     typeof value.articleBody === 'string' && value.articleBody.trim().length >= 250,
     `${route} Article schema is missing a complete articleBody.`,
   );
+  if (typeof value.articleBody === 'string') articleBodyLengths.push(value.articleBody.trim().length);
   assert(!('reviewedBy' in value), `${route} Article schema contains reviewedBy.`);
   assert(value.author && typeof value.author === 'object', `${route} Article schema is missing an author entity.`);
   assert(value.publisher && typeof value.publisher === 'object', `${route} Article schema is missing a publisher entity.`);
   assert(typeof value.dateModified === 'string', `${route} Article schema is missing dateModified.`);
   assert(Boolean(value.mainEntityOfPage), `${route} Article schema is missing mainEntityOfPage.`);
+}
+
+const requiredArticleSections = [
+  {
+    match: route => route.startsWith('reviews/') && route !== 'reviews/index.html',
+    headings: ['Detailed Performance Analysis', 'Inside the Mattress', 'How This Review Is Scored', 'Frequently Asked Questions', 'Sizes & Reference Pricing'],
+  },
+  {
+    match: route => route.startsWith('comparison/') && route !== 'comparison/index.html',
+    headings: ['Specs at a Glance', 'Performance Scores', 'The Winner By Category', 'Detailed Head-to-Head Comparison', '1. Construction & Build Quality', '5. Policies & Recorded Pricing', 'Our Verdict'],
+  },
+  {
+    match: route => route.startsWith('blog/'),
+    headings: ['Quick Answer', 'Multi-Brand Context', 'Frequently Asked Questions', 'About PureSleep'],
+  },
+];
+for (const { value, route } of articleNodes) {
+  const body = typeof value.articleBody === 'string' ? value.articleBody : '';
+  for (const rule of requiredArticleSections.filter(rule => rule.match(route))) {
+    for (const heading of rule.headings) {
+      assert(body.includes(heading), `${route} Article articleBody is missing the visible section: ${heading}.`);
+    }
+  }
+
+  const faqPages = schemaNodes.filter(node => node.route === route && typeIncludes(node.value, 'FAQPage'));
+  for (const faqPage of faqPages) {
+    for (const faq of faqPage.value.mainEntity ?? []) {
+      assert(body.includes(faq.name), `${route} Article articleBody is missing FAQ question: ${faq.name}`);
+      assert(body.includes(faq.acceptedAnswer?.text), `${route} Article articleBody is missing the answer for: ${faq.name}`);
+    }
+  }
 }
 
 assert(articleNodes.length >= 200, `Expected at least 200 Article schema nodes; found ${articleNodes.length}.`);
@@ -100,10 +134,12 @@ for (const [label, pattern] of [
   ['unverified sale-price claim', /on sale from/i],
   ['unverified risk-free trial claim', /risk-free for 100 nights/i],
   ['unverified shipping claim', /free shipping\s*(?:&|and|\u00b7)\s*(?:free )?returns|free shipping\s*\u00b7\s*20-year warranty/i],
+  ['Amerisleep owner language', /Amerisleep[- ]owned|owned and operated by Amerisleep|owned by Amerisleep|Amerisleep owns|operated by Amerisleep|parentOrganization[^<]{0,200}Amerisleep/i],
+  ['unsupported PureSleep hands-on claim', /PureSleep (?:Testing Team|testing team)|evaluated hands-on by PureSleep|scores (?:come|derive) from hands-on testing|scores are editorial, hands-on evaluations|our hands-on testing|hands-on mattress (?:reviews|rankings)|Hands-On Team Testing|quantified by our testing team/i],
 ] ) {
   assert(!pattern.test(allHtml), `Generated HTML contains ${label}.`);
 }
-assert(allHtml.includes('owned and operated by Amerisleep'), 'Generated HTML is missing the Amerisleep ownership disclosure.');
+assert(allHtml.includes('material business relationship with Amerisleep'), 'Generated HTML is missing the material-business-relationship disclosure.');
 
 for (const [route, html] of htmlByPath) {
   if (!route.startsWith('reviews/') || route === 'reviews/index.html') continue;
@@ -140,7 +176,7 @@ const expectedMachineSlug = (route) => {
   if (route === 'comparison/index.html') return 'comparisons';
   if (route.startsWith('comparison/')) return `comparison-${route.split('/')[1]}`;
   if (route.startsWith('best/')) return `best-${route.split('/')[1]}`;
-  if (route === 'brands/index.html') return null;
+  if (route === 'brands/index.html') return 'brands';
   if (route.startsWith('brands/')) return `brand-${route.split('/')[1]}`;
   if (route === 'topics/index.html') return 'topics';
   if (route.startsWith('topics/')) return `topic-${route.split('/')[1]}`;
@@ -172,7 +208,7 @@ assert(!/\/(?:admin|api)\//.test(sitemapText), 'Sitemap exposes /admin/ or /api/
 
 const legacyRedirectLines = (await readFile(path.join(root, 'public', '_redirects'), 'utf8'))
   .split('\n')
-  .map(line => line.trimEnd())
+  .map(line => line.trim())
   .filter(line => line.startsWith('/blog/') && line.endsWith(' 301'));
 for (const line of legacyRedirectLines) {
   const [source] = line.split(/\s+/);
@@ -241,6 +277,27 @@ const routeExists = async (pathname) => {
   }
 };
 
+const mattressImageFiles = files.filter(file => /^images\/mattresses\/[^/]+\.(?:jpe?g|png|webp)$/i.test(relative(file)));
+const mattressImagesByHash = new Map();
+for (const file of mattressImageFiles) {
+  const hash = createHash('sha256').update(await readFile(file)).digest('hex');
+  const names = mattressImagesByHash.get(hash) ?? [];
+  names.push(path.basename(file));
+  mattressImagesByHash.set(hash, names);
+}
+const allowedDuplicateImageSets = new Set([
+  ['amerisleep-as3-hybrid.webp', 'amerisleep-as3.webp'].sort().join('|'),
+  ['amerisleep-as5-hybrid.webp', 'amerisleep-as5.webp'].sort().join('|'),
+  ['amerisleep-organica-plush.webp', 'amerisleep-organica.webp'].sort().join('|'),
+]);
+const disallowedDuplicateImageGroups = [...mattressImagesByHash.values()]
+  .filter(names => names.length > 1)
+  .filter(names => !allowedDuplicateImageSets.has([...names].sort().join('|')));
+assert(
+  disallowedDuplicateImageGroups.length === 0,
+  `Mattress image library contains duplicate files assigned to unrelated models:\n${disallowedDuplicateImageGroups.map(group => group.join(', ')).join('\n')}`,
+);
+
 const missingLinks = new Set();
 const missingImages = new Set();
 for (const [route, html] of htmlByPath) {
@@ -277,9 +334,11 @@ console.log(JSON.stringify({
   htmlFiles: htmlFiles.length,
   jsonLdScripts,
   articleSchemas: articleNodes.length,
+  minimumArticleBodyCharacters: Math.min(...articleBodyLengths),
   llmMarkdownFiles: llmMarkdownFiles.length,
   llmReviewFiles: llmReviewFiles.length,
   comparisonCharts: comparisonDetailPages.length,
+  duplicateMattressImageGroups: disallowedDuplicateImageGroups.length,
   standaloneTopicRoutes: requiredTopicRoutes.length,
   legacyRedirectsExcludedFromSitemap: legacyRedirectLines.length,
   missingSameOriginImages: 0,

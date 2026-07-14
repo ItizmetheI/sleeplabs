@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero';
-import EditorsPickDetails from '../components/EditorsPickDetails';
 import StatsRow from '../components/StatsRow';
 import FindYourMatch from '../components/FindYourMatch';
 import ScoreSheet from '../components/ScoreSheet';
@@ -12,7 +11,41 @@ import FinalPick from '../components/FinalPick';
 import { allMattresses } from '../data/mattresses';
 
 const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
-const realScore = (id: string) => allMattresses.find(m => m.id === id)?.scores.overall;
+const featuredPicks = [
+  { id: 'amerisleep-as3', label: 'Best Overall', badge: '#1 Pick', desc: 'Medium-feel foam with a 10/10 overall score.' },
+  { id: 'plushbeds-signature-bliss', label: 'Best Organic', badge: '10/10 Overall', desc: 'Latex hybrid with a broad certification profile; verify current scope.' },
+  { id: 'vaya-hybrid', label: 'Best Value', badge: '10/10 Value', desc: 'Budget hybrid with 10/10 Value and Response Time scores.' },
+  { id: 'nest-bedding-sparrow', label: 'Trial Flexibility', badge: '10/10 Trial', desc: 'Hybrid with a top recorded Trial Period score.' },
+  { id: 'ghostbed-luxe', label: 'Cooling Foam', badge: '10/10 Cooling', desc: 'All-foam model with top Cooling and Motion Transfer scores.' },
+  { id: 'westin-heavenly-bed', label: 'Hotel-Style Feel', badge: '10/10 Overall', desc: 'Pillow-top innerspring with strong edge and response scores.' },
+].map(config => {
+  const mattress = allMattresses.find(item => item.id === config.id);
+  if (!mattress) throw new Error(`Missing homepage pick: ${config.id}`);
+  return { ...config, name: mattress.name, score: mattress.scores.overall, href: `/reviews/${mattress.id}` };
+});
+
+const homepageFaqs = [
+  {
+    q: 'How does PureSleep score mattresses?',
+    a: 'PureSleep uses one seven-metric editorial scorecard: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. Every field uses a 0-10 scale, and the same definitions apply to all covered brands.',
+  },
+  {
+    q: 'How many brands and mattress models does PureSleep cover?',
+    a: 'The current review library covers 59 mattress models across 24 brands, plus 30 head-to-head comparisons and 18 ranked buying categories.',
+  },
+  {
+    q: 'Are PureSleep scores customer ratings or laboratory results?',
+    a: 'No. The scores are editorial comparisons from the approved source dataset. They are not clinical findings, laboratory measurements, manufacturer ratings, or collected customer ratings.',
+  },
+  {
+    q: 'How should I use a mattress ranking?',
+    a: 'Start with the category that matches your sleep position, comfort preference, budget, or shared-bed needs. Then compare the full seven-metric scorecard, firmness, construction, trial policy, warranty, and model availability before purchasing.',
+  },
+  {
+    q: 'Which mattress details should I verify before buying?',
+    a: 'Verify current price, stock, specifications, certification scope, shipping, trial, return, and warranty terms on the brand\'s official site. PureSleep labels recorded prices and policy fields as reference data because those details can change.',
+  },
+];
 
 const jsonLd = [
   {
@@ -27,15 +60,23 @@ const jsonLd = [
     "@type": "Organization",
     "name": "PureSleep",
     "url": SITE_URL,
-    "logo": SITE_URL + "/logo.svg",
-    "parentOrganization": { "@type": "Organization", "name": "Amerisleep" }
+    "logo": SITE_URL + "/logo.svg"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": homepageFaqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+    }))
   }
 ];
 ---
 
 <BaseLayout 
-  title="Best Mattress of 2026 — PureSleep Testing Team Reviews"
-  description="Hands-on mattress rankings across 24 brands, scored by the PureSleep testing team using one published rubric."
+  title="Best Mattress of 2026 | 59 Models Scored | PureSleep"
+  description="Compare 59 mattresses across 24 brands with PureSleep's seven-metric editorial scorecards, ranked categories, and head-to-head charts."
   ogTitle="Best Mattress of 2026 — PureSleep"
   ogImage="/images/mattresses/amerisleep-as3.webp"
   ogType="website"
@@ -46,19 +87,18 @@ const jsonLd = [
   <div>
     <Hero client:load />
     
-    <!-- Editor's Pick Banner -->
+    <!-- Coverage Banner -->
     <div class="w-full bg-secondary-container/80 py-4 flex flex-col justify-center items-center px-margin-mobile shadow-[0_0_20px_rgba(37,99,235,0.1)] relative z-10 backdrop-blur-md border-y border-secondary/20">
       <span class="text-on-secondary-container font-headline-md text-headline-md text-center tracking-wide font-bold">
-        EDITOR'S PICK — BEST MEMORY FOAM MATTRESS 2026
+        59 SCORED MODELS ACROSS 24 MATTRESS BRANDS
       </span>
       <span class="text-on-secondary-container/80 text-label-sm font-label-sm uppercase tracking-widest mt-2 bg-white/40 px-3 py-1 rounded-full border border-white/50 shadow-sm font-bold">
-        Last Updated: {new Date("2026-07-13").toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+        30 comparison charts · 18 ranked categories · updated {new Date("2026-07-13").toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
       </span>
     </div>
     
     <!-- Main Content -->
     <main class="flex-1 w-full flex flex-col relative z-10 bg-background/50">
-      <EditorsPickDetails client:visible />
       <StatsRow client:visible />
       <FindYourMatch client:visible />
       <ScoreSheet client:visible />
@@ -66,22 +106,15 @@ const jsonLd = [
 <!-- Top Picks By Category -->
 <section class="py-16 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
   <h2 class="text-display-lg font-display-lg text-primary mb-3">Top picks by category</h2>
-  <p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl">The right Amerisleep depends on how you sleep. Here's our top recommendation for each sleeper type.</p>
+  <p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl">Cross-brand leaders from the same locked scorecard, with full reviews behind every pick.</p>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    {[
-      { label: "Best Overall", model: "AS3", href: "/reviews/amerisleep-as3", badge: "#1 Pick", desc: "Medium feel. Best for side and combination sleepers.", score: realScore('amerisleep-as3') },
-      { label: "Best for Back Sleepers", model: "AS2", href: "/reviews/amerisleep-as2", badge: "Most Supportive", desc: "Medium-firm. Prevents lumbar sinkage.", score: realScore('amerisleep-as2') },
-      { label: "Best for Side Sleepers", model: "AS5", href: "/reviews/amerisleep-as5", badge: "Best Pressure Relief", desc: "Soft. Maximum shoulder and hip relief.", score: realScore('amerisleep-as5') },
-      { label: "Best for Couples", model: "AS6", href: "/reviews/amerisleep-as6", badge: "Top Performer", desc: "Hybrid. Best edge support and cooling.", score: realScore('amerisleep-as6') },
-      { label: "Best Organic", model: "Organica", href: "/reviews/amerisleep-organica", badge: "GOLS Certified", desc: "Latex hybrid. Certified organic throughout.", score: realScore('amerisleep-organica') },
-      { label: "Best Value", model: "AS2", href: "/reviews/amerisleep-as2", badge: "From $799", desc: "Same Bio-Pur® tech at the lowest entry price.", score: realScore('amerisleep-as2') },
-    ].map(pick => (
+    {featuredPicks.map(pick => (
       <a href={pick.href} class="glass-panel p-6 rounded-2xl border border-outline-variant/30 hover:border-secondary/40 transition-all group flex flex-col gap-3">
         <div class="flex items-center justify-between">
           <span class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">{pick.label}</span>
           <span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded-full">{pick.badge}</span>
         </div>
-        <h3 class="text-headline-md font-headline-md text-primary group-hover:text-secondary transition-colors">Amerisleep {pick.model}</h3>
+        <h3 class="text-headline-md font-headline-md text-primary group-hover:text-secondary transition-colors">{pick.name}</h3>
         <p class="text-body-md text-on-surface-variant">{pick.desc}</p>
         <div class="flex items-center justify-between mt-auto pt-3 border-t border-outline-variant/20">
           <span class="text-label-sm text-on-surface-variant">PureSleep Score</span>
@@ -100,7 +133,7 @@ const jsonLd = [
   <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
     <div>
       <h2 class="text-display-lg font-display-lg text-primary mb-3">Head-to-head comparisons</h2>
-      <p class="text-body-lg text-on-surface-variant max-w-2xl">How does Amerisleep stack up against the competition? We scored 30 matchups across 7 metrics.</p>
+      <p class="text-body-lg text-on-surface-variant max-w-2xl">Explore 30 matchups with a crawlable chart for all seven score fields on every comparison page.</p>
     </div>
     <a href="/comparison" class="shrink-0 text-secondary font-label-sm font-bold uppercase tracking-widest hover:text-primary transition-colors">
       All 30 comparisons →
@@ -133,15 +166,9 @@ const jsonLd = [
 <!-- Homepage FAQ -->
 <section class="py-16 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
   <h2 class="text-display-lg font-display-lg text-primary mb-3">Frequently asked questions</h2>
-  <p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl">Common questions about Amerisleep mattresses answered by the PureSleep Testing Team.</p>
+  <p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl">Direct answers about the scorecard, coverage, evidence limits, and how to use the rankings.</p>
   <div class="flex flex-col gap-3 max-w-3xl">
-    {[
-      { q: "Which Amerisleep mattress is best for most people?", a: "The AS3 (medium, 5/10) is our top pick for most sleepers. Its Bio-Pur® plant-based foam and HIVE® 5-zone support work well for side sleepers, combination sleepers, and couples. If you sleep primarily on your back or stomach, the AS2 (medium-firm, 6/10) is the better fit." },
-      { q: "How does Amerisleep compare to Casper or Purple?", a: "Amerisleep has a 20-year warranty — double the 10-year warranty on most Casper and Purple models. The AS3 scores higher on pressure relief than the Casper The One. Purple's Grid technology provides better cooling; the AS3 provides better motion isolation at a lower price." },
-      { q: "Is the 100-night trial enough time to test a mattress?", a: "Yes. Most sleep researchers suggest 3–4 weeks to adapt to a new mattress. Amerisleep's 100 nights gives you over 13 weeks — well past the adjustment period. You must sleep on it at least 30 nights before initiating a return." },
-      { q: "What's the difference between the AS3 and AS5?", a: "The AS3 is medium (5/10) and suits side and combination sleepers. The AS5 is soft (3/10) with a thicker comfort layer and Active Flex layer — it's for dedicated side sleepers who want maximum pressure relief. The AS5 is also 14 inches tall vs the AS3's 12 inches." },
-      { q: "Do Amerisleep mattresses need a box spring?", a: "No. Amerisleep mattresses work on any firm, flat surface: a platform bed, adjustable base, slatted frame (slats no more than 3 inches apart), or the floor. A box spring is not recommended as it can reduce support and void the warranty." },
-    ].map(faq => (
+    {homepageFaqs.map(faq => (
       <details class="group glass-panel rounded-2xl border border-outline-variant/30 overflow-hidden">
         <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-on-surface list-none text-body-lg">
           {faq.q}

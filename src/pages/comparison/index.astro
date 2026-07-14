@@ -67,11 +67,11 @@ const jsonLd = {
             </h2>
             <div class="flex gap-4 items-center">
               <div class="flex-1 h-32 rounded-xl overflow-hidden border border-outline-variant/30">
-                 <img src={m1.image} alt={m1.name} class="w-full h-full object-cover" />
+                 <img src={m1.image} alt={m1.name} class="w-full h-full object-contain bg-white p-2" />
               </div>
               <span class="text-label-lg font-bold text-on-surface-variant italic font-headline-lg">VS</span>
               <div class="flex-1 h-32 rounded-xl overflow-hidden border border-outline-variant/30">
-                 <img src={m2.image} alt={m2.name} class="w-full h-full object-cover" />
+                 <img src={m2.image} alt={m2.name} class="w-full h-full object-contain bg-white p-2" />
               </div>
             </div>
             <p class="text-body-md text-on-surface-variant">{comparison.verdict}</p>

@@ -18,10 +18,9 @@ export default function EditorsPickDetails() {
         >
           <h2 className="text-display-lg font-display-lg text-primary ">Amerisleep AS3</h2>
           <div className="w-full h-72 glass-panel rounded-3xl mt-4 overflow-hidden shadow-sm group relative border border-outline-variant/30">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10 transition-opacity group-hover:opacity-60" />
             <img 
               alt="Amerisleep AS3 Mattress" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+              className="w-full h-full object-contain bg-white p-4 transition-transform duration-700 group-hover:scale-[1.02]" 
               src="/images/mattresses/amerisleep-as3.webp" 
             />
           </div>

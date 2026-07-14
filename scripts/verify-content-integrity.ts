@@ -100,8 +100,41 @@ const machineCorpus = allLlmDocuments.map(document => document.content).join('\n
 for (const [label, pattern] of [
   ['unfinished placeholder', /\[from page\]|\[insert|TODO|TBD/i],
   ['unsupported weighting formula', /weighted formula|weighted average formula/i],
+  ['unsupported PureSleep hands-on claim', /PureSleep (?:Testing Team|testing team)|evaluated hands-on by PureSleep|scores (?:come|derive) from hands-on testing|scores are editorial, hands-on evaluations|our hands-on testing|hands-on mattress (?:reviews|rankings)|Hands-On Team Testing|quantified by our testing team/i],
 ] as const) {
   assert(!pattern.test(machineCorpus), `Generated LLM corpus contains ${label}.`);
+}
+
+const competitorBiasPattern = /\b(?:Amerisleep|AS2|AS3|AS5|AS6|Organica)\b/i;
+for (const mattress of allMattresses) {
+  assert(mattress.faqs.length >= 3, `${mattress.id} has ${mattress.faqs.length} FAQs; minimum is 3.`);
+
+  let productUrl: URL | null = null;
+  try {
+    productUrl = new URL(mattress.affiliateUrl);
+  } catch {
+    // The assertion below reports the record ID and malformed value.
+  }
+  assert(
+    productUrl?.protocol === 'https:' && productUrl.pathname !== '/' && productUrl.pathname !== '',
+    `${mattress.id} must use an exact HTTPS product or official archived-model source URL; found ${mattress.affiliateUrl}.`,
+  );
+
+  if (mattress.brand !== 'Amerisleep') {
+    const editorialCopy = JSON.stringify({
+      summary: mattress.summary,
+      verdict: mattress.verdict,
+      pros: mattress.pros,
+      cons: mattress.cons,
+      faqs: mattress.faqs,
+    });
+    assert(!competitorBiasPattern.test(editorialCopy), `${mattress.id} still contains Amerisleep-specific competitor bias.`);
+  }
+}
+
+assert(BEST_CATEGORIES.value?.winner === 'vaya-hybrid', 'The value-category winner must be Vaya Hybrid.');
+for (const id of ['bear-star-hybrid', 'ghostbed-flex', 'sweetnight-prime', 'nolah-original-hybrid', 'zoma-start']) {
+  assert(Boolean(mattressById.get(id)?.availabilityNote), `${id} is missing its archived-model or construction-change notice.`);
 }
 
 const osgBrands = new Set(['Amerisleep', 'Zoma', 'Vaya', 'FORM']);
@@ -166,10 +199,12 @@ for (const [label, pattern] of [
   ['false independence language', /editorially independent|independent review publication|no financial relationship/i],
   ['inactive support address', /support@puresleep\.com/i],
   ['named reviewer schema', /"reviewedBy"|post\.reviewedBy/i],
+  ['Amerisleep owner language', /Amerisleep[- ]owned|owned and operated by Amerisleep|owned by Amerisleep|Amerisleep owns|operated by Amerisleep|parentOrganization[^\n]+Amerisleep/i],
+  ['unsupported PureSleep hands-on claim', /PureSleep (?:Testing Team|testing team)|evaluated hands-on by PureSleep|scores (?:come|derive) from hands-on testing|scores are editorial, hands-on evaluations|our hands-on testing|hands-on mattress (?:reviews|rankings)|Hands-On Team Testing|quantified by our testing team|Hands-on testing and practical analysis/i],
 ] as const) {
   assert(!pattern.test(publicSurface), `Public surfaces still contain ${label}.`);
 }
-assert(publicSurface.includes('owned and operated by Amerisleep'), 'Amerisleep ownership disclosure is missing.');
+assert(publicSurface.includes('material business relationship with Amerisleep'), 'Material-business-relationship disclosure is missing.');
 const publishedContent = JSON.stringify({
   mattresses: allMattresses,
   comparisons,
@@ -183,6 +218,8 @@ for (const [label, pattern] of [
   ['unsupported quantified cooling claim', /\b7\s*°?F cooler|\b25% (?:cooler|more breathable)/i],
   ['unsupported medical language', /medical brace|permanently stop morning stiffness|shuts it down immediately|fix(?:es|ed|ing)? (?:spinal|disc) inflammation|mechanical airway fix/i],
   ['false independent-testing claim', /independently tested alternatives|independent sleep product testing team/i],
+  ['unsupported PureSleep hands-on claim', /PureSleep (?:Testing Team|testing team)|evaluated hands-on by PureSleep|scores (?:come|derive) from hands-on testing|scores are editorial, hands-on evaluations|our hands-on testing|hands-on mattress (?:reviews|rankings)|Hands-On Team Testing|quantified by our testing team|Hands-on testing and practical analysis/i],
+  ['Amerisleep owner language', /Amerisleep[- ]owned|owned and operated by Amerisleep|owned by Amerisleep|Amerisleep owns|operated by Amerisleep|parentOrganization[^\n]+Amerisleep/i],
   ['unsupported performance guarantee', /measurably cooler than petroleum foam|prevent(?:s|ing)? sagging for the full 20-year warranty/i],
 ] as const) {
   assert(!pattern.test(publishedContent), `Published source content still contains ${label}.`);
@@ -204,6 +241,10 @@ console.log(JSON.stringify({
   status: 'pass',
   mattressRecords: expectedReviewIds.length,
   brands: brandCount,
+  exactProductOrOfficialArchiveUrls: allMattresses.length,
+  recordsWithAtLeastThreeFaqs: allMattresses.filter(mattress => mattress.faqs.length >= 3).length,
+  archivedOrChangedModelNotices: allMattresses.filter(mattress => mattress.availabilityNote).length,
+  valueCategoryWinner: BEST_CATEGORIES.value?.winner,
   llmReviewFiles: reviewFileIds.length,
   llmMachineDocuments: allLlmDocuments.length,
   bestCategoryPages: Object.keys(BEST_CATEGORIES).length,

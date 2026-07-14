@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { COMMERCIAL_RELATIONSHIP_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
 
 const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
-const lastUpdated = "2026-05-01";
+const lastUpdated = "2026-07-13";
 
 const jsonLd = [
   {
@@ -39,7 +39,7 @@ const jsonLd = [
         <ul class="flex flex-col gap-3 text-body-md text-on-surface-variant">
           <li class="flex gap-3"><span class="text-secondary font-bold">—</span> We do not make medical claims. Mattresses address sleep comfort and support only, not health conditions.</li>
           <li class="flex gap-3"><span class="text-secondary font-bold">—</span> {LINK_DISCLOSURE}</li>
-          <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Scores reflect hands-on testing, not manufacturer-provided data.</li>
+          <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Scores are editorial comparisons from the approved source dataset, not laboratory findings, manufacturer ratings, or collected customer ratings.</li>
           <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Reviews are updated when product specifications change or on a regular re-evaluation cycle.</li>
         </ul>
       </div>
@@ -49,13 +49,13 @@ const jsonLd = [
       <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">How Brand Coverage Is Decided</h2>
       <div class="flex flex-col gap-4 text-body-md text-on-surface-variant leading-relaxed">
         <p>Our 7-metric scoring system applies identically across all 59 models we cover: overall, value, edge support, trial period, response time, motion transfer, and cooling &amp; breathability. The same rubric means every model is genuinely comparable across brands.</p>
-        <p>Scores are finalized from hands-on testing before any product link is placed. No brand receives more favorable scoring because of its market position; rankings follow the locked score data and stated category criteria.</p>
+        <p>Scores are locked before category ordering and product-link placement. Rankings follow the recorded score data and stated category criteria, using the same fields for affiliated and non-affiliated brands.</p>
       </div>
     </section>
 
     <section class="flex flex-col gap-4">
       <div class="glass-panel p-8 rounded-3xl border border-white/60 flex flex-wrap gap-3">
-        <a href="/methodology" class="text-primary hover:text-secondary underline underline-offset-4 font-bold transition-colors">Read our full testing methodology →</a>
+        <a href="/methodology" class="text-primary hover:text-secondary underline underline-offset-4 font-bold transition-colors">Read our full scoring methodology →</a>
         <span class="text-outline-variant hidden md:inline self-center">·</span>
         <a href="/disclosure" class="text-primary hover:text-secondary underline underline-offset-4 font-bold transition-colors">Read our disclosure →</a>
       </div>

@@ -10,7 +10,7 @@ export default function Footer() {
             PureSleep
           </a>
           <p className="text-body-md font-body-md text-on-surface-variant max-w-sm text-center md:text-left">
-            The Science of Sleep. Testing team reviews to help you find your best night's rest.
+            Evidence-led mattress reviews, transparent scorecards, and side-by-side comparisons for better-informed buying decisions.
           </p>
           <p className="text-body-sm text-on-surface-variant/50 mt-4">
             © 2026 PureSleep. All rights reserved.
@@ -21,7 +21,8 @@ export default function Footer() {
           <div className="flex flex-col gap-4 items-center md:items-start">
             <h4 className="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Company</h4>
             <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/about">About Us</a>
-            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/about">About &amp; Contact</a>
+            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/reviews">Mattress Reviews</a>
+            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/comparison">Comparisons</a>
           </div>
           <div className="flex flex-col gap-4 items-center md:items-start">
             <h4 className="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Legal</h4>

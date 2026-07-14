@@ -24,9 +24,10 @@ export interface Mattress {
   priceRange: string;
   priceSale: string;
   affiliateUrl: string;
+  availabilityNote?: string;
   image: string;
   heroImage: string;
-  type: 'memory-foam' | 'hybrid' | 'latex' | 'innerspring';
+  type: 'memory-foam' | 'foam' | 'hybrid' | 'latex' | 'innerspring';
   firmness: 'soft' | 'medium-soft' | 'medium' | 'medium-firm' | 'firm';
   firmnessScale: number;
   thickness: string;
@@ -54,10 +55,81 @@ export interface Mattress {
 const SITE_URL = import.meta.env?.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
 
 export const reviewer_editorial: Reviewer = {
-  name: "PureSleep Testing Team",
-  role: "Sleep Product Testers",
-  credentials: "Organizational byline for PureSleep mattress evaluations.",
+  name: "PureSleep Editorial Team",
+  role: "Mattress Review Editors",
+  credentials: "Organizational byline for PureSleep's seven-metric editorial scorecards.",
   sameAs: [`${SITE_URL}/methodology/`]
+};
+
+const COMPETITOR_BIAS_PATTERN = /\b(?:Amerisleep|AS2|AS3|AS5|AS6|Organica)\b/i;
+const SCORE_LABELS: Array<[keyof MattressScore, string]> = [
+  ['value', 'Value'],
+  ['edgeSupport', 'Edge Support'],
+  ['trialPeriod', 'Trial Period'],
+  ['responseTime', 'Response Time'],
+  ['motionTransfer', 'Motion Transfer'],
+  ['coolingBreathability', 'Cooling & Breathability'],
+];
+
+const neutralizeCompetitorReview = (mattress: Mattress): Mattress => {
+  const rankedMetrics = SCORE_LABELS
+    .map(([key, label]) => ({ label, score: mattress.scores[key] }))
+    .sort((a, b) => b.score - a.score || a.label.localeCompare(b.label));
+  const strongest = rankedMetrics.slice(0, 2);
+  const weakest = rankedMetrics[rankedMetrics.length - 1];
+  const trialText = mattress.trialNights > 0
+    ? `${mattress.trialNights}-night trial`
+    : 'no home-trial period';
+  const cleanItems = (items: string[]) => items.filter(item => !COMPETITOR_BIAS_PATTERN.test(item));
+
+  const pros = cleanItems(mattress.pros);
+  for (const item of [
+    `${strongest[0].label}: ${strongest[0].score}/10 in the locked scorecard`,
+    `${strongest[1].label}: ${strongest[1].score}/10 in the locked scorecard`,
+    `Source dataset records a ${trialText} and ${mattress.warrantyYears}-year warranty; verify current terms`,
+  ]) {
+    if (pros.length >= 3) break;
+    pros.push(item);
+  }
+
+  const cons = cleanItems(mattress.cons);
+  for (const item of [
+    `${weakest.label}: ${weakest.score}/10, the model's lowest recorded metric`,
+    'Recorded prices, trial terms, warranties, and availability can change',
+    `Firmness is recorded at ${mattress.firmnessScale}/10 and may feel different by body type and sleep position`,
+  ]) {
+    if (cons.length >= 3) break;
+    cons.push(item);
+  }
+
+  const generatedFaqs = [
+    {
+      question: `What is the ${mattress.name} overall score?`,
+      answer: `${mattress.name} scores ${mattress.scores.overall}/10 overall in PureSleep's locked seven-metric scorecard. Its strongest recorded fields are ${strongest[0].label} (${strongest[0].score}/10) and ${strongest[1].label} (${strongest[1].score}/10).`,
+    },
+    {
+      question: `Who is the ${mattress.name} best suited to?`,
+      answer: `The recorded fit profile is strongest for ${mattress.bestFor.slice(0, 3).join(', ')}. It is a ${mattress.type.replaceAll('-', ' ')} model with a ${mattress.firmness.replaceAll('-', ' ')} feel (${mattress.firmnessScale}/10), but comfort varies by body type and preference.`,
+    },
+    {
+      question: `What trial and warranty terms are recorded for the ${mattress.name}?`,
+      answer: `The source dataset records a ${trialText} and ${mattress.warrantyYears}-year warranty. These are reference fields, not live offers; verify current eligibility, fees, exclusions, and availability with ${mattress.brand} before purchasing.`,
+    },
+  ];
+  const faqs = mattress.faqs.filter(faq => !COMPETITOR_BIAS_PATTERN.test(`${faq.question} ${faq.answer}`));
+  for (const faq of generatedFaqs) {
+    if (faqs.length >= 3) break;
+    faqs.push(faq);
+  }
+
+  const summary = COMPETITOR_BIAS_PATTERN.test(mattress.summary)
+    ? `${mattress.name} is a ${mattress.type.replaceAll('-', ' ')} mattress with a ${mattress.firmness.replaceAll('-', ' ')} feel (${mattress.firmnessScale}/10). It scores ${mattress.scores.overall}/10 overall, with its strongest recorded fields in ${strongest[0].label} and ${strongest[1].label}.`
+    : mattress.summary;
+  const verdict = COMPETITOR_BIAS_PATTERN.test(mattress.verdict)
+    ? `With an overall score of ${mattress.scores.overall}/10, ${mattress.name} stands out for ${strongest[0].label.toLowerCase()} and ${strongest[1].label.toLowerCase()}. Its recorded fit is strongest for ${mattress.bestFor.slice(0, 3).join(', ')}.`
+    : mattress.verdict;
+
+  return { ...mattress, summary, verdict, pros, cons, faqs };
 };
 
 export const mattresses: Mattress[] = [
@@ -552,7 +624,7 @@ export const mattresses: Mattress[] = [
 // These are used only for cross-brand comparison pages.
 // Data is sourced from publicly available manufacturer specs.
 
-export const competitorMattresses: any[] = [
+const competitorMattressRecords: Mattress[] = [
   {
     id: "saatva-classic",
     name: "Saatva Classic",
@@ -657,7 +729,7 @@ export const competitorMattresses: any[] = [
     price: 1299,
     priceRange: "$999 – $1,799",
     priceSale: "from $999",
-    affiliateUrl: "https://glaciermattress.com",
+    affiliateUrl: "https://glaciersleep.com/products/glacier-apex",
     image: "/images/mattresses/glacier-apex-hybrid.webp",
     heroImage: "/images/mattresses/glacier-apex-hybrid.webp",
     type: "hybrid",
@@ -689,7 +761,7 @@ export const competitorMattresses: any[] = [
     price: 1699,
     priceRange: "$1,499 – $2,499",
     priceSale: "from $1,499",
-    affiliateUrl: "https://birchliving.com/products/natural-mattress",
+    affiliateUrl: "https://birchliving.com/products/birch-natural-organic-mattress",
     image: "/images/mattresses/birch-natural.webp",
     heroImage: "/images/mattresses/birch-natural.webp",
     type: "latex",
@@ -721,7 +793,8 @@ export const competitorMattresses: any[] = [
     price: 1748,
     priceRange: "$1,498 – $2,498",
     priceSale: "from $1,498",
-    affiliateUrl: "https://bearmattress.com/products/bear-star-hybrid",
+    affiliateUrl: "https://www.bearmattress.com/pages/healthcare-discount",
+    availabilityNote: "Bear no longer lists the Star Hybrid in its current mattress collection. This review preserves the locked scorecard for the archived model and links to an official Bear page that still identifies it.",
     image: "/images/mattresses/bear-star-hybrid.webp",
     heroImage: "/images/mattresses/bear-star-hybrid.webp",
     type: "hybrid",
@@ -753,7 +826,7 @@ export const competitorMattresses: any[] = [
     price: 1899,
     priceRange: "$1,399 – $2,799",
     priceSale: "from $1,399",
-    affiliateUrl: "https://avocadogreenmattress.com/products/green-mattress",
+    affiliateUrl: "https://www.avocadogreenmattress.com/products/green-natural-organic-mattress",
     image: "/images/mattresses/avocado-green.webp",
     heroImage: "/images/mattresses/avocado-green.webp",
     type: "latex",
@@ -950,7 +1023,7 @@ export const competitorMattresses: any[] = [
     price: 1699,
     priceRange: "$1,299 – $2,299",
     priceSale: "from $1,299",
-    affiliateUrl: "https://leesa.com/products/sapira-hybrid-mattress",
+    affiliateUrl: "https://www.leesa.com/products/leesa-hybrid-mattress",
     image: "/images/mattresses/leesa-sapira-hybrid.webp",
     heroImage: "/images/mattresses/leesa-sapira-hybrid.webp",
     type: "hybrid",
@@ -1046,7 +1119,8 @@ export const competitorMattresses: any[] = [
     price: 1745,
     priceRange: "$1,495 – $2,495",
     priceSale: "from $1,495",
-    affiliateUrl: "https://ghostbed.com/products/ghostbed-flex",
+    affiliateUrl: "https://www.ghostbed.com/pages/our-story",
+    availabilityNote: "GhostBed no longer lists the Flex in its current mattress collection. This review preserves the locked Flex scorecard and links to GhostBed's official history page, which documents the model.",
     image: "/images/mattresses/ghostbed-flex.webp",
     heroImage: "/images/mattresses/ghostbed-flex.webp",
     type: "hybrid",
@@ -1174,7 +1248,7 @@ export const competitorMattresses: any[] = [
     price: 1995,
     priceRange: "$1,745 – $2,995",
     priceSale: "from $1,745",
-    affiliateUrl: "https://ghostbed.com/products/ghostbed-luxe",
+    affiliateUrl: "https://www.ghostbed.com/products/luxe-memory-foam-mattress",
     image: "/images/mattresses/ghostbed-luxe.webp",
     heroImage: "/images/mattresses/ghostbed-luxe.webp",
     type: "memory-foam",
@@ -1366,7 +1440,7 @@ export const competitorMattresses: any[] = [
   {
     id: "eco-terra-hybrid-latex", name: "Eco Terra Hybrid Latex", brand: "Eco Terra", model: "Hybrid Latex",
     price: 1249, priceRange: "$999 – $1,999", priceSale: "from $999",
-    affiliateUrl: "https://ecoterrabeds.com",
+    affiliateUrl: "https://ecoterrabeds.com/products/hybrid-latex-mattress",
     image: "/images/mattresses/eco-terra-hybrid-latex.webp",
     heroImage: "/images/mattresses/eco-terra-hybrid-latex.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "11 inches",
@@ -1389,7 +1463,7 @@ export const competitorMattresses: any[] = [
   {
     id: "form-core", name: "FORM Core", brand: "FORM", model: "Core",
     price: 699, priceRange: "$599 – $1,299", priceSale: "from $599",
-    affiliateUrl: "https://formsleep.com",
+    affiliateUrl: "https://formsleep.com/mattresses/form-core",
     image: "/images/mattresses/form-core.webp",
     heroImage: "/images/mattresses/form-core.webp",
     type: "foam", firmness: "medium", firmnessScale: 5, thickness: "10 inches",
@@ -1412,7 +1486,7 @@ export const competitorMattresses: any[] = [
   {
     id: "form-core-hybrid", name: "FORM Core Hybrid", brand: "FORM", model: "Core Hybrid",
     price: 899, priceRange: "$799 – $1,599", priceSale: "from $799",
-    affiliateUrl: "https://formsleep.com",
+    affiliateUrl: "https://formsleep.com/mattresses/form-core-hybrid",
     image: "/images/mattresses/form-core-hybrid.webp",
     heroImage: "/images/mattresses/form-core-hybrid.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
@@ -1435,7 +1509,7 @@ export const competitorMattresses: any[] = [
   {
     id: "form-prime", name: "FORM Prime", brand: "FORM", model: "Prime",
     price: 1099, priceRange: "$899 – $1,899", priceSale: "from $899",
-    affiliateUrl: "https://formsleep.com",
+    affiliateUrl: "https://formsleep.com/mattresses/form-prime",
     image: "/images/mattresses/form-prime.webp",
     heroImage: "/images/mattresses/form-prime.webp",
     type: "foam", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
@@ -1458,7 +1532,7 @@ export const competitorMattresses: any[] = [
   {
     id: "form-prime-x", name: "FORM Prime X", brand: "FORM", model: "Prime X",
     price: 1399, priceRange: "$1,199 – $2,199", priceSale: "from $1,199",
-    affiliateUrl: "https://formsleep.com",
+    affiliateUrl: "https://formsleep.com/mattresses/form-prime-x",
     image: "/images/mattresses/form-prime-x.webp",
     heroImage: "/images/mattresses/form-prime-x.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "14 inches",
@@ -1481,7 +1555,7 @@ export const competitorMattresses: any[] = [
   {
     id: "glacier-original-hybrid", name: "Glacier Original Hybrid", brand: "Glacier", model: "Original Hybrid",
     price: 1099, priceRange: "$899 – $1,799", priceSale: "from $899",
-    affiliateUrl: "https://glaciermattress.com",
+    affiliateUrl: "https://glaciersleep.com/products/glacier-original",
     image: "/images/mattresses/glacier-original-hybrid.webp",
     heroImage: "/images/mattresses/glacier-original-hybrid.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
@@ -1504,7 +1578,7 @@ export const competitorMattresses: any[] = [
   {
     id: "glacier-summit-hybrid", name: "Glacier Summit Hybrid", brand: "Glacier", model: "Summit Hybrid",
     price: 1299, priceRange: "$1,099 – $2,099", priceSale: "from $1,099",
-    affiliateUrl: "https://glaciermattress.com",
+    affiliateUrl: "https://glaciersleep.com/products/glacier-summit",
     image: "/images/mattresses/glacier-summit-hybrid.webp",
     heroImage: "/images/mattresses/glacier-summit-hybrid.webp",
     type: "hybrid", firmness: "medium-firm", firmnessScale: 6, thickness: "13 inches",
@@ -1527,7 +1601,7 @@ export const competitorMattresses: any[] = [
   {
     id: "latex-for-less-hybrid-latex-mattress", name: "Latex For Less Hybrid Latex Mattress", brand: "Latex For Less", model: "Hybrid Latex",
     price: 849, priceRange: "$749 – $1,499", priceSale: "from $749",
-    affiliateUrl: "https://latexforless.com",
+    affiliateUrl: "https://www.latexforless.com/products/hybrid-latex-mattress",
     image: "/images/mattresses/latex-for-less-hybrid-latex-mattress.webp",
     heroImage: "/images/mattresses/latex-for-less-hybrid-latex-mattress.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "9 inches",
@@ -1550,7 +1624,7 @@ export const competitorMattresses: any[] = [
   {
     id: "naturepedic-eos-classic", name: "Naturepedic EOS Classic", brand: "Naturepedic", model: "EOS Classic",
     price: 2399, priceRange: "$1,999 – $3,799", priceSale: "from $1,999",
-    affiliateUrl: "https://naturepedic.com",
+    affiliateUrl: "https://www.naturepedic.com/adult/mattresses/eos-classic-organic-mattress-buy",
     image: "/images/mattresses/naturepedic-eos-classic.webp",
     heroImage: "/images/mattresses/naturepedic-eos-classic.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "11 inches",
@@ -1573,7 +1647,7 @@ export const competitorMattresses: any[] = [
   {
     id: "naturepedic-concerto-plush", name: "Naturepedic Concerto Plush", brand: "Naturepedic", model: "Concerto Plush",
     price: 2299, priceRange: "$1,899 – $3,599", priceSale: "from $1,899",
-    affiliateUrl: "https://naturepedic.com",
+    affiliateUrl: "https://www.naturepedic.com/concerto-organic-pillowtop-mattress-buy",
     image: "/images/mattresses/naturepedic-concerto-plush.webp",
     heroImage: "/images/mattresses/naturepedic-concerto-plush.webp",
     type: "hybrid", firmness: "soft", firmnessScale: 3, thickness: "13 inches",
@@ -1596,7 +1670,7 @@ export const competitorMattresses: any[] = [
   {
     id: "nest-bedding-owl", name: "Nest Bedding Owl", brand: "Nest Bedding", model: "Owl",
     price: 1299, priceRange: "$999 – $2,099", priceSale: "from $999",
-    affiliateUrl: "https://nestbedding.com",
+    affiliateUrl: "https://www.nestbedding.com/products/owl-natural-latex-hybrid-mattress",
     image: "/images/mattresses/nest-bedding-owl.webp",
     heroImage: "/images/mattresses/nest-bedding-owl.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
@@ -1619,7 +1693,7 @@ export const competitorMattresses: any[] = [
   {
     id: "nest-bedding-puffin-kids", name: "Nest Bedding Puffin Kids", brand: "Nest Bedding", model: "Puffin Kids",
     price: 699, priceRange: "$549 – $1,099", priceSale: "from $549",
-    affiliateUrl: "https://nestbedding.com",
+    affiliateUrl: "https://www.nestbedding.com/products/puffin-memory-foam-kids-mattress",
     image: "/images/mattresses/nest-bedding-puffin-kids.webp",
     heroImage: "/images/mattresses/nest-bedding-puffin-kids.webp",
     type: "foam", firmness: "medium", firmnessScale: 5, thickness: "8 inches",
@@ -1642,7 +1716,7 @@ export const competitorMattresses: any[] = [
   {
     id: "nest-bedding-raven", name: "Nest Bedding Raven", brand: "Nest Bedding", model: "Raven",
     price: 1099, priceRange: "$899 – $1,799", priceSale: "from $899",
-    affiliateUrl: "https://nestbedding.com",
+    affiliateUrl: "https://www.nestbedding.com/products/raven-flippable-memory-foam-hybrid-mattress",
     image: "/images/mattresses/nest-bedding-raven.webp",
     heroImage: "/images/mattresses/nest-bedding-raven.webp",
     type: "foam", firmness: "medium-soft", firmnessScale: 4, thickness: "12 inches",
@@ -1665,7 +1739,7 @@ export const competitorMattresses: any[] = [
   {
     id: "nolah-natural-11", name: 'Nolah Natural 11"', brand: "Nolah", model: 'Natural 11"',
     price: 1299, priceRange: "$1,099 – $1,999", priceSale: "from $1,099",
-    affiliateUrl: "https://nolahmattress.com",
+    affiliateUrl: "https://www.nolahsleep.com/products/nolah-natural-11",
     image: "/images/mattresses/nolah-natural-11.webp",
     heroImage: "/images/mattresses/nolah-natural-11.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "11 inches",
@@ -1688,7 +1762,8 @@ export const competitorMattresses: any[] = [
   {
     id: "nolah-original-hybrid", name: "Nolah Original Hybrid", brand: "Nolah", model: "Original Hybrid",
     price: 999, priceRange: "$849 – $1,699", priceSale: "from $849",
-    affiliateUrl: "https://nolahmattress.com",
+    affiliateUrl: "https://www.nolahsleep.com/pages/limited-warranty-information",
+    availabilityNote: "Nolah no longer lists the Original Hybrid as a standalone product in its current mattress collection. This review preserves the locked Original Hybrid scorecard and links to Nolah's official warranty page, which still identifies the model.",
     image: "/images/mattresses/nolah-original-hybrid.webp",
     heroImage: "/images/mattresses/nolah-original-hybrid.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "10 inches",
@@ -1711,7 +1786,7 @@ export const competitorMattresses: any[] = [
   {
     id: "plushbeds-botanical-bliss", name: "PlushBeds Botanical Bliss", brand: "PlushBeds", model: "Botanical Bliss",
     price: 1699, priceRange: "$1,499 – $2,999", priceSale: "from $1,499",
-    affiliateUrl: "https://plushbeds.com",
+    affiliateUrl: "https://www.plushbeds.com/products/the-botanical-bliss-organic-latex-mattress",
     image: "/images/mattresses/plushbeds-botanical-bliss.webp",
     heroImage: "/images/mattresses/plushbeds-botanical-bliss.webp",
     type: "latex", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
@@ -1734,79 +1809,79 @@ export const competitorMattresses: any[] = [
   {
     id: "plushbeds-luxury-bliss", name: "PlushBeds Luxury Bliss", brand: "PlushBeds", model: "Luxury Bliss",
     price: 1299, priceRange: "$999 – $1,999", priceSale: "from $999",
-    affiliateUrl: "https://plushbeds.com",
+    affiliateUrl: "https://www.plushbeds.com/products/12-luxury-bliss-natural-latex-mattress-with-encased-coils",
     image: "/images/mattresses/plushbeds-luxury-bliss.webp",
     heroImage: "/images/mattresses/plushbeds-luxury-bliss.webp",
-    type: "foam", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
+    type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
     trialNights: 100, warrantyYears: 25,
-    certifications: ["CertiPUR-US"],
-    technology: ["Luxury Gel Memory Foam","Base Support Foam"],
+    certifications: ["GOLS","GOTS","GREENGUARD Gold","eco-INSTITUT"],
+    technology: ["GOLS-Certified Organic Latex","GOTS Organic Cotton Cover","Organic Wool","Fabric-Encased Coils"],
     scores: { overall: 8, value: 8, edgeSupport: 7, trialPeriod: 9, responseTime: 10, motionTransfer: 7, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
     dateReviewed: "2026-01-01", dateModified: "2026-06-16",
-    bestFor: ["Combination Sleepers","Hot Sleepers Who Prefer Memory Foam","Value Memory Foam Seekers"],
-    tags: ["foam","gel-foam","medium"],
-    pros: ["Excellent response time (10/10)","Good cooling for memory foam (9/10)","25-year warranty at lower price","100-night trial"],
+    bestFor: ["Combination Sleepers","Hot Sleepers","Natural Latex Seekers","Hybrid Shoppers"],
+    tags: ["latex","hybrid","organic","medium"],
+    pros: ["Excellent response time (10/10)","Organic latex over fabric-encased coils","Strong cooling score (9/10)","Long warranty coverage in the locked dataset"],
     cons: ["Edge support 7/10 — notable weakness","Motion transfer 7/10 — less effective for couples","Overall score 8 vs higher-rated PlushBeds options"],
-    summary: "The PlushBeds Luxury Bliss is an all-foam mattress with gel memory foam for cooling performance and an unusually long 25-year warranty at a mid-range price.",
-    verdict: "The 25-year warranty at this price point is exceptional. Edge support and motion isolation are weak points; best for solo sleepers or those not needing full-surface use.",
-    layers: [{ name: "Gel Foam System", thickness: "12 inches", material: "Luxury Gel Memory Foam + Base Support Foam", description: "Gel-infused memory foam comfort layer over dense base support foam." }],
+    summary: "The PlushBeds Luxury Bliss is a 12-inch organic latex hybrid that pairs a responsive latex comfort layer with fabric-encased coils and organic cotton and wool materials.",
+    verdict: "A responsive natural-material hybrid with strong cooling. Its locked scorecard shows weaker edge support and motion isolation than higher-rated models, which matters for couples using the full surface.",
+    layers: [{ name: "Organic Latex Hybrid System", thickness: "12 inches", material: "GOLS Latex + Organic Wool + Fabric-Encased Coils", description: "Organic latex and wool comfort materials over a fabric-encased coil support system." }],
     sizePricing: [{ size: "Queen", dimensions: "60\" × 80\"", priceOriginal: "$1,599", priceSale: "$1,299" }],
     faqs: [{ question: "PlushBeds Luxury Bliss vs Amerisleep AS3?", answer: "The AS3 scores higher overall (10 vs 8) and better on edge support and motion transfer. The Luxury Bliss has a longer warranty (25 vs 20 years) and slightly lower price. AS3's Bio-Pur® plant-based foam is a meaningful differentiator." }]
   },
   {
     id: "plushbeds-organic-bliss", name: "PlushBeds Organic Bliss", brand: "PlushBeds", model: "Organic Bliss",
     price: 1499, priceRange: "$1,299 – $2,499", priceSale: "from $1,299",
-    affiliateUrl: "https://plushbeds.com",
+    affiliateUrl: "https://www.plushbeds.com/products/organic-mattress",
     image: "/images/mattresses/plushbeds-organic-bliss.webp",
     heroImage: "/images/mattresses/plushbeds-organic-bliss.webp",
-    type: "foam", firmness: "medium", firmnessScale: 5, thickness: "10 inches",
+    type: "latex", firmness: "medium", firmnessScale: 5, thickness: "14 inches",
     trialNights: 100, warrantyYears: 25,
-    certifications: ["GOTS","OEKO-TEX"],
-    technology: ["GOTS Organic Cotton Cover","Organic Wool Layer","CertiPUR-US Foam"],
+    certifications: ["GOLS","GOTS","GREENGUARD Gold","eco-INSTITUT"],
+    technology: ["GOLS-Certified Organic Latex","GOTS Organic Cotton Cover","GOTS Organic Wool","Integrated Latex Pillow Top"],
     scores: { overall: 9, value: 8, edgeSupport: 9, trialPeriod: 9, responseTime: 9, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
     dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Eco-Conscious Shoppers","Couples","Chemical Sensitivities","Balanced Sleepers"],
-    tags: ["organic","foam","balanced","eco"],
+    tags: ["organic","latex","pillow-top","eco"],
     pros: ["Balanced 9/10 scores across all metrics","GOTS organic cotton and wool","25-year warranty","Strong edge support (9/10) for organic category"],
-    cons: ["No latex in comfort layer — not a full latex mattress","Value 8 — organic premium reflected in pricing"],
-    summary: "The PlushBeds Organic Bliss combines GOTS-certified organic cotton and wool cover with foam construction for organic buyers who don't specifically need latex.",
-    verdict: "A well-rounded organic mattress hitting 9/10 across every metric. Best for buyers wanting organic materials without full latex construction. The 25-year warranty is a strong bonus.",
-    layers: [{ name: "Organic Foam System", thickness: "10 inches", material: "GOTS Organic Cotton + Organic Wool + CertiPUR-US Foam", description: "Organic cotton and wool comfort system over certified foam base." }],
+    cons: ["Premium pricing reflects the organic materials and pillow-top construction","Heavier and more responsive than shoppers accustomed to memory foam may prefer"],
+    summary: "The PlushBeds Organic Bliss is an organic latex pillow-top mattress built with GOLS-certified latex plus GOTS-certified cotton and wool.",
+    verdict: "A balanced organic latex option whose locked scorecard is consistently strong across all seven metrics. It best suits shoppers who want a plush pillow top without switching to synthetic memory foam.",
+    layers: [{ name: "Organic Latex Pillow-Top System", thickness: "10 inches", material: "GOLS Latex + GOTS Cotton + Organic Wool", description: "An integrated organic latex pillow top over additional organic latex support layers, wrapped in organic cotton and wool." }],
     sizePricing: [{ size: "Queen", dimensions: "60\" × 80\"", priceOriginal: "$1,799", priceSale: "$1,499" }],
-    faqs: [{ question: "PlushBeds Organic Bliss vs Botanical Bliss?", answer: "The Botanical Bliss uses GOLS organic latex for the comfort layer; the Organic Bliss uses CertiPUR foam with organic cotton and wool. The Botanical scores higher on motion isolation. Choose Organic Bliss for foam feel with organic cover; Botanical for a true latex feel." }]
+    faqs: [{ question: "PlushBeds Organic Bliss vs Botanical Bliss?", answer: "Both use certified organic latex, cotton, and wool. The Organic Bliss adds an integrated plush pillow top and is 14 inches tall, while the Botanical Bliss uses a modular all-latex design with multiple thickness and firmness options. Choose Organic Bliss for a plusher pillow-top feel; choose Botanical Bliss for a more configurable all-latex build." }]
   },
   {
     id: "plushbeds-organic-kids", name: "PlushBeds Organic Kids Mattress", brand: "PlushBeds", model: "Organic Kids",
     price: 899, priceRange: "$699 – $1,299", priceSale: "from $699",
-    affiliateUrl: "https://plushbeds.com",
+    affiliateUrl: "https://www.plushbeds.com/products/healthy-child-organic-latex-mattress",
     image: "/images/mattresses/plushbeds-organic-kids.webp",
     heroImage: "/images/mattresses/plushbeds-organic-kids.webp",
-    type: "foam", firmness: "medium", firmnessScale: 5, thickness: "8 inches",
+    type: "latex", firmness: "medium-firm", firmnessScale: 8, thickness: "8 inches",
     trialNights: 100, warrantyYears: 25,
-    certifications: ["GOTS","OEKO-TEX","eco-INSTITUT"],
-    technology: ["GOTS Organic Cotton Cover","Organic Wool","CertiPUR-US Foam"],
+    certifications: ["GOLS","GOTS","OEKO-TEX","eco-INSTITUT"],
+    technology: ["GOLS-Certified Organic Latex","GOTS Organic Cotton Cover","Organic Wool"],
     scores: { overall: 9, value: 8, edgeSupport: 9, trialPeriod: 9, responseTime: 10, motionTransfer: 9, coolingBreathability: 9 },
     reviewer: reviewer_editorial,
     dateReviewed: "2026-01-01", dateModified: "2026-06-16",
     bestFor: ["Children","Eco-Conscious Parents","Non-Toxic Material Seekers"],
-    tags: ["kids","organic","foam","eco"],
+    tags: ["kids","organic","latex","eco"],
     pros: ["GOTS + OEKO-TEX + eco-INSTITUT certified","10/10 response time — easy position changes for active kids","25-year warranty on a children's mattress","100-night trial"],
     cons: ["Value 8 — premium for a kids mattress","8-inch profile thinner than adult options"],
     summary: "The PlushBeds Organic Kids Mattress provides multi-certified organic materials in a firm-medium kids mattress with an exceptional 25-year warranty.",
     verdict: "Best-in-class certifications for a children's mattress. The 25-year warranty is unusually strong for the kids category. Worth the premium for parents who prioritize organic materials.",
-    layers: [{ name: "Organic Kids Foam System", thickness: "8 inches", material: "GOTS Organic Cotton + Organic Wool + CertiPUR-US Foam", description: "Certified organic comfort system over firm support foam base, sized for children." }],
+    layers: [{ name: "Organic Kids Latex System", thickness: "8 inches", material: "GOLS Latex + GOTS Organic Cotton + Organic Wool", description: "Six inches of organic latex with organic wool and an organic cotton cover, sized for children." }],
     sizePricing: [{ size: "Twin", dimensions: "38\" × 75\"", priceOriginal: "$1,099", priceSale: "$899" }],
     faqs: [{ question: "PlushBeds Organic Kids vs Nest Bedding Puffin Kids?", answer: "The Puffin Kids scores higher on value (10 vs 8). The PlushBeds Organic Kids has deeper organic certifications (GOTS + OEKO-TEX + eco-INSTITUT) and a longer warranty (25 vs 10 years). Choose PlushBeds for organic credentials; Nest for maximum value." }]
   },
   {
     id: "plushbeds-signature-bliss", name: "PlushBeds Signature Bliss", brand: "PlushBeds", model: "Signature Bliss",
     price: 1999, priceRange: "$1,799 – $3,299", priceSale: "from $1,799",
-    affiliateUrl: "https://plushbeds.com",
+    affiliateUrl: "https://www.plushbeds.com/products/pillowtop-mattress",
     image: "/images/mattresses/plushbeds-signature-bliss.webp",
     heroImage: "/images/mattresses/plushbeds-signature-bliss.webp",
-    type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "13 inches",
+    type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "14 inches",
     trialNights: 100, warrantyYears: 25,
     certifications: ["GOLS","GOTS","OEKO-TEX","eco-INSTITUT"],
     technology: ["GOLS-Certified Organic Latex","GOTS Organic Cotton Cover","Organic Wool","Pocketed Coil Base"],
@@ -1826,7 +1901,7 @@ export const competitorMattresses: any[] = [
   {
     id: "sweetnight-coolnest", name: "SweetNight CoolNest Memory Foam Mattress", brand: "SweetNight", model: "CoolNest",
     price: 399, priceRange: "$299 – $699", priceSale: "from $299",
-    affiliateUrl: "https://sweetnight.com",
+    affiliateUrl: "https://www.sweetnight.com/products/sweetnight-coolnest-mattress",
     image: "/images/mattresses/sweetnight-coolnest.webp",
     heroImage: "/images/mattresses/sweetnight-coolnest.webp",
     type: "foam", firmness: "medium", firmnessScale: 5, thickness: "10 inches",
@@ -1849,7 +1924,8 @@ export const competitorMattresses: any[] = [
   {
     id: "sweetnight-prime", name: "SweetNight Prime Memory Foam Mattress", brand: "SweetNight", model: "Prime",
     price: 299, priceRange: "$199 – $549", priceSale: "from $199",
-    affiliateUrl: "https://sweetnight.com",
+    affiliateUrl: "https://www.sweetnight.com/blogs/news/best-mattress-2025-complete-buying-guide-expert-rankings",
+    availabilityNote: "SweetNight's Prime product page now redirects away from the model. This review preserves the locked Prime scorecard and links to an official SweetNight article that still documents the archived mattress.",
     image: "/images/mattresses/sweetnight-prime.webp",
     heroImage: "/images/mattresses/sweetnight-prime.webp",
     type: "foam", firmness: "medium-firm", firmnessScale: 6, thickness: "10 inches",
@@ -1872,7 +1948,7 @@ export const competitorMattresses: any[] = [
   {
     id: "vaya-foam", name: "Vaya Foam", brand: "Vaya", model: "Foam",
     price: 399, priceRange: "$299 – $699", priceSale: "from $299",
-    affiliateUrl: "https://vayasleep.com",
+    affiliateUrl: "https://vayasleep.com/mattresses/vaya/",
     image: "/images/mattresses/vaya-foam.webp",
     heroImage: "/images/mattresses/vaya-foam.webp",
     type: "foam", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
@@ -1895,7 +1971,7 @@ export const competitorMattresses: any[] = [
   {
     id: "vaya-hybrid", name: "Vaya Hybrid", brand: "Vaya", model: "Hybrid",
     price: 599, priceRange: "$499 – $999", priceSale: "from $499",
-    affiliateUrl: "https://vayasleep.com",
+    affiliateUrl: "https://vayasleep.com/mattresses/hybrid/",
     image: "/images/mattresses/vaya-hybrid.webp",
     heroImage: "/images/mattresses/vaya-hybrid.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
@@ -1918,7 +1994,7 @@ export const competitorMattresses: any[] = [
   {
     id: "westin-heavenly-bed", name: "Westin Heavenly Bed", brand: "Westin", model: "Heavenly Bed",
     price: 1799, priceRange: "$1,499 – $2,999", priceSale: "from $1,499",
-    affiliateUrl: "https://shopwestin.com",
+    affiliateUrl: "https://shop.marriott.com/brands/westin/mattresses/heavenly-bed-mattress/HB-124-01-F-MO.html",
     image: "/images/mattresses/westin-heavenly-bed.webp",
     heroImage: "/images/mattresses/westin-heavenly-bed.webp",
     type: "innerspring", firmness: "medium", firmnessScale: 5, thickness: "13 inches",
@@ -1941,7 +2017,7 @@ export const competitorMattresses: any[] = [
   {
     id: "zoma-boost", name: "Zoma Boost", brand: "Zoma", model: "Boost",
     price: 999, priceRange: "$799 – $1,699", priceSale: "from $799",
-    affiliateUrl: "https://zomasleep.com",
+    affiliateUrl: "https://zomasleep.com/mattresses/zoma-boost",
     image: "/images/mattresses/zoma-boost.webp",
     heroImage: "/images/mattresses/zoma-boost.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "14 inches",
@@ -1964,7 +2040,7 @@ export const competitorMattresses: any[] = [
   {
     id: "zoma-hybrid", name: "Zoma Hybrid", brand: "Zoma", model: "Hybrid",
     price: 799, priceRange: "$599 – $1,299", priceSale: "from $599",
-    affiliateUrl: "https://zomasleep.com",
+    affiliateUrl: "https://zomasleep.com/mattresses/zoma-mattress?material=hybrid",
     image: "/images/mattresses/zoma-hybrid.webp",
     heroImage: "/images/mattresses/zoma-hybrid.webp",
     type: "hybrid", firmness: "medium", firmnessScale: 5, thickness: "12 inches",
@@ -1987,7 +2063,8 @@ export const competitorMattresses: any[] = [
   {
     id: "zoma-start", name: "Zoma Start", brand: "Zoma", model: "Start",
     price: 499, priceRange: "$399 – $849", priceSale: "from $399",
-    affiliateUrl: "https://zomasleep.com",
+    affiliateUrl: "https://zomasleep.com/mattresses/zoma-start-mattress",
+    availabilityNote: "Zoma now sells a hybrid under the Zoma Start name. This review preserves the approved scorecard for the earlier all-foam Zoma Start and links to the current official Start product page so shoppers can verify the changed construction before buying.",
     image: "/images/mattresses/zoma-start.webp",
     heroImage: "/images/mattresses/zoma-start.webp",
     type: "foam", firmness: "medium", firmnessScale: 5, thickness: "10 inches",
@@ -2009,4 +2086,5 @@ export const competitorMattresses: any[] = [
   },
 ];
 
+export const competitorMattresses = competitorMattressRecords.map(neutralizeCompetitorReview);
 export const allMattresses = [...mattresses, ...competitorMattresses];

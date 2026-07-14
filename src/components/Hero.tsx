@@ -5,7 +5,7 @@ export default function Hero() {
   const as3 = mattresses.find(m => m.id === 'amerisleep-as3')!;
 
   return (
-    <header className="relative pt-[100px] pb-[100px] px-margin-mobile md:px-margin-desktop overflow-hidden">
+    <header className="relative pt-12 pb-12 md:pt-[100px] md:pb-[100px] px-margin-mobile md:px-margin-desktop overflow-hidden">
       <div className="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center relative z-10">
         {/* Left Col */}
         <motion.div 
@@ -24,29 +24,29 @@ export default function Hero() {
               59 MODELS · 24 BRANDS · ONE PUBLISHED RUBRIC
             </motion.span>
           </div>
-          <h1 className="text-display-lg font-display-lg  text-primary leading-tight">
-            The Mattress Review You Can Actually <span className="text-secondary drop-shadow-sm">Trust.</span>
+          <h1 className="text-[44px] leading-[1.14] font-bold md:text-display-lg md:font-display-lg text-primary">
+            Compare 59 Mattresses Across <span className="text-secondary drop-shadow-sm">24 Brands.</span>
           </h1>
           <p className="text-body-lg font-body-lg text-on-surface-variant max-w-lg leading-relaxed">
-            Hands-on mattress reviews across 24 brands using one published 7-metric scoring rubric.
+            Mattress reviews across 24 brands using one published 7-metric editorial scorecard.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
             <a 
               href="/reviews"
               className="bg-primary text-on-primary px-8 py-4 rounded-full shadow-xl shadow-primary/20 text-label-sm font-label-sm uppercase tracking-widest hover:bg-blue-800 transition-all duration-300 font-bold text-center hover:scale-105 active:scale-95"
             >
-              FIND MY MATCH
+              COMPARE ALL 59 MODELS
             </a>
             <a 
               href="/reviews/amerisleep-as3"
               className="glass-panel text-primary px-8 py-4 rounded-full text-label-sm font-label-sm uppercase tracking-widest hover:bg-primary/5 transition-colors font-bold text-center hover:scale-105 active:scale-95"
             >
-              READ OUR TOP PICK
+              SEE THE TOP OVERALL PICK
             </a>
           </div>
           <div className="flex flex-wrap gap-4 mt-4 text-label-sm font-label-sm text-secondary uppercase tracking-widest">
             <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-secondary block"></span> Relationships disclosed</span>
-            <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-secondary block"></span> Hands-on tested</span>
+            <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-secondary block"></span> 59 scored models</span>
             <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-secondary block"></span> Updated July 2026</span>
           </div>
         </motion.div>
@@ -56,7 +56,7 @@ export default function Hero() {
           initial={false} 
           animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="md:col-span-5 relative mt-12 md:mt-0 flex flex-col gap-stack-md"
+          className="md:col-span-5 relative mt-8 md:mt-0 flex flex-col gap-stack-md"
         >
           {/* Stacked Image Card */}
           <motion.a 
@@ -64,10 +64,9 @@ export default function Hero() {
             whileHover={{ y: -5 }}
             className="relative rounded-3xl overflow-hidden glass-panel h-72 group border border-[rgba(255,255,255,1)] block"
           >
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10 transition-opacity group-hover:opacity-60" />
             <img 
               alt="Amerisleep AS3 mattress, PureSleep's top overall pick"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+              className="w-full h-full object-contain bg-white p-4 transition-transform duration-700 group-hover:scale-[1.02]" 
               src={as3.heroImage}
             />
             <div className="absolute bottom-5 left-5 z-20">

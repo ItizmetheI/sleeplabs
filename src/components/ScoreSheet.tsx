@@ -79,7 +79,7 @@ export default function ScoreSheet() {
                         <img
                           src={item.img}
                           alt={item.name}
-                          className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-300"
+                          className="w-full h-full object-contain bg-white p-1 transition-transform group-hover:scale-[1.02] duration-300"
                         />
                       </div>
                     </td>

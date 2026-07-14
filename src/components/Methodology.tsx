@@ -14,9 +14,9 @@ export default function Methodology() {
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-label-sm font-label-sm uppercase tracking-widest text-secondary mb-3">Our Methodology</h3>
-            <h2 className="text-display-lg font-display-lg text-primary  mb-6">How We Test Mattresses</h2>
+            <h2 className="text-display-lg font-display-lg text-primary  mb-6">How We Score Mattresses</h2>
             <p className="text-body-lg text-on-surface-variant mb-8 leading-relaxed">
-              Every mattress we review is evaluated by the PureSleep testing team using the same published rubric. We score value, edge support, trial period, response time, motion transfer, and cooling &amp; breathability across multiple sleep positions.
+              Every review uses the same locked editorial scorecard: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability. Scores are comparative editorial ratings, not laboratory findings or collected customer ratings.
             </p>
             <a href="/methodology" className="inline-flex items-center text-label-sm font-label-sm uppercase tracking-widest text-primary border border-primary/20 rounded-full px-8 py-4 hover:bg-white transition-all group shadow-sm hover:shadow-md glass-panel font-bold">
               Read Our Full Methodology <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

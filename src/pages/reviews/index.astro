@@ -46,10 +46,10 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
         Mattress Reviews 2026
       </h1>
       <p class="text-body-lg font-body-lg text-on-surface-variant max-w-3xl">
-        Multi-brand mattress reviews across 24 brands and 59 models, evaluated by the PureSleep Testing Team using one published 7-metric scoring system.
+        Multi-brand mattress reviews across 24 brands and 59 models using one published seven-metric editorial scorecard.
       </p>
       <div class="flex flex-col md:flex-row gap-4 items-center justify-center text-body-md text-on-surface-variant bg-surface px-6 py-3 rounded-full shadow-sm border border-outline-variant/30">
-        <span><strong class="text-on-background">Testing Team:</strong> PureSleep Testing Team</span>
+        <span><strong class="text-on-background">Editorial Team:</strong> PureSleep Editorial Team</span>
         <span class="hidden md:inline-block w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
         <span><strong class="text-on-background">Last Updated:</strong> {formattedDateModified}</span>
       </div>
@@ -78,7 +78,7 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
           
           <!-- Image -->
           <div class="w-full h-56 overflow-hidden relative">
-            <img src={mattress.image} alt={`${mattress.name} mattress`} class="w-full h-full object-cover" />
+            <img src={mattress.image} alt={`${mattress.name} mattress`} class="w-full h-full object-contain bg-white p-3" />
             <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-md flex items-center gap-2">
               <span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface font-bold">Score</span>
               <span class="text-title-lg font-title-lg italic text-secondary font-bold leading-none">{mattress.scores.overall}</span>
@@ -181,7 +181,7 @@ const formattedDateModified = new Date(lastUpdated).toLocaleDateString('en-US', 
     <section class="max-w-2xl mx-auto mt-8 glass-panel p-6 rounded-2xl border border-white/60">
       <h3 class="text-title-md font-title-md text-primary font-bold mb-3">How we cover 24 brands</h3>
       <p class="text-body-md text-on-surface-variant leading-relaxed">
-        Every model above is scored using the same 7-metric system: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability. Scores come from hands-on testing by the PureSleep Testing Team — never from manufacturer data. <a href="/methodology" class="text-primary hover:underline font-bold">Read our full methodology →</a>
+        Every model above is scored using the same 7-metric system: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability. Scores are editorial comparisons from the approved source dataset, not laboratory findings, manufacturer ratings, or collected customer ratings. <a href="/methodology" class="text-primary hover:underline font-bold">Read our full methodology →</a>
       </p>
     </section>
   </main>

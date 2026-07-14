@@ -2,14 +2,14 @@ import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
 const needs = [
-  { num: '01', title: 'Side Sleepers', desc: 'AS3 and AS5 relieve shoulder and hip pressure with HIVE® zoning', href: '/reviews/amerisleep-as3' },
-  { num: '02', title: 'Back Sleepers', desc: 'AS2 has a medium-firm feel designed to limit excessive hip sinkage', href: '/reviews/amerisleep-as2' },
-  { num: '03', title: 'Hot Sleepers', desc: 'AS6 pocketed coils and Bio-Pur® open-cell foam tested 9.4/10 for cooling', href: '/reviews/amerisleep-as6' },
-  { num: '04', title: 'Couples', desc: 'Motion isolation 9.0–9.4/10 across the lineup. AS6 best for edge support', href: '/reviews/amerisleep-as6' },
+  { num: '01', title: 'Side Sleepers', desc: 'Compare soft-to-medium models across brands for cushioning and fit.', href: '/best/side-sleepers' },
+  { num: '02', title: 'Back Sleepers', desc: 'Compare medium-firm models with strong response and edge scores.', href: '/best/back-sleepers' },
+  { num: '03', title: 'Hot Sleepers', desc: 'Ranked cooling picks spanning foam, hybrid, latex, and innerspring builds.', href: '/best/cooling' },
+  { num: '04', title: 'Couples', desc: 'Compare motion-transfer and edge-support scores across multiple brands.', href: '/best/couples' },
   { num: '05', title: 'Back Discomfort', desc: 'Compare firmer support and pressure-distributing options; not medical advice', href: '/best/back-pain' },
-  { num: '06', title: 'Pressure Relief', desc: 'AS5 scores maximum 9.8/10 for shoulder and hip pressure relief', href: '/reviews/amerisleep-as5' },
-  { num: '07', title: 'Eco-Conscious', desc: 'Organica uses GOLS latex, GOTS cotton, organic wool — no synthetic foams', href: '/reviews/amerisleep-organica' },
-  { num: '08', title: 'Combination Sleepers', desc: 'AS3 medium feel suits both side and back positions equally well', href: '/reviews/amerisleep-as3' }
+  { num: '06', title: 'Pressure Relief', desc: 'Compare softer comfort layers and recorded firmness across brands.', href: '/best/pressure-relief' },
+  { num: '07', title: 'Eco-Conscious', desc: 'Compare organic-material claims and current third-party certifications.', href: '/best/organic' },
+  { num: '08', title: 'Combination Sleepers', desc: 'Compare responsive medium-feel models for easier position changes.', href: '/best/combination-sleepers' }
 ];
 
 export default function FindYourMatch() {
@@ -40,7 +40,7 @@ export default function FindYourMatch() {
           transition={{ delay: 0.2 }}
           className="text-body-lg font-body-lg text-on-surface-variant leading-relaxed"
         >
-          Start with how you sleep, what feels uncomfortable, or what you want to improve. We've grouped our top-tested picks by the needs that matter most.
+          Start with how you sleep, what feels uncomfortable, or what you want to improve. Each category uses the same scorecard and includes multiple brands.
         </motion.p>
       </div>
 
