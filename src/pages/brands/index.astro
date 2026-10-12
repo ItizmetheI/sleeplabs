@@ -1,153 +1,100 @@
 ---
+// Brands hub (owner template): lead with the brand count, then one card per brand
+// (name linked, model count, highest Overall with any tie stated).
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Byline from '../../components/Byline.astro';
 import { allMattresses } from '../../data/mattresses';
+import { toArticleBody } from '../../lib/schemaArticleBody';
+import { BYLINE_DISCLOSURE } from '../../lib/disclosure';
+import { brandModels, brandSlug, scoreText } from '../../lib/pageData';
+import { compareTieChain } from '../../lib/scoreFieldOrder';
+import { h1For, reviewUrl } from '../../lib/ownerSite';
 
 const SITE_URL = import.meta.env.SITE_URL || 'https://mattressinquirer.ahmedbarkat1067.workers.dev';
-const UPDATED = '2026-07-14';
+const DATE_MODIFIED = '2026-10-12';
+const pageUrl = '/brands/';
+const canonicalUrl = `${SITE_URL}${pageUrl}`;
+const h1 = h1For(pageUrl);
 
-const toBrandSlug = (brand: string) => brand
-  .toLowerCase()
-  .replace(/[^a-z0-9]+/g, '-')
-  .replace(/^-|-$/g, '');
-
-const brands = [...new Set(allMattresses.map(mattress => mattress.brand))]
+const names = (list: string[]) => (list.length < 2 ? list.join('') : `${list.slice(0, -1).join(', ')} and ${list.at(-1)}`);
+const brands = [...new Set(allMattresses.map(m => m.brand))]
   .map(brand => {
-    const models = allMattresses
-      .filter(mattress => mattress.brand === brand)
-      .sort((a, b) => b.scores.overall - a.scores.overall || a.name.localeCompare(b.name));
-    return {
-      name: brand,
-      slug: toBrandSlug(brand),
-      models,
-      topModel: models[0],
-    };
+    const models = brandModels(brand);
+    const top = models.filter(m => m.scores.overall === models[0].scores.overall);
+    return { brand, slug: brandSlug(brand), models, top };
   })
-  .sort((a, b) => a.name.localeCompare(b.name));
+  .sort((x, y) => compareTieChain(x.models[0], y.models[0]));
 
-const faqs = [
-  {
-    question: 'How many mattress brands does Mattress Inquirer cover?',
-    answer: `Mattress Inquirer currently covers ${brands.length} mattress brands and ${allMattresses.length} scored models in its published editorial dataset.`,
-  },
-  {
-    question: 'Are all brands scored with the same system?',
-    answer: 'Yes. Every covered model uses the same seven fields: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability.',
-  },
-  {
-    question: 'Where can I compare models from different brands?',
-    answer: 'Use the head-to-head comparison library or the ranked category pages to compare model scores, construction, fit, trial fields, and warranty fields across brands.',
-  },
-];
+const topLine = (b: (typeof brands)[number]) => b.top.length > 1
+  ? `Highest ${b.brand} Overall: ${scoreText(b.top[0], 'overall')}/10, a tie between the ${names(b.top.map(m => m.name))}.`
+  : `Highest ${b.brand} Overall: ${scoreText(b.top[0], 'overall')}/10, the ${b.top[0].name}.`;
+const lead = `Mattress Inquirer scores ${allMattresses.length} mattresses from ${brands.length} brands on one seven-field scorecard. Each brand page lists every model we score, sorted by Overall, with links to its reviews and comparisons.`;
+const description = `Mattress Inquirer scores ${allMattresses.length} mattresses from ${brands.length} brands on one seven-field scale. See each brand's model count and its highest Overall score, with ties stated.`;
 
 const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      '@type': 'CollectionPage',
-      '@id': `${SITE_URL}/brands/#webpage`,
-      name: 'Mattress Brands Covered by Mattress Inquirer',
-      description: `Browse ${brands.length} mattress brands and ${allMattresses.length} scored models covered by Mattress Inquirer's seven-metric editorial dataset.`,
-      url: `${SITE_URL}/brands/`,
-      dateModified: UPDATED,
-      mainEntity: {
-        '@type': 'ItemList',
-        numberOfItems: brands.length,
-        itemListElement: brands.map((brand, index) => ({
-          '@type': 'ListItem',
-          position: index + 1,
-          name: brand.name,
-          url: `${SITE_URL}/brands/${brand.slug}/`,
-        })),
+      "@type": "CollectionPage",
+      "@id": `${canonicalUrl}#page`,
+      "name": h1,
+      "description": description,
+      "url": canonicalUrl,
+      "datePublished": DATE_MODIFIED,
+      "dateModified": DATE_MODIFIED,
+      "author": { "@type": "Organization", "@id": `${SITE_URL}/about/#editorial-team`, "name": "Mattress Inquirer Editorial Team", "url": `${SITE_URL}/about/#editorial-team` },
+      "publisher": { "@type": "Organization", "@id": `${SITE_URL}/#organization`, "name": "Mattress Inquirer", "url": SITE_URL },
+      "text": toArticleBody(h1, BYLINE_DISCLOSURE, lead, brands.map(b => `${b.brand}: ${b.models.length} model${b.models.length === 1 ? '' : 's'}. ${topLine(b)}`), "Scores are Mattress Inquirer's editorial ratings on a 0 to 10 scale."),
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": brands.map((b, i) => ({ "@type": "ListItem", "position": i + 1, "name": b.brand, "url": `${SITE_URL}/brands/${b.slug}/` })),
       },
     },
     {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
-        { '@type': 'ListItem', position: 2, name: 'Brands', item: `${SITE_URL}/brands/` },
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+        { "@type": "ListItem", "position": 2, "name": h1, "item": canonicalUrl },
       ],
-    },
-    {
-      '@type': 'FAQPage',
-      mainEntity: faqs.map(faq => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-      })),
     },
   ],
 };
 ---
 
 <BaseLayout
-  title="Mattress Brands Reviewed: 24 Brands, 59 Models | Mattress Inquirer"
-  description="Browse 24 mattress brands and 59 scored models using Mattress Inquirer's shared seven-metric editorial scorecard."
-  canonicalUrl={`${SITE_URL}/brands/`}
+  title={`${h1}: ${brands.length} Brands, ${allMattresses.length} Models`}
+  description={description}
+  canonicalUrl={canonicalUrl}
   machineReadableUrl={`${SITE_URL}/llms/brands.md`}
-  lastUpdated={UPDATED}
+  lastUpdated={DATE_MODIFIED}
   jsonLd={jsonLd}
 >
-  <main class="w-full">
-    <header class="border-b border-outline-variant/30 bg-surface">
-      <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-16">
-        <p class="text-label-sm uppercase font-bold text-secondary mb-3">Complete brand coverage</p>
-        <h1 class="text-headline-lg font-headline-lg text-primary font-bold mb-5">Mattress Brands Covered by Mattress Inquirer</h1>
-        <p class="text-body-lg text-on-surface-variant max-w-3xl">
-          Mattress Inquirer covers {brands.length} brands and {allMattresses.length} mattress models with one published seven-metric editorial scorecard. Open any brand to see every included model, its recorded score, and its full review.
-        </p>
-      </div>
-    </header>
-
-    <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-10 md:py-14" aria-labelledby="brand-directory-heading">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-6">
-        <div>
-          <h2 id="brand-directory-heading" class="text-title-lg font-bold text-primary">Brand directory</h2>
-          <p class="text-body-md text-on-surface-variant mt-1">Alphabetical coverage with model counts and each brand's highest recorded overall score.</p>
-        </div>
-        <a href="/reviews/" class="text-primary font-bold hover:underline">Browse all 59 model reviews</a>
-      </div>
-
-      <div class="overflow-x-auto border border-outline-variant/40 rounded-lg bg-surface">
-        <table class="w-full min-w-[680px] border-collapse text-left">
-          <thead class="bg-primary text-on-primary">
-            <tr>
-              <th scope="col" class="px-5 py-3 text-label-sm uppercase">Brand</th>
-              <th scope="col" class="px-5 py-3 text-label-sm uppercase">Models covered</th>
-              <th scope="col" class="px-5 py-3 text-label-sm uppercase">Top recorded model</th>
-              <th scope="col" class="px-5 py-3 text-label-sm uppercase text-right">Overall score</th>
-            </tr>
-          </thead>
-          <tbody>
-            {brands.map((brand, index) => (
-              <tr class={index % 2 === 0 ? 'bg-background' : 'bg-surface'}>
-                <th scope="row" class="px-5 py-4 border-t border-outline-variant/30">
-                  <a href={`/brands/${brand.slug}/`} class="text-primary font-bold hover:underline">{brand.name}</a>
-                </th>
-                <td class="px-5 py-4 border-t border-outline-variant/30 text-on-surface-variant">{brand.models.length}</td>
-                <td class="px-5 py-4 border-t border-outline-variant/30">
-                  <a href={`/reviews/${brand.topModel.id}/`} class="text-on-surface font-semibold hover:text-primary hover:underline">{brand.topModel.name}</a>
-                </td>
-                <td class="px-5 py-4 border-t border-outline-variant/30 text-right font-bold text-secondary">{brand.topModel.scores.overall}/10</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <p class="text-sm text-on-surface-variant mt-4">Scores are editorial values from the approved dataset, not laboratory findings, manufacturer ratings, or collected customer ratings. Product terms and availability can change.</p>
-    </section>
-
-    <section class="border-y border-outline-variant/30 bg-surface" aria-labelledby="brand-faq-heading">
-      <div class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop py-10 md:py-14">
-        <h2 id="brand-faq-heading" class="text-title-lg font-bold text-primary mb-6">Brand coverage questions</h2>
-        <div class="divide-y divide-outline-variant/30">
-          {faqs.map(faq => (
-            <article class="py-5 first:pt-0 last:pb-0">
-              <h3 class="text-title-md font-bold text-on-surface mb-2">{faq.question}</h3>
-              <p class="text-body-md text-on-surface-variant leading-relaxed">{faq.answer}</p>
-            </article>
+  <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 relative z-10 w-full">
+    <article class="flex flex-col gap-8" data-body data-page-type="brands-hub">
+      <header class="flex flex-col gap-4 max-w-3xl">
+        <h1 class="text-headline-lg font-headline-lg text-primary font-bold">{h1}</h1>
+        <Byline dateModified={DATE_MODIFIED} />
+        <p class="text-body-lg text-on-surface leading-relaxed">{lead}</p>
+      </header>
+      <section class="flex flex-col gap-4" data-section="Brands" data-score-table>
+        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {brands.map(b => (
+            <li class="glass-panel rounded-lg border border-outline-variant/40 p-5 flex flex-col gap-2">
+              <a href={`/brands/${b.slug}/`} class="block h-32 bg-white rounded-lg overflow-hidden"><img src={b.top[0].image} alt={`${b.top[0].name} mattress`} class="w-full h-full object-contain p-2" loading="lazy" /></a>
+              <h2 class="text-title-lg font-bold"><a href={`/brands/${b.slug}/`} class="text-primary underline underline-offset-4">{b.brand}</a></h2>
+              <p class="text-body-md text-on-surface-variant">{b.models.length} model{b.models.length === 1 ? '' : 's'} scored</p>
+              <p class="text-body-md text-on-surface-variant">
+                Highest Overall for the brand: {scoreText(b.top[0], 'overall')}/10,{' '}
+                {b.top.length > 1 ? 'a tie between the ' : 'the '}
+                {b.top.map((m, i) => (
+                  <>{i > 0 && (i === b.top.length - 1 ? ' and ' : ', ')}<a href={reviewUrl(m.id)} class="text-primary underline underline-offset-4">{m.name}</a></>
+                ))}.
+              </p>
+            </li>
           ))}
-        </div>
-      </div>
-    </section>
+        </ul>
+        <p class="text-body-sm text-on-surface-variant" data-score-line>Scores are Mattress Inquirer's editorial ratings on a 0 to 10 scale.</p>
+      </section>
+    </article>
   </main>
 </BaseLayout>

@@ -1,0 +1,14 @@
+---
+// Paragraphs of editorial copy. Inline [label](/path/) links are validated against the owner page map.
+import { renderInline } from '../lib/ownerSite';
+
+export interface Props {
+  paragraphs: string[];
+  context: string;
+  class?: string;
+}
+
+const { paragraphs, context, class: className = 'text-body-md text-on-surface-variant leading-relaxed' } = Astro.props;
+---
+
+{paragraphs.map(text => <p class={className} set:html={renderInline(text, context)} />)}

@@ -3,13 +3,15 @@ import { TRUST_BADGE_LABEL } from '../lib/disclosure';
 import { motion } from 'motion/react';
 import { allMattresses } from '../data/mattresses';
 
-const leaderConfig = [
-  { id: 'amerisleep-as3', label: 'Overall score leader' },
-  { id: 'plushbeds-signature-bliss', label: 'Organic category leader' },
-  { id: 'nest-bedding-sparrow', label: 'Trial-period leader' },
-];
+interface HeroProps {
+  /** Owner homepage H1: answers "what is the best mattress" with the AS3 and its score. */
+  h1: string;
+  /** Category leaders from the ranking engine (label is the award on that page). */
+  leaderConfig: { id: string; label: string }[];
+  updated: string;
+}
 
-export default function Hero() {
+export default function Hero({ h1, leaderConfig, updated }: HeroProps) {
   const leaders = leaderConfig.map(config => {
     const mattress = allMattresses.find(item => item.id === config.id);
     if (!mattress) throw new Error(`Missing homepage leader: ${config.id}`);
@@ -29,7 +31,7 @@ export default function Hero() {
             59 models · 24 brands · one published rubric
           </p>
           <h1 className="text-[44px] leading-[1.14] md:text-display-lg md:font-display-lg font-bold text-primary max-w-3xl">
-            Compare mattresses with every score in view.
+            {h1}
           </h1>
           <p className="text-body-lg font-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
             Mattress Inquirer organizes 59 mattress models with one seven-metric editorial scorecard, complete comparison tables, and clearly labeled evidence limits.
@@ -50,8 +52,8 @@ export default function Hero() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-outline-variant text-body-sm text-on-surface-variant">
             <span className="flex items-center gap-2"><Scale className="w-4 h-4 text-secondary shrink-0" aria-hidden="true" /> {TRUST_BADGE_LABEL}</span>
-            <span>Scores are editorial, not lab results</span>
-            <span>Updated July 2026</span>
+            <span>Scores are editorial ratings</span>
+            <span>Updated {updated}</span>
           </div>
         </motion.div>
 
@@ -66,7 +68,7 @@ export default function Hero() {
               <p className="text-label-sm font-label-sm uppercase text-secondary font-bold">Selected category leaders</p>
               <h2 className="text-headline-md font-headline-md text-primary mt-2">Start with three different strengths</h2>
             </div>
-            <span className="text-label-sm text-on-surface-variant whitespace-nowrap">July 2026</span>
+            <span className="text-label-sm text-on-surface-variant whitespace-nowrap">{updated}</span>
           </div>
           <div className="divide-y divide-outline-variant">
             {leaders.map(({ label, mattress }) => (
@@ -83,14 +85,14 @@ export default function Hero() {
                   <h3 className="text-body-md text-primary font-bold mt-1 break-words group-hover:text-secondary transition-colors">{mattress.name}</h3>
                 </div>
                 <div className="text-right">
-                  <span className="text-headline-md font-bold text-primary">{mattress.scores.overall}</span>
+                  <span className="text-headline-md font-bold text-primary">{mattress.scores.overall.toFixed(1)}</span>
                   <span className="block text-[11px] text-on-surface-variant">Overall</span>
                 </div>
               </a>
             ))}
           </div>
-          <a href="/best/overall/" className="flex items-center justify-between gap-4 p-5 border-t border-outline-variant text-primary font-bold hover:text-secondary transition-colors">
-            View the full 59-model score field <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
+          <a href="/reviews/" className="flex items-center justify-between gap-4 p-5 border-t border-outline-variant text-primary font-bold hover:text-secondary transition-colors">
+            View the full 59-model scorecard <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
           </a>
         </motion.div>
       </div>

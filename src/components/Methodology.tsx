@@ -16,7 +16,7 @@ export default function Methodology() {
             <h3 className="text-label-sm font-label-sm uppercase tracking-normal text-secondary mb-3">Our Methodology</h3>
             <h2 className="text-display-lg font-display-lg text-primary  mb-6">How We Score Mattresses</h2>
             <p className="text-body-lg text-on-surface-variant mb-8 leading-relaxed">
-              Every review uses the same locked editorial scorecard: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability. Scores are comparative editorial ratings, not laboratory findings or collected customer ratings.
+              Every review uses the same editorial scorecard: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability. Scores are comparative editorial ratings, not laboratory findings or collected customer ratings.
             </p>
             <a href="/methodology/" className="inline-flex items-center text-label-sm font-label-sm uppercase tracking-normal text-primary border border-primary/20 rounded-full px-8 py-4 hover:bg-white transition-all group shadow-sm hover:shadow-md glass-panel font-bold">
               Read Our Full Methodology <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -25,10 +25,10 @@ export default function Methodology() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
             {[
-              { stat: "7", title: "Scoring Criteria", desc: "Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability — each scored 0–10." },
+              { stat: "7", title: "Scoring Criteria", desc: "Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability, each scored 0 to 10." },
               { stat: "59", title: "Models Reviewed", desc: "Mattresses from 24 brands, with every model using the same published fields." },
-              { stat: "24", title: "Brands Covered", desc: "Each brand is evaluated using the same seven scoring criteria and 0–10 scale." },
-              { stat: "1", title: "Published Rubric", desc: "Every covered mattress uses the same seven score fields, 0–10 scale, and evidence limits." }
+              { stat: "24", title: "Brands Covered", desc: "Each brand is evaluated using the same seven scoring criteria and 0 to 10 scale." },
+              { stat: "1", title: "Published Rubric", desc: "Every covered mattress uses the same seven score fields, 0 to 10 scale, and evidence limits." }
             ].map((item, i) => (
               <motion.div 
                 key={i}

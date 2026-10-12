@@ -1,409 +1,220 @@
 ---
-import { comparisons } from '../../data/comparisons';
-import { allMattresses, warrantyPhrase, warrantyValue } from '../../data/mattresses';
-import { articleTable, toArticleBody } from '../../lib/schemaArticleBody';
-import { EDITORIAL_INDEPENDENCE_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
+// Comparison template (owner content instructions): verdict first, fixed section order, two CTAs.
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Byline from '../../components/Byline.astro';
+import PriceCta from '../../components/PriceCta.astro';
+import Prose from '../../components/Prose.astro';
 import ComparisonScoreChart from '../../components/ComparisonScoreChart.astro';
-import TrustSignals from '../../components/TrustSignals.astro';
+import { comparisons } from '../../data/comparisons';
+import { COMPARISON_COPY } from '../../content/comparisons';
+import { BYLINE_DISCLOSURE } from '../../lib/disclosure';
+import { toArticleBody, articleTable } from '../../lib/schemaArticleBody';
+import { FIELD_LABEL } from '../../lib/ranking';
+import { comparisonSeoTitle, getMattress, getSpec, leadsSentence, SCORECARD_FIELDS, scoreText, winnerLine } from '../../lib/pageData';
+import {
+  h1For, renderInline, plainInline, assertAllowedLink, reviewUrl,
+  firmnessText, heightText, typeText, trialText, warrantyText, queenPriceText,
+} from '../../lib/ownerSite';
 
 export function getStaticPaths() {
-  return comparisons.map(c => ({
-    params: { slug: c.slug },
-    props: { comparison: c }
-  }));
+  // MI_CMP limits a local QA build to listed slugs while copy is in progress; release builds never set it.
+  const only = process.env.MI_CMP?.split(',');
+  return comparisons
+    .filter(c => !only || only.includes(c.slug))
+    .map(c => ({ params: { slug: c.slug }, props: { comparison: c } }));
 }
 
 const { comparison } = Astro.props;
+const copy = COMPARISON_COPY[comparison.slug];
+if (!copy) throw new Error(`Missing comparison copy for ${comparison.slug}`);
+if (copy.faqs.length < 4 || copy.faqs.length > 6) throw new Error(`${comparison.slug}: needs 4 to 6 FAQs.`);
 
-const mattressA = allMattresses.find(m => m.id === comparison.mattressAId);
-const mattressB = allMattresses.find(m => m.id === comparison.mattressBId);
-
-if (!mattressA || !mattressB) {
-  throw new Error(`Mattresses not found for comparison ${comparison.slug}`);
-}
-
+const a = getMattress(comparison.mattressAId);
+const b = getMattress(comparison.mattressBId);
+const specA = getSpec(a.id);
+const specB = getSpec(b.id);
 const SITE_URL = import.meta.env.SITE_URL || 'https://mattressinquirer.ahmedbarkat1067.workers.dev';
-const canonicalUrl = `${SITE_URL}/comparison/${comparison.slug}/`;
-const reviewUrlA = `${SITE_URL}/reviews/${mattressA.id}/`;
-const reviewUrlB = `${SITE_URL}/reviews/${mattressB.id}/`;
-const productIdA = `${reviewUrlA}#product`;
-const productIdB = `${reviewUrlB}#product`;
-const absoluteImageA = mattressA.heroImage.startsWith('http') ? mattressA.heroImage : `${SITE_URL}${mattressA.heroImage}`;
-const absoluteImageB = mattressB.heroImage.startsWith('http') ? mattressB.heroImage : `${SITE_URL}${mattressB.heroImage}`;
+const pageUrl = `/comparison/${comparison.slug}/`;
+const canonicalUrl = `${SITE_URL}${pageUrl}`;
+const h1 = h1For(pageUrl);
+const ctx = `comparison ${comparison.slug}`;
+copy.related.forEach(link => assertAllowedLink(link.href, `${ctx} related`));
 
-const constructionHeading = '1. Construction & Build Quality';
-const constructionText = `When selecting a new mattress, understanding the recorded materials and structural differences between the ${mattressA.name} and ${mattressB.name} helps clarify how each may feel and respond to movement. The ${mattressA.name} uses a ${mattressA.type} design and has a recorded ${mattressA.firmness} feel (${mattressA.firmnessScale}/10). The ${mattressB.name} uses a ${mattressB.type} construction with a recorded ${mattressB.firmness} feel (${mattressB.firmnessScale}/10). Construction can influence contouring, airflow, edge stability, and ease of movement, but individual comfort will vary.`;
-const firmnessHeading = `2. Firmness, Feel & Overall Score (${mattressA.scores.overall}/10 vs ${mattressB.scores.overall}/10)`;
-const overallComparison = mattressA.scores.overall === mattressB.scores.overall
-  ? `The models tie on the published Overall field at ${mattressA.scores.overall}/10.`
-  : `${mattressA.scores.overall > mattressB.scores.overall ? mattressA.name : mattressB.name} leads on the published Overall field.`;
-const firmnessText = `The published Mattress Inquirer score dataset gives the ${mattressA.name} an Overall score of ${mattressA.scores.overall}/10, with Edge Support at ${mattressA.scores.edgeSupport}/10 and Response Time at ${mattressA.scores.responseTime}/10. The ${mattressB.name} records ${mattressB.scores.overall}/10 Overall, with Edge Support at ${mattressB.scores.edgeSupport}/10 and Response Time at ${mattressB.scores.responseTime}/10. ${overallComparison} These are editorial scores, not laboratory measurements, customer ratings, or manufacturer scores.`;
-const motionHeading = '3. Motion Transfer & Cooling';
-const motionText = `The ${mattressA.name} records ${mattressA.scores.motionTransfer}/10 for Motion Transfer and ${mattressA.scores.coolingBreathability}/10 for Cooling & Breathability. The ${mattressB.name} records ${mattressB.scores.motionTransfer}/10 and ${mattressB.scores.coolingBreathability}/10 for the same fields. These scores are comparative editorial ratings, not sensor measurements or temperature tests.`;
-const valueHeading = '4. Value & Trial Period';
-const valueText = `The published scorecard records ${mattressA.name} at ${mattressA.scores.value}/10 for Value and ${mattressA.scores.trialPeriod}/10 for Trial Period, with a ${mattressA.trialNights}-night trial in the source dataset. ${mattressB.name} records ${mattressB.scores.value}/10 for Value and ${mattressB.scores.trialPeriod}/10 for Trial Period, with a ${mattressB.trialNights}-night trial. Verify current eligibility, exclusions, fees, and return terms with each manufacturer.`;
-const policyHeading = '5. Policies & Recorded Pricing';
-const policyText = `The source dataset lists a ${mattressA.trialNights}-night trial and ${warrantyPhrase(mattressA.warrantyYears)} for the ${mattressA.name}, and a ${mattressB.trialNights}-night trial with a ${warrantyPhrase(mattressB.warrantyYears)} for the ${mattressB.name}. These terms and the price fields above can change. Verify the current price, shipping, return, trial, and warranty terms on each brand's official site before purchasing. ${comparison.verdict}`;
+// Quick Verdict lead: the winner by Overall, then the owner's fixed leads sentence.
+const verdictLead = `${winnerLine(a, b, m => `[${m.name}](${reviewUrl(m.id)})`)} ${leadsSentence(a, b)}`;
 
-const comparisonArticleBody = toArticleBody(
-  `${mattressA.name} vs ${mattressB.name} (2026): Which Is Better?`,
-  'Quick Verdict',
-  comparison.verdict,
-  `${EDITORIAL_INDEPENDENCE_DISCLOSURE} ${LINK_DISCLOSURE}`,
-  'Price note: Price fields are reference values captured in the source dataset, not live offers. Verify current pricing and policies on each brand site.',
-  articleTable('Specs at a Glance', ['Feature', mattressA.name, mattressB.name], [
-    ['Recorded Price Range', mattressA.priceRange, mattressB.priceRange],
-    ['Thickness', mattressA.thickness, mattressB.thickness],
-    ['Recorded Sale Price', mattressA.priceSale, mattressB.priceSale],
-    ['Type', mattressA.type, mattressB.type],
-    ['Firmness', mattressA.firmness, mattressB.firmness],
-    ['Trial', `${mattressA.trialNights} Nights`, `${mattressB.trialNights} Nights`],
-    ['Warranty', warrantyValue(mattressA.warrantyYears), warrantyValue(mattressB.warrantyYears)],
-    ['Certifications', mattressA.certifications.join(', '), mattressB.certifications.join(', ')],
-  ]),
-  articleTable('Performance Scores', ['Metric', mattressA.name, mattressB.name], [
-    ['Overall', `${mattressA.scores.overall}/10`, `${mattressB.scores.overall}/10`],
-    ['Value', `${mattressA.scores.value}/10`, `${mattressB.scores.value}/10`],
-    ['Edge Support', `${mattressA.scores.edgeSupport}/10`, `${mattressB.scores.edgeSupport}/10`],
-    ['Trial Period', `${mattressA.scores.trialPeriod}/10`, `${mattressB.scores.trialPeriod}/10`],
-    ['Response Time', `${mattressA.scores.responseTime}/10`, `${mattressB.scores.responseTime}/10`],
-    ['Motion Transfer', `${mattressA.scores.motionTransfer}/10`, `${mattressB.scores.motionTransfer}/10`],
-    ['Cooling & Breathability', `${mattressA.scores.coolingBreathability}/10`, `${mattressB.scores.coolingBreathability}/10`],
-  ]),
-  'The Winner By Category',
-  comparison.winnerFor.map((winner: any) => {
-    const winningMattress = winner.winnerId === mattressA.id ? mattressA : mattressB;
-    return `Best for ${winner.category}: ${winningMattress.name}. ${winner.reason}`;
-  }),
-  'Detailed Head-to-Head Comparison',
-  constructionHeading,
-  constructionText,
-  firmnessHeading,
-  firmnessText,
-  motionHeading,
-  motionText,
-  valueHeading,
-  valueText,
-  policyHeading,
-  policyText,
-  'Our Verdict',
-  comparison.verdict,
-  comparison.faqs?.length
-    ? ['Frequently Asked Questions', comparison.faqs.map((faq: any) => [`Question: ${faq.question}`, `Answer: ${faq.answer}`])]
-    : null
-);
-
-const jsonLd: any[] = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "@id": `${canonicalUrl}#article`,
-    "headline": `${mattressA.name} vs ${mattressB.name} (2026): Which Is Better?`,
-    "description": comparison.description,
-    "articleBody": comparisonArticleBody,
-    "image": [absoluteImageA, absoluteImageB],
-    "author": {
-      "@type": "Organization",
-      "@id": `${SITE_URL}/about/#editorial-team`,
-      "name": "Mattress Inquirer Editorial Team",
-      "url": `${SITE_URL}/about/#editorial-team`
-    },
-    "dateModified": comparison.dateModified,
-    "datePublished": comparison.dateModified,
-    "publisher": {
-      "@type": "Organization",
-      "@id": `${SITE_URL}/#organization`,
-      "name": "Mattress Inquirer",
-      "url": SITE_URL
-    },
-    "mainEntityOfPage": canonicalUrl,
-    "mainEntity": {
-      "@type": "ItemList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "item": { "@id": productIdA } },
-        { "@type": "ListItem", "position": 2, "item": { "@id": productIdB } }
-      ]
-    },
-    "isPartOf": { "@type": "CollectionPage", "name": "Mattress Inquirer Comparisons", "url": `${SITE_URL}/comparison/` },
-    "about": [
-      { "@id": productIdA },
-      { "@id": productIdB },
-      { "@type": "Article", "name": "Mattress Inquirer Scoring Methodology", "url": `${SITE_URL}/methodology/` }
-    ],
-    "citation": [mattressA.productUrl, mattressB.productUrl, `${SITE_URL}/methodology/`]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "@id": productIdA,
-    "url": reviewUrlA,
-    "name": mattressA.name,
-    "brand": { "@type": "Brand", "name": mattressA.brand },
-    "description": mattressA.summary,
-    "image": absoluteImageA,
-    "sameAs": mattressA.productUrl,
-    "review": {
-      "@type": "Review",
-      "@id": `${reviewUrlA}#review`,
-      "name": `${mattressA.name} Editorial Review`,
-      "url": reviewUrlA,
-      "reviewBody": mattressA.verdict,
-      "reviewRating": { "@type": "Rating", "ratingValue": mattressA.scores.overall, "bestRating": "10" },
-      "author": { "@type": "Organization", "name": "Mattress Inquirer Editorial Team", "url": `${SITE_URL}/about/#editorial-team` },
-      "publisher": { "@type": "Organization", "name": "Mattress Inquirer", "url": SITE_URL },
-      "datePublished": mattressA.dateReviewed,
-      "dateModified": mattressA.dateModified
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "@id": productIdB,
-    "url": reviewUrlB,
-    "name": mattressB.name,
-    "brand": { "@type": "Brand", "name": mattressB.brand },
-    "description": mattressB.summary,
-    "image": absoluteImageB,
-    "sameAs": mattressB.productUrl,
-    "review": {
-      "@type": "Review",
-      "@id": `${reviewUrlB}#review`,
-      "name": `${mattressB.name} Editorial Review`,
-      "url": reviewUrlB,
-      "reviewBody": mattressB.verdict,
-      "reviewRating": { "@type": "Rating", "ratingValue": mattressB.scores.overall, "bestRating": "10" },
-      "author": { "@type": "Organization", "name": "Mattress Inquirer Editorial Team", "url": `${SITE_URL}/about/#editorial-team` },
-      "publisher": { "@type": "Organization", "name": "Mattress Inquirer", "url": SITE_URL },
-      "datePublished": mattressB.dateReviewed,
-      "dateModified": mattressB.dateModified
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
-      { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": `${SITE_URL}/comparison/` },
-      { "@type": "ListItem", "position": 3, "name": `${mattressA.name} vs ${mattressB.name}`, "item": canonicalUrl }
-    ]
-  }
+const priceMonth = specA.priceChecked || specB.priceChecked;
+const sideRows: [string, string, string][] = [
+  ...SCORECARD_FIELDS.map(k => [FIELD_LABEL[k], `${scoreText(a, k)}/10`, `${scoreText(b, k)}/10`] as [string, string, string]),
+  ['Type', typeText(specA), typeText(specB)],
+  ['Firmness', firmnessText(specA), firmnessText(specB)],
+  ['Height', heightText(specA), heightText(specB)],
+  [`Queen price (checked ${priceMonth})`, queenPriceText(specA), queenPriceText(specB)],
+  ['Trial', trialText(specA), trialText(specB)],
+  ['Warranty', warrantyText(specA), warrantyText(specB)],
 ];
 
-if (comparison.faqs && comparison.faqs.length > 0) {
-  jsonLd.push({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": comparison.faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  });
-}
+const sections: [string, string[]][] = [
+  ['Feel and Firmness', copy.feel],
+  ['Construction', copy.construction],
+  ['Edge Support', copy.edgeSupport],
+  ['Motion Transfer', copy.motionTransfer],
+  ['Cooling', copy.cooling],
+  ['Response', copy.response],
+  ['Value and Policies', copy.valuePolicies],
+];
+const buyHeading = `Who Should Buy the ${a.name} / Who Should Buy the ${b.name}`;
+const plain = (items: string[]) => items.map(plainInline);
+
+const articleBody = toArticleBody(
+  h1,
+  BYLINE_DISCLOSURE,
+  'Quick Verdict', plainInline(verdictLead), plainInline(copy.quickVerdict),
+  articleTable('Side by Side', ['Field', a.name, b.name], sideRows),
+  "Scores are Mattress Inquirer's editorial ratings on a 0 to 10 scale.",
+  ...sections.flatMap(([heading, paras]) => [heading, plain(paras)]),
+  buyHeading,
+  `Who Should Buy the ${a.name}: ${plain(copy.buyA).join(' ')}`,
+  `Who Should Buy the ${b.name}: ${plain(copy.buyB).join(' ')}`,
+  'FAQs', copy.faqs.map(f => [f.q, plainInline(f.a)]),
+);
+
+const product = (m: typeof a) => ({
+  "@type": "Product",
+  "@id": `${SITE_URL}${reviewUrl(m.id)}#product`,
+  "name": m.name,
+  "brand": { "@type": "Brand", "name": m.brand },
+  "url": `${SITE_URL}${reviewUrl(m.id)}`,
+});
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "headline": h1,
+      "description": copy.metaDescription,
+      "articleBody": articleBody,
+      "author": { "@type": "Organization", "@id": `${SITE_URL}/about/#editorial-team`, "name": "Mattress Inquirer Editorial Team", "url": `${SITE_URL}/about/#editorial-team` },
+      "publisher": { "@type": "Organization", "@id": `${SITE_URL}/#organization`, "name": "Mattress Inquirer", "url": SITE_URL },
+      "datePublished": copy.dateModified,
+      "dateModified": copy.dateModified,
+      "mainEntityOfPage": canonicalUrl,
+      "about": [{ "@id": `${SITE_URL}${reviewUrl(a.id)}#product` }, { "@id": `${SITE_URL}${reviewUrl(b.id)}#product` }]
+    },
+    product(a),
+    product(b),
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+        { "@type": "ListItem", "position": 2, "name": "Mattress Comparisons (2026)", "item": `${SITE_URL}/comparison/` },
+        { "@type": "ListItem", "position": 3, "name": h1, "item": canonicalUrl }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": copy.faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": plainInline(f.a) } }))
+    }
+  ]
+};
+
+const h2 = 'text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4';
+const h3 = 'text-title-lg font-bold text-on-surface';
+const tableWrap = 'w-full overflow-x-auto border border-outline-variant/40 rounded-lg';
+const th = 'text-left px-4 py-3 font-bold text-on-surface bg-surface-container-low';
+const td = 'px-4 py-3 text-on-surface-variant border-t border-outline-variant/30 align-top';
 ---
 
 <BaseLayout
-  title={`${mattressA.name} vs ${mattressB.name} (2026): Which Is Better? | Mattress Inquirer`}
-  description={comparison.description}
+  title={comparisonSeoTitle(a, b)}
+  description={copy.metaDescription}
+  ogType="article"
   canonicalUrl={canonicalUrl}
   machineReadableUrl={`${SITE_URL}/llms/comparison-${comparison.slug}.md`}
-  lastUpdated={comparison.dateModified}
+  lastUpdated={copy.dateModified}
   jsonLd={jsonLd}
 >
   <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 relative z-10 w-full flex flex-col gap-16">
-    
-    <header class="flex flex-col gap-6 items-center text-center max-w-4xl mx-auto">
-      <h1 class="text-headline-lg font-headline-lg  text-primary font-bold">
-        {mattressA.name} vs {mattressB.name} (2026): Which Is Better?
-      </h1>
-      <TrustSignals dateModified={comparison.dateModified} />
-    </header>
+    <article class="flex flex-col gap-10" data-body data-page-type="comparison">
+      <header class="flex flex-col gap-6 items-center text-center max-w-4xl mx-auto w-full">
+        <h1 class="text-headline-lg font-headline-lg text-primary font-bold">{h1}</h1>
+        <Byline dateModified={copy.dateModified} />
+        <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-4 glass-panel rounded-lg border border-outline-variant/40 p-4">
+          <a href={reviewUrl(a.id)} class="flex flex-col items-center gap-2 text-center group">
+            <img src={a.heroImage || a.image} alt={`${a.name} mattress`} class="w-full h-36 md:h-44 object-contain bg-white rounded-lg p-2" loading="eager" />
+            <span class="font-bold text-primary group-hover:text-secondary">{a.name}</span>
+          </a>
+          <span class="text-label-lg font-bold text-on-surface-variant italic">VS</span>
+          <a href={reviewUrl(b.id)} class="flex flex-col items-center gap-2 text-center group">
+            <img src={b.heroImage || b.image} alt={`${b.name} mattress`} class="w-full h-36 md:h-44 object-contain bg-white rounded-lg p-2" loading="eager" />
+            <span class="font-bold text-primary group-hover:text-secondary">{b.name}</span>
+          </a>
+        </div>
+      </header>
 
-    <div class="flex flex-col lg:flex-row gap-12 items-start">
-      <article class="flex-1 flex flex-col gap-12 w-full">
-        
-        <!-- Quick Verdict -->
-        <section class="glass-panel-heavy p-8 rounded-lg border border-secondary/20 shadow-lg">
-          <h2 class="text-title-lg font-title-lg text-primary mb-4 italic">Quick Verdict</h2>
-          <p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
-            {comparison.verdict}
-          </p>
+      <section class="flex flex-col gap-3" data-section="Quick Verdict">
+        <h2 class={h2}>Quick Verdict</h2>
+        <p class="text-body-lg text-on-surface leading-relaxed" data-verdict-lead set:html={renderInline(verdictLead, ctx)} />
+        <Prose paragraphs={[copy.quickVerdict]} context={ctx} />
+      </section>
+
+      <section class="flex flex-col gap-3" data-section="Side by Side" data-score-table>
+        <h2 class={h2}>Side by Side</h2>
+        <ComparisonScoreChart mattressA={a} mattressB={b} />
+        <div class={tableWrap}>
+          <table class="w-full text-body-md">
+            <caption class="sr-only">Scores and specs side by side</caption>
+            <thead><tr><th scope="col" class={th}>Field</th><th scope="col" class={th}><a href={reviewUrl(a.id)} class="text-primary underline underline-offset-4">{a.name}</a></th><th scope="col" class={th}><a href={reviewUrl(b.id)} class="text-primary underline underline-offset-4">{b.name}</a></th></tr></thead>
+            <tbody>
+              {sideRows.map(([label, va, vb]) => <tr><th scope="row" class={`${th} font-normal`}>{label}</th><td class={td}>{va}</td><td class={td}>{vb}</td></tr>)}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-body-sm text-on-surface-variant" data-score-line>Scores are Mattress Inquirer's editorial ratings on a 0 to 10 scale.</p>
+      </section>
+
+      {sections.map(([heading, paras]) => (
+        <section class="flex flex-col gap-3" data-section={heading}>
+          <h2 class={h2}>{heading}</h2>
+          <Prose paragraphs={paras} context={ctx} />
         </section>
+      ))}
 
-        <ComparisonScoreChart mattressA={mattressA} mattressB={mattressB} />
+      <section class="flex flex-col gap-4" data-section="Who Should Buy">
+        <h2 class={h2}>{buyHeading}</h2>
+        <h3 class={h3}>Who Should Buy the {a.name}</h3>
+        <ul class="list-disc pl-6 flex flex-col gap-2 text-body-md text-on-surface-variant">
+          {copy.buyA.map(item => <li set:html={renderInline(item, ctx)} />)}
+        </ul>
+        <h3 class={h3}>Who Should Buy the {b.name}</h3>
+        <ul class="list-disc pl-6 flex flex-col gap-2 text-body-md text-on-surface-variant">
+          {copy.buyB.map(item => <li set:html={renderInline(item, ctx)} />)}
+        </ul>
+      </section>
 
-        <!-- Product Images Side by Side -->
-         <section class="grid grid-cols-2 gap-8 items-center">
-            <div class="flex flex-col gap-4 text-center">
-                <div class="w-full h-[250px] rounded-lg overflow-hidden border border-white/60 shadow-lg">
-                    <img src={mattressA.image} alt={mattressA.name} class="w-full h-full object-contain bg-white p-3" />
-                </div>
-                <h3 class="font-title-lg text-primary font-bold">{mattressA.name}</h3>
-                <a href={mattressA.productUrl} target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-lg bg-primary text-on-primary font-bold font-label-md uppercase shadow-md hover:bg-primary/90 transition-colors">Official Product Page</a>
-            </div>
-            <div class="flex flex-col gap-4 text-center">
-                 <div class="w-full h-[250px] rounded-lg overflow-hidden border border-white/60 shadow-lg">
-                    <img src={mattressB.image} alt={mattressB.name} class="w-full h-full object-contain bg-white p-3" />
-                </div>
-                <h3 class="font-title-lg text-primary font-bold">{mattressB.name}</h3>
-                <a href={mattressB.productUrl} target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-lg bg-primary text-on-primary font-bold font-label-md uppercase shadow-md hover:bg-primary/90 transition-colors">Official Product Page</a>
-            </div>
-         </section>
-         <p class="text-xs text-on-surface-variant text-center">{LINK_DISCLOSURE}</p>
-
-        <!-- Stats Comparison Table -->
-        <section class="overflow-x-auto glass-panel rounded-lg border border-white/60">
-            <table class="w-full min-w-[680px] text-left border-collapse">
-                <thead>
-                    <tr class="bg-surface/50 border-b border-outline-variant/30 text-title-md text-primary font-bold">
-                        <th class="p-6">Feature</th>
-                        <th class="p-6 border-l border-outline-variant/30">{mattressA.name}</th>
-                        <th class="p-6 border-l border-outline-variant/30">{mattressB.name}</th>
-                    </tr>
-                </thead>
-                <tbody class="text-body-md text-on-surface-variant">
-                    <tr class="bg-primary/5 border-y-2 border-primary/20"><td colspan="3" class="p-6 text-center text-label-lg font-bold text-primary uppercase tracking-normal">Specs at a Glance</td></tr>
-
-                    <tr><td colspan="3" class="px-6 pt-5 pb-3 text-xs text-on-surface-variant">Prices are recorded dataset values, not live offers. Verify current prices and policies on each brand site.</td></tr>
-
-                    {/* Basic Stats */}
-                    {[
-                        { label: 'Recorded Price Range', a: mattressA.priceRange, b: mattressB.priceRange },
-                       { label: 'Thickness', a: mattressA.thickness, b: mattressB.thickness },
-                       { label: 'Recorded Sale Price', a: mattressA.priceSale, b: mattressB.priceSale },
-                        { label: 'Type', a: mattressA.type, b: mattressB.type },
-                        { label: 'Firmness', a: mattressA.firmness, b: mattressB.firmness },
-                        { label: 'Trial', a: `${mattressA.trialNights} Nights`, b: `${mattressB.trialNights} Nights` },
-                        { label: 'Warranty', a: warrantyValue(mattressA.warrantyYears), b: warrantyValue(mattressB.warrantyYears) },
-                        { label: 'Certifications', a: mattressA.certifications.join(', '), b: mattressB.certifications.join(', ') },
-                    ].map((row, i) => (
-                        <tr class={`border-b border-outline-variant/20 ${i % 2 === 0 ? 'bg-transparent' : 'bg-white/30'}`}>
-                            <td class="p-6 font-bold text-on-surface">{row.label}</td>
-                            <td class="p-6 border-l border-outline-variant/30">{row.a}</td>
-                            <td class="p-6 border-l border-outline-variant/30">{row.b}</td>
-                        </tr>
-                    ))}
-
-                    {(mattressA.certifications.length > 0 || mattressB.certifications.length > 0) && (
-                        <tr class="border-b border-outline-variant/20 bg-transparent">
-                            <td colspan="3" class="p-6 text-xs text-on-surface-variant italic">
-                                Certifications are self-reported by the manufacturer. Verify current certification status on the brand's official site or the certifying body's database before purchasing.
-                            </td>
-                        </tr>
-                    )}
-
-                    <tr class="bg-primary/5 border-y-2 border-primary/20"><td colspan="3" class="p-6 text-center text-label-lg font-bold text-primary uppercase tracking-normal">Performance Scores</td></tr>
-
-                    {/* Scores */}
-                    {[
-                        { label: 'Overall', key: 'overall' },
-                        { label: 'Value', key: 'value' },
-                        { label: 'Edge Support', key: 'edgeSupport' },
-                        { label: 'Trial Period', key: 'trialPeriod' },
-                        { label: 'Response Time', key: 'responseTime' },
-                        { label: 'Motion Transfer', key: 'motionTransfer' },
-                        { label: 'Cooling & Breathability', key: 'coolingBreathability' },
-                    ].map((row, i) => {
-                        const scoreA = mattressA.scores[row.key as keyof typeof mattressA.scores];
-                        const scoreB = mattressB.scores[row.key as keyof typeof mattressB.scores];
-                        const winnerA = scoreA > scoreB;
-                        const winnerB = scoreB > scoreA;
-                        
-                        return (
-                            <tr class={`border-b border-outline-variant/20 ${i % 2 === 0 ? 'bg-transparent' : 'bg-white/30'}`}>
-                                <td class="p-6 font-bold text-on-surface">{row.label}</td>
-                                <td class={`p-6 border-l border-outline-variant/30 ${winnerA ? 'text-secondary font-bold text-title-md' : ''}`}>{scoreA}/10</td>
-                                <td class={`p-6 border-l border-outline-variant/30 ${winnerB ? 'text-secondary font-bold text-title-md' : ''}`}>{scoreB}/10</td>
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
-        </section>
-
-        <!-- Who Wins For... -->
-        <section class="flex flex-col gap-6">
-            <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">The Winner By Category</h2>
-            <div class="grid grid-cols-1 gap-6">
-                {comparison.winnerFor.map(winner => {
-                    const winningMattress = winner.winnerId === mattressA.id ? mattressA : mattressB;
-                    return (
-                        <div class="glass-panel p-6 rounded-lg flex flex-col md:flex-row gap-6 items-start border border-white/50 border-l-4 border-l-secondary">
-                            <div class="flex flex-col gap-2 flex-1">
-                                <span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-normal border-b border-outline-variant/30 pb-2 mb-2">Best For {winner.category}</span>
-                                <h3 class="text-title-lg font-title-lg text-primary">{winningMattress.name}</h3>
-                                <p class="text-on-surface-variant leading-relaxed mt-1">{winner.reason}</p>
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
-        </section>
-
-        <!-- Detailed Body -->
-        <section class="flex flex-col gap-6 text-on-surface-variant leading-relaxed text-body-lg">
-             <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Detailed Head-to-Head Comparison</h2>
-             
-             <h3 class="text-title-lg font-title-lg text-primary mt-4">{constructionHeading}</h3>
-             <p>{constructionText}</p>
-             
-             <h3 class="text-title-lg font-title-lg text-primary mt-4">{firmnessHeading}</h3>
-             <p>{firmnessText}</p>
-
-             <h3 class="text-title-lg font-title-lg text-primary mt-4">{motionHeading}</h3>
-             <p>{motionText}</p>
-
-             <h3 class="text-title-lg font-title-lg text-primary mt-4">{valueHeading}</h3>
-             <p>{valueText}</p>
-             
-             <h3 class="text-title-lg font-title-lg text-primary mt-4">{policyHeading}</h3>
-             <p>{policyText}</p>
-        </section>
-
-        <!-- Our Verdict -->
-        <section class="glass-panel-heavy p-8 rounded-lg border border-secondary/20">
-          <h2 class="text-headline-md font-headline-md text-primary italic mb-4">Our Verdict</h2>
-          <p class="text-body-lg text-on-surface-variant leading-relaxed mb-6">{comparison.verdict}</p>
-          <div class="flex gap-3 flex-wrap">
-            <a href={mattressA.productUrl} target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center bg-primary text-white px-6 py-3 rounded-full font-bold text-label-sm uppercase tracking-normal hover:bg-primary/90 transition-colors shadow-lg">
-              Check {mattressA.name} Price →
-            </a>
-            <a href={mattressB.productUrl} target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center bg-primary text-white px-6 py-3 rounded-full font-bold text-label-sm uppercase tracking-normal hover:bg-primary/90 transition-colors shadow-lg">
-              Check {mattressB.name} Price →
-            </a>
+      <section class="flex flex-col gap-4" data-section="FAQs">
+        <h2 class={h2}>FAQs</h2>
+        {copy.faqs.map(f => (
+          <div class="flex flex-col gap-1">
+            <h3 class={h3}>{f.q}</h3>
+            <p class="text-body-md text-on-surface-variant leading-relaxed" set:html={renderInline(f.a, ctx)} />
           </div>
-          <p class="text-xs text-on-surface-variant mt-3">{LINK_DISCLOSURE}</p>
-        </section>
+        ))}
+      </section>
 
-        <!-- FAQs -->
-        {comparison.faqs && comparison.faqs.length > 0 && (
-          <section class="flex flex-col gap-6 mt-8">
-              <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Frequently Asked Questions</h2>
-              <div class="flex flex-col gap-4">
-                  {comparison.faqs.map(faq => (
-                      <details class="group glass-panel rounded-lg border border-white/50 overflow-hidden shadow-sm">
-                          <summary class="flex justify-between items-center cursor-pointer p-6 font-title-md text-primary font-bold list-none">
-                              {faq.question}
-                              <span class="transition group-open:rotate-180 text-primary">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-                              </span>
-                          </summary>
-                          <div class="px-6 pb-6 text-body-md text-on-surface-variant leading-relaxed border-t border-outline-variant/10 pt-4">
-                              {faq.answer}
-                          </div>
-                      </details>
-                  ))}
-              </div>
-          </section>
-        )}
+      <div class="flex flex-wrap gap-4" data-ctas>
+        <PriceCta mattress={a} pageUrl={pageUrl} />
+        <PriceCta mattress={b} pageUrl={pageUrl} />
+      </div>
 
-      </article>
-    </div>
+      <section class="flex flex-col gap-3" data-section="Related">
+        <h2 class={h2}>Related</h2>
+        <ul class="flex flex-col gap-2 text-body-md">
+          {copy.related.map(link => <li><a href={link.href} class="text-primary underline underline-offset-4 font-bold">{link.label}</a></li>)}
+        </ul>
+      </section>
+    </article>
   </main>
 </BaseLayout>

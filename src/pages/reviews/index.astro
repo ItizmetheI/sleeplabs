@@ -1,192 +1,146 @@
 ---
+// Scorecard (owner template): lead with the model count and as-of month, one table sorted by
+// Overall then the tie order (AS3 first), "How scores work", and the /scores.csv download.
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { allMattresses, warrantyTitle } from '../../data/mattresses';
-import { formatDateOnly } from '../../lib/dateFormat';
+import Byline from '../../components/Byline.astro';
+import { allMattresses } from '../../data/mattresses';
+import { toArticleBody, articleTable } from '../../lib/schemaArticleBody';
+import { BYLINE_DISCLOSURE } from '../../lib/disclosure';
+import { SCORECARD_HEADERS, scorecardAsOf, scorecardRows } from '../../lib/scorecard';
+import { h1For, reviewUrl } from '../../lib/ownerSite';
 
 const SITE_URL = import.meta.env.SITE_URL || 'https://mattressinquirer.ahmedbarkat1067.workers.dev';
-const brandQueues = [...new Set(allMattresses.map(mattress => mattress.brand))]
-  .sort((a, b) => a.localeCompare(b))
-  .map(brand => allMattresses.filter(mattress => mattress.brand === brand));
-const reviewMattresses = Array.from(
-  { length: Math.max(...brandQueues.map(queue => queue.length)) },
-  (_, index) => brandQueues.map(queue => queue[index]).filter(Boolean),
-).flat();
+const DATE_MODIFIED = '2026-10-12';
+const pageUrl = '/reviews/';
+const canonicalUrl = `${SITE_URL}${pageUrl}`;
+const h1 = h1For(pageUrl);
+const rows = scorecardRows();
+const brandCount = new Set(allMattresses.map(m => m.brand)).size;
+const asOf = scorecardAsOf();
+
+const lead = `This scorecard rates ${rows.length} mattresses from ${brandCount} brands on seven fields, with specs as of ${asOf}. It is sorted by Overall score, and each name links to its full review.`;
+const howScoresPlain = 'Each model gets a score from 0 to 10 in Value, Edge Support, Trial Period, Response Time, Motion Transfer and Cooling & Breathability. Overall is the average of those six, shown to one decimal. When Overall scores tie, the table keeps the same order used across the site. Our methodology explains what earns a 10 in each field.';
+const description = `Scores for ${rows.length} mattresses from ${brandCount} brands on seven fields, sorted by Overall, with firmness, type, trial and warranty. Download the full table as CSV.`;
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Mattress Reviews 2026 — 59 Models, 24 Brands | Mattress Inquirer",
-  "description": "Multi-brand mattress reviews across 24 brands. 59 models evaluated using one published 7-metric scoring system.",
-  "url": `${SITE_URL}/reviews/`,
-  "mainEntity": {
-    "@type": "ItemList",
-    "itemListElement": reviewMattresses.map((m, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "name": m.name,
-      "url": `${SITE_URL}/reviews/${m.id}/`
-    }))
-  }
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `${canonicalUrl}#page`,
+      "name": h1,
+      "description": description,
+      "url": canonicalUrl,
+      "datePublished": DATE_MODIFIED,
+      "dateModified": DATE_MODIFIED,
+      "author": { "@type": "Organization", "@id": `${SITE_URL}/about/#editorial-team`, "name": "Mattress Inquirer Editorial Team", "url": `${SITE_URL}/about/#editorial-team` },
+      "publisher": { "@type": "Organization", "@id": `${SITE_URL}/#organization`, "name": "Mattress Inquirer", "url": SITE_URL },
+      "text": toArticleBody(h1, BYLINE_DISCLOSURE, lead, articleTable('Scorecard', [...SCORECARD_HEADERS], rows.map(r => r.cells)), "Scores are Mattress Inquirer's editorial ratings on a 0 to 10 scale.", 'How Scores Work', howScoresPlain),
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": rows.map((r, i) => ({ "@type": "ListItem", "position": i + 1, "name": r.mattress.name, "url": `${SITE_URL}${reviewUrl(r.mattress.id)}` })),
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+        { "@type": "ListItem", "position": 2, "name": h1, "item": canonicalUrl },
+      ],
+    },
+  ],
 };
 
-const lastUpdated = "2026-07-14";
-const formattedDateModified = formatDateOnly(lastUpdated);
+const th = 'text-left px-3 py-3 font-bold text-on-surface bg-surface-container-low whitespace-nowrap';
+const td = 'px-3 py-3 text-on-surface-variant border-t border-outline-variant/30 align-top';
+const h2 = 'text-headline-md font-headline-md text-primary border-b border-outline-variant/30 pb-3';
+// Numeric columns sort high to low first; text columns sort A to Z.
+const numericCols = new Set([1, 2, 3, 4, 5, 6, 7]);
 ---
 
 <BaseLayout
-  title="Mattress Reviews 2026 — 59 Models, 24 Brands | Mattress Inquirer"
-  description="Multi-brand mattress reviews across 24 brands. 59 models evaluated using one published 7-metric scoring system."
-  canonicalUrl={`${SITE_URL}/reviews/`}
+  title={`${h1}: ${rows.length} Models Scored`}
+  description={description}
+  canonicalUrl={canonicalUrl}
   machineReadableUrl={`${SITE_URL}/llms/reviews.md`}
-  lastUpdated={lastUpdated}
-  ogImage="/og-default.jpg"
+  lastUpdated={DATE_MODIFIED}
   jsonLd={jsonLd}
 >
-  <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 relative z-10 w-full flex flex-col gap-16">
+  <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 relative z-10 w-full">
+    <article class="flex flex-col gap-8" data-body data-page-type="scorecard">
+      <header class="flex flex-col gap-4 max-w-3xl">
+        <h1 class="text-headline-lg font-headline-lg text-primary font-bold">{h1}</h1>
+        <Byline dateModified={DATE_MODIFIED} />
+        <p class="text-body-lg text-on-surface leading-relaxed">{lead}</p>
+        <p class="text-body-md"><a href="/scores.csv" class="text-primary underline underline-offset-4 font-bold" download>Download the scorecard as CSV</a></p>
+      </header>
 
-    <!-- Top Section -->
-    <header class="flex flex-col gap-6 items-center text-center max-w-4xl mx-auto">
-      <h1 class="text-headline-lg font-headline-lg  text-primary font-bold">
-        Mattress Reviews 2026
-      </h1>
-      <p class="text-body-lg font-body-lg text-on-surface-variant max-w-3xl">
-        Multi-brand mattress reviews across 24 brands and 59 models using one published seven-metric editorial scorecard.
-      </p>
-      <div class="flex flex-col md:flex-row gap-4 items-center justify-center text-body-md text-on-surface-variant bg-surface px-6 py-3 rounded-full shadow-sm border border-outline-variant/30">
-        <span><strong class="text-on-background">Editorial Team:</strong> Mattress Inquirer Editorial Team</span>
-        <span class="hidden md:inline-block w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
-        <span><strong class="text-on-background">Last Updated:</strong> {formattedDateModified}</span>
-      </div>
-    </header>
-
-    <!-- Filter Bar -->
-    <section class="flex flex-col gap-4 items-center">
-      <div class="flex flex-wrap justify-center gap-2">
-        <a href="#all" class="px-5 py-2 rounded-full bg-primary text-on-primary font-bold text-label-sm uppercase tracking-normal hover:bg-primary/90 transition-colors">All</a>
-        <a href="#memory-foam" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-primary font-bold text-label-sm uppercase tracking-normal hover:border-primary/30 transition-colors">Memory Foam</a>
-        <a href="#hybrid" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-primary font-bold text-label-sm uppercase tracking-normal hover:border-primary/30 transition-colors">Hybrid</a>
-        <a href="#innerspring" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-primary font-bold text-label-sm uppercase tracking-normal hover:border-primary/30 transition-colors">Innerspring</a>
-        <a href="#latex" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-primary font-bold text-label-sm uppercase tracking-normal hover:border-primary/30 transition-colors">Latex</a>
-      </div>
-      <div class="flex flex-wrap justify-center gap-2 mt-2">
-        <a href="#side-sleepers" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-secondary font-bold text-label-sm uppercase tracking-normal hover:border-secondary/30 transition-colors">Best for Side Sleepers</a>
-        <a href="#back-pain" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-secondary font-bold text-label-sm uppercase tracking-normal hover:border-secondary/30 transition-colors">Back Comfort</a>
-        <a href="#hot-sleepers" class="px-5 py-2 rounded-full bg-surface border border-outline-variant/30 text-secondary font-bold text-label-sm uppercase tracking-normal hover:border-secondary/30 transition-colors">Best for Hot Sleepers</a>
-      </div>
-    </section>
-
-    <!-- Mattress Grid -->
-    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {reviewMattresses.map(mattress => (
-        <article class="glass-panel flex flex-col rounded-lg overflow-hidden hover:shadow-lg transition-shadow border border-outline-variant">
-          
-          <!-- Image -->
-          <div class="w-full h-56 overflow-hidden relative">
-            <img src={mattress.image} alt={`${mattress.name} mattress`} class="w-full h-full object-contain bg-white p-3" />
-            <div class="absolute top-4 right-4 bg-white px-4 py-2 rounded-full border border-outline-variant flex items-center gap-2">
-              <span class="text-label-sm font-label-sm uppercase tracking-normal text-on-surface font-bold">Score</span>
-              <span class="text-title-lg font-title-lg italic text-secondary font-bold leading-none">{mattress.scores.overall}</span>
-            </div>
-          </div>
-
-          <!-- Content Base -->
-          <div class="p-8 flex flex-col flex-1 gap-6">
-            
-            <header>
-              <h2 class="text-title-lg font-title-lg text-primary mb-1">{mattress.name}</h2>
-              <span class="text-label-sm font-label-sm uppercase tracking-normal text-on-surface-variant">by {mattress.brand}</span>
-            </header>
-
-            <!-- Top 4 Score Bars -->
-            <div class="flex flex-col gap-3">
-              {Object.entries({
-                'Value': mattress.scores.value,
-                'Edge Support': mattress.scores.edgeSupport,
-                'Response Time': mattress.scores.responseTime,
-                'Cooling & Breathability': mattress.scores.coolingBreathability,
-              }).map(([label, score]) => (
-                <div class="flex flex-col gap-1.5">
-                  <div class="flex justify-between items-center text-[13px] font-bold">
-                    <span class="text-on-surface-variant">{label}</span>
-                    <span class="text-primary">{score}/10</span>
-                  </div>
-                  <div class="w-full bg-outline-variant/20 h-2 rounded-full overflow-hidden">
-                    <div class="bg-secondary h-full rounded-full" style={`width: ${score * 10}%`}></div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <!-- Tags & Specs -->
-            <div class="flex items-center gap-2 flex-wrap">
-              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-normal rounded-lg border border-primary/20">
-                {mattress.firmness} ({mattress.firmnessScale}/10)
-              </span>
-              {mattress.bestFor.slice(0, 3).map(tag => (
-                <span class="px-3 py-1 bg-surface border border-outline-variant/30 text-on-surface-variant text-xs font-bold rounded-lg whitespace-nowrap">
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            <!-- Trial & Warranty -->
-            <div class="flex gap-4 text-sm text-on-surface-variant font-medium border-y border-outline-variant/20 py-3 mt-2">
-              <div class="flex items-center gap-1.5">
-                <span class="text-primary font-bold">{mattress.trialNights}</span> Night Trial
-              </div>
-              <div class="w-px bg-outline-variant/30"></div>
-              <div class="flex items-center gap-1.5">
-                <span class="text-primary font-bold">{warrantyTitle(mattress.warrantyYears)}</span> Warranty
-              </div>
-            </div>
-
-            <!-- Size & Pricing -->
-            <details class="group mt-2">
-              <summary class="cursor-pointer text-label-sm font-bold uppercase tracking-normal text-secondary flex items-center gap-2 list-none py-2 hover:text-primary transition-colors">
-                <span>View Sizes & Reference Pricing</span>
-                <span class="transition group-open:rotate-180 text-xs">▼</span>
-              </summary>
-              <div class="mt-3 border border-outline-variant/20 rounded-lg overflow-hidden text-sm">
-                <p class="px-4 py-3 text-xs text-on-surface-variant border-b border-outline-variant/20">Recorded dataset values, not live offers. Verify current pricing and policies with the brand.</p>
-                {mattress.sizePricing.map((sp, i) => (
-                  <div class={`flex justify-between items-center px-4 py-2.5 ${i % 2 === 0 ? 'bg-transparent' : 'bg-surface/50'}`}>
-                    <div>
-                      <span class="font-bold text-on-surface">{sp.size}</span>
-                      <span class="text-on-surface-variant ml-2 text-xs">{sp.dimensions}</span>
-                    </div>
-                    <div class="text-right">
-                      <span class="line-through text-on-surface-variant text-xs mr-1">{sp.priceOriginal}</span>
-                      <span class="font-bold text-secondary">{sp.priceSale}</span>
-                    </div>
-                  </div>
+      <section class="flex flex-col gap-3" data-section="Scorecard" data-score-table>
+        <div class="w-full overflow-x-auto border border-outline-variant/40 rounded-lg" tabindex="0" role="region" aria-label="Scorecard table, scrolls sideways">
+          <table class="w-full text-body-sm" data-sortable>
+            <caption class="sr-only">Mattress scores, sorted by Overall. Select a column heading to sort by it.</caption>
+            <thead>
+              <tr>
+                {SCORECARD_HEADERS.map((h, i) => (
+                  <th scope="col" class={th} aria-sort={i === 1 ? 'descending' : 'none'}>
+                    <button type="button" class="font-bold text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary rounded" data-col={i} data-numeric={numericCols.has(i) ? '1' : undefined}>{h}</button>
+                  </th>
                 ))}
-              </div>
-            </details>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, idx) => (
+                <tr data-rank={idx}>
+                  <th scope="row" class={`${td} font-normal`}>
+                    <a href={reviewUrl(r.mattress.id)} class="flex items-center gap-3 min-w-[200px]">
+                      <img src={r.mattress.image} alt="" class="w-14 h-10 object-contain bg-white rounded shrink-0" loading="lazy" />
+                      <span class="text-primary underline underline-offset-4 font-bold">{r.mattress.name}</span>
+                    </a>
+                  </th>
+                  {r.cells.slice(1).map((c, i) => <td class={td} data-overall={i === 0 ? '' : undefined}>{c}</td>)}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-body-sm text-on-surface-variant" data-score-line>Scores are Mattress Inquirer's editorial ratings on a 0 to 10 scale.</p>
+      </section>
 
-            <p class="text-body-md text-on-surface-variant line-clamp-2 mt-2">
-              {mattress.verdict}
-            </p>
-
-            <!-- Actions -->
-            <div class="mt-auto flex flex-col gap-3 pt-6">
-              <a href={`/reviews/${mattress.id}/`} class="w-full text-center py-3.5 rounded-lg border-2 border-primary text-primary font-label-md uppercase tracking-normal font-bold hover:bg-primary/5 transition-colors">
-                Read Full Review
-              </a>
-              <a href={mattress.productUrl} target="_blank" rel="noopener noreferrer" class="w-full text-center py-3.5 rounded-lg bg-primary text-on-primary font-label-md uppercase tracking-normal font-bold hover:bg-primary/90 transition-colors shadow-sm">
-                Official Product Page
-              </a>
-            </div>
-
-          </div>
-        </article>
-      ))}
-    </section>
-
-    <section class="max-w-2xl mx-auto mt-8 glass-panel p-6 rounded-lg border border-white/60">
-      <h3 class="text-title-md font-title-md text-primary font-bold mb-3">How we cover 24 brands</h3>
-      <p class="text-body-md text-on-surface-variant leading-relaxed">
-        Every model above is scored using the same 7-metric system: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling &amp; Breathability. Scores are editorial comparisons from the published Mattress Inquirer score dataset, not laboratory findings, manufacturer ratings, or collected customer ratings. <a href="/methodology/" class="text-primary hover:underline font-bold">Read our full methodology →</a>
-      </p>
-    </section>
+      <section class="flex flex-col gap-3 max-w-3xl" data-section="How Scores Work">
+        <h2 class={h2}>How Scores Work</h2>
+        <p class="text-body-md text-on-surface-variant leading-relaxed">
+          Each model gets a score from 0 to 10 in Value, Edge Support, Trial Period, Response Time, Motion Transfer and Cooling &amp; Breathability. Overall is the average of those six, shown to one decimal. When Overall scores tie, the table keeps the same order used across the site. Our <a href="/methodology/" class="text-primary underline underline-offset-4">methodology</a> explains what earns a 10 in each field.
+        </p>
+      </section>
+    </article>
   </main>
 </BaseLayout>
+
+<script>
+  // Column sort. Selecting the active column again reverses it; ties keep the scorecard order.
+  const table = document.querySelector<HTMLTableElement>('table[data-sortable]');
+  if (table) {
+    const tbody = table.tBodies[0];
+    const headers = [...table.querySelectorAll<HTMLTableCellElement>('thead th')];
+    table.querySelectorAll<HTMLButtonElement>('thead button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const col = Number(btn.dataset.col);
+        const th = headers[col];
+        const numeric = btn.dataset.numeric === '1';
+        const current = th.getAttribute('aria-sort');
+        const first = numeric ? 'descending' : 'ascending';
+        const dir = current === first ? (first === 'ascending' ? 'descending' : 'ascending') : first;
+        const sign = dir === 'ascending' ? 1 : -1;
+        const value = (row: HTMLTableRowElement) => row.cells[col].textContent?.trim() ?? '';
+        const rows = [...tbody.rows].sort((a, b) => {
+          const va = value(a), vb = value(b);
+          const cmp = numeric ? Number(va) - Number(vb) : va.localeCompare(vb);
+          return cmp * sign || Number(a.dataset.rank) - Number(b.dataset.rank);
+        });
+        rows.forEach(r => tbody.appendChild(r));
+        headers.forEach(h => h.setAttribute('aria-sort', 'none'));
+        th.setAttribute('aria-sort', dir);
+      });
+    });
+  }
+</script>

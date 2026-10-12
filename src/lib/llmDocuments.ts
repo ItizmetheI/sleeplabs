@@ -1,10 +1,25 @@
+// Machine-readable Markdown alternates (/llms/*.md). Every document is built from the same copy files,
+// spec helpers and ranking engine as its HTML page, so facts, scores and limits stay identical.
 import { comparisons } from '../data/comparisons';
 import { EDITORIAL_INDEPENDENCE_DISCLOSURE, LINK_DISCLOSURE } from './disclosure';
-import { allMattresses, warrantyValue, type Mattress } from '../data/mattresses';
+import { allMattresses, type Mattress } from '../data/mattresses';
 import { topics } from '../data/topics';
-import { BEST_CATEGORIES } from './bestCategories';
-import { FIRDOUS_FARHAD } from './editorialPeople';
-import { orderFullScoreField } from './scoreFieldOrder';
+import { REVIEW_COPY } from '../content/reviews';
+import { COMPARISON_COPY } from '../content/comparisons';
+import { BEST_COPY } from '../content/best';
+import { BRAND_COPY } from '../content/brands';
+import { BEST_PAGE_CONFIGS, FIELD_LABEL, SIX_FIELDS, rankBestPage } from './ranking';
+import { METHODOLOGY_LEAD, METHODOLOGY_UPDATED, methodologyPlainSections } from './methodologyContent';
+import { orderScorecard, formatOverall } from './scoreFieldOrder';
+import {
+  alternativesFor, as3RankingSentence, brandModels, brandSlug, brandTopLead, getMattress, getSpec,
+  leadsSentence, reviewSpecRows, SCORECARD_FIELDS, scoreText as fieldScore, winnerLine,
+} from './pageData';
+import {
+  COMFORT_NOT_TREATMENT, PAIN_PAGE_SLUGS, h1For, plainInline, qualifyingFirmnessText,
+  firmnessShort, firmnessText, heightText, queenPriceLabel, queenPriceText, trialText, typeText, warrantyText,
+} from './ownerSite';
+import { SCORECARD_HEADERS, scorecardRows } from './scorecard';
 
 export const SCORE_METRICS = [
   { label: 'Overall', key: 'overall' },
@@ -17,17 +32,8 @@ export const SCORE_METRICS = [
 ] as const;
 
 export type LlmDocumentKind =
-  | 'methodology'
-  | 'review-index'
-  | 'review'
-  | 'comparison-index'
-  | 'comparison'
-  | 'best-index'
-  | 'best'
-  | 'brand-index'
-  | 'brand'
-  | 'topic-index'
-  | 'topic';
+  | 'methodology' | 'review-index' | 'review' | 'comparison-index' | 'comparison'
+  | 'best-index' | 'best' | 'brand-index' | 'brand' | 'topic-index' | 'topic';
 
 export interface LlmDocument {
   slug: string;
@@ -38,31 +44,19 @@ export interface LlmDocument {
   content: string;
 }
 
-const UPDATED = '2026-07-14';
+const UPDATED = '2026-10-12';
+const SCORE_LINE = "Scores are Mattress Inquirer's editorial ratings on a 0 to 10 scale.";
 
 const normalizeSiteUrl = (siteUrl: string) => siteUrl.replace(/\/$/, '');
-
-const markdownCell = (value: unknown) => String(value ?? '')
-  .replaceAll('|', '\\|')
-  .replace(/\s*\n\s*/g, ' ')
-  .trim();
-
+const markdownCell = (value: unknown) => String(value ?? '').replaceAll('|', '\\|').replace(/\s*\n\s*/g, ' ').trim();
 const markdownTable = (headers: string[], rows: unknown[][]) => [
   `| ${headers.map(markdownCell).join(' | ')} |`,
   `| ${headers.map(() => '---').join(' | ')} |`,
   ...rows.map(row => `| ${row.map(markdownCell).join(' | ')} |`),
 ].join('\n');
-
-const toBrandSlug = (brand: string) => brand
-  .toLowerCase()
-  .replace(/[^a-z0-9]+/g, '-')
-  .replace(/^-|-$/g, '');
-
-const getMattress = (id: string) => {
-  const mattress = allMattresses.find(item => item.id === id);
-  if (!mattress) throw new Error(`Unknown mattress ID in LLM document generator: ${id}`);
-  return mattress;
-};
+const bullets = (items: string[]) => items.map(item => `- ${plainInline(item)}`).join('\n');
+const paras = (items: string[]) => items.map(plainInline).join('\n\n');
+const faqBlock = (faqs: { q: string; a: string }[]) => faqs.map(f => `### ${f.q}\n\n${plainInline(f.a)}`).join('\n\n');
 
 const header = (title: string, canonicalUrl: string, dateModified: string, documentType: string) => [
   `# ${title}`,
@@ -77,258 +71,207 @@ const header = (title: string, canonicalUrl: string, dateModified: string, docum
 const evidenceLimits = [
   '## Evidence and limits',
   '',
-  '- Scores are Mattress Inquirer editorial evaluations on a shared 0-10 rubric; they are not laboratory measurements or manufacturer ratings.',
-  '- Price, trial, warranty, certification, and material details can change. Verify current facts on the official brand or certification source before purchase or citation.',
-  '- No mattress can diagnose, treat, or cure a health condition.',
-  `- Editorial context: ${EDITORIAL_INDEPENDENCE_DISCLOSURE} The same rubric and evidence limits apply to every covered brand. ${LINK_DISCLOSURE}`,
+  `- ${SCORE_LINE}`,
+  "- Price, trial, warranty, certification, and material details can change. Verify current facts on the brand's official site before purchase or citation.",
+  '- Scores are comfort ratings, not medical guidance.',
+  `- ${EDITORIAL_INDEPENDENCE_DISCLOSURE} ${LINK_DISCLOSURE}`,
 ].join('\n');
 
-const scoreRows = (mattress: Mattress) => SCORE_METRICS.map(metric => [
-  metric.label,
-  `${mattress.scores[metric.key]}/10`,
-]);
-
-const modelScoreRow = (mattress: Mattress) => [
-  mattress.name,
-  mattress.brand,
-  ...SCORE_METRICS.map(metric => mattress.scores[metric.key]),
-  `/reviews/${mattress.id}/`,
-];
-
-const scoreHeaders = ['Model', 'Brand', ...SCORE_METRICS.map(metric => metric.label), 'Review'];
+const scoreText = (mattress: Mattress, key: typeof SCORE_METRICS[number]['key']) =>
+  key === 'overall' ? formatOverall(mattress.scores.overall) : String(mattress.scores[key]);
+const scoreRows = (mattress: Mattress) => SCORE_METRICS.map(metric => [metric.label, `${scoreText(mattress, metric.key)}/10`]);
 
 const buildReviewDocument = (siteUrl: string, mattress: Mattress): LlmDocument => {
+  const copy = REVIEW_COPY[mattress.id];
+  if (!copy) throw new Error(`Missing review copy for ${mattress.id}`);
+  const spec = getSpec(mattress.id);
   const canonicalPath = `/reviews/${mattress.id}/`;
-  const canonicalUrl = `${siteUrl}${canonicalPath}`;
+  const title = h1For(canonicalPath);
+  const weights = [['under130', 'Under 130 lb'], ['from130to230', '130 to 230 lb'], ['over230', 'Over 230 lb']] as const;
+  const positions = [['side', 'Side Sleepers'], ['back', 'Back Sleepers'], ['stomach', 'Stomach Sleepers'], ['combination', 'Combination Sleepers']] as const;
+  const alternatives = [mattress, ...alternativesFor(mattress.id)];
   const content = [
-    header(`${mattress.name} Review`, canonicalUrl, mattress.dateModified, 'mattress review'),
-    '',
-    '## Direct answer',
-    '',
-    mattress.verdict,
-    '',
-    '## Seven-metric scorecard',
-    '',
-    markdownTable(['Metric', 'Editorial score'], scoreRows(mattress)),
-    '',
-    '## Construction and fit',
-    '',
-    `${mattress.name} is a ${mattress.type.replaceAll('-', ' ')} mattress with a ${mattress.firmness.replaceAll('-', ' ')} feel (${mattress.firmnessScale}/10) and a ${mattress.thickness} profile.`,
-    '',
-    `Best suited to: ${mattress.bestFor.join(', ')}.`,
-    '',
-    '## Layer summary',
-    '',
-    markdownTable(['Layer', 'Thickness', 'Material', 'Description'], mattress.layers.map(layer => [
-      layer.name,
-      layer.thickness,
-      layer.material,
-      layer.description,
-    ])),
-    '',
-    '## Recorded policy fields',
-    '',
-    `- Trial: ${mattress.trialNights} nights in the source dataset`,
-    `- Warranty: ${warrantyValue(mattress.warrantyYears)} in the source dataset`,
-    `- Recorded price range: ${mattress.priceRange}`,
-    ...(mattress.availabilityNote ? [
-      '',
-      '## Availability note',
-      '',
-      mattress.availabilityNote,
-    ] : []),
-    '',
-    evidenceLimits,
-    '',
-    `Methodology: ${siteUrl}/methodology/`,
+    header(title, `${siteUrl}${canonicalPath}`, copy.dateModified, 'mattress review'),
+    '', '## Quick Answer', '', plainInline(copy.quickAnswer),
+    '', '## Scorecard', '', markdownTable(['Metric', 'Editorial score'], scoreRows(mattress)),
+    '', `Firmness: ${firmnessShort(spec)}`, '', SCORE_LINE,
+    '', '## Specs at a Glance', '', markdownTable(['Spec', 'Detail'], reviewSpecRows(spec)),
+    '', '## Strengths and Limitations', '', '### Strengths', '', bullets(copy.strengths), '', '### Limitations', '', bullets(copy.limitations),
+    '', '## How It Was Scored', '', plainInline(copy.howScored),
+    '', '## Construction', '',
+    spec.layers.length ? markdownTable(['Layer', 'Thickness', 'Material', 'What it does'], spec.layers.map((l, i) => [i + 1, l.thickness === 'not listed' ? 'Not listed' : `${l.thickness} in`, l.name, plainInline(copy.layerRoles[i] ?? '')])) : '',
+    '', paras(copy.construction),
+    '', '## Performance', '',
+    SIX_FIELDS.map(k => `### ${FIELD_LABEL[k]}: ${fieldScore(mattress, k)}/10\n\n${paras(copy.performance[k as keyof typeof copy.performance])}`).join('\n\n'),
+    '', '## Firmness and Feel by Sleep Position', '', plainInline(copy.positionsIntro), '',
+    positions.map(([key, label]) => `### ${label}\n\n${weights.map(([w, wl]) => `- ${wl}: ${plainInline(copy.positions[key][w])}`).join('\n')}`).join('\n\n'),
+    '', '## Who Should Buy It / Who Should Skip It', '', '### Who Should Buy It', '', bullets(copy.buy), '', '### Who Should Skip It', '', bullets(copy.skip),
+    '', '## How It Compares', '', plainInline(copy.compareIntro), '',
+    markdownTable(['Mattress', 'Overall', 'Type', 'Firmness', 'Trial', 'Warranty'], alternatives.map(m => {
+      const s = getSpec(m.id);
+      return [m.name, `${fieldScore(m, 'overall')}/10`, typeText(s), firmnessShort(s), trialText(s), warrantyText(s)];
+    })),
+    '', '## Trial, Warranty, Shipping and Returns', '', paras(copy.policies),
+    '', '## FAQs', '', faqBlock(copy.faqs),
+    '', '## Verdict', '', plainInline(copy.verdict),
+    '', evidenceLimits, '', `Methodology: ${siteUrl}/methodology/`,
   ].join('\n');
-
-  return {
-    slug: `reviews-${mattress.id}`,
-    kind: 'review',
-    title: `${mattress.name} Review`,
-    canonicalPath,
-    dateModified: mattress.dateModified,
-    content,
-  };
+  return { slug: `reviews-${mattress.id}`, kind: 'review', title, canonicalPath, dateModified: copy.dateModified, content };
 };
 
 export const buildReviewLlmDocuments = (rawSiteUrl: string): LlmDocument[] => {
   const siteUrl = normalizeSiteUrl(rawSiteUrl);
-  return [...allMattresses]
-    .sort((a, b) => a.name.localeCompare(b.name))
-    .map(mattress => buildReviewDocument(siteUrl, mattress));
+  return [...allMattresses].sort((a, b) => a.name.localeCompare(b.name)).map(m => buildReviewDocument(siteUrl, m));
+};
+
+const buildComparisonDocument = (siteUrl: string, slug: string, aId: string, bId: string): LlmDocument => {
+  const copy = COMPARISON_COPY[slug];
+  if (!copy) throw new Error(`Missing comparison copy for ${slug}`);
+  const a = getMattress(aId), b = getMattress(bId);
+  const sa = getSpec(a.id), sb = getSpec(b.id);
+  const canonicalPath = `/comparison/${slug}/`;
+  const title = h1For(canonicalPath);
+  const rows = [
+    ...SCORECARD_FIELDS.map(k => [FIELD_LABEL[k], `${fieldScore(a, k)}/10`, `${fieldScore(b, k)}/10`]),
+    ['Type', typeText(sa), typeText(sb)],
+    ['Firmness', firmnessText(sa), firmnessText(sb)],
+    ['Height', heightText(sa), heightText(sb)],
+    [`Queen price (checked ${sa.priceChecked || sb.priceChecked})`, queenPriceText(sa), queenPriceText(sb)],
+    ['Trial', trialText(sa), trialText(sb)],
+    ['Warranty', warrantyText(sa), warrantyText(sb)],
+  ];
+  const sections: [string, string[]][] = [
+    ['Feel and Firmness', copy.feel], ['Construction', copy.construction], ['Edge Support', copy.edgeSupport],
+    ['Motion Transfer', copy.motionTransfer], ['Cooling', copy.cooling], ['Response', copy.response], ['Value and Policies', copy.valuePolicies],
+  ];
+  const content = [
+    header(title, `${siteUrl}${canonicalPath}`, copy.dateModified, 'head-to-head comparison'),
+    '', '## Quick Verdict', '', `${winnerLine(a, b)} ${leadsSentence(a, b)}`, '', plainInline(copy.quickVerdict),
+    '', '## Side by Side', '', markdownTable(['Field', a.name, b.name], rows), '', SCORE_LINE,
+    ...sections.flatMap(([h, p]) => ['', `## ${h}`, '', paras(p)]),
+    '', `## Who Should Buy the ${a.name} / Who Should Buy the ${b.name}`, '',
+    `### Who Should Buy the ${a.name}`, '', bullets(copy.buyA), '', `### Who Should Buy the ${b.name}`, '', bullets(copy.buyB),
+    '', '## FAQs', '', faqBlock(copy.faqs),
+    '', '## Entity URLs', '', `- ${a.name}: ${siteUrl}/reviews/${a.id}/`, `- ${b.name}: ${siteUrl}/reviews/${b.id}/`,
+    '', evidenceLimits,
+  ].join('\n');
+  return { slug: `comparison-${slug}`, kind: 'comparison', title, canonicalPath, dateModified: copy.dateModified, content };
+};
+
+const buildBestDocument = (siteUrl: string, config: (typeof BEST_PAGE_CONFIGS)[number]): LlmDocument => {
+  const copy = BEST_COPY[config.slug];
+  if (!copy) throw new Error(`Missing best-of copy for ${config.slug}`);
+  const result = rankBestPage(config);
+  const canonicalPath = `/best/${config.slug}/`;
+  const title = h1For(canonicalPath);
+  const as3 = getMattress('amerisleep-as3');
+  const showPrice = config.row === 'luxury' || config.row === 'under-1000';
+  const howWePicked = [as3RankingSentence(config, result), ...copy.howWePicked, ...(PAIN_PAGE_SLUGS.has(config.slug) ? [COMFORT_NOT_TREATMENT] : [])];
+  const content = [
+    header(title, `${siteUrl}${canonicalPath}`, copy.dateModified, 'ranked mattress category'),
+    '', plainInline(copy.quickAnswer),
+    ...(result.as3Qualifies ? [] : ['', `Our Best Overall Pick: Amerisleep AS3 (${fieldScore(as3, 'overall')}/10). ${plainInline(copy.as3BoxReason ?? '')}`]),
+    '', '## Our Picks at a Glance', '',
+    markdownTable(['Rank', 'Mattress', 'Award', 'Overall', 'Firmness', 'Type', 'Trial', 'Warranty'], result.picks.map(p => {
+      const m = p.candidate.mattress, s = p.candidate.spec, q = p.candidate.qualifyingFirmness;
+      return [p.rank, m.name, p.award, `${fieldScore(m, 'overall')}/10`, q ? `${q.display}/10, ${q.label} option` : firmnessShort(s), typeText(s), trialText(s), warrantyText(s)];
+    })),
+    '', SCORE_LINE,
+    '', '## How We Picked', '', paras(howWePicked),
+    ...result.picks.flatMap((p, i) => {
+      const m = p.candidate.mattress, s = p.candidate.spec, pc = copy.picks[i];
+      const mini = [
+        ['Type', typeText(s)], ['Firmness', qualifyingFirmnessText(s, p.candidate.qualifyingFirmness)], ['Height', heightText(s)],
+        ['Trial', trialText(s)], ['Warranty', warrantyText(s)], ...(showPrice ? [[queenPriceLabel(s), queenPriceText(s)]] : []),
+      ];
+      return [
+        '', `## #${p.rank} ${p.award}: ${m.name}`, '', markdownTable(['Metric', 'Editorial score'], scoreRows(m)),
+        '', paras(pc.why), '', markdownTable(['Spec', 'Detail'], mini),
+        '', '### Strengths', '', bullets(pc.strengths), '', '### Limitations', '', bullets(pc.limitations),
+        '', `Review: ${siteUrl}/reviews/${m.id}/`,
+      ];
+    }),
+    '', `## ${copy.whatMattersHeading}`, '', paras(copy.whatMatters),
+    '', '## FAQs', '', faqBlock(copy.faqs),
+    '', evidenceLimits,
+  ].join('\n');
+  return { slug: `best-${config.slug}`, kind: 'best', title, canonicalPath, dateModified: copy.dateModified, content };
+};
+
+const buildBrandDocument = (siteUrl: string, brand: string): LlmDocument => {
+  const slug = brandSlug(brand);
+  const copy = BRAND_COPY[slug];
+  if (!copy) throw new Error(`Missing brand copy for ${slug}`);
+  const canonicalPath = `/brands/${slug}/`;
+  const title = h1For(canonicalPath);
+  const models = brandModels(brand);
+  const ids = new Set(models.map(m => m.id));
+  const brandComparisons = comparisons.filter(c => ids.has(c.mattressAId) || ids.has(c.mattressBId));
+  const content = [
+    header(title, `${siteUrl}${canonicalPath}`, copy.dateModified, 'brand page'),
+    '', `## About ${brand}`, '', paras(copy.summary),
+    '', `## ${brand} Models We Score`, '',
+    markdownTable(['Mattress', 'Overall', 'Type', 'Firmness', 'Trial', 'Warranty'], models.map(m => {
+      const s = getSpec(m.id);
+      return [m.name, `${fieldScore(m, 'overall')}/10`, typeText(s), firmnessShort(s), trialText(s), warrantyText(s)];
+    })),
+    '', SCORE_LINE,
+    '', `## Highest ${brand} Score`, '', paras([brandTopLead(brand), ...copy.topModel]),
+    '', `## ${brand} Reviews and Comparisons`, '',
+    ...models.map(m => `- ${m.name} Review: ${siteUrl}/reviews/${m.id}/`),
+    ...brandComparisons.map(c => `- ${h1For(`/comparison/${c.slug}/`)}: ${siteUrl}/comparison/${c.slug}/`),
+    '', evidenceLimits,
+  ].join('\n');
+  return { slug: `brand-${slug}`, kind: 'brand', title, canonicalPath, dateModified: copy.dateModified, content };
 };
 
 export const buildGeneratedLlmDocuments = (rawSiteUrl: string): LlmDocument[] => {
   const siteUrl = normalizeSiteUrl(rawSiteUrl);
   const documents: LlmDocument[] = [];
-
-  const methodologyContent = [
-    header('Mattress Inquirer Scoring Methodology', `${siteUrl}/methodology/`, UPDATED, 'methodology'),
-    '',
-    '## Direct answer',
-    '',
-    'Mattress Inquirer evaluates 59 mattress models across 24 brands with one shared seven-metric editorial rubric. Each field is scored from 0 to 10: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability.',
-    '',
-    '## Score definitions',
-    '',
-    markdownTable(['Metric', 'What the score represents'], [
-      ['Overall', 'The dataset\'s editorial summary score for the complete mattress.'],
-      ['Value', 'Editorial value relative to the recorded price, construction, and policy fields.'],
-      ['Edge Support', 'Editorial assessment of perimeter stability.'],
-      ['Trial Period', 'Editorial score for the recorded home-trial policy.'],
-      ['Response Time', 'Editorial assessment of how quickly the surface regains shape after pressure changes.'],
-      ['Motion Transfer', 'Editorial assessment of how well the mattress limits movement across the surface.'],
-      ['Cooling & Breathability', 'Editorial assessment of airflow and temperature-related construction features.'],
-    ]),
-    '',
-    'The Overall score is stored directly in the source dataset. Mattress Inquirer does not publish an unsupported weighting formula or convert these values into laboratory claims.',
-    '',
-    '## Health and sleep content reviewer',
-    '',
-    `${FIRDOUS_FARHAD.name} is Mattress Inquirer's ${FIRDOUS_FARHAD.role.toLowerCase()}. ${FIRDOUS_FARHAD.credentials} Article-level review attribution appears only after completed review and approval. Reviewer profile: ${siteUrl}${FIRDOUS_FARHAD.path}`,
-    '',
-    '## Coverage',
-    '',
-    `- Mattress models: ${allMattresses.length}`,
-    `- Brands: ${new Set(allMattresses.map(item => item.brand)).size}`,
-    `- Ranked categories: ${Object.keys(BEST_CATEGORIES).length}`,
-    `- Head-to-head comparisons: ${comparisons.length}`,
-    `- Topic guides: ${topics.length}`,
-    '',
-    evidenceLimits,
-  ].join('\n');
+  const brands = [...new Set(allMattresses.map(m => m.brand))];
 
   documents.push({
     slug: 'methodology',
     kind: 'methodology',
-    title: 'Mattress Inquirer Scoring Methodology',
+    title: 'How Mattress Inquirer Scores Mattresses',
     canonicalPath: '/methodology/',
-    dateModified: UPDATED,
-    content: methodologyContent,
-  });
-
-  const reviewDocuments = buildReviewLlmDocuments(siteUrl);
-  documents.push({
-    slug: 'reviews',
-    kind: 'review-index',
-    title: 'Mattress Inquirer Mattress Review Dataset',
-    canonicalPath: '/reviews/',
-    dateModified: UPDATED,
+    dateModified: METHODOLOGY_UPDATED,
     content: [
-      header('Mattress Inquirer Mattress Review Dataset', `${siteUrl}/reviews/`, UPDATED, 'review index'),
-      '',
-      '## Coverage',
-      '',
-      `This index contains ${allMattresses.length} scored mattress models from ${new Set(allMattresses.map(item => item.brand)).size} brands.`,
-      '',
-      '## Complete score table',
-      '',
-      markdownTable(scoreHeaders, [...allMattresses]
-        .sort((a, b) => b.scores.overall - a.scores.overall || a.name.localeCompare(b.name))
-        .map(modelScoreRow)),
-      '',
-      '## Machine-readable review files',
-      '',
-      ...reviewDocuments.map(document => `- ${siteUrl}/llms/${document.slug}.md`),
-      '',
-      evidenceLimits,
+      header('How Mattress Inquirer Scores Mattresses', `${siteUrl}/methodology/`, METHODOLOGY_UPDATED, 'methodology'),
+      '', METHODOLOGY_LEAD, '',
+      ...methodologyPlainSections().flatMap(section => [`## ${section.heading}`, '', ...section.paragraphs.flatMap(p => [p, ''])]),
+      '## Coverage', '',
+      `- Mattress models: ${allMattresses.length}`,
+      `- Brands: ${brands.length}`,
+      `- Ranked categories: ${BEST_PAGE_CONFIGS.length}`,
+      `- Head-to-head comparisons: ${comparisons.length}`,
+      `- Topic guides: ${topics.length}`,
+      '', evidenceLimits,
     ].join('\n'),
   });
 
-  const comparisonDocuments = comparisons.map(comparison => {
-    const mattressA = getMattress(comparison.mattressAId);
-    const mattressB = getMattress(comparison.mattressBId);
-    const canonicalPath = `/comparison/${comparison.slug}/`;
-    const metricRows = SCORE_METRICS.map(metric => {
-      const scoreA = mattressA.scores[metric.key];
-      const scoreB = mattressB.scores[metric.key];
-      const leader = scoreA === scoreB ? 'Tie' : scoreA > scoreB ? mattressA.name : mattressB.name;
-      return [metric.label, `${scoreA}/10`, `${scoreB}/10`, leader];
-    });
-
-    return {
-      slug: `comparison-${comparison.slug}`,
-      kind: 'comparison' as const,
-      title: `${mattressA.name} vs ${mattressB.name}`,
-      canonicalPath,
-      dateModified: comparison.dateModified,
-      content: [
-        header(`${mattressA.name} vs ${mattressB.name}`, `${siteUrl}${canonicalPath}`, comparison.dateModified, 'head-to-head comparison'),
-        '',
-        '## Direct answer',
-        '',
-        comparison.verdict,
-        '',
-        '## Seven-metric comparison chart data',
-        '',
-        markdownTable(['Metric', mattressA.name, mattressB.name, 'Leader'], metricRows),
-        '',
-        '## Recorded specifications',
-        '',
-        markdownTable(['Field', mattressA.name, mattressB.name], [
-          ['Type', mattressA.type.replaceAll('-', ' '), mattressB.type.replaceAll('-', ' ')],
-          ['Firmness', `${mattressA.firmness} (${mattressA.firmnessScale}/10)`, `${mattressB.firmness} (${mattressB.firmnessScale}/10)`],
-          ['Thickness', mattressA.thickness, mattressB.thickness],
-          ['Recorded price range', mattressA.priceRange, mattressB.priceRange],
-          ['Recorded trial', `${mattressA.trialNights} nights`, `${mattressB.trialNights} nights`],
-          ['Recorded warranty', warrantyValue(mattressA.warrantyYears), warrantyValue(mattressB.warrantyYears)],
-        ]),
-        '',
-        '## Winner by use case',
-        '',
-        ...comparison.winnerFor.map(winner => {
-          const model = winner.winnerId === mattressA.id ? mattressA : mattressB;
-          return `- ${winner.category}: ${model.name}. ${winner.reason}`;
-        }),
-        '',
-        '## Entity URLs',
-        '',
-        `- ${mattressA.name}: ${siteUrl}/reviews/${mattressA.id}/`,
-        `- ${mattressB.name}: ${siteUrl}/reviews/${mattressB.id}/`,
-        '',
-        evidenceLimits,
-      ].join('\n'),
-    };
+  const rows = scorecardRows();
+  documents.push({
+    slug: 'reviews',
+    kind: 'review-index',
+    title: h1For('/reviews/'),
+    canonicalPath: '/reviews/',
+    dateModified: UPDATED,
+    content: [
+      header(h1For('/reviews/'), `${siteUrl}/reviews/`, UPDATED, 'scorecard'),
+      '', `This scorecard rates ${rows.length} mattresses from ${brands.length} brands on seven fields, sorted by Overall score.`,
+      '', markdownTable([...SCORECARD_HEADERS, 'Review'], rows.map(r => [...r.cells, `/reviews/${r.mattress.id}/`])),
+      '', SCORE_LINE, '', `CSV download: ${siteUrl}/scores.csv`,
+      '', '## Machine-readable review files', '',
+      ...orderScorecard(allMattresses).map(m => `- ${siteUrl}/llms/reviews-${m.id}.md`),
+      '', evidenceLimits,
+    ].join('\n'),
   });
-  documents.push(...comparisonDocuments);
 
-  const bestDocuments = Object.entries(BEST_CATEGORIES).map(([category, config]) => {
-    const picks = config.picks.map(getMattress);
-    const fullScoreField = orderFullScoreField(allMattresses);
-    const canonicalPath = `/best/${category}/`;
-    return {
-      slug: `best-${category}`,
-      kind: 'best' as const,
-      title: config.h1,
-      canonicalPath,
-      dateModified: UPDATED,
-      content: [
-        header(config.h1, `${siteUrl}${canonicalPath}`, UPDATED, 'ranked mattress category'),
-        '',
-        '## Direct answer',
-        '',
-        config.intro,
-        '',
-        `Top editorial pick: ${getMattress(config.winner).name}. ${config.winnerNote}`,
-        '',
-        '## Ranked score table',
-        '',
-        markdownTable(['Rank', ...scoreHeaders], picks.map((mattress, index) => [index + 1, ...modelScoreRow(mattress)])),
-        '',
-        config.filterNote ? `## Selection context\n\n${config.filterNote}\n` : '',
-        '## Full 59-model score field',
-        '',
-        'The ranked table above contains the six category picks. The complete table below contains every model and all 24 brands, ordered by Overall score with brands interleaved when scores tie; inclusion does not mean every model is recommended for this category.',
-        '',
-        markdownTable(scoreHeaders, fullScoreField.map(modelScoreRow)),
-        '',
-        evidenceLimits,
-      ].filter(Boolean).join('\n'),
-    };
-  });
-  documents.push(...bestDocuments);
+  const comparisonDocuments = comparisons.map(c => buildComparisonDocument(siteUrl, c.slug, c.mattressAId, c.mattressBId));
+  const bestDocuments = BEST_PAGE_CONFIGS.map(config => buildBestDocument(siteUrl, config));
+  const brandDocuments = brands.sort((x, y) => x.localeCompare(y)).map(brand => buildBrandDocument(siteUrl, brand));
+  documents.push(...comparisonDocuments, ...bestDocuments, ...brandDocuments);
 
   const topicDocuments = topics.map(topic => {
     const related = topic.relatedMattresses.map(getMattress);
@@ -341,79 +284,35 @@ export const buildGeneratedLlmDocuments = (rawSiteUrl: string): LlmDocument[] =>
       dateModified: topic.dateModified,
       content: [
         header(topic.title, `${siteUrl}${canonicalPath}`, topic.dateModified, 'topic guide'),
+        '', '## Direct answer and context', '', topic.body,
+        '', '## Related scored models', '',
+        markdownTable(['Model', 'Brand', ...SCORE_METRICS.map(m => m.label), 'Review'], related.map(m => [m.name, m.brand, ...SCORE_METRICS.map(x => scoreText(m, x.key)), `/reviews/${m.id}/`])),
         '',
-        '## Direct answer and context',
-        '',
-        topic.body,
-        '',
-        '## Related scored models',
-        '',
-        markdownTable(scoreHeaders, related.map(modelScoreRow)),
-        '',
-        topic.sources?.length ? '## Primary sources' : '',
-        topic.sources?.length ? '' : '',
-        ...(topic.sources ?? []).map(source => `- ${source.name}: ${source.url}`),
-        topic.sources?.length ? '' : '',
+        ...(topic.sources?.length ? ['## Primary sources', '', ...topic.sources.map(s => `- ${s.name}: ${s.url}`), ''] : []),
         evidenceLimits,
-      ].filter(value => value !== '').join('\n'),
+      ].join('\n'),
     };
   });
   documents.push(...topicDocuments);
 
-  const brandGroups = new Map<string, Mattress[]>();
-  for (const mattress of allMattresses) {
-    const group = brandGroups.get(mattress.brand) ?? [];
-    group.push(mattress);
-    brandGroups.set(mattress.brand, group);
-  }
-  const brandDocuments = [...brandGroups.entries()]
-    .sort(([brandA], [brandB]) => brandA.localeCompare(brandB))
-    .map(([brand, models]) => {
-      const brandSlug = toBrandSlug(brand);
-      const canonicalPath = `/brands/${brandSlug}/`;
-      const sortedModels = [...models].sort((a, b) => b.scores.overall - a.scores.overall || a.name.localeCompare(b.name));
-      return {
-        slug: `brand-${brandSlug}`,
-        kind: 'brand' as const,
-        title: `${brand} Mattress Reviews`,
-        canonicalPath,
-        dateModified: UPDATED,
-        content: [
-          header(`${brand} Mattress Reviews`, `${siteUrl}${canonicalPath}`, UPDATED, 'brand entity index'),
-          '',
-          '## Direct answer',
-          '',
-          `Mattress Inquirer currently covers ${models.length} ${brand} mattress model${models.length === 1 ? '' : 's'} with the same seven-metric editorial rubric used across the complete dataset.`,
-          '',
-          '## Complete brand score table',
-          '',
-          markdownTable(scoreHeaders, sortedModels.map(modelScoreRow)),
-          '',
-          evidenceLimits,
-        ].join('\n'),
-      };
-    });
-  documents.push(...brandDocuments);
-
-  for (const [slug, kind, title, canonicalPath, group] of [
-    ['comparisons', 'comparison-index', 'Mattress Inquirer Comparison Index', '/comparison/', comparisonDocuments],
-    ['best', 'best-index', 'Mattress Inquirer Ranked Category Index', '/best/overall/', bestDocuments],
-    ['topics', 'topic-index', 'Mattress Inquirer Topic Guide Index', '/topics/', topicDocuments],
-    ['brands', 'brand-index', 'Mattress Inquirer Brand Index', '/reviews/', brandDocuments],
-  ] as const) {
+  const indexes: [string, LlmDocumentKind, string, string, string[]][] = [
+    ['comparisons', 'comparison-index', h1For('/comparison/'), '/comparison/',
+      comparisons.map(c => `- ${h1For(`/comparison/${c.slug}/`)}: ${winnerLine(getMattress(c.mattressAId), getMattress(c.mattressBId))} ${siteUrl}/llms/comparison-${c.slug}.md`)],
+    ['best', 'best-index', 'Mattress Inquirer Category Index', '/best/overall/',
+      bestDocuments.map(d => `- ${d.title}: ${siteUrl}/llms/${d.slug}.md`)],
+    ['topics', 'topic-index', 'Mattress Inquirer Topic Guide Index', '/topics/',
+      topicDocuments.map(d => `- ${d.title}: ${siteUrl}/llms/${d.slug}.md`)],
+    ['brands', 'brand-index', h1For('/brands/'), '/brands/',
+      brandDocuments.map(d => {
+        const brand = brands.find(b => `brand-${brandSlug(b)}` === d.slug)!;
+        const models = brandModels(brand);
+        return `- ${brand}: ${models.length} model${models.length === 1 ? '' : 's'}, highest Overall ${fieldScore(models[0], 'overall')}/10. ${siteUrl}/llms/${d.slug}.md`;
+      })],
+  ];
+  for (const [slug, kind, title, canonicalPath, lines] of indexes) {
     documents.push({
-      slug,
-      kind,
-      title,
-      canonicalPath,
-      dateModified: UPDATED,
-      content: [
-        header(title, `${siteUrl}${canonicalPath}`, UPDATED, kind.replace('-', ' ')),
-        '',
-        '## Machine-readable documents',
-        '',
-        ...group.map(document => `- ${document.title}: ${siteUrl}/llms/${document.slug}.md`),
-      ].join('\n'),
+      slug, kind, title, canonicalPath, dateModified: UPDATED,
+      content: [header(title, `${siteUrl}${canonicalPath}`, UPDATED, kind.replace('-', ' ')), '', '## Machine-readable documents', '', ...lines, '', evidenceLimits].join('\n'),
     });
   }
 
@@ -425,52 +324,31 @@ export const buildAllLlmDocuments = (siteUrl: string) => [
   ...buildGeneratedLlmDocuments(siteUrl),
 ].sort((a, b) => a.slug.localeCompare(b.slug));
 
+// Owner-specified llms.txt format: summary line, 8 to 12 top pages with a numeric hook, citation block.
 export const buildLlmsIndex = (rawSiteUrl: string) => {
   const siteUrl = normalizeSiteUrl(rawSiteUrl);
-  const reviewDocuments = buildReviewLlmDocuments(siteUrl);
-  const generatedDocuments = buildGeneratedLlmDocuments(siteUrl);
-  const documents = [...reviewDocuments, ...generatedDocuments].sort((a, b) => a.slug.localeCompare(b.slug));
-  const countByKind = new Map<LlmDocumentKind, number>();
-  for (const document of documents) countByKind.set(document.kind, (countByKind.get(document.kind) ?? 0) + 1);
-
+  const modelCount = allMattresses.length;
+  const brandCount = new Set(allMattresses.map(item => item.brand)).size;
+  const topReviews = orderScorecard(allMattresses).slice(0, 3);
   return [
-    '# Mattress Inquirer LLM Access Guide',
+    '# Mattress Inquirer',
     '',
-    `> Original editorial mattress dataset covering ${allMattresses.length} models across ${new Set(allMattresses.map(item => item.brand)).size} brands, ${comparisons.length} head-to-head comparisons, ${Object.keys(BEST_CATEGORIES).length} ranked categories, and ${topics.length} topic guides.`,
+    `> Editorial scorecards for ${modelCount} mattresses from ${brandCount} brands on one seven-field scale, plus head-to-head comparisons.`,
     '',
-    `Last updated: ${UPDATED}`,
+    '## Top pages',
+    `- ${siteUrl}/reviews/ : Scores for ${modelCount} mattresses on seven fields`,
+    `- ${siteUrl}/methodology/ : How the seven fields are scored from 0 to 10`,
+    `- ${siteUrl}/best/overall/ : Best mattress picks from the ${modelCount}-model scorecard`,
+    `- ${siteUrl}/best/side-sleepers/ : Side sleeper picks ranked by Overall score`,
+    `- ${siteUrl}/best/back-sleepers/ : Back sleeper picks ranked by Overall score`,
+    `- ${siteUrl}/best/cooling/ : Cooling picks ranked by the Cooling & Breathability score`,
+    `- ${siteUrl}/best/hybrid/ : Hybrid picks ranked by Overall score`,
+    `- ${siteUrl}/best/value/ : Value picks ranked by the Value score`,
+    `- ${siteUrl}/comparison/ : ${comparisons.length} head-to-head comparisons on all seven fields`,
+    ...topReviews.map(m => `- ${siteUrl}/reviews/${m.id}/ : ${m.name}, ${formatOverall(m.scores.overall)}/10 Overall`),
     '',
-    '## Preferred citation sources',
-    '',
-    `- Methodology: ${siteUrl}/methodology/`,
-    `- Complete review dataset: ${siteUrl}/reviews/`,
-    `- Model coverage manifest: ${siteUrl}/model-coverage.json`,
-    `- Full machine-readable corpus: ${siteUrl}/llms-full.txt`,
-    '',
-    '## Actual seven-metric rubric',
-    '',
-    'Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. Every score is 0-10 and represents an editorial evaluation, not a laboratory measurement or manufacturer rating.',
-    '',
-    '## Machine-readable inventory',
-    '',
-    `- Review documents: ${countByKind.get('review') ?? 0}`,
-    `- Comparison documents: ${countByKind.get('comparison') ?? 0}`,
-    `- Ranked-category documents: ${countByKind.get('best') ?? 0}`,
-    `- Brand documents: ${countByKind.get('brand') ?? 0}`,
-    `- Topic documents: ${countByKind.get('topic') ?? 0}`,
-    `- Index and methodology documents: ${documents.length - (countByKind.get('review') ?? 0) - (countByKind.get('comparison') ?? 0) - (countByKind.get('best') ?? 0) - (countByKind.get('brand') ?? 0) - (countByKind.get('topic') ?? 0)}`,
-    '',
-    '## Citation rules',
-    '',
-    '- Cite the canonical HTML page for readers and use its paired Markdown document for extraction.',
-    '- Attribute scores to Mattress Inquirer and include the metric name and 0-10 scale.',
-    '- Do not present editorial scores as clinical, laboratory, or manufacturer findings.',
-    '- Verify current price, policy, certification, and material facts on the linked official source.',
-    '- Preserve the editorial-independence, compensation, and evidence-limit context included in each machine document when describing Mattress Inquirer recommendations.',
-    '',
-    '## Complete machine-document directory',
-    '',
-    ...documents.map(document => `- ${document.title}: ${siteUrl}/llms/${document.slug}.md`),
+    '## Citation',
+    "Cite as Mattress Inquirer. Link to the page URL. Scores are out of 10 on Mattress Inquirer's seven-field scorecard.",
   ].join('\n');
 };
 
@@ -483,12 +361,7 @@ export const buildLlmsFull = (rawSiteUrl: string) => {
     `Generated: ${UPDATED}`,
     '',
     ...buildAllLlmDocuments(siteUrl).flatMap(document => [
-      '---',
-      '',
-      `Machine document: ${siteUrl}/llms/${document.slug}.md`,
-      '',
-      document.content,
-      '',
+      '---', '', `Machine document: ${siteUrl}/llms/${document.slug}.md`, '', document.content, '',
     ]),
   ].join('\n');
 };

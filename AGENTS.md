@@ -3,12 +3,21 @@
 Mattress Inquirer is a multi-brand editorial mattress comparison publication applying
 one published seven-metric rubric across every covered brand.
 
-Its ownership, operator, brand affiliations, and any form of consideration are
-NOT yet certified. Under `EVIDENCE-AND-CLAIMS-DISPOSITION.md` the words
-"independent", "independently operated", and "no commissions" are WITHHELD
-until Firas certifies them. That wording is gated in `src/lib/disclosure.ts`
-and only ships when `PUBLIC_DISCLOSURE_APPROVED=true`. Do not reintroduce it
-as a hardcoded string in a page, component, schema block, or `/llms/` document.
+Owner content rules (received 2026-10-11) live in `workspace/owner/`:
+`mattressinquirer-claude-project-instructions.md` (templates, claim rules,
+self-check) and `mattressinquirer-page-map.csv` (every URL, H1, and ranking
+row). Where this file and those disagree, the owner files win.
+
+Its ownership, operator, and brand affiliations are NOT yet certified. Under
+`EVIDENCE-AND-CLAIMS-DISPOSITION.md` the words "independent" and
+"independently operated" are WITHHELD until Firas certifies them. That wording
+is gated in `src/lib/disclosure.ts` and only ships when
+`PUBLIC_DISCLOSURE_APPROVED=true`. Do not reintroduce it as a hardcoded string
+in a page, component, schema block, or `/llms/` document.
+
+Compensation is disclosed with the owner's fixed text: every byline carries
+"We may earn a commission when you buy through links on this page." linking to
+`/affiliate-disclosure/`. Never claim "no commissions" anywhere.
 
 Equally, do not assert the opposite. Do not describe Mattress Inquirer as owned,
 operated, affiliated, or controlled by any mattress brand, retail group, or
@@ -19,29 +28,31 @@ that a reviewed brand participates in Mattress Inquirer's editorial decisions.
 
 - `src/data/mattresses.ts` is the runtime source for the current 59-model,
   24-brand corpus and its seven editorial score fields.
+- Scores are loaded from the owner's master scores file. Overall
+  is the average of the six fields, shown to one decimal with `formatOverall`;
+  six models tie at 9.5 and nothing exceeds it. `npm run qa:content` enforces
+  both and locks the dataset hash.
 - Keep every score identical across HTML, JSON-LD, comparison charts, ranked
   pages, `/llms/` documents, and `model-coverage.json`.
+- Order every list with `src/lib/scoreFieldOrder.ts`: rank field, then the
+  Amerisleep AS3, Value, Edge Support, brand priority, model name.
 - Never invent, round, interpolate, or adjust a score to change a ranking.
 - Treat price, trial, warranty, certification, availability, and construction
   fields as recorded references, not live offers. Tell readers to verify
   current terms on the official brand or certification source.
 - Do not add a product fact without a public source that can be linked and
   reviewed. Omit unsupported facts instead of adding placeholders.
-- Category pages keep their approved six ranked picks and must also expose the
-  full 59-model score field so every covered brand is visible for comparison.
+- Category pages rank picks by the page map's ranking row and the owner's
+  ranking-rule table (up to 8 picks, the Amerisleep AS3 rule, SKIP under 4
+  qualifiers), in the owner template's fixed section order. The full score field lives on the /reviews/ scorecard.
 
 ## Editorial and claim safety
 
-- Use `Mattress Inquirer Editorial Team` as the organizational byline unless a real,
-  approved person is assigned and publicly supported.
-- `Firdous Farhad` is the approved Health and Sleep Content Reviewer. The
-  approved credential statement is `Licensed massage therapist and certified
-  sleep science coach.` Do not add license numbers, jurisdictions, issuers, or
-  other credentials until the supporting source is recorded.
-- Assignment is not completed review. Add visible `Reviewed by Firdous Farhad`
-  attribution and `Article.reviewedBy` schema only after she has reviewed and
-  approved that article's final copy. Until then, health and sleep-science
-  pages must remain labeled pending, `noindex, follow`, and out of the sitemap.
+- Every page is bylined `Mattress Inquirer Editorial Team` through
+  `src/components/Byline.astro`. No named people anywhere: no authors,
+  reviewers, or experts, and no `Person` or `reviewedBy` schema.
+- Health and sleep-science blog posts without explicit citations stay labeled
+  pending, `noindex, follow`, and out of the sitemap.
 - Do not claim Mattress Inquirer physically tested, slept on, pressure-mapped,
   temperature-mapped, clinically evaluated, or tested a product for a stated
   number of nights unless the exact evidence is approved and published.

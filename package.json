@@ -20,9 +20,11 @@
     "qa:schema": "node scripts/verify-schema-parity.mjs",
     "qa:release-config": "node scripts/verify-release-config.mjs",
     "qa:live": "node scripts/verify-live-release.mjs",
-    "qa": "npm run lint && npm run qa:content && npm run build && npm run qa:dist && npm run qa:schema",
+    "qa": "npm run lint && npm run qa:content && npm run build && npm run qa:dist && npm run qa:schema && npm run qa:owner && npm run qa:page-map",
     "deploy": "npm run build && wrangler deploy",
-    "cf-typegen": "wrangler types"
+    "cf-typegen": "wrangler types",
+    "qa:owner": "node scripts/verify-owner-rules.mjs",
+    "qa:page-map": "node scripts/verify-page-map.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "12.6.13",

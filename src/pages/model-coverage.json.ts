@@ -1,6 +1,6 @@
 import { allMattresses } from '../data/mattresses';
 import { comparisons } from '../data/comparisons';
-import { BEST_CATEGORIES } from '../lib/bestCategories';
+import { BEST_PAGE_CONFIGS, rankBestPage } from '../lib/ranking';
 import { LEGACY_BEST_BLOG_REDIRECTS } from '../lib/legacyBlogRedirects';
 
 export const prerender = true;
@@ -16,10 +16,10 @@ const scoreKeys = [
 ] as const;
 
 export const GET = () => {
-  const bestAppearancesByModel = Object.entries(BEST_CATEGORIES).reduce<Record<string, string[]>>((acc, [category, config]) => {
-    config.picks.forEach((id) => {
+  const bestAppearancesByModel = BEST_PAGE_CONFIGS.reduce<Record<string, string[]>>((acc, config) => {
+    rankBestPage(config).picks.forEach(({ candidate: { mattress: { id } } }) => {
       acc[id] = acc[id] ?? [];
-      acc[id].push(`/best/${category}/`);
+      acc[id].push(`/best/${config.slug}/`);
     });
     return acc;
   }, {});
@@ -53,7 +53,7 @@ export const GET = () => {
     purpose: 'Published Mattress Inquirer model and score manifest for source-to-output QA.',
     totals: {
       models: models.length,
-      bestCategories: Object.keys(BEST_CATEGORIES).length,
+      bestCategories: BEST_PAGE_CONFIGS.length,
       comparisons: comparisons.length,
       legacyBestBlogRedirects: Object.keys(LEGACY_BEST_BLOG_REDIRECTS).length,
     },

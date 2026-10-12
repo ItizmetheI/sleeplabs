@@ -27,7 +27,7 @@ export default function Footer() {
             <h2 className="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold">Legal</h2>
             <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/methodology/">Methodology</a>
             <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/editorial-policy/">Editorial Policy</a>
-            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/disclosure/">Disclosure</a>
+            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/affiliate-disclosure/">Affiliate Disclosure</a>
             <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/privacy-policy/">Privacy Policy</a>
             <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/terms-of-service/">Terms of Service</a>
           </div>

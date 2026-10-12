@@ -84,11 +84,13 @@ for (const { value, route } of articleNodes) {
 const requiredArticleSections = [
   {
     match: route => route.startsWith('reviews/') && route !== 'reviews/index.html',
-    headings: ['Detailed Performance Analysis', 'Inside the Mattress', 'How This Review Is Scored', 'Frequently Asked Questions', 'Sizes & Reference Pricing'],
+    // Owner review template, sections 1 to 13.
+    headings: ['Quick Answer', 'Specs at a Glance', 'Strengths and Limitations', 'How It Was Scored', 'Construction', 'Performance', 'Firmness and Feel by Sleep Position', 'How It Compares', 'Trial, Warranty, Shipping and Returns', 'FAQs', 'Verdict'],
   },
   {
     match: route => route.startsWith('comparison/') && route !== 'comparison/index.html',
-    headings: ['Specs at a Glance', 'Performance Scores', 'The Winner By Category', 'Detailed Head-to-Head Comparison', '1. Construction & Build Quality', '5. Policies & Recorded Pricing', 'Our Verdict'],
+    // Owner comparison template.
+    headings: ['Quick Verdict', 'Side by Side', 'Feel and Firmness', 'Construction', 'Edge Support', 'Motion Transfer', 'Cooling', 'Response', 'Value and Policies', 'FAQs'],
   },
   {
     match: route => route.startsWith('blog/'),
@@ -123,9 +125,13 @@ assert(
 );
 for (const { value, route } of schemaNodes.filter(({ value }) => typeIncludes(value, 'Product'))) {
   assert(typeof value['@id'] === 'string' && value['@id'].includes('#product'), `${route} Product schema is missing a stable @id.`);
-  const images = Array.isArray(value.image) ? value.image : [value.image];
-  assert(images.every(image => typeof image === 'string' && /^https?:\/\//.test(image)), `${route} Product schema contains a relative or missing image URL.`);
-  assert(value.review && typeIncludes(value.review, 'Review'), `${route} Product schema is missing editorial Review data.`);
+  // Owner schema: reviews carry a Review; comparison Products are name and brand only. Any image must be absolute.
+  const images = value.image === undefined ? [] : Array.isArray(value.image) ? value.image : [value.image];
+  assert(images.every(image => typeof image === 'string' && /^https?:\/\//.test(image)), `${route} Product schema contains a relative image URL.`);
+  assert(typeof value.name === 'string' && value.brand, `${route} Product schema is missing name or brand.`);
+  if (route.startsWith('reviews/') && route !== 'reviews/index.html') {
+    assert(value.review && typeIncludes(value.review, 'Review'), `${route} Product schema is missing editorial Review data.`);
+  }
 }
 
 const allHtml = [...htmlByPath.values()].join('\n');
@@ -142,7 +148,8 @@ for (const [label, pattern] of [
   ['stale recurring-update claim', /updated monthly/i],
   ['unverified sale-price claim', /on sale from/i],
   ['unverified risk-free trial claim', /risk-free for 100 nights/i],
-  ['unverified shipping claim', /free shipping\s*(?:&|and|\u00b7)\s*(?:free )?returns|free shipping\s*\u00b7\s*20-year warranty/i],
+  // Marketing badges only; sourced prose such as "Amerisleep lists free shipping and free returns" is allowed.
+  ['unverified shipping claim', /free shipping\s*(?:&amp;|&|\u00b7)\s*(?:free )?returns|free shipping\s*\u00b7\s*20-year warranty/i],
   ['Amerisleep owner language', /Amerisleep[- ]owned|owned and operated by Amerisleep|owned by Amerisleep|Amerisleep owns|operated by Amerisleep|parentOrganization[^<]{0,200}Amerisleep/i],
   ['unsupported Mattress Inquirer hands-on claim', /Mattress Inquirer (?:Testing Team|testing team)|evaluated hands-on by Mattress Inquirer|scores (?:come|derive) from hands-on testing|scores are editorial, hands-on evaluations|our hands-on testing|hands-on mattress (?:reviews|rankings)|Hands-On Team Testing|quantified by our testing team/i],
 ] ) {
@@ -150,47 +157,36 @@ for (const [label, pattern] of [
 }
 
 const disclosureApproved = process.env.PUBLIC_DISCLOSURE_APPROVED === 'true';
-if (disclosureApproved) {
-  assert(allHtml.includes('does not receive per-click or per-sale commissions'), 'Approved build is missing the outbound-link compensation disclosure.');
-} else {
-  // Claims disposition: independence / no-commission wording is withheld until certified.
-  assert(!allHtml.includes('does not receive per-click or per-sale commissions'), 'Uncertified build publishes a no-commission claim that is withheld by the claims disposition.');
+// Owner affiliate disclosure: commissions are disclosed; a no-commission claim is never allowed.
+assert(!allHtml.includes('does not receive per-click or per-sale commissions'), 'Generated HTML publishes a no-commission claim that contradicts the affiliate disclosure.');
+assert(allHtml.includes('We may earn a commission when you buy through links on this page.'), 'Generated HTML is missing the byline affiliate disclosure line.');
+if (!disclosureApproved) {
+  // Claims disposition: independence wording is withheld until certified.
   assert(!allHtml.includes('independently operated'), 'Uncertified build publishes an independence claim that is withheld by the claims disposition.');
 }
-assert(allHtml.includes('Firdous Farhad'), 'Generated HTML is missing the approved health and sleep content reviewer.');
-assert(allHtml.includes('Licensed massage therapist and certified sleep science coach.'), 'Generated HTML is missing Firdous Farhad\'s approved credential statement.');
 
-const firdousPersonNodes = schemaNodes.filter(({ value }) =>
-  typeIncludes(value, 'Person') && value.name === 'Firdous Farhad'
-);
-assert(firdousPersonNodes.length >= 1, 'Generated JSON-LD is missing the Firdous Farhad Person entity.');
-for (const { value, route } of firdousPersonNodes) {
-  assert(value.jobTitle === 'Health and Sleep Content Reviewer', `${route} uses the wrong jobTitle for Firdous Farhad.`);
-  assert(value.description === 'Licensed massage therapist and certified sleep science coach.', `${route} uses the wrong credential description for Firdous Farhad.`);
-  assert(typeof value.url === 'string' && value.url.endsWith('/contributors/firdous-farhad/'), `${route} uses the wrong profile URL for Firdous Farhad.`);
-}
+// Owner content instructions: no named people anywhere (no authors, reviewers, or experts).
+assert(!/Firdous|Farhad/.test(allHtml.replace(/\/contributors\/firdous-farhad\//g, '')), 'Generated HTML names a person; the owner rules allow no named people.');
+assert(!schemaNodes.some(({ value }) => typeIncludes(value, 'Person')), 'Generated JSON-LD contains a Person entity; the owner rules allow no named people.');
 
 const sourceReviewPendingBlogPages = [...htmlByPath].filter(([route, html]) =>
   route.startsWith('blog/')
   && route !== 'blog/index.html'
   && html.includes('Editorial status: source review pending')
 );
-assert(sourceReviewPendingBlogPages.length === 67, `Expected 67 source-review-pending blog pages; found ${sourceReviewPendingBlogPages.length}.`);
 for (const [route, html] of sourceReviewPendingBlogPages) {
   assert(hasNoindex(html), `${route} is missing its noindex gate.`);
-  assert(html.includes('Reviewer assigned:'), `${route} is missing the visible reviewer-assignment status.`);
-  assert(html.includes('Firdous Farhad'), `${route} is missing Firdous Farhad's reviewer assignment.`);
-  assert(!html.includes('Reviewed by Firdous Farhad'), `${route} falsely presents the pending assignment as completed review.`);
 }
 
 for (const [route, html] of htmlByPath) {
   if (!route.startsWith('reviews/') || route === 'reviews/index.html') continue;
   const h1 = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1]?.replace(/<[^>]+>/g, ' ') ?? '';
   assert(!h1.includes('$'), `${route} presents a reference price in its H1.`);
-  assert(html.includes('Recorded dataset values, not live offers'), `${route} is missing the reference-price disclosure.`);
+  // Owner rule: prices appear only as "Queen price (checked Month YYYY)" or not at all.
+  assert(/Queen price( \(checked [A-Z][a-z]+ \d{4}\))?/.test(html), `${route} is missing the Queen price row.`);
 }
 
-const coreRoutePattern = /^(?:index\.html|reviews\/|comparison\/|best\/|brands\/|topics\/|methodology\/|about\/|disclosure\/|editorial-policy\/|contributors\/)/;
+const coreRoutePattern = /^(?:index\.html|reviews\/|comparison\/|best\/|brands\/|topics\/|methodology\/|about\/|affiliate-disclosure\/|editorial-policy\/)/;
 const canonicalOwners = new Map();
 for (const [route, html] of [...htmlByPath].filter(([route]) => coreRoutePattern.test(route))) {
   const titles = [...html.matchAll(/<title\b[^>]*>[\s\S]*?<\/title>/gi)];
@@ -236,8 +232,10 @@ for (const [route, html] of htmlByPath) {
 const comparisonDetailPages = [...htmlByPath].filter(([route]) => route.startsWith('comparison/') && route !== 'comparison/index.html');
 assert(comparisonDetailPages.length === 30, `Expected 30 rendered comparison pages; found ${comparisonDetailPages.length}.`);
 for (const [route, html] of comparisonDetailPages) {
-  assert((html.match(/data-comparison-score-chart/g) ?? []).length === 1, `${route} is missing its comparison score chart.`);
-  assert((html.match(/data-score-metric=/g) ?? []).length === 7, `${route} must render all seven score metrics.`);
+  const table = html.match(/data-section="Side by Side"[\s\S]*?<\/table>/)?.[0] ?? '';
+  for (const label of ['Overall', 'Value', 'Edge Support', 'Trial Period', 'Response Time', 'Motion Transfer', 'Cooling &amp; Breathability']) {
+    assert(table.includes(`>${label}</th>`), `${route} Side by Side table is missing the ${label} score row.`);
+  }
 }
 
 const sitemapFiles = files.filter(file => /sitemap(?:-index|-\d+)?\.xml$/.test(file));
@@ -287,7 +285,7 @@ for (const [route, html] of htmlByPath.entries()) {
   for (const m of html.matchAll(/href="(\/[^"#?]*)"/g)) {
     const h = m[1];
     if (h === '/' || h.endsWith('/') || h.startsWith('/_')) continue;
-    if (/\.(css|js|json|xml|txt|md|jpg|jpeg|png|webp|svg|ico|avif)$/i.test(h)) continue;
+    if (/\.(css|js|json|xml|txt|md|csv|jpg|jpeg|png|webp|svg|ico|avif)$/i.test(h)) continue;
     slashlessTargets.add(`${h} (linked from ${route})`);
   }
 }
@@ -329,16 +327,18 @@ for (const file of llmMarkdownFiles) {
 }
 for (const file of llmBestFiles) {
   const content = await readFile(file, 'utf8');
-  const scoreField = content.split('## Full 59-model score field')[1]?.split('## Evidence and limits')[0] ?? '';
-  const scoreFieldIds = [...scoreField.matchAll(/\/reviews\/([a-z0-9-]+)\//g)].map(match => match[1]);
-  assert(scoreField.length > 0, `${relative(file)} is missing the full 59-model score-field section.`);
-  assert(scoreFieldIds.length === 59, `${relative(file)} must list 59 score-field models; found ${scoreFieldIds.length}.`);
-  assert(new Set(scoreFieldIds).size === 59, `${relative(file)} full score field contains duplicate model rows.`);
+  const picks = [...content.matchAll(/^## #\d+ .+: .+$/gm)].length;
+  assert(content.includes('## Our Picks at a Glance'), `${relative(file)} is missing Our Picks at a Glance.`);
+  assert(picks >= 4 && picks <= 8, `${relative(file)} must list 4 to 8 ranked picks; found ${picks}.`);
 }
 const llmsIndex = await readFile(path.join(dist, 'llms.txt'), 'utf8');
 const llmsFull = await readFile(path.join(dist, 'llms-full.txt'), 'utf8');
-const indexedMachineSlugs = new Set([...llmsIndex.matchAll(/\/llms\/([a-z0-9-]+)\.md/g)].map(match => match[1]));
-assert(indexedMachineSlugs.size === 148, `llms.txt must list 148 unique machine documents; found ${indexedMachineSlugs.size}.`);
+// Owner llms.txt format: H1, summary quote, 8 to 12 top pages, Citation block.
+const llmsTopPages = (llmsIndex.split('## Top pages')[1]?.split('## Citation')[0] ?? '').split('\n').filter(line => line.startsWith(`- ${expectedSite}/`));
+assert(llmsIndex.startsWith('# Mattress Inquirer\n'), 'llms.txt must start with "# Mattress Inquirer".');
+assert(/^> Editorial scorecards for 59 mattresses from 24 brands/m.test(llmsIndex), 'llms.txt is missing the owner summary line.');
+assert(llmsTopPages.length >= 8 && llmsTopPages.length <= 12, `llms.txt must list 8 to 12 top pages; found ${llmsTopPages.length}.`);
+assert(llmsIndex.includes("Cite as Mattress Inquirer. Link to the page URL. Scores are out of 10 on Mattress Inquirer's seven-field scorecard."), 'llms.txt is missing the owner citation block.');
 assert((llmsFull.match(/^Machine document:/gm) ?? []).length === 148, 'llms-full.txt does not contain all 148 machine documents.');
 
 const requiredTopicRoutes = [
@@ -351,7 +351,7 @@ const requiredTopicRoutes = [
   'certipur-us',
   'sleep-cycles',
 ];
-assert(htmlByPath.has('contributors/firdous-farhad/index.html'), 'Missing Firdous Farhad contributor profile route.');
+assert(htmlByPath.has('affiliate-disclosure/index.html'), 'Missing /affiliate-disclosure/ route.');
 for (const topic of requiredTopicRoutes) {
   assert(htmlByPath.has(`topics/${topic}/index.html`), `Missing standalone topic route: /topics/${topic}/.`);
 }
@@ -405,19 +405,15 @@ assert(
 
 const bestDetailPages = [...htmlByPath].filter(([route]) => route.startsWith('best/'));
 assert(bestDetailPages.length === 21, `Expected 21 rendered ranked-category pages; found ${bestDetailPages.length}.`);
+// Owner best-of template: 4 to 8 ranked pick sections, the AS3 first wherever it is ranked.
 for (const [route, html] of bestDetailPages) {
-  const scoreFieldIds = [...html.matchAll(/data-score-field-model=["']([^"']+)["']/g)].map(match => match[1]);
-  const scoreFieldBrands = [...html.matchAll(/data-score-field-brand=["']([^"']+)["']/g)].map(match => match[1]);
-  assert(html.includes('data-full-score-field'), `${route} is missing its full score-field container.`);
-  assert(scoreFieldIds.length === 59, `${route} must render 59 full-field model rows; found ${scoreFieldIds.length}.`);
-  assert(new Set(scoreFieldIds).size === 59, `${route} full score field contains duplicate model rows.`);
-  assert(scoreFieldBrands.length === 59, `${route} must expose a brand for every full-score-field row.`);
-  assert(new Set(scoreFieldBrands.slice(0, 12)).size >= 8, `${route} does not present enough brand diversity in the first 12 full-score-field rows.`);
-
+  const pickIds = [...html.matchAll(/data-pick="([^"]+)"/g)].map(match => match[1]);
+  assert(pickIds.length >= 4 && pickIds.length <= 8, `${route} must render 4 to 8 picks; found ${pickIds.length}.`);
+  if (pickIds.includes('amerisleep-as3')) assert(pickIds[0] === 'amerisleep-as3', `${route} must rank the Amerisleep AS3 first where it qualifies.`);
+  else assert(html.includes('data-as3-box'), `${route} must show the Our Best Overall Pick box when the AS3 is not ranked.`);
   const article = articleNodes.find(node => node.route === route)?.value;
   const articleBody = typeof article?.articleBody === 'string' ? article.articleBody : '';
-  assert(articleBody.includes('Full 59-Model Score Field'), `${route} Article schema is missing the full score-field section.`);
-  assert(articleBody.includes('All Model Scores'), `${route} Article schema is missing the complete score-field table.`);
+  assert(articleBody.includes('Our Picks at a Glance') && articleBody.includes('How We Picked'), `${route} Article schema is missing the picks table or How We Picked.`);
 }
 
 const mattressImageFiles = files.filter(file => /^images\/mattresses\/[^/]+\.(?:jpe?g|png|webp)$/i.test(relative(file)));
@@ -480,13 +476,9 @@ console.log(JSON.stringify({
   minimumArticleBodyCharacters: Math.min(...articleBodyLengths),
   llmMarkdownFiles: llmMarkdownFiles.length,
   llmReviewFiles: llmReviewFiles.length,
-  comparisonCharts: comparisonDetailPages.length,
+  comparisonPages: comparisonDetailPages.length,
   sourceNavigationLinks: sourceNavigationLinks.length,
-  bestPagesWithFullScoreField: bestDetailPages.length,
-  modelsPerBestScoreField: 59,
-  minimumDistinctBrandsInFirst12ScoreRows: Math.min(...bestDetailPages.map(([, html]) =>
-    new Set([...html.matchAll(/data-score-field-brand=["']([^"']+)["']/g)].slice(0, 12).map(match => match[1])).size
-  )),
+  bestPages: bestDetailPages.length,
   sourceReviewPendingBlogPages: sourceReviewPendingBlogPages.length,
   scheduledBlogPages: scheduledBlogPages.length,
   internalLinksNeedingRedirect: slashlessTargets.size,

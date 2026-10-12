@@ -102,7 +102,7 @@ const navItems: NavItem[] = [
   },
   {
     label: 'GUIDES',
-    href: '/guides/',
+    href: '/topics/',
     columns: [
       {
         title: 'Buying Guides',
@@ -112,7 +112,7 @@ const navItems: NavItem[] = [
           { label: 'Firm vs Soft Mattress', href: '/blog/firm-vs-soft-mattress/' },
           { label: 'Memory Foam vs Latex', href: '/blog/memory-foam-vs-latex-mattress/' },
           { label: 'Evaluate a Home Trial', href: '/blog/how-to-evaluate-a-mattress-trial-period/' },
-          { label: 'All Guides', href: '/guides/' },
+          { label: 'All Topics', href: '/topics/' },
         ]
       }
     ]

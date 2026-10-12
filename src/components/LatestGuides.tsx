@@ -4,18 +4,18 @@ const guides = [
   {
     href: '/best/organic/',
     eyebrow: 'Multi-brand ranking',
-    title: 'Best Organic Mattresses: Full Score Field',
-    description: 'Compare six ranked picks and all 59 covered models, with certification scope clearly labeled for verification.',
+    title: 'Best Organic Mattress (2026)',
+    description: 'Ranked picks with GOTS or GOLS certification listed, each with its scores, firmness and policies.',
     image: '/images/mattresses/plushbeds-signature-bliss.webp',
     imageAlt: 'PlushBeds Signature Bliss mattress',
   },
   {
-    href: '/reviews/ghostbed-flex/',
+    href: '/reviews/amerisleep-as3/',
     eyebrow: 'Mattress review',
-    title: 'GhostBed Flex Review and Seven-Metric Scorecard',
-    description: 'Recorded construction, firmness, policy fields, score definitions, evidence limits, and official source links.',
-    image: '/images/mattresses/ghostbed-flex.webp',
-    imageAlt: 'GhostBed Flex mattress',
+    title: 'Amerisleep AS3 Review (2026): Scores, Specs and Verdict',
+    description: 'A 9.5/10 Overall, with 10s in Edge Support, Motion Transfer and Cooling & Breathability at a medium 5/10 feel.',
+    image: '/images/mattresses/amerisleep-as3.webp',
+    imageAlt: 'Amerisleep AS3 mattress',
   },
 ];
 
@@ -35,12 +35,12 @@ export default function LatestGuides() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {guides.map((guide, index) => (
-            <article key={guide.href} className={`${index === 0 ? 'lg:col-span-7' : 'lg:col-span-5'} bg-white border border-outline-variant rounded-lg overflow-hidden shadow-sm`}>
+            <div key={guide.href} className={`${index === 0 ? 'lg:col-span-7' : 'lg:col-span-5'} bg-white border border-outline-variant rounded-lg overflow-hidden shadow-sm`}>
               <a href={guide.href} className="block h-56 bg-white border-b border-outline-variant overflow-hidden">
                 <img src={guide.image} alt={guide.imageAlt} className="w-full h-full object-contain p-4" />
               </a>
               <div className="p-6">
-                <p className="text-label-sm uppercase text-secondary font-bold">{guide.eyebrow} · July 2026</p>
+                <p className="text-label-sm uppercase text-secondary font-bold">{guide.eyebrow} · October 2026</p>
                 <h3 className="text-headline-md text-primary font-bold mt-3">
                   <a href={guide.href} className="hover:text-secondary transition-colors">{guide.title}</a>
                 </h3>
@@ -49,7 +49,7 @@ export default function LatestGuides() {
                   Open guide <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </a>
               </div>
-            </article>
+            </div>
           ))}
 
           <aside className="lg:col-span-12 grid grid-cols-1 md:grid-cols-[auto_1fr_auto] items-center gap-5 bg-primary text-white p-6 rounded-lg">

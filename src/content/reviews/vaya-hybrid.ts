@@ -1,0 +1,144 @@
+import type { ReviewCopy } from '../types';
+
+const copy: ReviewCopy = {
+  slug: 'vaya-hybrid',
+  dateModified: '2026-10-11',
+  metaDescription: 'Vaya Hybrid review: 8.8/10 Overall, a 14 inch medium 5/10 hybrid with a quilted cotton cushion over 8 inch coils and 10s in Value and Response Time.',
+  quickAnswer: 'Vaya Hybrid earns an 8.8/10 Overall as a 14 inch hybrid rated medium 5/10, with a quilted cotton cushion and Vaya foam over 8 inch pocketed coils. It suits side and combination sleepers who want a balanced, quick surface. Its main strengths are 10/10 scores in Value and Response Time. Its main limitations are 8s in Edge Support, Motion Transfer and Cooling & Breathability.',
+  strengths: [
+    '10/10 scores in Value and Response Time.',
+    'A medium 5/10 feel that suits side and combination sleepers.',
+    'A 2 inch quilted cotton cushion over 8 inch pocketed coils.',
+    'Made in the USA, according to Vaya.',
+  ],
+  limitations: [
+    'Edge Support, Motion Transfer and Cooling & Breathability are 8s, good with a caveat.',
+    'A 100-night trial, shorter than the year-long trials many brands we score offer.',
+    'A 10-year warranty, shorter than the lifetime warranties several brands we score offer.',
+  ],
+  howScored: 'Vaya Hybrid is scored on the same seven fields as every model we cover, from Vaya\'s official product page. Our [methodology page](/methodology/) explains how each field is set.',
+  layerRoles: [
+    'Quilted cotton cushion that adds a soft surface.',
+    'Vaya foam comfort layer that cushions the body.',
+    'Pocketed coils that give support and lift.',
+    'Base foam that gives the coils a stable floor.',
+  ],
+  construction: [
+    'Vaya Hybrid is a 14 inch hybrid with four named parts. A 2 inch quilted cotton cushion sits over 2 inches of Vaya foam and 8 inches of pocketed coils, on a 2 inch base foam.',
+    'That gives 4 inches of comfort material over the coils. The cotton cushion sits at the surface, so the first layer under the sheets is quilted cotton rather than foam. Vaya lists CertiPUR-US certification and OEKO-TEX for the fire sock, and states the mattress is made in the USA. It is sold in one medium feel. Vaya does not name a memory foam layer in the stack.',
+  ],
+  performance: {
+    value: [
+      'Value is a standout 10. The score is set from price, trial and warranty facts, and it weighs what the Vaya Hybrid delivers against its cost.',
+      'Vaya pairs a 100-night trial with a 10-year warranty, and FedEx curbside shipping is free in the lower 48 states. The product page did not list a queen price when we recorded our specs, so our table shows it as not listed. Check the current price on Vaya\'s site before ordering.',
+      'Shoppers who weigh value heavily gain the most from this field. Those who weigh trial or warranty length first should note that both are shorter than many we record. The 10 holds across every size, since the terms do not change between them.',
+    ],
+    edgeSupport: [
+      'Edge Support is an 8, good with a caveat. The 8 inch pocketed coils give the perimeter structure, but Vaya names no reinforced edge.',
+      'For sleeping, the surface stays usable close to the side, though the outer few inches give a little more than the center. Sitting on the edge feels steadier than on an all-foam bed, but gives more than on beds that score 9 or 10 here.',
+      'Anyone who sits on the edge to dress each morning should weigh this score. Couples who share a full or queen will notice it most. Solo sleepers who stay near the center will notice it least. A sturdy frame helps the perimeter hold its shape over time.',
+    ],
+    trialPeriod: [
+      'Trial Period is a strong 9. Vaya offers a 100-night trial, with free returns within that window.',
+      'A 9 is strong, though it trails the 365-night trials offered by many brands we score. One hundred nights is enough to judge a medium hybrid feel across a change of season. Free returns remove the cost of sending it back within the trial.',
+      'First-time buyers of an online hybrid gain the most from the full trial. Keep the order details on file in case a return is needed, and confirm the current terms on Vaya\'s site before ordering.',
+    ],
+    responseTime: [
+      'Response Time is a standout 10. The pocketed coils add lift from below, and Vaya names no slow memory foam layer in the stack.',
+      'In practice, the surface rebounds the moment you shift weight. Combination sleepers who turn several times a night will find it easy to move. Getting in and out of bed should also feel easy.',
+      'Restless sleepers gain the most from this score. It suits people who move between the back and side through the night. Sleepers who want the slow, deep sink of memory foam should know the Vaya Hybrid feels livelier than that.',
+    ],
+    motionTransfer: [
+      'Motion Transfer is an 8, good with a caveat. Pocketed coils move one at a time, but a quick, springy surface lets some movement reach the other side.',
+      'Most couples will sleep through a partner turning over. A partner getting in or out of bed is more likely to be felt than on an all-foam bed. Very light sleepers who wake easily should weigh this field before ordering.',
+      'Couples on different schedules may prefer a bed with a 9 or 10 here. Solo sleepers and couples who sleep soundly will notice it least. A larger size gives each partner more room. Parents who share the bed with a child or pet may notice more movement than on an all-foam bed.',
+    ],
+    coolingBreathability: [
+      'Cooling & Breathability is an 8, good with a caveat. The quilted cotton cushion breathes, and the coil core leaves room for air to move, but Vaya names no dedicated cooling layer.',
+      'The score reflects that construction rather than a temperature reading. Most sleepers should be comfortable, while very warm sleepers may notice some warmth on summer nights. Cotton at the surface helps the cover feel less warm than a foam top.',
+      'Warm sleepers should pair it with breathable sheets and a thin protector. Heavy, plastic-backed protectors can trap heat at the surface. Cotton or linen sheets suit the build better than heavy synthetic bedding.',
+    ],
+  },
+  positionsIntro: 'Vaya rates the Vaya Hybrid medium, which sits at 5/10 on our scale. It is sold in that one feel. This guidance comes from that firmness and the hybrid build, by sleep position and body weight.',
+  positions: {
+    side: {
+      under130: 'A good fit. The medium surface lets a lighter frame sink into the cotton cushion and foam for cushioning at the shoulder and hip, while the coils keep the waist level. Lighter side sleepers get cushioning without sinking too far.',
+      from130to230: 'A strong fit and a core audience for this feel. The 4 inches of comfort material cushion the shoulder and hip, and the coils keep the hips from sinking too far. Side sleepers who also spend time on the back will find it easy to switch.',
+      over230: 'A good fit. More weight presses the shoulder and hip into the comfort layers, and the 8 inch coils hold the waist level. Some heavier side sleepers may want a little more support. The coils carry most of the extra weight.',
+    },
+    back: {
+      under130: 'A good fit. The medium surface supports the lower back with some contour, and a lighter frame stays near the top. The coils keep the hips from sinking.',
+      from130to230: 'A good fit. The coils keep the hips level with the shoulders, and the foam fills the lower back curve. This is a balanced feel for most back sleepers in this range.',
+      over230: 'Workable. Heavier back sleepers often prefer 6/10 or firmer, so the hips do not sink too far into the comfort layers. A firmer hybrid is the safer choice for this group.',
+    },
+    stomach: {
+      under130: 'Workable. The coils keep a lighter body\'s hips up, though a thin pillow helps keep the neck in line. The hips may settle a little through the night.',
+      from130to230: 'Borderline. A medium 5/10 surface can let the hips dip below the shoulders. Most stomach sleepers in this range do better at 6/10 or firmer. A firmer model is the safer choice.',
+      over230: 'Not a natural fit. Heavier stomach sleepers usually need 7/10 or firmer to keep the hips level.',
+    },
+    combination: {
+      under130: 'A good fit. The medium surface suits side time, and the coils support back time without much sink. The 10/10 Response Time keeps turning easy.',
+      from130to230: 'A strong fit. The 10/10 Response Time makes turning easy, and the medium feel balances side cushioning with back support.',
+      over230: 'A good fit. The coils lift a heavier body between positions, though stomach time may feel soft.',
+    },
+  },
+  buy: [
+    'Side and combination sleepers who want a medium hybrid with quick rebound.',
+    'Shoppers who weigh value, backed by a 10/10 Value score.',
+    'Restless sleepers, backed by a 10/10 Response Time.',
+  ],
+  skip: [
+    'Light sleepers who share a bed, since Motion Transfer is an 8.',
+    'Stomach sleepers and heavier back sleepers, who need a firmer surface.',
+    'Shoppers who want a long trial or a lifetime warranty.',
+  ],
+  compareIntro: 'The [Brooklyn Bedding Aurora Luxe](/reviews/brooklyn-bedding-aurora-luxe/), the [Amerisleep AS5 Hybrid](/reviews/amerisleep-as5-hybrid/) and the [Purple RestorePlus Hybrid](/reviews/purple-restoreplus-hybrid/) all score 8.8 as hybrids, the same as the Vaya Hybrid. The table lines up their firmness, trial and warranty.',
+  policies: [
+    'Vaya Hybrid comes with a 100-night trial and a 10-year warranty, according to Vaya. FedEx curbside shipping is free in the lower 48 states.',
+    'Returns are free within the 100-night trial. Sizes run Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
+    'Vaya states the mattress is made in the USA. The mattress is 14 inches tall, so deep pocket fitted sheets may help. Keep the order details on file in case a return is needed during the trial. Confirm the current terms on Vaya\'s site before ordering, since policies can change between our checks.',
+  ],
+  faqs: [
+    {
+      q: 'How firm is the Vaya Hybrid?',
+      a: 'Vaya rates the Vaya Hybrid medium, which sits at 5/10 on our scale. It is sold in that one feel. The quilted cotton cushion and foam cushion the shoulders and hips, while the pocketed coils keep the waist level. Stomach sleepers and heavier back sleepers may find it soft.',
+    },
+    {
+      q: 'What is the Vaya Hybrid score?',
+      a: 'The Vaya Hybrid earns an 8.8/10 Overall. It scores 10/10 in Value and Response Time, 9/10 in Trial Period, and 8/10 in Edge Support, Motion Transfer and Cooling & Breathability. Overall is the average of those six fields, shown to one decimal. Value and Response Time are its standout fields.',
+    },
+    {
+      q: 'Is the Vaya Hybrid good for side sleepers?',
+      a: 'Yes, side sleepers are a core audience. The medium 5/10 surface and 4 inches of comfort material cushion the shoulder and hip, and the 8 inch coils keep the waist level. Lighter and average weight side sleepers gain the most. The 10/10 Response Time also makes turning easy.',
+    },
+    {
+      q: 'Is Vaya Hybrid good for couples?',
+      a: 'It suits couples who sleep soundly. The 8/10 Motion Transfer means some movement reaches the other side, especially when a partner gets in or out of bed. The 8/10 Edge Support keeps most of the width usable. Light sleepers who share a bed may prefer a model with a 9 or 10 in Motion Transfer.',
+    },
+    {
+      q: 'What trial and warranty come with Vaya Hybrid?',
+      a: 'The Vaya Hybrid comes with a 100-night trial and a 10-year warranty, according to Vaya. Returns are free within the trial, and FedEx curbside shipping is free in the lower 48 states. Confirm the current terms on Vaya\'s site before ordering, since they can change between our checks.',
+    },
+    {
+      q: 'Does Vaya Hybrid sleep hot?',
+      a: 'It earns an 8/10 in Cooling & Breathability, good with a caveat. The quilted cotton cushion breathes and the coil core lets air move, but Vaya names no dedicated cooling layer. Very warm sleepers may notice some warmth. Breathable sheets and a thin protector help.',
+    },
+    {
+      q: 'How is Vaya Hybrid different from Vaya Foam?',
+      a: 'The Vaya Hybrid is 14 inches with a quilted cotton cushion and 8 inch pocketed coils, rated medium 5/10. The [Vaya Foam](/reviews/vaya-foam/) is a 12 inch two-layer all-foam bed with no firmness listed. The Hybrid scores 8.8 with a 10 in Response Time, and Vaya Foam scores 8.7 with a 9.',
+    },
+    {
+      q: 'Is Vaya Hybrid good for back sleepers?',
+      a: 'It suits lighter and average weight back sleepers. The medium 5/10 surface supports the lower back with some contour, and the 8 inch coils keep the hips level with the shoulders. Heavier back sleepers often prefer 6/10 or firmer, so the hips do not sink too far into the comfort layers.',
+    },
+  ],
+  verdict: 'Vaya Hybrid earns an 8.8/10 Overall, led by 10/10 scores in Value and Response Time. Its quilted cotton cushion and foam over 8 inch pocketed coils, rated medium 5/10, suit side and combination sleepers who want a balanced, quick surface. Edge Support, Motion Transfer and Cooling & Breathability are 8s. Stomach sleepers and light sleepers who share a bed should weigh that.',
+  related: [
+    { label: 'Vaya Mattress Reviews (2026)', href: '/brands/vaya/' },
+    { label: 'Best Hybrid Mattress (2026)', href: '/best/hybrid/' },
+    { label: 'Best Value Mattress (2026)', href: '/best/value/' },
+    { label: 'Best Mattress for Combination Sleepers (2026)', href: '/best/combination-sleepers/' },
+  ],
+};
+
+export default copy;
