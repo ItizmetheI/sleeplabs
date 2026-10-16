@@ -166,7 +166,7 @@ async function main() {
   console.log("--- PLANNING PHASE: Retrieving pristine topic map from Gemini ---");
   const existingTitlesList = existingPosts.map((p: any) => `- "${p.title}" (slug: ${p.slug})`).join('\n');
 
-  const planningPrompt = `You are the Lead SEO Content Strategist for PureSleep.
+  const planningPrompt = `You are the Lead SEO Content Strategist for Mattress Inquirer.
 Review the current list of published sleep blog posts:
 ${existingTitlesList}
 
@@ -257,7 +257,7 @@ Return a valid raw JSON Array:
       console.log(`- [Task #${globalIdx + 1}] Commencing Generation: "${topic.title}"`);
       
       try {
-        const writeSystemInstruction = `You are a sleep health researcher and senior testing analyst at PureSleep.
+        const writeSystemInstruction = `You are a sleep health researcher and senior testing analyst at Mattress Inquirer.
 You write in an expert, conversational tone—as a helpful sleep buddy, never a sales agent.
 Format your response as a strict JSON matching the BlogPost schema.
 

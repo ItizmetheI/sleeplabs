@@ -315,27 +315,7 @@ const rawComparisons: Comparison[] = [
       { question: "What is the difference in firmness?", answer: "The Organica is generally considered medium firmness. Birch Natural is medium-firm. If you sleep on your side or prefer a softer organic mattress, the Organica is the better fit. If you sleep on your back or stomach and want organic materials with a firmer feel, Birch Natural is worth considering." }
     ]
   },
-  {
-    slug: "amerisleep-as3-vs-bear-star-hybrid",
-    mattressAId: "amerisleep-as3",
-    mattressBId: "bear-star-hybrid",
-    title: "Amerisleep AS3 vs Bear Star Hybrid",
-    description: "AS3 all-foam vs Bear's flagship hybrid — AS3 scores 10/10 overall vs Bear Star's 9/10.",
-    verdict: "The AS3 wins on overall score (10 vs 9), edge support (10 vs 9), motion transfer (10 vs 9), and cooling (10 vs 9). The Bear Star Hybrid matches on value (9/10 each).",
-    dateModified: "2026-06-16",
-    winnerFor: [
-      { category: "Overall Score", winnerId: "amerisleep-as3", reason: "AS3 scores 10/10 overall vs Bear Star Hybrid's 9/10." },
-      { category: "Edge Support", winnerId: "amerisleep-as3", reason: "AS3 scores 10/10 vs Bear Star's 9/10." },
-      { category: "Motion Transfer", winnerId: "amerisleep-as3", reason: "AS3 scores 10/10 vs Bear Star's 9/10 — all-foam absorbs motion better." },
-      { category: "Cooling & Breathability", winnerId: "amerisleep-as3", reason: "AS3 scores 10/10 vs Bear Star's 9/10." },
-      { category: "Value", winnerId: "amerisleep-as3", reason: "Both score 9/10 on value, but AS3 delivers a higher overall score at the same value tier." }
-    ],
-    faqs: [
-      { question: "Which is better for athletes or active sleepers?", answer: "Bear markets its mattresses to active sleepers. The Bear Star Hybrid uses Celliant® fiber in its cover, which Bear positions as beneficial for recovery. The AS3 doesn't include Celliant. If recovery-specific materials matter to you, consider the Bear Star. On measurable scores, the AS3 leads across most metrics." },
-      { question: "Which has better motion isolation?", answer: "The AS3 scores 10/10 on motion transfer vs Bear Star Hybrid's 9/10. If you share a bed, the AS3's all-foam construction is the stronger isolator." },
-      { question: "Which should a side sleeper choose?", answer: "The AS3's HIVE® zoning and 10/10 overall score make it the stronger pick for most side sleepers. Both are medium-feel mattresses, but the AS3's all-foam construction provides deeper pressure relief at the shoulder and hip." }
-    ]
-  },
+
   {
     slug: "amerisleep-organica-vs-avocado-green",
     mattressAId: "amerisleep-organica",
@@ -506,27 +486,7 @@ const rawComparisons: Comparison[] = [
       { question: "What is the difference in support technology?", answer: "The AS2 uses HIVE® zoning — hexagonal cutouts in the transition foam that provide differentiated support across zones. Bear Original uses a standard foam layering without dedicated zoning. For lumbar support specifically, the AS2's zoning technology is a differentiator." }
     ]
   },
-  {
-    slug: "amerisleep-as3-vs-ghostbed-flex",
-    mattressAId: "amerisleep-as3",
-    mattressBId: "ghostbed-flex",
-    title: "Amerisleep AS3 vs GhostBed Flex",
-    description: "AS3 all-foam vs GhostBed Flex hybrid — AS3 scores 10/10 overall vs GhostBed's 9/10, winning on overall score, value, and edge support.",
-    verdict: "The AS3 wins overall (10 vs 9), value (9 vs 8), and edge support (10 vs 8). Both score 10/10 on motion transfer and cooling. GhostBed Flex's coil base adds bounce the AS3 doesn't have.",
-    dateModified: "2026-06-16",
-    winnerFor: [
-      { category: "Overall Score", winnerId: "amerisleep-as3", reason: "AS3 scores 10/10 overall vs GhostBed Flex's 9/10." },
-      { category: "Edge Support", winnerId: "amerisleep-as3", reason: "AS3 scores 10/10 vs GhostBed Flex's 8/10." },
-      { category: "Value", winnerId: "amerisleep-as3", reason: "AS3 scores 9/10 on value vs GhostBed Flex's 8/10." },
-      { category: "Motion Transfer", winnerId: "amerisleep-as3", reason: "Both score 10/10 — tied." },
-      { category: "Cooling & Breathability", winnerId: "amerisleep-as3", reason: "Both score 10/10 — tied." }
-    ],
-    faqs: [
-      { question: "Which feels more responsive?", answer: "GhostBed Flex has a hybrid coil base which adds bounce and makes it feel more responsive. The AS3 is all-foam and has a slower, more contouring response. Preference between these is personal." },
-      { question: "Which is better for couples?", answer: "Both score 10/10 on motion transfer. The AS3 scores 10/10 on edge support vs GhostBed Flex's 8/10, giving couples more usable sleep surface." },
-      { question: "Which has a longer warranty?", answer: "The AS3 carries a 20-year warranty. Verify GhostBed Flex's current warranty terms on GhostBed's official website." }
-    ]
-  },
+
   {
     slug: "amerisleep-as2-vs-helix-dawn-luxe",
     mattressAId: "amerisleep-as2",
@@ -756,7 +716,7 @@ export const comparisons: Comparison[] = rawComparisons.map(comparison => {
   const leadA = winnerFor.filter(item => item.winnerId === mattressA.id).map(item => item.category);
   const leadB = winnerFor.filter(item => item.winnerId === mattressB.id).map(item => item.category);
   const list = (items: string[]) => items.length > 0 ? items.join(', ') : 'no score fields';
-  const verdict = `${mattressA.name} leads on ${list(leadA)}. ${mattressB.name} leads on ${list(leadB)}.${ties.length > 0 ? ` They tie on ${ties.join(', ')}.` : ''} These are PureSleep editorial scores, not laboratory measurements or collected customer ratings.`;
+  const verdict = `${mattressA.name} leads on ${list(leadA)}. ${mattressB.name} leads on ${list(leadB)}.${ties.length > 0 ? ` They tie on ${ties.join(', ')}.` : ''} These are Mattress Inquirer editorial scores, not laboratory measurements or collected customer ratings.`;
 
   return {
     ...comparison,

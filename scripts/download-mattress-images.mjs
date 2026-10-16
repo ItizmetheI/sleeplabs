@@ -52,7 +52,6 @@ const MANIFEST = [
   // ── Nolah (nolahsleep.com) ───────────────────────────────────────────────
   { id: 'nolah-natural-11',    url: 'https://www.nolahsleep.com/cdn/shop/files/assets_a60bb37726c64760aef6cf06b028e1a5_f92f92d0a5494c648d29d14652580baf.webp?v=1742220724' },
   { id: 'nolah-evolution-15',  url: 'https://www.nolahsleep.com/cdn/shop/files/assets_a60bb37726c64760aef6cf06b028e1a5_bec9b94342da4956818c8ff8ee29d6d4.webp?v=1741330648' },
-  { id: 'nolah-original-hybrid',url: 'https://www.nolahsleep.com/cdn/shop/files/Mattress-Collection-Signature-All-Foam-400X300_8806612a-abbe-4ec8-879f-725a7afc437e.png?v=1756408537' },
 
   // ── Nest Bedding (nestbedding.com) ───────────────────────────────────────
   { id: 'nest-bedding-sparrow',    url: 'https://www.nestbedding.com/cdn/shop/products/Sparrow-Front-Optimized_800x570.jpg?v=1675877185' },
@@ -66,10 +65,8 @@ const MANIFEST = [
 
   // ── Bear (bearmattress.com) ───────────────────────────────────────────────
   { id: 'bear-original',    url: 'https://www.bearmattress.com/cdn/shop/files/Nav-Dropdown-Hover-Bear-Original-Front-Angle.jpg?v=1778266343' },
-  { id: 'bear-star-hybrid', url: 'https://www.bearmattress.com/cdn/shop/files/StarHybrid-Silho-FrontHero-2068x1163.jpg?v=1680618319' },
 
   // ── GhostBed (ghostbed.com) ───────────────────────────────────────────────
-  { id: 'ghostbed-flex', url: 'https://ghostbed-cdn.imgix.net/ghostbed-global/generic/products/ghostbed-flex-mattress-queen-base-pillows.webp?w=1280&fm=webp' },
   { id: 'ghostbed-luxe', url: 'https://cdn.shopify.com/s/files/1/0307/1167/7063/files/gb-luxe-foam-queen-main-image.webp?v=1773843852&width=900' },
 
   // ── PlushBeds (plushbeds.com) ─────────────────────────────────────────────
@@ -104,7 +101,6 @@ const MANIFEST = [
   { id: 'latex-for-less-hybrid-latex-mattress', url: 'https://www.latexforless.com/cdn/shop/products/3_800x.jpg?v=1775144609' },
 
   // ── SweetNight (sweetnight.com) ───────────────────────────────────────────
-  { id: 'sweetnight-prime',    url: 'https://cdn.shopify.com/s/files/1/0365/1973/9437/files/prime-mattress-2_600x600.webp?v=1753238021' },
   { id: 'sweetnight-coolnest', url: 'https://www.sweetnight.com/cdn/shop/files/2400x1080-1_1.png?v=1780656767' },
 
   // ── Glacier (glaciersleep.com) ────────────────────────────────────────────

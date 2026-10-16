@@ -2,10 +2,11 @@
 import { blogPosts } from '../../../data/blogs-generated';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getLegacyBestBlogRedirect } from '../../../lib/legacyBlogRedirects';
+import { isScheduled } from '../../../lib/scheduledContent';
 import { formatDateOnly } from '../../../lib/dateFormat';
 
 export function getStaticPaths() {
-  const activePosts = blogPosts.filter((post: any) => !post.redirectTo && !getLegacyBestBlogRedirect(post.slug));
+  const activePosts = blogPosts.filter((post: any) => !post.redirectTo && !getLegacyBestBlogRedirect(post.slug) && !isScheduled(post.datePublished));
   const tags = new Set<string>();
   activePosts.forEach((post: any) => {
     if (post.tags) {
@@ -26,7 +27,7 @@ export function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
-const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
+const SITE_URL = import.meta.env.SITE_URL || 'https://mattressinquirer.ahmedbarkat1067.workers.dev';
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -46,7 +47,7 @@ const jsonLd = {
 ---
 
 <BaseLayout
-  title={`Posts tagged with ${tag} | PureSleep Blog`}
+  title={`Posts tagged with ${tag} | Mattress Inquirer Blog`}
   description={`Explore our sleep and mattress guides tagged with ${tag}.`}
   canonicalUrl={`${SITE_URL}/blog/tag/${tag}/`}
   jsonLd={jsonLd}
@@ -64,7 +65,7 @@ const jsonLd = {
     {posts.length === 0 ? (
       <div class="text-center py-20">
         <h2 class="text-headline-md text-primary mb-4">No posts found</h2>
-        <a href="/blog" class="text-nav font-nav text-secondary hover:underline">← Back to Blog</a>
+        <a href="/blog/" class="text-nav font-nav text-secondary hover:underline">← Back to Blog</a>
       </div>
     ) : (
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -90,7 +91,7 @@ const jsonLd = {
               </div>
 
               <h2 class="text-headline-md font-headline-md text-primary group-hover:text-secondary transition-colors leading-snug">
-                <a href={`/blog/${post.slug}`}>{post.title}</a>
+                <a href={`/blog/${post.slug}/`}>{post.title}</a>
               </h2>
 
               <p class="text-body-md text-on-surface-variant leading-relaxed flex-1">
@@ -103,7 +104,7 @@ const jsonLd = {
               </div>
 
               <a
-                href={`/blog/${post.slug}`}
+                href={`/blog/${post.slug}/`}
                 class="w-full text-center py-3 rounded-lg border-2 border-primary text-primary font-label-sm uppercase tracking-normal font-bold hover:bg-primary/5 transition-colors"
               >
                 Read Article →

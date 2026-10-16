@@ -1,0 +1,19 @@
+---
+// Shared byline: organizational author, updated date, and the fixed owner disclosure line.
+import { formatDateOnly } from '../lib/dateFormat';
+import { BYLINE_DISCLOSURE } from '../lib/disclosure';
+
+export interface Props {
+  dateModified?: string;
+}
+
+const { dateModified } = Astro.props;
+---
+
+<div class="flex flex-col gap-1 text-body-sm text-on-surface-variant" data-byline>
+  <p>
+    By <a href="/about/#editorial-team" class="font-bold text-on-surface hover:text-primary">Mattress Inquirer Editorial Team</a>
+    {dateModified && <span> · Updated <time datetime={dateModified}>{formatDateOnly(dateModified)}</time></span>}
+  </p>
+  <p>{BYLINE_DISCLOSURE} <a href="/affiliate-disclosure/" class="underline underline-offset-4 hover:text-primary">Affiliate disclosure</a></p>
+</div>

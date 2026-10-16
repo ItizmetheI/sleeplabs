@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { topics } from '../../data/topics';
 
 const lastUpdated = "2026-07-14";
-const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
+const SITE_URL = import.meta.env.SITE_URL || 'https://mattressinquirer.ahmedbarkat1067.workers.dev';
 
 const getTopicImage = (id: string) => {
   const images = {
@@ -22,7 +22,7 @@ const getTopicImage = (id: string) => {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Mattress & Sleep Topics — PureSleep",
+  "name": "Mattress Topics",
   "description": "The science behind sleep: memory foam, cooling technology, spinal alignment, motion isolation, sleep cycles, and more.",
   "url": `${SITE_URL}/topics/`,
   "dateModified": lastUpdated,
@@ -39,18 +39,24 @@ const jsonLd = {
 ---
 
 <BaseLayout 
-  title="Key Mattress & Sleep Topics — PureSleep" 
+  title="Mattress Topics | Mattress Inquirer"
   description="Explore the science behind sleep: memory foam, cooling technology, spinal alignment, sleep cycles, and more."
   canonicalUrl={`${SITE_URL}/topics/`}
   machineReadableUrl={`${SITE_URL}/llms/topics.md`}
   lastUpdated={lastUpdated}
   ogImage="/images/mattresses/amerisleep-as3.webp"
-  jsonLd={jsonLd}
+  jsonLd={[jsonLd, {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+      { "@type": "ListItem", "position": 2, "name": "Topics", "item": `${SITE_URL}/topics/` },
+    ],
+  }]}
 >
   <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 relative z-10 w-full flex flex-col gap-16">
     <header class="flex flex-col gap-6 items-center text-center max-w-4xl mx-auto">
       <h1 class="text-headline-lg font-headline-lg  text-primary font-bold">
-        Key Mattress & Sleep Topics
+        Mattress Topics
       </h1>
       <p class="text-body-lg font-body-lg text-on-surface-variant max-w-3xl">
         Explore the science behind sleep: memory foam, cooling technology, spinal alignment, sleep cycles, and more.

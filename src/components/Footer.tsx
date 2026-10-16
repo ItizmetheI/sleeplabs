@@ -6,30 +6,30 @@ export default function Footer() {
       <div className="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex flex-col items-center md:items-start gap-4">
           <a href="/" className="text-headline-lg font-headline-lg  text-primary hover:text-secondary transition-colors">
-            PureSleep
+            Mattress Inquirer
           </a>
           <p className="text-body-md font-body-md text-on-surface-variant max-w-sm text-center md:text-left">
             Evidence-led mattress reviews, transparent scorecards, and side-by-side comparisons for better-informed buying decisions.
           </p>
           <p className="text-body-sm text-on-surface-variant/50 mt-4">
-            © 2026 PureSleep. All rights reserved.
+            © 2026 Mattress Inquirer. All rights reserved.
           </p>
         </div>
         
         <div className="flex flex-wrap justify-center md:justify-end gap-8 mt-8 md:mt-0">
           <div className="flex flex-col gap-4 items-center md:items-start">
-            <h4 className="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold">Company</h4>
-            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/about">About Us</a>
-            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/reviews">Mattress Reviews</a>
-            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/comparison">Comparisons</a>
+            <h2 className="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold">Company</h2>
+            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/about/">About Us</a>
+            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/reviews/">Mattress Reviews</a>
+            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/comparison/">Comparisons</a>
           </div>
           <div className="flex flex-col gap-4 items-center md:items-start">
-            <h4 className="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold">Legal</h4>
-            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/methodology">Methodology</a>
-            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/editorial-policy">Editorial Policy</a>
-            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/disclosure">Disclosure</a>
-            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/privacy-policy">Privacy Policy</a>
-            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/terms-of-service">Terms of Service</a>
+            <h2 className="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold">Legal</h2>
+            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/methodology/">Methodology</a>
+            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/editorial-policy/">Editorial Policy</a>
+            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/affiliate-disclosure/">Affiliate Disclosure</a>
+            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/privacy-policy/">Privacy Policy</a>
+            <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="/terms-of-service/">Terms of Service</a>
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ let blogs = JSON.parse(fs.readFileSync('src/data/blogs-generated.json', 'utf8'))
 
 for (let b of blogs) {
    if (b.reviewedBy) {
-       b.reviewedBy.name = "PureSleep Testing Team";
+       b.reviewedBy.name = "Mattress Inquirer Testing Team";
        b.reviewedBy.role = "Sleep Product Testers";
    }
 }

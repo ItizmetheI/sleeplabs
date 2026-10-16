@@ -247,7 +247,7 @@ POSTS_DEF.forEach(def => {
     id: def.slug,
     slug: def.slug,
     title: title,
-    metaTitle: title.substring(0, 45) + " | PureSleep",
+    metaTitle: title.substring(0, 45) + " | Mattress Inquirer",
     metaDescription: "Read our expert guide on " + title.toLowerCase() + ". Learn exactly why the " + primaryProduct.name + " is the optimal choice for your sleep health.",
     canonicalUrl: "/blog/" + def.slug,
     ogTitle: title,

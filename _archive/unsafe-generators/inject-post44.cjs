@@ -4,7 +4,7 @@ const post44 = {
   "id": "adjustable-base-vs-box-spring",
   "slug": "adjustable-base-vs-box-spring",
   "title": "Adjustable Base Vs Box Spring",
-  "metaTitle": "Adjustable Base vs Box Spring | PureSleep",
+  "metaTitle": "Adjustable Base vs Box Spring | Mattress Inquirer",
   "metaDescription": "I test the Amerisleep Adjustable Bed against the standard Foundation. Learn exactly why a traditional box spring ruins modern foam mattresses.",
   "canonicalUrl": "/blog/adjustable-base-vs-box-spring",
   "ogTitle": "Adjustable Base vs Box Spring: A Complete Breakdown",

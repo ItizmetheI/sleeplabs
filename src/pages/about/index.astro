@@ -1,123 +1,112 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { EDITORIAL_INDEPENDENCE_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
-import { FIRDOUS_FARHAD, firdousFarhadSchemaId } from '../../lib/editorialPeople';
+import Byline from '../../components/Byline.astro';
+import { BYLINE_DISCLOSURE } from '../../lib/disclosure';
+import { toArticleBody } from '../../lib/schemaArticleBody';
+import { MODEL_COUNT, BRAND_COUNT } from '../../lib/methodologyContent';
+import { BEST_PAGE_CONFIGS } from '../../lib/ranking';
+import { comparisons } from '../../data/comparisons';
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
-const CONTACT_EMAIL = import.meta.env.PUBLIC_CONTACT_EMAIL;
-const lastUpdated = "2026-07-14";
+const SITE_URL = import.meta.env.SITE_URL || 'https://mattressinquirer.ahmedbarkat1067.workers.dev';
+const CONTACT_EMAIL = 'contact@mattressinquirer.com';
+const lastUpdated = "2026-10-11";
+const canonicalUrl = `${SITE_URL}/about/`;
 
-const jsonLd = [
+const lead = `Mattress Inquirer is a scorecard database of ${MODEL_COUNT} mattresses from ${BRAND_COUNT} brands. Every model is scored on the same seven fields, so any two mattresses can be compared side by side.`;
+const sections = [
   {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "About PureSleep",
-    "url": `${SITE_URL}/about/`,
-    "description": "PureSleep is an independently operated mattress review publication covering 59 models across 24 brands.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "PureSleep",
-      "url": SITE_URL
-    },
-    "mainEntity": { "@id": firdousFarhadSchemaId(SITE_URL) }
+    heading: 'What We Score',
+    paragraphs: [
+      'The seven fields are Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. Each field uses a 0 to 10 scale.',
+      'Overall is the average of the other six, shown to one decimal. The methodology page explains what earns a 10 and what earns a 7 in each field.',
+    ],
   },
   {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": firdousFarhadSchemaId(SITE_URL),
-    "name": FIRDOUS_FARHAD.name,
-    "url": `${SITE_URL}${FIRDOUS_FARHAD.path}`,
-    "jobTitle": FIRDOUS_FARHAD.role,
-    "description": FIRDOUS_FARHAD.credentials
-  }
+    heading: 'What We Publish',
+    paragraphs: [
+      'Reviews, head-to-head comparisons, ranked category pages, and brand pages all draw on the same scorecard. Specs come from each brand\'s official product page, and every price shows the month it was checked.',
+      `The site has ${MODEL_COUNT} reviews, ${BEST_PAGE_CONFIGS.length} ranked category pages and ${comparisons.length} head-to-head comparisons, each built from the same seven fields.`,
+    ],
+  },
+  {
+    heading: 'Our Editorial Team',
+    id: 'editorial-team',
+    paragraphs: [
+      'Every page is published under the Mattress Inquirer Editorial Team byline. The team maintains the scorecard, writes the reviews and comparisons, and corrects a page when a brand changes a product or policy.',
+      'Mattress Inquirer is reader-supported. The affiliate disclosure explains how links on this site work.',
+    ],
+  },
+  {
+    heading: 'Contact',
+    paragraphs: [`Send corrections, product updates, and questions to ${CONTACT_EMAIL}.`],
+  },
 ];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "name": "About Mattress Inquirer",
+      "url": canonicalUrl,
+      "description": lead,
+      "text": toArticleBody('About Mattress Inquirer', BYLINE_DISCLOSURE, lead, sections.map(s => [s.heading, ...s.paragraphs])),
+      "dateModified": lastUpdated,
+      "publisher": { "@type": "Organization", "@id": `${SITE_URL}/#organization`, "name": "Mattress Inquirer", "url": SITE_URL, "email": CONTACT_EMAIL }
+    },
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/about/#editorial-team`,
+      "name": "Mattress Inquirer Editorial Team",
+      "url": `${SITE_URL}/about/#editorial-team`
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+        { "@type": "ListItem", "position": 2, "name": "About", "item": canonicalUrl }
+      ]
+    }
+  ]
+};
 ---
 
 <BaseLayout
-  title="About PureSleep — Mattress Reviews Across 24 Brands"
-  description="PureSleep is an independently operated mattress review publication covering 59 models across 24 brands using one published 7-metric rubric."
-  canonicalUrl={`${SITE_URL}/about/`}
+  title={`About Mattress Inquirer | ${MODEL_COUNT} Mattresses, ${BRAND_COUNT} Brands`}
+  description={`Mattress Inquirer is a scorecard database of ${MODEL_COUNT} mattresses from ${BRAND_COUNT} brands, each scored on the same seven fields from 0 to 10 and easy to compare.`}
+  canonicalUrl={canonicalUrl}
   lastUpdated={lastUpdated}
   jsonLd={jsonLd}
 >
-  <main class="max-w-[760px] mx-auto px-margin-mobile md:px-0 py-16 relative z-10 flex flex-col gap-16">
+  <main class="max-w-[760px] mx-auto px-margin-mobile md:px-0 py-16 relative z-10 flex flex-col gap-12">
+    <article class="contents" data-body data-page-type="about">
 
     <header class="flex flex-col gap-6">
-      <h1 class="text-headline-lg font-headline-lg text-primary font-bold">About PureSleep</h1>
-      <p class="text-body-lg text-on-surface-variant leading-relaxed">
-        PureSleep covers 59 models across 24 brands, and every score uses the same published 7-metric rubric.
-      </p>
+      <h1 class="text-headline-lg font-headline-lg text-primary font-bold">About Mattress Inquirer</h1>
+      <Byline dateModified={lastUpdated} />
+      <p class="text-body-lg text-on-surface-variant leading-relaxed">{lead}</p>
     </header>
 
-    <section class="flex flex-col gap-6">
-      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">What We Do</h2>
-      <div class="glass-panel p-8 rounded-lg border border-white/60 flex flex-col gap-4">
-        <p class="text-body-md text-on-surface-variant leading-relaxed">
-          We publish mattress scorecards for 24 brands using one standardized seven-metric editorial system. Each model uses the same locked fields so readers can compare products consistently.
-        </p>
-        <p class="text-body-md text-on-surface-variant leading-relaxed">
-          {EDITORIAL_INDEPENDENCE_DISCLOSURE} {LINK_DISCLOSURE} Scores and rankings use the same published rubric for every covered brand.
-        </p>
-        <a href="/methodology" class="text-primary hover:text-secondary underline underline-offset-4 font-bold transition-colors w-fit">Read our full scoring methodology →</a>
-      </div>
+    {sections.map(section => (
+      <section id={section.id} class="flex flex-col gap-3">
+        <h2 class="text-headline-md font-headline-md text-primary border-b border-outline-variant/30 pb-3">{section.heading}</h2>
+        {section.paragraphs.map(paragraph => (
+          <p class="text-body-md text-on-surface-variant leading-relaxed">{paragraph}</p>
+        ))}
+      </section>
+    ))}
+
+    <section class="flex flex-col gap-3">
+      <h2 class="text-headline-md font-headline-md text-primary border-b border-outline-variant/30 pb-3">Related</h2>
+      <ul class="flex flex-col gap-2 text-body-md">
+        <li><a href="/methodology/" class="text-primary underline underline-offset-4 font-bold">How Mattress Inquirer Scores Mattresses</a></li>
+        <li><a href="/reviews/" class="text-primary underline underline-offset-4 font-bold">Mattress Reviews and Scores (2026)</a></li>
+        <li><a href="/editorial-policy/" class="text-primary underline underline-offset-4 font-bold">Editorial Policy</a></li>
+        <li><a href="/affiliate-disclosure/" class="text-primary underline underline-offset-4 font-bold">Affiliate Disclosure</a></li>
+        <li><a href={`mailto:${CONTACT_EMAIL}`} class="text-primary underline underline-offset-4 font-bold">{CONTACT_EMAIL}</a></li>
+      </ul>
     </section>
 
-    <section id="editorial-team" class="flex flex-col gap-6">
-      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Our Editorial Team</h2>
-      <div class="glass-panel p-8 rounded-lg border border-white/60 flex flex-col gap-4">
-        <p class="text-body-md text-on-surface-variant leading-relaxed">
-          PureSleep Editorial Team is the organizational byline for articles produced by multiple editors. It identifies the group responsible for source review, scorecard maintenance, corrections, and publication. We do not invent individual testers or laboratory findings when that evidence does not exist.
-        </p>
-        <div class="flex gap-4 items-start border-t border-outline-variant/30 pt-5 mt-2">
-          <div class="w-12 h-12 rounded-lg bg-primary text-white flex items-center justify-center font-bold shrink-0" aria-hidden="true">FF</div>
-          <div class="flex flex-col gap-1">
-            <a href={FIRDOUS_FARHAD.path} class="text-headline-sm font-bold text-primary hover:text-secondary">{FIRDOUS_FARHAD.name}</a>
-            <p class="text-label-sm uppercase text-secondary font-bold">{FIRDOUS_FARHAD.role}</p>
-            <p class="text-body-md text-on-surface-variant">{FIRDOUS_FARHAD.credentials}</p>
-            <p class="text-body-sm text-on-surface-variant leading-relaxed mt-1">Article-level review credit appears only after Firdous has reviewed and approved the final copy.</p>
-          </div>
-        </div>
-        <div class="flex flex-wrap gap-4">
-          <a href={FIRDOUS_FARHAD.path} class="text-primary hover:text-secondary underline underline-offset-4 font-bold transition-colors w-fit">Reviewer profile →</a>
-          <a href="/methodology" class="text-primary hover:text-secondary underline underline-offset-4 font-bold transition-colors w-fit">How we score →</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="flex flex-col gap-6">
-      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">How We Cover 24 Brands</h2>
-      <div class="flex flex-col gap-4 text-body-md text-on-surface-variant leading-relaxed">
-        <p>Our 7-metric scoring system applies identically across all 59 models: overall, value, edge support, trial period, response time, motion transfer, and cooling &amp; breathability. The same rubric means every model is genuinely comparable across brands.</p>
-        <p>Scores are locked before category ordering and product-link placement. Category order follows the published score data and stated selection criteria, and the same seven fields are used for every brand.</p>
-        <p>Coverage depth varies by available model information and comparison relevance, but every published score uses the same seven fields and 0–10 scale.</p>
-      </div>
-    </section>
-
-    <section class="flex flex-col gap-6">
-      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Why and How We Publish</h2>
-      <div class="glass-panel p-8 rounded-lg border border-outline-variant/40 flex flex-col gap-4">
-        <p class="text-body-md text-on-surface-variant leading-relaxed">
-          PureSleep exists to make difficult mattress comparisons easier to verify. We publish direct answers, complete score tables, evidence limits, source links, and update dates so readers and answer engines can trace a recommendation back to the same underlying record.
-        </p>
-        <p class="text-body-md text-on-surface-variant leading-relaxed">{EDITORIAL_INDEPENDENCE_DISCLOSURE} No covered brand receives a separate scoring formula. {LINK_DISCLOSURE}</p>
-        <div class="flex flex-wrap gap-4">
-          <a href="/methodology/" class="text-primary hover:text-secondary underline underline-offset-4 font-bold">Scoring methodology</a>
-          <a href="/model-coverage.json" class="text-primary hover:text-secondary underline underline-offset-4 font-bold">Published model manifest</a>
-          <a href="/editorial-policy/" class="text-primary hover:text-secondary underline underline-offset-4 font-bold">Editorial policy</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="flex flex-col gap-6">
-      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Editorial Contact</h2>
-      <div class="text-body-md text-on-surface-variant leading-relaxed">
-        {CONTACT_EMAIL ? (
-          <p>Send source corrections, product updates, and editorial questions to <a href={`mailto:${CONTACT_EMAIL}`} class="text-primary underline underline-offset-4 font-bold">{CONTACT_EMAIL}</a>.</p>
-        ) : (
-          <p>A public editorial contact must be added with the final production domain before launch.</p>
-        )}
-      </div>
-    </section>
-
+  </article>
   </main>
 </BaseLayout>

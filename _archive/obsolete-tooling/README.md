@@ -1,6 +1,6 @@
 # Archived obsolete tooling
 
-These utilities are not part of the PureSleep build or deployment path. They
+These utilities are not part of the Mattress Inquirer build or deployment path. They
 were moved here because they target removed data files, duplicate current QA,
 or scrape external sites without feeding a reviewed production workflow.
 

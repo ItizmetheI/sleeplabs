@@ -12,11 +12,11 @@ function replaceInFile(filepath, replacements) {
 
 const reps = [
   { regex: /Chiropractor-reviewed/gi, replacement: "Editorially Independent" },
-  { regex: /Chiropractor-scored for spinal support\./gi, replacement: "Tested by the PureSleep testing team." },
-  { regex: /Chiropractor-scored\./gi, replacement: "Tested by the PureSleep testing team." },
-  { regex: /Dr\. Sarah Mitchell, Lead Chiropractor/gi, replacement: "PureSleep Testing Team" },
-  { regex: /Dr\. Sarah Mitchell, Staff Chiropractor & Lead Reviewer/gi, replacement: "PureSleep Testing Team" },
-  { regex: /Physically tested by our in-house chiropractor./gi, replacement: "Tested by the PureSleep testing team." },
+  { regex: /Chiropractor-scored for spinal support\./gi, replacement: "Tested by the Mattress Inquirer testing team." },
+  { regex: /Chiropractor-scored\./gi, replacement: "Tested by the Mattress Inquirer testing team." },
+  { regex: /Dr\. Sarah Mitchell, Lead Chiropractor/gi, replacement: "Mattress Inquirer Testing Team" },
+  { regex: /Dr\. Sarah Mitchell, Staff Chiropractor & Lead Reviewer/gi, replacement: "Mattress Inquirer Testing Team" },
+  { regex: /Physically tested by our in-house chiropractor./gi, replacement: "Tested by the Mattress Inquirer testing team." },
   { regex: /role: "Staff Chiropractor & Lead Reviewer"/gi, replacement: 'role: "Sleep Product Testers"' },
   { regex: /credentials: "Doctor of Chiropractic, licensed in 12 states"/gi, replacement: 'credentials: "Independent sleep product testing team"' },
   { regex: /Chiropractor-reviewed where applicable\./gi, replacement: "" },

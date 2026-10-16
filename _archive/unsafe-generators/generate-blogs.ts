@@ -15,7 +15,7 @@ const APPROVED_PRODUCTS = [
 
 async function main() {
   console.log("=========================================");
-  console.log("   PURESLEEP AUTONOMOUS GENERATOR AGENT  ");
+  console.log("   MATTRESSINQUIRER AUTONOMOUS GENERATOR AGENT  ");
   console.log("=========================================\n");
 
   const apiKey = process.env.GEMINI_API_KEY;
@@ -47,7 +47,7 @@ async function main() {
     console.log("Action: Proposing a non-duplicate, relevant SEO topic...");
     const existingTitlesList = existingPosts.map((p: any) => `- "${p.title}"`).join('\n');
     
-    const suggestPrompt = `You are the lead strategist for PureSleep.
+    const suggestPrompt = `You are the lead strategist for Mattress Inquirer.
 We have these posts:
 ${existingTitlesList}
 
@@ -100,7 +100,7 @@ Output ONLY JSON matching structure: { "title": "...", "slug": "...", "keyword":
 
   console.log("\nInovking writing agent pipeline on gemini-3.1-pro-preview... (Hold tight, compiling content...)");
 
-  const systemInstruction = `You are a sleep health expert and senior editorial writer for PureSleep.
+  const systemInstruction = `You are a sleep health expert and senior editorial writer for Mattress Inquirer.
 Write a long-form article that matches the BlogPost interface JSON schema.
 
 **CRITICAL RULES**:

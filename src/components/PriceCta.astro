@@ -1,0 +1,30 @@
+---
+// Affiliate CTA in the owner's fixed format. The build swaps href for the affiliate link matching data-slot.
+// Models whose official page is unreachable have no product_url, so no CTA renders.
+import type { Mattress } from '../data/mattresses';
+import { getSpec } from '../lib/pageData';
+import { slotId } from '../lib/ownerSite';
+
+export interface Props {
+  mattress: Mattress;
+  pageUrl: string;
+  variant?: 'button' | 'text';
+  label?: string;
+}
+
+const { mattress, pageUrl, variant = 'button', label: labelOverride } = Astro.props;
+const spec = getSpec(mattress.id);
+const label = labelOverride ?? `Check ${mattress.brand} Price`;
+const buttonClass = 'inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3 rounded-lg font-bold text-body-md hover:bg-primary/90 transition-colors';
+const textClass = 'text-primary font-bold underline underline-offset-4 hover:text-secondary';
+---
+
+{spec.reachable && (
+  <a
+    href={spec.productUrl}
+    data-slot={slotId(pageUrl, mattress.id)}
+    rel="sponsored nofollow noopener"
+    target="_blank"
+    class={variant === 'button' ? buttonClass : textClass}
+  >{label}</a>
+)}

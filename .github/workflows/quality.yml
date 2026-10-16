@@ -1,0 +1,76 @@
+name: Release quality gates
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  preview-gate:
+    name: Fail-closed preview build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.12.0
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run qa:content
+      - run: npm run build
+      - run: npm run qa:dist
+      - run: npm run qa:schema
+      - name: Preview build must be non-indexable
+        run: |
+          grep -q 'Disallow: /' dist/robots.txt
+          ! grep -q 'Sitemap:' dist/robots.txt
+          grep -q 'noindex, nofollow, noarchive' dist/index.html
+
+  production-gate:
+    name: Production-mode build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SITE_URL: https://qa.mattressinquirer-release.invalid
+      PUBLIC_INDEXING_MODE: production
+      PUBLIC_CONTENT_CUTOFF_DATE: '2026-08-25'
+      PUBLIC_CONTACT_EMAIL: editorial@mattressinquirer-release.invalid
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.12.0
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run qa:content
+      - run: npm run build
+      - run: npm run qa:dist
+      - run: npm run qa:schema
+      - name: Production build must be indexable and advertise its sitemap
+        run: |
+          grep -q 'Allow: /' dist/robots.txt
+          grep -q 'Sitemap:' dist/robots.txt
+          ! grep -q 'name="robots"' dist/index.html
+
+  dependency-audit:
+    name: Dependency audit (advisory)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.12.0
+          cache: npm
+      - run: npm ci
+      - name: Full audit
+        run: npm audit --json > audit-full.json || true
+      - name: Production-only audit
+        run: npm audit --omit=dev --json > audit-prod.json || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dependency-audit
+          path: audit-*.json

@@ -1,83 +1,100 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { EDITORIAL_INDEPENDENCE_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
-import { FIRDOUS_FARHAD } from '../../lib/editorialPeople';
+import Byline from '../../components/Byline.astro';
+import { BYLINE_DISCLOSURE } from '../../lib/disclosure';
+import { toArticleBody, articleList } from '../../lib/schemaArticleBody';
+import { MODEL_COUNT } from '../../lib/methodologyContent';
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
-const lastUpdated = "2026-07-14";
+const SITE_URL = import.meta.env.SITE_URL || 'https://mattressinquirer.ahmedbarkat1067.workers.dev';
+const lastUpdated = "2026-10-11";
+const canonicalUrl = `${SITE_URL}/editorial-policy/`;
+const description = 'Mattress Inquirer editorial standards: one scorecard for every brand, no medical claims, specs from official brand pages, and how corrections work.';
 
-const jsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Editorial Policy",
-    "url": `${SITE_URL}/editorial-policy/`,
-    "description": "PureSleep's editorial standards: independence, scoring, evidence, corrections, and brand coverage.",
-    "publisher": { "@type": "Organization", "name": "PureSleep", "url": SITE_URL }
-  }
+const lead = 'Mattress Inquirer holds every brand to the same standards. This page explains how pages are written and how corrections are handled.';
+const standards = [
+  { title: 'One scorecard for every brand.', body: `All ${MODEL_COUNT} mattresses are scored on the same seven fields and the same 0 to 10 scale.` },
+  { title: 'No medical claims.', body: 'A mattress is a comfort choice. Pages describe support and feel, not health outcomes.' },
+  { title: 'Specs from brand pages.', body: 'Construction, firmness, trial, warranty, and price come from each brand\'s official product page. A fact the brand does not state is left out, not estimated.' },
+  { title: 'Scores from the scorecard.', body: 'Scores are editorial ratings set from each model\'s construction, policies, and price. A score never changes to move a product up or down a list.' },
+  { title: 'Dated prices.', body: 'Every price shows the month it was checked. Confirm the current price on the brand\'s site before buying.' },
 ];
+const corrections = [
+  'When a brand changes a product, price, or policy, the page is corrected to match the brand\'s official page.',
+  'The updated date on a page changes only when its content changes. Send corrections to contact@mattressinquirer.com.',
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Editorial Policy",
+      "url": canonicalUrl,
+      "description": description,
+      "text": toArticleBody(
+        'Editorial Policy',
+        BYLINE_DISCLOSURE,
+        lead,
+        articleList('Our Standards', standards.map(item => `${item.title} ${item.body}`)),
+        'Corrections',
+        corrections,
+      ),
+      "dateModified": lastUpdated,
+      "author": { "@type": "Organization", "@id": `${SITE_URL}/about/#editorial-team`, "name": "Mattress Inquirer Editorial Team" },
+      "publisher": { "@type": "Organization", "@id": `${SITE_URL}/#organization`, "name": "Mattress Inquirer", "url": SITE_URL }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+        { "@type": "ListItem", "position": 2, "name": "Editorial Policy", "item": canonicalUrl }
+      ]
+    }
+  ]
+};
 ---
 
 <BaseLayout
-  title="Editorial Policy — PureSleep"
-  description="PureSleep's editorial standards: independence, scoring, evidence, corrections, and brand coverage."
-  canonicalUrl={`${SITE_URL}/editorial-policy/`}
+  title="Editorial Policy | Mattress Inquirer"
+  description={description}
+  canonicalUrl={canonicalUrl}
   lastUpdated={lastUpdated}
   jsonLd={jsonLd}
 >
-  <main class="max-w-[760px] mx-auto px-margin-mobile md:px-0 py-16 relative z-10 flex flex-col gap-16">
+  <main class="max-w-[760px] mx-auto px-margin-mobile md:px-0 py-16 relative z-10 flex flex-col gap-12">
+    <article class="contents" data-body data-page-type="editorial-policy">
 
     <header class="flex flex-col gap-6">
       <h1 class="text-headline-lg font-headline-lg text-primary font-bold">Editorial Policy</h1>
-      <p class="text-body-lg text-on-surface-variant leading-relaxed">
-        {EDITORIAL_INDEPENDENCE_DISCLOSURE} This page explains how sources, scores, updates, and outbound links are handled across every covered brand.
-      </p>
+      <Byline dateModified={lastUpdated} />
+      <p class="text-body-lg text-on-surface-variant leading-relaxed">{lead}</p>
     </header>
 
-    <section class="flex flex-col gap-6">
-      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Our Standards</h2>
-      <div class="glass-panel p-8 rounded-lg border border-white/60">
-        <ul class="flex flex-col gap-3 text-body-md text-on-surface-variant">
-          <li class="flex gap-3"><span class="text-secondary font-bold">—</span> We do not make medical claims. Mattresses address sleep comfort and support only, not health conditions.</li>
-          <li class="flex gap-3"><span class="text-secondary font-bold">—</span> {LINK_DISCLOSURE}</li>
-          <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Scores are editorial comparisons from the published PureSleep score dataset, not laboratory findings, manufacturer ratings, or collected customer ratings.</li>
-          <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Reviews are revised when a documented source change or correction is confirmed, with the last-modified date shown on the page.</li>
-        </ul>
-      </div>
+    <section class="flex flex-col gap-3">
+      <h2 class="text-headline-md font-headline-md text-primary border-b border-outline-variant/30 pb-3">Our Standards</h2>
+      <ul class="flex flex-col gap-3 text-body-md text-on-surface-variant list-disc pl-5">
+        {standards.map(item => (
+          <li><strong class="text-on-surface">{item.title}</strong> {item.body}</li>
+        ))}
+      </ul>
     </section>
 
-    <section class="flex flex-col gap-6">
-      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Reviewer Assignment and Attribution</h2>
-      <div class="flex flex-col gap-4 text-body-md text-on-surface-variant leading-relaxed">
-        <p><a href={FIRDOUS_FARHAD.path} class="text-primary underline underline-offset-4 font-bold">{FIRDOUS_FARHAD.name}</a> is PureSleep's {FIRDOUS_FARHAD.role.toLowerCase()}. {FIRDOUS_FARHAD.credentials}</p>
-        <p>Her profile identifies her editorial scope. A page displays a "Reviewed by" attribution only after she has reviewed and approved that page's final copy. Assignment alone is not represented as completed review.</p>
-        <p>Medical-adjacent pages remain excluded from search indexing until article-specific sources and the required final review are complete.</p>
-      </div>
+    <section class="flex flex-col gap-3">
+      <h2 class="text-headline-md font-headline-md text-primary border-b border-outline-variant/30 pb-3">Corrections</h2>
+      {corrections.map(paragraph => (
+        <p class="text-body-md text-on-surface-variant leading-relaxed">{paragraph}</p>
+      ))}
     </section>
 
-    <section class="flex flex-col gap-6">
-      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">How Brand Coverage Is Decided</h2>
-      <div class="flex flex-col gap-4 text-body-md text-on-surface-variant leading-relaxed">
-        <p>Our 7-metric scoring system applies identically across all 59 models we cover: overall, value, edge support, trial period, response time, motion transfer, and cooling &amp; breathability. The same rubric means every model is genuinely comparable across brands.</p>
-        <p>Scores are locked before category ordering and product-link placement. Rankings follow the published score data and stated category criteria, using the same fields for every brand.</p>
-      </div>
+    <section class="flex flex-col gap-3">
+      <h2 class="text-headline-md font-headline-md text-primary border-b border-outline-variant/30 pb-3">Related</h2>
+      <ul class="flex flex-col gap-2 text-body-md">
+        <li><a href="/methodology/" class="text-primary underline underline-offset-4 font-bold">How Mattress Inquirer Scores Mattresses</a></li>
+        <li><a href="/about/" class="text-primary underline underline-offset-4 font-bold">About Mattress Inquirer</a></li>
+        <li><a href="/affiliate-disclosure/" class="text-primary underline underline-offset-4 font-bold">Affiliate Disclosure</a></li>
+      </ul>
     </section>
 
-    <section class="flex flex-col gap-6">
-      <h2 class="text-headline-md font-headline-md text-primary italic border-b border-outline-variant/30 pb-4">Corrections and Updates</h2>
-      <div class="flex flex-col gap-4 text-body-md text-on-surface-variant leading-relaxed">
-        <p>Product facts and policy terms are corrected when an official source changes. Material revisions update the page's visible dateModified value and matching machine-readable document.</p>
-        <p>PureSleep does not change a score to create a live promotion, satisfy a manufacturer, or improve a brand's placement. Unsupported facts are removed rather than filled with estimates.</p>
-      </div>
-    </section>
-
-    <section class="flex flex-col gap-4">
-      <div class="glass-panel p-8 rounded-lg border border-white/60 flex flex-wrap gap-3">
-        <a href="/methodology" class="text-primary hover:text-secondary underline underline-offset-4 font-bold transition-colors">Read our full scoring methodology →</a>
-        <span class="text-outline-variant hidden md:inline self-center">·</span>
-        <a href="/disclosure" class="text-primary hover:text-secondary underline underline-offset-4 font-bold transition-colors">Read our disclosure →</a>
-      </div>
-    </section>
-
+  </article>
   </main>
 </BaseLayout>

@@ -13,7 +13,7 @@ export function getStaticPaths() {
 }
 
 const { topic } = Astro.props;
-const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
+const SITE_URL = import.meta.env.SITE_URL || 'https://mattressinquirer.ahmedbarkat1067.workers.dev';
 const canonicalUrl = `${SITE_URL}/topics/${topic.id}/`;
 const relatedMattresses = topic.relatedMattresses
   .map((id: string) => allMattresses.find((mattress) => mattress.id === id))
@@ -47,7 +47,7 @@ const articleBody = toArticleBody(
     )
     : null,
   topic.sources?.length ? ['Sources', topic.sources.map((source) => `${source.name}: ${source.url}`)] : null,
-  'About PureSleep',
+  'About Mattress Inquirer',
   `${EDITORIAL_INDEPENDENCE_DISCLOSURE} ${LINK_DISCLOSURE}`,
 );
 
@@ -57,10 +57,10 @@ const articleSchema = {
   headline: topic.title,
   description: topic.description,
   image: heroImage.startsWith('http') ? heroImage : `${SITE_URL}${heroImage}`,
-  author: { '@type': 'Organization', name: 'PureSleep Editorial Team', url: `${SITE_URL}/about/` },
+  author: { '@type': 'Organization', name: 'Mattress Inquirer Editorial Team', url: `${SITE_URL}/about/` },
   publisher: {
     '@type': 'Organization',
-    name: 'PureSleep',
+    name: 'Mattress Inquirer',
     url: SITE_URL,
   },
   datePublished: topic.dateModified,
@@ -82,7 +82,7 @@ const breadcrumbSchema = {
 ---
 
 <BaseLayout
-  title={`${topic.title} Guide | PureSleep`}
+  title={`${topic.title} Guide | Mattress Inquirer`}
   description={topic.description}
   canonicalUrl={canonicalUrl}
   machineReadableUrl={`${SITE_URL}/llms/topic-${topic.id}.md`}
@@ -103,9 +103,9 @@ const breadcrumbSchema = {
         <h1 class="text-headline-lg font-headline-lg text-primary font-bold max-w-3xl">{topic.title}</h1>
         <p class="text-body-lg text-on-surface-variant max-w-3xl mt-5">{topic.description}</p>
         <div class="flex flex-wrap gap-x-6 gap-y-2 mt-6 text-body-sm text-on-surface-variant">
-          <span>By PureSleep Editorial Team</span>
+          <span>By Mattress Inquirer Editorial Team</span>
           <span>Updated {topic.dateModified}</span>
-          <a href="/disclosure/" class="underline underline-offset-4 hover:text-primary">Editorial disclosure</a>
+          <a href="/affiliate-disclosure/" class="underline underline-offset-4 hover:text-primary">Editorial disclosure</a>
         </div>
       </div>
     </header>
@@ -148,7 +148,7 @@ const breadcrumbSchema = {
           <h2 class="text-title-md font-bold text-primary mb-4">Related Guides</h2>
           <div class="flex flex-col gap-3">
             {topic.relatedGuides.map((guide: string) => (
-              <a href="/guides/" class="text-body-sm text-primary underline underline-offset-4 hover:text-secondary">
+              <a href="/topics/" class="text-body-sm text-primary underline underline-offset-4 hover:text-secondary">
                 {guide.replace(/-/g, ' ').replace(/\b\w/g, (letter: string) => letter.toUpperCase())}
               </a>
             ))}

@@ -1,0 +1,47 @@
+---
+// Score card: Overall (one decimal) plus the six fields as whole numbers, firmness, and the CTA.
+// The editorial score line renders only under the page's first score card (showScoreLine).
+import type { Mattress } from '../data/mattresses';
+import { getSpec, SCORECARD_FIELDS, scoreText } from '../lib/pageData';
+import { FIELD_LABEL } from '../lib/ranking';
+import { firmnessShort } from '../lib/ownerSite';
+import PriceCta from './PriceCta.astro';
+
+export interface Props {
+  mattress: Mattress;
+  pageUrl: string;
+  showScoreLine?: boolean;
+  /** Firmness to show instead of every option (best-of pages show the qualifying option). */
+  firmnessOverride?: string;
+  /** Best-of picks place the CTA after the pick copy instead of inside the card. */
+  showCta?: boolean;
+}
+
+const { mattress, pageUrl, showScoreLine = false, firmnessOverride, showCta = true } = Astro.props;
+const spec = getSpec(mattress.id);
+const six = SCORECARD_FIELDS.filter(key => key !== 'overall');
+---
+
+<div class="border border-outline-variant rounded-lg bg-white p-6 flex flex-col gap-5" data-score-card={mattress.id}>
+  <div class="flex items-baseline justify-between gap-4 flex-wrap">
+    <p class="text-label-sm uppercase font-bold text-secondary">{mattress.name}</p>
+    <p class="leading-none"><span class="text-[48px] font-bold text-primary" data-overall>{scoreText(mattress, 'overall')}</span><span class="text-title-md text-on-surface-variant">/10 Overall</span></p>
+  </div>
+  <table class="w-full text-body-md">
+    <caption class="sr-only">{mattress.name} scorecard</caption>
+    <tbody>
+      {six.map(key => (
+        <tr class="border-t border-outline-variant/40">
+          <th scope="row" class="text-left font-normal py-2 text-on-surface-variant">{FIELD_LABEL[key]}</th>
+          <td class="text-right py-2 font-bold text-on-surface">{scoreText(mattress, key)}/10</td>
+        </tr>
+      ))}
+      <tr class="border-t border-outline-variant/40">
+        <th scope="row" class="text-left font-normal py-2 text-on-surface-variant">Firmness</th>
+        <td class="text-right py-2 font-bold text-on-surface">{firmnessOverride ?? firmnessShort(spec)}</td>
+      </tr>
+    </tbody>
+  </table>
+  {showCta && <PriceCta mattress={mattress} pageUrl={pageUrl} />}
+</div>
+{showScoreLine && <p class="text-body-sm text-on-surface-variant" data-score-line>Scores are Mattress Inquirer's editorial ratings on a 0 to 10 scale.</p>}

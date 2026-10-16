@@ -1,6 +1,6 @@
-# PureSleep
+# Mattress Inquirer
 
-Multi-brand mattress reviews, rankings, comparisons, and buying guides covering 59 models across 24 brands. Scores use one published 7-metric editorial rubric.
+Multi-brand mattress reviews, rankings, comparisons, and buying guides covering 55 models across 24 brands. Scores use one published 7-metric editorial rubric.
 
 ## Tech Stack
 - Astro SSG (static HTML on first byte)

@@ -2,14 +2,14 @@ import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
 const needs = [
-  { num: '01', title: 'Side Sleepers', desc: 'Compare soft-to-medium models across brands for cushioning and fit.', href: '/best/side-sleepers' },
-  { num: '02', title: 'Back Sleepers', desc: 'Compare medium-firm models with strong response and edge scores.', href: '/best/back-sleepers' },
-  { num: '03', title: 'Hot Sleepers', desc: 'Ranked cooling picks spanning foam, hybrid, latex, and innerspring builds.', href: '/best/cooling' },
-  { num: '04', title: 'Couples', desc: 'Compare motion-transfer and edge-support scores across multiple brands.', href: '/best/couples' },
-  { num: '05', title: 'Back Discomfort', desc: 'Compare firmer support and pressure-distributing options; not medical advice', href: '/best/back-pain' },
-  { num: '06', title: 'Pressure Relief', desc: 'Compare softer comfort layers and recorded firmness across brands.', href: '/best/pressure-relief' },
-  { num: '07', title: 'Eco-Conscious', desc: 'Compare organic-material claims and current third-party certifications.', href: '/best/organic' },
-  { num: '08', title: 'Combination Sleepers', desc: 'Compare responsive medium-feel models for easier position changes.', href: '/best/combination-sleepers' }
+  { num: '01', title: 'Side Sleepers', desc: 'Compare soft-to-medium models across brands for cushioning and fit.', href: '/best/side-sleepers/' },
+  { num: '02', title: 'Back Sleepers', desc: 'Compare medium-firm models with strong response and edge scores.', href: '/best/back-sleepers/' },
+  { num: '03', title: 'Hot Sleepers', desc: 'Ranked cooling picks spanning foam, hybrid, latex, and innerspring builds.', href: '/best/cooling/' },
+  { num: '04', title: 'Couples', desc: 'Compare motion-transfer and edge-support scores across multiple brands.', href: '/best/couples/' },
+  { num: '05', title: 'Back Discomfort', desc: 'Compare firmer support and pressure-distributing options; not medical advice', href: '/best/back-pain/' },
+  { num: '06', title: 'Pressure Relief', desc: 'Compare softer comfort layers and recorded firmness across brands.', href: '/best/pressure-relief/' },
+  { num: '07', title: 'Eco-Conscious', desc: 'Compare organic-material claims and current third-party certifications.', href: '/best/organic/' },
+  { num: '08', title: 'Combination Sleepers', desc: 'Compare responsive medium-feel models for easier position changes.', href: '/best/combination-sleepers/' }
 ];
 
 export default function FindYourMatch() {

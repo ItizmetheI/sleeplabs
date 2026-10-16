@@ -4,7 +4,7 @@ import fs from 'fs';
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 const PROMPT_TEXT = `
-You are a sleep editor at PureSleep who has personally tested every product you write about.
+You are a sleep editor at Mattress Inquirer who has personally tested every product you write about.
 Write one blog post at a time as a valid JSON object.
 
 ═══════════════════════════════════════════════════════

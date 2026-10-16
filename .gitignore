@@ -12,3 +12,12 @@ coverage/
 .wrangler
 .dev.vars*
 !.dev.vars.example
+
+# unlazy local coordination state
+.unlazy/
+.unlazy-hook-state.json
+
+# Owner source files and internal working notes stay local (repository is public)
+workspace/owner/
+workspace/PHASE1-PAGE-MAP-PLAN.md
+workspace/changes-report-*

@@ -2,12 +2,13 @@
 import { blogPosts } from '../../data/blogs-generated';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getLegacyBestBlogRedirect } from '../../lib/legacyBlogRedirects';
+import { isScheduled } from '../../lib/scheduledContent';
 import { formatDateOnly } from '../../lib/dateFormat';
 
 export function getStaticPaths() {
   const postsPerPage = 10;
   const sortedPosts = blogPosts
-    .filter(post => !post.redirectTo && !getLegacyBestBlogRedirect(post.slug))
+    .filter(post => !post.redirectTo && !getLegacyBestBlogRedirect(post.slug) && !isScheduled(post.datePublished))
     .sort((a, b) => new Date(b.datePublished).valueOf() - new Date(a.datePublished).valueOf());
   const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
   return Array.from({ length: totalPages }, (_, i) => ({
@@ -21,20 +22,29 @@ export function getStaticPaths() {
 }
 
 const { posts, currentPage, totalPages } = Astro.props;
-const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
+const SITE_URL = import.meta.env.SITE_URL || 'https://mattressinquirer.ahmedbarkat1067.workers.dev';
+
+// ponytail: every paginated page needs its own title/description/canonical or all 12 dedupe.
+const pageUrl = currentPage === 1 ? `${SITE_URL}/blog/` : `${SITE_URL}/blog/${currentPage}/`;
+const pageTitle = currentPage === 1
+  ? 'Sleep and Mattress Blog (2026): Guides and Reviews'
+  : `Sleep and Mattress Blog (2026): Page ${currentPage} of ${totalPages}`;
+const pageDescription = currentPage === 1
+  ? "Sleep tips, mattress guides, and buying advice from Mattress Inquirer's multi-brand editorial team."
+  : `Page ${currentPage} of ${totalPages} of Mattress Inquirer's sleep and mattress guides, covering sleep science, mattress buying, and bedroom setup.`;
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "PureSleep Sleep & Mattress Blog",
-  "description": "Sleep science, mattress guides, and buying advice from PureSleep's editorial team.",
-  "url": SITE_URL + "/blog/",
+  "name": "Mattress Inquirer Sleep & Mattress Blog",
+  "description": "Sleep science, mattress guides, and buying advice from Mattress Inquirer's editorial team.",
+  "url": pageUrl,
   "mainEntity": {
     "@type": "ItemList",
     "itemListElement": posts.map((post: any, index: number) => ({
       "@type": "ListItem",
       "position": index + 1,
-      "url": SITE_URL + "/blog/" + post.slug,
+      "url": SITE_URL + "/blog/" + post.slug + "/",
       "name": post.title
     }))
   }
@@ -42,18 +52,26 @@ const jsonLd = {
 ---
 
 <BaseLayout
-  title="Sleep & Mattress Blog 2026 — Guides & Reviews"
-  description="Sleep tips, mattress guides, and buying advice from PureSleep's multi-brand editorial team."
-  canonicalUrl={currentPage === 1 ? `${SITE_URL}/blog/` : `${SITE_URL}/blog/${currentPage}/`}
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={pageUrl}
   lastUpdated="2026-05-01"
-  jsonLd={jsonLd}
+  jsonLd={[jsonLd, {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${SITE_URL}/blog/` },
+    ],
+  }]}
 >
   <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
 
     <header class="text-center mb-16">
       <h1 class="text-display-lg font-display-lg italic text-primary mb-4">Sleep & Mattress Guides</h1>
       <p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-        Guides on sleep science, mattress buying, and bedroom setup from PureSleep's multi-brand editorial team.
+        {currentPage === 1
+          ? "Guides on sleep science, mattress buying, and bedroom setup from Mattress Inquirer's multi-brand editorial team."
+          : `Page ${currentPage} of ${totalPages} of our guides on sleep science, mattress buying, and bedroom setup.`}
       </p>
     </header>
 
@@ -81,7 +99,7 @@ const jsonLd = {
             </div>
 
             <h2 class="text-headline-md font-headline-md text-primary group-hover:text-secondary transition-colors leading-snug">
-              <a href={`/blog/${post.slug}`}>{post.title}</a>
+              <a href={`/blog/${post.slug}/`}>{post.title}</a>
             </h2>
 
             <p class="text-body-md text-on-surface-variant leading-relaxed flex-1">
@@ -94,7 +112,7 @@ const jsonLd = {
             </div>
 
             <a
-              href={`/blog/${post.slug}`}
+              href={`/blog/${post.slug}/`}
               class="w-full text-center py-3 rounded-lg border-2 border-primary text-primary font-label-sm uppercase tracking-normal font-bold hover:bg-primary/5 transition-colors"
             >
               Read Article →
@@ -108,20 +126,20 @@ const jsonLd = {
     {totalPages > 1 && (
       <div class="flex justify-center gap-3 mt-16 flex-wrap">
         {currentPage > 1 && (
-          <a href={currentPage === 2 ? `/blog` : `/blog/${currentPage - 1}`} class="glass-panel px-6 py-3 rounded-full text-label-sm font-label-sm uppercase tracking-normal text-primary hover:text-secondary transition-colors font-bold">
+          <a href={currentPage === 2 ? `/blog/` : `/blog/${currentPage - 1}/`} class="glass-panel px-6 py-3 rounded-full text-label-sm font-label-sm uppercase tracking-normal text-primary hover:text-secondary transition-colors font-bold">
             ← Previous
           </a>
         )}
         {Array.from({ length: totalPages }, (_, i) => (
           <a
-            href={i === 0 ? `/blog` : `/blog/${i + 1}`}
+            href={i === 0 ? `/blog/` : `/blog/${i + 1}/`}
             class={`px-4 py-3 rounded-full text-label-sm font-label-sm uppercase tracking-normal font-bold transition-colors ${currentPage === i + 1 ? 'bg-primary text-white' : 'glass-panel text-primary hover:text-secondary'}`}
           >
             {i + 1}
           </a>
         ))}
         {currentPage < totalPages && (
-          <a href={`/blog/${currentPage + 1}`} class="glass-panel px-6 py-3 rounded-full text-label-sm font-label-sm uppercase tracking-normal text-primary hover:text-secondary transition-colors font-bold">
+          <a href={`/blog/${currentPage + 1}/`} class="glass-panel px-6 py-3 rounded-full text-label-sm font-label-sm uppercase tracking-normal text-primary hover:text-secondary transition-colors font-bold">
             Next →
           </a>
         )}

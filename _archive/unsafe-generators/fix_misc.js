@@ -42,28 +42,28 @@ let reviewIdMatch1 = `"author": {
     },`;
 let reviewIdRepl1 = `"author": {
       "@type": "Organization",
-      "name": "PureSleep",
+      "name": "Mattress Inquirer",
       "url": SITE_URL
     },
     "reviewedBy": {
       "@type": "Organization",
-      "name": "PureSleep Testing Team"
+      "name": "Mattress Inquirer Testing Team"
     },`;
 replaceInFile('src/pages/reviews/[id].astro', reviewIdMatch1, reviewIdRepl1);
 
 replaceInFile('src/pages/reviews/[id].astro', 
   `<span><strong class="text-on-background">Tested By:</strong> {mattress.reviewer.name}, {mattress.reviewer.role}</span>`,
-  `<span><strong class="text-on-background">Reviewed By:</strong> PureSleep Testing Team</span>`);
+  `<span><strong class="text-on-background">Reviewed By:</strong> Mattress Inquirer Testing Team</span>`);
 replaceInFile('src/pages/reviews/[id].astro', 
   `<span><strong class="text-on-background">Reviewed By:</strong> {mattress.reviewer.name}, {mattress.reviewer.role}</span>`,
-  `<span><strong class="text-on-background">Reviewed By:</strong> PureSleep Testing Team</span>`);
+  `<span><strong class="text-on-background">Reviewed By:</strong> Mattress Inquirer Testing Team</span>`);
 
 // comparison/[slug].astro
 replaceInFile('src/pages/comparison/[slug].astro', 
   /"author":\s*\{\s*"@type":\s*"Person",\s*"name":\s*mattressA\.reviewer\.name.*?"url":.*?`\$\{SITE_URL\}\/methodology\/`\s*\},/s,
-  `"author": {\n      "@type": "Organization",\n      "name": "PureSleep",\n      "url": SITE_URL\n    },\n    "reviewedBy": {\n      "@type": "Organization",\n      "name": "PureSleep Testing Team"\n    },`
+  `"author": {\n      "@type": "Organization",\n      "name": "Mattress Inquirer",\n      "url": SITE_URL\n    },\n    "reviewedBy": {\n      "@type": "Organization",\n      "name": "Mattress Inquirer Testing Team"\n    },`
 );
-replaceInFile('src/pages/comparison/[slug].astro', '{mattressA.reviewer.name}', 'PureSleep Testing Team');
+replaceInFile('src/pages/comparison/[slug].astro', '{mattressA.reviewer.name}', 'Mattress Inquirer Testing Team');
 
 
 // mattresses.ts
@@ -71,13 +71,13 @@ let mattressesMatchStr = `export const reviewer_drsmith: Reviewer = {
   name: "Dr. Sarah Mitchell",
   role: "Staff Chiropractor & Lead Reviewer",
   credentials: "Doctor of Chiropractic, licensed in 12 states. 14 years clinical practice.",
-  sameAs: ["https://puresleep.com/methodology/"]
+  sameAs: ["https://mattressinquirer.com/methodology/"]
 };`;
 let mattressesReplStr = `export const reviewer_editorial: Reviewer = {
-  name: "PureSleep Testing Team",
+  name: "Mattress Inquirer Testing Team",
   role: "Sleep Product Testers",
   credentials: "Independent sleep product testing team.",
-  sameAs: ["https://puresleep.com/methodology/"]
+  sameAs: ["https://mattressinquirer.com/methodology/"]
 };
 
 // Alias for backwards compatibility with any remaining imports

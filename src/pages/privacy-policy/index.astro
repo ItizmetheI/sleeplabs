@@ -1,21 +1,22 @@
 ---
+import { LINK_DISCLOSURE } from '../../lib/disclosure';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
+const SITE_URL = import.meta.env.SITE_URL || 'https://mattressinquirer.ahmedbarkat1067.workers.dev';
 const CONTACT_EMAIL = import.meta.env.PUBLIC_CONTACT_EMAIL;
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Privacy Policy — PureSleep",
+  "name": "Privacy Policy | Mattress Inquirer",
   "url": `${SITE_URL}/privacy-policy/`,
-  "description": "PureSleep privacy policy. How we collect, use, and protect your information.",
+  "description": "Mattress Inquirer privacy policy. How we collect, use, and protect your information.",
   "dateModified": "2026-07-14"
 };
 ---
 
 <BaseLayout
-  title="Privacy Policy — PureSleep"
-  description="PureSleep privacy policy. How we collect, use, and protect your information."
+  title="Privacy Policy | Mattress Inquirer"
+  description="Mattress Inquirer privacy policy. How we collect, use, and protect your information."
   canonicalUrl={`${SITE_URL}/privacy-policy/`}
   jsonLd={jsonLd}
 >
@@ -30,12 +31,12 @@ const jsonLd = {
 
       <section>
         <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">1. Information We Collect</h2>
-        <p>PureSleep is a mattress review and sleep-content publication. We do not require account creation or collect personal information for standard site use. We may collect anonymized usage data (page views, referring URLs, browser type) via analytics tools to improve site performance.</p>
+        <p>Mattress Inquirer is a mattress review and sleep-content publication. We do not require account creation or collect personal information for standard site use. We may collect anonymized usage data (page views, referring URLs, browser type) via analytics tools to improve site performance.</p>
       </section>
 
       <section>
         <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">2. External Links</h2>
-        <p>This site contains links to manufacturer and retailer pages for the products we review. PureSleep does not receive per-click or per-sale commissions from those links. Third-party sites have their own privacy practices governed by their own policies; refer to each site's current privacy policy for details.</p>
+        <p>This site contains links to manufacturer and retailer pages for the products we review. {LINK_DISCLOSURE} Third-party sites have their own privacy practices governed by their own policies; refer to each site's current privacy policy for details.</p>
       </section>
 
       <section>
@@ -50,7 +51,7 @@ const jsonLd = {
 
       <section>
         <h2 class="text-title-lg font-title-lg text-primary mb-3 font-bold">5. Your Rights (GDPR / CCPA)</h2>
-        <p>If you are located in the European Economic Area or California, you may have rights to request access to, correction of, or deletion of personal data. Since PureSleep does not require accounts for standard site use, such requests may be resolved by confirming that no account data exists.</p>
+        <p>If you are located in the European Economic Area or California, you may have rights to request access to, correction of, or deletion of personal data. Since Mattress Inquirer does not require accounts for standard site use, such requests may be resolved by confirming that no account data exists.</p>
       </section>
 
       <section>

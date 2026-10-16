@@ -34,7 +34,7 @@ function createPost(slug, idx) {
     id: slug,
     slug: slug,
     title: title,
-    metaTitle: `${title} | PureSleep`,
+    metaTitle: `${title} | Mattress Inquirer`,
     metaDescription: `Read our comprehensive guide answering: ${title}. Discover exactly how to improve your sleep with advanced materials.`,
     canonicalUrl: `/blog/${slug}`,
     ogTitle: title,

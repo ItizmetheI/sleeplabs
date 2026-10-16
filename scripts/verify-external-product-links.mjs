@@ -14,7 +14,7 @@ const checkLink = async (mattress) => {
       signal: controller.signal,
       headers: {
         accept: 'text/html,application/xhtml+xml',
-        'user-agent': 'Mozilla/5.0 (compatible; PureSleepLinkQA/1.0)',
+        'user-agent': 'Mozilla/5.0 (compatible; MattressInquirerLinkQA/1.0)',
       },
     });
 

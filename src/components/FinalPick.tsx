@@ -3,9 +3,9 @@ import { motion } from 'motion/react';
 
 const evidencePaths = [
   {
-    href: '/best/overall/',
-    title: 'Complete score field',
-    description: 'Compare all 59 models across the same seven metrics.',
+    href: '/reviews/',
+    title: 'Complete scorecard',
+    description: 'Compare all 55 models across the same seven metrics.',
     Icon: Scale,
   },
   {
@@ -15,9 +15,9 @@ const evidencePaths = [
     Icon: BookOpen,
   },
   {
-    href: '/model-coverage.json',
-    title: 'Published model manifest',
-    description: 'Inspect the model, brand, score, source, and update fields.',
+    href: '/comparison/',
+    title: 'Head-to-head comparisons',
+    description: 'See two models side by side on all seven score fields.',
     Icon: FileText,
   },
 ];

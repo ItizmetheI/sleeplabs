@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const mdPath = path.join(__dirname, 'PURESLEEP_IMAGES.md');
+const mdPath = path.join(__dirname, 'MATTRESSINQUIRER_IMAGES.md');
 const jsonPath = path.join(__dirname, 'src/data/blogs-generated.json');
 
 const mdContent = fs.readFileSync(mdPath, 'utf8');

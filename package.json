@@ -1,10 +1,13 @@
 {
-  "name": "puresleep",
+  "name": "mattressinquirer",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
-    "start": "HOST=0.0.0.0 PORT=3000 node ./dist/server/entry.mjs",
+    "start": "wrangler dev",
     "dev": "astro dev --port 3000 --host 0.0.0.0",
     "build": "astro build",
     "postbuild": "node scripts/sync-llms-site-url.mjs",
@@ -14,13 +17,17 @@
     "qa:content": "node --import tsx scripts/verify-content-integrity.ts",
     "qa:dist": "node scripts/verify-build-output.mjs",
     "qa:external": "node --import tsx scripts/verify-external-product-links.mjs",
-    "qa": "npm run lint && npm run qa:content && npm run build && npm run qa:dist",
+    "qa:schema": "node scripts/verify-schema-parity.mjs",
+    "qa:release-config": "node scripts/verify-release-config.mjs",
+    "qa:live": "node scripts/verify-live-release.mjs",
+    "qa": "npm run lint && npm run qa:content && npm run build && npm run qa:dist && npm run qa:schema && npm run qa:owner && npm run qa:page-map",
     "deploy": "npm run build && wrangler deploy",
-    "cf-typegen": "wrangler types"
+    "cf-typegen": "wrangler types",
+    "qa:owner": "node scripts/verify-owner-rules.mjs",
+    "qa:page-map": "node scripts/verify-page-map.mjs"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "12",
-    "@astrojs/node": "9.5.5",
+    "@astrojs/cloudflare": "12.6.13",
     "@astrojs/react": "^4.2.0",
     "@astrojs/sitemap": "^3.2.0",
     "@astrojs/tailwind": "5.1.5",
@@ -42,7 +49,7 @@
     "esbuild": "^0.25.0",
     "tsx": "^4.21.0",
     "typescript": "~5.8.2",
-    "wrangler": "^4.103.0"
+    "wrangler": "4.103.0"
   },
   "overrides": {
     "@astrojs/tailwind": {

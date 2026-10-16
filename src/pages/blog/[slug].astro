@@ -3,10 +3,15 @@ import { blogPosts } from '../../data/blogs-generated';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { articleList, articleTable, toArticleBody } from '../../lib/schemaArticleBody';
 import { EDITORIAL_INDEPENDENCE_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
-import { formatDateOnly } from '../../lib/dateFormat';
 import { getLegacyBestBlogRedirect } from '../../lib/legacyBlogRedirects';
 import { requiresBlogSourceReview } from '../../lib/blogSourceReview';
-import { FIRDOUS_FARHAD } from '../../lib/editorialPeople';
+import { isScheduled } from '../../lib/scheduledContent';
+import Byline from '../../components/Byline.astro';
+import { BYLINE_DISCLOSURE } from '../../lib/disclosure';
+
+// Approved comfort sentence (owner content instructions). Used wherever a health topic appears.
+import { COMFORT_NOT_TREATMENT, reviewUrl } from '../../lib/ownerSite';
+import { allMattresses } from '../../data/mattresses';
 
 export function getStaticPaths() {
   return blogPosts.map(post => ({
@@ -22,19 +27,36 @@ if (redirectTo) {
   return Astro.redirect(redirectTo, 301);
 }
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
+const SITE_URL = import.meta.env.SITE_URL || 'https://mattressinquirer.ahmedbarkat1067.workers.dev';
 
 const sourceReviewPending = requiresBlogSourceReview(post);
+// Related reading: internal links stay; an Amerisleep mattress URL maps to its review here; other outbound links drop
+// (owner rule: links only to page-map URLs, outbound links are CTAs only).
+const MATTRESS_URL_IDS: [RegExp, string][] = [
+  [/\/as2-memory-foam-mattress/, 'amerisleep-as2'], [/\/as3-memory-foam-mattress/, 'amerisleep-as3'],
+  [/\/as5-memory-foam-mattress/, 'amerisleep-as5'], [/\/as6-memory-foam-mattress/, 'amerisleep-as6'],
+  [/\/organica-natural-mattress/, 'amerisleep-organica'],
+];
+const relatedLinks = [...new Map(post.internalLinks.flatMap((link: any) => {
+  if (!/^https?:/.test(link.url)) return [[link.url, link]];
+  const id = MATTRESS_URL_IDS.find(([re]) => re.test(link.url))?.[1];
+  const m = id && allMattresses.find(x => x.id === id);
+  return m ? [[reviewUrl(m.id), { anchorText: `${m.name} Review`, url: reviewUrl(m.id) }]] : [];
+})).values()];
+// Referenced products link to their review on this site; owner rule: no prices in prose, outbound links are CTAs only.
+const productLinks = [...new Map(post.productRefs
+  .map((ref: any) => allMattresses.find(m => m.name === ref.productName || m.name === `Amerisleep ${ref.productId}`))
+  .filter(Boolean)
+  .map((m: any) => [m.id, { name: m.name, href: reviewUrl(m.id) }])).values()];
+const scheduled = isScheduled(post.datePublished);
 
 const blogArticleBody = toArticleBody(
   post.title,
+  BYLINE_DISCLOSURE,
   'Quick Answer',
   post.directAnswer,
   sourceReviewPending
-    ? 'No mattress can diagnose, treat, or cure any health condition. This article provides general comfort and sleep-product information only; talk to a doctor about pain or medical concerns.'
-    : null,
-  sourceReviewPending
-    ? ['Reviewer Assignment', `${FIRDOUS_FARHAD.name}, ${FIRDOUS_FARHAD.role.toLowerCase()}. ${FIRDOUS_FARHAD.credentials} This page does not carry completed review attribution until article-specific sources and final reviewer approval are complete.`]
+    ? `This article provides general comfort and sleep-product information only. ${COMFORT_NOT_TREATMENT}`
     : null,
   post.sections.map((section: any) => [
     section.heading,
@@ -50,18 +72,14 @@ const blogArticleBody = toArticleBody(
       )
       : null,
   ]),
-  post.productRefs?.length
-    ? articleTable(
-      'Referenced Products - prices are recorded reference values, not live offers; verify current terms on the official product page',
-      ['Product', 'Recorded Reference Price', 'Product URL'],
-      post.productRefs.map((product: any) => [product.productName, product.salePrice, product.productUrl]),
-    )
+  productLinks.length
+    ? articleList('Referenced Products', productLinks.map(link => `${link.name}: ${SITE_URL}${link.href}`))
     : null,
   'Multi-Brand Context',
-  'Product examples in this article are not a complete category ranking. See the Best Mattress rankings and Reviews index for the full 59-model, 24-brand scored dataset.',
+  'Product examples in this article are not a complete category ranking. See the Best Mattress rankings and Reviews index for the full scored dataset.',
   'Frequently Asked Questions',
   post.faqs.map((faq: any) => [`Question: ${faq.question}`, `Answer: ${faq.answer}`]),
-  'About PureSleep',
+  'About Mattress Inquirer',
   `${EDITORIAL_INDEPENDENCE_DISCLOSURE} ${LINK_DISCLOSURE}`,
 );
 
@@ -74,13 +92,13 @@ const articleSchema = {
   "author": {
     "@type": "Organization",
     "@id": `${SITE_URL}/about/#editorial-team`,
-    "name": "PureSleep Editorial Team",
+    "name": "Mattress Inquirer Editorial Team",
     "url": `${SITE_URL}/about/#editorial-team`
   },
   "publisher": {
     "@type": "Organization",
     "@id": `${SITE_URL}/#organization`,
-    "name": "PureSleep",
+    "name": "Mattress Inquirer",
     "url": SITE_URL
   },
   "datePublished": post.datePublished,
@@ -88,7 +106,7 @@ const articleSchema = {
   "mainEntityOfPage": `${SITE_URL}/blog/${post.slug}/`,
   "articleBody": blogArticleBody,
   "citation": [
-    ...post.productRefs.map(product => product.productUrl),
+    ...productLinks.map(link => `${SITE_URL}${link.href}`),
     `${SITE_URL}/editorial-policy/`
   ]
 };
@@ -117,7 +135,7 @@ const breadcrumbSchema = {
   ]
 };
 
-const jsonLd = [articleSchema, faqSchema, breadcrumbSchema];
+const jsonLd = [articleSchema, ...(post.faqs.length ? [faqSchema] : []), breadcrumbSchema];
 
 const formatProse = (text: string) => {
   let formatted = text || '';
@@ -159,9 +177,10 @@ const formatProse = (text: string) => {
   canonicalUrl={`${SITE_URL}/blog/${post.slug}/`}
   lastUpdated={post.dateModified}
   jsonLd={jsonLd}
-  noindex={sourceReviewPending}
+  noindex={sourceReviewPending || scheduled}
 >
-  <article class="w-full min-w-0 max-w-[760px] mx-auto px-margin-mobile md:px-0 py-stack-lg">
+  <!-- Gates stay machine-readable for QA; readers see no staff status text (owner fix list item 5). -->
+  <article class="w-full min-w-0 max-w-[760px] mx-auto px-margin-mobile md:px-0 py-stack-lg" data-source-review-pending={sourceReviewPending ? 'true' : undefined} data-scheduled={scheduled ? 'true' : undefined}>
 
     <!-- Breadcrumb -->
     <nav class="text-label-sm font-label-sm text-on-surface-variant mb-8 uppercase tracking-normal">
@@ -182,30 +201,16 @@ const formatProse = (text: string) => {
       {post.title}
     </h1>
 
-    <!-- Direct Answer Box — LLM signal -->
+    <!-- Direct Answer Box: LLM signal -->
     <div class="bg-white p-6 rounded-lg border border-outline-variant border-l-4 border-l-secondary mb-8">
       <p class="text-label-sm font-label-sm uppercase tracking-normal text-secondary mb-2 font-bold">Quick Answer</p>
       <p class="text-body-lg text-on-background leading-relaxed">{post.directAnswer}</p>
     </div>
 
-    {sourceReviewPending && (
-      <div class="bg-amber-50 border border-amber-300 rounded-lg p-5 mb-8 text-body-md text-amber-950" role="note">
-        <p class="font-bold mb-2">Editorial status: source review pending</p>
-        <p>This page is excluded from search indexing until its health or sleep-science claims have explicit citations and final review. It provides general information only. A mattress cannot diagnose, treat, or cure a health condition; talk to a qualified professional about medical concerns.</p>
-        <p class="mt-3"><strong>Reviewer assigned:</strong> <a href={FIRDOUS_FARHAD.path} class="font-bold underline underline-offset-4">{FIRDOUS_FARHAD.name}</a>, {FIRDOUS_FARHAD.role.toLowerCase()}. {FIRDOUS_FARHAD.credentials} Assignment is not presented as completed review.</p>
-      </div>
-    )}
-
     <!-- Byline -->
-    <div class="flex items-start mb-8 pb-8 border-b border-outline-variant/30">
-      <div class="flex flex-wrap items-center gap-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-normal">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-md bg-primary text-white flex items-center justify-center font-bold text-lg">P</div>
-          <span>By {post.author.name}</span>
-        </div>
-        <span>· <time datetime={post.dateModified}>Updated: {formatDateOnly(post.dateModified)}</time></span>
-        <span>· {post.readTimeMinutes} min read</span>
-      </div>
+    <div class="flex flex-col gap-2 mb-8 pb-8 border-b border-outline-variant/30">
+      <Byline dateModified={post.dateModified} />
+      <span class="text-body-sm text-on-surface-variant">{post.readTimeMinutes} min read</span>
     </div>
 
     <!-- Hero image -->
@@ -317,17 +322,17 @@ const formatProse = (text: string) => {
       );
     })}
 
-    {post.productRefs.length > 0 && (
+    {productLinks.length > 0 && (
       <section class="my-12 border-y border-outline-variant/30 py-8" aria-labelledby="referenced-products">
         <h2 id="referenced-products" class="text-headline-sm font-bold text-primary mb-3">Referenced Products</h2>
         <p class="text-body-sm text-on-surface-variant mb-5">
-          {EDITORIAL_INDEPENDENCE_DISCLOSURE} These links go to official product pages; verify current price, shipping, return, trial, and warranty terms before purchase.
+          Each review lists the model's scores, specs, trial and warranty, with the month we checked them.
         </p>
         <div class="flex flex-col divide-y divide-outline-variant/20 border-y border-outline-variant/20">
-          {post.productRefs.map(ref => (
-            <a href={ref.productUrl} target="_blank" rel="noopener noreferrer" class="flex items-center justify-between gap-4 py-4 text-primary hover:text-secondary">
-              <span class="font-bold">{ref.productName}</span>
-              <span class="text-label-sm uppercase tracking-normal">Official product page →</span>
+          {productLinks.map(link => (
+            <a href={link.href} class="flex items-center justify-between gap-4 py-4 text-primary hover:text-secondary">
+              <span class="font-bold">{link.name}</span>
+              <span class="text-label-sm uppercase tracking-normal">Read the review →</span>
             </a>
           ))}
         </div>
@@ -335,7 +340,7 @@ const formatProse = (text: string) => {
     )}
 
     <aside class="my-10 border-l-4 border-secondary pl-5 py-1 text-body-sm text-on-surface-variant">
-      <strong class="text-on-surface">Multi-brand context:</strong> Product examples in this article are not a complete category ranking. See the <a href="/best/overall/" class="text-primary underline underline-offset-4">Best Mattress rankings</a> and <a href="/reviews/" class="text-primary underline underline-offset-4">Reviews index</a> for the full 59-model, 24-brand scored dataset.
+      <strong class="text-on-surface">Multi-brand context:</strong> Product examples in this article are not a complete category ranking. See the <a href="/best/overall/" class="text-primary underline underline-offset-4">Best Mattress rankings</a> and <a href="/reviews/" class="text-primary underline underline-offset-4">Reviews index</a> for the full scored dataset.
     </aside>
 
     <!-- Author Box -->
@@ -346,7 +351,7 @@ const formatProse = (text: string) => {
       <div>
         <h3 class="text-headline-sm font-headline-sm text-primary mb-2 font-bold">{post.author.name}</h3>
         <p class="text-body-md text-on-surface-variant leading-relaxed mb-4">
-          PureSleep Editorial Team is the organizational byline for multi-editor articles. The team organizes source records, maintains scorecards, and publishes corrections without claiming laboratory or clinical testing.
+          Mattress Inquirer Editorial Team is the organizational byline for multi-editor articles. The team organizes source records, maintains scorecards, and publishes corrections without claiming laboratory or clinical testing.
         </p>
         <div class="flex items-center justify-center sm:justify-start gap-4 text-label-sm uppercase tracking-normal font-bold">
           <a href="/about/" class="text-secondary hover:text-primary transition-colors">Read Our Story</a>
@@ -372,16 +377,18 @@ const formatProse = (text: string) => {
     </div>
 
     <!-- Related reading (internal links) -->
-    <div class="mt-12 border-t border-outline-variant/30 pt-12">
-      <h3 class="text-label-sm font-label-sm uppercase tracking-normal text-secondary mb-6 font-bold">Related Reading</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {post.internalLinks.map(link => (
-          <a href={link.url} class="bg-white border border-outline-variant p-5 rounded-lg hover:border-secondary transition-colors group">
-            <span class="text-body-md text-primary font-bold group-hover:text-secondary transition-colors">{link.anchorText} →</span>
-          </a>
-        ))}
+    {relatedLinks.length > 0 && (
+      <div class="mt-12 border-t border-outline-variant/30 pt-12">
+        <h3 class="text-label-sm font-label-sm uppercase tracking-normal text-secondary mb-6 font-bold">Related Reading</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {relatedLinks.map((link: any) => (
+            <a href={link.url} class="bg-white border border-outline-variant p-5 rounded-lg hover:border-secondary transition-colors group">
+              <span class="text-body-md text-primary font-bold group-hover:text-secondary transition-colors">{link.anchorText} →</span>
+            </a>
+          ))}
+        </div>
       </div>
-    </div>
+    )}
 
   </article>
 </BaseLayout>

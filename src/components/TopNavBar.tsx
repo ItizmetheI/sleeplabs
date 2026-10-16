@@ -23,176 +23,159 @@ const navItems: NavItem[] = [
   { label: 'HOME', href: '/' },
   {
     label: 'BEST MATTRESS',
-    href: '/best/overall',
+    href: '/best/overall/',
     columns: [
       {
         title: 'By Sleeper Type',
         items: [
-          { label: 'Best Overall', href: '/best/overall' },
-          { label: 'Back Sleepers', href: '/best/back-sleepers' },
-          { label: 'Side Sleepers', href: '/best/side-sleepers' },
-          { label: 'Stomach Sleepers', href: '/best/stomach-sleepers' },
-          { label: 'Combination Sleepers', href: '/best/combination-sleepers' },
-          { label: 'Heavy Sleepers', href: '/best/heavy-sleepers' },
-          { label: 'Couples', href: '/best/couples' },
+          { label: 'Best Overall', href: '/best/overall/' },
+          { label: 'Back Sleepers', href: '/best/back-sleepers/' },
+          { label: 'Side Sleepers', href: '/best/side-sleepers/' },
+          { label: 'Stomach Sleepers', href: '/best/stomach-sleepers/' },
+          { label: 'Combination Sleepers', href: '/best/combination-sleepers/' },
+          { label: 'Heavy Sleepers', href: '/best/heavy-sleepers/' },
+          { label: 'Couples', href: '/best/couples/' },
         ]
       },
       {
         title: 'By Sleep Concern',
         items: [
-          { label: 'Back Comfort', href: '/best/back-pain' },
-          { label: 'Hip Comfort', href: '/best/hip-pain' },
-          { label: 'Shoulder Comfort', href: '/best/shoulder-pain' },
-          { label: 'Hot Sleepers / Cooling', href: '/best/cooling' },
-          { label: 'Motion Isolation', href: '/best/motion-isolation' },
-          { label: 'Pressure Relief', href: '/best/pressure-relief' },
+          { label: 'Back Comfort', href: '/best/back-pain/' },
+          { label: 'Hip Comfort', href: '/best/hip-pain/' },
+          { label: 'Shoulder Comfort', href: '/best/shoulder-pain/' },
+          { label: 'Hot Sleepers / Cooling', href: '/best/cooling/' },
+          { label: 'Motion Isolation', href: '/best/motion-isolation/' },
+          { label: 'Pressure Relief', href: '/best/pressure-relief/' },
         ]
       },
       {
         title: 'By Type & Budget',
         items: [
-          { label: 'Best Luxury', href: '/best/luxury' },
-          { label: 'Best Hybrid', href: '/best/hybrid' },
-          { label: 'Best Organic', href: '/best/organic' },
-          { label: 'Best Memory Foam', href: '/best/memory-foam' },
-          { label: 'Best Value', href: '/best/value' },
-          { label: 'All Categories →', href: '/best/overall' },
+          { label: 'Best Luxury', href: '/best/luxury/' },
+          { label: 'Best Hybrid', href: '/best/hybrid/' },
+          { label: 'Best Organic', href: '/best/organic/' },
+          { label: 'Best Memory Foam', href: '/best/memory-foam/' },
+          { label: 'Best Value', href: '/best/value/' },
+          { label: 'All Categories →', href: '/best/overall/' },
         ]
       }
     ]
   },
   {
     label: 'REVIEWS',
-    href: '/reviews',
+    href: '/reviews/',
     columns: [
       {
         title: 'Popular Reviews',
         items: [
-          { label: 'Amerisleep AS3', href: '/reviews/amerisleep-as3' },
-          { label: 'Saatva Classic', href: '/reviews/saatva-classic' },
-          { label: 'Helix Midnight Luxe', href: '/reviews/helix-midnight-luxe' },
-          { label: 'Avocado Green', href: '/reviews/avocado-green' },
-          { label: 'PlushBeds Signature Bliss', href: '/reviews/plushbeds-signature-bliss' },
-          { label: 'GhostBed Flex', href: '/reviews/ghostbed-flex' }
+          { label: 'Amerisleep AS3', href: '/reviews/amerisleep-as3/' },
+          { label: 'Saatva Classic', href: '/reviews/saatva-classic/' },
+          { label: 'Helix Midnight Luxe', href: '/reviews/helix-midnight-luxe/' },
+          { label: 'Avocado Green', href: '/reviews/avocado-green/' },
+          { label: 'PlushBeds Signature Bliss', href: '/reviews/plushbeds-signature-bliss/' },
+          { label: 'Zoma Boost', href: '/reviews/zoma-boost/' }
         ]
       },
       {
         title: 'Shop by Need',
         items: [
-          { label: 'Side Sleepers', href: '/best/side-sleepers' },
-          { label: 'Back Sleepers', href: '/best/back-sleepers' },
-          { label: 'Hot Sleepers', href: '/best/cooling' },
-          { label: 'Couples', href: '/best/couples' },
-          { label: 'Organic Mattresses', href: '/best/organic' },
-          { label: 'Value Mattresses', href: '/best/value' }
+          { label: 'Side Sleepers', href: '/best/side-sleepers/' },
+          { label: 'Back Sleepers', href: '/best/back-sleepers/' },
+          { label: 'Hot Sleepers', href: '/best/cooling/' },
+          { label: 'Couples', href: '/best/couples/' },
+          { label: 'Organic Mattresses', href: '/best/organic/' },
+          { label: 'Value Mattresses', href: '/best/value/' }
         ]
       },
       {
         title: 'Browse the Library',
         items: [
-          { label: 'All 59 Reviews', href: '/reviews' },
-          { label: 'Browse 24 Brands', href: '/brands' },
-          { label: 'Ranked Categories', href: '/best/overall' },
-          { label: 'Head-to-Head Comparisons', href: '/comparison' },
-          { label: 'Scoring Methodology', href: '/methodology' },
-          { label: 'Sleep Topics', href: '/topics' }
-        ]
-      }
-    ]
-  },
-  {
-    label: 'GUIDES',
-    href: '/guides',
-    columns: [
-      {
-        title: 'Buying Guides',
-        items: [
-          { label: 'First-Time Buyer Guide', href: '/blog/mattress-buying-guide-for-first-time-buyers' },
-          { label: 'How to Read a Spec Sheet', href: '/blog/how-to-read-a-mattress-spec-sheet' },
-          { label: 'Firm vs Soft Mattress', href: '/blog/firm-vs-soft-mattress' },
-          { label: 'Memory Foam vs Latex', href: '/blog/memory-foam-vs-latex-mattress' },
-          { label: 'Evaluate a Home Trial', href: '/blog/how-to-evaluate-a-mattress-trial-period' },
-          { label: 'All Guides', href: '/guides' },
+          { label: 'Full Scorecard', href: '/reviews/' },
+          { label: 'Browse 24 Brands', href: '/brands/' },
+          { label: 'Ranked Categories', href: '/best/overall/' },
+          { label: 'Head-to-Head Comparisons', href: '/comparison/' },
+          { label: 'Scoring Methodology', href: '/methodology/' },
+          { label: 'Sleep Topics', href: '/topics/' }
         ]
       }
     ]
   },
   {
     label: 'BLOG',
-    href: '/blog',
+    href: '/blog/',
     columns: [
       {
         title: 'Popular Articles',
         items: [
-          { label: 'How Memory Foam Works', href: '/blog/how-does-memory-foam-work' },
-          { label: 'Mattress Certifications', href: '/blog/what-mattress-certifications-actually-mean' },
-          { label: 'Compare Two Mattresses', href: '/blog/how-to-choose-between-two-mattresses' },
-          { label: 'Mattress Trial Guide', href: '/blog/what-the-100-night-trial-actually-covers' },
-          { label: 'Build a Sleep Routine', href: '/blog/how-to-build-a-sleep-routine-that-works' },
-          { label: 'All Posts', href: '/blog' }
+          { label: 'How Memory Foam Works', href: '/blog/how-does-memory-foam-work/' },
+          { label: 'Mattress Certifications', href: '/blog/what-mattress-certifications-actually-mean/' },
+          { label: 'Compare Two Mattresses', href: '/blog/how-to-choose-between-two-mattresses/' },
+          { label: 'Mattress Trial Guide', href: '/blog/what-the-100-night-trial-actually-covers/' },
+          { label: 'Build a Sleep Routine', href: '/blog/how-to-build-a-sleep-routine-that-works/' },
+          { label: 'All Posts', href: '/blog/' }
         ]
       },
       {
         title: 'Categories & Tags',
         items: [
-          { label: 'Sleep Science', href: '/blog/category/sleep-science' },
-          { label: 'Product Comparisons', href: '/blog/category/product-comparison' },
-          { label: 'Mattress Care', href: '/blog/category/mattress-care' },
-          { label: 'Mattress Reviews', href: '/blog/tag/mattress-reviews' },
-          { label: 'Adjustable Beds', href: '/blog/tag/adjustable-beds' },
-          { label: 'Bed Frames', href: '/blog/tag/bed-frames' }
+          { label: 'Sleep Science', href: '/blog/category/sleep-science/' },
+          { label: 'Product Comparisons', href: '/blog/category/product-comparison/' },
+          { label: 'Mattress Care', href: '/blog/category/mattress-care/' },
+          { label: 'Mattress Reviews', href: '/blog/tag/mattress-reviews/' },
+          { label: 'Adjustable Beds', href: '/blog/tag/adjustable-beds/' },
+          { label: 'Bed Frames', href: '/blog/tag/bed-frames/' }
         ]
       }
     ]
   },
   {
     label: 'KEY TOPICS',
-    href: '/topics',
+    href: '/topics/',
     columns: [
       {
         title: 'Sleep Science',
         items: [
-          { label: 'Sleep Cycles Explained', href: '/topics/sleep-cycles' },
-          { label: 'Spinal Alignment', href: '/topics/spinal-alignment' },
-          { label: 'Motion Isolation', href: '/topics/motion-isolation' },
-          { label: 'Edge Support', href: '/topics/edge-support' },
-          { label: 'All Topics', href: '/topics' }
+          { label: 'Sleep Cycles Explained', href: '/topics/sleep-cycles/' },
+          { label: 'Spinal Alignment', href: '/topics/spinal-alignment/' },
+          { label: 'Motion Isolation', href: '/topics/motion-isolation/' },
+          { label: 'Edge Support', href: '/topics/edge-support/' },
+          { label: 'All Topics', href: '/topics/' }
         ]
       },
       {
         title: 'Materials & Certifications',
         items: [
-          { label: 'Memory Foam Explained', href: '/topics/memory-foam' },
-          { label: 'Cooling Technology', href: '/topics/cooling-technology' },
-          { label: 'Pocketed Coils Guide', href: '/topics/pocketed-coils' },
-          { label: 'CertiPUR-US Explained', href: '/topics/certipur-us' }
+          { label: 'Memory Foam Explained', href: '/topics/memory-foam/' },
+          { label: 'Cooling Technology', href: '/topics/cooling-technology/' },
+          { label: 'Pocketed Coils Guide', href: '/topics/pocketed-coils/' },
+          { label: 'CertiPUR-US Explained', href: '/topics/certipur-us/' }
         ]
       }
     ]
   },
   {
     label: 'COMPARISON',
-    href: '/comparison',
+    href: '/comparison/',
     columns: [
       {
         title: 'Popular Comparisons',
         items: [
-          { label: 'AS3 vs Saatva Classic', href: '/comparison/amerisleep-as3-vs-saatva-classic' },
-          { label: 'Organica vs Avocado Green', href: '/comparison/amerisleep-organica-vs-avocado-green' },
-          { label: 'AS5 Hybrid vs Leesa Sapira Chill', href: '/comparison/amerisleep-as5-hybrid-vs-leesa-sapira-chill-hybrid' },
-          { label: 'AS6 vs Saatva RX', href: '/comparison/amerisleep-as6-black-series-vs-saatva-rx' },
-          { label: 'AS2 vs Brooklyn Bedding Plank Firm', href: '/comparison/amerisleep-as2-vs-brooklyn-bedding-plank-firm' },
-          { label: 'All 30 Comparisons', href: '/comparison' }
+          { label: 'AS3 vs Saatva Classic', href: '/comparison/amerisleep-as3-vs-saatva-classic/' },
+          { label: 'Organica vs Avocado Green', href: '/comparison/amerisleep-organica-vs-avocado-green/' },
+          { label: 'AS5 Hybrid vs Leesa Sapira Chill', href: '/comparison/amerisleep-as5-hybrid-vs-leesa-sapira-chill-hybrid/' },
+          { label: 'AS6 vs Saatva RX', href: '/comparison/amerisleep-as6-black-series-vs-saatva-rx/' },
+          { label: 'AS2 vs Brooklyn Bedding Plank Firm', href: '/comparison/amerisleep-as2-vs-brooklyn-bedding-plank-firm/' },
+          { label: 'All 28 Comparisons', href: '/comparison/' }
         ]
       },
       {
         title: 'Compare and Verify',
         items: [
-          { label: 'All 59 Reviews', href: '/reviews' },
-          { label: 'Browse 24 Brands', href: '/brands' },
-          { label: 'Full Score Field', href: '/best/overall' },
-          { label: 'Scoring Methodology', href: '/methodology' },
-          { label: 'Editorial Policy', href: '/editorial-policy' },
+          { label: 'Full Scorecard', href: '/reviews/' },
+          { label: 'Browse 24 Brands', href: '/brands/' },
+          { label: 'Full Score Field', href: '/best/overall/' },
+          { label: 'Scoring Methodology', href: '/methodology/' },
+          { label: 'Editorial Policy', href: '/editorial-policy/' },
           { label: 'Published Model Manifest', href: '/model-coverage.json' }
         ]
       }
@@ -311,7 +294,7 @@ export default function TopNavBar({ currentPath = '/' }: { currentPath?: string 
       >
         <div className="max-w-container-max mx-auto w-full h-[72px] flex justify-between items-center px-margin-mobile md:px-margin-desktop">
           <div className="flex items-center gap-4">
-            <a href="/" className="text-headline-md font-headline-md  text-primary inline-block relative z-[60]">PureSleep</a>
+            <a href="/" className="text-headline-md font-headline-md  text-primary inline-block relative z-[60]">Mattress Inquirer</a>
           </div>
           
           {/* Desktop Nav */}

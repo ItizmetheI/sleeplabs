@@ -60,7 +60,7 @@ function generatePosts(batchDefinition) {
       id: def.id,
       slug: def.id,
       title: def.title,
-      metaTitle: `${def.title} | PureSleep`,
+      metaTitle: `${def.title} | Mattress Inquirer`,
       metaDescription: def.directAnswer.substring(0, 150) + "...",
       canonicalUrl: `/blog/${def.id}`,
       ogTitle: def.title,

@@ -2,7 +2,7 @@ import { buildLlmsIndex } from '../lib/llmDocuments';
 
 export const prerender = true;
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
+const SITE_URL = import.meta.env.SITE_URL || 'https://mattressinquirer.ahmedbarkat1067.workers.dev';
 
 export const GET = () =>
   new Response(`${buildLlmsIndex(SITE_URL).trim()}\n`, {

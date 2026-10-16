@@ -45,5 +45,5 @@ replaceInFile('src/components/Methodology.tsx', [
 
 // TASK 6
 replaceInFile('src/pages/reviews/index.astro', [
-    {regex: /Independent, physically tested Amerisleep mattress reviews\. 5 models evaluated over 90–120 nights each\. No paid placements\. Tested by the PureSleep testing team\./g, replacement: "Independent Amerisleep mattress reviews. 5 models hands-on evaluated. Affiliate-disclosed. Tested by the PureSleep Testing Team."}
+    {regex: /Independent, physically tested Amerisleep mattress reviews\. 5 models evaluated over 90–120 nights each\. No paid placements\. Tested by the Mattress Inquirer testing team\./g, replacement: "Independent Amerisleep mattress reviews. 5 models hands-on evaluated. Affiliate-disclosed. Tested by the Mattress Inquirer Testing Team."}
 ]);

@@ -1,5 +1,11 @@
 ---
+// Homepage: the original visual layout (Hero, stats, match finder, score sheet, use cases, guides,
+// methodology, final pick) carrying the owner template's content: answer-first H1 with the AS3 and its
+// score, top picks from the ranking engine, a top-10 scorecard teaser, categories, comparisons,
+// latest reviews and FAQs.
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Byline from '../components/Byline.astro';
+import PriceCta from '../components/PriceCta.astro';
 import Hero from '../components/Hero';
 import StatsRow from '../components/StatsRow';
 import FindYourMatch from '../components/FindYourMatch';
@@ -10,199 +16,289 @@ import Methodology from '../components/Methodology';
 import FinalPick from '../components/FinalPick';
 import { allMattresses } from '../data/mattresses';
 import { comparisons } from '../data/comparisons';
-import { formatDateOnly } from '../lib/dateFormat';
+import { REVIEW_COPY } from '../content/reviews';
+import { BYLINE_DISCLOSURE } from '../lib/disclosure';
+import { toArticleBody, articleTable } from '../lib/schemaArticleBody';
+import { BEST_PAGE_CONFIGS, KIDS_IDS, WESTIN_ID, rankBestPage } from '../lib/ranking';
+import { AS3_ID, compareTieChain } from '../lib/scoreFieldOrder';
+import { getMattress, getSpec, scoreText, winnerLine } from '../lib/pageData';
+import { SCORECARD_HEADERS, scorecardRows } from '../lib/scorecard';
+import { h1For, plainInline, renderInline, reviewUrl, typeText, firmnessShort } from '../lib/ownerSite';
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
-const featuredPicks = [
-  { id: 'amerisleep-as3', label: 'Best Overall', badge: '#1 Pick', desc: 'Medium-feel foam with a 10/10 overall score.' },
-  { id: 'plushbeds-signature-bliss', label: 'Best Organic', badge: '10/10 Overall', desc: 'Latex hybrid with a broad certification profile; verify current scope.' },
-  { id: 'vaya-hybrid', label: 'Best Value', badge: '10/10 Value', desc: 'Budget hybrid with 10/10 Value and Response Time scores.' },
-  { id: 'nest-bedding-sparrow', label: 'Trial Flexibility', badge: '10/10 Trial', desc: 'Hybrid with a top recorded Trial Period score.' },
-  { id: 'ghostbed-luxe', label: 'Cooling Foam', badge: '10/10 Cooling', desc: 'All-foam model with top Cooling and Motion Transfer scores.' },
-  { id: 'westin-heavenly-bed', label: 'Hotel-Style Feel', badge: '10/10 Overall', desc: 'Pillow-top innerspring with strong edge and response scores.' },
-].map(config => {
-  const mattress = allMattresses.find(item => item.id === config.id);
-  if (!mattress) throw new Error(`Missing homepage pick: ${config.id}`);
-  return { ...config, name: mattress.name, score: mattress.scores.overall, href: `/reviews/${mattress.id}` };
+const SITE_URL = import.meta.env.SITE_URL || 'https://mattressinquirer.ahmedbarkat1067.workers.dev';
+const DATE_MODIFIED = '2026-10-12';
+const UPDATED_LABEL = 'October 2026';
+const pageUrl = '/';
+const ctx = 'homepage';
+const link = (m: { id: string; name: string }) => `[${m.name}](${reviewUrl(m.id)})`;
+const names = (list: string[]) => (list.length < 2 ? list.join('') : `${list.slice(0, -1).join(', ')} and ${list.at(-1)}`);
+
+const as3 = getMattress(AS3_ID);
+const as3Score = scoreText(as3, 'overall');
+const tiedAt = allMattresses.filter(m => m.id !== AS3_ID && m.scores.overall === as3.scores.overall).sort(compareTieChain);
+const h1 = `The Best Mattress of 2026 Is the Amerisleep AS3, at ${as3Score}/10`;
+const answer = `Our Best Overall pick is the ${link(as3)}, scored ${as3Score}/10 Overall. It pairs a medium 5/10 all-foam feel with 10s in Edge Support, Motion Transfer and Cooling & Breathability. It ties at ${as3Score} with ${tiedAt.length} other models, the ${names(tiedAt.map(link))}, and is our editorial pick listed first.`;
+
+// Top picks: the AS3 as Best Overall, then the #1 pick from the five category pages the owner names.
+const PICK_PAGES = ['hybrid', 'latex', 'soft', 'firm', 'organic'];
+const picks = PICK_PAGES.map(slug => {
+  const config = BEST_PAGE_CONFIGS.find(c => c.slug === slug)!;
+  const pick = rankBestPage(config).picks[0];
+  return { slug, href: `/best/${slug}/`, page: h1For(`/best/${slug}/`), award: pick.award, mattress: pick.candidate.mattress };
 });
-const featuredComparisons = [
+const heroLeaders = [{ id: as3.id, label: 'Best Overall' }, ...picks.slice(0, 2).map(p => ({ id: p.mattress.id, label: p.award }))];
+
+const teaser = scorecardRows().slice(0, 10);
+const teaserHeaders = SCORECARD_HEADERS.slice(0, 8);
+const scoreSheetRows = teaser.map(r => {
+  const spec = getSpec(r.mattress.id);
+  return { id: r.mattress.id, name: r.mattress.name, image: r.mattress.image, detail: `${typeText(spec)} · ${firmnessShort(spec)} firmness`, overall: scoreText(r.mattress, 'overall') };
+});
+
+const categories = BEST_PAGE_CONFIGS.map(c => ({ href: `/best/${c.slug}/`, label: h1For(`/best/${c.slug}/`) }));
+
+const TOP_COMPARISONS = [
+  'amerisleep-as3-vs-nolah-evolution-15',
+  'amerisleep-as3-vs-saatva-classic',
+  'amerisleep-as3-vs-purple-restoreplus-hybrid',
+  'amerisleep-as3-vs-glacier-apex-hybrid',
+  'amerisleep-as6-black-series-vs-leesa-sapira-chill-hybrid',
   'amerisleep-organica-vs-avocado-green',
-  'amerisleep-as5-hybrid-vs-leesa-sapira-chill-hybrid',
-  'amerisleep-as6-black-series-vs-saatva-rx',
-].map(slug => {
-  const comparison = comparisons.find(item => item.slug === slug);
-  if (!comparison) throw new Error(`Missing homepage comparison: ${slug}`);
-  const mattressA = allMattresses.find(item => item.id === comparison.mattressAId);
-  const mattressB = allMattresses.find(item => item.id === comparison.mattressBId);
-  if (!mattressA || !mattressB) throw new Error(`Missing homepage comparison models: ${slug}`);
-  return { comparison, mattressA, mattressB };
+];
+const topComparisons = TOP_COMPARISONS.map(slug => {
+  const c = comparisons.find(x => x.slug === slug);
+  if (!c) throw new Error(`Homepage comparison missing: ${slug}`);
+  const a = getMattress(c.mattressAId), b = getMattress(c.mattressBId);
+  return { href: `/comparison/${slug}/`, title: h1For(`/comparison/${slug}/`), verdict: winnerLine(a, b, link), a, b };
 });
 
-const homepageFaqs = [
+const latest = allMattresses
+  .filter(m => !KIDS_IDS.has(m.id) && m.id !== WESTIN_ID && REVIEW_COPY[m.id])
+  .sort((x, y) => REVIEW_COPY[y.id].dateModified.localeCompare(REVIEW_COPY[x.id].dateModified) || compareTieChain(x, y))
+  .slice(0, 6);
+
+const faqs = [
   {
-    q: 'How does PureSleep score mattresses?',
-    a: 'PureSleep uses one seven-metric editorial scorecard: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. Every field uses a 0-10 scale, and the same definitions apply to all covered brands.',
+    q: 'What is the best mattress in 2026?',
+    a: `Our Best Overall pick is the ${link(as3)}, scored ${as3Score}/10 Overall. It ties at ${as3Score} with ${tiedAt.length} other models on our scorecard, and we list it first as our editorial pick. It earns 10s in Edge Support, Motion Transfer and Cooling & Breathability at a medium 5/10 feel, which suits side, back and combination sleepers of average weight.`,
   },
   {
-    q: 'How many brands and mattress models does PureSleep cover?',
-    a: 'The current review library covers 59 mattress models across 24 brands, plus 30 head-to-head comparisons and 18 ranked buying categories.',
+    q: 'How does Mattress Inquirer score mattresses?',
+    a: `Every model is scored from 0 to 10 in six fields: Value, Edge Support, Trial Period, Response Time, Motion Transfer and Cooling & Breathability. Overall is the average of those six, shown to one decimal. The same scorecard applies to all ${allMattresses.length} mattresses we cover, and our [methodology](/methodology/) explains what earns a 10 in each field.`,
   },
   {
-    q: 'Are PureSleep scores customer ratings or laboratory results?',
-    a: 'No. The scores are editorial comparisons from the published PureSleep score dataset. They are not clinical findings, laboratory measurements, manufacturer ratings, or collected customer ratings.',
+    q: 'Does one score cover every firmness option?',
+    a: 'Yes. Many models are sold in more than one firmness or height, and each model has one score that covers all of its options. Our category pages show the option that qualifies for that page, such as a Firm option on the firm page, and list the other options as available.',
   },
   {
-    q: 'How should I use a mattress ranking?',
-    a: 'Start with the category that matches your sleep position, comfort preference, budget, or shared-bed needs. Then compare the full seven-metric scorecard, firmness, construction, trial policy, warranty, and model availability before purchasing.',
+    q: 'Where can I compare two mattresses side by side?',
+    a: `Our [comparison pages](/comparison/) set two models against each other on all seven fields, with type, firmness, height, trial and warranty in one table. Each one opens with the winner by Overall score. The full [scorecard](/reviews/) lists every model we score, sorted by Overall, and can be downloaded as a CSV file.`,
   },
   {
-    q: 'Which mattress details should I verify before buying?',
-    a: 'Verify current price, stock, specifications, certification scope, shipping, trial, return, and warranty terms on the brand\'s official site. PureSleep labels recorded prices and policy fields as reference data because those details can change.',
+    q: 'Does Mattress Inquirer earn commissions?',
+    a: 'We may earn a commission when you buy through links on this page, at no extra cost to you. Commissions never change our scores. Every mattress is scored on the same seven-field scorecard, and our [affiliate disclosure](/affiliate-disclosure/) page explains how links on this site work.',
   },
 ];
 
-const jsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": `${SITE_URL}/#website`,
-    "name": "PureSleep",
-    "url": SITE_URL,
-    "description": "Multi-brand mattress reviews, rankings, and buying guides covering 59 models across 24 brands. Updated July 2026.",
-    "publisher": { "@id": `${SITE_URL}/#organization` }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": `${SITE_URL}/#organization`,
-    "name": "PureSleep",
-    "url": SITE_URL,
-    "logo": SITE_URL + "/logo.svg"
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": `${SITE_URL}/about/#editorial-team`,
-    "name": "PureSleep Editorial Team",
-    "url": `${SITE_URL}/about/#editorial-team`,
-    "parentOrganization": { "@id": `${SITE_URL}/#organization` }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": homepageFaqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.q,
-      "acceptedAnswer": { "@type": "Answer", "text": faq.a }
-    }))
-  }
-];
+const description = `Our Best Overall pick is the Amerisleep AS3 at ${as3Score}/10. See top picks by category and editorial scores for ${allMattresses.length} mattresses on one seven-field scale.`;
+const articleBody = toArticleBody(
+  h1, BYLINE_DISCLOSURE, plainInline(answer),
+  'Top Picks', `Best Overall: ${as3.name}, ${as3Score}/10.`, picks.map(p => `${p.award}: ${p.mattress.name}, ${scoreText(p.mattress, 'overall')}/10, the top pick on ${p.page}.`),
+  "Scores are Mattress Inquirer's editorial ratings on a 0 to 10 scale.",
+  articleTable('Scorecard: Top 10', [...teaserHeaders], teaser.map(r => r.cells.slice(0, 8))),
+  'Best Mattresses by Category', categories.map(c => c.label),
+  'Top Comparisons', topComparisons.map(c => `${c.title}: ${plainInline(c.verdict)}`),
+  'Latest Reviews', latest.map(m => `${m.name}: ${scoreText(m, 'overall')}/10, ${typeText(getSpec(m.id))}.`),
+  'FAQs', faqs.map(f => [f.q, plainInline(f.a)]),
+);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      "name": "Mattress Inquirer",
+      "url": SITE_URL,
+      "publisher": { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/#webpage`,
+      "name": h1,
+      "description": description,
+      "url": `${SITE_URL}/`,
+      "datePublished": DATE_MODIFIED,
+      "dateModified": DATE_MODIFIED,
+      "author": { "@type": "Organization", "@id": `${SITE_URL}/about/#editorial-team`, "name": "Mattress Inquirer Editorial Team", "url": `${SITE_URL}/about/#editorial-team` },
+      "publisher": { "@type": "Organization", "@id": `${SITE_URL}/#organization`, "name": "Mattress Inquirer", "url": SITE_URL, "logo": `${SITE_URL}/logo.svg` },
+      "text": articleBody,
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` }],
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": plainInline(f.a) } })),
+    },
+  ],
+};
+
+const section = 'py-16 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop';
+const sectionH2 = 'text-display-lg font-display-lg text-primary mb-3';
+const sectionLead = 'text-body-lg text-on-surface-variant mb-10 max-w-2xl';
+const cardCls = 'glass-panel p-6 rounded-lg border border-outline-variant/30 hover:border-secondary/40 transition-all group flex flex-col gap-3';
 ---
 
-<BaseLayout 
-  title="Best Mattress of 2026 | 59 Models Scored | PureSleep"
-  description="Compare 59 mattresses across 24 brands with PureSleep's seven-metric editorial scorecards, ranked categories, and head-to-head charts."
-  ogTitle="Best Mattress of 2026 — PureSleep"
+<BaseLayout
+  title={`Best Mattress (2026): Amerisleep AS3 Scores ${as3Score}/10`}
+  description={description}
   ogImage="/images/mattresses/amerisleep-as3.webp"
   ogType="website"
   canonicalUrl={`${SITE_URL}/`}
-  lastUpdated="2026-07-14"
+  machineReadableUrl={`${SITE_URL}/llms.txt`}
+  lastUpdated={DATE_MODIFIED}
   jsonLd={jsonLd}
 >
-  <div>
-    <Hero client:load />
-    
+  <article class="contents" data-body data-page-type="home">
+    <Hero client:load h1={h1} leaderConfig={heroLeaders} updated={UPDATED_LABEL} />
+
     <!-- Coverage Banner -->
     <div class="w-full bg-secondary-container py-4 flex flex-col justify-center items-center px-margin-mobile relative z-10 border-y border-secondary/20">
       <span class="text-on-secondary-container font-headline-md text-headline-md text-center tracking-normal font-bold">
-        59 SCORED MODELS ACROSS 24 MATTRESS BRANDS
+        {allMattresses.length} SCORED MODELS ACROSS {new Set(allMattresses.map(m => m.brand)).size} MATTRESS BRANDS
       </span>
       <span class="text-on-secondary-container/80 text-label-sm font-label-sm uppercase tracking-normal mt-2 bg-white/40 px-3 py-1 rounded-full border border-white/50 shadow-sm font-bold">
-        30 comparison charts · 18 ranked categories · updated {formatDateOnly("2026-07-14")}
+        {comparisons.length} comparisons · {BEST_PAGE_CONFIGS.length} ranked categories · updated {UPDATED_LABEL}
       </span>
     </div>
-    
-    <!-- Main Content -->
+
     <main class="flex-1 w-full flex flex-col relative z-10 bg-background/50">
+      <!-- Answer first -->
+      <section class={`${section} flex flex-col gap-4`}>
+        <Byline dateModified={DATE_MODIFIED} />
+        <p class="text-body-lg text-on-surface leading-relaxed max-w-3xl" data-answer set:html={renderInline(answer, ctx)} />
+        <div><PriceCta mattress={as3} pageUrl={pageUrl} /></div>
+      </section>
+
       <StatsRow client:visible />
+
+      <!-- Top Picks -->
+      <section class={section} data-section="Top Picks" data-score-table>
+        <h2 class={sectionH2}>Top picks by category</h2>
+        <p class={sectionLead}>Our Best Overall pick, plus the top-ranked pick from five category pages, each with its full review behind it.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class={cardCls}>
+            <div class="flex items-center justify-between">
+              <span class="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold">Best Overall</span>
+              <span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded-full">#1 Pick</span>
+            </div>
+            <a href={reviewUrl(as3.id)} class="block h-36 bg-white rounded-lg overflow-hidden"><img src={as3.image} alt={as3.name} class="w-full h-full object-contain p-2" loading="lazy" /></a>
+            <h3 class="text-headline-md font-headline-md text-primary"><a href={reviewUrl(as3.id)} class="hover:text-secondary transition-colors">{as3.name}</a></h3>
+            <p class="text-body-md text-on-surface-variant">Medium {firmnessShort(getSpec(as3.id))} {typeText(getSpec(as3.id)).toLowerCase()} bed with 10s in Edge Support, Motion Transfer and Cooling &amp; Breathability.</p>
+            <div class="flex items-center justify-between mt-auto pt-3 border-t border-outline-variant/20">
+              <span class="text-label-sm text-on-surface-variant">Overall</span>
+              <span class="text-secondary font-bold text-title-md" data-overall>{as3Score}</span>
+            </div>
+          </div>
+          {picks.map(p => (
+            <div class={cardCls}>
+              <span class="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold">{p.award}</span>
+              <a href={reviewUrl(p.mattress.id)} class="block h-36 bg-white rounded-lg overflow-hidden"><img src={p.mattress.image} alt={p.mattress.name} class="w-full h-full object-contain p-2" loading="lazy" /></a>
+              <h3 class="text-headline-md font-headline-md text-primary"><a href={reviewUrl(p.mattress.id)} class="hover:text-secondary transition-colors">{p.mattress.name}</a></h3>
+              <p class="text-body-md text-on-surface-variant">Top pick on <a href={p.href} class="text-primary underline underline-offset-4">{p.page}</a>.</p>
+              <div class="flex items-center justify-between mt-auto pt-3 border-t border-outline-variant/20">
+                <PriceCta mattress={p.mattress} pageUrl={pageUrl} variant="text" />
+                <span class="text-secondary font-bold text-title-md" data-overall>{scoreText(p.mattress, 'overall')}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="text-body-sm text-on-surface-variant mt-6" data-score-line>Scores are Mattress Inquirer's editorial ratings on a 0 to 10 scale.</p>
+      </section>
+
+      <ScoreSheet client:visible rows={scoreSheetRows} />
       <FindYourMatch client:visible />
-      <ScoreSheet client:visible />
-      
-<!-- Top Picks By Category -->
-<section class="py-16 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-  <h2 class="text-display-lg font-display-lg text-primary mb-3">Top picks by category</h2>
-  <p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl">Cross-brand leaders from the same published scorecard, with full reviews behind every pick.</p>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    {featuredPicks.map(pick => (
-      <a href={pick.href} class="glass-panel p-6 rounded-lg border border-outline-variant/30 hover:border-secondary/40 transition-all group flex flex-col gap-3">
-        <div class="flex items-center justify-between">
-          <span class="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold">{pick.label}</span>
-          <span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded-full">{pick.badge}</span>
-        </div>
-        <h3 class="text-headline-md font-headline-md text-primary group-hover:text-secondary transition-colors">{pick.name}</h3>
-        <p class="text-body-md text-on-surface-variant">{pick.desc}</p>
-        <div class="flex items-center justify-between mt-auto pt-3 border-t border-outline-variant/20">
-          <span class="text-label-sm text-on-surface-variant">PureSleep Score</span>
-          <span class="text-secondary font-bold text-title-md">{pick.score}/10</span>
-        </div>
-      </a>
-    ))}
-  </div>
-</section>
+
+      <!-- Categories grid -->
+      <section class={section} data-section="Categories">
+        <h2 class={sectionH2}>Best mattresses by category</h2>
+        <p class={sectionLead}>Every ranked category page, each ranked by the rule shown on the page.</p>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {categories.map(c => <li><a href={c.href} class="glass-panel block rounded-lg border border-outline-variant/30 hover:border-secondary/40 px-5 py-4 font-bold text-primary hover:text-secondary transition-colors">{c.label}</a></li>)}
+        </ul>
+      </section>
 
       <UseCases client:visible />
       <LatestGuides />
 
-<!-- Head-to-Head Comparisons -->
-<section class="py-16 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-  <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
-    <div>
-      <h2 class="text-display-lg font-display-lg text-primary mb-3">Head-to-head comparisons</h2>
-      <p class="text-body-lg text-on-surface-variant max-w-2xl">Explore 30 matchups with a crawlable chart for all seven score fields on every comparison page.</p>
-    </div>
-    <a href="/comparison" class="shrink-0 text-secondary font-label-sm font-bold uppercase tracking-normal hover:text-primary transition-colors">
-      All 30 comparisons →
-    </a>
-  </div>
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-    {featuredComparisons.map(({ comparison, mattressA, mattressB }) => (
-      <a href={`/comparison/${comparison.slug}/`} class="glass-panel rounded-lg p-5 border border-outline-variant hover:border-secondary transition-colors group flex flex-col gap-3">
-        <div class="flex items-center gap-2 font-bold text-primary">
-          <span class="text-title-md">{mattressA.name}</span>
-          <span class="text-on-surface-variant font-normal text-body-md">vs</span>
-          <span class="text-title-md">{mattressB.name}</span>
+      <!-- Head-to-Head Comparisons -->
+      <section class={section} data-section="Top Comparisons">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+          <div>
+            <h2 class={sectionH2}>Head-to-head comparisons</h2>
+            <p class="text-body-lg text-on-surface-variant max-w-2xl">Two models side by side on all seven score fields, with the winner by Overall score first.</p>
+          </div>
+          <a href="/comparison/" class="shrink-0 text-secondary font-label-sm font-bold uppercase tracking-normal hover:text-primary transition-colors">All {comparisons.length} comparisons →</a>
         </div>
-        <p class="text-body-md text-on-surface-variant flex-1">{comparison.verdict}</p>
-        <span class="text-secondary text-label-sm font-bold uppercase tracking-normal group-hover:text-primary transition-colors">Compare →</span>
-      </a>
-    ))}
-  </div>
-</section>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {topComparisons.map(c => (
+            <div class="glass-panel rounded-lg p-5 border border-outline-variant hover:border-secondary transition-colors flex flex-col gap-3">
+              <div class="flex items-center gap-2">
+                <a href={reviewUrl(c.a.id)} class="w-1/2"><img src={c.a.image} alt={c.a.name} class="w-full h-20 object-contain bg-white rounded" loading="lazy" /></a>
+                <span class="text-on-surface-variant text-body-sm font-bold">vs</span>
+                <a href={reviewUrl(c.b.id)} class="w-1/2"><img src={c.b.image} alt={c.b.name} class="w-full h-20 object-contain bg-white rounded" loading="lazy" /></a>
+              </div>
+              <h3 class="font-bold text-primary text-title-md"><a href={c.href} class="hover:text-secondary transition-colors">{c.title}</a></h3>
+              <p class="text-body-md text-on-surface-variant flex-1" set:html={renderInline(c.verdict, ctx)} />
+              <a href={c.href} class="text-secondary text-label-sm font-bold uppercase tracking-normal hover:text-primary transition-colors">Compare →</a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Latest Reviews -->
+      <section class={section} data-section="Latest Reviews">
+        <h2 class={sectionH2}>Latest reviews</h2>
+        <p class={sectionLead}>Recently updated reviews, each with the full seven-field scorecard.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {latest.map(m => (
+            <div class={cardCls}>
+              <a href={reviewUrl(m.id)} class="block h-36 bg-white rounded-lg overflow-hidden"><img src={m.image} alt={m.name} class="w-full h-full object-contain p-2" loading="lazy" /></a>
+              <h3 class="text-headline-md font-headline-md text-primary"><a href={reviewUrl(m.id)} class="hover:text-secondary transition-colors">{m.name}</a></h3>
+              <p class="text-body-md text-on-surface-variant">{typeText(getSpec(m.id))}, {firmnessShort(getSpec(m.id))} firmness.</p>
+              <div class="flex items-center justify-between mt-auto pt-3 border-t border-outline-variant/20">
+                <span class="text-label-sm text-on-surface-variant">Overall</span>
+                <span class="text-secondary font-bold text-title-md" data-overall>{scoreText(m, 'overall')}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <Methodology client:visible />
-      
-<!-- Homepage FAQ -->
-<section class="py-16 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-  <h2 class="text-display-lg font-display-lg text-primary mb-3">Frequently asked questions</h2>
-  <p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl">Direct answers about the scorecard, coverage, evidence limits, and how to use the rankings.</p>
-  <div class="flex flex-col gap-3 max-w-3xl">
-    {homepageFaqs.map(faq => (
-      <details class="group glass-panel rounded-lg border border-outline-variant/30 overflow-hidden">
-        <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-on-surface list-none text-body-lg">
-          {faq.q}
-          <span class="transition-transform group-open:rotate-180 shrink-0 ml-4">
-            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
-          </span>
-        </summary>
-        <div class="px-6 pb-6 text-body-md text-on-surface-variant leading-relaxed border-t border-outline-variant/10 pt-4">
-          {faq.a}
+
+      <!-- FAQs -->
+      <section class={section} data-section="FAQs">
+        <h2 class={sectionH2}>Frequently asked questions</h2>
+        <p class={sectionLead}>Direct answers about the scorecard, the picks and how to use them.</p>
+        <div class="flex flex-col gap-3 max-w-3xl">
+          {faqs.map(f => (
+            <details class="group glass-panel rounded-lg border border-outline-variant/30 overflow-hidden" open>
+              <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-on-surface list-none text-body-lg">
+                <h3>{f.q}</h3>
+                <span class="transition-transform group-open:rotate-180 shrink-0 ml-4">
+                  <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+              </summary>
+              <p class="px-6 pb-6 text-body-md text-on-surface-variant leading-relaxed border-t border-outline-variant/10 pt-4" set:html={renderInline(f.a, ctx)} />
+            </details>
+          ))}
         </div>
-      </details>
-    ))}
-  </div>
-</section>
+      </section>
 
       <FinalPick client:visible />
     </main>
-  </div>
+  </article>
 </BaseLayout>

@@ -166,7 +166,7 @@ async function main() {
       id: candidateSlug,
       slug: candidateSlug,
       title: candidateTitle,
-      metaTitle: `${candidateTitle.slice(0, 45)} | PureSleep`,
+      metaTitle: `${candidateTitle.slice(0, 45)} | Mattress Inquirer`,
       metaDescription: `Discover professional methods to optimize deep sleep and address ${topicParam.key.replace(/-/g, ' ')} issues using veterinarian and chiropractor approved bedding tips.`,
       canonicalUrl: `/blog/${candidateSlug}`,
       ogTitle: `${candidateTitle} for Healthy Sleep`,

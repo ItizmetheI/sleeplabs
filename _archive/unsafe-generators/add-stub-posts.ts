@@ -26,13 +26,13 @@ function createStub(id, title, tag, category) {
     "metaDescription": `A comprehensive guide about ${title}.`,
     "author": {
       "name": "Alex Sleep",
-      "url": "https://puresleep.com/authors/alex"
+      "url": "https://mattressinquirer.com/authors/alex"
     },
     "datePublished": "2026-05-28",
     "dateModified": "2026-05-28",
     "readTimeMinutes": 5,
     "schemaType": "Article",
-    "canonicalUrl": `https://puresleep.com/blog/${id}`,
+    "canonicalUrl": `https://mattressinquirer.com/blog/${id}`,
     "ogImage": "https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?auto=format&fit=crop&w=1200&q=80",
     "ogTitle": title,
     "ogDescription": `A comprehensive guide about ¹${title}.`,

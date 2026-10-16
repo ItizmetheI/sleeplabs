@@ -6,7 +6,7 @@ const posts = [
     "id": "memory-foam-vs-latex-mattress",
     "slug": "memory-foam-vs-latex-mattress",
     "title": "Memory Foam vs. Latex Mattress",
-    "metaTitle": "Memory Foam vs Latex Mattress | PureSleep",
+    "metaTitle": "Memory Foam vs Latex Mattress | Mattress Inquirer",
     "metaDescription": "Discover the exact structural difference between memory foam and latex. We break down which material relieves pressure better and which sleeps completely cooler.",
     "canonicalUrl": "/blog/memory-foam-vs-latex-mattress",
     "ogTitle": "Memory Foam vs. Latex Mattress",

@@ -335,7 +335,7 @@ const topPicksHtml = `
         <h3 class="text-headline-md font-headline-md text-primary group-hover:text-secondary transition-colors">Amerisleep {pick.model}</h3>
         <p class="text-body-md text-on-surface-variant">{pick.desc}</p>
         <div class="flex items-center justify-between mt-auto pt-3 border-t border-outline-variant/20">
-          <span class="text-label-sm text-on-surface-variant">PureSleep Score</span>
+          <span class="text-label-sm text-on-surface-variant">Mattress Inquirer Score</span>
           <span class="text-secondary font-bold text-title-md">{pick.score}/10</span>
         </div>
       </a>
@@ -348,7 +348,7 @@ const faqHtml = `
 <!-- Homepage FAQ -->
 <section class="py-16 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
   <h2 class="text-display-lg font-display-lg text-primary mb-3">Frequently asked questions</h2>
-  <p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl">Common questions about Amerisleep mattresses answered by the PureSleep Testing Team.</p>
+  <p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl">Common questions about Amerisleep mattresses answered by the Mattress Inquirer Testing Team.</p>
   <div class="flex flex-col gap-3 max-w-3xl">
     {[
       { q: "Which Amerisleep mattress is best for most people?", a: "The AS3 (medium, 5/10) is our top pick for most sleepers. Its Bio-Pur® plant-based foam and HIVE® 5-zone support work well for side sleepers, combination sleepers, and couples. If you sleep primarily on your back or stomach, the AS2 (medium-firm, 6/10) is the better fit." },

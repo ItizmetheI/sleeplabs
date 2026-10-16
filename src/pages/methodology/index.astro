@@ -1,155 +1,104 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { articleList, toArticleBody } from '../../lib/schemaArticleBody';
-import { EDITORIAL_INDEPENDENCE_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
-import { formatDateOnly } from '../../lib/dateFormat';
-import { FIRDOUS_FARHAD, firdousFarhadSchemaId } from '../../lib/editorialPeople';
+import Byline from '../../components/Byline.astro';
+import { toArticleBody } from '../../lib/schemaArticleBody';
+import { BYLINE_DISCLOSURE } from '../../lib/disclosure';
+import {
+  METHODOLOGY_LEAD,
+  METHODOLOGY_UPDATED,
+  METHODOLOGY_SOURCES,
+  METHODOLOGY_FIELDS,
+  METHODOLOGY_OVERALL,
+  METHODOLOGY_LIMITS,
+  methodologyPlainSections,
+} from '../../lib/methodologyContent';
 
-const lastUpdated = "2026-07-14";
-const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
+const lastUpdated = METHODOLOGY_UPDATED;
+const SITE_URL = import.meta.env.SITE_URL || 'https://mattressinquirer.ahmedbarkat1067.workers.dev';
+const canonicalUrl = `${SITE_URL}/methodology/`;
+const headline = 'How Mattress Inquirer Scores Mattresses';
+const description = 'How Mattress Inquirer scores 55 mattresses from 24 brands on seven fields from 0 to 10, what earns a 10 versus a 7, and how Overall is calculated.';
 
-const methodologyArticleBody = toArticleBody(
-  'How PureSleep Scores Mattresses',
-  `PureSleep publishes editorial scorecards for 59 mattresses across 24 brands using one standardized 7-metric system. ${EDITORIAL_INDEPENDENCE_DISCLOSURE} ${LINK_DISCLOSURE}`,
-  'Our Scoring Process',
-  articleList('Process Steps', [
-    'Every review starts with the published PureSleep score dataset and one record for each covered model. PureSleep does not present editorial scores as laboratory measurements or collected customer ratings.',
-    'Product construction, recorded firmness, policy fields, and sleep-position fit are interpreted using the same published definitions.',
-    'Each mattress is scored on Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. Every field uses a 0-10 scale.',
-    'The Overall field is the source dataset\'s editorial summary score, not a formula-derived laboratory result or manufacturer rating.',
-    'PureSleep is independently operated. The same published rubric is used across every covered brand.',
-  ]),
-  'The 7 Scoring Criteria',
-  articleList('Scoring Criteria', [
-    'Overall: the source dataset\'s editorial summary score for the complete mattress.',
-    'Value: overall quality relative to price, warranty, and trial terms.',
-    'Edge Support: firmness and usability at the mattress perimeter.',
-    'Trial Period: quality and length of the home trial policy.',
-    'Response Time: how quickly the surface responds to movement and position changes.',
-    'Motion Transfer: how much movement carries from one side of the mattress to the other.',
-    'Cooling & Breathability: airflow and heat dissipation across the sleep surface.',
-  ]),
-  'Editorial Standards',
-  articleList('Standards', [
-    'We do not make medical claims. Mattresses address sleep comfort and support only, not health conditions.',
-    `${EDITORIAL_INDEPENDENCE_DISCLOSURE} ${LINK_DISCLOSURE}`,
-    'Scores are editorial comparisons and are not presented as clinical findings, laboratory measurements, manufacturer ratings, or collected customer ratings.',
-    'Reviews are revised when documented source records change or a correction is confirmed; each page exposes its last-modified date.',
-  ]),
-  'Health and Sleep Content Review',
-  `${FIRDOUS_FARHAD.name} is PureSleep's ${FIRDOUS_FARHAD.role.toLowerCase()}. ${FIRDOUS_FARHAD.credentials} Article-level review attribution appears only after she has reviewed and approved the final copy. Assignment does not imply completed review or personal testing of every mattress.`,
-  'Evidence Boundaries',
-  articleList('What the scorecard can and cannot show', [
-    'Recorded construction, firmness, pricing, trial, warranty, and certification fields are checked against available official sources and should be re-verified before purchase.',
-    'PureSleep has not published pressure-map, thermal-camera, motion-sensor, durability-lab, or long-term sleep-test evidence for this dataset.',
-    'The model manifest exposes the complete score field so the same values can be checked across HTML, schema, comparisons, and machine-readable documents.',
-  ])
+const articleBody = toArticleBody(
+  headline,
+  BYLINE_DISCLOSURE,
+  METHODOLOGY_LEAD,
+  METHODOLOGY_UPDATED,
+  methodologyPlainSections().map(section => [section.heading, ...section.paragraphs]),
 );
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How PureSleep Scores Mattresses",
-  "description": "PureSleep's seven-metric editorial scoring methodology, evidence limits, editorial independence, and cross-brand coverage.",
-  "articleBody": methodologyArticleBody,
-  "author": { "@type": "Organization", "@id": `${SITE_URL}/about/#editorial-team`, "name": "PureSleep Editorial Team", "url": `${SITE_URL}/about/#editorial-team` },
-  "publisher": { "@type": "Organization", "@id": `${SITE_URL}/#organization`, "name": "PureSleep", "url": SITE_URL },
-  "datePublished": "2024-01-01",
-  "dateModified": lastUpdated,
-  "mainEntityOfPage": `${SITE_URL}/methodology/`,
-  "citation": [`${SITE_URL}/model-coverage.json`],
-  "mentions": { "@id": firdousFarhadSchemaId(SITE_URL) }
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": headline,
+      "description": description,
+      "articleBody": articleBody,
+      "author": { "@type": "Organization", "@id": `${SITE_URL}/about/#editorial-team`, "name": "Mattress Inquirer Editorial Team", "url": `${SITE_URL}/about/#editorial-team` },
+      "publisher": { "@type": "Organization", "@id": `${SITE_URL}/#organization`, "name": "Mattress Inquirer", "url": SITE_URL },
+      "datePublished": "2024-01-01",
+      "dateModified": lastUpdated,
+      "mainEntityOfPage": canonicalUrl
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+        { "@type": "ListItem", "position": 2, "name": "Methodology", "item": canonicalUrl }
+      ]
+    }
+  ]
 };
-
-const formattedDate = formatDateOnly(lastUpdated);
 ---
 
 <BaseLayout
-  title="How PureSleep Scores Mattresses | Methodology"
-  description="PureSleep's seven-metric editorial scoring methodology, evidence limits, editorial independence, and 59-model cross-brand coverage."
-  canonicalUrl={`${SITE_URL}/methodology/`}
+  title="How Mattress Inquirer Scores Mattresses | Methodology"
+  description={description}
+  canonicalUrl={canonicalUrl}
   machineReadableUrl={`${SITE_URL}/llms/methodology.md`}
   lastUpdated={lastUpdated}
   jsonLd={jsonLd}
 >
-  <main class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop py-16 relative z-10 w-full flex flex-col gap-16">
+  <main class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop py-16 relative z-10 w-full flex flex-col gap-12">
+    <article class="contents" data-body data-page-type="methodology">
 
-    <header class="flex flex-col gap-6 text-center">
-      <h1 class="text-headline-lg font-headline-lg text-primary font-bold">How PureSleep Scores Mattresses</h1>
-      <div class="flex justify-center">
-        <span class="text-body-md text-on-surface-variant bg-surface px-6 py-2 rounded-full shadow-sm border border-outline-variant/30">
-          <strong>Last Updated:</strong> {formattedDate}
-        </span>
-      </div>
-      <p class="text-body-lg text-on-surface-variant leading-relaxed text-left mt-4 glass-panel p-8 rounded-lg border border-outline-variant">
-        PureSleep publishes editorial scorecards for 59 mattresses across 24 brands using one standardized seven-metric system. {EDITORIAL_INDEPENDENCE_DISCLOSURE} {LINK_DISCLOSURE}
-      </p>
+    <header class="flex flex-col gap-6">
+      <h1 class="text-headline-lg font-headline-lg text-primary font-bold">{headline}</h1>
+      <Byline dateModified={lastUpdated} />
+      <p class="text-body-lg text-on-surface-variant leading-relaxed">{METHODOLOGY_LEAD}</p>
+      <p class="text-body-md text-on-surface-variant leading-relaxed">{METHODOLOGY_SOURCES}</p>
     </header>
 
-    <section class="flex flex-col gap-8">
-      <h2 class="text-headline-md font-headline-md text-primary border-b border-outline-variant/30 pb-4 italic">Our Scoring Process</h2>
-      <div class="grid grid-cols-1 gap-6">
-        {[
-          { n: "1", title: "Published Score Dataset", desc: "Every review starts with the published PureSleep score dataset and one record for each covered model. PureSleep does not present editorial scores as laboratory measurements or collected customer ratings." },
-          { n: "2", title: "Consistent Fit Analysis", desc: "Product construction, recorded firmness, policy fields, and sleep-position fit are interpreted using the same published definitions. Body-weight guidance is fit guidance, not a clinical measurement." },
-          { n: "3", title: "7-Metric Scoring", desc: "Each mattress is scored on Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. All scores are 0–10." },
-          { n: "4", title: "Evidence Limits", desc: "The Overall field is the source dataset's editorial summary score. It is not a formula-derived laboratory result, manufacturer rating, or collected customer rating." },
-          { n: "5", title: "Editorial Independence", desc: "PureSleep is independently operated, uses the same rubric for every brand, and explains how outbound product links work." }
-        ].map(step => (
-          <div class="flex gap-6 items-start">
-            <div class="bg-primary/10 text-primary font-bold text-xl rounded-full w-12 h-12 flex items-center justify-center shrink-0 border border-primary/20">{step.n}</div>
-            <div class="pt-2">
-              <h3 class="font-bold text-on-surface mb-2">{step.title}</h3>
-              <p class="text-body-md text-on-surface-variant leading-relaxed">{step.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+    {METHODOLOGY_FIELDS.map(field => (
+      <section class="flex flex-col gap-3">
+        <h2 class="text-headline-md font-headline-md text-primary border-b border-outline-variant/30 pb-3">{field.heading}</h2>
+        <p class="text-body-md text-on-surface-variant leading-relaxed">{field.body}</p>
+      </section>
+    ))}
+
+    <section class="flex flex-col gap-3">
+      <h2 class="text-headline-md font-headline-md text-primary border-b border-outline-variant/30 pb-3">How Overall Is Calculated</h2>
+      {METHODOLOGY_OVERALL.map(paragraph => (
+        <p class="text-body-md text-on-surface-variant leading-relaxed">{paragraph}</p>
+      ))}
     </section>
 
-    <section class="flex flex-col gap-8">
-      <h2 class="text-headline-md font-headline-md text-primary border-b border-outline-variant/30 pb-4 italic">The 7 Scoring Criteria</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {[
-          { metric: "Overall", desc: "The source dataset's editorial summary score for the complete mattress." },
-          { metric: "Value", desc: "Overall quality relative to price, including warranty and trial terms." },
-          { metric: "Edge Support", desc: "The dataset's editorial comparison field for expected perimeter stability and usability." },
-          { metric: "Trial Period", desc: "The dataset's editorial comparison field for the recorded home-trial length and terms." },
-          { metric: "Response Time", desc: "The dataset's editorial comparison field for expected surface response to movement." },
-          { metric: "Motion Transfer", desc: "The dataset's editorial comparison field for expected movement isolation across the surface." },
-          { metric: "Cooling & Breathability", desc: "The dataset's editorial comparison field for expected airflow and heat-management characteristics." }
-        ].map(item => (
-          <div class="glass-panel p-6 rounded-lg border border-outline-variant/30">
-            <h4 class="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold mb-2">{item.metric}</h4>
-            <p class="text-body-md text-on-surface-variant">{item.desc}</p>
-          </div>
-        ))}
-      </div>
+    <section class="flex flex-col gap-3">
+      <h2 class="text-headline-md font-headline-md text-primary border-b border-outline-variant/30 pb-3">What Scores Do Not Measure</h2>
+      <p class="text-body-md text-on-surface-variant leading-relaxed">{METHODOLOGY_LIMITS}</p>
     </section>
 
-    <section class="glass-panel p-8 rounded-lg border border-outline-variant/30 flex flex-col gap-4">
-      <h2 class="text-headline-md font-headline-md text-primary mb-2">Editorial Standards</h2>
-      <ul class="flex flex-col gap-3 text-body-md text-on-surface-variant">
-        <li class="flex gap-3"><span class="text-secondary font-bold">—</span> We do not make medical claims. Mattresses address sleep comfort and support only, not health conditions.</li>
-        <li class="flex gap-3"><span class="text-secondary font-bold">—</span> {EDITORIAL_INDEPENDENCE_DISCLOSURE} {LINK_DISCLOSURE}</li>
-        <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Scores are editorial comparisons, not clinical findings, laboratory measurements, manufacturer ratings, or collected customer ratings.</li>
-        <li class="flex gap-3"><span class="text-secondary font-bold">—</span> Reviews are updated when product specifications change or on a regular re-evaluation cycle.</li>
+    <section class="flex flex-col gap-3">
+      <h2 class="text-headline-md font-headline-md text-primary border-b border-outline-variant/30 pb-3">Related</h2>
+      <ul class="flex flex-col gap-2 text-body-md">
+        <li><a href="/reviews/" class="text-primary underline underline-offset-4 font-bold">Mattress Reviews and Scores (2026)</a></li>
+        <li><a href="/best/overall/" class="text-primary underline underline-offset-4 font-bold">Best Mattress (2026)</a></li>
+        <li><a href="/editorial-policy/" class="text-primary underline underline-offset-4 font-bold">Editorial Policy</a></li>
+        <li><a href="/affiliate-disclosure/" class="text-primary underline underline-offset-4 font-bold">Affiliate Disclosure</a></li>
       </ul>
     </section>
 
-    <section class="flex flex-col gap-6 border-t border-outline-variant/40 pt-10">
-      <h2 class="text-headline-md font-headline-md text-primary">Health and Sleep Content Review</h2>
-      <p class="text-body-md text-on-surface-variant leading-relaxed">
-        <a href={FIRDOUS_FARHAD.path} class="text-primary underline underline-offset-4 font-bold">{FIRDOUS_FARHAD.name}</a> is PureSleep's {FIRDOUS_FARHAD.role.toLowerCase()}. {FIRDOUS_FARHAD.credentials}
-      </p>
-      <p class="text-body-md text-on-surface-variant leading-relaxed">Article-level review attribution appears only after she has reviewed and approved the final copy. Assignment does not imply completed review, clinical testing, or personal testing of every mattress.</p>
-    </section>
-
-    <section class="flex flex-col gap-6 border-t border-outline-variant/40 pt-10">
-      <h2 class="text-headline-md font-headline-md text-primary">Evidence Boundaries</h2>
-      <p class="text-body-md text-on-surface-variant leading-relaxed">The scorecard is transparent about what it does not prove. PureSleep has not published pressure-map, thermal-camera, motion-sensor, durability-lab, or long-term sleep-test evidence for this dataset.</p>
-      <p class="text-body-md text-on-surface-variant leading-relaxed">Recorded product and policy fields are checked against available official sources and should be re-verified before purchase. The <a href="/model-coverage.json" class="text-primary underline underline-offset-4 font-bold">published model manifest</a> exposes every score so values can be checked across HTML, schema, comparisons, and machine-readable documents.</p>
-    </section>
-
+  </article>
   </main>
 </BaseLayout>

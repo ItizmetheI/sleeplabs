@@ -1,11 +1,11 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
-const DEFAULT_SITE_URL = 'https://finalize.ahmedbarkat1067.workers.dev';
+const DEFAULT_SITE_URL = 'https://mattressinquirer.ahmedbarkat1067.workers.dev';
 const sourceSiteUrls = [
   DEFAULT_SITE_URL,
   'https://production-domain-not-set.example',
-  'https://puresleep.com',
+  'https://mattressinquirer.com',
 ];
 const configuredUrl = new URL(process.env.SITE_URL || DEFAULT_SITE_URL);
 if (!['http:', 'https:'].includes(configuredUrl.protocol) || configuredUrl.pathname !== '/' || configuredUrl.search || configuredUrl.hash) {

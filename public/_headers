@@ -1,0 +1,13 @@
+# Response security headers for every route.
+# ponytail: script-src keeps 'unsafe-inline' because Astro emits 844 inline hydration
+# scripts in this build. Dropping it without switching to nonces breaks the site — the
+# upgrade path is nonce-based CSP, not deleting the allowance. It still blocks scripts
+# from any third-party origin, which is the main exfiltration vector.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin

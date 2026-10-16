@@ -67,8 +67,8 @@ fs.writeFileSync('src/pages/reviews/[id].astro', reviewId);
 // TASK 8
 let compAstro = fs.readFileSync('src/pages/comparison/[slug].astro', 'utf8');
 compAstro = compAstro.replace(
-    /"author": \{\s*"@type": "Person",\s*"name": "PureSleep",\s*"url": SITE_URL\s*\}/g,
-    `"author": {\n      "@type": "Organization",\n      "name": "PureSleep",\n      "url": SITE_URL\n    }`
+    /"author": \{\s*"@type": "Person",\s*"name": "Mattress Inquirer",\s*"url": SITE_URL\s*\}/g,
+    `"author": {\n      "@type": "Organization",\n      "name": "Mattress Inquirer",\n      "url": SITE_URL\n    }`
 );
 fs.writeFileSync('src/pages/comparison/[slug].astro', compAstro);
 

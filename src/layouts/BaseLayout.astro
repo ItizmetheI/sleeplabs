@@ -1,4 +1,5 @@
 ---
+import { isPreviewMode } from '../lib/releaseMode';
 import '../styles/global.css';
 
 import TopNavBar from '../components/TopNavBar';
@@ -20,7 +21,7 @@ export interface Props {
 
 const {
   title,
-  description = "PureSleep: multi-brand mattress reviews, scorecards, comparisons, and sleep guides.",
+  description = "Mattress Inquirer: multi-brand mattress reviews, scorecards, comparisons, and sleep guides.",
   ogTitle,
   ogDescription,
   ogImage,
@@ -32,7 +33,15 @@ const {
   noindex,
 } = Astro.props;
 
-const SITE_URL = import.meta.env.SITE_URL || 'https://finalize.ahmedbarkat1067.workers.dev';
+const SITE_URL = import.meta.env.SITE_URL || 'https://mattressinquirer.ahmedbarkat1067.workers.dev';
+// Preview builds are noindex sitewide; a per-page noindex still wins in production.
+const robotsContent = isPreviewMode()
+  ? 'noindex, nofollow, noarchive'
+  : (noindex ? 'noindex, follow' : null);
+// Owner schema rule: one JSON-LD block per page with an @graph. Pages that pass a list of nodes are merged here.
+const schemaBlock = Array.isArray(jsonLd)
+  ? { '@context': 'https://schema.org', '@graph': jsonLd.map(({ '@context': _context, ...node }: Record<string, unknown>) => node) }
+  : jsonLd;
 const absoluteOgImage = ogImage
   ? (ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`)
   : `${SITE_URL}/og-default.jpg`;
@@ -44,7 +53,7 @@ const absoluteOgImage = ogImage
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    {noindex && <meta name="robots" content="noindex, follow" />}
+    {robotsContent && <meta name="robots" content={robotsContent} />}
     
     <meta property="og:title" content={ogTitle ?? title} />
     <meta property="og:description" content={ogDescription ?? description} />
@@ -68,13 +77,17 @@ const absoluteOgImage = ogImage
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    {schemaBlock && <script type="application/ld+json" set:html={JSON.stringify(schemaBlock)} />}
   </head>
   <body>
     <div class="bg-background text-on-background font-body-md text-body-md antialiased pt-[60px] min-h-screen flex flex-col selection:bg-secondary/20 selection:text-secondary relative overflow-x-clip">
+      <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
       <TopNavBar client:idle currentPath={Astro.url.pathname} />
-      
-      <slot />
+
+      <div id="main-content" tabindex="-1">
+        <slot />
+      </div>
       
       <Footer client:visible />
     </div>
