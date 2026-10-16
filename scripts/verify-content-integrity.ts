@@ -70,8 +70,8 @@ const lockedScoreDataset = [...allMattresses]
   .map(mattress => [mattress.id, ...SCORE_METRICS.map(metric => mattress.scores[metric.key])].join('|'))
   .join('\n');
 const lockedScoreDatasetHash = createHash('sha256').update(lockedScoreDataset).digest('hex');
-// Locked to the owner's master scores file (received 2026-10-11).
-const approvedScoreDatasetHash = '68c5cc6f44ac44ad9f77323affe9169fa34f314e70f1ef9ca5d099c42be1ccb3';
+// Locked to the owner's master scores file (received 2026-10-11), less the four models removed on 2026-10-16.
+const approvedScoreDatasetHash = '7fa71fb8a9b38169798c41d7b5300463d67f399a2a55bcee5da6caf1dcf04564';
 const siteUrl = 'https://mattressinquirer.ahmedbarkat1067.workers.dev';
 const reviewDocuments = buildReviewLlmDocuments(siteUrl);
 const generatedDocuments = buildGeneratedLlmDocuments(siteUrl);
@@ -81,7 +81,7 @@ const reviewFileIds = reviewDocuments
   .map(document => document.slug.slice('reviews-'.length))
   .sort();
 
-assert(expectedReviewIds.length === 59, `Expected 59 mattress records; found ${expectedReviewIds.length}.`);
+assert(expectedReviewIds.length === 55, `Expected 55 mattress records; found ${expectedReviewIds.length}.`);
 assert(brandCount === 24, `Expected 24 brands; found ${brandCount}.`);
 const orderedScoreField = orderFullScoreField(allMattresses);
 assert(
@@ -97,9 +97,9 @@ for (const model of allMattresses) {
 }
 assert(
   lockedScoreDatasetHash === approvedScoreDatasetHash,
-  'The approved 59-model, seven-metric score dataset changed. Reconcile every edit against the source ranking sheet before updating the locked hash.',
+  'The approved 55-model, seven-metric score dataset changed. Reconcile every edit against the source ranking sheet before updating the locked hash.',
 );
-assert(reviewFileIds.length === 59, `Expected 59 generated LLM review files; found ${reviewFileIds.length}.`);
+assert(reviewFileIds.length === 55, `Expected 55 generated LLM review files; found ${reviewFileIds.length}.`);
 assert(
   reviewFileIds.length === expectedReviewIds.length && expectedReviewIds.every(id => reviewFileIds.includes(id)),
   `Review/LLM ID mismatch. Missing: ${expectedReviewIds.filter(id => !reviewFileIds.includes(id)).join(', ') || 'none'}. Extra: ${reviewFileIds.filter(id => !expectedReviewIds.includes(id)).join(', ') || 'none'}.`,
@@ -131,7 +131,7 @@ const expectedGeneratedCounts = {
   methodology: 1,
   'review-index': 1,
   'comparison-index': 1,
-  comparison: 30,
+  comparison: 28,
   'best-index': 1,
   best: 21,
   'brand-index': 1,
@@ -143,8 +143,8 @@ for (const [kind, expected] of Object.entries(expectedGeneratedCounts)) {
   const actual = generatedDocuments.filter(document => document.kind === kind).length;
   assert(actual === expected, `Expected ${expected} generated ${kind} documents; found ${actual}.`);
 }
-assert(generatedDocuments.length === 89, `Expected 89 generated non-review LLM documents; found ${generatedDocuments.length}.`);
-assert(allLlmDocuments.length === 148, `Expected 148 total LLM documents; found ${allLlmDocuments.length}.`);
+assert(generatedDocuments.length === 87, `Expected 87 generated non-review LLM documents; found ${generatedDocuments.length}.`);
+assert(allLlmDocuments.length === 142, `Expected 142 total LLM documents; found ${allLlmDocuments.length}.`);
 assert(new Set(allLlmDocuments.map(document => document.slug)).size === allLlmDocuments.length, 'Generated LLM slugs are not unique.');
 for (const document of allLlmDocuments) {
   assert(document.content.includes(`${siteUrl}${document.canonicalPath}`), `${document.slug}.md is missing its canonical HTML URL.`);
@@ -210,7 +210,7 @@ for (const mattress of allMattresses) {
   }
 }
 
-for (const id of ['bear-star-hybrid', 'ghostbed-flex', 'sweetnight-prime', 'nolah-original-hybrid', 'zoma-start']) {
+for (const id of ['zoma-start']) {
   assert(Boolean(mattressById.get(id)?.availabilityNote), `${id} is missing its archived-model or construction-change notice.`);
 }
 
@@ -218,7 +218,7 @@ for (const comparison of comparisons) {
   assert(mattressById.has(comparison.mattressAId), `${comparison.slug} references missing ${comparison.mattressAId}.`);
   assert(mattressById.has(comparison.mattressBId), `${comparison.slug} references missing ${comparison.mattressBId}.`);
 }
-assert(comparisons.length === 30, `Expected 30 comparison pages; found ${comparisons.length}.`);
+assert(comparisons.length === 28, `Expected 28 comparison pages; found ${comparisons.length}.`);
 
 assert(topics.length === 8, `Expected 8 standalone topic pages; found ${topics.length}.`);
 for (const topic of topics) {
@@ -238,14 +238,14 @@ for (const [source, destination] of Object.entries(LEGACY_BEST_BLOG_REDIRECTS)) 
 }
 
 const activeBlogPosts = blogPosts.filter(post => !post.redirectTo && !LEGACY_BEST_BLOG_REDIRECTS[`/blog/${post.slug}/`]);
-assert(blogPosts.length === 151, `Expected 151 source blog records; found ${blogPosts.length}.`);
-assert(activeBlogPosts.length === 89, `Expected 89 active blog articles after the 2026-10-11 page-map cuts; found ${activeBlogPosts.length}.`);
+assert(blogPosts.length === 149, `Expected 149 source blog records; found ${blogPosts.length}.`);
+assert(activeBlogPosts.length === 76, `Expected 76 active blog articles after the 2026-10-16 page-map cuts; found ${activeBlogPosts.length}.`);
 for (const post of activeBlogPosts) {
   assert(post.author.name === 'Mattress Inquirer Editorial Team', `${post.slug} must use the Mattress Inquirer Editorial Team organizational byline.`);
   assert(post.reviewedBy === null, `${post.slug} contains an unverified reviewer attribution.`);
 }
 const sourceReviewPendingPosts = activeBlogPosts.filter(requiresBlogSourceReview);
-assert(sourceReviewPendingPosts.length === 45, `Expected 45 source-review-pending blog articles; found ${sourceReviewPendingPosts.length}.`);
+assert(sourceReviewPendingPosts.length === 22, `Expected 22 source-review-pending blog articles; found ${sourceReviewPendingPosts.length}.`);
 
 const surfaceFiles = [
   'AGENTS.md',

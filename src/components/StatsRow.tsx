@@ -1,10 +1,10 @@
 import { motion } from 'motion/react';
 
 const stats = [
-  { value: "59", label: "Mattress Models Scored" },
+  { value: "55", label: "Mattress Models Scored" },
   { value: "24", label: "Brands Covered" },
   { value: "7", label: "Metrics Scored Per Mattress" },
-  { value: "30", label: "Head-to-Head Comparisons" },
+  { value: "28", label: "Head-to-Head Comparisons" },
 ];
 
 export default function StatsRow() {

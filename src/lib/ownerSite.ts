@@ -73,7 +73,7 @@ const NOT_LISTED = 'not listed';
 export const firmnessText = (spec: MattressSpec): string => {
   if (!spec.reachable || spec.firmnessOptions.length === 0) return 'Not listed';
   return spec.firmnessOptions
-    .map(o => (o.display ? `${o.display}/10 (${o.label})` : `${o.label} (no number given)`))
+    .map(o => (!o.display ? `${o.label} (no number given)` : o.label ? `${o.display}/10 (${o.label})` : `${o.display}/10`))
     .join('; ');
 };
 
@@ -100,15 +100,9 @@ export const warrantyText = (spec: MattressSpec) => {
   return match ? `${match[1]} years${match[2]}` : spec.warranty;
 };
 
-const usd = (value: number) => `$${value.toLocaleString('en-US', { minimumFractionDigits: Number.isInteger(value) ? 0 : 2, maximumFractionDigits: 2 })}`;
-
-/** Queen price as recorded, or "Not listed". Multi-height models show each recorded price. */
-export const queenPriceText = (spec: MattressSpec) => {
-  if (!spec.reachable || spec.queenPricesUsd.length === 0) return 'Not listed';
-  return spec.queenPricesUsd.map(usd).join(' or ');
-};
-
-export const queenPriceLabel = (spec: MattressSpec) => `Queen price (checked ${spec.priceChecked})`;
+// Owner rule: no prices anywhere. A price row is a "See Price" CTA to the product page; recorded prices stay in the spec data for luxury qualification only.
+export const PRICE_LABEL = 'Price';
+export const SEE_PRICE = 'See Price';
 
 export const listOrNotListed = (values: string[]) => (values.length ? values.join(', ') : 'Not listed');
 
@@ -121,6 +115,8 @@ export const PAIN_PAGE_SLUGS = new Set(['back-pain', 'hip-pain', 'shoulder-pain'
 /** Firmness for a best-of pick: the qualifying option ("7/10, Firm option"), then the others as available. */
 export const qualifyingFirmnessText = (spec: MattressSpec, q: { label: string; display: string } | null): string => {
   if (!q) return firmnessText(spec);
+  // Unlabeled ratings (owner-fixed Vaya and FORM numbers) are a single option with no name.
+  if (!q.label) return `${q.display}/10`;
   const others = spec.firmnessOptions
     .filter(o => o.label !== q.label)
     .map(o => (o.display ? `${o.label} ${o.display}/10` : o.label));

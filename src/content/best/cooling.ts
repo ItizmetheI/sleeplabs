@@ -5,10 +5,6 @@ const copy: BestCopy = {
   dateModified: '2026-10-12',
   metaDescription: 'The best cooling mattress in 2026: eight picks that all score 10 in Cooling & Breathability, ranked by Overall score and led by the Amerisleep AS3.',
   quickAnswer: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) leads our cooling picks at 9.5/10, the highest Overall score of the eight picks on this page, with a 10 in Cooling & Breathability. The [Glacier Apex Hybrid](/reviews/glacier-apex-hybrid/) earns Best Cooling, pairing its own 10 with several named cooling foams over coils.',
-  howWePicked: [
-    'This page ranks by Cooling & Breathability, then Overall score. All eight picks score 10 in Cooling & Breathability, so Overall and the usual tie-breaks set the order. Our cooling score reflects named cooling materials, open or ventilated foams and airflow through the core. It is not a temperature reading.',
-    'Kids models, the [Westin Heavenly Bed](/reviews/westin-heavenly-bed/) and models whose official page could not be reached are left out. Where a model comes in several firmness options, one score covers them all.',
-  ],
   picks: [
     {
       slug: 'amerisleep-as3',
@@ -150,12 +146,12 @@ const copy: BestCopy = {
         'That stack is quilt foam, GreenFlex BioFoam, responsive foam and transition foam over 8 inch zoned lumbar springs. With 8 inches of springs, air has room to move through the base. It ties for the highest Cooling & Breathability, Edge Support and Response Time scores here, each at 10.',
         'Warm sleepers who dislike the slow sink of memory foam get a lively surface instead. Leesa sells it in Plush 4/10, Medium-Firm 6/10 and Firm 7/10, under one score.',
         'Value is an 8, its lowest field, and it scores 9.3 Overall. No Split King size is listed.',
-        'Leesa lists a 365-night trial and a lifetime warranty, which gives a full year, through summer and winter, to judge the cooling for yourself.',
+        'Leesa lists a 365-night trial and a limited lifetime warranty, which gives a full year, through summer and winter, to judge the cooling for yourself.',
       ],
       strengths: [
         'An Ultra Cool cover with no memory foam named below it.',
         '10s in Cooling & Breathability, Edge Support and Response Time.',
-        'A 365-night trial and a lifetime warranty.',
+        'A 365-night trial and a limited lifetime warranty.',
       ],
       limitations: [
         'Value is an 8.',
@@ -170,6 +166,7 @@ const copy: BestCopy = {
     'Firmness plays a part. A softer surface lets the body sink deeper, so more foam wraps around you. A medium or medium-firm feel keeps you nearer the top. Warm side sleepers who need a plush feel can look for a plush option paired with cooling foams.',
     'Bedding counts as much as the mattress. Breathable cotton or linen sheets and a thin protector keep the surface in line with its score. Heavy, plastic-backed protectors trap heat and can cover the cooling fabric that earned the score in the first place.',
     'Finally, use the trial. A warm sleeper\'s comfort can change with the seasons, so a trial long enough to cover summer is worth more here than on most pages. Couples should weigh cooling a little more heavily than solo sleepers, since two bodies add warmth to one surface. A king or Cal King also leaves more open space between partners, which lets the surface between them stay cooler through the night.',
+    'Room conditions set the starting point for any mattress. A bedroom that stays warm at night will feel warm on any bed, so airflow, a fan and lighter bedding often matter as much as the mattress itself. Covers and top layers do most of the cooling work you feel, because they are what touch the skin. Coils add airflow lower down, while all-foam builds rely on cooling covers and gels near the surface. If you share the bed, remember that two bodies add warmth, so a couple may notice heat more than a solo sleeper on the same model.',
   ],
   faqs: [
     {

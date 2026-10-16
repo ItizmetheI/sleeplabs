@@ -27,8 +27,8 @@ const SITE_URL = import.meta.env.SITE_URL || 'https://mattressinquirer.ahmedbark
 // ponytail: every paginated page needs its own title/description/canonical or all 12 dedupe.
 const pageUrl = currentPage === 1 ? `${SITE_URL}/blog/` : `${SITE_URL}/blog/${currentPage}/`;
 const pageTitle = currentPage === 1
-  ? 'Sleep & Mattress Blog 2026 — Guides & Reviews'
-  : `Sleep & Mattress Blog 2026 — Page ${currentPage} of ${totalPages}`;
+  ? 'Sleep and Mattress Blog (2026): Guides and Reviews'
+  : `Sleep and Mattress Blog (2026): Page ${currentPage} of ${totalPages}`;
 const pageDescription = currentPage === 1
   ? "Sleep tips, mattress guides, and buying advice from Mattress Inquirer's multi-brand editorial team."
   : `Page ${currentPage} of ${totalPages} of Mattress Inquirer's sleep and mattress guides, covering sleep science, mattress buying, and bedroom setup.`;
@@ -44,7 +44,7 @@ const jsonLd = {
     "itemListElement": posts.map((post: any, index: number) => ({
       "@type": "ListItem",
       "position": index + 1,
-      "url": SITE_URL + "/blog/" + post.slug,
+      "url": SITE_URL + "/blog/" + post.slug + "/",
       "name": post.title
     }))
   }
@@ -56,14 +56,22 @@ const jsonLd = {
   description={pageDescription}
   canonicalUrl={pageUrl}
   lastUpdated="2026-05-01"
-  jsonLd={jsonLd}
+  jsonLd={[jsonLd, {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${SITE_URL}/blog/` },
+    ],
+  }]}
 >
   <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
 
     <header class="text-center mb-16">
       <h1 class="text-display-lg font-display-lg italic text-primary mb-4">Sleep & Mattress Guides</h1>
       <p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-        Guides on sleep science, mattress buying, and bedroom setup from Mattress Inquirer's multi-brand editorial team.
+        {currentPage === 1
+          ? "Guides on sleep science, mattress buying, and bedroom setup from Mattress Inquirer's multi-brand editorial team."
+          : `Page ${currentPage} of ${totalPages} of our guides on sleep science, mattress buying, and bedroom setup.`}
       </p>
     </header>
 

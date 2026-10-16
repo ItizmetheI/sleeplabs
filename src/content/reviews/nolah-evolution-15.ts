@@ -9,16 +9,16 @@ const copy: ReviewCopy = {
     '10/10 scores in Value, Edge Support and Motion Transfer.',
     'Three firmness options, Plush, Luxury Firm and Firm.',
     'Zoned Ascension coils under six named foam and cover layers.',
-    'A lifetime warranty, according to Nolah.',
+    'A limited lifetime warranty on the Evolution 15", according to Nolah.',
   ],
   limitations: [
     'Trial Period is a 9, with a 120-night trial shorter than the year-long trials many brands we score offer.',
     'Returns need a 30-night break-in and an email request, according to Nolah.',
     'Nolah does not list most layer thicknesses, so the comfort stack depth is not listed.',
   ],
-  howScored: 'Nolah Evolution 15" is scored on the same seven fields as every model we cover, from Nolah\'s official product page. Our [methodology page](/methodology/) explains how each field is set.',
+  howScored: 'Nolah Evolution 15" is scored on the same seven fields as every model we cover, from Nolah\'s official product page. Our [methodology page](/methodology/) explains how each field is set, for the Evolution 15" and every other model we score.',
   layerRoles: [
-    'Organic cotton cover that wraps the mattress.',
+    'On the Evolution 15", organic cotton cover that wraps the mattress.',
     'Quilted foam that adds a soft surface.',
     'AirFoam Luxe copper foam comfort layer that cushions the body.',
     'Gel swirl foam that adds contour under the comfort layer.',
@@ -34,33 +34,33 @@ const copy: ReviewCopy = {
   performance: {
     value: [
       'Value is a standout 10. The score is set from price, trial and warranty facts, and it weighs what the Evolution delivers against its queen price.',
-      'Nolah pairs a 120-night trial with a lifetime warranty, and shipping is free via FedEx, with paid in-home setup available. Three firmness options and a zoned coil build add to what the price covers. The recorded queen price appears in our specs table with the month we checked it.',
-      'Shoppers who want a tall, layered hybrid with a lifetime warranty gain the most from this field. The 10 holds across all three firmness options, since the terms do not change between them.',
+      'Nolah pairs a 120-night trial with a limited lifetime warranty, and shipping is free via FedEx, with paid in-home setup available. Three firmness options and a zoned coil build add to what the price covers.',
+      'Shoppers who want a tall, layered hybrid with a limited lifetime warranty gain the most from this field. The 10 holds across all three firmness options, since the terms do not change between them.',
     ],
     edgeSupport: [
-      'Edge Support is a standout 10. The 8 inch zoned Ascension coils give the side of the bed firm structure under the deep comfort stack.',
-      'For sleeping, the full surface stays usable, so a sleeper can lie near the edge without feeling a roll. Sitting on the side to put on shoes should feel steady in all three versions. The Plush version will give a little more at the very surface than the Firm.',
-      'Couples who share a full or queen gain the most, since both sleepers can use the full width. Heavier sleepers who sit on the edge each morning should also give this score weight. A sturdy frame helps the perimeter hold its shape over time.',
+      'The Evolution 15" scores a standout 10 in Edge Support. The 8 inch zoned Ascension coils give the side of the bed firm structure under the deep comfort stack.',
+      'The full surface of the Evolution 15" stays usable for sleeping, so you can lie near the edge without feeling a roll. Sitting on the side to put on shoes should feel steady in all three versions. The Plush version will give a little more at the very surface than the Firm.',
+      'Couples who share the Evolution 15" in a full or queen gain the most, since both sleepers can use the full width. On the Evolution 15", heavier sleepers who sit on the edge each morning should also give this score weight. Set the Evolution 15" on a sturdy frame to help the perimeter hold its shape.',
     ],
     trialPeriod: [
-      'Trial Period is a strong 9. Nolah offers a 120-night trial, with a full refund and pickup after a 30-night break-in, requested by email.',
-      'A 9 is strong, though it trails the 365-night trials offered by many brands we score. Four months is enough to judge the chosen firmness across a change of season. The break-in means the mattress has to be kept for 30 nights before a return.',
+      'The Evolution 15" scores a strong 9 in Trial Period. Nolah offers a 120-night trial, with a full refund and pickup after a 30-night break-in, requested by email.',
+      'A 9 is strong for the Evolution 15", though it trails the 365-night trials offered by many brands we score. Four months is enough to judge the chosen firmness across a change of season. The break-in means the mattress has to be kept for 30 nights before a return.',
       'Shoppers unsure between Plush, Luxury Firm and Firm should weigh this field, since the window to decide is shorter than a year. Keep the order details on file, and confirm the current terms on Nolah\'s site before ordering.',
     ],
     responseTime: [
-      'Response Time is a strong 9. The zoned coils add lift from below, and the AirFoam Luxe and gel swirl foams recover quickly after you move.',
-      'Combination sleepers who turn several times a night should find it easy to change position. A deep foam stack adds a slight settling feel, but it is brief. The Firm version will feel a little quicker than Plush.',
-      'Restless sleepers gain the most from this score. Sleepers who want the slow, deep sink of thick memory foam should know the Evolution feels livelier than that.',
+      'Response Time is a strong 9 for the Evolution 15". The zoned coils add lift from below, and the AirFoam Luxe and gel swirl foams recover quickly after you move.',
+      'Combination sleepers who turn several times a night should find changing position on the Evolution 15" easy. A deep foam stack adds a slight settling feel, but it is brief. The Firm version will feel a little quicker than Plush.',
+      'This is the score restless sleepers should look at first on the Evolution 15". Sleepers who want the slow, deep sink of thick memory foam should know the Evolution feels livelier than that.',
     ],
     motionTransfer: [
-      'Motion Transfer is a standout 10. The layered foams absorb motion before it reaches the surface, and the zoned coils limit how far it travels.',
-      'A 10 here means a partner getting in or out of bed is unlikely to disturb the other side. Many coil beds carry more bounce across the surface, so this score stands out within the hybrid group. Light sleepers who share a bed get the most from it.',
-      'Couples on different schedules should give this score heavy weight. Paired with the 10 in Edge Support, it gives both partners a quiet surface across the full width of the bed.',
+      'Motion Transfer is a standout 10 for the Evolution 15". The layered foams absorb motion before it reaches the surface, and the zoned coils limit how far it travels.',
+      'A 10 here means a partner getting in or out of the Evolution 15" is unlikely to disturb the other side. On the Evolution 15", many coil beds carry more bounce across the surface, so this score stands out within the hybrid group. On the Evolution 15", light sleepers who share a bed get the most from it.',
+      'Couples on different schedules should weigh this score heavily when looking at the Evolution 15". Paired with the 10 in Edge Support, it gives both partners a quiet surface across the full width of the bed.',
     ],
     coolingBreathability: [
-      'Cooling & Breathability is a strong 9. Nolah names copper in the AirFoam Luxe layer and gel in the swirl foam, and the coil core leaves room for air to move through the base.',
-      'The score reflects that construction rather than a temperature reading. It stops at 9 because the deep foam stack sits between the body and the coils. Most warm sleepers should find it comfortable through the year.',
-      'Very warm sleepers should pair it with breathable sheets and a thin protector. Heavy, plastic-backed protectors can trap heat at the surface and cover the cotton fabric.',
+      'The Evolution 15" earns a strong 9 in Cooling & Breathability. Nolah names copper in the AirFoam Luxe layer and gel in the swirl foam, and the coil core leaves room for air to move through the base.',
+      'That score comes from how the Evolution 15" is built, not from a temperature reading. It stops at 9 because the deep foam stack sits between the body and the coils. On the Evolution 15", most warm sleepers should find it comfortable through the year.',
+      'Breathable sheets and a thin protector suit very warm sleepers on the Evolution 15". Heavy, plastic-backed protectors can trap heat at the surface and cover the cotton fabric.',
     ],
   },
   positionsIntro: 'Nolah sells the Evolution 15" in Plush 4-5/10, Luxury Firm 6-7/10 and Firm 7-8/10. We read a range as the lower number, so this guidance reads them as 4, 6 and 7. It names the version that fits each sleep position and body weight.',
@@ -77,35 +77,35 @@ const copy: ReviewCopy = {
     },
     stomach: {
       under130: 'Luxury Firm 6-7/10 or Firm 7-8/10. Both keep the hips from dipping below the shoulders, and a thin pillow keeps the neck in line. Plush may let the hips settle for this position.',
-      from130to230: 'Firm 7-8/10 is the natural pick. It keeps the hips level with the chest through the night. Plush is likely too soft for this position.',
+      from130to230: 'Firm 7-8/10 is the natural pick. The Evolution 15" keeps the hips level with the chest through the night. Plush is likely too soft for this position.',
       over230: 'Firm 7-8/10 is the version to consider. The zoned coils give heavier stomach sleepers lift under the hips, though the deep foam stack may let them settle a little.',
     },
     combination: {
-      under130: 'Luxury Firm 6-7/10 balances side cushioning with back and stomach support for a lighter frame. Those who sleep mostly on the side can step down to Plush.',
+      under130: 'Luxury Firm 6-7/10 balances side cushioning with back and stomach support for a lighter frame. On the Evolution 15", those who sleep mostly on the side can step down to Plush.',
       from130to230: 'Luxury Firm 6-7/10 suits most combination sleepers. The 9/10 Response Time makes turning easy, and the zoned coils adjust support as the body moves.',
       over230: 'Luxury Firm or Firm 7-8/10 keeps a heavier body supported in every position, and the coils add lift between turns. Heavier sleepers who spend most nights on the side may prefer Luxury Firm.',
     },
   },
   buy: [
-    'Couples who want quiet nights and a full-width surface, backed by 10s in Motion Transfer and Edge Support.',
+    'Couples who want quiet nights and a full-width surface, backed by 10s in Motion Transfer and Edge Support on the Evolution 15".',
     'Shoppers who want to choose their firmness, with Plush, Luxury Firm and Firm versions.',
-    'Shoppers who weigh value, backed by a 10/10 Value score and a lifetime warranty.',
+    'Shoppers who weigh value, backed by a 10/10 Value score and a limited lifetime warranty.',
   ],
   skip: [
     'Shoppers who want a year-long trial, since the trial is 120 nights.',
-    'Shoppers who want listed layer thicknesses before buying.',
+    'Shoppers who want listed layer thicknesses before buying on the Evolution 15".',
     'Sleepers who want the slow hug of thick memory foam.',
   ],
-  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Evolution and scores 9.5 as a medium all-foam bed. The [Zoma Boost](/reviews/zoma-boost/) and the [FORM Core Hybrid](/reviews/form-core-hybrid/) also score 9.5 as hybrids. The table lines up their firmness, trial and warranty.',
+  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Evolution and scores 9.5 as a medium all-foam bed. The [Zoma Boost](/reviews/zoma-boost/) and the [FORM Core Hybrid](/reviews/form-core-hybrid/) also score 9.5 as hybrids. Use the table to compare their firmness, trial and warranty with the Evolution 15".',
   policies: [
-    'Nolah Evolution 15" comes with a 120-night trial and a lifetime warranty, according to Nolah. Shipping is free via FedEx, and paid in-home setup is available.',
-    'A full refund and pickup are available after a 30-night break-in, requested by email. Sizes run Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
-    'Nolah states the mattress is made in Arizona from foreign and domestic components. Keep the order details on file in case a return is needed during the trial. Confirm the current terms on Nolah\'s site before ordering, since policies can change between our checks.',
+    'Nolah Evolution 15" comes with a 120-night trial and a limited lifetime warranty, according to Nolah. Shipping is free via FedEx, and paid in-home setup is available.',
+    'A full refund and pickup are available after a 30-night break-in, requested by email. The Evolution 15" comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
+    'Nolah states the mattress is made in Arizona from foreign and domestic components. Hold on to the Evolution 15" order confirmation in case a return comes up during the trial. Confirm the current terms on Nolah\'s site before ordering, since policies can change between our checks.',
   ],
   faqs: [
     {
       q: 'How firm is the Nolah Evolution 15"?',
-      a: 'Nolah sells it in three feels: Plush 4-5/10, Luxury Firm 6-7/10 and Firm 7-8/10, and we read each range as the lower number. Most side sleepers do well on Plush, back sleepers on Luxury Firm, and stomach sleepers on Firm. The model has one score, which covers all three options.',
+      a: 'Nolah sells it in three feels: Plush 4-5/10, Luxury Firm 6-7/10 and Firm 7-8/10, and we read each range as the lower number. Most side sleepers do well on Plush, back sleepers on Luxury Firm, and stomach sleepers on Firm. On the Evolution 15", the model has one score, which covers all three options.',
     },
     {
       q: 'What is the Nolah Evolution 15" score?',
@@ -113,7 +113,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'Is Nolah Evolution 15" good for couples?',
-      a: 'Yes. It earns a 10/10 in Motion Transfer, so one partner moving is unlikely to wake the other, and a 10/10 in Edge Support, so both sleepers can use the full width. Partners with different needs can pick the firmness that suits both, and Split King is also available.',
+      a: 'Yes. The Evolution 15" earns a 10/10 in Motion Transfer, so one partner moving is unlikely to wake the other, and a 10/10 in Edge Support, so both sleepers can use the full width. Partners with different needs can pick the firmness that suits both, and Split King is also available.',
     },
     {
       q: 'Is the Nolah Evolution 15" good for side sleepers?',
@@ -121,15 +121,15 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What trial and warranty come with Nolah Evolution 15"?',
-      a: 'The Evolution comes with a 120-night trial and a lifetime warranty, according to Nolah. A full refund and pickup are available after a 30-night break-in, requested by email. Shipping is free via FedEx. Confirm the current terms on Nolah\'s site before ordering, since they can change between our checks.',
+      a: 'The Evolution comes with a 120-night trial and a limited lifetime warranty, according to Nolah. A full refund and pickup are available after a 30-night break-in, requested by email. Shipping is free via FedEx. Confirm the current terms on Nolah\'s site before ordering, since they can change between our checks.',
     },
     {
       q: 'Does Nolah Evolution 15" sleep hot?',
-      a: 'It earns a 9/10 in Cooling & Breathability, a strong result. Nolah names copper in the AirFoam Luxe layer and gel in the swirl foam, and the coil core lets air move. The deep foam stack keeps the score at 9. Breathable sheets and a thin protector help warm sleepers stay comfortable.',
+      a: 'Cooling & Breathability is a 9/10 for the Evolution 15", a strong result. Nolah names copper in the AirFoam Luxe layer and gel in the swirl foam, and the coil core lets air move. The deep foam stack keeps the score at 9. Breathable sheets and a thin protector help warm sleepers stay comfortable.',
     },
     {
       q: 'How tall is Nolah Evolution 15"?',
-      a: 'Nolah lists the height as 14 or 15 inches. Deep pocket fitted sheets help at this height, and a lower frame or foundation can keep the sleeping surface at a comfortable level. It comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
+      a: 'Nolah lists the height as 14 or 15 inches. On the Evolution 15", deep pocket fitted sheets help at this height, and a lower frame or foundation can keep the sleeping surface at a comfortable level. The Evolution 15" comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
     },
     {
       q: 'Is Nolah Evolution 15" good for heavier sleepers?',

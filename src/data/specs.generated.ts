@@ -690,7 +690,7 @@ export const SPECS: Record<string, MattressSpec> = {
     "queenPricesUsd": [],
     "priceChecked": "October 2026",
     "trialNights": 365,
-    "warranty": "Lifetime",
+    "warranty": "Limited Lifetime",
     "shipping": "Free shipping via FedEx; fees may apply for Alaska and Hawaii",
     "returns": "Free returns after a 30-night break-in period",
     "sizes": [
@@ -710,32 +710,6 @@ export const SPECS: Record<string, MattressSpec> = {
     "madeIn": "USA (foreign and domestic components)",
     "productUrl": "https://bearmattress.com/products/bear-original-mattress",
     "sourceChecked": "October 2026"
-  },
-  "bear-star-hybrid": {
-    "slug": "bear-star-hybrid",
-    "model": "Bear Star Hybrid",
-    "reachable": false,
-    "type": null,
-    "construction": [],
-    "firmnessRaw": "FAIL: page not reachable",
-    "firmnessOptions": [],
-    "heightRaw": "FAIL: page not reachable",
-    "heightsIn": [],
-    "layersRaw": "FAIL: page not reachable",
-    "layers": [],
-    "queenPriceRaw": "FAIL: page not reachable",
-    "queenPricesUsd": [],
-    "priceChecked": "FAIL: page not reachable",
-    "trialNights": null,
-    "warranty": "FAIL: page not reachable",
-    "shipping": "FAIL: page not reachable",
-    "returns": "FAIL: page not reachable",
-    "sizes": [],
-    "certifications": [],
-    "organicCert": "FAIL: page not reachable",
-    "madeIn": "FAIL: page not reachable",
-    "productUrl": "https://www.bearmattress.com/products/bear-star-hybrid",
-    "sourceChecked": "FAIL: page not reachable"
   },
   "birch-natural": {
     "slug": "birch-natural",
@@ -783,7 +757,7 @@ export const SPECS: Record<string, MattressSpec> = {
     ],
     "priceChecked": "October 2026",
     "trialNights": 365,
-    "warranty": "Lifetime",
+    "warranty": "Limited Lifetime",
     "shipping": "Free shipping in the contiguous US via FedEx Ground; Alaska, Hawaii, and Canada pay shipping",
     "returns": "Free return or exchange within the 365-night trial after a 30-day break-in",
     "sizes": [
@@ -1176,8 +1150,14 @@ export const SPECS: Record<string, MattressSpec> = {
     "reachable": true,
     "type": "All-foam",
     "construction": [],
-    "firmnessRaw": "not listed",
-    "firmnessOptions": [],
+    "firmnessRaw": "5-6",
+    "firmnessOptions": [
+      {
+        "label": "",
+        "value": 5,
+        "display": "5-6"
+      }
+    ],
     "heightRaw": "10",
     "heightsIn": [
       10
@@ -1235,8 +1215,14 @@ export const SPECS: Record<string, MattressSpec> = {
     "construction": [
       "hybrid"
     ],
-    "firmnessRaw": "not listed",
-    "firmnessOptions": [],
+    "firmnessRaw": "5-6",
+    "firmnessOptions": [
+      {
+        "label": "",
+        "value": 5,
+        "display": "5-6"
+      }
+    ],
     "heightRaw": "12",
     "heightsIn": [
       12
@@ -1298,8 +1284,14 @@ export const SPECS: Record<string, MattressSpec> = {
     "construction": [
       "hybrid"
     ],
-    "firmnessRaw": "not listed",
-    "firmnessOptions": [],
+    "firmnessRaw": "5-6",
+    "firmnessOptions": [
+      {
+        "label": "",
+        "value": 5,
+        "display": "5-6"
+      }
+    ],
     "heightRaw": "14",
     "heightsIn": [
       14
@@ -1357,14 +1349,20 @@ export const SPECS: Record<string, MattressSpec> = {
     "slug": "form-prime-x",
     "model": "FORM Prime X",
     "reachable": true,
-    "type": "Hybrid",
+    "type": "Latex hybrid",
     "construction": [
       "hybrid",
       "latex",
       "memory foam"
     ],
-    "firmnessRaw": "not listed",
-    "firmnessOptions": [],
+    "firmnessRaw": "4-5",
+    "firmnessOptions": [
+      {
+        "label": "",
+        "value": 4,
+        "display": "4-5"
+      }
+    ],
     "heightRaw": "15",
     "heightsIn": [
       15
@@ -1425,32 +1423,6 @@ export const SPECS: Record<string, MattressSpec> = {
     "madeIn": "USA",
     "productUrl": "https://formsleep.com/mattresses/form-prime-x",
     "sourceChecked": "October 2026"
-  },
-  "ghostbed-flex": {
-    "slug": "ghostbed-flex",
-    "model": "GhostBed Flex",
-    "reachable": false,
-    "type": null,
-    "construction": [],
-    "firmnessRaw": "FAIL: page not reachable",
-    "firmnessOptions": [],
-    "heightRaw": "FAIL: page not reachable",
-    "heightsIn": [],
-    "layersRaw": "FAIL: page not reachable",
-    "layers": [],
-    "queenPriceRaw": "FAIL: page not reachable",
-    "queenPricesUsd": [],
-    "priceChecked": "FAIL: page not reachable",
-    "trialNights": null,
-    "warranty": "FAIL: page not reachable",
-    "shipping": "FAIL: page not reachable",
-    "returns": "FAIL: page not reachable",
-    "sizes": [],
-    "certifications": [],
-    "organicCert": "FAIL: page not reachable",
-    "madeIn": "FAIL: page not reachable",
-    "productUrl": "https://www.ghostbed.com/products/ghostbed-flex",
-    "sourceChecked": "FAIL: page not reachable"
   },
   "ghostbed-luxe": {
     "slug": "ghostbed-luxe",
@@ -1879,7 +1851,7 @@ export const SPECS: Record<string, MattressSpec> = {
     ],
     "priceChecked": "October 2026",
     "trialNights": 365,
-    "warranty": "Lifetime",
+    "warranty": "Limited Lifetime",
     "shipping": "Free shipping in the contiguous US; rates apply for Alaska, Hawaii, and Canada",
     "returns": "Free return or exchange within 365 nights after a 30-day break-in",
     "sizes": [
@@ -1954,7 +1926,7 @@ export const SPECS: Record<string, MattressSpec> = {
     ],
     "priceChecked": "October 2026",
     "trialNights": 365,
-    "warranty": "Lifetime",
+    "warranty": "Limited Lifetime",
     "shipping": "Free shipping in the contiguous US; rates apply for Alaska, Hawaii, and Canada",
     "returns": "Free return or exchange within 365 nights after a 30-day break-in",
     "sizes": [
@@ -2014,7 +1986,7 @@ export const SPECS: Record<string, MattressSpec> = {
     ],
     "priceChecked": "October 2026",
     "trialNights": 365,
-    "warranty": "Lifetime",
+    "warranty": "Limited Lifetime",
     "shipping": "Free shipping in the contiguous US; rates apply for Alaska, Hawaii, and Canada",
     "returns": "Free return or exchange within 365 nights after a 30-day break-in",
     "sizes": [
@@ -2154,7 +2126,7 @@ export const SPECS: Record<string, MattressSpec> = {
     "queenPricesUsd": [],
     "priceChecked": "October 2026",
     "trialNights": 365,
-    "warranty": "Lifetime",
+    "warranty": "Limited Lifetime",
     "shipping": "Free shipping; made to order; optional in-home setup and removal",
     "returns": "No-hassle returns within the 365-night trial",
     "sizes": [
@@ -2240,7 +2212,7 @@ export const SPECS: Record<string, MattressSpec> = {
     "queenPricesUsd": [],
     "priceChecked": "October 2026",
     "trialNights": 365,
-    "warranty": "Lifetime",
+    "warranty": "Limited Lifetime",
     "shipping": "Free shipping; made to order; optional in-home setup and removal",
     "returns": "Covered by the 365-night trial",
     "sizes": [
@@ -2270,8 +2242,14 @@ export const SPECS: Record<string, MattressSpec> = {
       "hybrid",
       "memory foam"
     ],
-    "firmnessRaw": "not listed",
-    "firmnessOptions": [],
+    "firmnessRaw": "5-6",
+    "firmnessOptions": [
+      {
+        "label": "",
+        "value": 5,
+        "display": "5-6"
+      }
+    ],
     "heightRaw": "11",
     "heightsIn": [
       11
@@ -2307,7 +2285,7 @@ export const SPECS: Record<string, MattressSpec> = {
     "queenPricesUsd": [],
     "priceChecked": "October 2026",
     "trialNights": 365,
-    "warranty": "Lifetime",
+    "warranty": "Limited Lifetime",
     "shipping": "Free shipping; made to order; optional in-home setup and removal",
     "returns": "No-hassle returns within the 365-night trial",
     "sizes": [
@@ -2556,7 +2534,7 @@ export const SPECS: Record<string, MattressSpec> = {
     ],
     "priceChecked": "October 2026",
     "trialNights": 365,
-    "warranty": "20 (coil system)",
+    "warranty": "Limited Lifetime",
     "shipping": "Free shipping in the continental US; extra rates for Alaska, Hawaii, and Canada",
     "returns": "Free returns after a 30-night adjustment period",
     "sizes": [
@@ -2607,7 +2585,7 @@ export const SPECS: Record<string, MattressSpec> = {
     "queenPricesUsd": [],
     "priceChecked": "October 2026",
     "trialNights": 30,
-    "warranty": "Lifetime",
+    "warranty": "Limited Lifetime",
     "shipping": "Free shipping in the continental US; extra rates for Alaska, Hawaii, and Canada",
     "returns": "Eligible returns within the 30-night trial",
     "sizes": [
@@ -2678,7 +2656,7 @@ export const SPECS: Record<string, MattressSpec> = {
     ],
     "priceChecked": "October 2026",
     "trialNights": 365,
-    "warranty": "Lifetime",
+    "warranty": "Limited Lifetime",
     "shipping": "Free shipping in the continental US; extra rates for Alaska, Hawaii, and Canada",
     "returns": "Eligible exchange or return after a 30-night adjustment period",
     "sizes": [
@@ -2758,7 +2736,7 @@ export const SPECS: Record<string, MattressSpec> = {
     ],
     "priceChecked": "October 2026",
     "trialNights": 365,
-    "warranty": "20 (coil system)",
+    "warranty": "Limited Lifetime",
     "shipping": "Free shipping in the continental US; extra rates for Alaska, Hawaii, and Canada",
     "returns": "Free returns after a 30-night adjustment period",
     "sizes": [
@@ -2850,7 +2828,7 @@ export const SPECS: Record<string, MattressSpec> = {
     ],
     "priceChecked": "October 2026",
     "trialNights": 120,
-    "warranty": "Lifetime",
+    "warranty": "Limited Lifetime",
     "shipping": "Free shipping via FedEx; paid in-home setup available",
     "returns": "Full refund and pickup after a 30-night break-in, requested by email",
     "sizes": [
@@ -2925,7 +2903,7 @@ export const SPECS: Record<string, MattressSpec> = {
     ],
     "priceChecked": "October 2026",
     "trialNights": 120,
-    "warranty": "Lifetime",
+    "warranty": "Limited Lifetime",
     "shipping": "Free shipping via FedEx; paid in-home setup available",
     "returns": "Full refund and pickup after a 30-night break-in, requested by email",
     "sizes": [
@@ -2945,32 +2923,6 @@ export const SPECS: Record<string, MattressSpec> = {
     "madeIn": "Arizona, USA (foreign and domestic components)",
     "productUrl": "https://www.nolahsleep.com/products/nolah-natural-11",
     "sourceChecked": "October 2026"
-  },
-  "nolah-original-hybrid": {
-    "slug": "nolah-original-hybrid",
-    "model": "Nolah Original Hybrid",
-    "reachable": false,
-    "type": null,
-    "construction": [],
-    "firmnessRaw": "FAIL: page not reachable",
-    "firmnessOptions": [],
-    "heightRaw": "FAIL: page not reachable",
-    "heightsIn": [],
-    "layersRaw": "FAIL: page not reachable",
-    "layers": [],
-    "queenPriceRaw": "FAIL: page not reachable",
-    "queenPricesUsd": [],
-    "priceChecked": "FAIL: page not reachable",
-    "trialNights": null,
-    "warranty": "FAIL: page not reachable",
-    "shipping": "FAIL: page not reachable",
-    "returns": "FAIL: page not reachable",
-    "sizes": [],
-    "certifications": [],
-    "organicCert": "FAIL: page not reachable",
-    "madeIn": "FAIL: page not reachable",
-    "productUrl": "https://www.nolahsleep.com/products/nolah-original-hybrid",
-    "sourceChecked": "FAIL: page not reachable"
   },
   "plushbeds-botanical-bliss": {
     "slug": "plushbeds-botanical-bliss",
@@ -3325,8 +3277,8 @@ export const SPECS: Record<string, MattressSpec> = {
       2099
     ],
     "priceChecked": "October 2026",
-    "trialNights": 100,
-    "warranty": "10",
+    "trialNights": 365,
+    "warranty": "Limited Lifetime (full 10 years, then prorated)",
     "shipping": "Free UPS delivery in the contiguous US; in-home setup from 249",
     "returns": "Money-back guarantee; 99 fee if returned before 30 days; concierge removal 149; one per household",
     "sizes": [
@@ -3472,7 +3424,7 @@ export const SPECS: Record<string, MattressSpec> = {
     "queenPricesUsd": [],
     "priceChecked": "October 2026",
     "trialNights": 365,
-    "warranty": "not listed",
+    "warranty": "Lifetime",
     "shipping": "Free delivery and setup",
     "returns": "not listed",
     "sizes": [
@@ -3540,7 +3492,7 @@ export const SPECS: Record<string, MattressSpec> = {
     "queenPricesUsd": [],
     "priceChecked": "October 2026",
     "trialNights": 365,
-    "warranty": "not listed",
+    "warranty": "Lifetime",
     "shipping": "Free delivery and setup",
     "returns": "not listed",
     "sizes": [
@@ -3640,40 +3592,20 @@ export const SPECS: Record<string, MattressSpec> = {
     "productUrl": "https://www.sweetnight.com/products/sweetnight-coolnest-mattress",
     "sourceChecked": "October 2026"
   },
-  "sweetnight-prime": {
-    "slug": "sweetnight-prime",
-    "model": "SweetNight Prime Memory Foam Mattress",
-    "reachable": false,
-    "type": null,
-    "construction": [],
-    "firmnessRaw": "FAIL: page not reachable",
-    "firmnessOptions": [],
-    "heightRaw": "FAIL: page not reachable",
-    "heightsIn": [],
-    "layersRaw": "FAIL: page not reachable",
-    "layers": [],
-    "queenPriceRaw": "FAIL: page not reachable",
-    "queenPricesUsd": [],
-    "priceChecked": "FAIL: page not reachable",
-    "trialNights": null,
-    "warranty": "FAIL: page not reachable",
-    "shipping": "FAIL: page not reachable",
-    "returns": "FAIL: page not reachable",
-    "sizes": [],
-    "certifications": [],
-    "organicCert": "FAIL: page not reachable",
-    "madeIn": "FAIL: page not reachable",
-    "productUrl": "https://www.sweetnight.com/products/sweetnight-prime-mattress",
-    "sourceChecked": "FAIL: page not reachable"
-  },
   "vaya-foam": {
     "slug": "vaya-foam",
     "model": "Vaya Foam",
     "reachable": true,
     "type": "All-foam",
     "construction": [],
-    "firmnessRaw": "not listed",
-    "firmnessOptions": [],
+    "firmnessRaw": "5-6",
+    "firmnessOptions": [
+      {
+        "label": "",
+        "value": 5,
+        "display": "5-6"
+      }
+    ],
     "heightRaw": "12",
     "heightsIn": [
       12
@@ -3720,12 +3652,12 @@ export const SPECS: Record<string, MattressSpec> = {
     "construction": [
       "hybrid"
     ],
-    "firmnessRaw": "Medium 5",
+    "firmnessRaw": "5-6",
     "firmnessOptions": [
       {
-        "label": "Medium",
+        "label": "",
         "value": 5,
-        "display": "5"
+        "display": "5-6"
       }
     ],
     "heightRaw": "14",

@@ -38,7 +38,7 @@ for (const { url, pageType: type, h1, notes } of rows) {
   const html = await readFile(file, 'utf8');
   const h1s = [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)].map(m => decode(m[1]));
   if (h1s.length !== 1) failures.push(`${url}: ${h1s.length} H1 tags.`);
-  else if (!h1.startsWith('[') && h1s[0] !== h1) failures.push(`${url}: H1 "${h1s[0]}" should be "${h1}".`);
+  else if (h1 && !h1.startsWith('[') && h1s[0] !== h1) failures.push(`${url}: H1 "${h1s[0]}" should be "${h1}".`);
   for (const from of (notes.match(/301 (\/\S*) to here/g) ?? []).map(n => n.split(' ')[1])) {
     const rule = redirects.get(from);
     if (!rule || rule.code !== '301' || rule.to !== url) failures.push(`${from}: expected 301 to ${url}.`);

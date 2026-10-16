@@ -8,7 +8,7 @@ const copy: ReviewCopy = {
   strengths: [
     'A 10/10 in Cooling & Breathability, with a cooling cover and copper foam named in the build.',
     'Three firmness options, from Soft 3/10 to Firm 7/10, under one model.',
-    'A 365-night trial and a lifetime warranty.',
+    'A 365-night trial and a lifetime warranty for the Aurora Luxe.',
     'Most layer thicknesses published, including an 8 inch zoned coil core.',
   ],
   limitations: [
@@ -33,7 +33,7 @@ const copy: ReviewCopy = {
   performance: {
     value: [
       'The Value score is set from price, trial and warranty facts, and the Aurora Luxe earns a strong 9. A 365-night trial and a lifetime warranty are the longest terms we record in both fields.',
-      'The score stops at 9 because the Value field weighs those terms against the price. Brooklyn Bedding does not show a queen-specific price on the product page, so our specs table lists it as not listed. Free shipping is included, and the brand sells a wide range of sizes, including Short Queen and RV King.',
+      'The score stops at 9 because the Value field weighs those terms against the price. Brooklyn Bedding lists a 365-night trial and a lifetime warranty alongside it. Free shipping is included, and the brand sells a wide range of sizes, including Short Queen and RV King.',
       'Buyers who want long policy coverage with a choice of three feels will find this field well placed. The terms stay the same across every firmness option and size.',
     ],
     edgeSupport: [
@@ -52,12 +52,12 @@ const copy: ReviewCopy = {
       'Combination sleepers who turn often should lean toward Medium or Firm. Side sleepers who settle into one position will notice this field least. The copper foam sits above the memory foam, so the first contact still feels lively.',
     ],
     motionTransfer: [
-      'Motion Transfer is a strong 9. The zoned coils move independently, and the foam layers above absorb much of the motion that reaches the surface.',
+      'The Aurora Luxe earns a strong 9 in Motion Transfer. The zoned coils move independently, and the foam layers above absorb much of the motion that reaches the surface.',
       'In practice, a 9 means most partner movement stays on its own side. Very light sleepers may notice a partner getting in or out of bed, since coils carry a little more motion than solid foam. Most couples will sleep undisturbed.',
       'Couples on different schedules should weigh this field. It is strong enough for most shared beds without the dead feel of a slow all-foam surface. A larger size, such as a King, also gives each sleeper more room from the other.',
     ],
     coolingBreathability: [
-      'Cooling & Breathability is a standout 10. Brooklyn Bedding names a GlacioTex cooling cover, copper-infused foam and a coil core that lets air move through the base.',
+      'The Aurora Luxe earns a standout 10 in Cooling & Breathability. Brooklyn Bedding names a GlacioTex cooling cover, copper-infused foam and a coil core that lets air move through the base.',
       'The score reflects that construction, not a temperature reading. The coil unit leaves open space for airflow, which matters with several inches of foam on top. The cover is designed to feel cool to the touch when you first lie down.',
       'Hot sleepers who want a foam comfort feel are the clearest audience for this field. A breathable protector keeps the cooling cover working as designed. Thick, plastic-backed protectors can trap heat and undercut the cover.',
     ],

@@ -17,9 +17,10 @@ import {
 } from './pageData';
 import {
   COMFORT_NOT_TREATMENT, PAIN_PAGE_SLUGS, h1For, plainInline, qualifyingFirmnessText,
-  firmnessShort, firmnessText, heightText, queenPriceLabel, queenPriceText, trialText, typeText, warrantyText,
+  firmnessShort, firmnessText, heightText, PRICE_LABEL, SEE_PRICE, trialText, typeText, warrantyText,
 } from './ownerSite';
 import { SCORECARD_HEADERS, scorecardRows } from './scorecard';
+import type { MattressSpec } from '../data/specTypes';
 
 export const SCORE_METRICS = [
   { label: 'Overall', key: 'overall' },
@@ -43,6 +44,9 @@ export interface LlmDocument {
   dateModified: string;
   content: string;
 }
+
+/** Markdown form of the owner's "See Price" CTA; machine documents carry no prices. */
+const seePrice = (spec: MattressSpec) => `[${SEE_PRICE}](${spec.productUrl})`;
 
 const UPDATED = '2026-10-12';
 const SCORE_LINE = "Scores are Mattress Inquirer's editorial ratings on a 0 to 10 scale.";
@@ -95,7 +99,7 @@ const buildReviewDocument = (siteUrl: string, mattress: Mattress): LlmDocument =
     '', '## Quick Answer', '', plainInline(copy.quickAnswer),
     '', '## Scorecard', '', markdownTable(['Metric', 'Editorial score'], scoreRows(mattress)),
     '', `Firmness: ${firmnessShort(spec)}`, '', SCORE_LINE,
-    '', '## Specs at a Glance', '', markdownTable(['Spec', 'Detail'], reviewSpecRows(spec)),
+    '', '## Specs at a Glance', '', markdownTable(['Spec', 'Detail'], reviewSpecRows(spec).map(([k, v]) => [k, v === SEE_PRICE ? seePrice(spec) : v])),
     '', '## Strengths and Limitations', '', '### Strengths', '', bullets(copy.strengths), '', '### Limitations', '', bullets(copy.limitations),
     '', '## How It Was Scored', '', plainInline(copy.howScored),
     '', '## Construction', '',
@@ -136,7 +140,7 @@ const buildComparisonDocument = (siteUrl: string, slug: string, aId: string, bId
     ['Type', typeText(sa), typeText(sb)],
     ['Firmness', firmnessText(sa), firmnessText(sb)],
     ['Height', heightText(sa), heightText(sb)],
-    [`Queen price (checked ${sa.priceChecked || sb.priceChecked})`, queenPriceText(sa), queenPriceText(sb)],
+    [PRICE_LABEL, seePrice(sa), seePrice(sb)],
     ['Trial', trialText(sa), trialText(sb)],
     ['Warranty', warrantyText(sa), warrantyText(sb)],
   ];
@@ -166,7 +170,7 @@ const buildBestDocument = (siteUrl: string, config: (typeof BEST_PAGE_CONFIGS)[n
   const title = h1For(canonicalPath);
   const as3 = getMattress('amerisleep-as3');
   const showPrice = config.row === 'luxury' || config.row === 'under-1000';
-  const howWePicked = [as3RankingSentence(config, result), ...copy.howWePicked, ...(PAIN_PAGE_SLUGS.has(config.slug) ? [COMFORT_NOT_TREATMENT] : [])];
+  const howWePicked = [as3RankingSentence(config, result), ...(PAIN_PAGE_SLUGS.has(config.slug) ? [COMFORT_NOT_TREATMENT] : [])];
   const content = [
     header(title, `${siteUrl}${canonicalPath}`, copy.dateModified, 'ranked mattress category'),
     '', plainInline(copy.quickAnswer),
@@ -174,7 +178,7 @@ const buildBestDocument = (siteUrl: string, config: (typeof BEST_PAGE_CONFIGS)[n
     '', '## Our Picks at a Glance', '',
     markdownTable(['Rank', 'Mattress', 'Award', 'Overall', 'Firmness', 'Type', 'Trial', 'Warranty'], result.picks.map(p => {
       const m = p.candidate.mattress, s = p.candidate.spec, q = p.candidate.qualifyingFirmness;
-      return [p.rank, m.name, p.award, `${fieldScore(m, 'overall')}/10`, q ? `${q.display}/10, ${q.label} option` : firmnessShort(s), typeText(s), trialText(s), warrantyText(s)];
+      return [p.rank, m.name, p.award, `${fieldScore(m, 'overall')}/10`, q?.label ? `${q.display}/10, ${q.label} option` : firmnessShort(s), typeText(s), trialText(s), warrantyText(s)];
     })),
     '', SCORE_LINE,
     '', '## How We Picked', '', paras(howWePicked),
@@ -182,7 +186,7 @@ const buildBestDocument = (siteUrl: string, config: (typeof BEST_PAGE_CONFIGS)[n
       const m = p.candidate.mattress, s = p.candidate.spec, pc = copy.picks[i];
       const mini = [
         ['Type', typeText(s)], ['Firmness', qualifyingFirmnessText(s, p.candidate.qualifyingFirmness)], ['Height', heightText(s)],
-        ['Trial', trialText(s)], ['Warranty', warrantyText(s)], ...(showPrice ? [[queenPriceLabel(s), queenPriceText(s)]] : []),
+        ['Trial', trialText(s)], ['Warranty', warrantyText(s)], ...(showPrice ? [[PRICE_LABEL, seePrice(s)]] : []),
       ];
       return [
         '', `## #${p.rank} ${p.award}: ${m.name}`, '', markdownTable(['Metric', 'Editorial score'], scoreRows(m)),

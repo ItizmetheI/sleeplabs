@@ -21,7 +21,6 @@ import formCoreHybrid from './form-core-hybrid';
 import formPrime from './form-prime';
 import formPrimeX from './form-prime-x';
 import ghostbedLuxe from './ghostbed-luxe';
-import ghostbedFlex from './ghostbed-flex';
 import glacierApexHybrid from './glacier-apex-hybrid';
 import glacierOriginalHybrid from './glacier-original-hybrid';
 import glacierSummitHybrid from './glacier-summit-hybrid';
@@ -41,9 +40,6 @@ import nestBeddingRaven from './nest-bedding-raven';
 import nestBeddingSparrow from './nest-bedding-sparrow';
 import nolahEvolution15 from './nolah-evolution-15';
 import nolahNatural11 from './nolah-natural-11';
-import nolahOriginalHybrid from './nolah-original-hybrid';
-import bearStarHybrid from './bear-star-hybrid';
-import sweetnightPrime from './sweetnight-prime';
 import plushbedsBotanicalBliss from './plushbeds-botanical-bliss';
 import plushbedsLuxuryBliss from './plushbeds-luxury-bliss';
 import plushbedsOrganicBliss from './plushbeds-organic-bliss';
@@ -63,6 +59,6 @@ import zomaStart from './zoma-start';
 export const REVIEW_COPY: Record<string, ReviewCopy> = Object.fromEntries(
   [
     amerisleepAs2, amerisleepAs3, amerisleepAs3Hybrid, amerisleepAs5, amerisleepAs5Hybrid,
-    amerisleepAs6, amerisleepOrganica, amerisleepOrganicaPlush, avocadoGreen, bearOriginal, birchNatural, brooklynBeddingAuroraLuxe, brooklynBeddingPlankFirm, casperDreamHybrid, casperTheOne, ecoTerraHybridLatex, formCore, formCoreHybrid, formPrime, formPrimeX, ghostbedLuxe, ghostbedFlex, glacierApexHybrid, glacierOriginalHybrid, glacierSummitHybrid, happsy, helixDawnLuxe, helixMidnightLuxe, helixSunsetLuxe, latexForLessHybridLatexMattress, leesaOriginal, leesaSapiraChillHybrid, leesaSapiraHybrid, naturepedicConcertoPlush, naturepedicEosClassic, nestBeddingOwl, nestBeddingPuffinKids, nestBeddingRaven, nestBeddingSparrow, nolahEvolution15, nolahNatural11, nolahOriginalHybrid, bearStarHybrid, sweetnightPrime, plushbedsBotanicalBliss, plushbedsLuxuryBliss, plushbedsOrganicBliss, plushbedsOrganicKids, plushbedsSignatureBliss, purpleRestoreplusHybrid, saatvaClassic, saatvaRx, sweetnightCoolnest, vayaFoam, vayaHybrid, westinHeavenlyBed, zomaBoost, zomaHybrid, zomaStart,
+    amerisleepAs6, amerisleepOrganica, amerisleepOrganicaPlush, avocadoGreen, bearOriginal, birchNatural, brooklynBeddingAuroraLuxe, brooklynBeddingPlankFirm, casperDreamHybrid, casperTheOne, ecoTerraHybridLatex, formCore, formCoreHybrid, formPrime, formPrimeX, ghostbedLuxe, glacierApexHybrid, glacierOriginalHybrid, glacierSummitHybrid, happsy, helixDawnLuxe, helixMidnightLuxe, helixSunsetLuxe, latexForLessHybridLatexMattress, leesaOriginal, leesaSapiraChillHybrid, leesaSapiraHybrid, naturepedicConcertoPlush, naturepedicEosClassic, nestBeddingOwl, nestBeddingPuffinKids, nestBeddingRaven, nestBeddingSparrow, nolahEvolution15, nolahNatural11, plushbedsBotanicalBliss, plushbedsLuxuryBliss, plushbedsOrganicBliss, plushbedsOrganicKids, plushbedsSignatureBliss, purpleRestoreplusHybrid, saatvaClassic, saatvaRx, sweetnightCoolnest, vayaFoam, vayaHybrid, westinHeavenlyBed, zomaBoost, zomaHybrid, zomaStart,
   ].map(copy => [copy.slug, copy]),
 );

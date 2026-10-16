@@ -25,7 +25,7 @@ const copy: ReviewCopy = {
   ],
   construction: [
     'Casper The One is an 11 inch all-foam mattress with four named parts. A Cozy knit cover sits over Breathe Flex foam, an Align+ memory foam layer and a high-density Casper Core base.',
-    'Casper does not list layer thicknesses, so those cells read not listed. There are no coils in this model, so all of the support and motion control come from the foam. The brand states it is designed and assembled in the USA. No certifications are named on the product page we checked.',
+    'Casper does not list layer thicknesses, so those cells read not listed. There are no coils in this model, so all of the support and motion control come from the foam. The brand states it is designed and assembled in the USA. Casper names no certifications for it.',
   ],
   performance: {
     value: [
@@ -59,21 +59,21 @@ const copy: ReviewCopy = {
       'Hot sleepers should pair it with breathable sheets and a thin protector. Heavy, plastic-backed protectors can trap heat and undercut the open-cell foam on top.',
     ],
   },
-  positionsIntro: 'Casper calls The One medium-firm and gives no number, so we map it to 6/10. It is sold in that one feel. This guidance comes from that firmness and the all-foam build, by sleep position and body weight.',
+  positionsIntro: 'Casper calls The One medium-firm and gives no number, so we map it to 6/10. That is the only feel Casper The One comes in. This guidance comes from that firmness and the all-foam build, by sleep position and body weight.',
   positions: {
     side: {
       under130: 'Likely firm at the shoulder. Lighter side sleepers may not sink far enough into the foam for full cushioning, which can leave pressure at the shoulder and hip. A medium or plush bed suits this group better.',
       from130to230: 'Workable for side sleepers who like a supportive surface under them. Those who want deeper contour at the shoulder should look at a medium 5/10 bed. Side sleepers who switch to the back during the night will find The One easier.',
-      over230: 'A reasonable fit. More weight presses the shoulder and hip into the memory foam, while the high-density base keeps the spine level. This is the side sleeper group The One suits best.',
+      over230: 'Casper The One is a reasonable fit. More weight presses the shoulder and hip into the memory foam, while the high-density base keeps the spine level. This is the side sleeper group The One suits best.',
     },
     back: {
-      under130: 'A good fit. The medium-firm foam supports the lower back without letting a lighter frame sink, and the memory foam adds a little contour at the surface.',
-      from130to230: 'A strong fit and the core audience for this feel. The 6/10 surface keeps the hips level with the shoulders through the night, with no sag at the lower back.',
+      under130: 'Casper The One is a good fit. The medium-firm foam supports the lower back without letting a lighter frame sink, and the memory foam adds a little contour at the surface.',
+      from130to230: 'Casper The One is a strong fit and the core audience for this feel. The 6/10 surface keeps the hips level with the shoulders through the night, with no sag at the lower back.',
       over230: 'A good fit, though some heavier back sleepers may prefer the extra lift of a coil core. The foam base still holds the hips up well for most of this group.',
     },
     stomach: {
-      under130: 'A good fit. The medium-firm feel keeps the hips from dipping below the shoulders, and a thin pillow keeps the neck in line.',
-      from130to230: 'A good fit. A 6/10 surface is the floor most stomach sleepers in this range should consider, and The One meets it without feeling hard.',
+      under130: 'Casper The One is a good fit. The medium-firm feel keeps the hips from dipping below the shoulders, and a thin pillow keeps the neck in line.',
+      from130to230: 'Casper The One is a good fit. A 6/10 surface is the floor most stomach sleepers in this range should consider, and The One meets it without feeling hard.',
       over230: 'Borderline. Heavier stomach sleepers often do better at 7/10 or firmer, with coils for added support under the hips. The foam can compress more than this group needs.',
     },
     combination: {
@@ -105,7 +105,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'How firm is the Casper The One?',
-      a: 'Casper calls The One medium-firm and gives no number, so we map it to 6/10 on our scale. It is sold in that one feel. The firmness keeps the hips level for back and stomach sleepers, while the memory foam layer adds some contour at the surface. There is no softer or firmer version of the same model.',
+      a: 'Casper calls The One medium-firm and gives no number, so we map it to 6/10 on our scale. That is the only feel Casper The One comes in. The firmness keeps the hips level for back and stomach sleepers, while the memory foam layer adds some contour at the surface. There is no softer or firmer version of the same model.',
     },
     {
       q: 'What is the Casper The One score?',

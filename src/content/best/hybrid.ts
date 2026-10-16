@@ -6,10 +6,6 @@ const copy: BestCopy = {
   metaDescription: 'The best hybrid mattress in 2026: eight coil-core picks ranked by Overall score and Value, led by the Zoma Boost at 9.5/10 with three 10s on its scorecard.',
   quickAnswer: 'The [Zoma Boost](/reviews/zoma-boost/) is our Best Hybrid at 9.5/10, with 10s in Value, Edge Support and Motion Transfer from memory foam and gel foam over coils with a dynamic edge. Four other hybrids here tie it on Overall, and the Boost leads them on the tie order through its 10 in Value.',
   as3BoxReason: 'It is an all-foam mattress with no coil core, so it is not part of this hybrid list.',
-  howWePicked: [
-    'A model qualifies when the brand describes it as a hybrid, meaning a coil core under foam or latex comfort layers. That includes latex hybrids. Picks are ranked by Overall score, then Value, then the usual tie-breaks.',
-    'Five hybrids tie at 9.5 Overall, so Value does most of the sorting at the top. Kids models, the [Westin Heavenly Bed](/reviews/westin-heavenly-bed/) and models whose official page could not be reached are left out. One score covers every firmness option a model sells.',
-  ],
   picks: [
     {
       slug: 'zoma-boost',
@@ -22,11 +18,11 @@ const copy: BestCopy = {
       ],
       strengths: [
         'Coils with a dynamic edge under memory foam and gel foam.',
-        '10s in Value, Edge Support and Motion Transfer.',
+        'Scores of 10 in Value, Edge Support and Motion Transfer on the Zoma Boost.',
         'No field below 9.',
       ],
       limitations: [
-        'A 100-night trial and a 10-year warranty.',
+        'A 100-night trial and a 10-year warranty for the Zoma Boost.',
         'One medium-firm 5.5/10 feel.',
       ],
     },
@@ -36,36 +32,36 @@ const copy: BestCopy = {
         'The Nolah Evolution 15" matches the [Zoma Boost](/reviews/zoma-boost/) on every field and follows it only on the final tie-breaks, brand and model name. For a hybrid shopper, the two are close equals on our scorecard.',
         'Where they differ is design. The Nolah uses zoned coils, plus a separate zoned foam above them, so support changes from shoulders to hips in two layers. Six named comfort and cover layers sit above the coils in total.',
         'It is also sold in three feels: Plush 4-5/10, Luxury Firm 6-7/10 and Firm 7-8/10. That makes it the only 9.5 hybrid here sold in three firmness options, with all three under one score.',
-        'It ties for the highest Value, Edge Support and Motion Transfer scores on this page, each at 10. Nolah lists a lifetime warranty, which is longer than the Boost\'s 10 years.',
-        'The trial is 120 nights with a 30-night break-in, and most layer thicknesses are not listed. Free FedEx shipping is listed, with paid in-home setup available.',
+        'It ties for the highest Value, Edge Support and Motion Transfer scores on this page, each at 10. Nolah lists a limited lifetime warranty, which is longer than the Boost\'s 10 years.',
+        'The trial is 120 nights with a 30-night break-in, and most layer thicknesses are not listed. On the Evolution 15", free FedEx shipping is listed, with paid in-home setup available.',
       ],
       strengths: [
         'Zoned coils plus a zoned foam layer.',
         'Plush, Luxury Firm and Firm versions.',
-        'A lifetime warranty, according to Nolah.',
+        'A limited lifetime warranty on the Evolution 15", according to Nolah.',
       ],
       limitations: [
-        'A 120-night trial with a 30-night break-in.',
-        'Most layer thicknesses are not listed.',
+        'A 120-night trial with a 30-night break-in for the Evolution 15".',
+        'Most layer thicknesses are not listed on the Evolution 15".',
       ],
     },
     {
       slug: 'plushbeds-signature-bliss',
       why: [
-        'PlushBeds Signature Bliss earns Best Latex Hybrid as the only latex hybrid among the eight picks. It shares the 9.5 Overall and swaps foam for latex in the comfort layer.',
+        'PlushBeds Signature Bliss earns Best Organic Pick as the only pick here with GOTS and GOLS certified materials. It shares the 9.5 Overall and swaps foam for organic Dunlop latex in the comfort layer.',
         'A 3 inch organic Dunlop latex pillow top sits over 5-zone fabric-encased coils, under an organic cotton and wool cover. With latex on top, the surface is buoyant and quick rather than contouring.',
         'It ties for the highest Edge Support, Trial Period and Response Time scores on this page, each at 10. Hybrid shoppers who want a springy, natural-materials bed with fast rebound will find that here.',
-        'PlushBeds rates it Medium 5.5/10 or Medium-Firm 8/10, and GOTS and GOLS certifications back the organic claims. Side and back sleepers usually fit Medium, while stomach sleepers and heavier back sleepers can choose Medium-Firm under the same score. At 14 inches, it may need deep pocket fitted sheets.',
-        'The trade is a 10-year warranty, a fee for returns before 30 days and one return per household. Concierge removal is available for a fee, according to PlushBeds.',
+        'PlushBeds rates it Medium 5.5/10 or Medium-Firm 8/10, and GOTS and GOLS certifications back the organic claims. Side and back sleepers usually fit Medium, while stomach sleepers and heavier back sleepers can choose Medium-Firm under the same score. The Signature Bliss is 14 inches tall, so it may need deep pocket fitted sheets.',
+        'PlushBeds pairs a 365-night trial with a limited lifetime warranty, prorated after year 10. Returns before 30 days carry a fee, and one return is allowed per household. Concierge removal is available for a fee, according to PlushBeds.',
       ],
       strengths: [
         'A latex pillow top over 5-zone coils.',
-        '10s in Edge Support, Trial Period and Response Time.',
+        'Scores of 10 in Edge Support, Trial Period and Response Time on the Signature Bliss.',
         'GOTS and GOLS certified materials.',
       ],
       limitations: [
-        'A 10-year warranty.',
-        'A fee applies to returns before 30 days.',
+        'Full warranty coverage lasts 10 years, then it is prorated.',
+        'A fee applies to returns before 30 days on the Signature Bliss.',
       ],
     },
     {
@@ -74,16 +70,16 @@ const copy: BestCopy = {
         'The FORM Core Hybrid is the lean hybrid on this page. Only 3 inches of comfort material, a 1.5 inch gel polymer grid and 1.5 inches of adaptive foam, sit over 8 inches of zoned pocketed coils, so the coils shape most of the feel.',
         'That build ties for the highest Edge Support, Trial Period, Response Time and Motion Transfer scores here, each at 10, and shares the 9.5 Overall. Four 10s in one scorecard is matched among these picks only by the [FORM Prime X](/reviews/form-prime-x/).',
         'Shoppers who want a hybrid that feels like a hybrid, with spring and lift rather than deep foam, should look here. FORM lists free FedEx Ground shipping and Split King among its sizes. The thin stack keeps the body close to the zoned coils.',
-        'Value is an 8, its lowest field, which places it fourth on the tie order. FORM lists no firmness rating, so the 365-night trial and lifetime warranty are the way to judge the feel.',
+        'Value is an 8, its lowest field, which places it fourth on the tie order. It sits at 5-6/10, and the 365-night trial and lifetime warranty leave a full year to judge that feel.',
         'Lighter side sleepers who want deep cushioning may find the thin comfort stack firm.',
       ],
       strengths: [
         'A thin comfort stack over 8 inch zoned pocketed coils.',
-        '10s in Edge Support, Trial Period, Response Time and Motion Transfer.',
-        'A 365-night trial and a lifetime warranty.',
+        'The Core Hybrid scores 10 in Edge Support, Trial Period, Response Time and Motion Transfer.',
+        'The Core Hybrid comes with a 365-night trial and a lifetime warranty.',
       ],
       limitations: [
-        'FORM lists no firmness rating.',
+        'One 5-6/10 feel only.',
         'Value is an 8.',
       ],
     },
@@ -93,16 +89,16 @@ const copy: BestCopy = {
         'The FORM Prime X uses the same 8 inch zoned coils as the Core Hybrid but puts more than twice the comfort material above them: a 2 inch quilted Euro-top, a gel polymer grid, Talalay latex, adaptive foam and memory foam, 6.5 inches in all.',
         'It matches the Core Hybrid score for score, with 10s in Edge Support, Trial Period, Response Time and Motion Transfer, and shares the 9.5 Overall. The final tie-break, model name, places it fifth.',
         'For hybrid shoppers who want a plush, layered top without losing a quick surface, it is the Euro-top option among these picks. The latex keeps it responsive under the padding.',
-        'FORM includes free White Glove delivery with in-home setup, a 365-night trial and a lifetime warranty. FORM lists no firmness rating.',
+        'FORM includes free White Glove delivery with in-home setup, a 365-night trial and a lifetime warranty. FORM rates it 4-5/10, a softer feel than the Core Hybrid.',
         'Value is an 8, its lowest field, and the 15 inch height needs deep pocket fitted sheets. Side and combination sleepers gain the most, while heavier stomach sleepers may find the deep stack lets the hips settle.',
       ],
       strengths: [
         'A 6.5 inch comfort stack with a Euro-top and Talalay latex.',
-        '10s in Edge Support, Trial Period, Response Time and Motion Transfer.',
-        'Free White Glove delivery with in-home setup.',
+        'Scores of 10 in Edge Support, Trial Period, Response Time and Motion Transfer on the Prime X.',
+        'Free White Glove delivery with in-home setup on the Prime X.',
       ],
       limitations: [
-        'FORM lists no firmness rating.',
+        'At 15 inches, it needs deep pocket sheets.',
         'Value is an 8.',
       ],
     },
@@ -112,17 +108,17 @@ const copy: BestCopy = {
         'The Zoma Hybrid is the 12 inch, single-feel option among these picks. Perforated gel memory foam and Reactiv foam sit over pocketed coils under a breathable mesh cover, in one Luxury Firm feel that sits at 6/10 on our scale.',
         'It ties for the highest Value and Edge Support scores on this page, each at 10, and every other field is a 9. That 10 in Edge Support puts it first among the three 9.3 hybrids here, which all tie on Value.',
         'At 12 inches, it fits standard fitted sheets and most frames, which several taller hybrids above do not. Back and stomach sleepers get a supportive surface with some contour. Free FedEx curbside shipping is listed in the lower 48 states.',
-        'Zoma lists a 100-night trial with free returns and pickup, and a 10-year warranty.',
+        'For the Zoma Hybrid, Zoma lists a 100-night trial with free returns and pickup, and a 10-year warranty.',
         'Lighter side sleepers may find 6/10 firm at the shoulder, which is its main fit limit. Couples get a 9 in Motion Transfer and a 10 in Edge Support, so the full width stays usable and quiet for most pairs.',
       ],
       strengths: [
         'A 12 inch hybrid that fits standard sheets.',
-        '10s in Value and Edge Support, with 9s elsewhere.',
+        'Scores of 10 in Value and Edge Support, with 9s elsewhere on the Zoma Hybrid.',
         'A Luxury Firm 6/10 feel.',
       ],
       limitations: [
-        'Firm at the shoulder for lighter side sleepers.',
-        'A 100-night trial and a 10-year warranty.',
+        'Firm at the shoulder for lighter side sleepers on the Zoma Hybrid.',
+        'The Zoma Hybrid comes with a 100-night trial and a 10-year warranty.',
       ],
     },
     {
@@ -137,7 +133,7 @@ const copy: BestCopy = {
       strengths: [
         'Several named cooling foams over a coil core.',
         'Soft, Medium and Firm options.',
-        'A 365-night trial and a lifetime warranty.',
+        'A full year to try the Apex Hybrid, plus a lifetime warranty.',
       ],
       limitations: [
         'Response Time is an 8.',
@@ -155,7 +151,7 @@ const copy: BestCopy = {
       ],
       strengths: [
         'A cooling cover over gel and graphite foams.',
-        '10s in Value, Trial Period and Cooling & Breathability.',
+        '10s in Value, Trial Period and Cooling & Breathability for the Original Hybrid.',
         'A 12 inch profile that fits standard sheets.',
       ],
       limitations: [
@@ -171,6 +167,7 @@ const copy: BestCopy = {
     'The depth of the comfort stack changes the feel more than the coil count does. A thin stack, around 3 inches, feels springy and supportive. A deep stack of 6 inches or more, often with a Euro-top or pillow top, feels plush even over firm coils.',
     'Hybrids tend to be tall and heavy. Many on this page are 14 or 15 inches, which needs deep pocket sheets, and a heavy king can be hard to set up. Free White Glove delivery or in-home setup is worth noting where a brand lists it.',
     'Hybrids usually score well on Response Time and Cooling & Breathability, thanks to the coils. If those fields matter most to you, a hybrid is a strong starting point. If you want the stillest surface, compare Motion Transfer carefully.',
+    'Coil type shapes how a hybrid feels. Pocketed coils move one at a time, which keeps motion local and lets the surface follow the body, while zoned coil units add firmer support under the hips. Reinforced perimeter coils help the edge hold up when you sit or lie near it. The comfort layers above the coils decide the first feel: a thin stack feels livelier and firmer, and a deep stack feels more cushioned. Many hybrids here are 12 inches or taller, so measure your frame height and check sheet depth before ordering.',
   ],
   faqs: [
     {

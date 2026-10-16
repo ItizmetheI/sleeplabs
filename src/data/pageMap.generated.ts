@@ -156,11 +156,11 @@ export const PAGE_MAP: PageMapRow[] = [
   },
   {
     "url": "/reviews/bear-star-hybrid/",
-    "pageType": "review",
-    "h1": "Bear Star Hybrid Review (2026): Scores, Specs and Verdict",
+    "pageType": "cut",
+    "h1": "",
     "rankingRow": "",
-    "action": "rewrite",
-    "notes": ""
+    "action": "301",
+    "notes": "301 to /brands/bear/ (model removed from Inquirer)"
   },
   {
     "url": "/reviews/birch-natural/",
@@ -244,11 +244,11 @@ export const PAGE_MAP: PageMapRow[] = [
   },
   {
     "url": "/reviews/ghostbed-flex/",
-    "pageType": "review",
-    "h1": "GhostBed Flex Review (2026): Scores, Specs and Verdict",
+    "pageType": "cut",
+    "h1": "",
     "rankingRow": "",
-    "action": "rewrite",
-    "notes": ""
+    "action": "301",
+    "notes": "301 to /brands/ghostbed/ (model removed from Inquirer)"
   },
   {
     "url": "/reviews/ghostbed-luxe/",
@@ -412,11 +412,11 @@ export const PAGE_MAP: PageMapRow[] = [
   },
   {
     "url": "/reviews/nolah-original-hybrid/",
-    "pageType": "review",
-    "h1": "Nolah Original Hybrid Review (2026): Scores, Specs and Verdict",
+    "pageType": "cut",
+    "h1": "",
     "rankingRow": "",
-    "action": "rewrite",
-    "notes": ""
+    "action": "301",
+    "notes": "301 to /brands/nolah/ (model removed from Inquirer)"
   },
   {
     "url": "/reviews/plushbeds-botanical-bliss/",
@@ -492,11 +492,11 @@ export const PAGE_MAP: PageMapRow[] = [
   },
   {
     "url": "/reviews/sweetnight-prime/",
-    "pageType": "review",
-    "h1": "SweetNight Prime Memory Foam Mattress Review (2026): Scores, Specs and Verdict",
+    "pageType": "cut",
+    "h1": "",
     "rankingRow": "",
-    "action": "rewrite",
-    "notes": ""
+    "action": "301",
+    "notes": "301 to /brands/sweetnight/ (model removed from Inquirer)"
   },
   {
     "url": "/reviews/vaya-foam/",
@@ -772,11 +772,11 @@ export const PAGE_MAP: PageMapRow[] = [
   },
   {
     "url": "/comparison/amerisleep-as3-vs-bear-star-hybrid/",
-    "pageType": "comparison",
-    "h1": "Amerisleep AS3 vs Bear Star Hybrid",
+    "pageType": "cut",
+    "h1": "",
     "rankingRow": "",
-    "action": "rewrite",
-    "notes": ""
+    "action": "301",
+    "notes": "301 to /reviews/amerisleep-as3/ (model removed from Inquirer)"
   },
   {
     "url": "/comparison/amerisleep-as3-vs-brooklyn-bedding-aurora-luxe/",
@@ -804,11 +804,11 @@ export const PAGE_MAP: PageMapRow[] = [
   },
   {
     "url": "/comparison/amerisleep-as3-vs-ghostbed-flex/",
-    "pageType": "comparison",
-    "h1": "Amerisleep AS3 vs GhostBed Flex",
+    "pageType": "cut",
+    "h1": "",
     "rankingRow": "",
-    "action": "rewrite",
-    "notes": ""
+    "action": "301",
+    "notes": "301 to /reviews/amerisleep-as3/ (model removed from Inquirer)"
   },
   {
     "url": "/comparison/amerisleep-as3-vs-glacier-apex-hybrid/",
@@ -1337,5 +1337,189 @@ export const PAGE_MAP: PageMapRow[] = [
     "rankingRow": "",
     "action": "301",
     "notes": "301 to /topics/"
+  },
+  {
+    "url": "/blog/what-is-hive-technology/",
+    "pageType": "blog",
+    "h1": "",
+    "rankingRow": "",
+    "action": "rewrite",
+    "notes": "orphan post: remove staff status text, apply content rules, add schema, add to sitemap"
+  },
+  {
+    "url": "/blog/what-is-bio-pur-memory-foam/",
+    "pageType": "blog",
+    "h1": "",
+    "rankingRow": "",
+    "action": "rewrite",
+    "notes": "orphan post: remove staff status text, apply content rules, add schema, add to sitemap"
+  },
+  {
+    "url": "/blog/how-does-memory-foam-work/",
+    "pageType": "blog",
+    "h1": "",
+    "rankingRow": "",
+    "action": "rewrite",
+    "notes": "orphan post: remove staff status text, apply content rules, add schema, add to sitemap"
+  },
+  {
+    "url": "/blog/what-does-certipur-us-certified-mean/",
+    "pageType": "blog",
+    "h1": "",
+    "rankingRow": "",
+    "action": "rewrite",
+    "notes": "orphan post: remove staff status text, apply content rules, add schema, add to sitemap"
+  },
+  {
+    "url": "/blog/what-is-off-gassing-and-is-it-dangerous/",
+    "pageType": "blog",
+    "h1": "",
+    "rankingRow": "",
+    "action": "rewrite",
+    "notes": "orphan post: remove staff status text, apply content rules, add schema, add to sitemap"
+  },
+  {
+    "url": "/blog/how-long-does-a-memory-foam-mattress-last/",
+    "pageType": "blog",
+    "h1": "",
+    "rankingRow": "",
+    "action": "rewrite",
+    "notes": "orphan post: remove staff status text, apply content rules, add schema, add to sitemap"
+  },
+  {
+    "url": "/blog/what-is-pressure-relief-in-a-mattress/",
+    "pageType": "blog",
+    "h1": "",
+    "rankingRow": "",
+    "action": "rewrite",
+    "notes": "orphan post: remove staff status text, apply content rules, add schema, add to sitemap"
+  },
+  {
+    "url": "/blog/does-mattress-height-matter/",
+    "pageType": "blog",
+    "h1": "",
+    "rankingRow": "",
+    "action": "rewrite",
+    "notes": "orphan post: remove staff status text, apply content rules, add schema, add to sitemap"
+  },
+  {
+    "url": "/blog/how-does-mattress-firmness-affect-sleep-quality/",
+    "pageType": "blog",
+    "h1": "",
+    "rankingRow": "",
+    "action": "rewrite",
+    "notes": "orphan post: remove staff status text, apply content rules, add schema, add to sitemap"
+  },
+  {
+    "url": "/blog/how-mattress-temperature-affects-deep-sleep/",
+    "pageType": "blog",
+    "h1": "",
+    "rankingRow": "",
+    "action": "rewrite",
+    "notes": "orphan post: remove staff status text, apply content rules, add schema, add to sitemap"
+  },
+  {
+    "url": "/blog/sleep-hygiene-checklist/",
+    "pageType": "cut",
+    "h1": "",
+    "rankingRow": "",
+    "action": "301",
+    "notes": "301 to /blog/ (sleep-science post, no reviewer)"
+  },
+  {
+    "url": "/blog/impact-of-sleep-quality-on-daily-life/",
+    "pageType": "cut",
+    "h1": "",
+    "rankingRow": "",
+    "action": "301",
+    "notes": "301 to /blog/ (sleep-science post, no reviewer)"
+  },
+  {
+    "url": "/blog/how-aging-changes-sleep-patterns/",
+    "pageType": "cut",
+    "h1": "",
+    "rankingRow": "",
+    "action": "301",
+    "notes": "301 to /blog/ (sleep-science post, no reviewer)"
+  },
+  {
+    "url": "/blog/what-to-do-when-you-cannot-fall-asleep/",
+    "pageType": "cut",
+    "h1": "",
+    "rankingRow": "",
+    "action": "301",
+    "notes": "301 to /blog/ (sleep-science post, no reviewer)"
+  },
+  {
+    "url": "/blog/why-couples-sleep-better-apart/",
+    "pageType": "cut",
+    "h1": "",
+    "rankingRow": "",
+    "action": "301",
+    "notes": "301 to /blog/ (sleep-science post, no reviewer)"
+  },
+  {
+    "url": "/blog/how-to-stop-overheating-at-night/",
+    "pageType": "cut",
+    "h1": "",
+    "rankingRow": "",
+    "action": "301",
+    "notes": "301 to /blog/ (sleep-science post, no reviewer)"
+  },
+  {
+    "url": "/blog/why-you-sleep-worse-in-a-new-place/",
+    "pageType": "cut",
+    "h1": "",
+    "rankingRow": "",
+    "action": "301",
+    "notes": "301 to /blog/ (sleep-science post, no reviewer)"
+  },
+  {
+    "url": "/blog/how-exercise-timing-affects-sleep/",
+    "pageType": "cut",
+    "h1": "",
+    "rankingRow": "",
+    "action": "301",
+    "notes": "301 to /blog/ (sleep-science post, no reviewer)"
+  },
+  {
+    "url": "/blog/what-is-sleep-pressure-and-why-it-matters/",
+    "pageType": "cut",
+    "h1": "",
+    "rankingRow": "",
+    "action": "301",
+    "notes": "301 to /blog/ (sleep-science post, no reviewer)"
+  },
+  {
+    "url": "/blog/how-circadian-rhythm-affects-sleep/",
+    "pageType": "cut",
+    "h1": "",
+    "rankingRow": "",
+    "action": "301",
+    "notes": "301 to /blog/ (sleep-science post, no reviewer)"
+  },
+  {
+    "url": "/blog/how-blue-light-affects-sleep-cycles/",
+    "pageType": "cut",
+    "h1": "",
+    "rankingRow": "",
+    "action": "301",
+    "notes": "301 to /blog/ (sleep-science post, no reviewer)"
+  },
+  {
+    "url": "/blog/what-is-rem-sleep-and-why-it-matters/",
+    "pageType": "cut",
+    "h1": "",
+    "rankingRow": "",
+    "action": "301",
+    "notes": "301 to /blog/ (sleep-science post, no reviewer)"
+  },
+  {
+    "url": "/blog/what-is-spinal-neutral-position/",
+    "pageType": "cut",
+    "h1": "",
+    "rankingRow": "",
+    "action": "301",
+    "notes": "301 to /blog/ (sleep-science post, no reviewer)"
   }
 ];

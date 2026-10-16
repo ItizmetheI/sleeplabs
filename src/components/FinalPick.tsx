@@ -5,7 +5,7 @@ const evidencePaths = [
   {
     href: '/reviews/',
     title: 'Complete scorecard',
-    description: 'Compare all 59 models across the same seven metrics.',
+    description: 'Compare all 55 models across the same seven metrics.',
     Icon: Scale,
   },
   {

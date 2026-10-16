@@ -16,9 +16,9 @@ const copy: ReviewCopy = {
     'A 120-night trial, shorter than the year-long trials many brands we score offer.',
     'Shipping excludes Alaska and Hawaii, according to Latex For Less.',
   ],
-  howScored: 'The Latex For Less Hybrid Latex Mattress is scored on the same seven fields as every model we cover, from the brand\'s official product page. Our [methodology page](/methodology/) explains how each field is set.',
+  howScored: 'The Latex For Less Hybrid Latex Mattress is scored on the same seven fields as every model we cover, from the brand\'s official product page. Our [methodology page](/methodology/) explains how each field is set, for the Hybrid Latex Mattress and every other model we score.',
   layerRoles: [
-    'Organic cotton cover that wraps the mattress.',
+    'On the Hybrid Latex Mattress, organic cotton cover that wraps the mattress.',
     'Thin organic wool layer under the cover.',
     'Organic Dunlop latex comfort layer that cushions and adds bounce.',
     'Fabric-encased coils that give support and lift.',
@@ -31,33 +31,33 @@ const copy: ReviewCopy = {
   performance: {
     value: [
       'Value is a standout 10. The score is set from price, trial and warranty facts, and it weighs what the mattress delivers against its cost.',
-      'Latex For Less pairs a 120-night trial with a 20-year warranty, and shipping is free in the US via UPS or FedEx Ground, excluding Alaska and Hawaii. Four certifications and 3 inches of organic latex sit behind the 10. The product page did not list a queen price when we recorded our specs, so check the current price on the brand\'s site.',
+      'Latex For Less pairs a 120-night trial with a 20-year warranty, and shipping is free in the US via UPS or FedEx Ground, excluding Alaska and Hawaii. Four certifications and 3 inches of organic latex sit behind the 10.',
       'Shoppers who want certified organic latex and weigh value heavily gain the most from this field. The 10 holds across both firmness options, since the terms do not change between them.',
     ],
     edgeSupport: [
       'Edge Support is a 5, a real weakness and the lowest of its six scored fields. Latex For Less names no reinforced edge on the coils.',
       'For sleeping, the outer few inches give noticeably more than the center, which narrows the usable surface. Sitting on the side to put on shoes compresses the edge more than on beds that score 8 or higher here. Couples who share a full or queen will feel it most.',
-      'Anyone who sits on the edge to dress each morning, or who sleeps near the side, should weigh this score carefully. Solo sleepers who stay near the center will notice it least. A larger size gives couples more room to stay clear of the edge.',
+      'Anyone who sits on the edge to dress each morning, or who sleeps near the side, should weigh this score carefully. On the Hybrid Latex Mattress, solo sleepers who stay near the center will notice it least. A larger size gives couples more room to stay clear of the edge.',
     ],
     trialPeriod: [
-      'Trial Period is a strong 9. Latex For Less offers a 120-night trial, with free returns in the continental US within that window.',
-      'A 9 is strong, though it trails the 365-night trials offered by many brands we score. Four months is enough to judge a latex feel across a change of season. An optional concierge pickup is available for a fee, according to Latex For Less.',
-      'First-time latex buyers should weigh this field. The buoyant feel of Dunlop latex can take a few weeks to settle into, which uses part of the trial. Choosing the right firmness up front makes the 120 nights go further. Keep the order details on file in case a return is needed.',
+      'The Hybrid Latex Mattress scores a strong 9 in Trial Period. Latex For Less offers a 120-night trial, with free returns in the continental US within that window.',
+      'A 9 is strong for the Hybrid Latex Mattress, though it trails the 365-night trials offered by many brands we score. Four months is enough to judge a latex feel across a change of season. An optional concierge pickup is available for a fee, according to Latex For Less.',
+      'First-time latex buyers should weigh this field. The buoyant feel of Dunlop latex can take a few weeks to settle into, which uses part of the trial. Choosing the right firmness up front makes the 120 nights go further. Hold on to the Hybrid Latex Mattress order confirmation in case a return comes up.',
     ],
     responseTime: [
-      'Response Time is a standout 10. Dunlop latex springs back quickly, and the fabric-encased coils add lift under the comfort layer.',
+      'Response Time is a standout 10 for the Hybrid Latex Mattress. Dunlop latex springs back quickly, and the fabric-encased coils add lift under the comfort layer.',
       'In practice, the surface rebounds the moment you shift weight. Combination sleepers who turn several times a night will find it easy to move. Sleepers who prefer the slow sink of memory foam should know this latex feel is very different.',
-      'Restless sleepers gain the most from this score. It also makes getting in and out of bed feel easy, since the latex lifts the body rather than holding it. Both firmness options share that quick rebound.',
+      'On the Hybrid Latex Mattress, restless sleepers gain the most from this field. It also makes getting in and out of bed feel easy, since the latex lifts the body rather than holding it. Both firmness options share that quick rebound.',
     ],
     motionTransfer: [
-      'Motion Transfer is a strong 9. Fabric-encased coils move one at a time, and the latex and wool absorb much of the motion before it reaches the surface.',
-      'Latex is elastic, so a little bounce reaches the other side when a partner moves. Most couples will sleep undisturbed through the night. Very light sleepers who wake easily may prefer an all-foam bed with a 10 in this field.',
-      'Couples on different schedules should weigh this score. A 9 keeps most nights quiet while keeping the lively feel of latex. Parents who share the bed with a child or pet will find it settled enough.',
+      'Motion Transfer is a strong 9 for the Hybrid Latex Mattress. Fabric-encased coils move one at a time, and the latex and wool absorb much of the motion before it reaches the surface.',
+      'Latex is elastic, so a little bounce reaches the other side when a partner moves. On the Hybrid Latex Mattress, most couples will sleep undisturbed through the night. Compared with the Hybrid Latex Mattress, very light sleepers who wake easily may prefer an all-foam bed with a 10 in this field.',
+      'Couples on different schedules should weigh this score on the Hybrid Latex Mattress. A 9 keeps most nights quiet while keeping the lively feel of latex. Parents who share the bed with a child or pet will find it settled enough.',
     ],
     coolingBreathability: [
-      'Cooling & Breathability is a strong 9. Organic cotton, organic wool and latex are breathable materials, and the coil core leaves room for air to move through the base.',
-      'The score reflects those materials rather than a temperature reading. It stops at 9 because Latex For Less names no dedicated cooling cover or cooling layer. Wool can help buffer moisture near the surface, which some warm sleepers prefer.',
-      'Warm sleepers who want natural materials will find it comfortable through most of the year. Cotton sheets and a thin protector keep the surface breathable. Synthetic, plastic-backed protectors can trap heat and undercut the natural cover.',
+      'The Hybrid Latex Mattress earns a strong 9 in Cooling & Breathability. Organic cotton, organic wool and latex are breathable materials, and the coil core leaves room for air to move through the base.',
+      'The score for the Hybrid Latex Mattress reflects those materials rather than a temperature reading. It stops at 9 because Latex For Less names no dedicated cooling cover or cooling layer. On the Hybrid Latex Mattress, wool can help buffer moisture near the surface, which some warm sleepers prefer.',
+      'On the Hybrid Latex Mattress, warm sleepers who want natural materials will find it comfortable through most of the year. Cotton sheets and a thin protector keep the surface breathable. On the Hybrid Latex Mattress, synthetic, plastic-backed protectors can trap heat and undercut the natural cover.',
     ],
   },
   positionsIntro: 'Latex For Less sells two feels, Medium and Medium-Firm, which sit at 5/10 and 6/10 on our scale. This guidance names the version that fits each sleep position and body weight, based on those firmness ratings and the latex hybrid build.',
@@ -93,11 +93,11 @@ const copy: ReviewCopy = {
     'Shoppers who want a year-long trial, since the trial is 120 nights.',
     'Shoppers in Alaska or Hawaii, since free shipping excludes them.',
   ],
-  compareIntro: 'The [Happsy](/reviews/happsy/) and the [Avocado Green](/reviews/avocado-green/) both score 8.8 as latex hybrids. The [PlushBeds Luxury Bliss](/reviews/plushbeds-luxury-bliss/) scores 8.5. The table lines up their firmness, trial and warranty.',
+  compareIntro: 'The [Happsy](/reviews/happsy/) and the [Avocado Green](/reviews/avocado-green/) both score 8.8 as latex hybrids. The [PlushBeds Luxury Bliss](/reviews/plushbeds-luxury-bliss/) scores 8.5. The table below sets their firmness, trial and warranty beside the Hybrid Latex Mattress.',
   policies: [
     'The Latex For Less Hybrid Latex Mattress comes with a 120-night trial and a 20-year warranty, according to Latex For Less. Shipping is free in the US via UPS or FedEx Ground, excluding Alaska and Hawaii.',
-    'Returns are free in the continental US within 120 nights, and an optional concierge pickup is available for a fee. Sizes run Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
-    'Latex For Less states the mattress is made in Los Angeles, California. Keep the order details on file in case a return is needed during the trial. Confirm the current terms on the brand\'s site before ordering, since policies can change between our checks.',
+    'Returns are free in the continental US within 120 nights, and an optional concierge pickup is available for a fee. The Hybrid Latex Mattress comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
+    'Latex For Less states the mattress is made in Los Angeles, California. Keep the order details for the Hybrid Latex Mattress on file in case a return is needed during the trial. Confirm the current terms on the brand\'s site before ordering, since policies can change between our checks.',
   ],
   faqs: [
     {
@@ -122,7 +122,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'Does the Latex For Less Hybrid sleep hot?',
-      a: 'It earns a 9/10 in Cooling & Breathability, a strong result. Organic cotton, organic wool and Dunlop latex are breathable materials, and the coil core lets air move through the base. No dedicated cooling layer is named, which keeps the score at 9. Cotton sheets help keep the surface cool.',
+      a: 'Cooling & Breathability is a 9/10 for the Hybrid Latex Mattress, a strong result. Organic cotton, organic wool and Dunlop latex are breathable materials, and the coil core lets air move through the base. No dedicated cooling layer is named, which keeps the score at 9. Cotton sheets help keep the surface cool.',
     },
     {
       q: 'How tall is the Latex For Less Hybrid Latex Mattress?',

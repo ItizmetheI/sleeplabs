@@ -5,10 +5,6 @@ const copy: BestCopy = {
   dateModified: '2026-10-12',
   metaDescription: 'The best mattress for couples in 2026: eight picks that all score 10 in Motion Transfer, ranked by Overall score and led by the Amerisleep AS3.',
   quickAnswer: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) leads our couples picks at 9.5/10, with 10s in Motion Transfer and Edge Support so one partner\'s movement stays on their side and the full width stays usable. The [Zoma Boost](/reviews/zoma-boost/) earns Best for Couples, matching those 10s and adding a 10 in Value.',
-  howWePicked: [
-    'Picks are ranked first by Motion Transfer, the field that decides whether one partner\'s movement wakes the other. All eight picks here score 10 in that field, so Overall score then sets the order, followed by the usual tie-breaks.',
-    'Kids models, the [Westin Heavenly Bed](/reviews/westin-heavenly-bed/) and models whose official page could not be reached are left out. Each model has one score that covers every firmness option, which matters for couples who want different feels on each side.',
-  ],
   picks: [
     {
       slug: 'amerisleep-as3',
@@ -45,7 +41,7 @@ const copy: BestCopy = {
       ],
       limitations: [
         'One medium-firm 5.5/10 feel for both partners.',
-        'A 100-night trial and a 10-year warranty.',
+        'A 100-night trial and a 10-year warranty for the Zoma Boost.',
       ],
     },
     {
@@ -55,16 +51,16 @@ const copy: BestCopy = {
         'It ties for the highest Motion Transfer, Edge Support and Value scores on this page, each at 10, and shares the 9.5 Overall. It matches the pick above field for field and follows it on the final tie-breaks.',
         'A side sleeper and a stomach sleeper can each find their version, and Split King is among the sizes Nolah lists. Every version uses 8 inch zoned coils and a zoned foam under the comfort layers.',
         'Its 10 in Motion Transfer comes from a deep stack of foams over the coils, which absorbs movement before it travels. That keeps a restless partner from being felt on the other side.',
-        'Nolah lists a lifetime warranty and a 120-night trial with a 30-night break-in. Couples choosing two firmness levels should settle on both early in that window.',
+        'Nolah lists a limited lifetime warranty and a 120-night trial with a 30-night break-in. Couples choosing two firmness levels should settle on both early in that window.',
       ],
       strengths: [
         'Plush, Luxury Firm and Firm versions for partners with different needs.',
         '10s in Motion Transfer, Edge Support and Value.',
-        'A lifetime warranty, according to Nolah.',
+        'A limited lifetime warranty on the Evolution 15", according to Nolah.',
       ],
       limitations: [
-        'A 120-night trial with a 30-night break-in.',
-        'Most layer thicknesses are not listed.',
+        'A 30-night break-in comes first in the 120-night trial for the Evolution 15".',
+        'Most layer thicknesses are not listed on the Evolution 15".',
       ],
     },
     {
@@ -73,26 +69,26 @@ const copy: BestCopy = {
         'Couples where one partner turns often and the other sleeps lightly need a bed that is both quick and quiet. The FORM Core Hybrid ties for the highest Motion Transfer and Response Time scores on this page, each at 10.',
         'It also ties for the highest Edge Support and Trial Period scores, and shares the 9.5 Overall. That gives it four 10s, matched only by the [FORM Prime X](/reviews/form-prime-x/) among these picks.',
         'A 1.5 inch gel polymer grid and 1.5 inches of adaptive foam sit over 8 inches of zoned pocketed coils. The pocketed coils move independently, and the foam above absorbs what little motion passes through. The thin comfort stack keeps the surface quick for the partner who moves.',
-        'FORM lists no firmness rating, so couples cannot compare a number. The 365-night trial and lifetime warranty give a full year to judge whether the supportive build suits both people.',
+        'It sits at 5-6/10, a middle feel that most back and combination sleepers can share. The 365-night trial and lifetime warranty give a full year to judge whether it suits both people.',
         'Value is an 8, its lowest field. FORM lists free FedEx Ground shipping and Split King among the sizes.',
       ],
       strengths: [
         '10s in Motion Transfer, Edge Support, Trial Period and Response Time.',
         'Pocketed coils under a thin, quick comfort stack.',
-        'A 365-night trial and a lifetime warranty.',
+        'The Core Hybrid comes with a 365-night trial and a lifetime warranty.',
       ],
       limitations: [
-        'FORM lists no firmness rating.',
+        'One 5-6/10 feel for both partners.',
         'Value is an 8.',
       ],
     },
     {
       slug: 'form-prime-x',
       why: [
-        'The FORM Prime X earns Best Latex Pick, since it is the only pick on this page with latex in its construction. It shares the 9.5 Overall and matches the Core Hybrid with 10s in Motion Transfer, Edge Support, Trial Period and Response Time.',
+        'The FORM Prime X earns Best Latex Hybrid, since it is the only latex hybrid on this page. It shares the 9.5 Overall and matches the Core Hybrid with 10s in Motion Transfer, Edge Support, Trial Period and Response Time.',
         'Its 1 inch of Talalay latex sits inside a 6.5 inch comfort stack that also includes a quilted Euro-top, a gel polymer grid, adaptive foam and memory foam, all over 8 inch zoned coils. The memory foam and adaptive foam soak up the bounce that latex alone would pass along.',
         'For couples, that stack offers deep cushioning for a side sleeper while keeping a quick surface for a partner who turns. FORM adds free White Glove delivery with in-home setup, which helps when a 15 inch king has to go up the stairs.',
-        'FORM lists no firmness rating. The 365-night trial and lifetime warranty give both partners a full year to decide.',
+        'FORM rates it 4-5/10, so it leans toward the side sleeper in a couple. The 365-night trial and lifetime warranty give both partners a full year to decide.',
         'Couples with a heavier stomach sleeper should note that the deep stack may let that partner settle at the hips.',
       ],
       strengths: [
@@ -101,7 +97,7 @@ const copy: BestCopy = {
         'Free White Glove delivery with in-home setup.',
       ],
       limitations: [
-        'FORM lists no firmness rating.',
+        'Value is an 8.',
         'The deep stack may be soft for heavier stomach sleepers.',
       ],
     },
@@ -140,7 +136,7 @@ const copy: BestCopy = {
       ],
       limitations: [
         'Edge Support is an 8, so the perimeter gives on smaller sizes.',
-        'Firm at the shoulder for lighter side sleepers.',
+        'Firm at the shoulder for lighter side sleepers on the AS2.',
       ],
     },
     {
@@ -150,7 +146,7 @@ const copy: BestCopy = {
         'It sits between the two FORM models above. A 1.5 inch gel polymer grid and 3 inches of adaptive foam make a 4.5 inch comfort stack over 8 inch zoned coils, for a 14 inch mattress. That is more cushioning than the Core Hybrid and less than the Prime X.',
         'For couples, the deeper adaptive foam layer helps absorb motion at the surface, and the zoned coils keep the full width supported. FORM lists free White Glove delivery with in-home setup and optional old-mattress removal.',
         'Response Time is a 9, a step below the other FORM picks, so a partner who turns often may notice a slightly slower surface. Value is an 8, its lowest field.',
-        'FORM lists no firmness rating, but the 365-night trial and lifetime warranty give couples a year to confirm the feel suits both of them.',
+        'At 5-6/10, it matches the Core Hybrid\'s rating with more foam on top, and the 365-night trial and lifetime warranty give couples a year to confirm the feel suits both of them.',
       ],
       strengths: [
         '10s in Motion Transfer, Edge Support and Trial Period.',
@@ -158,7 +154,7 @@ const copy: BestCopy = {
         'Free White Glove delivery with in-home setup.',
       ],
       limitations: [
-        'FORM lists no firmness rating.',
+        'Response Time is a 9, a point below the Core Hybrid.',
         'Value is an 8.',
       ],
     },
@@ -169,6 +165,7 @@ const copy: BestCopy = {
     'Motion Transfer comes first. Every pick on this page scores 10 in it, which means a partner getting in or out of bed is unlikely to be felt. Foam absorbs movement well. Pocketed coils move one at a time and stop most of it.',
     'Firmness is the hardest part for many couples, because two people rarely want the same feel. Models sold in several firmness options, combined with a split size, let each partner choose. A medium to medium-firm feel, around 5/10 to 6/10, is the usual compromise for one shared surface.',
     'Size changes how much the edge matters. On a full or queen, each partner sleeps near a perimeter, so Edge Support carries real weight. On a king or Cal King, there is more room to stay clear of the edge. Check the trial too: two people need time to agree. A longer trial gives both partners time to settle on a feel.',
+    'Bed size changes how much these scores matter. On a queen, each sleeper has 30 inches of width, so both partners sleep closer to the edge and to each other, and Edge Support and Motion Transfer carry more weight. A king gives each sleeper 38 inches, which eases both problems. Split King lets each partner choose a different firmness of the same model, which suits couples whose weights or sleep positions differ a lot. Check that both halves sit level on your base, and use a bed bridge or a single king fitted sheet if the seam bothers you.',
   ],
   faqs: [
     {
@@ -200,7 +197,7 @@ const copy: BestCopy = {
       a: 'Yes, if partners want different feels. A split king is two Twin XL mattresses side by side, so each half can be a different firmness. Every pick on this page lists Split King among its sizes. Check that the model you choose sells the firmness each partner needs.',
     },
     {
-      q: 'Does one score cover every firmness option?',
+      q: 'Does one score cover every firmness option a couple might choose?',
       a: 'Yes. Each model has one score that covers every firmness option it sells. Two partners choosing different versions of the same model are buying the same scorecard, with a different feel on each side. This page lists every firmness option each pick is sold in.',
     },
   ],

@@ -28,13 +28,13 @@ export default function Hero({ h1, leaderConfig, updated }: HeroProps) {
           className="lg:col-span-7 flex flex-col gap-6"
         >
           <p className="text-label-sm font-label-sm uppercase text-secondary font-bold">
-            59 models · 24 brands · one published rubric
+            55 models · 24 brands · one published rubric
           </p>
           <h1 className="text-[44px] leading-[1.14] md:text-display-lg md:font-display-lg font-bold text-primary max-w-3xl">
             {h1}
           </h1>
           <p className="text-body-lg font-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
-            Mattress Inquirer organizes 59 mattress models with one seven-metric editorial scorecard, complete comparison tables, and clearly labeled evidence limits.
+            Mattress Inquirer organizes 55 mattress models with one seven-metric editorial scorecard, complete comparison tables, and clearly labeled evidence limits.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mt-2">
             <a
@@ -92,7 +92,7 @@ export default function Hero({ h1, leaderConfig, updated }: HeroProps) {
             ))}
           </div>
           <a href="/reviews/" className="flex items-center justify-between gap-4 p-5 border-t border-outline-variant text-primary font-bold hover:text-secondary transition-colors">
-            View the full 59-model scorecard <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
+            View the full 55-model scorecard <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
           </a>
         </motion.div>
       </div>

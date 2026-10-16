@@ -16,7 +16,7 @@ const copy: ReviewCopy = {
     'Glacier does not list layer thicknesses, so the comfort stack depth is not listed.',
     'Returns need at least 30 days of use first, according to Glacier.',
   ],
-  howScored: 'Glacier Apex Hybrid is scored on the same seven fields as every model we cover, from Glacier\'s official product page. Our [methodology page](/methodology/) explains how each field is set.',
+  howScored: 'Glacier Apex Hybrid is scored on the same seven fields as every model we cover, from Glacier\'s official product page. Our [methodology page](/methodology/) explains how each field is set, for the Apex Hybrid and every other model we score.',
   layerRoles: [
     'Zoned Euro-top with quilted foam that adds a cushioned surface.',
     'Graphite memory foam that contours to the body.',
@@ -33,32 +33,32 @@ const copy: ReviewCopy = {
   performance: {
     value: [
       'Value is a standout 10. The score is set from price, trial and warranty facts, and it weighs what the Apex delivers against its queen price.',
-      'Glacier pairs a 365-night trial with a lifetime warranty, and standard UPS delivery to the door is free. White glove delivery is available for an added fee. Three certifications and three firmness options add to what the price covers. The recorded queen price appears in our specs table with the month we checked it.',
+      'Glacier pairs a 365-night trial with a lifetime warranty, and standard UPS delivery to the door is free. White glove delivery is available for an added fee. Three certifications and three firmness options add to what the price covers.',
       'Shoppers who want a tall, layered hybrid with long policies gain the most from this field. The 10 holds across all three firmness options, since the terms do not change between them.',
     ],
     edgeSupport: [
-      'Edge Support is a strong 9. The pocketed coils give the perimeter structure, though Glacier names no reinforced edge on the Apex.',
+      'The Apex Hybrid scores a strong 9 in Edge Support. The pocketed coils give the perimeter structure, though Glacier names no reinforced edge on the Apex.',
       'For sleeping, the surface stays usable close to the side, and sitting on the edge should feel steady for most people. The Euro-top and memory foams soften the very outer edge a little. The Soft version will give more at the perimeter than the Firm version.',
-      'Couples who share a full or queen gain the most from this score. Anyone who sits on the edge to dress each morning should find a 9 dependable. A sturdy frame helps the perimeter hold its shape over time.',
+      'Couples who share a full or queen gain the most from this score. Anyone who sits on the edge to dress each morning should find a 9 dependable. Set the Apex Hybrid on a sturdy frame to help the perimeter hold its shape.',
     ],
     trialPeriod: [
-      'Trial Period is a standout 10. Glacier offers a 365-night trial, a full year to decide.',
+      'The Apex Hybrid scores a standout 10 in Trial Period. Glacier offers a 365-night trial, a full year to decide.',
       'Returns get a full refund with return shipping covered, once the mattress has been used for at least 30 days, according to Glacier. That window gives the body time to adjust to a new feel before deciding. A full year also covers every season.',
-      'Shoppers unsure between the Soft, Medium and Firm versions gain the most from this field. Keep the order details on file in case a return is needed. Confirm the current terms on Glacier\'s site before ordering, since policies can change between our checks.',
+      'Shoppers unsure between the Soft, Medium and Firm versions gain the most from this field. Keep the order details for the Apex Hybrid on file in case a return is needed. Confirm the current terms on Glacier\'s site before ordering, since policies can change between our checks.',
     ],
     responseTime: [
-      'Response Time is an 8, good with a caveat. The Apex stacks graphite memory foam and gel memory foam over the coils, and memory foam returns to shape at a slower pace.',
+      'The Apex Hybrid scores 8 in Response Time, good with a caveat. The Apex stacks graphite memory foam and gel memory foam over the coils, and memory foam returns to shape at a slower pace.',
       'The pocketed coils add lift from below, so the surface recovers faster than an all-memory-foam bed. Combination sleepers who turn a few times a night should find it workable, with a short pause on each move. The Firm version will feel a little quicker than the Soft.',
       'Restless sleepers who want the quickest surface should weigh this field. Sleepers who stay in one or two positions will notice it least, and they gain the close contour of the memory foam in return.',
     ],
     motionTransfer: [
-      'Motion Transfer is a strong 9. Pocketed coils move one at a time, and the memory foam layers absorb much of the motion before it reaches the surface.',
-      'A 9 means most couples will sleep through a partner turning over. A little movement may reach the other side when someone gets in or out of bed. Very light sleepers who wake easily may prefer an all-foam bed with a 10 in this field.',
+      'The Apex Hybrid earns a strong 9 in Motion Transfer. Pocketed coils move one at a time, and the memory foam layers absorb much of the motion before it reaches the surface.',
+      'A 9 means most couples on the Apex Hybrid will sleep through a partner turning over. A little movement may reach the other side when someone gets in or out of bed. Very light sleepers who wake easily may prefer an all-foam bed with a 10 in this field.',
       'Couples on different schedules should weigh this score. A 9 keeps most nights quiet while keeping the coil lift that all-foam beds lack. Parents who share the bed with a child or pet will find it settled enough for most nights.',
     ],
     coolingBreathability: [
-      'Cooling & Breathability is a standout 10. Glacier stacks several named cooling parts: graphite in the CarbonICE foam, gel in the memory foam, ventilated ARCFlow foam and a coil core that lets air move through the base.',
-      'The score reflects that construction rather than a temperature reading. That is a long list of named cooling parts for one build. Warm sleepers who have found memory foam too warm in the past should give this field heavy weight.',
+      'Cooling & Breathability is a standout 10 for the Apex Hybrid. Glacier stacks several named cooling parts: graphite in the CarbonICE foam, gel in the memory foam, ventilated ARCFlow foam and a coil core that lets air move through the base.',
+      'That score comes from how the Apex Hybrid is built, not from a temperature reading. That is a long list of named cooling parts for one build. Warm sleepers who have found memory foam too warm in the past should give this field heavy weight.',
       'Breathable sheets and a thin protector keep the surface in line with the score. Heavy, plastic-backed protectors can trap heat and undercut the cooling layers. Cotton or linen sheets suit the build better than heavy synthetic bedding.',
     ],
   },
@@ -95,11 +95,11 @@ const copy: ReviewCopy = {
     'Very light sleepers who want an all-foam level of motion control.',
     'Shoppers who want listed layer thicknesses before buying.',
   ],
-  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Apex and scores 9.5 as a medium all-foam bed. The [Zoma Hybrid](/reviews/zoma-hybrid/) and the [Glacier Original Hybrid](/reviews/glacier-original-hybrid/) both score 9.3 as hybrids. The table lines up their firmness, trial and warranty.',
+  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Apex and scores 9.5 as a medium all-foam bed. The [Zoma Hybrid](/reviews/zoma-hybrid/) and the [Glacier Original Hybrid](/reviews/glacier-original-hybrid/) both score 9.3 as hybrids. The table lines up their firmness, trial and warranty next to the Apex Hybrid.',
   policies: [
     'Glacier Apex Hybrid comes with a 365-night trial and a lifetime warranty, according to Glacier. Standard UPS delivery to the door is free, and white glove delivery is available for an added fee.',
-    'Returns get a full refund with return shipping covered, after at least 30 days of use. Sizes run Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
-    'Glacier states the mattress is made in the USA. Keep the order details on file in case a return is needed during the trial. Confirm the current terms on Glacier\'s site before ordering, since policies can change between our checks.',
+    'Returns get a full refund with return shipping covered, after at least 30 days of use. The Apex Hybrid comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
+    'Glacier states the mattress is made in the USA. Save the order details for the Apex Hybrid until the trial ends, in case a return is needed. Confirm the current terms on Glacier\'s site before ordering, since policies can change between our checks.',
   ],
   faqs: [
     {
@@ -132,7 +132,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'Does Glacier Apex Hybrid have zoned support?',
-      a: 'Glacier describes the Euro-top as zoned, which places different levels of cushioning under different parts of the body. The pocketed coils below are not described as zoned on the product page we checked. Glacier does not list the thickness of the Euro-top or any other layer, so our specs table reads not listed for those cells.',
+      a: 'Glacier describes the Euro-top as zoned, which places different levels of cushioning under different parts of the body. The pocketed coils below are not described as zoned by Glacier. Glacier does not list the thickness of the Euro-top or any other layer.',
     },
   ],
   verdict: 'Glacier Apex Hybrid earns a 9.3/10 Overall, led by 10/10 scores in Value, Trial Period and Cooling & Breathability. Its Euro-top and layered cooling foams over pocketed coils suit warm sleepers, and the Soft, Medium and Firm versions cover most sleep positions. Response Time is an 8, so restless sleepers may notice the memory foam. A 365-night trial gives time to pick the right feel.',

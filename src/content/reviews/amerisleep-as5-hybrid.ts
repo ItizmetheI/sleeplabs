@@ -54,7 +54,7 @@ const copy: ReviewCopy = {
       'Couples on different schedules should weigh this field closely. A 9 keeps most nights undisturbed, though it is not the quietest result available.',
     ],
     coolingBreathability: [
-      'Cooling & Breathability is a standout 10. The pocketed coil core leaves open space for air to move beneath the comfort layers, which counters the extra contact of a soft surface.',
+      'Cooling & Breathability is a standout 10 for the AS5 Hybrid. The pocketed coil core leaves open space for air to move beneath the comfort layers, which counters the extra contact of a soft surface.',
       'On top, Amerisleep pairs plant-based Bio-Pur memory foam with a Refresh cover it describes as made with a high energy transfer fiber. The score comes from that construction, not a temperature reading. Warm side sleepers who want a plush feel are the clearest fit for this field. A breathable protector helps the cover keep working as designed.',
       'Hot sleepers who avoid soft beds because of heat are the group this score serves best. The coil airflow gives a soft surface a cooler base than an all-foam core.',
     ],
@@ -125,7 +125,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'How tall is the Amerisleep AS5 Hybrid?',
-      a: 'Amerisleep does not list a separate height for the AS5 Hybrid on its product page. The all-foam AS5 is 14 inches tall. Ask Amerisleep for the hybrid\'s exact profile before ordering if sheet depth or frame height matters to you. Our specs table lists the height as not listed until the brand publishes it.',
+      a: 'Amerisleep does not list a separate height for the AS5 Hybrid on its product page. The all-foam AS5 is 14 inches tall. Ask Amerisleep for the hybrid\'s exact profile before ordering if sheet depth or frame height matters to you. Check the height with Amerisleep before ordering sheets.',
     },
     {
       q: 'Is the Amerisleep AS5 Hybrid good for couples?',

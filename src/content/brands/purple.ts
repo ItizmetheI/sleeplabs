@@ -6,7 +6,7 @@ const copy: BrandCopy = {
   metaDescription: 'Purple mattress reviews: the Purple RestorePlus Hybrid, a GelFlex Grid hybrid scored 8.8/10 Overall on one seven-field scale, with a 10 in Response Time.',
   summary: [
     `Purple makes hybrid mattresses built around its GelFlex Grid, and the one we score is the [Purple RestorePlus Hybrid](/reviews/purple-restoreplus-hybrid/). It places a Keep Fresh cover over a 3 inch GelFlex Grid, a comfort foam layer and 8 inches of responsive coils, at 13 inches. Purple rates it medium-soft, which sits at 4/10 on our scale.`,
-    `Purple lists a 100-night trial and a 10-year warranty, with free delivery. Purple picks up and refunds returns within 100 nights, after at least 21 nights. The RestorePlus Hybrid lists CertiPUR-US and Clean-Air Gold. Its place of manufacture was not listed on the product page we recorded.`,
+    `Purple lists a 100-night trial and a 10-year warranty, with free delivery. Purple picks up and refunds returns within 100 nights, after at least 21 nights. The RestorePlus Hybrid lists CertiPUR-US and Clean-Air Gold. Purple does not state where it is made.`,
   ],
   topModel: [
     `It scores 10 in Response Time, 9 in Edge Support, Trial Period, Motion Transfer and Cooling & Breathability, and 7 in Value. The grid springs back as soon as weight lifts, so the surface feels soft without holding the body in place.`,

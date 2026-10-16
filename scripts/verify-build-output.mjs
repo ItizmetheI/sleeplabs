@@ -172,7 +172,7 @@ assert(!schemaNodes.some(({ value }) => typeIncludes(value, 'Person')), 'Generat
 const sourceReviewPendingBlogPages = [...htmlByPath].filter(([route, html]) =>
   route.startsWith('blog/')
   && route !== 'blog/index.html'
-  && html.includes('Editorial status: source review pending')
+  && html.includes('data-source-review-pending="true"')
 );
 for (const [route, html] of sourceReviewPendingBlogPages) {
   assert(hasNoindex(html), `${route} is missing its noindex gate.`);
@@ -182,8 +182,9 @@ for (const [route, html] of htmlByPath) {
   if (!route.startsWith('reviews/') || route === 'reviews/index.html') continue;
   const h1 = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1]?.replace(/<[^>]+>/g, ' ') ?? '';
   assert(!h1.includes('$'), `${route} presents a reference price in its H1.`);
-  // Owner rule: prices appear only as "Queen price (checked Month YYYY)" or not at all.
-  assert(/Queen price( \(checked [A-Z][a-z]+ \d{4}\))?/.test(html), `${route} is missing the Queen price row.`);
+  // Owner rule (2026-10-16): no prices anywhere; the Price row is a "See Price" CTA with a data-slot.
+  assert(/<th[^>]*>Price<\/th><td[^>]*><a\b[^>]*data-slot="MI-[^"]+"[^>]*>See Price<\/a>/.test(html), `${route} is missing the See Price row.`);
+  assert(!/\$\d/.test(html.replace(/<script\b[\s\S]*?<\/script>/gi, '')), `${route} shows a price.`);
 }
 
 const coreRoutePattern = /^(?:index\.html|reviews\/|comparison\/|best\/|brands\/|topics\/|methodology\/|about\/|affiliate-disclosure\/|editorial-policy\/)/;
@@ -230,7 +231,7 @@ for (const [route, html] of htmlByPath) {
 }
 
 const comparisonDetailPages = [...htmlByPath].filter(([route]) => route.startsWith('comparison/') && route !== 'comparison/index.html');
-assert(comparisonDetailPages.length === 30, `Expected 30 rendered comparison pages; found ${comparisonDetailPages.length}.`);
+assert(comparisonDetailPages.length === 28, `Expected 28 rendered comparison pages; found ${comparisonDetailPages.length}.`);
 for (const [route, html] of comparisonDetailPages) {
   const table = html.match(/data-section="Side by Side"[\s\S]*?<\/table>/)?.[0] ?? '';
   for (const label of ['Overall', 'Value', 'Edge Support', 'Trial Period', 'Response Time', 'Motion Transfer', 'Cooling &amp; Breathability']) {
@@ -259,9 +260,9 @@ for (const [route] of sourceReviewPendingBlogPages) {
   assert(!sitemapText.includes(`${expectedSite}${pathname}`), `Source-review-pending page remains in sitemap: ${pathname}`);
 }
 
-// Scheduled (future-dated) posts must be noindex, labelled, and absent from the sitemap.
+// Scheduled (future-dated) posts must be noindex and absent from the sitemap.
 const scheduledBlogPages = [...htmlByPath.entries()].filter(([route, html]) =>
-  route.startsWith('blog/') && html.includes('Editorial status: scheduled'),
+  route.startsWith('blog/') && html.includes('data-scheduled="true"'),
 );
 for (const [route, html] of scheduledBlogPages) {
   assert(hasNoindex(html), `Scheduled page is missing its noindex gate: ${route}`);
@@ -313,9 +314,9 @@ const llmComparisonFiles = llmMarkdownFiles.filter(file => relative(file).starts
 const llmBestFiles = llmMarkdownFiles.filter(file => relative(file).startsWith('llms/best-'));
 const llmBrandFiles = llmMarkdownFiles.filter(file => relative(file).startsWith('llms/brand-'));
 const llmTopicFiles = llmMarkdownFiles.filter(file => relative(file).startsWith('llms/topic-'));
-assert(llmMarkdownFiles.length === 148, `Expected 148 generated LLM Markdown files; found ${llmMarkdownFiles.length}.`);
-assert(llmReviewFiles.length === 59, `Expected 59 generated LLM review files; found ${llmReviewFiles.length}.`);
-assert(llmComparisonFiles.length === 30, `Expected 30 generated comparison Markdown files; found ${llmComparisonFiles.length}.`);
+assert(llmMarkdownFiles.length === 142, `Expected 142 generated LLM Markdown files; found ${llmMarkdownFiles.length}.`);
+assert(llmReviewFiles.length === 55, `Expected 55 generated LLM review files; found ${llmReviewFiles.length}.`);
+assert(llmComparisonFiles.length === 28, `Expected 28 generated comparison Markdown files; found ${llmComparisonFiles.length}.`);
 assert(llmBestFiles.length === 21, `Expected 21 generated ranked-category Markdown files; found ${llmBestFiles.length}.`);
 assert(llmBrandFiles.length === 24, `Expected 24 generated brand Markdown files; found ${llmBrandFiles.length}.`);
 assert(llmTopicFiles.length === 8, `Expected 8 generated topic Markdown files; found ${llmTopicFiles.length}.`);
@@ -336,10 +337,10 @@ const llmsFull = await readFile(path.join(dist, 'llms-full.txt'), 'utf8');
 // Owner llms.txt format: H1, summary quote, 8 to 12 top pages, Citation block.
 const llmsTopPages = (llmsIndex.split('## Top pages')[1]?.split('## Citation')[0] ?? '').split('\n').filter(line => line.startsWith(`- ${expectedSite}/`));
 assert(llmsIndex.startsWith('# Mattress Inquirer\n'), 'llms.txt must start with "# Mattress Inquirer".');
-assert(/^> Editorial scorecards for 59 mattresses from 24 brands/m.test(llmsIndex), 'llms.txt is missing the owner summary line.');
+assert(/^> Editorial scorecards for 55 mattresses from 24 brands/m.test(llmsIndex), 'llms.txt is missing the owner summary line.');
 assert(llmsTopPages.length >= 8 && llmsTopPages.length <= 12, `llms.txt must list 8 to 12 top pages; found ${llmsTopPages.length}.`);
 assert(llmsIndex.includes("Cite as Mattress Inquirer. Link to the page URL. Scores are out of 10 on Mattress Inquirer's seven-field scorecard."), 'llms.txt is missing the owner citation block.');
-assert((llmsFull.match(/^Machine document:/gm) ?? []).length === 148, 'llms-full.txt does not contain all 148 machine documents.');
+assert((llmsFull.match(/^Machine document:/gm) ?? []).length === 142, 'llms-full.txt does not contain all 142 machine documents.');
 
 const requiredTopicRoutes = [
   'memory-foam',
@@ -391,10 +392,10 @@ for (const href of sourceNavigationLinks) {
 
 const statsSource = await readFile(path.join(root, 'src', 'components', 'StatsRow.tsx'), 'utf8');
 for (const expectedStat of [
-  '59", label: "Mattress Models Scored',
+  '55", label: "Mattress Models Scored',
   '24", label: "Brands Covered',
   '7", label: "Metrics Scored Per Mattress',
-  '30", label: "Head-to-Head Comparisons',
+  '28", label: "Head-to-Head Comparisons',
 ]) {
   assert(statsSource.includes(expectedStat), `StatsRow.tsx is missing the approved corpus statistic: ${expectedStat}.`);
 }

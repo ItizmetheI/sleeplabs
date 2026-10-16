@@ -9,11 +9,12 @@ export interface Props {
   mattress: Mattress;
   pageUrl: string;
   variant?: 'button' | 'text';
+  label?: string;
 }
 
-const { mattress, pageUrl, variant = 'button' } = Astro.props;
+const { mattress, pageUrl, variant = 'button', label: labelOverride } = Astro.props;
 const spec = getSpec(mattress.id);
-const label = `Check ${mattress.brand} Price`;
+const label = labelOverride ?? `Check ${mattress.brand} Price`;
 const buttonClass = 'inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3 rounded-lg font-bold text-body-md hover:bg-primary/90 transition-colors';
 const textClass = 'text-primary font-bold underline underline-offset-4 hover:text-secondary';
 ---

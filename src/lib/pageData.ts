@@ -4,7 +4,7 @@ import { comparisons } from '../data/comparisons';
 import { SPECS } from '../data/specs.generated';
 import type { MattressSpec } from '../data/specTypes';
 import { FIELD_LABEL, KIDS_IDS, WESTIN_ID, type BestPageConfig, type BestPageResult, type ScoreKey } from './ranking';
-import { firmnessText, heightText, listOrNotListed, plainOrNotListed, queenPriceText, trialText, typeText, warrantyText } from './ownerSite';
+import { firmnessText, heightText, listOrNotListed, plainOrNotListed, PRICE_LABEL, SEE_PRICE, trialText, typeText, warrantyText } from './ownerSite';
 import { compareTieChain, formatOverall, orderScorecard } from './scoreFieldOrder';
 
 export const getMattress = (id: string): Mattress => {
@@ -96,11 +96,13 @@ export const winnerLine = (a: Mattress, b: Mattress, link: (m: Mattress) => stri
 const MAX_TITLE = 60;
 const firstFit = (candidates: string[]) => candidates.find(t => t.length <= MAX_TITLE) ?? candidates[candidates.length - 1];
 
-/** Brand prefix stripped, for the last rung of the title ladder ("Amerisleep AS3" -> "AS3"). */
-export const shortName = (m: Mattress) => {
-  const stripped = m.name.startsWith(`${m.brand} `) ? m.name.slice(m.brand.length + 1) : m.name;
-  return stripped || m.name;
-};
+/** Brand prefix stripped ("Leesa Sapira Chill Hybrid" -> "Sapira Chill Hybrid"); used only when the full names cannot fit. */
+const brandless = (m: Mattress) => shortName(m).replace(new RegExp(`^${m.brand} `), "");
+
+/** Short name for the lower title rungs. Only Amerisleep's own AS-line names stay clear without the brand
+ *  ("Amerisleep AS6 Black Series" -> "AS6"); other models keep their brand ("Avocado Green", "Saatva RX"). */
+export const shortName = (m: Mattress) =>
+  m.name.replace(/^Amerisleep /, '').replace(/ Black Series$/, '');
 
 /** "[Model] Review (2026): [x.x]/10 Score, Specs and Verdict" with the owner's fallback ladder. */
 export const reviewSeoTitle = (m: Mattress) => {
@@ -111,6 +113,8 @@ export const reviewSeoTitle = (m: Mattress) => {
     `${m.name} Review: ${o}/10 Score and Specs`,
     `${shortName(m)} Review: ${o}/10 Score and Specs`,
     `${shortName(m)} Review: ${o}/10 Score`,
+    `${brandless(m)} Review: ${o}/10 Score and Specs`,
+    `${brandless(m)} Review: ${o}/10 Score`,
   ]);
 };
 
@@ -137,6 +141,7 @@ export const comparisonSeoTitle = (a: Mattress, b: Mattress) => {
     `${shortName(a)} vs ${shortName(b)}: ${shortName(winner)} Wins on ${joinFields(one)}`,
     `${shortName(a)} vs ${shortName(b)}: ${shortName(winner)} Wins (2026)`,
     `${shortName(a)} vs ${shortName(b)}: ${shortName(winner)} Wins`,
+    `${brandless(a)} vs ${brandless(b)}: ${brandless(winner)} Wins`,
     `${shortName(a)} vs ${shortName(b)}: Scores Compared`,
   ]);
 };
@@ -158,11 +163,19 @@ export const as3RankingSentence = (config: BestPageConfig, result: BestPageResul
   const rankPhrase = config.row === 'motion' || config.row === 'cooling' || config.row === 'value'
     ? `${FIELD_LABEL[result.rule.rankBy]} score`
     : 'Overall score';
-  const tieChain = [...new Set([result.rule.thenLabel, 'Value', 'Edge Support', 'brand', 'model name'])];
-  const tieText = `${tieChain[0]}, then ${tieChain.slice(1, -1).join(', ')} and ${tieChain[tieChain.length - 1]}`;
-  return result.as3Qualifies
+  // One "then", each tie-break once, never the rank field itself (owner fix list item 8).
+  const tieChain = [...new Set([result.rule.thenLabel, 'Value', 'Edge Support', 'brand', 'model name'])]
+    .filter(label => label !== FIELD_LABEL[result.rule.rankBy]);
+  const tieText = `${tieChain.slice(0, -1).join(', ')} and ${tieChain[tieChain.length - 1]}`;
+  const checked = result.picks[0]?.candidate.spec.priceChecked;
+  const qualifies = config.row === 'luxury'
+    ? `Every pick was listed at $1,800 or more for a queen when we checked in ${checked}. `
+    : config.row === 'construction'
+    ? `Models qualify when the brand lists ${config.construction} in the construction. `
+    : result.rule.whoQualifies === 'every scored model' ? '' : `Models qualify with ${result.rule.whoQualifies}. `;
+  return qualifies + (result.as3Qualifies
     ? `The [Amerisleep AS3](/reviews/amerisleep-as3/) is our editorial Best Overall pick and is listed first. The other picks are ranked by ${rankPhrase}, then ${tieText}.`
-    : `The [Amerisleep AS3](/reviews/amerisleep-as3/) is our editorial Best Overall pick, shown above. The picks below are ranked by ${rankPhrase}, then ${tieText}.`;
+    : `The [Amerisleep AS3](/reviews/amerisleep-as3/) is our editorial Best Overall pick, shown above. The picks below are ranked by ${rankPhrase}, then ${tieText}.`);
 };
 
 /** Specs at a Glance rows for a review, in the owner's fixed order. */
@@ -171,7 +184,7 @@ export const reviewSpecRows = (spec: MattressSpec): [string, string][] => [
   ['Firmness', firmnessText(spec)],
   ['Height', heightText(spec)],
   ['Comfort layers', spec.layers.length ? spec.layers.map(l => (l.thickness === 'not listed' ? l.name : `${l.name} (${l.thickness} in)`)).join('; ') : 'Not listed'],
-  [spec.reachable ? `Queen price (checked ${spec.priceChecked})` : 'Queen price', queenPriceText(spec)],
+  ...(spec.reachable ? [[PRICE_LABEL, SEE_PRICE] as [string, string]] : []),
   ['Trial', trialText(spec)],
   ['Warranty', warrantyText(spec)],
   ['Sizes', listOrNotListed(spec.sizes)],

@@ -7,7 +7,7 @@ const copy: ComparisonCopy = {
   slug: 'amerisleep-as2-vs-bear-original',
   dateModified: '2026-10-12',
   metaDescription: 'Amerisleep AS2 vs Bear Original: two medium-firm all-foam beds. The AS2 scores 9.3/10 to 9.2/10 and leads on four fields; the Bear leads on Value and Edge.',
-  quickVerdict: `Choose the ${A} if you want a medium-firm 6/10 memory foam bed with 10s in Response Time, Motion Transfer and Cooling & Breathability. Choose the ${B} if you want a medium-firm foam bed with 10s in Value and Edge Support, a 365-night trial and a lifetime warranty.`,
+  quickVerdict: `Choose the ${A} if you want a medium-firm 6/10 memory foam bed with 10s in Response Time, Motion Transfer and Cooling & Breathability. Choose the ${B} if you want a medium-firm foam bed with 10s in Value and Edge Support, a 365-night trial and a limited lifetime warranty.`,
   feel: [
     `These two are close on feel. The ${A} is sold in medium-firm, which sits at 6/10 on our scale. The ${B} is sold in medium-firm too, listed at 6.5-7, so it sits a half step firmer.`,
     'Both are all foam with memory foam near the top, so both feel contouring without letting the body sink deep.',
@@ -76,12 +76,12 @@ const copy: ComparisonCopy = {
     'Heavier combination sleepers will find both supportive enough to turn on easily, since neither lets the hips sink far. The AS2\'s extra point shows most for sleepers who change position many times a night.',
   ],
   valuePolicies: [
-    `The ${B} scores 10 in Value and 9 in Trial Period. The ${A} scores 9 in Value and 9 in Trial Period. Our Value and Trial Period scores are set from price, trial and warranty facts.`,
-    'Bear lists a 365-night trial and a lifetime warranty for the Original, with free returns after a 30-night break-in period.',
+    `The ${B} scores 10 in Value and 9 in Trial Period. The ${A} scores 9 in Value and 9 in Trial Period. Our Value and Trial Period scores for the AS2 and the Bear Original come from price, trial and warranty facts.`,
+    'Bear lists a 365-night trial and a limited lifetime warranty for the Original, with free returns after a 30-night break-in period.',
     'Amerisleep lists a 100-night trial with free returns by mail within 100 days, and a 20-year warranty for the AS2.',
     'Shipping is free for both via FedEx. Bear notes fees may apply for Alaska and Hawaii. Amerisleep ships in the continental US.',
-    'The Bear\'s queen price was not listed on the page we recorded, so check it with Bear. Value weighs policies against price, and the Bear scores a point higher in that field.',
-    'Shoppers who want a full year to decide and a lifetime warranty may prefer the Bear Original.',
+    'Value weighs policies against price, and the Bear scores a point higher in that field.',
+    'Shoppers who want a full year to decide and a limited lifetime warranty may prefer the Bear Original.',
     'Shoppers who are unsure whether the half step of extra firmness suits them can use the Bear\'s 365-night trial to judge it at home, keeping in mind the 30-night break-in before a free return.',
     'Confirm current terms on each brand\'s site before ordering.',
     'With Overall separated by a tenth, policies and the fields each bed leads can reasonably decide between them.',
@@ -92,7 +92,7 @@ const copy: ComparisonCopy = {
     'Restless sleepers who want a 10 in Response Time.',
   ],
   buyB: [
-    'Shoppers who want a 10 in Value and a lifetime warranty.',
+    'Shoppers who want a 10 in Value and a limited lifetime warranty.',
     'Anyone who sits on the edge often and wants a 10 in Edge Support.',
     'Shoppers who want a 365-night trial.',
   ],
@@ -111,7 +111,7 @@ const copy: ComparisonCopy = {
     },
     {
       q: 'Which has the longer trial and warranty?',
-      a: `The Bear Original lists a 365-night trial, with free returns after a 30-night break-in, and a lifetime warranty. Amerisleep lists a 100-night trial and a 20-year warranty for the AS2. Both score 9 in Trial Period, and the Bear scores 10 in Value.`,
+      a: `The Bear Original lists a 365-night trial, with free returns after a 30-night break-in, and a limited lifetime warranty. Amerisleep lists a 100-night trial and a 20-year warranty for the AS2. Both score 9 in Trial Period, and the Bear scores 10 in Value.`,
     },
     {
       q: 'Which sleeps cooler?',

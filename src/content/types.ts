@@ -71,8 +71,6 @@ export interface BestCopy {
   quickAnswer: string;
   /** 2. Box sentence when the AS3 does not qualify. */
   as3BoxReason?: string;
-  /** 4. How We Picked (the fixed AS3 sentence is added by the template). */
-  howWePicked: string[];
   /** 5. One entry per ranked pick, in rank order. */
   picks: BestPickCopy[];
   /** 6. What Matters, 200 to 400 words. */

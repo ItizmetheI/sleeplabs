@@ -2,19 +2,15 @@ import type { BestCopy } from '../types';
 
 const copy: BestCopy = {
   slug: 'back-sleepers',
-  dateModified: '2026-10-12',
+  dateModified: '2026-10-16',
   metaDescription: 'The best mattress for back sleepers in 2026: eight picks with a 5/10 to 7/10 firmness option, ranked on one scorecard and led by the Amerisleep AS3.',
   quickAnswer: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) leads our back sleeper picks at 9.5/10, with a medium 5/10 surface that fills the lower back curve and keeps the hips level. The [Zoma Boost](/reviews/zoma-boost/) ties it at 9.5 and earns Best for Back Sleepers with a medium-firm 5.5/10 feel over edge coils.',
-  howWePicked: [
-    'A model qualifies when it is sold in at least one firmness option from 5/10 to 7/10. That band keeps the hips from sinking below the shoulders while still filling the gap at the lower back. Every pick here also scores 10 in Edge Support, so the tie-break on that field did not separate any of them.',
-    'Kids models, the [Westin Heavenly Bed](/reviews/westin-heavenly-bed/) and models whose official page could not be reached are left out. Each model has one score that covers all its firmness options, and the table lists the qualifying option first.',
-  ],
   picks: [
     {
       slug: 'amerisleep-as3',
       why: [
         'Back sleepers sit at the center of the AS3\'s range. Its one feel, medium 5/10, is the lower edge of the back sleeper band, soft enough to fill the lumbar curve and firm enough to hold the pelvis up. As our editorial Best Overall pick, it is listed first.',
-        'Its scorecard ties the leaders on this page in four places. It shares the highest Overall score of the eight picks, 9.5, with three others. It shares the 10 in Edge Support with all seven other picks, the 10 in Motion Transfer with three others, and the 10 in Cooling & Breathability with two others.',
+        'Its scorecard ties the leaders on this page in four places. It shares the highest Overall score of the eight picks, 9.5, with four others. It shares the 10 in Edge Support with all seven other picks, the 10 in Motion Transfer with four others, and the 10 in Cooling & Breathability with one other.',
         'The build is simple. A Refresh cover sits over Bio-Pur memory foam, a HIVE transition layer and a Bio-Core base foam. The memory foam does the contouring at the small of the back, and the base keeps the spine in a straight line through the night.',
         'Back sleepers under 230 lb fit this feel well. Heavier back sleepers who want more push under the hips should look at the firmer coil picks below, since a medium foam surface can let a heavier pelvis settle a little over time. Back sleepers who share the bed with a side sleeper get a feel that suits both positions.',
       ],
@@ -31,7 +27,7 @@ const copy: BestCopy = {
     {
       slug: 'zoma-boost',
       why: [
-        'Zoma Boost earns Best for Back Sleepers as the top pick under this page\'s rule after the AS3. It ties the AS3 and two others at 9.5 Overall, and it ranks ahead of those two on Value, where it scores a 10.',
+        'Zoma Boost earns Best for Back Sleepers as the top pick under this page\'s rule after the AS3. It ties the AS3 and three others at 9.5 Overall. All of them score 10 in Edge Support, so Value decides: its 10 puts it ahead of the PlushBeds and FORM picks, and brand order puts it ahead of the Nolah, which also scores 10.',
         'Zoma rates it medium-firm 5.5/10, a half step firmer than the AS3. Graphite memory foam and quilted gel foam contour at the lower back, while the Reactiv layer and coils with a dynamic edge lift the hips. That combination is the classic back sleeper brief: give at the surface, push underneath.',
         'It shares 10s in Value, Edge Support and Motion Transfer with other picks here, and no field falls below 9. The 15 inch profile is tall, so deep pocket fitted sheets help.',
         'The trade sits in the policies. Zoma lists a 100-night trial with free returns and a 10-year warranty, both shorter than several picks below. Heavier back sleepers who want coil support with a contouring top should still put it near the top of their list. It is sold in seven sizes, including Split King.',
@@ -52,12 +48,12 @@ const copy: BestCopy = {
         'The Nolah Evolution 15" qualifies here through its Luxury Firm version, which Nolah rates 6-7/10. That option sits in the middle of the back sleeper band.',
         'It matches the [Zoma Boost](/reviews/zoma-boost/) on every field: 10s in Value, Edge Support and Motion Transfer, and 9s elsewhere. It ranks just after it on the final tie-breaks, brand and model name, so the two are interchangeable on the scorecard.',
         'What it adds is range. Plush 4-5/10 and Firm 7-8/10 versions sit on either side of Luxury Firm, so a back sleeper who shares the bed with a side sleeper can each pick a feel within the same model. All three versions share one score.',
-        'Under the comfort layers are 8 inch zoned coils, plus a separate zoned foam. Nolah lists a lifetime warranty and a 120-night trial with a 30-night break-in before a return. Back sleepers unsure between Luxury Firm and Firm should decide before the trial window closes. Free FedEx shipping is listed, with in-home setup available for a fee.',
+        'Under the comfort layers are 8 inch zoned coils, plus a separate zoned foam. Nolah lists a limited lifetime warranty and a 120-night trial with a 30-night break-in before a return. Back sleepers unsure between Luxury Firm and Firm should decide before the trial window closes. Free FedEx shipping is listed, with in-home setup available for a fee.',
       ],
       strengths: [
         'A Luxury Firm 6-7/10 option for back sleepers.',
         'Plush and Firm versions under the same score.',
-        'A lifetime warranty, according to Nolah.',
+        'A limited lifetime warranty, according to Nolah.',
       ],
       limitations: [
         'A 120-night trial with a 30-night break-in.',
@@ -70,7 +66,7 @@ const copy: BestCopy = {
         'PlushBeds Signature Bliss is the only latex hybrid among these picks, which earns it Best Latex Hybrid. It shares the 9.5 Overall at the top of the page.',
         'Its Medium version, rated 5.5/10 by PlushBeds, is the back sleeper option. A 3 inch organic Dunlop latex pillow top sits over 5-zone fabric-encased coils. Latex holds the lower back up with a springy feel rather than the slow hug of memory foam, which many back sleepers prefer.',
         'It ties for the highest Trial Period and Response Time scores here, each at 10, along with its 10 in Edge Support. Heavier back sleepers can step up to the Medium-Firm 8/10 version, which keeps the hips higher.',
-        'PlushBeds lists a 10-year warranty, and a fee applies to returns made before 30 days. GOTS and GOLS certifications back its organic materials, which suits back sleepers who want natural latex rather than foam. Its 14 inch height may call for deep pocket fitted sheets.',
+        'PlushBeds lists a 365-night trial and a limited lifetime warranty, prorated after 10 years, and a fee applies to returns made before 30 days. GOTS and GOLS certifications back its organic materials, which suits back sleepers who want natural latex rather than foam. Its 14 inch height may call for deep pocket fitted sheets.',
       ],
       strengths: [
         'A Medium 5.5/10 latex pillow top over 5-zone coils.',
@@ -78,8 +74,26 @@ const copy: BestCopy = {
         'GOTS and GOLS certified materials.',
       ],
       limitations: [
-        'A 10-year warranty and a fee for returns before 30 days.',
+        'A fee for returns before 30 days.',
         'Back sleepers who like the slow sink of memory foam may find latex too springy.',
+      ],
+    },
+    {
+      slug: 'form-core-hybrid',
+      why: [
+        'The FORM Core Hybrid sits at 5-6/10, medium to medium-firm, in the middle of the back sleeper band. It shares the 9.5 Overall with four other picks and ranks fifth on the tie-breaks, where its 8 in Value trails the picks above.',
+        'A 1.5 inch gel polymer grid and 1.5 inches of adaptive foam sit over 8 inches of 7-zone pocketed coils and a 1 inch base. With only 3 inches above the coils, the lower back gets contour without the hips sinking, the balance most back sleepers want.',
+        'It ties for the highest Edge Support, Trial Period, Response Time and Motion Transfer scores here, each at 10. Back sleepers who share a bed get a quiet surface that is still quick to move on.',
+        'FORM lists a 365-night trial, a lifetime warranty and free FedEx Ground shipping. It comes in one feel, so the long trial is the safety net, and the 12 inch profile fits standard sheets.',
+      ],
+      strengths: [
+        'A 5-6/10 feel with 3 inches above zoned coils.',
+        'Four 10s, including Motion Transfer and Response Time.',
+        'A 365-night trial and a lifetime warranty.',
+      ],
+      limitations: [
+        'Value is an 8, the lowest Value score among the five 9.5 picks here.',
+        'One feel only.',
       ],
     },
     {
@@ -119,39 +133,21 @@ const copy: BestCopy = {
       ],
     },
     {
-      slug: 'leesa-sapira-chill-hybrid',
+      slug: 'form-prime',
       why: [
-        'The Leesa Sapira Chill Hybrid qualifies through its Medium-Firm 6/10 version, and its springs carry a feature aimed squarely at back sleepers: Leesa zones them under the lumbar area.',
-        'Above the 8 inch zoned lumbar springs are 2 inches of quilt foam, 1.5 inches of GreenFlex BioFoam, 1 inch of responsive foam and 1 inch of transition foam. With no memory foam named, the surface feels lively rather than sinking, and the zoning puts the firmest push where the lower back needs it.',
-        'It ties for the highest Response Time and Cooling & Breathability scores on this page, each at 10, along with its 10 in Edge Support. The Ultra Cool cover is part of that cooling score.',
-        'Leesa lists a 365-night trial and a lifetime warranty, with Plush 4/10 and Firm 7/10 versions under the same score. Value is an 8, its lowest field, and no Split King is listed.',
+        'The FORM Prime closes the list at 9.3 Overall. It sits at 5-6/10 like the Core Hybrid, but adds a deeper comfort stack for back sleepers who want more cushioning at the surface.',
+        'A 1.5 inch gel polymer grid sits over 3 inches of adaptive foam, then 8 inches of 7-zone pocketed coils and a 1 inch base, for 14 inches in all. The thicker foam fills the lumbar curve more fully, and the zoned coils keep the hips level.',
+        'It ties for the highest Edge Support, Trial Period and Motion Transfer scores here, each at 10. Response Time is a 9, a point below the Core Hybrid, since the deeper foam settles a little more slowly.',
+        'Value is an 8, its lowest field. FORM lists a 365-night trial and a lifetime warranty, and its free White Glove delivery includes in-home setup. At 14 inches, deep pocket fitted sheets help.',
       ],
       strengths: [
-        'Zoned lumbar springs under a Medium-Firm 6/10 top.',
-        '10s in Edge Support, Response Time and Cooling & Breathability.',
-        'A 365-night trial and a lifetime warranty.',
-      ],
-      limitations: [
-        'Value is an 8.',
-        'Back sleepers who want memory foam contour may find it lively.',
-      ],
-    },
-    {
-      slug: 'nest-bedding-sparrow',
-      why: [
-        'The Nest Bedding Sparrow qualifies through its Medium 5/10 version and closes the list with three shared 10s: Edge Support, Trial Period and Motion Transfer.',
-        'A phase change cover with gel memory foam sits over 3 inches of Energex foam, 1 inch of SmartFlow support foam and 8 inches of reinforced edge pocketed coils. For a back sleeper, that 5 inch comfort stack gives the lower back some contour while the coils hold the hips.',
-        'Heavier back sleepers can choose Firm 7/10 instead, and lighter ones Plush 4/10. All three versions share one score, and the 365-night trial leaves time to switch if the first pick is wrong.',
-        'Value is an 8, its lowest field. Nest Bedding lists a 20-year warranty on the coil system, and returns are free after a 30-night adjustment period. At 14 inches, it may need deep pocket fitted sheets, and Split Cal King is among its sizes for couples who want separate halves.',
-      ],
-      strengths: [
-        'Medium 5/10 and Firm 7/10 options for back sleepers.',
+        '3 inches of adaptive foam over zoned coils.',
         '10s in Edge Support, Trial Period and Motion Transfer.',
-        'Reinforced edge pocketed coils.',
+        'Free White Glove delivery with in-home setup.',
       ],
       limitations: [
-        'The warranty covers the coil system.',
         'Value is an 8.',
+        'Response Time is a 9, a step slower than the Core Hybrid.',
       ],
     },
   ],
@@ -161,6 +157,7 @@ const copy: BestCopy = {
     'That is why this page ranks models with an option from 5/10 to 7/10. Back sleepers under 130 lb usually fit 5/10. Those between 130 and 230 lb tend to fit 5/10 to 6/10. Heavier back sleepers often prefer 6/10 or 7/10 over coils, so the hips do not settle over time.',
     'Construction shapes how that firmness feels. Memory foam fills the lumbar curve slowly and closely. Latex supports it with more spring. Zoned coils, like the lumbar zoning in some picks here, put firmer support under the hips and lower back.',
     'Edge Support is less of a deciding field here, since every pick on this page scores 10. Look instead at Motion Transfer if you share the bed, Cooling & Breathability if you sleep warm, and the trial length if you are choosing between two firmness options of the same model. Height matters too: many picks here are 14 inches or taller and need deep pocket sheets.',
+    'Check the gap under your lower back once you lie down. On a good fit, a flat hand slides into the space at the small of the back with a little resistance. If the hand slides in with no contact, the surface is too firm for you, and if it will not fit at all, the hips may be sinking too far.',
   ],
   faqs: [
     {
@@ -173,7 +170,7 @@ const copy: BestCopy = {
     },
     {
       q: 'Is a firm mattress good for back sleepers?',
-      a: 'A medium-firm mattress suits most back sleepers better than a very firm one. Very firm surfaces can leave a gap under the lower back. On this page, the firmest qualifying options are around 6/10 to 7/10, such as the [Nolah Evolution 15"](/reviews/nolah-evolution-15/) Luxury Firm and the Sparrow Firm.',
+      a: 'A medium-firm mattress suits most back sleepers better than a very firm one. Very firm surfaces can leave a gap under the lower back. On this page, the firmest qualifying options are around 6/10 to 7/10, such as the [Nolah Evolution 15"](/reviews/nolah-evolution-15/) Luxury Firm and the [Zoma Hybrid](/reviews/zoma-hybrid/) Luxury Firm.',
     },
     {
       q: 'Are hybrid mattresses good for back sleepers?',
@@ -181,11 +178,11 @@ const copy: BestCopy = {
     },
     {
       q: 'What should heavier back sleepers look for?',
-      a: 'Heavier back sleepers should look for a 6/10 to 7/10 option over coils. On this page, the [Zoma Hybrid](/reviews/zoma-hybrid/) offers Luxury Firm 6/10, and the [Nest Bedding Sparrow](/reviews/nest-bedding-sparrow/) offers Firm 7/10. [PlushBeds Signature Bliss](/reviews/plushbeds-signature-bliss/) also offers a Medium-Firm 8/10 version for those who want more lift.',
+      a: 'Heavier back sleepers should look for a 6/10 to 7/10 option over coils. On this page, the [Zoma Hybrid](/reviews/zoma-hybrid/) offers Luxury Firm 6/10, and the [Nolah Evolution 15"](/reviews/nolah-evolution-15/) offers Luxury Firm 6-7/10. [PlushBeds Signature Bliss](/reviews/plushbeds-signature-bliss/) also offers a Medium-Firm 8/10 version for those who want more lift.',
     },
     {
       q: 'Which back sleeper mattress has zoned support?',
-      a: 'The [Leesa Sapira Chill Hybrid](/reviews/leesa-sapira-chill-hybrid/) zones its springs under the lumbar area, according to Leesa. The Nolah Evolution 15" uses zoned coils and a zoned foam, and the PlushBeds Signature Bliss uses 5-zone coils. Zoning puts firmer support where the hips and lower back sit.',
+      a: 'The [FORM Core Hybrid](/reviews/form-core-hybrid/) and the [FORM Prime](/reviews/form-prime/) use 7-zone pocketed coils. The Nolah Evolution 15" uses zoned coils and a zoned foam, and the PlushBeds Signature Bliss uses 5-zone coils. Zoning puts firmer support where the hips and lower back sit.',
     },
     {
       q: 'Is memory foam or latex better for back sleepers?',

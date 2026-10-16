@@ -6,7 +6,7 @@ const copy: ReviewCopy = {
   metaDescription: 'Bear Original review: 9.2/10 Overall, a 10 inch medium-firm 6.5-7/10 memory foam bed with 10s in Value and Edge Support. Specs, fit and verdict.',
   quickAnswer: 'The Bear Original earns a 9.2/10 Overall as a 10 inch medium-firm all-foam mattress rated 6.5-7/10. It suits back and stomach sleepers who want firm foam support. Its main strength is a pair of 10s in Value and Edge Support. Its main limitation is an 8 in Motion Transfer, the lowest field on its scorecard.',
   strengths: [
-    'A 10/10 in Value, backed by a one-year trial and a lifetime warranty.',
+    'A 10/10 in Value, backed by a one-year trial and a limited lifetime warranty.',
     'A 10/10 in Edge Support for a 10 inch foam bed.',
     'A medium-firm 6.5-7/10 feel that keeps the hips level for back and stomach sleepers.',
     'GREENGUARD Gold and CertiPUR-US certifications on the brand page.',
@@ -29,12 +29,12 @@ const copy: ReviewCopy = {
   ],
   performance: {
     value: [
-      'Value is a standout 10. The score is set from price, trial and warranty facts, and the Bear Original pairs a one-year trial with a lifetime warranty.',
+      'Value is a standout 10. The score is set from price, trial and warranty facts, and the Bear Original pairs a one-year trial with a limited lifetime warranty.',
       'Those are the longest terms we record in both fields, which is why it reaches a 10. Free shipping by FedEx and free returns after a 30-night break-in add to the package. Shoppers who want firm foam with long policy coverage will find it hard to beat on this field.',
       'Value-focused buyers who sleep on the back or stomach gain the most here. The terms stay the same across all seven sizes Bear sells, from Twin to Split King.',
     ],
     edgeSupport: [
-      'Edge Support is a standout 10. Foam beds can compress at the perimeter, so this is one of the Bear Original\'s most useful scores.',
+      'The Bear Original earns a standout 10 in Edge Support. Foam beds can compress at the perimeter, so this is one of the Bear Original\'s most useful scores.',
       'Bear does not name an edge layer, so the score reflects the full foam stack and the firmer medium-firm feel. A firmer surface gives more push-back when you sit or sleep near the side. Couples who use the full width of a queen will benefit most from that.',
       'Anyone who sits on the side of the bed to dress each day should weigh this field. A 10 means the edge stays usable for that daily routine, even without a coil core.',
     ],
@@ -44,7 +44,7 @@ const copy: ReviewCopy = {
       'Buyers moving from a softer bed gain the most from the long trial. A medium-firm foam feel can take a few weeks to settle into, especially for side sleepers.',
     ],
     responseTime: [
-      'Response Time is a strong 9. The medium-firm feel keeps the body near the surface, so the foam returns to shape quickly when you move.',
+      'The Bear Original scores a strong 9 in Response Time. The medium-firm feel keeps the body near the surface, so the foam returns to shape quickly when you move.',
       'Bear describes the comfort foam as firmer with a slight bounce, which helps the surface respond faster than slow memory foam. Combination sleepers should find turning over easy. The gel swirl memory foam on top still adds a little contour that slows the feel slightly.',
       'Restless sleepers will notice this field most. Side sleepers who stay still all night will notice it least, and back sleepers will feel the surface lift them as they shift.',
     ],
@@ -54,7 +54,7 @@ const copy: ReviewCopy = {
       'This is the field couples with very different schedules should weigh most carefully. Solo sleepers can largely set it aside. Couples who sleep soundly will rarely notice the gap between an 8 and a 9 here.',
     ],
     coolingBreathability: [
-      'Cooling & Breathability is a strong 9. Bear uses gel swirl memory foam and a quilted Celliant cover, and the firmer feel limits how far the body sinks.',
+      'The Bear Original earns a strong 9 in Cooling & Breathability. Bear uses gel swirl memory foam and a quilted Celliant cover, and the firmer feel limits how far the body sinks.',
       'The score reflects that construction rather than a temperature reading. Less sink means less of the body is wrapped in foam, which can help warm sleepers. It stops at 9 because the build has no coils to add airflow underneath.',
       'Warm sleepers who want foam support will find it comfortable through most of the year. Breathable sheets and a thin protector help keep it that way on hot nights. Heavy, plastic-backed protectors can trap heat at the surface and work against the cover.',
     ],
@@ -67,24 +67,24 @@ const copy: ReviewCopy = {
       over230: 'A reasonable fit. More body weight presses the shoulder and hip into the foam while the high-density base keeps the spine level. This is the side sleeper group the Bear suits best.',
     },
     back: {
-      under130: 'A good fit. The firm surface supports the lower back without letting a lighter frame sink, and the memory foam on top adds a little contour.',
+      under130: 'The Bear Original is a good fit. The firm surface supports the lower back without letting a lighter frame sink, and the memory foam on top adds a little contour.',
       from130to230: 'A strong fit and the core audience for this feel. The 6.5-7/10 surface keeps the hips level with the shoulders through the night.',
-      over230: 'A good fit. The firm foam holds heavier hips up well, though some sleepers in this group prefer the extra lift of a coil core.',
+      over230: 'The Bear Original is a good fit. The firm foam holds heavier hips up well, though some sleepers in this group prefer the extra lift of a coil core.',
     },
     stomach: {
-      under130: 'A strong fit. The medium-firm feel keeps the hips from dipping below the shoulders, and a thin pillow keeps the neck in line.',
-      from130to230: 'A strong fit. This firmness range suits stomach sleepers in this weight group, holding the lower back in a neutral line.',
+      under130: 'The Bear Original is a strong fit. The medium-firm feel keeps the hips from dipping below the shoulders, and a thin pillow keeps the neck in line.',
+      from130to230: 'The Bear Original is a strong fit. This firmness range suits stomach sleepers in this weight group, holding the lower back in a neutral line.',
       over230: 'A good fit, though some heavier stomach sleepers may want a firm hybrid with coils for more support under the hips.',
     },
     combination: {
       under130: 'A good fit for back and stomach time. Side time may feel firm at the shoulder, so weigh how much of the night is spent there.',
-      from130to230: 'A strong fit. The 9/10 Response Time keeps position changes easy, and the feel suits back and stomach time equally well.',
+      from130to230: 'The Bear Original is a strong fit. The 9/10 Response Time keeps position changes easy, and the feel suits back and stomach time equally well.',
       over230: 'A good fit for back and stomach time, with enough give for short stretches on the side between them. Heavier sleepers who change position often will appreciate how quickly the firm foam returns to shape.',
     },
   },
   buy: [
     'Back and stomach sleepers who want a medium-firm memory foam feel.',
-    'Value-focused buyers who want a 365-night trial and a lifetime warranty.',
+    'Value-focused buyers who want a 365-night trial and a limited lifetime warranty.',
     'Couples who use the full width of the bed and want a 10/10 edge.',
   ],
   skip: [
@@ -94,7 +94,7 @@ const copy: ReviewCopy = {
   ],
   compareIntro: 'The [Amerisleep AS2](/reviews/amerisleep-as2/) has a head-to-head page with the Bear Original and scores 9.3 as a medium-firm 6/10 foam bed. The [FORM Core](/reviews/form-core/) matches its 9.2 Overall as another all-foam build. The [Amerisleep AS5](/reviews/amerisleep-as5/) scores 9.0 as a soft all-foam option. The table shows how each one lines up on firmness, trial and warranty.',
   policies: [
-    'The Bear Original has a 365-night trial and a lifetime warranty, according to Bear. Shipping is free by FedEx, and fees may apply for Alaska and Hawaii.',
+    'The Bear Original has a 365-night trial and a limited lifetime warranty, according to Bear. Shipping is free by FedEx, and fees may apply for Alaska and Hawaii.',
     'Returns are free once the 30-night break-in period has passed. Sizes run Twin, Twin XL, Full, Queen, King, Cal King and Split King, all 10 inches tall.',
     'Bear states the mattress is made in the USA with foreign and domestic components. Confirm the current terms on Bear\'s site before ordering, since policies can change between our checks. Keep the order details handy in case you start a return.',
   ],
@@ -117,7 +117,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What trial and warranty come with the Bear Original?',
-      a: 'The Bear Original comes with a 365-night trial and a lifetime warranty, according to Bear. Returns are free after a 30-night break-in period, and shipping is free by FedEx. Check the current terms on Bear\'s site before ordering, since they can change between our checks.',
+      a: 'The Bear Original comes with a 365-night trial and a limited lifetime warranty, according to Bear. Returns are free after a 30-night break-in period, and shipping is free by FedEx. Check the current terms on Bear\'s site before ordering, since they can change between our checks.',
     },
     {
       q: 'How tall is the Bear Original?',
@@ -132,7 +132,7 @@ const copy: ReviewCopy = {
       a: 'Both are medium-firm all-foam beds. The [Amerisleep AS2](/reviews/amerisleep-as2/) scores 9.3 Overall with 10s in Response Time, Motion Transfer and Cooling. The Bear Original scores 9.2 with 10s in Value and Edge Support. The AS2 is 12 inches tall, and the Bear is 10.',
     },
   ],
-  verdict: 'The Bear Original earns a 9.2/10 Overall with 10s in Value and Edge Support. Its medium-firm 6.5-7/10 foam suits back and stomach sleepers, and a one-year trial with a lifetime warranty backs the Value score. Motion Transfer is an 8, and light side sleepers may find it firm. For firm foam support with long policy terms, it is a strong pick. Back and stomach sleepers between 130 and 230 lb are the clearest fit.',
+  verdict: 'The Bear Original earns a 9.2/10 Overall with 10s in Value and Edge Support. Its medium-firm 6.5-7/10 foam suits back and stomach sleepers, and a one-year trial with a limited lifetime warranty backs the Value score. Motion Transfer is an 8, and light side sleepers may find it firm. For firm foam support with long policy terms, it is a strong pick. Back and stomach sleepers between 130 and 230 lb are the clearest fit.',
   related: [
     { label: 'Amerisleep AS2 vs Bear Original', href: '/comparison/amerisleep-as2-vs-bear-original/' },
     { label: 'Best Mattress for Stomach Sleepers (2026)', href: '/best/stomach-sleepers/' },

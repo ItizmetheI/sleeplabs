@@ -3,12 +3,12 @@ import type { ReviewCopy } from '../types';
 const copy: ReviewCopy = {
   slug: 'birch-natural',
   dateModified: '2026-10-11',
-  metaDescription: 'Birch Natural review: 9.0/10 Overall, a 10 inch GOLS latex hybrid at medium-firm 6/10 with a 10 in Response Time and a lifetime warranty. Specs and fit.',
+  metaDescription: 'Birch Natural review: 9.0/10 Overall, a 10 inch GOLS latex hybrid at medium-firm 6/10 with a 10 in Response Time and a limited lifetime warranty. Specs and fit.',
   quickAnswer: 'The Birch Natural earns a 9.0/10 Overall as a 10 inch organic latex hybrid at medium-firm 6/10. It suits back and combination sleepers who want natural materials with a buoyant feel. Its main strength is a 10/10 in Response Time. Its main limitation is an 8 in Motion Transfer.',
   strengths: [
     'A 10/10 in Response Time from organic latex over individually wrapped coils.',
     'GOLS-certified organic latex and GREENGUARD Gold certification, per the brand.',
-    'A 365-night trial and a lifetime warranty.',
+    'A 365-night trial and a limited lifetime warranty for the Birch Natural.',
     'A medium-firm 6/10 feel that keeps the hips level for back sleepers.',
   ],
   limitations: [
@@ -29,12 +29,12 @@ const copy: ReviewCopy = {
   ],
   performance: {
     value: [
-      'The Value score is set from price, trial and warranty facts, and the Birch Natural earns a strong 9. A 365-night trial and a lifetime warranty are long terms for any mattress.',
-      'The score stops at 9 because the Value field weighs those terms against the queen price, recorded in the specs table above. Free shipping in the contiguous US and free returns or exchanges round out the package. Shoppers who want organic latex with long coverage will find it well placed.',
-      'Buyers comparing latex hybrids should weigh this field alongside certification depth. Birch names GOLS for its latex, and the lifetime warranty means the coverage outlasts the typical life of a mattress.',
+      'The Value score is set from price, trial and warranty facts, and the Birch Natural earns a strong 9. A 365-night trial and a limited lifetime warranty are long terms for any mattress.',
+      'The score stops at 9 because the Value field weighs those terms against the price. Free shipping in the contiguous US and free returns or exchanges round out the package. Shoppers who want organic latex with long coverage will find it well placed.',
+      'Buyers comparing latex hybrids should weigh this field alongside certification depth. Birch names GOLS for its latex, and the limited lifetime warranty means the coverage outlasts the typical life of a mattress.',
     ],
     edgeSupport: [
-      'Edge Support is a strong 9. Individually wrapped steel coils give the perimeter more structure than a foam or all-latex base.',
+      'Edge Support is a strong 9 for the Birch Natural. Individually wrapped steel coils give the perimeter more structure than a foam or all-latex base.',
       'Birch does not name a separate edge system, so the score reflects the coil core and the latex above it. The latex compresses slightly at the very edge, which keeps it from reaching a 10. For sitting and sleeping near the side, the perimeter holds up well.',
       'Couples who share a queen gain the most from this score. A supported edge keeps the full surface usable, and it helps anyone who sits on the side of the bed to dress each morning.',
     ],
@@ -54,7 +54,7 @@ const copy: ReviewCopy = {
       'This is the field couples on different schedules should weigh most before choosing the Birch. Solo sleepers and couples who sleep soundly will barely notice the difference from a 9.',
     ],
     coolingBreathability: [
-      'Cooling & Breathability is a strong 9. Organic cotton, New Zealand wool and natural latex breathe well, and the coil core leaves room for airflow.',
+      'Cooling & Breathability is a strong 9 for the Birch Natural. Organic cotton, New Zealand wool and natural latex breathe well, and the coil core leaves room for airflow.',
       'The score reflects those materials, not a temperature reading. Wool can help buffer moisture near the surface, which some warm sleepers prefer. It stops at 9 because the base model has no dedicated cooling layer named in the specs.',
       'Warm sleepers who want natural materials will find it comfortable through most of the year. Cotton sheets help keep the cover breathable, while thick synthetic protectors can trap heat at the surface.',
     ],
@@ -64,27 +64,27 @@ const copy: ReviewCopy = {
     side: {
       under130: 'Likely firm at the shoulder. Lighter side sleepers may not sink far enough into the latex for full cushioning, and the hip can feel pressure on a long night.',
       from130to230: 'Workable for side sleepers who like a supportive, buoyant surface rather than deep sink. Those who want plush shoulder cushioning should look at a 4/10 or 5/10 option.',
-      over230: 'A reasonable fit. More body weight presses into the latex for shoulder and hip cushioning, while the coil core keeps the spine level through the night.',
+      over230: 'The Birch Natural is a reasonable fit. More body weight presses into the latex for shoulder and hip cushioning, while the coil core keeps the spine level through the night.',
     },
     back: {
-      under130: 'A good fit. The latex supports the lower back without feeling hard against a lighter frame, and the wool adds a little softness at the surface.',
+      under130: 'The Birch Natural is a good fit. The latex supports the lower back without feeling hard against a lighter frame, and the wool adds a little softness at the surface.',
       from130to230: 'A strong fit and the core audience for this feel. The medium-firm latex keeps the hips level with the shoulders and fills the lumbar curve.',
-      over230: 'A good fit. The coil core and latex hold heavier hips up well, so the lower back stays supported without the sag of a soft foam bed.',
+      over230: 'The Birch Natural is a good fit. The coil core and latex hold heavier hips up well, so the lower back stays supported without the sag of a soft foam bed.',
     },
     stomach: {
-      under130: 'A good fit. The firmer latex keeps the hips from dipping below the shoulders, and a thin pillow keeps the neck in line.',
-      from130to230: 'A good fit. A 6/10 latex surface is a sound floor for stomach sleepers in this range. Latex also pushes back more than foam at the same rating.',
+      under130: 'The Birch Natural is a good fit. The firmer latex keeps the hips from dipping below the shoulders, and a thin pillow keeps the neck in line.',
+      from130to230: 'The Birch Natural is a good fit. A 6/10 latex surface is a sound floor for stomach sleepers in this range. Latex also pushes back more than foam at the same rating.',
       over230: 'Borderline. Heavier stomach sleepers may want a firmer 7/10 option with more lift under the hips, since the latex top still compresses under heavy loads.',
     },
     combination: {
       under130: 'A good fit for back and stomach time. Side time may feel firm at the shoulder, so weigh how much of the night you spend on your side.',
-      from130to230: 'A strong fit. The 10/10 Response Time makes turning over quick, and the medium-firm feel works across back, stomach and most side time.',
+      from130to230: 'The Birch Natural is a strong fit. The 10/10 Response Time makes turning over quick, and the medium-firm feel works across back, stomach and most side time.',
       over230: 'A strong fit for most positions, with fast rebound between them. Latex never holds the body in place the way slow memory foam can.',
     },
   },
   buy: [
     'Back and combination sleepers who want organic latex at medium-firm.',
-    'Shoppers who want a 365-night trial and a lifetime warranty.',
+    'Shoppers who want a 365-night trial and a limited lifetime warranty on the Birch Natural.',
     'Restless sleepers who want a 10/10 Response Time.',
   ],
   skip: [
@@ -94,7 +94,7 @@ const copy: ReviewCopy = {
   ],
   compareIntro: 'The [Amerisleep Organica](/reviews/amerisleep-organica/) has a head-to-head page with the Birch Natural and scores 9.2 as a Talalay latex hybrid. The [Eco Terra Hybrid Latex](/reviews/eco-terra-hybrid-latex/) and [Nolah Natural 11"](/reviews/nolah-natural-11/) both match its 9.0 Overall. All four pair natural latex with a coil core, so the table shows where firmness, trial and warranty differ.',
   policies: [
-    'The Birch Natural has a 365-night trial and a lifetime warranty, according to Birch. Shipping is free in the contiguous US by FedEx Ground, while Alaska, Hawaii and Canada pay shipping.',
+    'The Birch Natural has a 365-night trial and a limited lifetime warranty, according to Birch. Shipping is free in the contiguous US by FedEx Ground, while Alaska, Hawaii and Canada pay shipping.',
     'Birch offers a free return or an exchange within the trial, after a 30-day break-in. Sizes run Twin, Twin XL, Full, Queen, King and Cal King, all 10 inches tall.',
     'The mattress is assembled in Phoenix, Arizona, according to Birch, and the wool comes from New Zealand. Keep the order details on file, since returns and exchanges run through Birch directly. Confirm the current terms on Birch\'s site before ordering, since policies can change between our checks.',
   ],
@@ -117,7 +117,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What trial and warranty come with the Birch Natural?',
-      a: 'The Birch Natural comes with a 365-night trial and a lifetime warranty, according to Birch. After a 30-day break-in, Birch offers a free return or an exchange for a different mattress. Shipping is free in the contiguous US by FedEx Ground. Confirm the current terms on Birch\'s site before buying.',
+      a: 'The Birch Natural comes with a 365-night trial and a limited lifetime warranty, according to Birch. After a 30-day break-in, Birch offers a free return or an exchange for a different mattress. Shipping is free in the contiguous US by FedEx Ground. Confirm the current terms on Birch\'s site before buying.',
     },
     {
       q: 'How tall is the Birch Natural?',
@@ -129,10 +129,10 @@ const copy: ReviewCopy = {
     },
     {
       q: 'Does the Birch Natural sleep hot?',
-      a: 'Heat is not a weak spot. It earns a 9/10 in Cooling & Breathability from organic cotton, New Zealand wool, natural latex and a coil core. It stops short of 10 because no dedicated cooling layer is named in the specs. Cotton or linen sheets suit the natural materials and keep the surface breathable.',
+      a: 'On the Birch Natural, heat is not a weak spot. It earns a 9/10 in Cooling & Breathability from organic cotton, New Zealand wool, natural latex and a coil core. It stops short of 10 because no dedicated cooling layer is named in the specs. Cotton or linen sheets suit the natural materials and keep the surface breathable.',
     },
   ],
-  verdict: 'The Birch Natural earns a 9.0/10 Overall as a 10 inch organic latex hybrid at medium-firm. Its 10/10 Response Time and long terms, a 365-night trial and a lifetime warranty, are its main draws. Motion Transfer lands at 8. Back, stomach and combination sleepers who want natural latex will find it a strong fit, while light side sleepers should look softer. The year-long trial and lifetime warranty back that fit with long coverage.',
+  verdict: 'The Birch Natural earns a 9.0/10 Overall as a 10 inch organic latex hybrid at medium-firm. Its 10/10 Response Time and long terms, a 365-night trial and a limited lifetime warranty, are its main draws. Motion Transfer lands at 8. Back, stomach and combination sleepers who want natural latex will find it a strong fit, while light side sleepers should look softer. The year-long trial and limited lifetime warranty back that fit with long coverage.',
   related: [
     { label: 'Amerisleep Organica vs Birch Natural', href: '/comparison/amerisleep-organica-vs-birch-natural/' },
     { label: 'Best Latex Mattress (2026)', href: '/best/latex/' },

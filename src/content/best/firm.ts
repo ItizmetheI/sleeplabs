@@ -6,10 +6,6 @@ const copy: BestCopy = {
   metaDescription: 'The best firm mattress in 2026: eight picks with a 6/10 or firmer option, ranked by Overall score, led by PlushBeds Signature Bliss in Medium-Firm 8/10.',
   quickAnswer: 'The [PlushBeds Signature Bliss](/reviews/plushbeds-signature-bliss/) is our Best Firm Pick at 9.5/10, with a Medium-Firm version rated 8/10 by PlushBeds. It pairs that firm surface with 10s in Edge Support, Trial Period and Response Time, over 5-zone coils.',
   as3BoxReason: 'It is sold in one medium 5/10 feel, softer than the 6/10 floor this page uses for a firm mattress, so it is not ranked here.',
-  howWePicked: [
-    'A model qualifies when it is sold in at least one option rated 6/10 or firmer on our scale. When two picks tie on Overall, the rule favors the firmer qualifying option, so the firmest versions rise to the top of a tie.',
-    'Firmness numbers come from the brand where it gives one, and from our mapping of the brand\'s word where it does not. Kids models, the [Westin Heavenly Bed](/reviews/westin-heavenly-bed/) and models whose official page could not be reached are left out. One score covers every firmness option a model sells.',
-  ],
   picks: [
     {
       slug: 'plushbeds-signature-bliss',
@@ -18,15 +14,15 @@ const copy: BestCopy = {
         'Firm does not mean hard here. A 3 inch organic Dunlop latex pillow top gives the surface a buoyant top inch or two, then the 5-zone fabric-encased coils take over. The result is a bed that holds the body up rather than letting it sink.',
         'It ties for the highest Edge Support, Trial Period and Response Time scores on this page, each at 10. The quick latex surface suits firm-bed sleepers who still change position through the night.',
         'PlushBeds also sells a Medium 5.5/10 version under the same score, which helps a couple where only one partner wants firm. GOTS and GOLS certifications back the organic cotton, wool and latex.',
-        'The trade is policy length: a 10-year warranty, a fee for returns before 30 days, and one return allowed per household.',
+        'PlushBeds backs it with a 365-night trial and a limited lifetime warranty, prorated after the first 10 years. The trade is a fee for returns before 30 days and one return allowed per household.',
       ],
       strengths: [
         'A Medium-Firm 8/10 option over 5-zone coils.',
-        '10s in Edge Support, Trial Period and Response Time.',
+        '10s in Edge Support, Trial Period and Response Time for the Signature Bliss.',
         'A buoyant latex top rather than a sinking one.',
       ],
       limitations: [
-        'A 10-year warranty.',
+        'Full warranty coverage lasts 10 years, then it is prorated.',
         'A fee applies to returns before 30 days.',
       ],
     },
@@ -34,19 +30,19 @@ const copy: BestCopy = {
       slug: 'nolah-evolution-15',
       why: [
         'The Nolah Evolution 15" earns Tallest Profile, since its 15 inch listing is the tallest height among the eight picks. Its firm option is Firm 7-8/10, which we read as 7/10 under our range rule.',
-        'It ties the first pick at 9.5 Overall and adds 10s in Value, Edge Support and Motion Transfer. No field falls below 9, so a firm-bed shopper gives up nothing on the scorecard to choose it.',
+        'It ties the first pick at 9.5 Overall and adds 10s in Value, Edge Support and Motion Transfer for the Evolution 15". No field falls below 9, so a firm-bed shopper gives up nothing on the scorecard to choose it.',
         'A firm bed with a tall profile has a deep comfort stack above the coils, and that is the case here: six named comfort and cover layers over 8 inch zoned coils. The Firm version puts that depth to work as a cushioned top over strong support.',
         'Shoppers who want a truly hard surface with little give may prefer a thinner firm bed. Those who want firm support with some surface comfort will find the balance here.',
-        'Nolah lists a lifetime warranty and a 120-night trial with a 30-night break-in. Free FedEx shipping is listed, with paid in-home setup available. Plush and Luxury Firm versions are also sold under one score.',
+        'Nolah lists a limited lifetime warranty and a 120-night trial with a 30-night break-in. Free FedEx shipping is listed, with paid in-home setup available. Plush and Luxury Firm versions are also sold under one score.',
       ],
       strengths: [
         'A Firm 7-8/10 option with a deep comfort stack.',
-        '10s in Value, Edge Support and Motion Transfer.',
-        'A lifetime warranty, according to Nolah.',
+        '10s in Value, Edge Support and Motion Transfer for the Evolution 15".',
+        'Nolah lists a limited lifetime warranty for the Evolution 15".',
       ],
       limitations: [
         'The deep stack adds give that some firm-bed shoppers may not want.',
-        'A 120-night trial with a 30-night break-in.',
+        'The Evolution 15" has a 120-night trial with a 30-night break-in.',
       ],
     },
     {
@@ -80,7 +76,7 @@ const copy: BestCopy = {
       strengths: [
         'A Firm 7/10 option with a zoned Euro-top.',
         '10s in Value, Trial Period and Cooling & Breathability.',
-        'A 365-night trial and a lifetime warranty.',
+        'A 365-night trial and a lifetime warranty for the Apex Hybrid.',
       ],
       limitations: [
         'Response Time is an 8.',
@@ -93,13 +89,13 @@ const copy: BestCopy = {
         'The Leesa Sapira Chill Hybrid qualifies through its Firm 7/10 version. With no memory foam named in the stack, it is a lively firm option.',
         'Quilt foam, GreenFlex BioFoam, responsive foam and transition foam sit over 8 inch zoned lumbar springs, with every thickness listed. In the Firm version, the springs and responsive foam push back rather than letting the body settle.',
         'It ties for the highest Edge Support, Response Time and Cooling & Breathability scores here, each at 10. Firm-bed sleepers who get up and down often, or who sit on the edge each morning, benefit from that combination.',
-        'Leesa lists a 365-night trial and a lifetime warranty, with Plush 4/10 and Medium-Firm 6/10 versions under the same score.',
+        'Leesa lists a 365-night trial and a limited lifetime warranty, with Plush 4/10 and Medium-Firm 6/10 versions under the same score.',
         'Value is an 8, its lowest field, and no Split King size is listed. Heavier sleepers who want firm support without a sinking feel will find the springs and responsive foam keep them near the surface. At 14 inches, it may need deep pocket fitted sheets.',
       ],
       strengths: [
         'A Firm 7/10 option with no memory foam named.',
         '10s in Edge Support, Response Time and Cooling & Breathability.',
-        'A 365-night trial and a lifetime warranty.',
+        'A 365-night trial and a limited lifetime warranty.',
       ],
       limitations: [
         'Value is an 8.',
@@ -112,7 +108,7 @@ const copy: BestCopy = {
         'The Nest Bedding Sparrow qualifies through its Firm 7/10 version and ties for the highest Edge Support, Trial Period and Motion Transfer scores on this page, each at 10.',
         'A phase change cover with gel memory foam sits over 3 inches of Energex foam, SmartFlow support foam and 8 inch reinforced edge pocketed coils. The reinforced edge suits firm-bed sleepers who use the full width of the bed.',
         'A firm bed that is also still is useful for couples. The 10 in Motion Transfer means a partner\'s movement is unlikely to be felt, even on a firm surface that might otherwise pass motion along.',
-        'Value is an 8, its lowest field. Nest Bedding lists a 365-night trial and a 20-year warranty on the coil system, and returns are free after a 30-night adjustment period.',
+        'For the Sparrow, Value is an 8, its lowest field. Nest Bedding lists a 365-night trial and a limited lifetime warranty, and returns are free after a 30-night adjustment period.',
         'Plush 4/10 and Medium 5/10 versions are sold too, under the same score. Split Cal King is among its sizes for couples who want separate halves.',
       ],
       strengths: [
@@ -121,7 +117,7 @@ const copy: BestCopy = {
         'A 365-night trial.',
       ],
       limitations: [
-        'The warranty covers the coil system.',
+        'A 30-night adjustment period comes before any return.',
         'Value is an 8.',
       ],
     },
@@ -131,7 +127,7 @@ const copy: BestCopy = {
         'Zoma Hybrid is a firm-leaning bed rather than a hard one. It is sold in one Luxury Firm feel that sits at 6/10 on our scale, the floor of this page\'s rule.',
         'Perforated gel memory foam and Reactiv foam sit over pocketed coils under a breathable mesh cover. For shoppers moving up from a soft bed, 6/10 is a gentle step into firm.',
         'It ties for the highest Value and Edge Support scores on this page, each at 10, and every other field is a 9. That evenness is its main argument. Back sleepers and lighter stomach sleepers get a supportive surface with a little contour at the top, and the 10 in Edge Support keeps the full width usable.',
-        'At 12 inches, it fits standard fitted sheets. Zoma lists a 100-night trial with free returns and pickup, and a 10-year warranty.',
+        'The Zoma Hybrid is 12 inches tall, so it fits standard fitted sheets. Zoma lists a 100-night trial with free returns and pickup, and a 10-year warranty.',
         'Shoppers who want 7/10 or firmer should look at the Firm options above, or at the [Zoma Start](/reviews/zoma-start/), which Zoma rates Firm 7/10.',
       ],
       strengths: [
@@ -141,7 +137,7 @@ const copy: BestCopy = {
       ],
       limitations: [
         'Not firm enough for shoppers who want 7/10 or above.',
-        'A 100-night trial and a 10-year warranty.',
+        'A 100-night trial, with a 10-year warranty on the Zoma Hybrid.',
       ],
     },
     {
@@ -156,7 +152,7 @@ const copy: BestCopy = {
       strengths: [
         'A medium-firm 6/10 feel with a cooling cover.',
         '10s in Value, Trial Period and Cooling & Breathability.',
-        'A 365-night trial and a lifetime warranty.',
+        'The Original Hybrid comes with a 365-night trial and a lifetime warranty.',
       ],
       limitations: [
         'Motion Transfer is an 8.',
@@ -171,6 +167,7 @@ const copy: BestCopy = {
     'Firm beds suit back and stomach sleepers, heavier sleepers who sink through softer layers, and anyone who dislikes the feeling of being held in place. Side sleepers usually find 7/10 or above hard at the shoulder.',
     'Firmness labels vary by brand. One brand\'s medium-firm can be another\'s firm, which is why we show a number for every option. Where a brand gives no number, we map its word to our scale and say so.',
     'If you are moving from a soft bed, give it time. A firm surface can feel unfamiliar for several weeks, which makes trial length worth weighing. Several picks here list 365-night trials. Check the return terms too, since some brands require a minimum number of nights before a return.',
+    'Firm is relative to body weight. A sleeper under 130 lb presses only a short way into a 7/10 surface, so it can feel harder to them than to a heavier sleeper on the same bed. Sleepers over 230 lb sink further, so a firm rating often feels closer to medium-firm for them, which is why coils matter on this page. If you are moving from a soft bed to a firm one, give your body a few weeks to adjust before deciding, and use the trial to compare how your hips and lower back feel in the morning.',
   ],
   faqs: [
     {

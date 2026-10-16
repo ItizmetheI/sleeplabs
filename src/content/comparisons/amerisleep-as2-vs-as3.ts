@@ -72,7 +72,7 @@ const copy: ComparisonCopy = {
     `Both score 9 in Value and 9 in Trial Period. The ${A} and the ${B} share Amerisleep's policies. Our Value and Trial Period scores are set from price, trial and warranty facts.`,
     'Amerisleep lists a 100-night trial and a 20-year warranty for both models, with free shipping via FedEx in the continental US.',
     'The returns wording differs slightly. Amerisleep lists free returns by mail within 100 days for the AS2, and free returns with courier pickup for the AS3.',
-    'Recorded queen prices appear in the table above with the month we checked them. Because Value ties, price and policy alone do not separate these two on our scorecard.',
+    'Because Value ties, price and policy alone do not separate these two on our scorecard.',
     'Both come in seven sizes, from Twin to Split King, so couples who want a Split King can choose either.',
     'Confirm current terms on Amerisleep\'s site before ordering.',
     'Since policies, sizes and materials match, the decision rests on firmness, edge support and response.',

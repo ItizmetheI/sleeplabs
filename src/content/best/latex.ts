@@ -6,10 +6,6 @@ const copy: BestCopy = {
   metaDescription: 'The best latex mattress in 2026: eight picks with latex in the build, ranked by Overall score, led by PlushBeds Signature Bliss with organic Dunlop latex.',
   quickAnswer: 'The [PlushBeds Signature Bliss](/reviews/plushbeds-signature-bliss/) is our Best Latex pick at 9.5/10, with a 3 inch organic Dunlop latex pillow top over 5-zone coils. It ties for the highest Overall score of the eight picks here and scores 10 in Edge Support, Trial Period and Response Time.',
   as3BoxReason: 'It is an all-foam mattress with no latex layer, so it is not part of this latex list.',
-  howWePicked: [
-    'A model qualifies when the brand lists latex in its construction, whether as the whole comfort layer or one layer among foams. Picks are ranked by Overall score, then Value, then the usual tie-breaks. Seven of the eight picks are latex hybrids, with latex over coils.',
-    'Kids models, the [Westin Heavenly Bed](/reviews/westin-heavenly-bed/) and models whose official page could not be reached are left out. One score covers every firmness option a model sells, and organic claims are stated only where the brand lists a GOTS or GOLS certification.',
-  ],
   picks: [
     {
       slug: 'plushbeds-signature-bliss',
@@ -19,16 +15,16 @@ const copy: BestCopy = {
         'It ties for the highest Edge Support, Trial Period and Response Time scores here, each at 10. Latex springs back quickly, and the zoned coils keep the perimeter firm.',
         'PlushBeds rates it Medium 5.5/10 or Medium-Firm 8/10, so side and back sleepers can take Medium while stomach sleepers take Medium-Firm, under one score. GOTS and GOLS certifications back the organic claims.',
         'Shoppers who want a latex bed that feels clearly like latex, springy and lifting rather than sinking, should start here.',
-        'The trade is a 10-year warranty, a fee for returns made before 30 days and one return per household.',
+        'The policies are long, with a 365-night trial and a limited lifetime warranty, though coverage is prorated after year 10. Returns before 30 days carry a fee, and PlushBeds allows one return per household.',
       ],
       strengths: [
         'A 3 inch organic Dunlop latex pillow top over 5-zone coils.',
-        '10s in Edge Support, Trial Period and Response Time.',
+        '10s in Edge Support, Trial Period and Response Time for the Signature Bliss.',
         'GOTS and GOLS certified materials.',
       ],
       limitations: [
-        'A 10-year warranty.',
-        'A fee applies to returns before 30 days.',
+        'Prorated warranty coverage after year 10.',
+        'A fee applies to returns before 30 days on the Signature Bliss.',
       ],
     },
     {
@@ -38,16 +34,16 @@ const copy: BestCopy = {
         'Its 1 inch of Talalay latex sits inside a 6.5 inch comfort stack with a quilted Euro-top, a gel polymer grid, adaptive foam and titanium-infused memory foam, over 8 inch zoned coils. The foams absorb the bounce that latex alone would carry.',
         'It ties the first pick at 9.5 Overall and ties for the highest Edge Support, Trial Period and Response Time scores here. Talalay latex, the lighter and airier of the two common types, keeps the surface quick.',
         'This is the latex pick for couples, and for shoppers who want a little latex spring inside a mostly foam feel rather than an all-latex top.',
-        'FORM lists no firmness rating. The 365-night trial, lifetime warranty and free White Glove delivery with in-home setup give time and help to judge it.',
+        'FORM rates it 4-5/10. The 365-night trial, lifetime warranty and free White Glove delivery with in-home setup give time and help to judge it.',
         'Value is an 8, its lowest field, and no organic certification is listed.',
       ],
       strengths: [
         'The only 10 in Motion Transfer among these picks.',
         'Talalay latex inside a 6.5 inch comfort stack.',
-        'A 365-night trial and a lifetime warranty.',
+        'A 365-night trial and a lifetime warranty for the Prime X.',
       ],
       limitations: [
-        'FORM lists no firmness rating.',
+        'Value is an 8.',
         'Only 1 inch of latex, so the feel is mostly foam.',
       ],
     },
@@ -68,7 +64,7 @@ const copy: BestCopy = {
       ],
       limitations: [
         'A 100-night trial.',
-        'Firm at the shoulder for lighter side sleepers.',
+        'Firm at the shoulder for lighter side sleepers on the Organica.',
       ],
     },
     {
@@ -79,7 +75,7 @@ const copy: BestCopy = {
         'It ties for the highest Trial Period and Response Time scores on this page, each at 10. Its 365-night trial is the longest among these latex picks alongside two others, which helps when choosing between three firmness levels.',
         'Couples with different needs can each pick a version, and Split Cal King is among its sizes.',
         'No organic certification is listed for the cover, so we do not describe it as certified organic. Nest Bedding lists CertiPUR-US for its foams.',
-        'Value is an 8, its lowest field, and the 20-year warranty covers the coil system. Returns are free after a 30-night adjustment period.',
+        'Value is an 8, its lowest field, and Nest Bedding lists a limited lifetime warranty. Returns are free after a 30-night adjustment period.',
       ],
       strengths: [
         'Plush, Medium and Firm versions with 3 inches of Talalay latex.',
@@ -87,7 +83,7 @@ const copy: BestCopy = {
         'Reinforced edge pocketed coils.',
       ],
       limitations: [
-        'The warranty covers the coil system.',
+        'Value is an 8 for the Owl, its lowest field.',
         'No organic certification is listed.',
       ],
     },
@@ -99,7 +95,7 @@ const copy: BestCopy = {
         'Eco Terra sells it in Medium 5/10 and Medium-Firm 6/10. Side sleepers usually fit Medium, while back and stomach sleepers usually fit Medium-Firm.',
         'For shoppers who want certified organic latex and weigh value heavily, it is the clearest pick on this page.',
         'Its policies are the trade. Eco Terra lists a 90-night trial, shorter than the other picks here, and a 15-year warranty. Trial Period is an 8, tied with Edge Support as its lowest fields.',
-        'Return terms are not listed on the product page we recorded, so confirm them before ordering.',
+        'The brand does not publish its return terms, so confirm them before ordering.',
       ],
       strengths: [
         'The only 10 in Value among these picks.',
@@ -117,13 +113,13 @@ const copy: BestCopy = {
         'The Birch Natural is the 10 inch latex hybrid on this page, with GOLS organic latex, New Zealand wool and individually wrapped steel coils under an organic cotton cover.',
         'It is sold in one medium-firm feel, which sits at 6/10 on our scale. Latex at that firmness feels buoyant and supportive, a fit for back sleepers and lighter stomach sleepers.',
         'It ties for the highest Response Time score here at 10 and scores 9.0 Overall. Value, Edge Support, Trial Period and Cooling & Breathability are 9s.',
-        'Birch lists a 365-night trial and a lifetime warranty, tied for the longest trial among these picks. A free return or exchange is available after a 30-day break-in. It lists GOLS and GREENGUARD Gold.',
+        'Birch lists a 365-night trial and a limited lifetime warranty, tied for the longest trial among these picks. A free return or exchange is available after a 30-day break-in. It lists GOLS and GREENGUARD Gold.',
         'Motion Transfer is an 8, its lowest field. Latex is elastic, so light sleepers who share a bed may feel a partner move.',
         'At 10 inches, it fits standard fitted sheets and suits low frames and platform beds.',
       ],
       strengths: [
         'GOLS organic latex and New Zealand wool over wrapped coils.',
-        'A 365-night trial and a lifetime warranty.',
+        'A 365-night trial and a limited lifetime warranty for the Birch Natural.',
         'A 10 in Response Time.',
       ],
       limitations: [
@@ -139,16 +135,16 @@ const copy: BestCopy = {
         'It ties for the highest Response Time score here at 10, and Value, Edge Support, Trial Period and Cooling & Breathability are 9s. It scores 9.0 Overall and follows the [Birch Natural](/reviews/birch-natural/) only on the model name tie-break.',
         'Nolah sells it in one medium-firm feel, which sits at 6/10 on our scale. Nolah lists GOLS for the latex and GREENGUARD Gold, though no GOTS certification is listed for the cover.',
         'Motion Transfer is an 8, its lowest field, so a partner\'s movement is more likely to be felt.',
-        'Nolah lists a 120-night trial with a 30-night break-in and a lifetime warranty. At 11 inches, it fits standard fitted sheets.',
+        'Nolah lists a 120-night trial with a 30-night break-in and a limited lifetime warranty. At 11 inches, it fits standard fitted sheets.',
       ],
       strengths: [
         'Two organic latex layers over zoned coils.',
         'A 10 in Response Time.',
-        'A lifetime warranty, according to Nolah.',
+        'Nolah lists a limited lifetime warranty for the Natural 11".',
       ],
       limitations: [
         'Motion Transfer is an 8.',
-        'A 120-night trial with a 30-night break-in.',
+        'The Natural 11" has a 120-night trial with a 30-night break-in.',
       ],
     },
     {
@@ -159,7 +155,7 @@ const copy: BestCopy = {
         'It ties for the highest Edge Support score here at 10, which is useful on a plush bed, since soft tops often give way at the perimeter. It scores 9.0 Overall, and every other field is a 9 except Value.',
         'Value is an 8, its lowest field, placing it last among the 9.0 picks on the tie order.',
         'Its certifications match the Organica: OEKO-TEX Standard 100, Rainforest Alliance and eco-INSTITUT, with GOTS for the wool listed in Amerisleep\'s FAQ.',
-        'Amerisleep lists a 100-night trial and a 20-year warranty. At 15 inches, it needs deep pocket fitted sheets.',
+        'Amerisleep lists a 100-night trial and a 20-year warranty. The Organica Plush is 15 inches tall, so it needs deep pocket fitted sheets.',
       ],
       strengths: [
         'A 3 inch natural latex box top.',
@@ -168,7 +164,7 @@ const copy: BestCopy = {
       ],
       limitations: [
         'Value is an 8.',
-        'At 15 inches, it needs deep pocket fitted sheets.',
+        'The Organica Plush is 15 inches tall, so it needs deep pocket fitted sheets.',
       ],
     },
   ],
@@ -179,6 +175,7 @@ const copy: BestCopy = {
     'Organic latex is certified separately. GOLS covers latex, and GOTS covers cotton and wool. We only describe a mattress as certified organic when the brand lists one of those certifications.',
     'Latex has one common trade-off: bounce. Because it is elastic, latex can carry a partner\'s movement more than memory foam. Builds that surround latex with foam, or use pocketed coils, reduce that. Check Motion Transfer if you share the bed.',
     'Most latex beds are hybrids, with latex over coils. The amount of latex varies a lot, from 1 inch inside a foam stack to two full latex layers. More latex means a more distinctly latex feel. Fewer layers of foam between you and the latex also means a quicker, springier surface.',
+    'Latex comes in two main types. Dunlop latex is poured and set in one step and tends to feel denser, while Talalay latex is whipped with air before it sets, which gives a lighter, springier feel. Both recover quickly, which shows up in the Response Time scores on this page. Natural latex is tapped from rubber trees, while blended latex mixes in synthetic material, so check which one a brand names. If you are sensitive to latex, look at how the layers are covered and ask the brand before ordering.',
   ],
   faqs: [
     {

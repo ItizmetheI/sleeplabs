@@ -5,10 +5,6 @@ const copy: BestCopy = {
   dateModified: '2026-10-12',
   metaDescription: 'The best memory foam mattress in 2026: eight picks with memory foam in the build, ranked by Overall score, led by the all-foam Amerisleep AS3 at 9.5/10.',
   quickAnswer: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) leads our memory foam picks at 9.5/10, with Bio-Pur memory foam in a medium 5/10 all-foam build. The [Zoma Boost](/reviews/zoma-boost/) earns Best Memory Foam among the hybrids, pairing graphite memory foam with coils and a 10 in Value.',
-  howWePicked: [
-    'A model qualifies when the brand lists memory foam in its construction, whether in an all-foam bed or above a coil core. Picks are ranked by Overall score, then Value, then the usual tie-breaks.',
-    'Kids models, the [Westin Heavenly Bed](/reviews/westin-heavenly-bed/) and models whose official page could not be reached are left out. One score covers every firmness option a model sells, and the table shows each option as the brand lists it.',
-  ],
   picks: [
     {
       slug: 'amerisleep-as3',
@@ -22,7 +18,7 @@ const copy: BestCopy = {
       ],
       strengths: [
         'An all-foam build with Bio-Pur memory foam.',
-        'Ties for a 10 in Edge Support, Motion Transfer and Cooling & Breathability.',
+        'Ties for a 10 in Edge Support, Motion Transfer and Cooling & Breathability on the AS3.',
         'A medium 5/10 feel with close contour.',
       ],
       limitations: [
@@ -38,15 +34,15 @@ const copy: BestCopy = {
         'That is the hybrid answer to memory foam\'s main trade-off. The memory foam contours at the surface, while the Reactiv layer and coils keep the bed from feeling stuck. It ties for the highest Edge Support and Motion Transfer scores here, each at 10.',
         'Zoma rates it medium-firm 5.5/10, a setting that keeps the body from sinking too deep into the foam. It suits back sleepers, many side sleepers and lighter stomach sleepers.',
         'No field falls below 9, and the advanced cooling cover sits behind a strong 9 in Cooling & Breathability.',
-        'Zoma lists a 100-night trial with free returns and a 10-year warranty. At 15 inches, it needs deep pocket fitted sheets.',
+        'For the Zoma Boost, Zoma lists a 100-night trial with free returns and a 10-year warranty. At 15 inches, the Zoma Boost needs deep pocket fitted sheets.',
       ],
       strengths: [
         'Graphite memory foam and gel foam over coils with a dynamic edge.',
-        '10s in Value, Edge Support and Motion Transfer.',
+        '10s in Value, Edge Support and Motion Transfer for the Zoma Boost.',
         'No field below 9.',
       ],
       limitations: [
-        'A 100-night trial and a 10-year warranty.',
+        'A 100-night trial, with a 10-year warranty on the Zoma Boost.',
         'One medium-firm 5.5/10 feel.',
       ],
     },
@@ -57,16 +53,16 @@ const copy: BestCopy = {
         'Its trick is layering. Titanium-infused memory foam sits low in a 6.5 inch comfort stack, under 1 inch of Talalay latex, adaptive foam, a gel polymer grid and a 2 inch quilted Euro-top. The latex sits above the memory foam and pushes back quickly, so the surface does not feel slow.',
         'It ties the first pick at 9.5 Overall and ties for the highest Edge Support, Trial Period and Motion Transfer scores here, each at 10. Below the foams are 8 inch zoned coils.',
         'Shoppers who like the contour of memory foam but dislike feeling stuck in it should look closely. It is the clearest example on this page of memory foam working with faster materials. Side and combination sleepers fit it best.',
-        'FORM lists no firmness rating, so use the 365-night trial to confirm the feel. A lifetime warranty and free White Glove delivery with in-home setup are included.',
+        'FORM rates it 4-5/10, and the 365-night trial leaves time to confirm the feel. A lifetime warranty and free White Glove delivery with in-home setup are included.',
         'Value is an 8, its lowest field, and the 15 inch height needs deep pocket fitted sheets.',
       ],
       strengths: [
         'A 10 in Response Time with memory foam in the stack.',
         'Talalay latex above the memory foam.',
-        'A 365-night trial and a lifetime warranty.',
+        'A 365-night trial and a lifetime warranty for the Prime X.',
       ],
       limitations: [
-        'FORM lists no firmness rating.',
+        'At 15 inches, it needs deep pocket sheets.',
         'Value is an 8.',
       ],
     },
@@ -76,18 +72,18 @@ const copy: BestCopy = {
         'The Zoma Hybrid takes a different approach to memory foam heat: perforation. Its gel memory foam is perforated, with holes through the layer, under a breathable mesh cover.',
         'Below it sit Reactiv foam and pocketed coils, in one Luxury Firm feel that sits at 6/10 on our scale. The firmer setting keeps the body nearer the top of the foam, which helps both cooling and turning. Couples get a 9 in Motion Transfer and a 10 in Edge Support.',
         'It ties for the highest Value and Edge Support scores on this page, each at 10, and every other field is a 9. That puts it first among the five 9.3 picks here on the tie order.',
-        'Back and stomach sleepers who want memory foam contour with firm support underneath fit it well. At 12 inches, it fits standard fitted sheets.',
+        'Back and stomach sleepers who want memory foam contour with firm support underneath fit it well. The Zoma Hybrid stands 12 inches tall and fits standard fitted sheets.',
         'Lighter side sleepers may find 6/10 firm at the shoulder, which is its main fit limit.',
-        'Zoma lists a 100-night trial with free returns and pickup, and a 10-year warranty.',
+        'For the #4 memory foam pick, Zoma lists a 100-night trial with free returns and pickup, and a 10-year warranty.',
       ],
       strengths: [
         'Perforated gel memory foam under a mesh cover.',
-        '10s in Value and Edge Support, with 9s elsewhere.',
+        '10s in Value and Edge Support, with 9s elsewhere for the Zoma Hybrid.',
         'A 12 inch profile that fits standard sheets.',
       ],
       limitations: [
-        'Firm at the shoulder for lighter side sleepers.',
-        'A 100-night trial and a 10-year warranty.',
+        'Firm at the shoulder for lighter side sleepers on the Zoma Hybrid.',
+        'A 100-night trial and a 10-year warranty for the Zoma Hybrid.',
       ],
     },
     {
@@ -98,12 +94,12 @@ const copy: BestCopy = {
         'That stack ties for the highest Cooling & Breathability score on this page at 10, along with 10s in Value and Trial Period. For memory foam shoppers who sleep warm, it names four different foams aimed at cooling in one build.',
         'The Soft version gives the deep, cradling feel memory foam is known for, which suits lighter side sleepers. Firm suits stomach sleepers.',
         'Response Time is an 8, its lowest field. Two memory foam layers recover more slowly, which restless sleepers may notice.',
-        'Glacier lists a 365-night trial and a lifetime warranty, and returns get a full refund after 30 days of use.',
+        'For the Apex Hybrid, Glacier lists a 365-night trial and a lifetime warranty, and returns get a full refund after 30 days of use.',
       ],
       strengths: [
         'Soft, Medium and Firm versions under one score.',
         'Two memory foams with cooling foams over coils.',
-        'A 365-night trial and a lifetime warranty.',
+        'The Apex Hybrid comes with a 365-night trial and a lifetime warranty.',
       ],
       limitations: [
         'Response Time is an 8.',
@@ -116,18 +112,18 @@ const copy: BestCopy = {
         'The Glacier Original Hybrid uses the same graphite and gel memory foams as the Apex, but swaps the Euro-top for a glacierTECH cooling cover against the sheets.',
         'Ventilated gel foam and pocketed coils sit below. It ties for the highest Value, Trial Period and Cooling & Breathability scores on this page, each at 10.',
         'Sold in one medium-firm feel at 6/10 on our scale, it suits back sleepers and lighter stomach sleepers who want memory foam contour without deep sink. Its 9 in Response Time is a step quicker than the Apex.',
-        'Motion Transfer is an 8, its lowest field. It means a partner getting in or out of bed is more likely to be felt.',
+        'The Original Hybrid scores 8 in Motion Transfer, its lowest field. It means a partner getting in or out of bed is more likely to be felt.',
         'Solo sleepers and couples who sleep soundly will notice it least. The cooling cover against the sheets is its clearest difference from the other Glacier picks.',
         'Glacier lists a 365-night trial and a lifetime warranty, and at 12 inches it fits standard fitted sheets.',
       ],
       strengths: [
         'Graphite and gel memory foams under a cooling cover.',
-        '10s in Value, Trial Period and Cooling & Breathability.',
+        'The Original Hybrid scores 10 in Value, Trial Period and Cooling & Breathability.',
         'A medium-firm 6/10 feel.',
       ],
       limitations: [
         'Motion Transfer is an 8.',
-        'Lighter side sleepers may find 6/10 firm.',
+        'Lighter side sleepers may find 6/10 firm on the Original Hybrid.',
       ],
     },
     {
@@ -142,7 +138,7 @@ const copy: BestCopy = {
       ],
       strengths: [
         'A zoned pillow top over memory foams.',
-        '10s in Value, Trial Period and Cooling & Breathability.',
+        'Scores of 10 in Value, Trial Period and Cooling & Breathability on the Summit Hybrid.',
         'A medium 5/10 feel for side sleepers.',
       ],
       limitations: [
@@ -157,12 +153,12 @@ const copy: BestCopy = {
         'It ties for the highest Edge Support and Cooling & Breathability scores on this page, each at 10, and scores 9.3 Overall. The coils add lift and airflow under the same medium 5/10 memory foam feel.',
         'For memory foam shoppers torn between all-foam and a hybrid, the AS3 and AS3 Hybrid make a clean comparison. The all-foam version is quieter, with a 10 in Motion Transfer to the Hybrid\'s 9. The Hybrid adds coil lift.',
         'Side and back sleepers fit it best. Heavier stomach sleepers may want a firmer option. Couples who want the AS3 feel with more lift under the hips should compare the two side by side.',
-        'Amerisleep lists a 100-night trial with courier pickup for returns and a 20-year warranty.',
+        'For the AS3 Hybrid, Amerisleep lists a 100-night trial with courier pickup for returns and a 20-year warranty.',
         'At 12 inches, it fits standard fitted sheets, and it is sold in seven sizes, including Split King.',
       ],
       strengths: [
         'Bio-Pur memory foam over pocketed coils.',
-        '10s in Edge Support and Cooling & Breathability.',
+        '10s in Edge Support and Cooling & Breathability for the AS3 Hybrid.',
         'A medium 5/10 feel for side and back sleepers.',
       ],
       limitations: [
@@ -178,6 +174,7 @@ const copy: BestCopy = {
     'Heat is the other common concern. Dense foam can hold warmth. Brands counter it with gel, graphite or copper infusions, perforated or ventilated foam, cooling covers, and coils under the foam for airflow.',
     'Firmness changes how memory foam behaves. A softer feel lets you sink deeper into the foam, which adds contour and warmth. A medium-firm feel keeps you nearer the top, which adds support and makes turning easier.',
     'Finally, decide between all-foam and hybrid. All-foam memory foam beds are usually the quietest. Hybrids add coils for lift, airflow and a stronger edge. Both are on this page. If you share a bed and sleep lightly, lean toward all-foam. If you run warm or want an easier edge, lean toward a hybrid.',
+    'Memory foam density affects both feel and lifespan. Denser foam usually contours more slowly and holds its shape longer, while lighter foam feels softer at first and can show wear sooner. Many brands now blend memory foam with plant-based oils or add gel, graphite or copper to draw heat away from the surface. If you are new to memory foam, expect a short adjustment period, since the slow sink can feel unfamiliar for a week or two. Rotating the mattress head to foot every few months helps the foam wear evenly.',
   ],
   faqs: [
     {

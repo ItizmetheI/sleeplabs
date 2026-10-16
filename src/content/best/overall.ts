@@ -5,10 +5,6 @@ const copy: BestCopy = {
   dateModified: '2026-10-11',
   metaDescription: 'The best mattress of 2026, ranked: the Amerisleep AS3 leads eight picks scored on one seven-field scorecard, with hybrids, latex and all-foam options.',
   quickAnswer: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) is our Best Overall pick at 9.5/10, one of six models on our scorecard tied at that Overall score. It ties for the highest Edge Support, Motion Transfer and Cooling & Breathability scores among the eight picks here, in a medium all-foam build that suits most sleep positions.',
-  howWePicked: [
-    'Every scored model qualifies for this page, with three exceptions. Kids models and the [Westin Heavenly Bed](/reviews/westin-heavenly-bed/) appear only on their own pages, and models whose official product page could not be reached are left out, since we cannot list their specs.',
-    'Six models tie at 9.5 Overall, so the tie order decides most of the top of this list. Where a model is sold in several firmness options, its one score covers every option. The table above shows each option as the brand lists it.',
-  ],
   picks: [
     {
       slug: 'amerisleep-as3',
@@ -19,7 +15,7 @@ const copy: BestCopy = {
         'It is sold in one medium feel, which sits at 5/10 on our scale. That middle setting suits back, side and combination sleepers across a wide weight range. Heavier stomach sleepers are the main group who should look further down the list, since a medium surface can let the hips settle below the chest.',
       ],
       strengths: [
-        'Ties for a 10 in Edge Support, Motion Transfer and Cooling & Breathability.',
+        'Ties for a 10 in Edge Support, Motion Transfer and Cooling & Breathability on the AS3.',
         'A medium 5/10 feel that suits side, back and combination sleepers.',
         'A 20-year warranty, according to Amerisleep.',
       ],
@@ -42,7 +38,7 @@ const copy: BestCopy = {
         'No field below 9 on our scorecard.',
       ],
       limitations: [
-        'A 100-night trial and a 10-year warranty.',
+        'A 100-night trial and a 10-year warranty for the Zoma Boost.',
         'At 5.5/10, stomach sleepers who need 7/10 or firmer should look elsewhere.',
       ],
     },
@@ -51,13 +47,13 @@ const copy: BestCopy = {
       why: [
         'What sets the Nolah Evolution 15" apart on this list is choice. It is sold in Plush 4-5/10, Luxury Firm 6-7/10 and Firm 7-8/10, so one model can cover a side sleeper, a back sleeper or a stomach sleeper.',
         'It shares the 9.5 Overall with five other models and matches the score above it field for field: 10s in Value, Edge Support and Motion Transfer, and 9s in Trial Period, Response Time and Cooling & Breathability. It ranks third only because the final tie-break, brand and then model name, puts it after the pick above.',
-        'The build stacks six named comfort and cover layers, including a copper foam and a zoned foam, over 8 inch zoned coils. Nolah lists a lifetime warranty and a 120-night trial, which needs a 30-night break-in before a return. Free FedEx shipping and paid in-home setup are also listed.',
+        'The build stacks six named comfort and cover layers, including a copper foam and a zoned foam, over 8 inch zoned coils. Nolah lists a limited lifetime warranty and a 120-night trial, which needs a 30-night break-in before a return. Free FedEx shipping and paid in-home setup are also listed.',
         'For a household where two people want different feels, or a shopper unsure of their firmness, the three versions make this the only 9.5 pick on this page sold in three firmness options.',
       ],
       strengths: [
         'Three firmness options from Plush to Firm.',
-        '10s in Value, Edge Support and Motion Transfer.',
-        'A lifetime warranty, according to Nolah.',
+        '10s in Value, Edge Support and Motion Transfer for the Evolution 15".',
+        'Nolah lists a limited lifetime warranty for the Evolution 15".',
       ],
       limitations: [
         'A 120-night trial with a 30-night break-in before a return.',
@@ -67,18 +63,18 @@ const copy: BestCopy = {
     {
       slug: 'plushbeds-signature-bliss',
       why: [
-        'PlushBeds Signature Bliss earns the Best Latex Hybrid award here because it is the only latex hybrid among the eight picks. It also shares the 9.5 Overall at the top of our scorecard.',
-        'Its build is short and specific: an organic cotton and wool cover, a 3 inch GOLS organic Dunlop latex pillow top, and 5-zone fabric-encased coils. That combination produces 10s in Edge Support, Trial Period and Response Time. The latex gives a quick, buoyant surface rather than the slower contour of memory foam.',
-        'PlushBeds rates it Medium 5.5/10 or Medium-Firm 8/10. Stomach sleepers who want a firm surface with natural materials have a strong option in the Medium-Firm version, while side and back sleepers usually fit Medium. GOTS and GOLS certifications back the organic claims.',
-        'The trade is warranty length. PlushBeds lists a 10-year warranty, and a fee applies to returns made before 30 days, with one return allowed per household. Shoppers who put certified materials first should weigh those terms against the latex feel.',
+        'PlushBeds Signature Bliss earns Best Organic Pick here as the only pick among the eight with GOTS and GOLS certified materials. It also shares the 9.5 Overall at the top of our scorecard.',
+        'Its build is short and specific: an organic cotton and wool cover, a 3 inch GOLS organic Dunlop latex pillow top, and 5-zone fabric-encased coils. That combination produces 10s in Edge Support, Trial Period and Response Time for the Signature Bliss. The latex gives a quick, buoyant surface rather than the slower contour of memory foam.',
+        'For the Signature Bliss, PlushBeds rates it Medium 5.5/10 or Medium-Firm 8/10. Stomach sleepers who want a firm surface with natural materials have a strong option in the Medium-Firm version, while side and back sleepers usually fit Medium. GOTS and GOLS certifications back the organic claims.',
+        'The trade is in the return terms. PlushBeds lists a 365-night trial and a limited lifetime warranty, full for 10 years and prorated after, but a fee applies to returns made before 30 days, with one return allowed per household. Shoppers who put certified materials first should weigh those terms against the latex feel.',
       ],
       strengths: [
         'GOTS and GOLS certified organic materials.',
-        '10s in Edge Support, Trial Period and Response Time.',
+        '10s in Edge Support, Trial Period and Response Time for the Signature Bliss.',
         'A Medium-Firm 8/10 option for stomach sleepers.',
       ],
       limitations: [
-        'A 10-year warranty, and a fee for returns before 30 days.',
+        'A fee for returns before 30 days.',
         'At 14 inches, it needs deep pocket fitted sheets.',
       ],
     },
@@ -87,16 +83,16 @@ const copy: BestCopy = {
       why: [
         'The FORM Core Hybrid scores 10 in four of its six fields: Edge Support, Trial Period, Response Time and Motion Transfer. It shares the 9.5 Overall, and its 8 in Value is what places it fifth on the tie order.',
         'The construction is lean. A 1.5 inch gel polymer grid and 1.5 inches of adaptive foam sit over 8 inches of zoned pocketed coils and a 1 inch base. With only 3 inches of comfort material, the body stays close to the coils, which helps explain the quick surface and firm edge.',
-        'FORM pairs it with a 365-night trial and a lifetime warranty, plus free FedEx Ground shipping. FORM lists no firmness rating, so the year-long trial matters more than usual: it is the window to judge whether the supportive build suits you.',
+        'FORM pairs it with a 365-night trial and a lifetime warranty, plus free FedEx Ground shipping. At 5-6/10, medium to medium-firm, the supportive build suits back, stomach and combination sleepers most.',
         'Restless sleepers and couples who want a fast, quiet surface should look closely at this pick. Lighter side sleepers who want deep cushioning will usually do better with a thicker comfort stack.',
       ],
       strengths: [
-        '10s in Edge Support, Trial Period, Response Time and Motion Transfer.',
-        'A 365-night trial and a lifetime warranty.',
+        '10s in Edge Support, Trial Period, Response Time and Motion Transfer for the Core Hybrid.',
+        'The Core Hybrid comes with a 365-night trial and a lifetime warranty.',
         'Zoned pocketed coils under a thin comfort stack.',
       ],
       limitations: [
-        'FORM lists no firmness rating.',
+        'One 5-6/10 feel only.',
         'Value is an 8, the lowest of its six scored fields.',
       ],
     },
@@ -106,15 +102,15 @@ const copy: BestCopy = {
         'The FORM Prime X matches the scorecard of the pick above, with 10s in Edge Support, Trial Period, Response Time and Motion Transfer. It shares the 9.5 Overall and ranks sixth on the final tie-break, model name.',
         'The difference is underneath. At 15 inches, it stacks a 2 inch quilted Euro-top, a gel polymer grid, 1 inch of Talalay latex and two foam layers over 8 inch zoned coils. That 6.5 inch comfort stack is more than twice the 3 inches in the [FORM Core Hybrid](/reviews/form-core-hybrid/).',
         'Side and combination sleepers who want cushioning without losing a quick surface are the natural fit. The latex keeps the response high even with the extra padding, and the zoned coils hold the waist level. Like the rest of the FORM range, it comes with a 365-night trial, a lifetime warranty and, on this model, free White Glove delivery with in-home setup.',
-        'FORM lists no firmness rating, so confirm the feel during the trial. Stomach sleepers who want a thin comfort layer should look at a firmer pick.',
+        'FORM rates it 4-5/10, so it favors side sleepers. Stomach sleepers who want a thin comfort layer should look at a firmer pick.',
       ],
       strengths: [
         'A 6.5 inch comfort stack with a Euro-top and Talalay latex.',
-        'Free White Glove delivery with in-home setup.',
-        'A 365-night trial and a lifetime warranty.',
+        'Free White Glove delivery with in-home setup on the Prime X.',
+        'A full year to try the Prime X, plus a lifetime warranty.',
       ],
       limitations: [
-        'FORM lists no firmness rating.',
+        'Value is an 8.',
         'Stomach sleepers who want a thin comfort layer should look elsewhere.',
       ],
     },
@@ -123,17 +119,17 @@ const copy: BestCopy = {
       why: [
         'Zoma Hybrid is the higher placed of the two 9.3 picks on this page, ahead of the other on Value. It earns 10s in Value and Edge Support, and 9s in every other field.',
         'That evenness is the case for it. A breathable mesh cover and perforated gel memory foam sit over Reactiv foam and pocketed coils, in one Luxury Firm feel that sits at 6/10 on our scale. Back and stomach sleepers get a supportive surface, and the 10 in Edge Support keeps the full width usable.',
-        'At 12 inches, it fits standard fitted sheets and most frames, which the taller hybrids above do not. Zoma lists a 100-night trial with free returns and pickup, and a 10-year warranty. Lighter side sleepers may find 6/10 firm at the shoulder, which is the main fit limit.',
+        'At 12 inches, it fits standard fitted sheets and most frames, which the taller hybrids above do not. For the Zoma Hybrid, Zoma lists a 100-night trial with free returns and pickup, and a 10-year warranty. Lighter side sleepers may find 6/10 firm at the shoulder, which is the main fit limit.',
         'For shoppers who want a hybrid with no field below 9 and a supportive, even feel, it is a sound choice for back and stomach sleeping.',
       ],
       strengths: [
-        '10s in Value and Edge Support, with 9s elsewhere.',
+        '10s in Value and Edge Support, with 9s elsewhere for the Zoma Hybrid.',
         'A Luxury Firm 6/10 feel for back and stomach sleepers.',
-        'Free returns with pickup within the trial.',
+        'Free returns with pickup within the trial on the Zoma Hybrid.',
       ],
       limitations: [
         'Firm at the shoulder for side sleepers under 130 lb.',
-        'A 100-night trial and a 10-year warranty.',
+        'The Zoma Hybrid comes with a 100-night trial and a 10-year warranty.',
       ],
     },
     {
@@ -147,7 +143,7 @@ const copy: BestCopy = {
       strengths: [
         'A 10 in Cooling & Breathability.',
         'Soft, Medium and Firm options.',
-        'A 365-night trial and a lifetime warranty.',
+        'A 365-night trial and a lifetime warranty for the Apex Hybrid.',
       ],
       limitations: [
         'Response Time is an 8, so the surface is a little slower to recover.',
@@ -160,7 +156,8 @@ const copy: BestCopy = {
     'Start with firmness and sleep position, since that decides fit before any score does. Side sleepers usually do best between 4/10 and 6/10, which lets the shoulder and hip sink in. Back sleepers tend to fit 5/10 to 7/10. Stomach sleepers usually need 6/10 or firmer, and heavier stomach sleepers 7/10 or firmer, so the hips stay level with the chest.',
     'Then match the scorecard to your household. Couples should look at Motion Transfer and Edge Support, since one decides whether a partner wakes you and the other decides how much of the width you can use. Warm sleepers should weigh Cooling & Breathability. Restless sleepers should weigh Response Time.',
     'Construction explains most of those scores. Coils usually lift Edge Support and Response Time, while thick memory foam tends to lift Motion Transfer and slow Response Time. Latex sits in between, quick but slightly bouncy. Height matters too: beds of 14 inches or more often need deep pocket sheets.',
-    'Finally, read the policies. Our Value and Trial Period scores are set from price, trial and warranty facts. A longer trial matters most when a brand lists no firmness rating, or when you are moving from a very different feel. Every model on this page has one score that covers all its firmness options.',
+    'Finally, read the policies. Our Value and Trial Period scores are set from price, trial and warranty facts. A longer trial matters most when you are moving from a very different feel. Every model on this page has one score that covers all its firmness options.',
+    'Size and setup matter as much as the model. Check the height of each pick against your frame and fitted sheets, since several picks here are 14 inches or taller. Couples who want different feels can look at models sold in a split size, and anyone with a slatted base should confirm the slat spacing the brand asks for before ordering. Delivery terms differ too: some brands ship a boxed bed to the door, while others include setup in the room. Reading those details now saves a return later, when moving a heavy mattress back out of the house is the hard part.',
   ],
   faqs: [
     {

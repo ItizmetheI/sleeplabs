@@ -39,12 +39,12 @@ const tiedAt = allMattresses.filter(m => m.id !== AS3_ID && m.scores.overall ===
 const h1 = `The Best Mattress of 2026 Is the Amerisleep AS3, at ${as3Score}/10`;
 const answer = `Our Best Overall pick is the ${link(as3)}, scored ${as3Score}/10 Overall. It pairs a medium 5/10 all-foam feel with 10s in Edge Support, Motion Transfer and Cooling & Breathability. It ties at ${as3Score} with ${tiedAt.length} other models, the ${names(tiedAt.map(link))}, and is our editorial pick listed first.`;
 
-// Top picks: the AS3 as Best Overall, then the top non-AS3 pick (the page's field award) from five category pages.
-const PICK_PAGES = ['hybrid', 'latex', 'soft', 'cooling', 'couples'];
+// Top picks: the AS3 as Best Overall, then the #1 pick from the five category pages the owner names.
+const PICK_PAGES = ['hybrid', 'latex', 'soft', 'firm', 'organic'];
 const picks = PICK_PAGES.map(slug => {
   const config = BEST_PAGE_CONFIGS.find(c => c.slug === slug)!;
-  const pick = rankBestPage(config).picks.find(p => p.candidate.mattress.id !== AS3_ID)!;
-  return { slug, href: `/best/${slug}/`, page: h1For(`/best/${slug}/`), award: pick.award, rank: pick.rank, mattress: pick.candidate.mattress };
+  const pick = rankBestPage(config).picks[0];
+  return { slug, href: `/best/${slug}/`, page: h1For(`/best/${slug}/`), award: pick.award, mattress: pick.candidate.mattress };
 });
 const heroLeaders = [{ id: as3.id, label: 'Best Overall' }, ...picks.slice(0, 2).map(p => ({ id: p.mattress.id, label: p.award }))];
 
@@ -103,7 +103,7 @@ const faqs = [
 const description = `Our Best Overall pick is the Amerisleep AS3 at ${as3Score}/10. See top picks by category and editorial scores for ${allMattresses.length} mattresses on one seven-field scale.`;
 const articleBody = toArticleBody(
   h1, BYLINE_DISCLOSURE, plainInline(answer),
-  'Top Picks', `Best Overall: ${as3.name}, ${as3Score}/10.`, picks.map(p => `${p.award}: ${p.mattress.name}, ${scoreText(p.mattress, 'overall')}/10, ranked #${p.rank} on ${p.page}.`),
+  'Top Picks', `Best Overall: ${as3.name}, ${as3Score}/10.`, picks.map(p => `${p.award}: ${p.mattress.name}, ${scoreText(p.mattress, 'overall')}/10, the top pick on ${p.page}.`),
   "Scores are Mattress Inquirer's editorial ratings on a 0 to 10 scale.",
   articleTable('Scorecard: Top 10', [...teaserHeaders], teaser.map(r => r.cells.slice(0, 8))),
   'Best Mattresses by Category', categories.map(c => c.label),
@@ -204,13 +204,10 @@ const cardCls = 'glass-panel p-6 rounded-lg border border-outline-variant/30 hov
           </div>
           {picks.map(p => (
             <div class={cardCls}>
-              <div class="flex items-center justify-between">
-                <span class="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold">{p.award}</span>
-                <span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded-full">#{p.rank} on its page</span>
-              </div>
+              <span class="text-label-sm font-label-sm uppercase tracking-normal text-secondary font-bold">{p.award}</span>
               <a href={reviewUrl(p.mattress.id)} class="block h-36 bg-white rounded-lg overflow-hidden"><img src={p.mattress.image} alt={p.mattress.name} class="w-full h-full object-contain p-2" loading="lazy" /></a>
               <h3 class="text-headline-md font-headline-md text-primary"><a href={reviewUrl(p.mattress.id)} class="hover:text-secondary transition-colors">{p.mattress.name}</a></h3>
-              <p class="text-body-md text-on-surface-variant">Ranked #{p.rank} on <a href={p.href} class="text-primary underline underline-offset-4">{p.page}</a>.</p>
+              <p class="text-body-md text-on-surface-variant">Top pick on <a href={p.href} class="text-primary underline underline-offset-4">{p.page}</a>.</p>
               <div class="flex items-center justify-between mt-auto pt-3 border-t border-outline-variant/20">
                 <PriceCta mattress={p.mattress} pageUrl={pageUrl} variant="text" />
                 <span class="text-secondary font-bold text-title-md" data-overall>{scoreText(p.mattress, 'overall')}</span>

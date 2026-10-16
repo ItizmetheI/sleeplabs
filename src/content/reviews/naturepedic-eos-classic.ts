@@ -13,10 +13,10 @@ const copy: ReviewCopy = {
   ],
   limitations: [
     'Value is a 6, a real weakness and the lowest of its six scored fields.',
-    'Motion Transfer is an 8, good with a caveat.',
+    'The EOS Classic scores 8 in Motion Transfer, good with a caveat.',
     'A 100-night trial, shorter than the year-long trials many brands we score offer.',
   ],
-  howScored: 'Naturepedic EOS Classic is scored on the same seven fields as every model we cover, from Naturepedic\'s official product page. Our [methodology page](/methodology/) explains how each field is set.',
+  howScored: 'Naturepedic EOS Classic is scored on the same seven fields as every model we cover, from Naturepedic\'s official product page. Our [methodology page](/methodology/) explains how each field is set, for the EOS Classic and every other model we score.',
   layerRoles: [
     'Quilted top of organic cotton, wool and PLA.',
     'Organic latex comfort layer that cushions and adds bounce.',
@@ -30,33 +30,33 @@ const copy: ReviewCopy = {
   performance: {
     value: [
       'Value is a 6, a real weakness and the lowest of the EOS Classic\'s six scored fields. The score is set from price, trial and warranty facts, and it weighs what the mattress delivers against its queen price.',
-      'Naturepedic pairs a 100-night trial with a 25-year warranty, and shipping is free in the continental US, with in-home setup available. Free layer exchanges in the first 100 nights add flexibility. The recorded queen price appears in our specs table with the month we checked it.',
+      'Naturepedic pairs a 100-night trial with a 25-year warranty, and shipping is free in the continental US, with in-home setup available. Free layer exchanges in the first 100 nights add flexibility.',
       'Shoppers who rank value first should compare this field across the latex hybrids we score before deciding. Those who put certified organic materials and firmness choice first may weigh the trade differently.',
     ],
     edgeSupport: [
-      'Edge Support is a strong 9. The 8 inch encased coils give the perimeter structure, and latex holds its shape well under load.',
-      'For sleeping, the surface stays usable close to the side, and sitting on the edge should feel steady for most people. The firmer options will hold the edge a little better than Plush. Couples who share a full or queen gain the most.',
-      'Anyone who sits on the edge to dress each morning should find a 9 dependable. A sturdy frame helps the perimeter hold its shape over time. Solo sleepers who stay near the center will notice the edge least.',
+      'The EOS Classic scores a strong 9 in Edge Support. The 8 inch encased coils give the perimeter structure, and latex holds its shape well under load.',
+      'For sleeping on the EOS Classic, the surface stays usable close to the side, and sitting on the edge should feel steady for most people. The firmer options will hold the edge a little better than Plush. Couples who share a full or queen gain the most.',
+      'On the EOS Classic, anyone who sits on the edge to dress each morning should find a 9 dependable. Over time, a sturdy frame helps the edge of the EOS Classic keep its shape. Solo sleepers who stay near the center will notice the edge least.',
     ],
     trialPeriod: [
-      'Trial Period is a strong 9. Naturepedic offers a 100-night trial, with free returns and free layer exchanges within that window.',
-      'A 9 is strong, though it trails the 365-night trials offered by many brands we score. The layer exchange matters here: if the chosen firmness is not right, the comfort layer can be swapped within the first 100 nights instead of returning the whole mattress.',
+      'Trial Period is a strong 9 for the EOS Classic. Naturepedic offers a 100-night trial, with free returns and free layer exchanges within that window.',
+      'For the EOS Classic, a 9 is strong, though it trails the 365-night trials offered by many brands we score. The layer exchange matters here: if the chosen firmness is not right, the comfort layer can be swapped within the first 100 nights instead of returning the whole mattress.',
       'Shoppers unsure between firmness levels gain the most from this field. Keep the order details on file in case a return or exchange is needed, and confirm the terms on Naturepedic\'s site before ordering.',
     ],
     responseTime: [
-      'Response Time is a strong 9. Latex springs back quickly, and the encased coils add lift under the comfort layer.',
+      'The EOS Classic scores a strong 9 in Response Time. Latex springs back quickly, and the encased coils add lift under the comfort layer.',
       'In practice, the surface recovers soon after you move. The quilt softens the very top a little. Combination sleepers who turn several times a night should find it easy to change position, and the firmer options will feel quicker still.',
-      'Restless sleepers gain the most from this score. Sleepers who want the slow sink of memory foam should know this latex feel is livelier.',
+      'On the EOS Classic, restless sleepers gain the most from this field. Sleepers who want the slow sink of memory foam should know this latex feel is livelier.',
     ],
     motionTransfer: [
-      'Motion Transfer is an 8, good with a caveat. Encased coils move one at a time, but latex is elastic, so some bounce reaches the other side when a partner moves.',
-      'Most couples will sleep through a partner turning over. A partner getting in or out of bed is more likely to be felt than on an all-foam bed. Very light sleepers who wake easily should weigh this field before ordering.',
-      'Couples on different schedules may prefer a bed with a 9 or 10 here. Solo sleepers and couples who sleep soundly will notice it least. A larger size gives each partner more room, which reduces how much motion reaches the other side.',
+      'The EOS Classic scores 8 in Motion Transfer, good with a caveat. Encased coils move one at a time, but latex is elastic, so some bounce reaches the other side when a partner moves.',
+      'On the EOS Classic, most couples will sleep through a partner turning over. A partner getting in or out of bed is more likely to be felt than on an all-foam bed. On the EOS Classic, very light sleepers who wake easily should weigh this field before ordering.',
+      'On the EOS Classic, couples on different schedules may prefer a bed with a 9 or 10 here. On the EOS Classic, solo sleepers and couples who sleep soundly will notice it least. A larger size gives each partner more room, which reduces how much motion reaches the other side.',
     ],
     coolingBreathability: [
-      'Cooling & Breathability is a strong 9. Organic cotton, wool and latex are breathable materials, and the coil core leaves room for air to move through the base.',
-      'The score reflects those materials rather than a temperature reading. It stops at 9 because Naturepedic names no dedicated cooling layer. Wool can help buffer moisture near the surface, which some warm sleepers prefer.',
-      'Warm sleepers who want natural materials will find it comfortable through most of the year. Cotton sheets and a thin protector keep the surface breathable. Synthetic, plastic-backed protectors can trap heat and undercut the natural cover.',
+      'The EOS Classic earns a strong 9 in Cooling & Breathability. Organic cotton, wool and latex are breathable materials, and the coil core leaves room for air to move through the base.',
+      'We set the EOS Classic score from its materials, not from a temperature reading. It stops at 9 because Naturepedic names no dedicated cooling layer. On the EOS Classic, wool can help buffer moisture near the surface, which some warm sleepers prefer.',
+      'On the EOS Classic, warm sleepers who want natural materials will find it comfortable through most of the year. On the EOS Classic, cotton sheets and a thin protector keep the surface breathable. On the EOS Classic, synthetic, plastic-backed protectors can trap heat and undercut the natural cover.',
     ],
   },
   positionsIntro: 'Naturepedic sells the EOS Classic in Plush 3-4/10, Medium 5/10, Cushion-Firm, Firm 7/10 and Extra-Firm 8/10. Naturepedic gives no number for Cushion-Firm, so we do not place it on our scale. We read Plush as 3/10. This guidance names the version that fits each sleep position and body weight.',
@@ -64,15 +64,15 @@ const copy: ReviewCopy = {
     side: {
       under130: 'Plush 3-4/10 is the natural pick. A lighter frame sinks into the latex for full cushioning at the shoulder and hip, while the coils keep the waist level. Medium may feel firm at the shoulder for this group.',
       from130to230: 'Plush or Medium 5/10. Plush cushions the shoulder more, while Medium adds support under the hips for side sleepers who also spend time on the back.',
-      over230: 'Medium 5/10 is the safer pick. Plush can let the hips sink too far at this weight, while Medium keeps the waist level and still cushions the shoulder. The 8 inch coils carry the extra weight.',
+      over230: 'On the EOS Classic, Medium 5/10 is the safer pick. Plush can let the hips sink too far at this weight, while Medium keeps the waist level and still cushions the shoulder. The 8 inch coils carry the extra weight.',
     },
     back: {
       under130: 'Medium 5/10 suits most lighter back sleepers. It supports the lower back with a little contour. Plush can let the hips settle, and Firm may feel hard for a lighter frame.',
-      from130to230: 'Medium 5/10 or Firm 7/10. Medium adds contour at the lower back, while Firm gives more lift for those who like a supportive feel.',
+      from130to230: 'Choose Medium 5/10 or Firm 7/10 on the EOS Classic. Medium adds contour at the lower back, while Firm gives more lift for those who like a supportive feel.',
       over230: 'Firm 7/10 is the safer pick. It keeps the hips level with the shoulders under more weight. Extra-Firm suits heavier back sleepers who like a very firm surface.',
     },
     stomach: {
-      under130: 'Firm 7/10 is the natural pick. It keeps the hips from dipping below the shoulders, and a thin pillow keeps the neck in line. Medium may let the hips settle for this position.',
+      under130: 'Firm 7/10 is the natural pick. The EOS Classic keeps the hips from dipping below the shoulders, and a thin pillow keeps the neck in line. Medium may let the hips settle for this position.',
       from130to230: 'Firm 7/10 or Extra-Firm 8/10. Both keep the hips level with the chest through the night. Pick Extra-Firm if you prefer a very firm feel.',
       over230: 'Extra-Firm 8/10 is the version to consider. Heavier stomach sleepers need a very firm surface to keep the hips level. The coils add lift under the hips through the night.',
     },
@@ -92,10 +92,10 @@ const copy: ReviewCopy = {
     'Light sleepers who share a bed, since Motion Transfer is an 8.',
     'Shoppers who want a year-long trial, since the trial is 100 nights.',
   ],
-  compareIntro: 'The [Naturepedic Concerto Plush](/reviews/naturepedic-concerto-plush/) scores 8.2 as a plush latex hybrid. The [PlushBeds Luxury Bliss](/reviews/plushbeds-luxury-bliss/) scores 8.5 and the [Latex For Less Hybrid Latex Mattress](/reviews/latex-for-less-hybrid-latex-mattress/) scores 8.7. The table lines up their firmness, trial and warranty.',
+  compareIntro: 'The [Naturepedic Concerto Plush](/reviews/naturepedic-concerto-plush/) scores 8.2 as a plush latex hybrid. The [PlushBeds Luxury Bliss](/reviews/plushbeds-luxury-bliss/) scores 8.5 and the [Latex For Less Hybrid Latex Mattress](/reviews/latex-for-less-hybrid-latex-mattress/) scores 8.7. The table lines up their firmness, trial and warranty next to the EOS Classic.',
   policies: [
     'Naturepedic EOS Classic comes with a 100-night trial and a 25-year warranty, according to Naturepedic. Shipping is free in the continental US, and in-home setup is available.',
-    'Returns within 100 nights are free, and layer exchanges are free in the first 100 nights. Sizes run Twin, Twin XL, Full, Queen, King and Cal King.',
+    'Returns within 100 nights are free, and layer exchanges are free in the first 100 nights. The EOS Classic comes in Twin, Twin XL, Full, Queen, King and Cal King.',
     'Naturepedic states it is made in Chagrin Falls, Ohio, from domestic and global materials. Keep the order details on file in case a return or exchange is needed. Confirm the current terms on Naturepedic\'s site before ordering, since policies can change between our checks.',
   ],
   faqs: [
@@ -125,7 +125,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'Does Naturepedic EOS Classic sleep hot?',
-      a: 'It earns a 9/10 in Cooling & Breathability, a strong result. Organic cotton, wool and latex are breathable materials, and the coil core lets air move through the base. Naturepedic names no dedicated cooling layer, which keeps the score at 9. Cotton sheets and a thin protector help warm sleepers.',
+      a: 'Cooling & Breathability is a 9/10 for the EOS Classic, a strong result. Organic cotton, wool and latex are breathable materials, and the coil core lets air move through the base. Naturepedic names no dedicated cooling layer, which keeps the score at 9. Cotton sheets and a thin protector help warm sleepers.',
     },
     {
       q: 'Is the Naturepedic EOS Classic good for side sleepers?',

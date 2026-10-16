@@ -26,7 +26,7 @@ that a reviewed brand participates in Mattress Inquirer's editorial decisions.
 
 ## Product and score sources
 
-- `src/data/mattresses.ts` is the runtime source for the current 59-model,
+- `src/data/mattresses.ts` is the runtime source for the current 55-model,
   24-brand corpus and its seven editorial score fields.
 - Scores are loaded from the owner's master scores file. Overall
   is the average of the six fields, shown to one decimal with `formatOverall`;

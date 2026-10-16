@@ -32,7 +32,7 @@ const copy: ReviewCopy = {
   performance: {
     value: [
       'The Value score is set from price, trial and warranty facts, and the Organica Plush earns an 8, good with a caveat. It carries a 20-year warranty and a 100-night trial, the same terms as the standard Organica.',
-      'The caveat is that the box top adds material without adding policy length, and the brand page shows no queen price for either feel. The standard Organica earns a 9 in Value with the same terms. Shoppers who need the softer feel still get long coverage.',
+      'The standard Organica earns a 9 in Value with the same terms. Shoppers who need the softer feel still get long coverage.',
       'This field matters most for buyers torn between the two Organica feels. If either feel works, the standard version scores one point higher here. If only the plush feel works, the long warranty still makes the Plush a sound choice.',
     ],
     edgeSupport: [
@@ -46,12 +46,12 @@ const copy: ReviewCopy = {
       'Buyers new to latex get the most from a full trial. The buoyant feel of latex can surprise sleepers used to sinking into foam. Give your body several weeks to adjust before judging the final feel.',
     ],
     responseTime: [
-      'Response Time is a strong 9. Talalay latex and coils rebound quickly, though the plush box top lets the body settle deeper than the standard Organica.',
+      'The Organica Plush earns a strong 9 in Response Time. Talalay latex and coils rebound quickly, though the plush box top lets the body settle deeper than the standard Organica.',
       'The standard Organica scores a 10 here because its firmer surface pushes back faster. On the Plush, turning over still feels easy, and the latex never holds the body the way slow memory foam can. Combination sleepers who turn often will find it responsive.',
       'This score matters most to restless sleepers who still want a soft surface. Latex keeps a plush top lively, so changing position does not feel like climbing out of a hollow.',
     ],
     motionTransfer: [
-      'Motion Transfer is a strong 9. Individually pocketed coils move on their own, and the thick latex top absorbs much of the remaining motion.',
+      'Motion Transfer is a strong 9 for the Organica Plush. Individually pocketed coils move on their own, and the thick latex top absorbs much of the remaining motion.',
       'Latex is elastic, so a small amount of bounce still reaches the other side. Most couples will sleep undisturbed through the night. Very light sleepers who wake at small movements may prefer an all-foam bed with a 10 in this field.',
       'Couples on different schedules should weigh this field. A 9 keeps most nights quiet, with a little more bounce than foam. The thick latex top helps soften a partner getting in or out of bed.',
     ],
@@ -65,7 +65,7 @@ const copy: ReviewCopy = {
   positions: {
     side: {
       under130: 'An excellent fit. The latex box top cushions the shoulder and hip without much weight needed to sink in. This is the core audience for the Plush.',
-      from130to230: 'A strong fit. The plush top gives pressure relief at the shoulders while the coils keep the spine level through the night.',
+      from130to230: 'The Organica Plush is a strong fit. The plush top gives pressure relief at the shoulders while the coils keep the spine level through the night.',
       over230: 'A reasonable fit for heavier side sleepers who want plush comfort, with the coils holding the hips up. The 10/10 Edge Support helps at this weight.',
     },
     back: {
@@ -75,8 +75,8 @@ const copy: ReviewCopy = {
     },
     stomach: {
       under130: 'Borderline. Lighter stomach sleepers may be fine, but the hips can dip on a 4/10 surface. A firmer model is the safer choice for regular stomach sleeping.',
-      from130to230: 'Not a good fit. Stomach sleepers here need 6/10 or firmer to keep the spine in line through the night.',
-      over230: 'Not a good fit. This group needs 7/10 or firmer, ideally with coil support under the hips. The Plush is built for the opposite need.',
+      from130to230: 'The Organica Plush is not a good fit. Stomach sleepers here need 6/10 or firmer to keep the spine in line through the night.',
+      over230: 'The Organica Plush is not a good fit. This group needs 7/10 or firmer, ideally with coil support under the hips. The Plush is built for the opposite need.',
     },
     combination: {
       under130: 'A good fit if side and back time make up most of the night. Stomach time should stay brief, since the soft top lets the hips settle.',

@@ -13,7 +13,7 @@ const copy: ReviewCopy = {
   ],
   limitations: [
     'Firm at the shoulder for side sleepers under 130 lb on its 6/10 feel.',
-    'No queen price is shown on the brand page, only a starting price.',
+    'A 100-night trial, shorter than the 365-night trials several brands offer.',
     'Cooling & Breathability and Motion Transfer are 9s rather than 10s.',
   ],
   howScored: 'The Organica is scored on the same seven fields as every model we cover, using Amerisleep\'s official product page. The [methodology](/methodology/) explains each field and the 0 to 10 scale.',
@@ -31,7 +31,7 @@ const copy: ReviewCopy = {
   performance: {
     value: [
       'The Value score is set from price, trial and warranty facts, and the Organica earns a strong 9. A 20-year warranty covers a latex hybrid built with organic cotton, wool and natural latex. The 100-night trial gives a full season to decide.',
-      'The brand page shows only a starting price rather than a queen price, so our specs table lists the queen price as not listed. The score stops at 9 because many brands we score now offer year-long trials. Shoppers who want natural materials with long coverage will find the Organica well placed here.',
+      'The score stops at 9 because many brands we score now offer year-long trials. Shoppers who want natural materials with long coverage will find the Organica well placed here.',
       'Buyers comparing natural latex beds gain the most from this field. Few of them pair a 20-year warranty with a fully published layer stack.',
     ],
     edgeSupport: [
@@ -50,7 +50,7 @@ const copy: ReviewCopy = {
       'This score matters most for restless sleepers and anyone who changes position often. It also makes getting in and out of bed feel easy, since the surface lifts rather than holds.',
     ],
     motionTransfer: [
-      'Motion Transfer is a strong 9. Individually pocketed coils limit how far movement travels, and the latex absorbs much of the rest.',
+      'The Organica earns a strong 9 in Motion Transfer. Individually pocketed coils limit how far movement travels, and the latex absorbs much of the rest.',
       'Latex is more elastic than memory foam, so a little more bounce reaches the other side than on an all-foam bed. Most couples will find it calm enough for undisturbed sleep. Very light sleepers who wake easily may prefer a model with a 10 in this field.',
       'Couples who want quick rebound and reasonable motion control get a good balance here. Those who rank motion control above everything else should compare it with an all-foam option. The table under How It Compares includes one.',
     ],
@@ -69,7 +69,7 @@ const copy: ReviewCopy = {
     },
     back: {
       under130: 'A good fit. The latex supports the lower back without feeling hard against a lighter frame. The soft Talalay layer on top still gives some contour.',
-      from130to230: 'A strong fit. The 6/10 feel keeps the hips level and the lumbar area supported through the night. This is the Organica\'s core audience.',
+      from130to230: 'The Organica is a strong fit. The 6/10 feel keeps the hips level and the lumbar area supported through the night. This is the Organica\'s core audience.',
       over230: 'A good fit. The coil core and latex hold the hips up well for heavier back sleepers. The edge support also helps when getting in and out of bed.',
     },
     stomach: {
@@ -79,7 +79,7 @@ const copy: ReviewCopy = {
     },
     combination: {
       under130: 'A good fit for back and stomach time; side time may feel firm at the shoulder for a lighter frame. Weigh how much of the night is spent on the side.',
-      from130to230: 'A strong fit. The 10/10 Response Time makes turning over quick and easy between positions. The feel works well across back, side and stomach time.',
+      from130to230: 'The Organica is a strong fit. The 10/10 Response Time makes turning over quick and easy between positions. The feel works well across back, side and stomach time.',
       over230: 'A strong fit for most positions, with quick rebound between them and coil support underneath. Latex never holds the body in place the way slow foam can.',
     },
   },
@@ -91,12 +91,12 @@ const copy: ReviewCopy = {
   skip: [
     'Side sleepers under 130 lb who want more cushioning at the shoulder.',
     'Memory foam fans who want a slow, contouring feel.',
-    'Buyers who need a queen price on the brand page before deciding.',
+    'Shoppers who want a full year to decide, since the trial is 100 nights.',
   ],
   compareIntro: 'Each alternative has a head-to-head page with the Organica. The [Amerisleep AS6 Black Series](/reviews/amerisleep-as6/) is a 9.3 memory foam hybrid. The [Birch Natural](/reviews/birch-natural/) is a 9.0 latex hybrid. The [Amerisleep AS3](/reviews/amerisleep-as3/) is the 9.5 all-foam pick. The table compares their firmness, trial and warranty with the Organica.',
   policies: [
     'The Organica comes with a 100-night trial and a 20-year warranty. Amerisleep ships it free by FedEx within the contiguous US, with no-contact delivery.',
-    'The brand lists free returns. Sizes run Twin, Twin XL, Full, Queen, King, Cal King and Split King, all 12 inches tall. Delivery is no-contact, so plan to set the mattress up on the frame yourself.',
+    'The brand lists free returns. Sizes run Twin, Twin XL, Full, Queen, King, Cal King and Split King, all 12 inches tall. Delivery is no-contact, so plan to set the mattress up on the frame yourself, ideally with a second person to help.',
     'Amerisleep names OEKO-TEX Standard 100 for the latex and wool, plus Rainforest Alliance and eco-INSTITUT for the latex. Its FAQ states the wool is GOTS-certified. Check current terms and certificates before buying.',
   ],
   faqs: [

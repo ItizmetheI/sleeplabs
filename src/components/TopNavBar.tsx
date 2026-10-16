@@ -73,7 +73,7 @@ const navItems: NavItem[] = [
           { label: 'Helix Midnight Luxe', href: '/reviews/helix-midnight-luxe/' },
           { label: 'Avocado Green', href: '/reviews/avocado-green/' },
           { label: 'PlushBeds Signature Bliss', href: '/reviews/plushbeds-signature-bliss/' },
-          { label: 'GhostBed Flex', href: '/reviews/ghostbed-flex/' }
+          { label: 'Zoma Boost', href: '/reviews/zoma-boost/' }
         ]
       },
       {
@@ -90,29 +90,12 @@ const navItems: NavItem[] = [
       {
         title: 'Browse the Library',
         items: [
-          { label: 'All 59 Reviews', href: '/reviews/' },
+          { label: 'Full Scorecard', href: '/reviews/' },
           { label: 'Browse 24 Brands', href: '/brands/' },
           { label: 'Ranked Categories', href: '/best/overall/' },
           { label: 'Head-to-Head Comparisons', href: '/comparison/' },
           { label: 'Scoring Methodology', href: '/methodology/' },
           { label: 'Sleep Topics', href: '/topics/' }
-        ]
-      }
-    ]
-  },
-  {
-    label: 'GUIDES',
-    href: '/topics/',
-    columns: [
-      {
-        title: 'Buying Guides',
-        items: [
-          { label: 'First-Time Buyer Guide', href: '/blog/mattress-buying-guide-for-first-time-buyers/' },
-          { label: 'How to Read a Spec Sheet', href: '/blog/how-to-read-a-mattress-spec-sheet/' },
-          { label: 'Firm vs Soft Mattress', href: '/blog/firm-vs-soft-mattress/' },
-          { label: 'Memory Foam vs Latex', href: '/blog/memory-foam-vs-latex-mattress/' },
-          { label: 'Evaluate a Home Trial', href: '/blog/how-to-evaluate-a-mattress-trial-period/' },
-          { label: 'All Topics', href: '/topics/' },
         ]
       }
     ]
@@ -182,13 +165,13 @@ const navItems: NavItem[] = [
           { label: 'AS5 Hybrid vs Leesa Sapira Chill', href: '/comparison/amerisleep-as5-hybrid-vs-leesa-sapira-chill-hybrid/' },
           { label: 'AS6 vs Saatva RX', href: '/comparison/amerisleep-as6-black-series-vs-saatva-rx/' },
           { label: 'AS2 vs Brooklyn Bedding Plank Firm', href: '/comparison/amerisleep-as2-vs-brooklyn-bedding-plank-firm/' },
-          { label: 'All 30 Comparisons', href: '/comparison/' }
+          { label: 'All 28 Comparisons', href: '/comparison/' }
         ]
       },
       {
         title: 'Compare and Verify',
         items: [
-          { label: 'All 59 Reviews', href: '/reviews/' },
+          { label: 'Full Scorecard', href: '/reviews/' },
           { label: 'Browse 24 Brands', href: '/brands/' },
           { label: 'Full Score Field', href: '/best/overall/' },
           { label: 'Scoring Methodology', href: '/methodology/' },

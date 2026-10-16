@@ -14,7 +14,7 @@ import { AS3_ID } from '../../lib/scoreFieldOrder';
 import { as3RankingSentence, bestSeoTitle, getMattress, getSpec, scoreText } from '../../lib/pageData';
 import {
   h1For, renderInline, plainInline, assertAllowedLink, reviewUrl, qualifyingFirmnessText, firmnessShort,
-  heightText, typeText, trialText, warrantyText, queenPriceText, queenPriceLabel,
+  heightText, typeText, trialText, warrantyText, PRICE_LABEL, SEE_PRICE,
   COMFORT_NOT_TREATMENT, PAIN_PAGE_SLUGS,
 } from '../../lib/ownerSite';
 
@@ -51,7 +51,7 @@ copy.related.forEach(link => assertAllowedLink(link.href, `${ctx} related`));
 
 // How We Picked opens with the owner's fixed AS3 sentence and the ranking rule in plain words.
 const as3Sentence = as3RankingSentence(config, result);
-const howWePicked = [as3Sentence, ...copy.howWePicked, ...(isPainPage ? [COMFORT_NOT_TREATMENT] : [])];
+const howWePicked = [as3Sentence, ...(isPainPage ? [COMFORT_NOT_TREATMENT] : [])];
 
 const pickRows = picks.map(p => {
   const m = p.candidate.mattress;
@@ -63,9 +63,9 @@ const pickRows = picks.map(p => {
     ['Height', heightText(spec)],
     ['Trial', trialText(spec)],
     ['Warranty', warrantyText(spec)],
-    ...(showPrice ? [[queenPriceLabel(spec), queenPriceText(spec)] as [string, string]] : []),
+    ...(showPrice ? [[PRICE_LABEL, SEE_PRICE] as [string, string]] : []),
   ];
-  const glanceFirmness = p.candidate.qualifyingFirmness
+  const glanceFirmness = p.candidate.qualifyingFirmness?.label
     ? `${p.candidate.qualifyingFirmness.display}/10, ${p.candidate.qualifyingFirmness.label} option`
     : firmnessShort(spec);
   return { pick: p, m, spec, firmness, glanceFirmness, mini, copy: copy.picks[p.rank - 1] };
@@ -213,7 +213,7 @@ const td = 'px-4 py-3 text-on-surface-variant border-t border-outline-variant/30
             <table class="w-full text-body-md">
               <caption class="sr-only">{r.m.name} specs from the official brand page</caption>
               <tbody>
-                {r.mini.map(([label, value]) => <tr><th scope="row" class={`${th} w-[38%]`}>{label}</th><td class={td}>{value}</td></tr>)}
+                {r.mini.map(([label, value]) => <tr><th scope="row" class={`${th} w-[38%]`}>{label}</th><td class={td}>{value === SEE_PRICE ? <PriceCta mattress={r.m} pageUrl={pageUrl} variant="text" label={SEE_PRICE} /> : value}</td></tr>)}
               </tbody>
             </table>
           </div>

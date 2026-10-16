@@ -16,7 +16,7 @@ const copy: ReviewCopy = {
     'Motion Transfer is a 9, so a partner\'s movement carries a little more than on all-foam.',
     'One firmness only, with no firmer option sold under the same model.',
   ],
-  howScored: 'Mattress Inquirer scores the AS3 Hybrid on the same seven fields used across all 59 models, from Amerisleep\'s published facts. See the [methodology](/methodology/) for what earns each score.',
+  howScored: 'Mattress Inquirer scores the AS3 Hybrid on the same seven fields used across all 55 models, from Amerisleep\'s published facts. See the [methodology](/methodology/) for what earns each score.',
   layerRoles: [
     'Cover fabric that Amerisleep describes as made with a high energy transfer fiber.',
     'Plant-based memory foam comfort layer that contours to the body.',

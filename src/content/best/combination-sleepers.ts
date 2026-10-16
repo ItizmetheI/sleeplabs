@@ -5,10 +5,6 @@ const copy: BestCopy = {
   dateModified: '2026-10-12',
   metaDescription: 'The best mattress for combination sleepers in 2026: eight picks ranked by Overall score, then Response Time, led by the Amerisleep AS3 at 9.5/10.',
   quickAnswer: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) leads our combination sleeper picks at 9.5/10, with a medium 5/10 feel that works on the side, back and stomach for most weights. The [PlushBeds Signature Bliss](/reviews/plushbeds-signature-bliss/) earns Best for Combination Sleepers, pairing a 9.5 Overall with a 10 in Response Time.',
-  howWePicked: [
-    'Every scored model qualifies here, since combination sleepers use every position. What separates the picks is how easily the surface lets you turn, so ties on Overall are broken by Response Time before the usual tie order.',
-    'Kids models, the [Westin Heavenly Bed](/reviews/westin-heavenly-bed/) and models whose official page could not be reached are left out. Where a model is sold in several firmness options, one score covers them all.',
-  ],
   picks: [
     {
       slug: 'amerisleep-as3',
@@ -36,7 +32,7 @@ const copy: BestCopy = {
         'Latex is the reason. A 3 inch organic Dunlop latex pillow top springs back as soon as weight shifts, so rolling from the back to the side takes little effort. The 5-zone fabric-encased coils underneath add lift and keep the hips supported in each position.',
         'PlushBeds rates it Medium 5.5/10 or Medium-Firm 8/10. Most combination sleepers fit Medium, while those who spend most of the night face down can choose Medium-Firm under the same score.',
         'It also ties for the highest Edge Support and Trial Period scores here, each at 10. The materials carry GOTS and GOLS certifications.',
-        'The caveats are policy ones. PlushBeds lists a 10-year warranty, a fee applies to returns before 30 days, and one return is allowed per household.',
+        'Policies run long: a 365-night trial and a limited lifetime warranty, prorated after 10 years. The caveats are a fee for returns before 30 days and one return per household.',
       ],
       strengths: [
         'A springy latex pillow top that makes turning easy.',
@@ -44,7 +40,7 @@ const copy: BestCopy = {
         'Medium 5.5/10 and Medium-Firm 8/10 options.',
       ],
       limitations: [
-        'A 10-year warranty.',
+        'The warranty turns prorated after year 10.',
         'A fee applies to returns before 30 days.',
       ],
     },
@@ -54,7 +50,7 @@ const copy: BestCopy = {
         'The FORM Core Hybrid ties for the highest Response Time score here with a 10, and it pairs that with 10s in Edge Support, Trial Period and Motion Transfer. It shares the 9.5 Overall at the top of the page.',
         'A 1.5 inch gel polymer grid and 1.5 inches of adaptive foam sit over 8 inches of zoned pocketed coils. With only 3 inches of comfort material, the body stays close to the coils, which is why the surface reacts so quickly when a combination sleeper turns.',
         'The zoning helps across positions. FORM designs the coils to give more under the shoulders than under the hips, which suits side time without letting the hips sag during back or stomach time.',
-        'FORM lists no firmness rating, so the thin comfort stack is the best guide: it usually reads as supportive rather than plush. The 365-night trial and lifetime warranty leave time to confirm that.',
+        'At 5-6/10, medium to medium-firm, the thin comfort stack reads as supportive rather than plush, which suits back and stomach time. The 365-night trial and lifetime warranty leave time to confirm the fit.',
         'Value is an 8, its lowest field, which places it behind the first two picks on the tie order. Free FedEx Ground shipping is included, according to FORM.',
       ],
       strengths: [
@@ -63,7 +59,7 @@ const copy: BestCopy = {
         'A 365-night trial and a lifetime warranty.',
       ],
       limitations: [
-        'FORM lists no firmness rating.',
+        'One 5-6/10 feel only.',
         'Lighter side sleepers may find the thin comfort stack firm.',
       ],
     },
@@ -73,7 +69,7 @@ const copy: BestCopy = {
         'The FORM Prime X matches the Core Hybrid score for score, with 10s in Edge Support, Trial Period, Response Time and Motion Transfer, and it shares the 9.5 Overall. The final tie-break, model name, places it just after.',
         'Its build is the opposite of lean. A 2 inch quilted Euro-top, a gel polymer grid, 1 inch of Talalay latex, adaptive foam and memory foam make up 6.5 inches of comfort over 8 inch zoned coils, for a 15 inch mattress.',
         'For combination sleepers who spend more of the night on their side, that depth adds shoulder cushioning. The Talalay latex keeps the surface quick despite the extra padding, which is how it holds its 10 in Response Time.',
-        'FORM lists no firmness rating, so use the 365-night trial to confirm the feel. A lifetime warranty and free White Glove delivery with in-home setup are included, according to FORM.',
+        'FORM rates it 4-5/10, the lowest rating in the FORM lineup, which favors side time over stomach time. A lifetime warranty and free White Glove delivery with in-home setup are included, according to FORM.',
         'Combination sleepers who spend long stretches face down may find the deep stack lets the hips settle, and should compare it with the thinner Core Hybrid above.',
       ],
       strengths: [
@@ -82,7 +78,7 @@ const copy: BestCopy = {
         'Free White Glove delivery with in-home setup.',
       ],
       limitations: [
-        'FORM lists no firmness rating.',
+        'Value is an 8.',
         'The deep stack may be soft for stomach time.',
       ],
     },
@@ -112,12 +108,12 @@ const copy: BestCopy = {
         'For combination sleepers, its main draw is the choice of feel. Nolah sells it in Plush 4-5/10, Luxury Firm 6-7/10 and Firm 7-8/10. A combination sleeper who leans toward the side can take Plush, while one who leans toward the stomach can take Firm, and both carry the same score.',
         'Luxury Firm is the middle path for an even mix of positions. Underneath every version are 8 inch zoned coils and a zoned foam, which put firmer support under the hips.',
         'Response Time is a 9. The foam stack adds a short settle when turning, though the coils lift the body quickly enough for most combination sleepers. Nolah lists its height as 14 or 15 inches, so deep pocket fitted sheets help.',
-        'Nolah lists a lifetime warranty and a 120-night trial with a 30-night break-in before a return.',
+        'Nolah lists a limited lifetime warranty and a 120-night trial with a 30-night break-in before a return.',
       ],
       strengths: [
         'Plush, Luxury Firm and Firm versions under one score.',
         '10s in Value, Edge Support and Motion Transfer.',
-        'A lifetime warranty, according to Nolah.',
+        'A limited lifetime warranty, according to Nolah.',
       ],
       limitations: [
         'A 120-night trial with a 30-night break-in.',
@@ -150,12 +146,12 @@ const copy: BestCopy = {
         'Its comfort stack has no memory foam named: quilt foam, GreenFlex BioFoam, responsive foam and transition foam over 8 inch zoned lumbar springs. That makes the surface lively, so combination sleepers can roll without waiting for foam to recover.',
         'Leesa sells it in Plush 4/10, Medium-Firm 6/10 and Firm 7/10. Medium-Firm is the usual combination sleeper choice, with Plush for those who sleep mostly on the side and Firm for those who sleep mostly face down.',
         'The lumbar zoning puts firmer support under the hips, which helps during back and stomach time. The Ultra Cool cover backs its 10 in cooling.',
-        'Leesa lists a 365-night trial and a lifetime warranty. Value is an 8, its lowest field, and no Split King size is listed.',
+        'Leesa lists a 365-night trial and a limited lifetime warranty. Value is an 8, its lowest field, and no Split King size is listed.',
       ],
       strengths: [
         'A 10 in Response Time with no memory foam named.',
         'Plush, Medium-Firm and Firm options.',
-        'A 365-night trial and a lifetime warranty.',
+        'A 365-night trial and a limited lifetime warranty.',
       ],
       limitations: [
         'Value is an 8.',
@@ -169,6 +165,7 @@ const copy: BestCopy = {
     'Response Time is the field that sets combination sleeping apart. A surface that recovers slowly makes every turn feel like climbing out of a dip. Latex, responsive foam and coils close to the surface recover quickly. Thick memory foam recovers more slowly.',
     'Lean the firmness toward your most common position. If most of your night is spent on your side, a 4/10 or 5/10 option makes sense. If you spend more time face down, 6/10 or 7/10 is safer. Models sold in several firmness options let you make that call within one score.',
     'Edge Support matters more than you might expect, since frequent turning often moves you toward the side of the bed. If you share the bed, Motion Transfer decides whether those turns wake your partner. Cooling & Breathability is worth a look too, since moving between positions often means moving between warmer and cooler parts of the bed.',
+    'Think about the position you wake up in, not only the one you fall asleep in. Many combination sleepers start on the back and end the night on a side, or the reverse, so the mattress needs to suit both. A firmness near the middle of the scale, around 5/10 to 6/10, covers most mixes of positions. If one position takes most of the night, lean the firmness toward it: softer for side time, firmer for stomach time. A long trial gives you weeks of real nights to see whether the surface works in every position you use.',
   ],
   faqs: [
     {
@@ -189,7 +186,7 @@ const copy: BestCopy = {
     },
     {
       q: 'Which combination sleeper mattress has the most firmness choices?',
-      a: 'The [Nolah Evolution 15"](/reviews/nolah-evolution-15/) and the [Leesa Sapira Chill Hybrid](/reviews/leesa-sapira-chill-hybrid/) each sell three firmness options, the most among the picks on this page. Both let you lean toward your most common position under one score. The Nolah adds a lifetime warranty, and the Leesa adds a 365-night trial.',
+      a: 'The [Nolah Evolution 15"](/reviews/nolah-evolution-15/) and the [Leesa Sapira Chill Hybrid](/reviews/leesa-sapira-chill-hybrid/) each sell three firmness options, the most among the picks on this page. Both let you lean toward your most common position under one score. The Nolah adds a limited lifetime warranty, and the Leesa adds a 365-night trial.',
     },
     {
       q: 'Are latex mattresses good for combination sleepers?',

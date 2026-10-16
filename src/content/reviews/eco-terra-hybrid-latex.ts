@@ -16,7 +16,7 @@ const copy: ReviewCopy = {
     'Edge Support is an 8, so the perimeter gives more under a seated load.',
     'Firm at the shoulder for side sleepers under 130 lb on the Medium-Firm option.',
   ],
-  howScored: 'The Eco Terra Hybrid Latex is scored on the same seven fields as every model we cover, from Eco Terra\'s official product page. One score covers both firmness options. See the [methodology](/methodology/) for details.',
+  howScored: 'The Eco Terra Hybrid Latex is scored on the same seven fields as every model we cover, from Eco Terra\'s official product page. On the Hybrid Latex, one score covers both firmness options. See the [methodology](/methodology/) for details.',
   layerRoles: [
     'Organic cotton cover that wraps the mattress.',
     'Organic wool layered under the cover for cushioning and as a natural fire barrier.',
@@ -30,7 +30,7 @@ const copy: ReviewCopy = {
   performance: {
     value: [
       'Value is a standout 10. The score is set from price, trial and warranty facts, and it weighs what the Eco Terra delivers against its queen price.',
-      'The brand page does not tie a price to the queen size, so our specs table lists it as not listed. Organic certifications, a coil core and a 15-year warranty sit behind the 10. Free shipping in the continental US adds to the package.',
+      'The Value score weighs those facts against what the Eco Terra costs. Organic certifications, a coil core and a 15-year warranty sit behind the 10. Free shipping in the continental US adds to the package.',
       'Shoppers who want certified organic latex without stretching their budget gain the most from this field. It is the clearest reason to look at the Eco Terra over other latex hybrids we score. The 10 holds across both firmness options, since the terms do not change between them.',
     ],
     edgeSupport: [
@@ -49,12 +49,12 @@ const copy: ReviewCopy = {
       'Restless sleepers gain the most from this score. It also makes getting in and out of bed feel easy, since the latex lifts the body rather than holding it. Both firmness options share that quick rebound. Sleepers who share the bed with a restless partner will find the surface settles again quickly after each turn.',
     ],
     motionTransfer: [
-      'Motion Transfer is a strong 9. Individually encased coils move on their own, and the latex absorbs much of the motion that reaches the surface.',
+      'The Hybrid Latex scores a strong 9 in Motion Transfer. Individually encased coils move on their own, and the latex absorbs much of the motion that reaches the surface.',
       'Latex is elastic, so a little bounce reaches the other side when a partner moves. Most couples will sleep undisturbed through the night. Very light sleepers who wake easily may prefer an all-foam bed with a 10 in this field.',
       'Couples on different schedules should weigh this score. A 9 keeps most nights quiet while keeping the surface lively for both sleepers. Parents who share the bed with a child or pet will find it settled enough.',
     ],
     coolingBreathability: [
-      'Cooling & Breathability is a strong 9. Organic cotton, organic wool and natural latex breathe well, and the coil core leaves room for air to move.',
+      'The Hybrid Latex earns a strong 9 in Cooling & Breathability. Organic cotton, organic wool and natural latex breathe well, and the coil core leaves room for air to move.',
       'The score reflects those materials rather than a temperature reading. It stops at 9 because Eco Terra names no dedicated cooling cover or cooling layer. Wool can help buffer moisture near the surface, which some warm sleepers prefer.',
       'Warm sleepers who want natural materials will find it comfortable through most of the year. Cotton sheets and a thin protector keep the surface breathable. Synthetic, plastic-backed protectors can trap heat and undercut the natural cover.',
     ],
@@ -92,7 +92,7 @@ const copy: ReviewCopy = {
     'Sleepers who sit on the bed edge often and want a firm perimeter.',
     'Heavier stomach sleepers who need 7/10 or firmer.',
   ],
-  compareIntro: 'No head-to-head pages include the Eco Terra yet, so these are the nearest latex hybrids by Overall. The [Birch Natural](/reviews/birch-natural/), [Nolah Natural 11"](/reviews/nolah-natural-11/) and [Amerisleep Organica Plush](/reviews/amerisleep-organica-plush/) all match its 9.0 Overall. The table lines up their firmness, trial and warranty.',
+  compareIntro: 'No head-to-head pages include the Eco Terra yet, so these are the nearest latex hybrids by Overall. The [Birch Natural](/reviews/birch-natural/), [Nolah Natural 11"](/reviews/nolah-natural-11/) and [Amerisleep Organica Plush](/reviews/amerisleep-organica-plush/) all match its 9.0 Overall. The table lines up their firmness, trial and warranty next to the Hybrid Latex.',
   policies: [
     'The Eco Terra Hybrid Latex comes with a 90-night trial and a 15-year warranty, according to Eco Terra. Shipping is free in the continental US by UPS Ground.',
     'The product page does not list return terms, so we leave them out rather than guess. Sizes run Twin, Twin XL, Full, Queen, King and Cal King, all 11 inches tall.',
@@ -129,7 +129,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'Does the Eco Terra Hybrid Latex sleep hot?',
-      a: 'Heat is not a weak spot. It earns a 9/10 in Cooling & Breathability from organic cotton, wool, natural latex and a coil core. It stops short of 10 because no dedicated cooling layer is named. Breathable cotton sheets suit the natural materials.',
+      a: 'On the Hybrid Latex, heat is not a weak spot. It earns a 9/10 in Cooling & Breathability from organic cotton, wool, natural latex and a coil core. It stops short of 10 because no dedicated cooling layer is named. Breathable cotton sheets suit the natural materials.',
     },
   ],
   verdict: 'The Eco Terra Hybrid Latex earns a 9.0/10 Overall with 10s in Value and Response Time. It pairs GOTS and GOLS certified materials with a choice of Medium or Medium-Firm latex over encased coils. Edge Support and Trial Period land at 8, and return terms are not on the product page. Back and combination sleepers who want organic latex will find it a strong fit.',

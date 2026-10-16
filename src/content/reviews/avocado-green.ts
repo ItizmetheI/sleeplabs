@@ -35,7 +35,7 @@ const copy: ReviewCopy = {
       'Buyers who weigh value above all else should compare this field across the latex hybrids we score. Those who weigh certification depth first will judge the Avocado Green differently, since few fields matter more to them.',
     ],
     edgeSupport: [
-      'Edge Support is a strong 9. A seven-zone core of pocketed steel coils gives the perimeter structure that a foam or all-latex base would not.',
+      'The Avocado Green earns a strong 9 in Edge Support. A seven-zone core of pocketed steel coils gives the perimeter structure that a foam or all-latex base would not.',
       'The score stops short of 10 because the latex comfort layer compresses a little at the very edge. On the Plush option, with 5 inches of latex, that give is more noticeable. Firm buyers will find the edge holds up well for sitting and for sleeping near the side.',
       'Couples who share a queen gain the most from this field. A supported perimeter keeps the full width of the bed usable for both sleepers. It also helps anyone who sits on the edge to dress each morning.',
     ],
@@ -45,12 +45,12 @@ const copy: ReviewCopy = {
       'First-time latex buyers benefit most from a long trial. The buoyant feel of latex can take a few weeks to get used to. With three firmness options, the first choice may also need a second look.',
     ],
     responseTime: [
-      'Response Time is a strong 9. Dunlop latex springs back quickly, and the pocketed coils add lift underneath the comfort layer.',
+      'Response Time is a strong 9 for the Avocado Green. Dunlop latex springs back quickly, and the pocketed coils add lift underneath the comfort layer.',
       'On the Firm option, the body rests higher on the latex, which makes turning over easy. On the Plush option, the deeper latex lets the body settle more before it pushes back. Combination sleepers should lean toward Medium or Firm for the quickest feel. Dunlop latex is denser than some other latex types, which adds to the supportive feel.',
       'Restless sleepers and anyone who changes position often will notice this score most. Latex never holds the body the way slow memory foam can, so getting out of bed also feels easy.',
     ],
     motionTransfer: [
-      'Motion Transfer is a strong 9. Pocketed coils move on their own, and the latex layer absorbs much of the motion that reaches the surface.',
+      'The Avocado Green scores a strong 9 in Motion Transfer. Pocketed coils move on their own, and the latex layer absorbs much of the motion that reaches the surface.',
       'Latex is more elastic than memory foam, so a little more bounce reaches the other side. Most couples will still sleep undisturbed. Very light sleepers who wake easily may prefer an all-foam bed with a 10 in this field. The Firm option, with less latex on top, carries a little more bounce than the Plush.',
       'Couples on different schedules should weigh this score. A 9 keeps most nights quiet with a lively surface, which suits partners who both move during the night.',
     ],

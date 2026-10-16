@@ -93,7 +93,7 @@ const manifest = await get(siteUrl + '/model-coverage.json');
 record('model-manifest-200', manifest.status === 200, `model-coverage.json returned ${manifest.status}`);
 let modelCount = 0;
 try { const j = JSON.parse(manifest.body); modelCount = (j.models ?? j.data ?? j).length ?? 0; } catch { /* reported below */ }
-record('model-manifest-59', modelCount === 59, `expected 59 models in manifest, found ${modelCount}`);
+record('model-manifest-55', modelCount === 55, `expected 55 models in manifest, found ${modelCount}`);
 const llms = await get(siteUrl + '/llms.txt');
 record('llms-txt-200', llms.status === 200, `llms.txt returned ${llms.status}`);
 record('llms-txt-origin', !llms.body.includes('workers.dev') || siteUrl.includes('workers.dev'),

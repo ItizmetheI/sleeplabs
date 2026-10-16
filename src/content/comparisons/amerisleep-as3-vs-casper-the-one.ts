@@ -15,10 +15,10 @@ const copy: ComparisonCopy = {
     'Lighter side sleepers may find The One firm at the shoulder. Heavier stomach sleepers may find the AS3 soft at the hips. Back sleepers of most weights can fit either, with the AS3 adding a little more contour and The One a little more lift. Combination sleepers who move between positions will usually find the medium AS3 the easier middle ground, while those who spend most nights on the back or stomach may lean toward The One.',
   ],
   construction: [
-    `The ${A} is a 12 inch all-foam mattress with four named parts: a Refresh cover, Bio-Pur memory foam, a HIVE transition layer and a Bio-Core base foam. Amerisleep does not list layer thicknesses.`,
+    `The ${A} is a 12 inch all-foam mattress with four named parts: a Refresh cover, Bio-Pur memory foam, a HIVE transition layer and a Bio-Core base foam. Amerisleep does not list layer thicknesses for the AS3.`,
     `The ${B} is an 11 inch all-foam mattress with four named parts: a Cozy knit cover, Breathe Flex foam, an Align+ memory foam layer and a high-density Casper Core base. Casper does not list layer thicknesses either.`,
     'The two builds follow the same pattern, a cover, comfort foams and a dense base, with no coils. The main structural difference is the order of the comfort layers. The AS3 leads with memory foam, while The One leads with a breathable foam above its memory foam.',
-    'Amerisleep lists CertiPUR-US certification and states the AS3 is made in the USA from U.S. and imported components, with covers sewn in Canada. Casper names no certifications on the product page we recorded, and states The One is designed and assembled in the USA.',
+    'Amerisleep lists CertiPUR-US certification and states the AS3 is made in the USA from U.S. and imported components, with covers sewn in Canada. Casper names no certifications for The One and states it is designed and assembled in the USA.',
     'Neither has a coil core, which explains why both score so well on motion and why edge support depends entirely on the foam. At 11 and 12 inches, both fit standard fitted sheets and sit well on most frames, foundations and platform beds without extra height.',
   ],
   edgeSupport: [
@@ -40,7 +40,7 @@ const copy: ComparisonCopy = {
     'Neither has a coil core to move air, so both rely on their covers and foams. The AS3 reaches the top band in this field despite being all foam. The One uses Breathe Flex foam near the top, which Casper describes as breathable, but its score lands two points lower.',
     'The firmness difference plays a small part in the other direction. A firmer surface keeps the body nearer the top of the foam, which can help with warmth, and The One is the firmer of the two. Even so, the AS3 holds the higher score.',
     'Warm sleepers should lean toward the AS3. Very warm sleepers on The One may notice heat building on summer nights.',
-    'On either bed, breathable sheets and a thin protector help keep the surface comfortable. Heavy, plastic-backed protectors can trap heat at the surface. Cotton or linen sheets suit both builds better than heavy synthetic bedding, and keeping the bedroom well ventilated helps any foam mattress.',
+    'On either bed, breathable sheets and a thin protector help keep the surface comfortable. Skip heavy, plastic-backed protectors on the AS3 or the Casper The One, since they can trap heat at the surface. Cotton or linen sheets suit both builds better than heavy synthetic bedding, and keeping the bedroom well ventilated helps any foam mattress.',
   ],
   response: [
     `The ${A} scores 9 in Response Time, a strong result. The ${B} scores 7, an average result.`,
@@ -50,11 +50,11 @@ const copy: ComparisonCopy = {
     'Restless sleepers and combination sleepers should favor the AS3 on this field. Sleepers who like the held-in feel of slow memory foam may not mind The One\'s pace. Heavier sleepers press further into foam, so the gap between a 9 and a 7 can feel larger for them when turning.',
   ],
   valuePolicies: [
-    `The ${A} scores 9 in Value and 9 in Trial Period. The ${B} scores 8 in Value and 9 in Trial Period. Our Value and Trial Period scores are set from price, trial and warranty facts.`,
+    `The ${A} scores 9 in Value and 9 in Trial Period. The ${B} scores 8 in Value and 9 in Trial Period. For the AS3 and the Casper The One, our Value and Trial Period scores are set from price, trial and warranty facts.`,
     'Both list a 100-night trial. Amerisleep lists free returns with courier pickup. Casper lists free returns once a 30-night adjustment period has passed, and notes that some states add a recycling fee to mattress orders.',
     'The warranties differ more. Amerisleep lists a 20-year warranty for the AS3. Casper lists a 10-year warranty for The One. Warranty length is one of the facts our Value score weighs.',
-    'Shipping is free for both. Amerisleep ships via FedEx in the continental US, and Casper lists free no-contact delivery, with extra fees for Alaska and Hawaii. Both come in seven sizes, from Twin to Split King.',
-    'Recorded queen prices appear in the table above with the month we checked them. Confirm current terms on each brand\'s site before ordering. If you are unsure between the two, the shared 100-night trial gives the same window to decide either way.',
+    'Shipping is free for both. Amerisleep ships via FedEx in the continental US, and Casper lists free no-contact delivery, with extra fees for Alaska and Hawaii. The AS3 and the Casper The One both come in seven sizes, from Twin to Split King.',
+    'Confirm current terms for the AS3 and the Casper The One on each brand\'s site before ordering. If you are unsure between the two, the shared 100-night trial gives the same window to decide either way.',
   ],
   buyA: [
     'Couples who want a 10 in both Motion Transfer and Edge Support.',
@@ -76,19 +76,19 @@ const copy: ComparisonCopy = {
       a: 'Casper The One is firmer. Casper calls it medium-firm, which we map to 6/10, while the Amerisleep AS3 is medium at 5/10. The one-point gap means The One keeps the body nearer the surface, and the AS3 lets the shoulder and hip settle a little further.',
     },
     {
-      q: 'Which is better for couples?',
+      q: 'Which is better for couples, the AS3 or the Casper The One?',
       a: 'Both score 10 in Motion Transfer, so a partner\'s movement is unlikely to be felt on either. The Amerisleep AS3 adds a 10 in Edge Support, against 7 for Casper The One, so couples who use the full width of a full or queen will get more usable surface from the AS3.',
     },
     {
-      q: 'Which sleeps cooler?',
+      q: 'Which sleeps cooler, the AS3 or the Casper The One?',
       a: 'The Amerisleep AS3 scores 10 in Cooling & Breathability, and Casper The One scores 8. Neither has a coil core, so both rely on their covers and foams. Warm sleepers should lean toward the AS3, and pair either bed with breathable sheets.',
     },
     {
       q: 'Which has the better warranty?',
-      a: 'Amerisleep lists a 20-year warranty for the AS3, and Casper lists a 10-year warranty for The One. Both list a 100-night trial, with Casper requiring a 30-night adjustment period before free returns. Confirm current terms on each brand\'s site before ordering.',
+      a: 'Amerisleep lists a 20-year warranty for the AS3, and Casper lists a 10-year warranty for The One. Both list a 100-night trial, with Casper requiring a 30-night adjustment period before free returns. Confirm current terms for the AS3 and the Casper The One on each brand\'s site before ordering.',
     },
     {
-      q: 'Which is better for side sleepers?',
+      q: 'Which is better for side sleepers, the AS3 or the Casper The One?',
       a: 'The Amerisleep AS3 suits most side sleepers better. Its medium 5/10 feel lets the shoulder and hip settle, while Casper The One, at medium-firm 6/10, can feel firm at the shoulder for lighter side sleepers. Heavier side sleepers may do well on either, since they press further into the foam.',
     },
   ],

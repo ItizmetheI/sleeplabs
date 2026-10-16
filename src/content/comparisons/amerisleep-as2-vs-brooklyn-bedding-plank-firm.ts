@@ -9,7 +9,7 @@ const copy: ComparisonCopy = {
   metaDescription: 'Amerisleep AS2 vs Brooklyn Bedding Plank Firm: medium-firm memory foam against a very firm foam bed. The AS2 scores 9.3/10 to 8.8/10; the Plank leads on Edge.',
   quickVerdict: `Choose the ${A} if you want a medium-firm 6/10 memory foam bed with 10s in Response Time, Motion Transfer and Cooling & Breathability. Choose the ${B} if you want a very firm surface, in Firm or Extra Firm, with a 10 in Edge Support and a wide range of sizes.`,
   feel: [
-    `Both are firm-leaning all-foam beds, but they sit far apart. The ${A} is sold in medium-firm, which sits at 6/10 on our scale. The ${B} is sold in Firm, listed at 7.5-9, and Extra Firm, listed at 9.5-10.5, all under one score.`,
+    `Both are firm-leaning all-foam beds, but they sit far apart. Against the Plank Firm, the ${A} is sold in medium-firm, which sits at 6/10 on our scale. The ${B} is sold in Firm, listed at 7.5-9, and Extra Firm, listed at 9.5-10.5, all under one score.`,
     'The Plank is built for sleepers who want a surface with very little give. Even its Firm option sits well above the AS2, and its Extra Firm option goes further still.',
     'The AS2 is firm enough to keep the hips level for back and stomach sleepers, while still letting memory foam fill the curve of the lower back.',
     'Heavier stomach sleepers and heavier back sleepers who find most beds too soft are the core audience for the Plank.',
@@ -32,12 +32,12 @@ const copy: ComparisonCopy = {
   edgeSupport: [
     `This is the Plank's field. The ${B} scores 10 in Edge Support. The ${A} scores 8, good with a caveat.`,
     'A very firm foam surface holds its shape at the perimeter, and the Plank\'s 6 inch high-density base backs that up. Sitting on the side to put on shoes should feel steady.',
-    'On the AS2, the edge holds up for sleeping, though the outer few inches give a little more than the center when you sit there.',
-    'Couples on a full or queen, who both sleep near a perimeter, will notice the gap most. On a king, there is more room to stay toward the middle.',
-    'Anyone who sits on the edge each morning to dress should give this field weight. It is the Plank\'s clearest scorecard advantage.',
+    'Against the Plank Firm, on the AS2, the edge holds up for sleeping, though the outer few inches give a little more than the center when you sit there.',
+    'With the AS2 and the Plank Firm, couples on a full or queen, who both sleep near a perimeter, will notice the gap most. On a king, there is more room to stay toward the middle.',
+    'With the AS2 and the Plank Firm, anyone who sits on the edge each morning to dress should give this field weight. It is the Plank\'s clearest scorecard advantage.',
     'Heavier sleepers who sit on the edge often should also lean toward the Plank on this field.',
     'Solo sleepers who stay near the center will notice the difference least.',
-    'A sturdy frame or foundation helps either mattress hold its perimeter shape over time.',
+    'A sturdy frame or foundation helps the AS2 and the Plank Firm hold their perimeter shape over time.',
   ],
   motionTransfer: [
     `The ${A} scores 10 in Motion Transfer. The ${B} scores 8, good with a caveat.`,
@@ -54,7 +54,7 @@ const copy: ComparisonCopy = {
     'Neither has a coil core to move air through the base. The AS2 reaches the top band despite being all foam. The Plank\'s quilted top and foams keep it at a solid 8, and Brooklyn Bedding names no dedicated cooling layer.',
     'A very firm surface keeps the body near the top, which helps the Plank. Even so, warm sleepers should lean toward the AS2.',
     'Very warm sleepers on the Plank may notice some heat building on summer nights, especially under heavy bedding.',
-    'On either bed, breathable cotton or linen sheets and a thin protector help keep the surface in line with its score. Heavy, plastic-backed protectors can trap heat at the surface.',
+    'On either bed, breathable cotton or linen sheets and a thin protector help keep the surface in line with its score. Skip heavy, plastic-backed protectors on the AS2 or the Plank Firm, since they can trap heat at the surface.',
     'Couples who sleep warm should give this field extra weight, since two bodies add warmth to one surface.',
     'Bedroom temperature and bedding also matter, and can narrow the gap between two beds.',
     'This is one of the AS2\'s clearest scorecard advantages over the Plank.',
@@ -71,11 +71,11 @@ const copy: ComparisonCopy = {
     'Heavier stomach sleepers who choose the Plank for its firmness will find it quick to move on as well, since the body barely sinks into its surface.',
   ],
   valuePolicies: [
-    `Both score 9 in Value and 9 in Trial Period. The ${A} and the ${B} reach those scores with different policies. Our Value and Trial Period scores are set from price, trial and warranty facts.`,
+    `Both score 9 in Value and 9 in Trial Period. The ${A} and the ${B} reach those scores with different policies. For the AS2 and the Plank Firm, our Value and Trial Period scores are set from price, trial and warranty facts.`,
     'Brooklyn Bedding lists a 365-night trial and a lifetime warranty for the Plank Firm. Return requests start 30 days after delivery, with one return per customer and clearance items excluded.',
     'Amerisleep lists a 100-night trial with free returns by mail within 100 days, and a 20-year warranty for the AS2.',
     'Shipping is free for both. Brooklyn Bedding ships the Plank as a bed in a box. Amerisleep ships via FedEx in the continental US.',
-    'The Plank\'s queen price was not listed on the page we recorded, so check it with Brooklyn Bedding. Because Value ties, policy alone does not separate these two on our scorecard.',
+    'Because Value ties, policy alone does not separate these two on our scorecard.',
     'Shoppers who want a full year to decide and a lifetime warranty may prefer the Plank, keeping its return conditions in mind.',
     'Confirm current terms on each brand\'s site before ordering.',
     'Shoppers who are unsure whether they want the Plank\'s Firm or Extra Firm feel can use the 365-night trial to judge it at home, keeping in mind that return requests start 30 days after delivery.',
@@ -87,7 +87,7 @@ const copy: ComparisonCopy = {
   ],
   buyB: [
     'Heavier back and stomach sleepers who want a very firm surface.',
-    'Anyone who sits on the edge often and wants a 10 in Edge Support.',
+    'Anyone who sits on the edge often and wants a 10 in Edge Support, which the Plank Firm offers.',
     'Shoppers who need an Olympic Queen, Short King, RV King or other unusual size.',
   ],
   faqs: [

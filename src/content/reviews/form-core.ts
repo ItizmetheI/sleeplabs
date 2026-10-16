@@ -2,9 +2,9 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'form-core',
-  dateModified: '2026-10-11',
+  dateModified: '2026-10-16',
   metaDescription: 'FORM Core review: 9.2/10 Overall, a 10 inch all-foam bed with 10s in Motion Transfer and Trial Period, a 365-night trial and a lifetime warranty.',
-  quickAnswer: 'FORM Core earns a 9.2/10 Overall as a 10 inch all-foam mattress with a gel polymer grid near the surface. It suits couples and back sleepers who want a quiet, supportive foam bed. Its main strengths are 10/10 scores in Motion Transfer and Trial Period. Its main limitation is an 8/10 in Value, and FORM lists no firmness rating.',
+  quickAnswer: 'FORM Core earns a 9.2/10 Overall as a 10 inch all-foam mattress with a gel polymer grid near the surface. At 5-6/10, medium to medium-firm, it suits couples and back sleepers who want a quiet, supportive foam bed. Its main strengths are 10/10 scores in Motion Transfer and Trial Period. Its main limitation is an 8/10 in Value.',
   strengths: [
     'A 10/10 in Motion Transfer, so a partner\'s movement stays on their side.',
     'A 365-night trial with free pickup and no restocking fees.',
@@ -12,11 +12,11 @@ const copy: ReviewCopy = {
     'CertiPUR-US, OEKO-TEX Standard 100 and GREENGUARD Gold certifications.',
   ],
   limitations: [
-    'Value is an 8, good with a caveat, and the queen price is not listed on the product page.',
-    'FORM lists no firmness rating, so the feel has to be judged from the construction.',
+    'An 8/10 in Value, its lowest field.',
+    'One feel only, 5-6/10, with no softer or firmer version.',
     'At 10 inches, it has a thinner comfort stack than the taller FORM hybrids.',
   ],
-  howScored: 'FORM Core is scored on the same seven fields as every model we cover, from FORM\'s official product page. Our [methodology page](/methodology/) explains how each field is set.',
+  howScored: 'FORM Core is scored on the same seven fields as every model we cover, from FORM\'s official product page. Our [methodology page](/methodology/) explains how each field is set, for the FORM Core and every other model we score.',
   layerRoles: [
     'Cover that wraps the mattress.',
     'Gel polymer grid that flexes under the heavier parts of the body.',
@@ -30,7 +30,7 @@ const copy: ReviewCopy = {
   performance: {
     value: [
       'Value is an 8, good with a caveat. The score is set from price, trial and warranty facts, and it weighs what the Core delivers against its cost.',
-      'FORM pairs a 365-night trial with a lifetime warranty, and shipping is free via FedEx Ground. The product page did not list a queen price when we recorded our specs, so our table shows it as not listed. Check the current price on FORM\'s site to judge the trade for yourself.',
+      'FORM pairs a 365-night trial with a lifetime warranty, and shipping is free via FedEx Ground. Check the current price on FORM\'s site to judge the trade for yourself.',
       'Shoppers who weigh long policies heavily will find a lot to like in the terms. Those who rank cost first should compare this field across the all-foam beds we score before deciding. The three certifications also add to what the price covers.',
     ],
     edgeSupport: [
@@ -40,45 +40,45 @@ const copy: ReviewCopy = {
     ],
     trialPeriod: [
       'Trial Period is a standout 10. FORM offers a 365-night trial, a full year to decide.',
-      'Returns within the trial include free pickup and a full refund, with no restocking fees, according to FORM. A full year gives time to judge the foam through every season and to adjust to a new feel. That matters more here because FORM gives no firmness rating to set expectations.',
-      'First-time buyers of an online mattress gain the most from this field. Keep the order details on file in case a return is needed. Confirm the current terms on FORM\'s site before ordering, since policies can change between our checks.',
+      'Returns within the trial include free pickup and a full refund, with no restocking fees, according to FORM. A full year gives time to judge the foam through every season and to adjust to a new feel. That is enough time to judge whether the 5-6/10 feel suits you.',
+      'First-time buyers of an online mattress gain the most from this field. Keep the order details for the FORM Core on file in case a return is needed. Confirm the current terms on FORM\'s site before ordering, since policies can change between our checks.',
     ],
     responseTime: [
-      'Response Time is a strong 9. The gel polymer grid at the top springs back as soon as weight lifts, which gives the surface more bounce than a memory foam top layer.',
+      'The FORM Core scores a strong 9 in Response Time. The gel polymer grid at the top springs back as soon as weight lifts, which gives the surface more bounce than a memory foam top layer.',
       'The ContourFlex foam below adapts to the body, so there is a slight settling feel under the grid. Combination sleepers who turn a few times a night should find it easy to change position. The thin comfort stack also keeps the body near the surface.',
       'Restless sleepers gain the most from this score. Sleepers who want the slow, deep sink of a thick memory foam layer should know the Core feels livelier than that. It suits people who move between the back and side through the night.',
     ],
     motionTransfer: [
-      'Motion Transfer is a standout 10. All-foam beds absorb movement well because there are no springs to carry motion across the surface.',
-      'A 10 here means a partner getting in or out of bed is unlikely to disturb the other side. Light sleepers who share a bed get the most from this field. Pets that jump on and off the bed are also less likely to wake the other sleeper.',
+      'The FORM Core earns a standout 10 in Motion Transfer. All-foam beds absorb movement well because there are no springs to carry motion across the surface.',
+      'A 10 here means a partner getting in or out of the FORM Core is unlikely to disturb the other side. Light sleepers who share a bed get the most from this field. Pets that jump on and off the bed are also less likely to wake the other sleeper.',
       'Couples on different schedules should give this score heavy weight. It ties with the Core\'s Trial Period as its top result, and it is the clearest reason to choose an all-foam build over a coil bed.',
     ],
     coolingBreathability: [
-      'Cooling & Breathability is a strong 9. FORM places a gel polymer grid directly under the AeroWeave cover, which keeps a solid sheet of foam away from the surface.',
-      'The score reflects that construction rather than a temperature reading. It stops at 9 because there is no coil core to move air through the base, as there is on the FORM hybrids. Most sleepers should find it comfortable through the year.',
+      'Cooling & Breathability is a strong 9 for the FORM Core. FORM places a gel polymer grid directly under the AeroWeave cover, which keeps a solid sheet of foam away from the surface.',
+      'The score for the FORM Core reflects that construction rather than a temperature reading. It stops at 9 because there is no coil core to move air through the base, as there is on the FORM hybrids. Most sleepers should find it comfortable through the year.',
       'Very warm sleepers should pair it with breathable sheets and a thin protector. Heavy, plastic-backed protectors can trap heat and cover the grid at the surface.',
     ],
   },
-  positionsIntro: 'FORM does not list a firmness for the Core, so this guidance comes from the construction: 3.5 inches of comfort material over a 6 inch high-density base, with no coils. A thin comfort stack over a thick base usually reads as supportive rather than plush. Confirm the feel on FORM\'s site, and use the 365-night trial if it does not suit you.',
+  positionsIntro: 'The Core sits at 5-6/10, medium to medium-firm, with 3.5 inches of comfort material over a 6 inch high-density base and no coils. That middle feel over a thick base reads as supportive rather than plush, so the guidance below favors back sleepers and couples.',
   positions: {
     side: {
-      under130: 'Uncertain fit. Lighter side sleepers may not press far enough into a 3.5 inch comfort stack for full cushioning at the shoulder and hip. Those who want deep contour should look at a model with a firmness rating that says medium or softer.',
+      under130: 'Uncertain fit. Lighter side sleepers may not press far enough into a 3.5 inch comfort stack for full cushioning at the shoulder and hip. Those who want deep contour should look at a model sold at 4/10 or softer.',
       from130to230: 'Workable for side sleepers who like a supportive surface. The grid and adaptive foam give some contour at the shoulder, while the thick base keeps the hips from sinking. Side sleepers who also spend time on the back will find it easier.',
-      over230: 'A reasonable fit. More weight presses the shoulder and hip through the grid into the adaptive foam, and the 6 inch base holds the rest of the body level. Heavier side sleepers who want more lift may prefer a coil hybrid.',
+      over230: 'The FORM Core is a reasonable fit. More weight presses the shoulder and hip through the grid into the adaptive foam, and the 6 inch base holds the rest of the body level. Heavier side sleepers who want more lift may prefer a coil hybrid.',
     },
     back: {
-      under130: 'A good fit. The thick base keeps a lighter frame from sinking, and the grid adds a little give at the surface without letting the hips drop.',
+      under130: 'The FORM Core is a good fit. The thick base keeps a lighter frame from sinking, and the grid adds a little give at the surface without letting the hips drop.',
       from130to230: 'A strong fit and a core audience for this build. The supportive base keeps the hips level with the shoulders, and the adaptive foam fills the lower back curve.',
       over230: 'A good fit for most of this group. Some heavier back sleepers may prefer the added push of a coil core, which FORM offers in the [FORM Core Hybrid](/reviews/form-core-hybrid/).',
     },
     stomach: {
-      under130: 'A good fit. The thin comfort stack keeps the hips close to the surface, and a thin pillow keeps the neck in line.',
+      under130: 'The FORM Core is a good fit. The thin comfort stack keeps the hips close to the surface, and a thin pillow keeps the neck in line.',
       from130to230: 'Likely a good fit. A supportive foam base suits most stomach sleepers in this range, as long as the hips stay level with the chest.',
       over230: 'Borderline. Heavier stomach sleepers often do better with coils under the hips. All-foam builds can compress more than this group needs over time.',
     },
     combination: {
-      under130: 'A reasonable fit for back and stomach time. Side time may feel firm at the shoulder for a lighter frame, so weigh how much of the night is spent there.',
-      from130to230: 'A good fit. The 9/10 Response Time makes turning easy, and the supportive base suits back and stomach time. Side time gets moderate contour from the grid.',
+      under130: 'The FORM Core is a reasonable fit for back and stomach time. On the FORM Core, side time may feel firm at the shoulder for a lighter frame, so weigh how much of the night is spent there.',
+      from130to230: 'The FORM Core is a good fit. The 9/10 Response Time makes turning easy, and the supportive base suits back and stomach time. Side time gets moderate contour from the grid.',
       over230: 'Workable. Heavier combination sleepers who move often may prefer the added lift of a coil hybrid between positions.',
     },
   },
@@ -88,20 +88,20 @@ const copy: ReviewCopy = {
     'Back and stomach sleepers who want a supportive all-foam bed.',
   ],
   skip: [
-    'Shoppers who want a firmness rating before buying, since FORM lists none.',
+    'Shoppers who want a choice of firmness, since it comes in one 5-6/10 feel.',
     'Lighter side sleepers who want a deep, plush comfort layer.',
     'Heavier stomach sleepers who want coils under the hips.',
   ],
-  compareIntro: 'The [Bear Original](/reviews/bear-original/) also scores 9.2 as an all-foam bed. The [Amerisleep AS2](/reviews/amerisleep-as2/) scores 9.3 and the [Amerisleep AS5](/reviews/amerisleep-as5/) scores 9.0, both all-foam. The table lines up their firmness, trial and warranty.',
+  compareIntro: 'The [Bear Original](/reviews/bear-original/) also scores 9.2 as an all-foam bed. The [Amerisleep AS2](/reviews/amerisleep-as2/) scores 9.3 and the [Amerisleep AS5](/reviews/amerisleep-as5/) scores 9.0, both all-foam. The table below sets their firmness, trial and warranty beside the FORM Core.',
   policies: [
     'FORM Core comes with a 365-night trial and a lifetime warranty, according to FORM. Shipping is free via FedEx Ground.',
-    'Returns within the trial include free pickup and a full refund, with no restocking fees. Sizes run Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
+    'Returns within the trial include free pickup and a full refund, with no restocking fees. The FORM Core comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
     'FORM states the mattress is made in the USA. Keep the order details on file in case a return is needed during the trial. Confirm the current terms on FORM\'s site before ordering, since policies can change between our checks.',
   ],
   faqs: [
     {
       q: 'How firm is the FORM Core?',
-      a: 'FORM does not list a firmness rating for the Core, so our specs table shows it as not listed. The construction puts 3.5 inches of comfort material over a 6 inch high-density base, which usually reads as supportive rather than plush. Check FORM\'s site for its description, and use the 365-night trial if the feel does not suit you.',
+      a: 'The FORM Core sits at 5-6/10, medium to medium-firm. Its 3.5 inches of comfort material over a 6 inch high-density base feel supportive rather than plush, and the 365-night trial leaves time to judge it. Side sleepers under 130 lb may find it firm at the shoulder.',
     },
     {
       q: 'What is the FORM Core score?',
@@ -129,10 +129,10 @@ const copy: ReviewCopy = {
     },
     {
       q: 'Is the FORM Core good for side sleepers?',
-      a: 'It suits average and heavier side sleepers better than lighter ones. FORM lists no firmness, and the 3.5 inch comfort stack over a 6 inch base usually reads as supportive. Lighter side sleepers may not sink far enough for full shoulder cushioning. Those who want deep contour should look at a model rated medium or softer, and use the 365-night trial if needed.',
+      a: 'It suits average and heavier side sleepers better than lighter ones. At 5-6/10, with a 3.5 inch comfort stack over a 6 inch base, it reads as supportive. Lighter side sleepers may not sink far enough for full shoulder cushioning. Those who want deep contour should look at a model sold at 4/10 or softer.',
     },
   ],
-  verdict: 'FORM Core earns a 9.2/10 Overall, led by 10/10 scores in Motion Transfer and Trial Period. Its gel polymer grid and thick foam base suit couples and back sleepers who want a quiet, supportive bed. Value is an 8, and FORM lists no firmness rating, so the 365-night trial carries extra weight. Shoppers who want coils under the foam should look at the [FORM Core Hybrid](/reviews/form-core-hybrid/).',
+  verdict: 'FORM Core earns a 9.2/10 Overall, led by 10/10 scores in Motion Transfer and Trial Period. Its gel polymer grid and thick foam base suit couples and back sleepers who want a quiet, supportive bed. Value is an 8, and the 5-6/10 feel is the only one sold. Shoppers who want coils under the foam should look at the [FORM Core Hybrid](/reviews/form-core-hybrid/).',
   related: [
     { label: 'FORM Mattress Reviews (2026)', href: '/brands/form/' },
     { label: 'Best Memory Foam Mattress (2026)', href: '/best/memory-foam/' },

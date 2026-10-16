@@ -1,3 +1,5 @@
+import { PAGE_MAP } from '../data/pageMap.generated';
+
 export const LEGACY_BEST_BLOG_REDIRECTS: Record<string, string> = {
   '/blog/best-mattress-for-back-sleepers/': '/best/back-sleepers/',
   '/blog/best-mattress-for-back-pain/': '/best/back-pain/',
@@ -61,6 +63,10 @@ export const LEGACY_BEST_BLOG_REDIRECTS: Record<string, string> = {
   '/blog/how-alcohol-affects-sleep-quality/': '/blog/',
   '/blog/what-causes-night-sweats-during-sleep/': '/best/cooling/',
   '/blog/how-stress-physically-affects-sleep/': '/blog/',
+  // Owner page map: every cut /blog/ row 301s to the target in its notes.
+  ...Object.fromEntries(PAGE_MAP
+    .filter(row => row.pageType === 'cut' && row.url.startsWith('/blog/'))
+    .flatMap(row => { const to = row.notes.match(/301 to (\/\S*)/)?.[1]; return to ? [[row.url, to]] : []; })),
 };
 
 export const getLegacyBestBlogRedirect = (slug: string): string | undefined =>

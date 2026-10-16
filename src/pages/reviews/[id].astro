@@ -13,7 +13,7 @@ import { FIELD_LABEL, SIX_FIELDS } from '../../lib/ranking';
 import { alternativesFor, getSpec, reviewSeoTitle, reviewSpecRows, scoreText } from '../../lib/pageData';
 import {
   h1For, renderInline, plainInline, assertAllowedLink, reviewUrl,
-  firmnessText, firmnessShort, heightText, typeText, trialText, warrantyText, queenPriceText,
+  firmnessText, firmnessShort, heightText, typeText, trialText, warrantyText, SEE_PRICE,
   listOrNotListed, plainOrNotListed,
 } from '../../lib/ownerSite';
 
@@ -184,7 +184,7 @@ const td = 'px-4 py-3 text-on-surface-variant border-t border-outline-variant/30
             <caption class="sr-only">{mattress.name} specs from the official brand page</caption>
             <tbody>
               {specRows.map(([label, value]) => (
-                <tr><th scope="row" class={`${th} w-[38%]`}>{label}</th><td class={td}>{value}</td></tr>
+                <tr><th scope="row" class={`${th} w-[38%]`}>{label}</th><td class={td}>{value === SEE_PRICE ? <PriceCta mattress={mattress} pageUrl={pageUrl} variant="text" label={SEE_PRICE} /> : value}</td></tr>
               ))}
             </tbody>
           </table>

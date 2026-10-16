@@ -6,7 +6,7 @@ const copy: BrandCopy = {
   metaDescription: 'Casper mattress reviews: 2 models scored on one seven-field scale, the Dream Hybrid and The One. The Dream Hybrid leads the lineup at 8.7/10 Overall.',
   summary: [
     `Casper makes all-foam and hybrid mattresses. The [Casper Dream Hybrid](/reviews/casper-dream-hybrid/) is a 12 inch hybrid at medium 5/10, with Breathe Flex foam and Zoned Support Align memory foam over Flex pocketed coils, Casper Core Edge foam and a high-density base. [Casper The One](/reviews/casper-the-one/) is an 11 inch all-foam bed at medium-firm 6/10.`,
-    `Casper lists a 100-night trial and a 10-year warranty for both, with free returns after a 30-night adjustment period. Delivery is free and no-contact, with extra fees for Alaska and Hawaii, and some states add a recycling fee. Casper names no certifications on the product pages we recorded, and states both are designed and assembled in the USA.`,
+    `Casper lists a 100-night trial and a 10-year warranty for both, with free returns after a 30-night adjustment period. Delivery is free and no-contact, with extra fees for Alaska and Hawaii, and some states add a recycling fee. Casper names no certifications for either model, and states both are designed and assembled in the USA.`,
   ],
   topModel: [
     `The Dream Hybrid scores 9 in Trial Period, Response Time, Motion Transfer and Cooling & Breathability, and 8 in Value and Edge Support. Its zoned memory foam is aimed at the hips and lower back, which suits back and combination sleepers at medium 5/10.`,

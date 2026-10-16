@@ -19,7 +19,7 @@ const copy: ComparisonCopy = {
     'Couples with one side sleeper and one back sleeper will usually find the AS3 the better middle ground, since it gives the side sleeper room at the shoulder without letting the back sleeper\'s hips sink too far.',
   ],
   construction: [
-    `The ${A} has four named parts: a Refresh cover, Bio-Pur memory foam, a HIVE transition layer and a Bio-Core base foam. Amerisleep does not list layer thicknesses.`,
+    `The ${A} has four named parts: a Refresh cover, Bio-Pur memory foam, a HIVE transition layer and a Bio-Core base foam. Layer thicknesses for the AS3 are not listed by Amerisleep.`,
     `The ${B} has five named parts. It adds an Active Flex foam layer between the Bio-Pur memory foam and the HIVE transition layer, over the same Bio-Core base foam. Thicknesses are not listed.`,
     'That extra comfort layer is the main structural difference, and the AS5 stands two inches taller.',
     'Both are all foam with no coils, so edge support and motion control depend entirely on the foams.',
@@ -37,7 +37,7 @@ const copy: ComparisonCopy = {
     'Because they tie, edge support is not a reason to choose one over the other. The differences lie in firmness, motion and response.',
     'It is a notable result for the AS5, since soft beds often trade edge strength for cushioning, and it means side sleepers do not have to give up a firm perimeter to get a soft surface.',
     'Side sleepers who curl up near the edge of the bed will find that position works on either model.',
-    'A sturdy frame or foundation helps either mattress hold its perimeter shape over time.',
+    'Either the AS3 or the AS5 keeps its edge longer on a sturdy frame or foundation.',
     'Solo sleepers who stay near the center will notice edge support least, so they can weigh firmness and response more heavily.',
   ],
   motionTransfer: [
@@ -55,7 +55,7 @@ const copy: ComparisonCopy = {
     'Both reach the top band despite being all foam, with no coil core. They share the Refresh cover and Bio-Pur memory foam.',
     'A soft bed usually lets the body sink deeper, which can hold more warmth. The AS5 still matches the AS3\'s score in this field.',
     'For warm sleepers, cooling is not a reason to choose one over the other.',
-    'On either bed, breathable cotton or linen sheets and a thin protector help keep the surface in line with its score. Heavy, plastic-backed protectors can trap heat at the surface.',
+    'On the AS3 or the AS5, breathable cotton or linen sheets and a thin protector help keep the surface in line with its score. Heavy, plastic-backed protectors can trap heat at the surface of the AS3 and the AS5.',
     'Couples who sleep warm can choose between these two on firmness alone.',
     'Bedroom temperature and bedding usually matter more than any difference between two beds that share a cooling score.',
     'Warm sleepers who need a soft bed for side sleeping can take the AS5 without giving up anything on cooling.',
@@ -72,10 +72,10 @@ const copy: ComparisonCopy = {
     'Sleepers who often get up at night may also find the AS3\'s firmer surface easier to leave and return to.',
   ],
   valuePolicies: [
-    `The ${A} scores 9 in Value and 9 in Trial Period. The ${B} scores 8 in Value and 9 in Trial Period. Our Value and Trial Period scores are set from price, trial and warranty facts.`,
+    `The ${A} scores 9 in Value and 9 in Trial Period. The ${B} scores 8 in Value and 9 in Trial Period. Our Value and Trial Period scores for the AS3 and the AS5 come from price, trial and warranty facts.`,
     'Amerisleep lists a 100-night trial and a 20-year warranty for both models, with free shipping via FedEx in the continental US.',
     'The returns wording differs slightly. Amerisleep lists free returns with courier pickup for the AS3, and free returns by mail within 100 days, with courier pickup, for the AS5.',
-    'Value weighs policies against price, and the AS3 scores a point higher in that field. Recorded queen prices appear in the table above with the month we checked them.',
+    'Value weighs policies against price, and the AS3 scores a point higher in that field.',
     'Both come in seven sizes, from Twin to Split King.',
     'Couples who want separate halves can choose a Split King on either model, so sizing does not separate them.',
     'Confirm current terms on Amerisleep\'s site before ordering.',
@@ -84,7 +84,7 @@ const copy: ComparisonCopy = {
   ],
   buyA: [
     'Side, back and combination sleepers who want a medium 5/10 surface.',
-    'Couples who want a 10 in Motion Transfer.',
+    'Couples who want a 10 in Motion Transfer, which the AS3 offers.',
     'Restless sleepers who want a 9 in Response Time.',
   ],
   buyB: [
@@ -99,7 +99,7 @@ const copy: ComparisonCopy = {
     },
     {
       q: 'How much softer is the AS5 than the AS3?',
-      a: `Two steps on our scale. The Amerisleep AS5 is soft, 3/10, and the Amerisleep AS3 is medium, 5/10. The AS5 adds an Active Flex foam layer and stands 14 inches tall, against 12 for the AS3. Neither is sold in another firmness.`,
+      a: `Two steps on our scale. The Amerisleep AS5 is soft, 3/10, and the Amerisleep AS3 is medium, 5/10. The AS5 adds an Active Flex foam layer and stands 14 inches tall, against 12 for the AS3. Neither the AS3 nor the AS5 is sold in another firmness.`,
     },
     {
       q: 'Which is better for side sleepers?',
@@ -110,7 +110,7 @@ const copy: ComparisonCopy = {
       a: `Most back sleepers will be better served by the Amerisleep AS3. A soft 3/10 surface like the Amerisleep AS5 can let the hips sink below the chest. Lighter back sleepers who like a plush feel can still try the AS5 during its 100-night trial.`,
     },
     {
-      q: 'Which is better for couples?',
+      q: 'Which is better for couples, the AS3 or the AS5?',
       a: `The Amerisleep AS3 scores 10 in Motion Transfer, against 9 for the Amerisleep AS5. Both score 10 in Edge Support. Couples where both partners sleep on their side and want a soft bed may still prefer the AS5. A king or Split King gives either bed more room between partners.`,
     },
     {

@@ -16,7 +16,7 @@ const copy: ReviewCopy = {
     'Edge Support is a 9 rather than a 10, so the perimeter gives slightly under a seated load.',
     'A 100-night trial, shorter than the year-long trials many brands now offer.',
   ],
-  howScored: 'The AS6 is scored on the same seven fields used for all 59 models, from Amerisleep\'s official product page. One score covers all three firmness options. See the [methodology](/methodology/) for details.',
+  howScored: 'The AS6 is scored on the same seven fields used for all 55 models, from Amerisleep\'s official product page. One score covers all three firmness options. See the [methodology](/methodology/) for details.',
   layerRoles: [
     'Cover with cooling fibers that sits on the sleep surface.',
     'Titanium-infused memory foam that contours to the body.',
@@ -56,7 +56,7 @@ const copy: ReviewCopy = {
       'Couples on different schedules get the most from this score. Early risers can get up without waking a partner on the other side, even on a full-size bed.',
     ],
     coolingBreathability: [
-      'Cooling & Breathability is a standout 10. Amerisleep builds three cooling features into the AS6: a CryoCool cover, ArcticWave cooling bands and a coil core.',
+      'The AS6 Black Series scores a standout 10 in Cooling & Breathability. Amerisleep builds three cooling features into the AS6: a CryoCool cover, ArcticWave cooling bands and a coil core.',
       'The coil core leaves space for air to move beneath the foam. The brand designs the cover and bands to pull heat from the surface. The score reflects that construction rather than a temperature reading, and it applies to all three firmness options.',
       'Hot sleepers who want memory foam contouring are the clearest audience here. A breathable protector keeps the cooling cover working as designed. Thick, plastic-backed protectors can trap heat and undercut all three cooling features.',
     ],
@@ -96,7 +96,7 @@ const copy: ReviewCopy = {
   ],
   compareIntro: 'Each alternative has a head-to-head page with the AS6 Black Series. The [Leesa Sapira Chill Hybrid](/reviews/leesa-sapira-chill-hybrid/) matches its 9.3 Overall with three firmness options of its own. The [Amerisleep Organica](/reviews/amerisleep-organica/) and [Saatva RX](/reviews/saatva-rx/) both score 9.2. The Organica swaps memory foam for natural latex, and the Saatva RX is built for a supportive plush feel.',
   policies: [
-    'The AS6 Black Series has a 100-night trial and a 20-year warranty. Shipping is free within the continental US by FedEx. Those terms apply to all three firmness options, so the choice of feel does not change the coverage.',
+    'The AS6 Black Series has a 100-night trial and a 20-year warranty. On the AS6 Black Series, shipping is free within the continental US by FedEx. Those terms apply to all three firmness options, so the choice of feel does not change the coverage.',
     'Returns are free by mail within 100 nights, according to the brand page. Sizes include Twin, Twin XL, Full, Queen, King, Cal King and Split King, all at 14 inches tall.',
     'Amerisleep states the AS6 is made in the USA. Confirm the current trial, warranty and return terms on the brand\'s site before ordering, since policies can change between our checks.',
   ],

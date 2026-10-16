@@ -16,9 +16,9 @@ const copy: ReviewCopy = {
     'A 120-night trial, shorter than the year-long trials many brands we score offer.',
     'Happsy does not list layer thicknesses, so the comfort stack depth is not listed.',
   ],
-  howScored: 'Happsy is scored on the same seven fields as every model we cover, from Happsy\'s official product page. Our [methodology page](/methodology/) explains how each field is set.',
+  howScored: 'Happsy is scored on the same seven fields as every model we cover, from Happsy\'s official product page. Our [methodology page](/methodology/) explains how each field is set, for the Happsy and every other model we score.',
   layerRoles: [
-    'Organic cotton cover that wraps the mattress.',
+    'On the Happsy, organic cotton cover that wraps the mattress.',
     'Organic wool layer under the cover.',
     'Organic latex comfort layer that cushions and adds bounce.',
     'PLA batting that sits between the latex and the coils.',
@@ -30,32 +30,32 @@ const copy: ReviewCopy = {
   ],
   performance: {
     value: [
-      'Value is an 8, good with a caveat. The score is set from price, trial and warranty facts, and it weighs what Happsy delivers against its cost.',
-      'Happsy pairs a 120-night trial with a 20-year warranty, and shipping is free in the continental US. The product page did not list a queen price when we recorded our specs, so our table shows it as not listed. Check the current price on Happsy\'s site to judge the trade for yourself.',
+      'For the Happsy, Value is an 8, good with a caveat. The score is set from price, trial and warranty facts, and it weighs what Happsy delivers against its cost.',
+      'Happsy pairs a 120-night trial with a 20-year warranty, and shipping is free in the continental US. Check the current price on Happsy\'s site to judge the trade for yourself.',
       'Shoppers who put certified organic materials first will find five certifications behind this score. Those who rank cost or trial length first should compare this field across the latex hybrids we score before deciding. A 20-year warranty also adds to what the price covers.',
     ],
     edgeSupport: [
       'Edge Support is a standout 10, Happsy\'s top score. The pocketed steel coils run to the perimeter, and latex holds its shape well under load.',
-      'For sleeping, the full surface stays usable, so a sleeper can lie near the edge without feeling a roll. Sitting on the side to put on shoes should feel steady in both firmness options. The Plush version will give a little more at the very surface.',
-      'Couples who share a full or queen gain the most from this score, since both sleepers can use the full width. Anyone who sits on the edge each morning should give it weight. A sturdy frame helps the perimeter hold its shape over time.',
+      'For sleeping, the full surface of the Happsy stays usable, so a sleeper can lie near the edge without feeling a roll. Sitting on the side to put on shoes should feel steady in both firmness options. The Plush version will give a little more at the very surface.',
+      'Couples who share a full or queen gain the most from this score, since both sleepers can use the full width. Anyone who sits on the edge each morning should give it weight. Set the Happsy on a sturdy frame to help the perimeter hold its shape.',
     ],
     trialPeriod: [
       'Trial Period is a strong 9. Happsy offers a 120-night trial, with free returns and a full refund within that window.',
-      'A 9 is strong, though it trails the 365-night trials offered by many brands we score. Four months is enough to judge a latex feel across a change of season. Free returns remove the cost of sending it back within the trial.',
-      'First-time latex buyers should weigh this field. The buoyant feel of latex can take a few weeks to settle into, which uses part of the trial. Choosing the right firmness up front makes the 120 nights go further. Keep the order details on file in case a return is needed. Confirm the current terms on Happsy\'s site before ordering.',
+      'For the Happsy, a 9 is strong, though it trails the 365-night trials offered by many brands we score. Four months is enough to judge a latex feel across a change of season. Free returns remove the cost of sending it back within the trial.',
+      'First-time latex buyers should weigh this field. The buoyant feel of latex can take a few weeks to settle into, which uses part of the trial. Choosing the right firmness up front makes the 120 nights go further. Keep the order details for the Happsy on file in case a return is needed. Confirm the current terms on Happsy\'s site before ordering.',
     ],
     responseTime: [
-      'Response Time is an 8, good with a caveat. Latex springs back quickly, and the coils add lift, but the wool and batting layers soften the response at the surface.',
+      'Response Time is an 8 for the Happsy, good with a caveat. Latex springs back quickly, and the coils add lift, but the wool and batting layers soften the response at the surface.',
       'Combination sleepers who turn a few times a night should find it workable, with only a short pause on each move. The Medium-Firm version keeps the body nearer the surface, so it will feel a little quicker than the Plush.',
       'Restless sleepers who want the quickest surface should weigh this field. Sleepers who stay in one or two positions will notice it least. Getting in and out of bed should feel easy in both versions.',
     ],
     motionTransfer: [
-      'Motion Transfer is a strong 9. Pocketed coils move one at a time, and the latex and wool absorb much of the motion before it reaches the surface.',
-      'Latex is elastic, so a little bounce reaches the other side when a partner moves. Most couples will sleep undisturbed through the night. Very light sleepers who wake easily may prefer an all-foam bed with a 10 in this field.',
-      'Couples on different schedules should weigh this score. A 9 keeps most nights quiet while keeping the lively feel of latex. Parents who share the bed with a child or pet will find it settled enough. Both firmness options share this score.',
+      'Motion Transfer is a strong 9 for the Happsy. Pocketed coils move one at a time, and the latex and wool absorb much of the motion before it reaches the surface.',
+      'Latex is elastic, so a little bounce reaches the other side when a partner moves. On the Happsy, most couples will sleep undisturbed through the night. Compared with the Happsy, very light sleepers who wake easily may prefer an all-foam bed with a 10 in this field.',
+      'Couples on different schedules should weigh this score on the Happsy. A 9 keeps most nights quiet while keeping the lively feel of latex. Parents who share the bed with a child or pet will find it settled enough. Both firmness options share this score.',
     ],
     coolingBreathability: [
-      'Cooling & Breathability is a strong 9. Organic cotton, organic wool and latex are breathable materials, and the coil core leaves room for air to move through the base.',
+      'The Happsy earns a strong 9 in Cooling & Breathability. Organic cotton, organic wool and latex are breathable materials, and the coil core leaves room for air to move through the base.',
       'The score reflects those materials rather than a temperature reading. It stops at 9 because Happsy names no dedicated cooling cover or cooling layer. Wool can help buffer moisture near the surface, which some warm sleepers prefer.',
       'Warm sleepers who want natural materials will find it comfortable through most of the year. Cotton sheets and a thin protector keep the surface breathable. Synthetic, plastic-backed protectors can trap heat and undercut the natural cover.',
     ],
@@ -93,11 +93,11 @@ const copy: ReviewCopy = {
     'Heavier stomach sleepers who need a firm surface.',
     'Restless sleepers who want the quickest surface, since Response Time is an 8.',
   ],
-  compareIntro: 'The [Avocado Green](/reviews/avocado-green/) also scores 8.8 as a latex hybrid. The [Latex For Less Hybrid Latex Mattress](/reviews/latex-for-less-hybrid-latex-mattress/) scores 8.7 and the [Eco Terra Hybrid Latex](/reviews/eco-terra-hybrid-latex/) scores 9.0. The table lines up their firmness, trial and warranty.',
+  compareIntro: 'The [Avocado Green](/reviews/avocado-green/) also scores 8.8 as a latex hybrid. The [Latex For Less Hybrid Latex Mattress](/reviews/latex-for-less-hybrid-latex-mattress/) scores 8.7 and the [Eco Terra Hybrid Latex](/reviews/eco-terra-hybrid-latex/) scores 9.0. The table lines up their firmness, trial and warranty next to the Happsy.',
   policies: [
     'Happsy comes with a 120-night trial and a 20-year warranty, according to Happsy. Shipping is free in the continental US.',
     'Returns within 120 nights are free, with a full refund. Sizes run Twin, Twin XL, Full, Queen, King and Cal King.',
-    'Happsy states the mattress is made in the USA from domestic and imported components. Keep the order details on file in case a return is needed during the trial. Confirm the current terms on Happsy\'s site before ordering, since policies can change between our checks.',
+    'Happsy states the mattress is made in the USA from domestic and imported components. Save the order details for the Happsy until the trial ends, in case a return is needed. Confirm the current terms on Happsy\'s site before ordering, since policies can change between our checks.',
   ],
   faqs: [
     {
@@ -122,7 +122,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'Does Happsy sleep hot?',
-      a: 'It earns a 9/10 in Cooling & Breathability, a strong result. Organic cotton, organic wool and latex are breathable materials, and the coil core lets air move through the base. Happsy names no dedicated cooling layer, which keeps the score at 9. Cotton sheets help keep the surface cool.',
+      a: 'Cooling & Breathability is a 9/10 for the Happsy, a strong result. Organic cotton, organic wool and latex are breathable materials, and the coil core lets air move through the base. Happsy names no dedicated cooling layer, which keeps the score at 9. Cotton sheets help keep the surface cool.',
     },
     {
       q: 'How tall is Happsy?',

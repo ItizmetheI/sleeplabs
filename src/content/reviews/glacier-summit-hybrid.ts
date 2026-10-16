@@ -9,14 +9,14 @@ const copy: ReviewCopy = {
     '10/10 scores in Value, Trial Period and Cooling & Breathability.',
     'A medium 5/10 pillow top that cushions the shoulder and hip for side sleepers.',
     'Pocketed coils with a reinforced edge, according to Glacier.',
-    'A 365-night trial and a lifetime warranty.',
+    'A 365-night trial and a lifetime warranty for the Summit Hybrid.',
   ],
   limitations: [
     'Motion Transfer is an 8, good with a caveat, so some movement reaches the other side.',
     'Sold in one medium feel, which may be soft for heavier stomach sleepers.',
     'Glacier does not list layer thicknesses, so the comfort stack depth is not listed.',
   ],
-  howScored: 'Glacier Summit Hybrid is scored on the same seven fields as every model we cover, from Glacier\'s official product page. Our [methodology page](/methodology/) explains how each field is set.',
+  howScored: 'Glacier Summit Hybrid is scored on the same seven fields as every model we cover, from Glacier\'s official product page. Our [methodology page](/methodology/) explains how each field is set, for the Summit Hybrid and every other model we score.',
   layerRoles: [
     'Zoned pillow top with quilted foam that adds a cushioned surface.',
     'Graphite memory foam that contours to the body.',
@@ -32,45 +32,45 @@ const copy: ReviewCopy = {
   performance: {
     value: [
       'Value is a standout 10. The score is set from price, trial and warranty facts, and it weighs what the Summit delivers against its queen price.',
-      'Glacier pairs a 365-night trial with a lifetime warranty, and standard UPS delivery to the door is free. White glove delivery is available for an added fee. Three certifications, a pillow top and a reinforced edge add to what the price covers. The recorded queen price appears in our specs table with the month we checked it.',
+      'Glacier pairs a 365-night trial with a lifetime warranty, and standard UPS delivery to the door is free. White glove delivery is available for an added fee. Three certifications, a pillow top and a reinforced edge add to what the price covers.',
       'Shoppers who want a cushioned hybrid with long policies gain the most from this field. Those who weigh cost alongside features will find a lot behind this 10. The 10 reflects the full package rather than any single term.',
     ],
     edgeSupport: [
-      'Edge Support is a strong 9. Glacier names a reinforced edge on the pocketed coils, which gives the perimeter more structure than the coils alone.',
+      'Edge Support is a strong 9 for the Summit Hybrid. Glacier names a reinforced edge on the pocketed coils, which gives the perimeter more structure than the coils alone.',
       'For sleeping, the surface stays usable close to the side, and sitting on the edge should feel steady for most people. The pillow top softens the very outer edge a little. The reinforced coils hold the line underneath.',
-      'Couples who share a full or queen gain the most from this score. Anyone who sits on the edge to dress each morning should find a 9 dependable. A sturdy frame helps the perimeter hold its shape over time.',
+      'Couples who share a full or queen gain the most from this score. Anyone who sits on the edge to dress each morning should find a 9 dependable. A sturdy frame helps the perimeter of the Summit Hybrid hold its shape over time.',
     ],
     trialPeriod: [
-      'Trial Period is a standout 10. Glacier offers a 365-night trial, a full year to decide.',
+      'Trial Period is a standout 10 for the Summit Hybrid. Glacier offers a 365-night trial, a full year to decide.',
       'Returns get a full refund with return shipping covered, once the mattress has been used for at least 30 days, according to Glacier. That window gives the body time to adjust to a pillow top feel before deciding. A full year also covers every season, which matters for a bed bought for cooling.',
-      'Buyers moving from a firmer bed gain the most from this field, since a pillow top can take a few weeks to get used to. Keep the order details on file in case a return is needed. Confirm the current terms on Glacier\'s site before ordering.',
+      'Buyers moving from a firmer bed gain the most from this field, since a pillow top can take a few weeks to get used to. Save the order details for the Summit Hybrid in case a return is needed. Confirm the current terms on Glacier\'s site before ordering.',
     ],
     responseTime: [
-      'Response Time is a strong 9. The pocketed coils add lift from below, so the memory foams and pillow top recover quickly after you move.',
+      'The Summit Hybrid scores a strong 9 in Response Time. The pocketed coils add lift from below, so the memory foams and pillow top recover quickly after you move.',
       'Combination sleepers who turn several times a night should find it easy to change position. There is a slight settling feel from the memory foam, but it is brief. Getting in and out of bed should feel easy, helped by the firmer edge.',
-      'Restless sleepers gain the most from this score. Sleepers who want the slow, deep sink of thick memory foam should know the Summit feels livelier than that, even with its pillow top.',
+      'On the Summit Hybrid, restless sleepers gain the most from this field. Sleepers who want the slow, deep sink of thick memory foam should know the Summit feels livelier than that, even with its pillow top.',
     ],
     motionTransfer: [
-      'Motion Transfer is an 8, good with a caveat. Pocketed coils move one at a time, but some movement still reaches the other side, especially when a partner gets in or out of bed.',
+      'Motion Transfer is an 8 for the Summit Hybrid, good with a caveat. Pocketed coils move one at a time, but some movement still reaches the other side, especially when a partner gets in or out of bed.',
       'Most couples will sleep through a partner turning over. Very light sleepers who wake easily should weigh this field before ordering. The pillow top absorbs some motion at the surface, but not as much as a deep all-foam stack.',
       'Couples on different schedules may prefer a bed with a 9 or 10 here. Solo sleepers and couples who sleep soundly will notice it least. A larger size gives each partner more room, which reduces how much motion reaches the other side.',
     ],
     coolingBreathability: [
-      'Cooling & Breathability is a standout 10. Glacier stacks several named cooling parts: graphite in the CarbonICE foam, gel in the memory foam, ventilated ARCFlow foam and a coil core that lets air move through the base.',
-      'The score reflects that construction rather than a temperature reading. A pillow top usually lets the body sink deeper, which can hold warmth, and the cooling foams below are designed to offset that. Warm side sleepers who want cushioning should give this field heavy weight.',
+      'The Summit Hybrid earns a standout 10 in Cooling & Breathability. Glacier stacks several named cooling parts: graphite in the CarbonICE foam, gel in the memory foam, ventilated ARCFlow foam and a coil core that lets air move through the base.',
+      'The score for the Summit Hybrid reflects that construction rather than a temperature reading. A pillow top usually lets the body sink deeper, which can hold warmth, and the cooling foams below are designed to offset that. Warm side sleepers who want cushioning should give this field heavy weight.',
       'Breathable sheets and a thin protector keep the surface in line with the score. Heavy, plastic-backed protectors can trap heat and undercut the cooling layers.',
     ],
   },
   positionsIntro: 'Glacier sells the Summit in one medium feel, which sits at 5/10 on our scale. This guidance comes from that firmness and the pillow top hybrid build, by sleep position and body weight.',
   positions: {
     side: {
-      under130: 'A good fit. The pillow top and memory foams give a lighter frame room to sink at the shoulder and hip. Those who want a very plush feel may prefer the Soft 3/10 version of the [Glacier Apex Hybrid](/reviews/glacier-apex-hybrid/).',
+      under130: 'The Summit Hybrid is a good fit. The pillow top and memory foams give a lighter frame room to sink at the shoulder and hip. Those who want a very plush feel may prefer the Soft 3/10 version of the [Glacier Apex Hybrid](/reviews/glacier-apex-hybrid/).',
       from130to230: 'A strong fit and a core audience for this feel. The medium 5/10 surface cushions the shoulder and hip, while the coils keep the waist level. The zoned pillow top is designed to place softer cushioning where the shoulder presses down.',
-      over230: 'A good fit. More weight presses the shoulder and hip into the pillow top and foams, and the coils hold the hips level. Some heavier side sleepers may want a little more support.',
+      over230: 'The Summit Hybrid is a good fit. More weight presses the shoulder and hip into the pillow top and foams, and the coils hold the hips level. Some heavier side sleepers may want a little more support.',
     },
     back: {
-      under130: 'A good fit. The medium surface supports the lower back with some contour, and a lighter frame stays near the top of the pillow top.',
-      from130to230: 'A good fit. The coils keep the hips level with the shoulders, and the memory foams fill the lower back curve. Back sleepers who like a little give at the surface will find the pillow top comfortable.',
+      under130: 'The Summit Hybrid is a good fit. The medium surface supports the lower back with some contour, and a lighter frame stays near the top of the pillow top.',
+      from130to230: 'The Summit Hybrid is a good fit. The coils keep the hips level with the shoulders, and the memory foams fill the lower back curve. Back sleepers who like a little give at the surface will find the pillow top comfortable.',
       over230: 'Workable. Heavier back sleepers often prefer 6/10 or firmer. The medium-firm [Glacier Original Hybrid](/reviews/glacier-original-hybrid/) is closer to that range.',
     },
     stomach: {
@@ -79,9 +79,9 @@ const copy: ReviewCopy = {
       over230: 'Not a natural fit. Heavier stomach sleepers usually need 7/10 or firmer to keep the hips level, which the Firm version of the Apex offers.',
     },
     combination: {
-      under130: 'A good fit. The medium surface suits side time, and the coils support back time without much sink.',
-      from130to230: 'A good fit. The 9/10 Response Time makes turning easy, and the medium feel balances side cushioning with back support. Stomach time may feel slightly soft for some.',
-      over230: 'A reasonable fit. The coils lift a heavier body between positions, though stomach time may feel soft.',
+      under130: 'The Summit Hybrid is a good fit. The medium surface suits side time, and the coils support back time without much sink.',
+      from130to230: 'The Summit Hybrid is a good fit. The 9/10 Response Time makes turning easy, and the medium feel balances side cushioning with back support. Stomach time may feel slightly soft for some.',
+      over230: 'The Summit Hybrid is a reasonable fit. The coils lift a heavier body between positions, though stomach time may feel soft.',
     },
   },
   buy: [
@@ -94,11 +94,11 @@ const copy: ReviewCopy = {
     'Heavier stomach sleepers who need a firm surface.',
     'Shoppers who want listed layer thicknesses before buying.',
   ],
-  compareIntro: 'The [Zoma Hybrid](/reviews/zoma-hybrid/), the [Glacier Apex Hybrid](/reviews/glacier-apex-hybrid/) and the [Glacier Original Hybrid](/reviews/glacier-original-hybrid/) all score 9.3 as hybrids, the same as the Summit. The table lines up their firmness, trial and warranty.',
+  compareIntro: 'The [Zoma Hybrid](/reviews/zoma-hybrid/), the [Glacier Apex Hybrid](/reviews/glacier-apex-hybrid/) and the [Glacier Original Hybrid](/reviews/glacier-original-hybrid/) all score 9.3 as hybrids, the same as the Summit. Use the table to compare their firmness, trial and warranty with the Summit Hybrid.',
   policies: [
     'Glacier Summit Hybrid comes with a 365-night trial and a lifetime warranty, according to Glacier. Standard UPS delivery to the door is free, and white glove delivery is available for an added fee.',
-    'Returns get a full refund with return shipping covered, after at least 30 days of use. Sizes run Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
-    'Glacier states the mattress is made in the USA. Keep the order details on file in case a return is needed during the trial. Confirm the current terms on Glacier\'s site before ordering, since policies can change between our checks.',
+    'Returns get a full refund with return shipping covered, after at least 30 days of use. The Summit Hybrid comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
+    'Glacier states the mattress is made in the USA. Hold on to the Summit Hybrid order confirmation in case a return comes up during the trial. Confirm the current terms on Glacier\'s site before ordering, since policies can change between our checks.',
   ],
   faqs: [
     {
@@ -131,7 +131,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'How tall is Glacier Summit Hybrid?',
-      a: 'The Summit is 13 inches tall, according to Glacier. Deep pocket fitted sheets may help at this height. It comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King, so most bed setups have a matching size. A standard frame or foundation keeps it at a comfortable height.',
+      a: 'The Summit is 13 inches tall, according to Glacier. Deep pocket fitted sheets may help at this height. The Summit Hybrid comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King, so most bed setups have a matching size. A standard frame or foundation keeps it at a comfortable height.',
     },
   ],
   verdict: 'Glacier Summit Hybrid earns a 9.3/10 Overall, led by 10/10 scores in Value, Trial Period and Cooling & Breathability. Its medium 5/10 pillow top and cooling foams over reinforced-edge coils suit side sleepers and warm sleepers who want cushioning with a quick surface. Motion Transfer is an 8, so light sleepers who share a bed should weigh that. Stomach sleepers should look firmer.',

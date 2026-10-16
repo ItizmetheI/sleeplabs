@@ -5,7 +5,7 @@ import { articleList, articleTable, toArticleBody } from '../../lib/schemaArticl
 import { EDITORIAL_INDEPENDENCE_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
 import { getLegacyBestBlogRedirect } from '../../lib/legacyBlogRedirects';
 import { requiresBlogSourceReview } from '../../lib/blogSourceReview';
-import { isScheduled, contentCutoffDate } from '../../lib/scheduledContent';
+import { isScheduled } from '../../lib/scheduledContent';
 import Byline from '../../components/Byline.astro';
 import { BYLINE_DISCLOSURE } from '../../lib/disclosure';
 
@@ -76,7 +76,7 @@ const blogArticleBody = toArticleBody(
     ? articleList('Referenced Products', productLinks.map(link => `${link.name}: ${SITE_URL}${link.href}`))
     : null,
   'Multi-Brand Context',
-  'Product examples in this article are not a complete category ranking. See the Best Mattress rankings and Reviews index for the full 59-model, 24-brand scored dataset.',
+  'Product examples in this article are not a complete category ranking. See the Best Mattress rankings and Reviews index for the full scored dataset.',
   'Frequently Asked Questions',
   post.faqs.map((faq: any) => [`Question: ${faq.question}`, `Answer: ${faq.answer}`]),
   'About Mattress Inquirer',
@@ -135,7 +135,7 @@ const breadcrumbSchema = {
   ]
 };
 
-const jsonLd = [articleSchema, faqSchema, breadcrumbSchema];
+const jsonLd = [articleSchema, ...(post.faqs.length ? [faqSchema] : []), breadcrumbSchema];
 
 const formatProse = (text: string) => {
   let formatted = text || '';
@@ -179,7 +179,8 @@ const formatProse = (text: string) => {
   jsonLd={jsonLd}
   noindex={sourceReviewPending || scheduled}
 >
-  <article class="w-full min-w-0 max-w-[760px] mx-auto px-margin-mobile md:px-0 py-stack-lg">
+  <!-- Gates stay machine-readable for QA; readers see no staff status text (owner fix list item 5). -->
+  <article class="w-full min-w-0 max-w-[760px] mx-auto px-margin-mobile md:px-0 py-stack-lg" data-source-review-pending={sourceReviewPending ? 'true' : undefined} data-scheduled={scheduled ? 'true' : undefined}>
 
     <!-- Breadcrumb -->
     <nav class="text-label-sm font-label-sm text-on-surface-variant mb-8 uppercase tracking-normal">
@@ -200,25 +201,11 @@ const formatProse = (text: string) => {
       {post.title}
     </h1>
 
-    <!-- Direct Answer Box — LLM signal -->
+    <!-- Direct Answer Box: LLM signal -->
     <div class="bg-white p-6 rounded-lg border border-outline-variant border-l-4 border-l-secondary mb-8">
       <p class="text-label-sm font-label-sm uppercase tracking-normal text-secondary mb-2 font-bold">Quick Answer</p>
       <p class="text-body-lg text-on-background leading-relaxed">{post.directAnswer}</p>
     </div>
-
-    {scheduled && (
-      <div class="bg-slate-50 border border-slate-300 rounded-lg p-5 mb-8 text-body-md text-slate-900" role="note">
-        <p class="font-bold mb-2">Editorial status: scheduled</p>
-        <p>This article is dated {post.datePublished}, after the current publication cutoff of {contentCutoffDate()}. It is excluded from search indexing, the sitemap, and blog listings until its publication date.</p>
-      </div>
-    )}
-
-    {sourceReviewPending && (
-      <div class="bg-amber-50 border border-amber-300 rounded-lg p-5 mb-8 text-body-md text-amber-950" role="note">
-        <p class="font-bold mb-2">Editorial status: source review pending</p>
-        <p>This page is excluded from search indexing until its health or sleep-science statements have explicit citations. It provides general comfort and sleep-product information only. {COMFORT_NOT_TREATMENT}</p>
-      </div>
-    )}
 
     <!-- Byline -->
     <div class="flex flex-col gap-2 mb-8 pb-8 border-b border-outline-variant/30">
@@ -353,7 +340,7 @@ const formatProse = (text: string) => {
     )}
 
     <aside class="my-10 border-l-4 border-secondary pl-5 py-1 text-body-sm text-on-surface-variant">
-      <strong class="text-on-surface">Multi-brand context:</strong> Product examples in this article are not a complete category ranking. See the <a href="/best/overall/" class="text-primary underline underline-offset-4">Best Mattress rankings</a> and <a href="/reviews/" class="text-primary underline underline-offset-4">Reviews index</a> for the full 59-model, 24-brand scored dataset.
+      <strong class="text-on-surface">Multi-brand context:</strong> Product examples in this article are not a complete category ranking. See the <a href="/best/overall/" class="text-primary underline underline-offset-4">Best Mattress rankings</a> and <a href="/reviews/" class="text-primary underline underline-offset-4">Reviews index</a> for the full scored dataset.
     </aside>
 
     <!-- Author Box -->

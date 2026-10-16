@@ -13,7 +13,7 @@ import { FIELD_LABEL } from '../../lib/ranking';
 import { comparisonSeoTitle, getMattress, getSpec, leadsSentence, SCORECARD_FIELDS, scoreText, winnerLine } from '../../lib/pageData';
 import {
   h1For, renderInline, plainInline, assertAllowedLink, reviewUrl,
-  firmnessText, heightText, typeText, trialText, warrantyText, queenPriceText,
+  firmnessText, heightText, typeText, trialText, warrantyText, PRICE_LABEL, SEE_PRICE,
 } from '../../lib/ownerSite';
 
 export function getStaticPaths() {
@@ -43,13 +43,12 @@ copy.related.forEach(link => assertAllowedLink(link.href, `${ctx} related`));
 // Quick Verdict lead: the winner by Overall, then the owner's fixed leads sentence.
 const verdictLead = `${winnerLine(a, b, m => `[${m.name}](${reviewUrl(m.id)})`)} ${leadsSentence(a, b)}`;
 
-const priceMonth = specA.priceChecked || specB.priceChecked;
 const sideRows: [string, string, string][] = [
   ...SCORECARD_FIELDS.map(k => [FIELD_LABEL[k], `${scoreText(a, k)}/10`, `${scoreText(b, k)}/10`] as [string, string, string]),
   ['Type', typeText(specA), typeText(specB)],
   ['Firmness', firmnessText(specA), firmnessText(specB)],
   ['Height', heightText(specA), heightText(specB)],
-  [`Queen price (checked ${priceMonth})`, queenPriceText(specA), queenPriceText(specB)],
+  [PRICE_LABEL, SEE_PRICE, SEE_PRICE],
   ['Trial', trialText(specA), trialText(specB)],
   ['Warranty', warrantyText(specA), warrantyText(specB)],
 ];
@@ -168,7 +167,7 @@ const td = 'px-4 py-3 text-on-surface-variant border-t border-outline-variant/30
             <caption class="sr-only">Scores and specs side by side</caption>
             <thead><tr><th scope="col" class={th}>Field</th><th scope="col" class={th}><a href={reviewUrl(a.id)} class="text-primary underline underline-offset-4">{a.name}</a></th><th scope="col" class={th}><a href={reviewUrl(b.id)} class="text-primary underline underline-offset-4">{b.name}</a></th></tr></thead>
             <tbody>
-              {sideRows.map(([label, va, vb]) => <tr><th scope="row" class={`${th} font-normal`}>{label}</th><td class={td}>{va}</td><td class={td}>{vb}</td></tr>)}
+              {sideRows.map(([label, va, vb]) => <tr><th scope="row" class={`${th} font-normal`}>{label}</th><td class={td}>{va === SEE_PRICE ? <PriceCta mattress={a} pageUrl={pageUrl} variant="text" label={SEE_PRICE} /> : va}</td><td class={td}>{vb === SEE_PRICE ? <PriceCta mattress={b} pageUrl={pageUrl} variant="text" label={SEE_PRICE} /> : vb}</td></tr>)}
             </tbody>
           </table>
         </div>

@@ -6,10 +6,6 @@ const copy: BestCopy = {
   metaDescription: 'The best organic mattress in 2026: eight picks with GOTS or GOLS certification named by the brand, ranked by Overall score, led by PlushBeds Signature Bliss.',
   quickAnswer: 'The [PlushBeds Signature Bliss](/reviews/plushbeds-signature-bliss/) is our Best Organic pick at 9.5/10, the highest Overall score of the eight picks here. PlushBeds lists GOTS certification for its cotton and wool and GOLS certification for its Dunlop latex, over 5-zone coils.',
   as3BoxReason: 'It lists no GOTS or GOLS certification, so it does not meet this page\'s organic rule.',
-  howWePicked: [
-    'A model qualifies when the brand names a GOTS or GOLS certification for at least one of its materials. GOTS, the Global Organic Textile Standard, covers cotton, wool and textiles. GOLS, the Global Organic Latex Standard, covers latex. Picks are ranked by Overall score, then Value, then the usual tie-breaks.',
-    'Certifications are listed as the brand states them, including which material each one covers. Kids models, the [Westin Heavenly Bed](/reviews/westin-heavenly-bed/) and models whose official page could not be reached are left out. One score covers every firmness option a model sells.',
-  ],
   picks: [
     {
       slug: 'plushbeds-signature-bliss',
@@ -19,16 +15,16 @@ const copy: BestCopy = {
         'It ties for the highest Edge Support, Trial Period and Response Time scores here, each at 10. The organic latex gives a springy, supportive feel that suits most positions. Couples get a 9 in Motion Transfer alongside the 10 in Edge Support.',
         'PlushBeds rates it Medium 5.5/10 or Medium-Firm 8/10, so side and back sleepers can take Medium and stomach sleepers Medium-Firm, under one score. PlushBeds states it is made in California.',
         'For shoppers who want certified organic materials without giving up scorecard strength, it is the clearest starting point on this page.',
-        'The trade is a 10-year warranty, a fee for returns made before 30 days and one return per household. Concierge removal is available for a fee.',
+        'It comes with a 365-night trial and a limited lifetime warranty, full for the first 10 years. The trade is a fee for returns made before 30 days and one return per household. Concierge removal is available for a fee.',
       ],
       strengths: [
         'GOTS for the cotton and wool, GOLS for the latex.',
-        '10s in Edge Support, Trial Period and Response Time.',
-        'Medium 5.5/10 and Medium-Firm 8/10 options.',
+        'The Signature Bliss scores 10 in Edge Support, Trial Period and Response Time.',
+        'Medium 5.5/10 and Medium-Firm 8/10 options on the Signature Bliss.',
       ],
       limitations: [
-        'A 10-year warranty.',
-        'A fee applies to returns before 30 days.',
+        'Warranty coverage is full for 10 years only.',
+        'A fee applies to returns before 30 days on the Signature Bliss.',
       ],
     },
     {
@@ -59,7 +55,7 @@ const copy: BestCopy = {
         'It ties for the highest Response Time score here at 10. Eco Terra sells it in Medium 5/10 and Medium-Firm 6/10, so side sleepers and back or stomach sleepers can each find a version.',
         'Shoppers who want both GOTS and GOLS and weigh value first will find it a direct fit.',
         'Its weaker fields are policy-led. Eco Terra lists a 90-night trial, the shortest among these picks, and a 15-year warranty. Trial Period and Edge Support are both 8s.',
-        'Return terms are not listed on the product page we recorded, so confirm them before ordering. Free shipping in the continental US via UPS Ground is listed.',
+        'The brand does not publish its return terms, so confirm them before ordering. Free shipping in the continental US via UPS Ground is listed.',
       ],
       strengths: [
         'GOTS and GOLS, plus eco-INSTITUT and OEKO-TEX.',
@@ -77,13 +73,13 @@ const copy: BestCopy = {
         'The Birch Natural lists GOLS for its organic latex and GREENGUARD Gold for the mattress. Its cover is organic cotton and its wool comes from New Zealand, though no GOTS certification is listed for those textiles.',
         'The build is GOLS organic latex and wool over individually wrapped steel coils, 10 inches tall, in one medium-firm feel that sits at 6/10 on our scale. Birch states it is made in Phoenix, Arizona.',
         'It ties for the highest Response Time score here at 10, and its Value, Edge Support, Trial Period and Cooling & Breathability scores are all 9s. It scores 9.0 Overall.',
-        'Birch lists a 365-night trial and a lifetime warranty, a pairing it shares with one other pick on this page. A free return or exchange is available after a 30-day break-in.',
+        'Birch lists a 365-night trial and a limited lifetime warranty, a pairing it shares with one other pick on this page. A free return or exchange is available after a 30-day break-in.',
         'Motion Transfer is an 8, its lowest field, so light sleepers who share a bed should weigh that. Back sleepers and lighter stomach sleepers fit the 6/10 feel best.',
         'At 10 inches, it fits standard fitted sheets and suits low frames.',
       ],
       strengths: [
         'GOLS organic latex and GREENGUARD Gold.',
-        'A 365-night trial and a lifetime warranty.',
+        'The Birch Natural comes with a 365-night trial and a limited lifetime warranty.',
         'A 10 in Response Time.',
       ],
       limitations: [
@@ -98,13 +94,13 @@ const copy: BestCopy = {
         'Two organic latex layers, a comfort layer and a support layer, sit over 8 inch zoned coils, with a fiber blend under the cover. Two layers of GOLS latex give more certified material than a single latex top. That makes the latex feel more uniform from top to bottom.',
         'It ties for the highest Response Time score here at 10, with 9s in Value, Edge Support, Trial Period and Cooling & Breathability. It scores 9.0 Overall and follows the Birch on the model name tie-break.',
         'Nolah sells it in one medium-firm feel at 6/10 on our scale, which suits back sleepers and lighter stomach sleepers.',
-        'Motion Transfer is an 8, its lowest field. Nolah states it is made in Arizona from foreign and domestic components.',
-        'Nolah lists a 120-night trial with a 30-night break-in and a lifetime warranty. Free FedEx shipping is listed, with paid in-home setup available.',
+        'Motion Transfer is an 8 for the Natural 11", its lowest field. Nolah states it is made in Arizona from foreign and domestic components.',
+        'Nolah lists a 120-night trial with a 30-night break-in and a limited lifetime warranty. On the Natural 11", free FedEx shipping is listed, with paid in-home setup available.',
       ],
       strengths: [
         'Two GOLS organic latex layers.',
         'Zoned coils under the latex.',
-        'A lifetime warranty, according to Nolah.',
+        'A limited lifetime warranty for the Natural 11", according to Nolah.',
       ],
       limitations: [
         'Motion Transfer is an 8.',
@@ -118,8 +114,8 @@ const copy: BestCopy = {
         'Its certifications match the Organica: GOTS for the wool, listed in Amerisleep\'s FAQ, plus OEKO-TEX Standard 100, Rainforest Alliance and eco-INSTITUT for its materials. No GOLS certification is listed for the latex.',
         'Below the box top sit organic wool, soft and medium Talalay latex and an 8 inch edge-supported coil unit, in one Plush 4/10 feel. Side sleepers who want a soft, natural-materials bed fit it best.',
         'It ties for the highest Edge Support score here at 10, which helps on a plush top. It scores 9.0 Overall.',
-        'Value is an 8, its lowest field. Amerisleep lists a 100-night trial and a 20-year warranty.',
-        'At 15 inches, it needs deep pocket fitted sheets. Shoppers who want a plush natural-materials bed with a strong edge will find that pairing here.',
+        'For the Organica Plush, Value is an 8, its lowest field. Amerisleep lists a 100-night trial and a 20-year warranty.',
+        'The Organica Plush stands 15 inches tall and needs deep pocket fitted sheets. Shoppers who want a plush natural-materials bed with a strong edge will find that pairing here.',
       ],
       strengths: [
         'A 3 inch natural latex box top over Talalay layers.',
@@ -143,12 +139,12 @@ const copy: BestCopy = {
       ],
       strengths: [
         'An all-latex build with GOTS and GOLS certifications.',
-        'A 365-night trial and a lifetime warranty.',
+        'A 365-night trial and a lifetime warranty for the Organic Bliss.',
         'Medium and Medium-Firm options.',
       ],
       limitations: [
         'Value is an 8.',
-        'A fee applies to returns before 30 days.',
+        'A fee applies to returns before 30 days on the Organic Bliss.',
       ],
     },
     {
@@ -179,6 +175,7 @@ const copy: BestCopy = {
     'Other certifications cover different things. GREENGUARD Gold and eco-INSTITUT relate to emissions from materials. OEKO-TEX Standard 100 screens textiles and components for harmful substances. MADE SAFE and EWG Verified screen ingredients. None of these is an organic certification on its own.',
     'Most organic mattresses use latex, cotton and wool, often over steel coils. That makes them springy, breathable and supportive. Latex can pass along a little more motion than foam, so check Motion Transfer if you share a bed.',
     'Check certifications on the issuer\'s site if they matter to your decision, since listings can change between our checks. Certification also says nothing about feel or support, so read the scorecard and firmness options alongside the labels. A certified mattress that does not suit your sleep position is still the wrong mattress.',
+    'Read each certification for what it covers. GOTS applies to textiles such as the cotton and wool in a cover, while GOLS applies to latex. A brand can hold one without the other, and some certify only part of a mattress. Look up the certificate holder and scope with the certifying body, since that shows which product and material are covered. Other labels, such as GREENGUARD Gold for emissions or OEKO-TEX for textiles, are useful but measure different things than organic status, so read them as separate signals.',
   ],
   faqs: [
     {
@@ -198,7 +195,7 @@ const copy: BestCopy = {
       a: 'No. GREENGUARD Gold relates to chemical emissions, not organic materials. It often appears alongside GOTS or GOLS on organic mattresses, such as the [Birch Natural](/reviews/birch-natural/), which lists GOLS and GREENGUARD Gold. Only GOTS and GOLS qualify a model for this page.',
     },
     {
-      q: 'Why is the Amerisleep AS3 not on this page?',
+      q: 'Why is the Amerisleep AS3 not on the organic page?',
       a: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) lists CertiPUR-US for its foams but no GOTS or GOLS certification, so it does not meet this page\'s rule. It remains our editorial Best Overall pick. Amerisleep\'s Organica and Organica Plush, which list GOTS wool, appear on this list.',
     },
     {

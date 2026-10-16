@@ -50,7 +50,7 @@ const copy: ReviewCopy = {
       'It lands at 9 rather than 10 because a softer, deeper surface lets more motion register as a partner rolls. Most couples will find the AS5 calm and quiet. Very light sleepers who share the bed may prefer a firmer foam model with a 10 in this field. Parents who share the bed with a child or pet should still find it settled through the night. The foam absorbs the small shifts that wake light sleepers on spring beds.',
     ],
     coolingBreathability: [
-      'Cooling & Breathability is a standout 10. Soft foam can trap heat because the body sinks deeper, so this score reflects the materials Amerisleep chose for the build.',
+      'The AS5 earns a standout 10 in Cooling & Breathability. Soft foam can trap heat because the body sinks deeper, so this score reflects the materials Amerisleep chose for the build.',
       'The brand pairs plant-based Bio-Pur memory foam with a Refresh cover it describes as made with a high energy transfer fiber. The score comes from that construction, not a temperature reading. Warm side sleepers who want a soft foam bed are the clearest audience for this field. Breathable sheets and a thin protector help keep that benefit in place. A heavy, plastic-backed protector can trap heat and work against the cover.',
     ],
   },
@@ -63,18 +63,18 @@ const copy: ReviewCopy = {
     },
     back: {
       under130: 'Workable for lighter back sleepers who like a soft feel. Some may still want more push-back under the lower back, especially on long nights.',
-      from130to230: 'Often too soft. The hips can settle lower than the shoulders on a 3/10 surface, which flattens the lumbar curve. A 5/10 or 6/10 surface suits most back sleepers here.',
-      over230: 'Not a good fit. Heavier back sleepers need a medium-firm or firmer surface to keep the hips level. Coil support helps this group most.',
+      from130to230: 'The AS5 is often too soft. The hips can settle lower than the shoulders on a 3/10 surface, which flattens the lumbar curve. A 5/10 or 6/10 surface suits most back sleepers here.',
+      over230: 'The AS5 is not a good fit. Heavier back sleepers need a medium-firm or firmer surface to keep the hips level. Coil support helps this group most.',
     },
     stomach: {
       under130: 'Not recommended. Even light stomach sleepers will see the hips sink below the shoulders on a soft surface, which bends the lower back.',
-      from130to230: 'Not a good fit. Stomach sleepers in this range need 6/10 or firmer to keep the spine in line through the night.',
-      over230: 'Not a good fit. This group needs a firm 7/10 or higher mattress, ideally with coil support under the hips.',
+      from130to230: 'The AS5 is not a good fit. Stomach sleepers in this range need 6/10 or firmer to keep the spine in line through the night.',
+      over230: 'The AS5 is not a good fit. This group needs a firm 7/10 or higher mattress, ideally with coil support under the hips.',
     },
     combination: {
       under130: 'A reasonable fit if most of the night is spent on the side, with only short stretches on the back. Stomach time should stay brief.',
       from130to230: 'Mixed. Side time works well, but back and stomach time will feel too soft for many sleepers. The 8/10 Response Time also slows position changes a little.',
-      over230: 'Not a good fit. A medium-firm hybrid suits heavier combination sleepers better, with faster rebound between positions.',
+      over230: 'The AS5 is not a good fit. A medium-firm hybrid suits heavier combination sleepers better, with faster rebound between positions.',
     },
   },
   buy: [

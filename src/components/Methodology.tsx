@@ -26,7 +26,7 @@ export default function Methodology() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
             {[
               { stat: "7", title: "Scoring Criteria", desc: "Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability, each scored 0 to 10." },
-              { stat: "59", title: "Models Reviewed", desc: "Mattresses from 24 brands, with every model using the same published fields." },
+              { stat: "55", title: "Models Reviewed", desc: "Mattresses from 24 brands, with every model using the same published fields." },
               { stat: "24", title: "Brands Covered", desc: "Each brand is evaluated using the same seven scoring criteria and 0 to 10 scale." },
               { stat: "1", title: "Published Rubric", desc: "Every covered mattress uses the same seven score fields, 0 to 10 scale, and evidence limits." }
             ].map((item, i) => (

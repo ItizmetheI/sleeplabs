@@ -30,11 +30,11 @@ const copy: ReviewCopy = {
   performance: {
     value: [
       'The Value score is set from price, trial and warranty facts, and the Plank Firm earns a strong 9. A 365-night trial and a lifetime warranty are the longest terms we record in both fields.',
-      'The score stops at 9 because the Value field weighs those terms against the price, and the brand page shows no queen-specific sale price. Free shipping and two firmness levels in one bed add to the package. Buyers who want a very firm surface get long coverage behind it.',
+      'The score stops at 9 because the Value field weighs those terms against the price. Free shipping and two firmness levels in one bed add to the package. Buyers who want a very firm surface get long coverage behind it.',
       'This field matters most to buyers who are unsure how firm to go. A flippable bed gives two chances to get the feel right without a return. Flipping the mattress also spreads wear across both sides over time.',
     ],
     edgeSupport: [
-      'Edge Support is a standout 10. A very firm foam stack compresses little at the perimeter, so the edge holds up when you sit or sleep near the side.',
+      'Edge Support is a standout 10 for the Plank Firm. A very firm foam stack compresses little at the perimeter, so the edge holds up when you sit or sleep near the side.',
       'The brand does not name a separate edge system, so the score reflects the dense foam build. In daily use, a 10 means the full width of the surface stays usable. Couples who sleep close to the edge or sit on the side to dress will notice it most.',
       'Heavier sleepers who use the edge to get in and out of bed benefit from this score as well. A firm perimeter gives a stable place to push off from.',
     ],
@@ -44,7 +44,7 @@ const copy: ReviewCopy = {
       'The long window suits a bed this firm. Many sleepers need several weeks to adjust to a very firm surface. Both sides are worth a few weeks each before deciding.',
     ],
     responseTime: [
-      'Response Time is a strong 9. On a very firm surface the body rests on top of the foam rather than sinking in, so turning over takes little effort.',
+      'The Plank Firm earns a strong 9 in Response Time. On a very firm surface the body rests on top of the foam rather than sinking in, so turning over takes little effort.',
       'The 2 inch comfort foam adds a small amount of contour, which keeps the score from a 10. Combination sleepers who move between back and stomach will find position changes quick. Side sleepers will feel the firmness more than any slowness in response.',
       'This field matters most for restless sleepers on a firm bed. Getting in and out of bed also feels easy when the surface does not hold the body.',
     ],
@@ -69,11 +69,11 @@ const copy: ReviewCopy = {
     back: {
       under130: 'The Firm side can work for lighter back sleepers who like a hard surface. Many will find it firmer than they need, since a light frame barely compresses the foam.',
       from130to230: 'A good fit on the Firm side. It keeps the hips level with the shoulders and supports the lower back without sag. Back sleepers who want a little contour may still prefer a 6/10 bed.',
-      over230: 'A strong fit. The Firm or Extra Firm side holds heavier hips up well and keeps the spine in a straight line through the night.',
+      over230: 'The Plank Firm is a strong fit. The Firm or Extra Firm side holds heavier hips up well and keeps the spine in a straight line through the night.',
     },
     stomach: {
       under130: 'A good fit on the Firm side. It keeps the hips from dipping below the shoulders, and a thin pillow keeps the neck in line.',
-      from130to230: 'A strong fit. Either side keeps the hips level, which is what stomach sleepers in this range need most from a mattress.',
+      from130to230: 'The Plank Firm is a strong fit. Either side keeps the hips level, which is what stomach sleepers in this range need most from a mattress.',
       over230: 'A strong fit, especially on the Extra Firm side. It gives heavier stomach sleepers the most lift under the hips of the two sides.',
     },
     combination: {
