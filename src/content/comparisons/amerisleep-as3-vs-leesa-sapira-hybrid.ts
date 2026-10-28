@@ -5,16 +5,16 @@ const B = '[Leesa Sapira Hybrid](/reviews/leesa-sapira-hybrid/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as3-vs-leesa-sapira-hybrid',
-  dateModified: '2026-10-16',
-  metaDescription: 'Amerisleep AS3 vs Leesa Sapira Hybrid: an all-foam medium bed against a steel spring hybrid. The AS3 scores 9.5/10 to 8.7/10 and leads on five fields.',
-  quickVerdict: `Choose the ${A} if you want a medium 5/10 bed with 10s in Edge Support, Motion Transfer and Cooling & Breathability. Choose the ${B} if you want reinforced steel springs under a balanced 5-6/10 foam stack, a 365-night trial and a limited lifetime warranty.`,
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS3 vs Leesa Sapira Hybrid: an all-foam medium bed against a steel spring hybrid. The AS3 scores 9.7/10 to 8.8/10 and leads on five fields.',
+  quickVerdict: `Choose the ${A} if you want a medium 5/10 bed with 10s in Edge Support, Motion Transfer and Cooling & Breathability. Choose the ${B} if you want reinforced steel springs under a balanced 5-6/10 foam stack and a limited lifetime warranty.`,
   feel: [
     `The ${A} is sold in one medium feel, which sits at 5/10 on our scale. The ${B} sits at 5-6/10, medium to medium-firm, so it starts at the same point and runs half a step firmer.`,
     'That construction is 4 inches of comfort foam over 6 inches of reinforced steel springs. That stack reads as balanced, neither plush nor firm, which puts it close to the AS3 for most sleepers.',
     'The texture differs more than the firmness. The AS3 is all foam, with memory foam near the top, so it feels close and contouring. The Sapira Hybrid has BioFoam on top, memory foam below it, and springs underneath, so it adds lift and a little bounce.',
     'Side sleepers of average weight should find the shoulder and hip settle on either. Back sleepers get a level surface on both. Combination sleepers will find both easy to turn on, since each scores 9 in Response Time.',
     'Heavier stomach sleepers may want firmer support than the AS3\'s 5/10 feel. The Sapira Hybrid\'s 5-6/10 and its springs give a little more push under the hips, though most heavier stomach sleepers do best at 7/10 or firmer.',
-    'Both beds come in one feel only, so the choice is between two fixed surfaces rather than between firmness options. The Sapira Hybrid\'s 365-night trial gives a full year to judge its feel at home.',
+    'Both beds come in one feel only, so the choice is between two fixed surfaces rather than between firmness options. Both now list a 365-night trial, so either gives a full year to judge its feel at home.',
   ],
   construction: [
     `The ${A} is a 12 inch all-foam mattress: a Refresh cover over Bio-Pur memory foam, a HIVE transition layer and a Bio-Core base foam. Layer thicknesses for the AS3 are not listed by Amerisleep.`,
@@ -57,12 +57,12 @@ const copy: ComparisonCopy = {
     'Restless sleepers who share a bed should also weigh motion and edge, since frequent turning often moves a sleeper toward the side. Heavier combination sleepers may notice the springs lift them a little more between positions.',
   ],
   valuePolicies: [
-    `Against the Sapira Hybrid, the ${A} scores 9 in Value and 9 in Trial Period. The ${B} scores 8 in Value and 9 in Trial Period. Our Value and Trial Period scores for the AS3 and the Sapira Hybrid come from price, trial and warranty facts.`,
-    'Leesa lists the longer policies. The Sapira Hybrid comes with a 365-night trial with no-hassle returns and a limited lifetime warranty. Against the Sapira Hybrid, Amerisleep lists a 100-night trial with free returns and courier pickup, and a 20-year warranty for the AS3.',
-    'Value weighs those policies against price, so a longer trial alone does not decide the score, and the AS3 still scores higher on Value.',
+    `Against the Sapira Hybrid, the ${A} scores 9 in Value and 10 in Trial Period. The ${B} scores 8 in Value and 10 in Trial Period, so the two tie on trial. Our Value and Trial Period scores for the AS3 and the Sapira Hybrid come from price, trial and warranty facts.`,
+    'Leesa lists the longer warranty. The Sapira Hybrid comes with a 365-night trial with no-hassle returns and a limited lifetime warranty. For the AS3, Amerisleep lists the same 365-night trial with free returns and courier pickup, plus a 20-year warranty.',
+    'Value weighs those policies against price, so a longer warranty alone does not decide the score, and the AS3 scores higher on Value.',
     'Shipping is free for both. Leesa lists optional in-home setup and removal, and the Sapira Hybrid is made to order. Amerisleep sends the AS3 via FedEx within the continental US.',
     'Sizes differ slightly. Against the Sapira Hybrid, the AS3 comes in seven sizes, including Split King. The Sapira Hybrid comes in six, from Twin to Cal King.',
-    'Shoppers who put a long trial and a limited lifetime warranty first may prefer the Sapira Hybrid. Terms for the AS3 and the Sapira Hybrid can change, so confirm them on each brand\'s site before ordering.',
+    'Shoppers who put a limited lifetime warranty first may prefer the Sapira Hybrid. Terms for the AS3 and the Sapira Hybrid can change, so confirm them on each brand\'s site before ordering.',
   ],
   buyA: [
     'Couples who want 10s in Motion Transfer and Edge Support, which the AS3 offers.',
@@ -71,13 +71,13 @@ const copy: ComparisonCopy = {
   ],
   buyB: [
     'Shoppers who want reinforced steel springs with listed layer thicknesses.',
-    'Shoppers who want a 365-night trial and a limited lifetime warranty, which the Sapira Hybrid offers.',
+    'Shoppers who want a limited lifetime warranty, which the Sapira Hybrid offers.',
     'Back and combination sleepers who want a balanced hybrid feel.',
   ],
   faqs: [
     {
       q: 'Which is better, Amerisleep AS3 or Leesa Sapira Hybrid?',
-      a: `The ${A} scores higher, 9.5/10 against 8.7/10, and leads on Overall, Value, Edge Support, Motion Transfer and Cooling & Breathability. The ${B} does not lead on any field, and the two tie on Trial Period and Response Time. The Sapira Hybrid lists longer policies.`,
+      a: `The ${A} scores higher, 9.7/10 against 8.8/10, and leads on Overall, Value, Edge Support, Motion Transfer and Cooling & Breathability. The ${B} does not lead on any field, and the two tie on Trial Period and Response Time. The Sapira Hybrid lists a longer warranty.`,
     },
     {
       q: 'How firm is the Leesa Sapira Hybrid compared with the AS3?',
@@ -89,7 +89,7 @@ const copy: ComparisonCopy = {
     },
     {
       q: 'Which has the better trial and warranty?',
-      a: 'The Leesa Sapira Hybrid does. Leesa lists a 365-night trial and a limited lifetime warranty, while Amerisleep lists a 100-night trial and a 20-year warranty for the AS3. The AS3 still scores higher on Value, which weighs policies against price. Both ship free.',
+      a: 'Each lists a 365-night trial and earns a 10 in Trial Period. Leesa lists a limited lifetime warranty for the Sapira Hybrid, while Amerisleep lists a 20-year warranty for the AS3. The AS3 scores higher on Value, which weighs policies against price. Both ship free.',
     },
     {
       q: 'Which sleeps cooler, the AS3 or the Sapira Hybrid?',

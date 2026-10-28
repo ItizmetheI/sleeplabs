@@ -2,14 +2,14 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'helix-midnight-luxe',
-  dateModified: '2026-10-11',
-  metaDescription: 'Helix Midnight Luxe review: 9.0/10 Overall, a 13.5 inch medium 5/10 pillow top hybrid with zoned coils and 10s in Edge Support and Cooling & Breathability.',
-  quickAnswer: 'Helix Midnight Luxe earns a 9.0/10 Overall as a 13.5 inch pillow top hybrid rated medium 5/10, with gel and memory foams over zoned pocketed coils. It suits side and combination sleepers who want cushioning with strong support at the edge. Its main strengths are 10/10 scores in Edge Support and Cooling & Breathability. Its main limitation is a 7/10 in Value, an average result.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Helix Midnight Luxe review: 9.2/10 Overall for a 13.5 inch medium 5/10 pillow top hybrid. It earns 10s in Edge Support, Trial Period and Cooling.',
+  quickAnswer: 'Helix Midnight Luxe earns a 9.2/10 Overall as a 13.5 inch pillow top hybrid rated medium 5/10. Gel and memory foams sit over zoned pocketed coils. It suits side and combination sleepers who want cushioning with a firm edge. Its main strengths are 10/10 scores in Edge Support, Trial Period and Cooling & Breathability. Its main limitation is a 7/10 in Value.',
   strengths: [
-    '10/10 scores in Edge Support and Cooling & Breathability.',
+    '10/10 scores in Edge Support, Trial Period and Cooling & Breathability.',
     'Zoned pocketed coils with perimeter reinforcement, according to Helix.',
     'A medium 5/10 pillow top that cushions the shoulder and hip.',
-    'The Midnight Luxe comes with a 365-night trial and a limited lifetime warranty.',
+    'A 365-night trial and a limited lifetime warranty, the basis of its 10 in Trial Period.',
   ],
   limitations: [
     'Value is a 7, an average result and the lowest of its six scored fields.',
@@ -32,7 +32,7 @@ const copy: ReviewCopy = {
   performance: {
     value: [
       'Value is a 7, an average result and the lowest of the Midnight Luxe\'s six scored fields. The score is set from price, trial and warranty facts, and it weighs what the Midnight Luxe delivers against its queen price.',
-      'Helix pairs a 365-night trial with a limited lifetime warranty, and shipping is free in the contiguous US, with rates for Alaska, Hawaii and Canada. Those terms are strong. Two certifications, CertiPUR-US and GREENGUARD Gold, also add to the package.',
+      'Helix pairs a 365-night trial with a limited lifetime warranty. Shipping is free in the contiguous US, with rates for Alaska, Hawaii and Canada. Those terms earn a 10 in Trial Period. Two certifications, CertiPUR-US and GREENGUARD Gold, also add to the package.',
       'Shoppers who rank cost first should compare this field across the hybrids we score before deciding. Those who weigh the pillow top, zoned coils and policies more heavily may see the trade differently.',
     ],
     edgeSupport: [
@@ -41,8 +41,8 @@ const copy: ReviewCopy = {
       'Couples who share a full or queen gain the most from this score, since both sleepers can use the full width. Heavier sleepers who sit on the edge each morning should also give it weight. Over time, a sturdy frame helps the edge of the Midnight Luxe keep its shape.',
     ],
     trialPeriod: [
-      'The Midnight Luxe earns a strong 9 in Trial Period. Helix offers a 365-night trial, with a free return or exchange after a 30-day break-in period.',
-      'The break-in means the mattress has to be kept for 30 nights before a return or exchange. That gives the body time to adjust to a pillow top feel. After that, the rest of the year is open for a decision, which covers every season.',
+      'Trial Period is a standout 10 for the Midnight Luxe. The field is set from trial and warranty facts: a 365-night trial and a limited lifetime warranty.',
+      'Helix asks buyers to keep the mattress for a 30-day break-in before a free return or exchange. That month gives the body time to adjust to a pillow top. The rest of the year stays open for a decision.',
       'Buyers moving from a firmer bed gain the most from this field. The exchange option also helps if the medium feel turns out to be too soft or too firm. Keep the order details on file, and confirm the current terms on Helix\'s site before ordering.',
     ],
     responseTime: [
@@ -57,7 +57,7 @@ const copy: ReviewCopy = {
     ],
     coolingBreathability: [
       'Cooling & Breathability is a standout 10 for the Midnight Luxe. Helix pairs a TENCEL cover with gel memory foam, and the coil core leaves room for air to move through the base.',
-      'We set the Midnight Luxe score from its construction, not from a temperature reading. A pillow top usually lets the body sink deeper, which can hold warmth, and the cooling cover and gel foam are designed to offset that.',
+      'We set the Midnight Luxe score from its construction, not from a temperature reading. A pillow top usually lets the body sink deeper, which can hold warmth. The cooling cover and gel foam are designed to offset that.',
       'Warm sleepers who want a cushioned surface should give this field heavy weight. Breathable sheets and a thin protector keep the surface in line with the score, while heavy, plastic-backed protectors can trap heat.',
     ],
   },
@@ -65,7 +65,7 @@ const copy: ReviewCopy = {
   positions: {
     side: {
       under130: 'The Midnight Luxe is a good fit. The pillow top and memory foams give a lighter frame room to sink at the shoulder and hip. Those who want a very plush feel may prefer the soft Sunset Luxe. Most lighter side sleepers will find the medium feel enough.',
-      from130to230: 'A strong fit, and a core audience for the Midnight Luxe. The medium surface cushions the shoulder and hip, and the zoned coils are designed to give more under the shoulders than under the hips.',
+      from130to230: 'A strong fit, and a core audience for the Midnight Luxe. The medium surface cushions the shoulder and hip. The zoned coils are designed to give more under the shoulders than under the hips.',
       over230: 'The Midnight Luxe is a good fit. More weight presses the shoulder and hip into the pillow top, while the zoned coils hold the waist level. Some heavier side sleepers may want a little more support. The reinforced perimeter also helps when sitting up in bed.',
     },
     back: {
@@ -94,7 +94,7 @@ const copy: ReviewCopy = {
     'Heavier stomach sleepers who need a firm surface.',
     'Shoppers who want listed layer thicknesses before buying on the Midnight Luxe.',
   ],
-  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Midnight Luxe and scores 9.5 as a medium all-foam bed. The [Zoma Start](/reviews/zoma-start/) scores 9.2 and the [Vaya Hybrid](/reviews/vaya-hybrid/) scores 8.8, both hybrids. Use the table to compare their firmness, trial and warranty with the Midnight Luxe.',
+  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Midnight Luxe and scores 9.7 as a medium all-foam bed. The [Zoma Start](/reviews/zoma-start/) scores 9.3 and the [Vaya Hybrid](/reviews/vaya-hybrid/) scores 9.0, both hybrids. Use the table to compare their firmness, trial and warranty with the Midnight Luxe.',
   policies: [
     'Helix Midnight Luxe comes with a 365-night trial and a limited lifetime warranty, according to Helix. Shipping is free in the contiguous US, with rates for Alaska, Hawaii and Canada.',
     'A free return or exchange is available within 365 nights, after a 30-day break-in period. Sizes run Twin, Twin XL, Full, Queen, King, Cal King, Short Queen and RV King.',
@@ -107,15 +107,15 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What is the Helix Midnight Luxe score?',
-      a: 'The Midnight Luxe earns a 9.0/10 Overall. It scores 10/10 in Edge Support and Cooling & Breathability, 9/10 in Trial Period, Response Time and Motion Transfer, and 7/10 in Value. Overall is the average of those six fields, shown to one decimal. Value is its weakest field.',
+      a: 'The Midnight Luxe earns a 9.2/10 Overall. It scores 10/10 in Edge Support, Trial Period and Cooling & Breathability. It earns 9/10 in Response Time and Motion Transfer, and 7/10 in Value. Overall is the average of those six fields, shown to one decimal.',
     },
     {
       q: 'Is the Helix Midnight Luxe good for side sleepers?',
-      a: 'Yes, side sleepers are a core audience. The medium 5/10 pillow top cushions the shoulder and hip, and the zoned coils are designed to give more under the shoulders than under the hips. Lighter side sleepers who want a plusher feel may prefer the soft [Helix Sunset Luxe](/reviews/helix-sunset-luxe/).',
+      a: 'Yes, side sleepers are a core audience. The medium 5/10 pillow top cushions the shoulder and hip. The zoned coils are designed to give more under the shoulders than under the hips. Lighter side sleepers who want a plusher feel may prefer the soft [Helix Sunset Luxe](/reviews/helix-sunset-luxe/).',
     },
     {
       q: 'Is Helix Midnight Luxe good for couples?',
-      a: 'Yes. It earns a 10/10 in Edge Support, so both sleepers can use the full width, and a 9/10 in Motion Transfer, so most partners sleep through each other turning over. The 9/10 Response Time also suits partners who change position often. Light sleepers who wake easily should weigh the 9.',
+      a: 'Yes. It earns a 10/10 in Edge Support, so both sleepers can use the full width. A 9/10 in Motion Transfer means most partners sleep through each other turning over. The 9/10 Response Time also suits partners who change position often. Light sleepers who wake easily should weigh the 9.',
     },
     {
       q: 'What trial and warranty come with Helix Midnight Luxe?',
@@ -127,14 +127,14 @@ const copy: ReviewCopy = {
     },
     {
       q: 'How is Helix Midnight Luxe different from Helix Dawn Luxe?',
-      a: 'The Midnight Luxe is rated medium 5/10 with a quilted pillow top and zoned coils, while the [Helix Dawn Luxe](/reviews/helix-dawn-luxe/) is rated firm 7/10. The Midnight Luxe scores 9.0 Overall with 10s in Edge Support and Cooling & Breathability. The Dawn Luxe scores 8.5 and suits back and stomach sleepers who want a firmer surface.',
+      a: 'The Midnight Luxe is rated medium 5/10 with a quilted pillow top and zoned coils, while the [Helix Dawn Luxe](/reviews/helix-dawn-luxe/) is rated firm 7/10. The Midnight Luxe scores 9.2 Overall with 10s in Edge Support, Trial Period and Cooling & Breathability. The Dawn Luxe scores 8.7 and suits back and stomach sleepers who want a firmer surface.',
     },
     {
       q: 'What sizes does Helix Midnight Luxe come in?',
       a: 'It comes in Twin, Twin XL, Full, Queen, King, Cal King, Short Queen and RV King, according to Helix. The Short Queen and RV King sizes suit RVs and campers. The mattress is 13.5 inches tall, so deep pocket fitted sheets may help. Every size shares the same construction and scores.',
     },
   ],
-  verdict: 'Helix Midnight Luxe earns a 9.0/10 Overall, led by 10/10 scores in Edge Support and Cooling & Breathability. Its medium 5/10 pillow top over zoned, reinforced coils suits side and combination sleepers, and couples who use the full width of the bed. Value is a 7, an average result. Stomach sleepers and heavier back sleepers should look at a firmer model.',
+  verdict: 'Helix Midnight Luxe earns a 9.2/10 Overall, led by 10/10 scores in Edge Support, Trial Period and Cooling & Breathability. Its medium 5/10 pillow top over zoned, reinforced coils suits side and combination sleepers, and couples who use the full width of the bed. Value is a 7, an average result. Stomach sleepers and heavier back sleepers should look at a firmer model.',
   related: [
     { label: 'Amerisleep AS3 vs Helix Midnight Luxe', href: '/comparison/amerisleep-as3-vs-helix-midnight-luxe/' },
     { label: 'Helix Mattress Reviews (2026)', href: '/brands/helix/' },

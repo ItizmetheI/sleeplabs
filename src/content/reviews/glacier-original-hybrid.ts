@@ -2,7 +2,7 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'glacier-original-hybrid',
-  dateModified: '2026-10-11',
+  dateModified: '2026-10-22',
   metaDescription: 'Glacier Original Hybrid review: 9.3/10 Overall, a 12 inch medium-firm 6/10 hybrid with 10s in Value, Trial Period and Cooling & Breathability.',
   quickAnswer: 'Glacier Original Hybrid earns a 9.3/10 Overall as a 12 inch hybrid rated medium-firm 6/10, with a cooling cover and gel foams over pocketed coils. It suits warm sleepers and back or combination sleepers who want a supportive, cool surface. Its main strengths are 10/10 scores in Value, Trial Period and Cooling & Breathability. Its main limitation is an 8/10 in Motion Transfer.',
   strengths: [
@@ -31,7 +31,7 @@ const copy: ReviewCopy = {
   ],
   performance: {
     value: [
-      'Value is a standout 10. The score is set from price, trial and warranty facts, and it weighs what the Original delivers against its cost.',
+      'Value lands at a standout 10. The score is set from price, trial and warranty facts, and it weighs what the Original delivers against its cost.',
       'Glacier pairs a 365-night trial with a lifetime warranty, and standard UPS delivery to the door is free. White glove delivery is available for an added fee. Check the current price on Glacier\'s site before ordering.',
       'Shoppers who weigh long policies and certifications will find a lot behind this 10. Three certifications and a lifetime warranty are a strong package for a coil hybrid. Those who rank cost first should still confirm the current price before deciding.',
     ],
@@ -94,7 +94,7 @@ const copy: ReviewCopy = {
     'Lighter side sleepers who want a plush surface.',
     'Shoppers who want listed layer thicknesses before buying.',
   ],
-  compareIntro: 'The [Zoma Hybrid](/reviews/zoma-hybrid/), the [Glacier Apex Hybrid](/reviews/glacier-apex-hybrid/) and the [Glacier Summit Hybrid](/reviews/glacier-summit-hybrid/) all score 9.3 as hybrids, the same as the Original. The table below sets their firmness, trial and warranty beside the Original Hybrid.',
+  compareIntro: 'The [Zoma Start](/reviews/zoma-start/), the [Glacier Apex Hybrid](/reviews/glacier-apex-hybrid/) and the [Glacier Summit Hybrid](/reviews/glacier-summit-hybrid/) all score 9.3 as hybrids, the same as the Original. The table below sets their firmness, trial and warranty beside the Original Hybrid.',
   policies: [
     'Glacier Original Hybrid comes with a 365-night trial and a lifetime warranty, according to Glacier. Standard UPS delivery to the door is free, and white glove delivery is available for an added fee.',
     'Returns get a full refund with return shipping covered, after at least 30 days of use. The Original Hybrid comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',

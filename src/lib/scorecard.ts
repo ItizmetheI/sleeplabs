@@ -24,4 +24,4 @@ export const scorecardRows = (): { mattress: Mattress; cells: string[] }[] =>
   });
 
 /** Month the specs were recorded, for the "as of" lead. */
-export const scorecardAsOf = (): string => getSpec(allMattresses[0].id).sourceChecked ?? 'October 2026';
+export const scorecardAsOf = (): string => (getSpec(allMattresses[0].id).sourceChecked ?? 'October 2026').split(';')[0].trim(); // the note after ';' is internal

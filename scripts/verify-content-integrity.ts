@@ -70,8 +70,8 @@ const lockedScoreDataset = [...allMattresses]
   .map(mattress => [mattress.id, ...SCORE_METRICS.map(metric => mattress.scores[metric.key])].join('|'))
   .join('\n');
 const lockedScoreDatasetHash = createHash('sha256').update(lockedScoreDataset).digest('hex');
-// Locked to the owner's master scores file (received 2026-10-11), less the four models removed on 2026-10-16.
-const approvedScoreDatasetHash = '7fa71fb8a9b38169798c41d7b5300463d67f399a2a55bcee5da6caf1dcf04564';
+// Locked to the owner's master scores file (received 2026-10-22).
+const approvedScoreDatasetHash = 'd1ccfe3fb03085a2eb258b37ace8d8f6069b199ecd1eac6a151075430f01de5a';
 const siteUrl = 'https://mattressinquirer.ahmedbarkat1067.workers.dev';
 const reviewDocuments = buildReviewLlmDocuments(siteUrl);
 const generatedDocuments = buildGeneratedLlmDocuments(siteUrl);
@@ -88,12 +88,12 @@ assert(
   orderedScoreField.every((model, index) => index === 0 || orderedScoreField[index - 1].scores.overall >= model.scores.overall),
   'The full score field is not ordered by Overall score.',
 );
-// Owner rule: Overall is the average of the six fields, shown to one decimal, never above 9.5.
+// Owner rule: Overall is the average of the six fields, shown to one decimal, never above 9.7 (owner scores master, 2026-10-22).
 for (const model of allMattresses) {
   const { value, edgeSupport, trialPeriod, responseTime, motionTransfer, coolingBreathability, overall } = model.scores;
   const average = (value + edgeSupport + trialPeriod + responseTime + motionTransfer + coolingBreathability) / 6;
   assert(formatOverall(average) === formatOverall(overall), `${model.id} Overall ${formatOverall(overall)} is not the six-field average ${formatOverall(average)}.`);
-  assert(overall <= 9.5, `${model.id} Overall ${overall} is above 9.5.`);
+  assert(overall <= 9.7, `${model.id} Overall ${overall} is above 9.7.`);
 }
 assert(
   lockedScoreDatasetHash === approvedScoreDatasetHash,

@@ -2,7 +2,7 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'plushbeds-botanical-bliss',
-  dateModified: '2026-10-11',
+  dateModified: '2026-10-22',
   metaDescription: 'PlushBeds Botanical Bliss review: 8.7/10 Overall, an organic all-latex bed in 9, 10 or 12 inches, with 10s in Trial Period and Motion Transfer.',
   quickAnswer: 'PlushBeds Botanical Bliss earns an 8.7/10 Overall as an all-latex mattress sold in 9, 10 and 12 inch heights and in Medium 5/10 and Medium-Firm 6/10. It suits shoppers who want certified organic latex with no coils or foam. Its main strengths are 10/10 scores in Trial Period and Motion Transfer. The main limitation of the Botanical Bliss is a 7/10 in Value, an average result.',
   strengths: [
@@ -98,7 +98,7 @@ const copy: ReviewCopy = {
     'Heavier stomach sleepers who need a firm surface with coils.',
     'Restless sleepers who want the quickest surface, since Response Time is an 8.',
   ],
-  compareIntro: 'The [PlushBeds Organic Bliss](/reviews/plushbeds-organic-bliss/) scores 9.0 as an all-latex bed with a latex pillow top. The [Vaya Foam](/reviews/vaya-foam/) scores 8.7, the same as the Botanical Bliss, as an all-foam bed. The table below sets their firmness, trial and warranty beside the Botanical Bliss.',
+  compareIntro: 'The [PlushBeds Organic Bliss](/reviews/plushbeds-organic-bliss/) scores 9.0 as an all-latex bed with a latex pillow top. The [Latex For Less Hybrid Latex Mattress](/reviews/latex-for-less-hybrid-latex-mattress/) scores 8.7, the same as the Botanical Bliss, as a latex hybrid. The table below sets their firmness, trial and warranty beside the Botanical Bliss.',
   policies: [
     'PlushBeds Botanical Bliss comes with a 365-night money-back guarantee and a lifetime warranty, according to PlushBeds. UPS delivery is free in the contiguous US, and in-home setup is available for a fee.',
     'A one-time comfort exchange is available. Confirm how the exchange works, and whether it covers a change of height, before ordering. Sizes run Twin, Twin XL, Full, Queen, King, Cal King, Split King, Split Cal King and Split Queen.',

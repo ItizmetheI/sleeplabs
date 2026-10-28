@@ -406,12 +406,20 @@ assert(
 
 const bestDetailPages = [...htmlByPath].filter(([route]) => route.startsWith('best/'));
 assert(bestDetailPages.length === 21, `Expected 21 rendered ranked-category pages; found ${bestDetailPages.length}.`);
-// Owner best-of template: 4 to 8 ranked pick sections, the AS3 first wherever it is ranked.
+// Owner best-of template (2026-10-22): 4 to 8 ranked pick sections, the page's named top pick first, no AS3 box.
+const TOP_PICK_BY_PAGE = {
+  'amerisleep-as6': ['firm', 'stomach-sleepers', 'luxury'],
+  'amerisleep-as5-hybrid': ['soft'],
+  'zoma-boost': ['hybrid', 'heavy-sleepers'],
+  'amerisleep-organica': ['latex', 'organic'],
+};
 for (const [route, html] of bestDetailPages) {
   const pickIds = [...html.matchAll(/data-pick="([^"]+)"/g)].map(match => match[1]);
   assert(pickIds.length >= 4 && pickIds.length <= 8, `${route} must render 4 to 8 picks; found ${pickIds.length}.`);
-  if (pickIds.includes('amerisleep-as3')) assert(pickIds[0] === 'amerisleep-as3', `${route} must rank the Amerisleep AS3 first where it qualifies.`);
-  else assert(html.includes('data-as3-box'), `${route} must show the Our Best Overall Pick box when the AS3 is not ranked.`);
+  const slug = route.split('/')[1];
+  const topPick = Object.keys(TOP_PICK_BY_PAGE).find(id => TOP_PICK_BY_PAGE[id].includes(slug)) ?? 'amerisleep-as3';
+  assert(pickIds[0] === topPick, `${route} must rank ${topPick} first; found ${pickIds[0]}.`);
+  assert(!html.includes('data-as3-box'), `${route} must not show the retired Our Best Overall Pick box.`);
   const article = articleNodes.find(node => node.route === route)?.value;
   const articleBody = typeof article?.articleBody === 'string' ? article.articleBody : '';
   assert(articleBody.includes('Our Picks at a Glance') && articleBody.includes('How We Picked'), `${route} Article schema is missing the picks table or How We Picked.`);

@@ -2,7 +2,7 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'nest-bedding-owl',
-  dateModified: '2026-10-16',
+  dateModified: '2026-10-22',
   metaDescription: 'Nest Bedding Owl review: 9.2/10 Overall, a 14 inch Talalay latex hybrid in Plush 4, Medium 5 and Firm 7, with 10s in Trial Period and Response Time.',
   quickAnswer: 'Nest Bedding Owl earns a 9.2/10 Overall as a 14 inch latex hybrid with 3 inches of natural Talalay latex over reinforced-edge pocketed coils, sold in Plush 4/10, Medium 5/10 and Firm 7/10. It suits most sleep positions and sleepers who want a buoyant latex feel. Its main strengths are 10/10 scores in Trial Period and Response Time. The main limitation of the Owl is an 8/10 in Value.',
   strengths: [
@@ -93,7 +93,7 @@ const copy: ReviewCopy = {
     'Shoppers who want to return early, since a 30-night adjustment period comes first.',
     'Shoppers who want certified organic materials, since none are listed.',
   ],
-  compareIntro: 'The [Amerisleep Organica](/reviews/amerisleep-organica/) also scores 9.2 as a latex hybrid. The [Eco Terra Hybrid Latex](/reviews/eco-terra-hybrid-latex/) and the [Birch Natural](/reviews/birch-natural/) both score 9.0. The table below sets their firmness, trial and warranty beside the Owl.',
+  compareIntro: 'The [Birch Natural](/reviews/birch-natural/), the [Nolah Natural 11"](/reviews/nolah-natural-11/) and the [Amerisleep Organica Plush](/reviews/amerisleep-organica-plush/) all score 9.2 as latex hybrids, the same as the Owl. The table below sets their firmness, trial and warranty beside the Owl.',
   policies: [
     'Nest Bedding Owl comes with a 365-night trial and a limited lifetime warranty, according to Nest Bedding. Shipping is free in the continental US, with extra rates for Alaska, Hawaii and Canada.',
     'On the Owl, returns are free after a 30-night adjustment period. Sizes run Twin, Twin XL, Full, Queen, King, Cal King and Split Cal King.',

@@ -5,11 +5,11 @@ const B = '[Leesa Sapira Chill Hybrid](/reviews/leesa-sapira-chill-hybrid/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as6-black-series-vs-leesa-sapira-chill-hybrid',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS6 Black Series vs Leesa Sapira Chill Hybrid: both score 9.3/10. The AS6 leads on Value and Motion Transfer; the Leesa leads on Edge and Response.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS6 Black Series vs Leesa Sapira Chill Hybrid: both score 9.5/10. The AS6 leads on Value and Motion Transfer; the Leesa leads on Edge and Response.',
   quickVerdict: `Choose the ${A} if you want memory foam over individually wrapped coils in Plush Soft, Luxury Firm or Firm, with 10s in Motion Transfer and Cooling & Breathability. Choose the ${B} if you want a livelier hybrid with zoned lumbar springs in Plush, Medium-Firm or Firm, with 10s in Edge Support and Response Time.`,
   feel: [
-    `These two tie on Overall and both come in three firmness options, so the choice comes down to texture and the fields each one leads. The ${A} is sold in Plush Soft 3/10, Luxury Firm 7/10 and Firm 8/10. The ${B} is sold in Plush 4/10, Medium-Firm 6/10 and Firm 7/10.`,
+    `These two tie at 9.5 Overall and both come in three firmness options, so the choice comes down to texture and the fields each one leads. The ${A} is sold in Plush Soft 3/10, Luxury Firm 7/10 and Firm 8/10. The ${B} is sold in Plush 4/10, Medium-Firm 6/10 and Firm 7/10.`,
     'The AS6 places titanium-infused memory foam near the top, so it feels close and contouring. The Sapira Chill places quilt foam, BioFoam and a responsive foam over its springs, with no memory foam named, so it feels livelier.',
     'The ranges differ. The AS6 reaches softer and firmer settings, from 3/10 to 8/10. The Sapira Chill covers a middle range, from 4/10 to 7/10, with a Medium-Firm option at 6/10 that the AS6 does not offer.',
     'A lighter side sleeper could take the AS6 in Plush Soft or the Sapira Chill in Plush. A back sleeper could take the AS6 in Luxury Firm or the Sapira Chill in Medium-Firm. A heavier stomach sleeper could take the AS6 in Firm.',
@@ -70,15 +70,15 @@ const copy: ComparisonCopy = {
     'The gap is one point, so many sleepers will not notice it. It matters most for combination sleepers who turn several times a night.',
   ],
   valuePolicies: [
-    `The ${A} scores 9 in Value and 9 in Trial Period. The ${B} scores 8 in Value and 9 in Trial Period. For the AS6 Black Series and the Sapira Chill Hybrid, our Value and Trial Period scores are set from price, trial and warranty facts.`,
-    'Leesa lists the longer policies. The Sapira Chill comes with a 365-night trial and a limited lifetime warranty, with optional in-home setup and removal.',
-    'Amerisleep lists a 100-night trial with free returns by mail within 100 nights, and a 20-year warranty for the AS6.',
+    `The ${A} scores 9 in Value and 10 in Trial Period. The ${B} scores 8 in Value and 10 in Trial Period. For the AS6 Black Series and the Sapira Chill Hybrid, our Value and Trial Period scores are set from price, trial and warranty facts.`,
+    'The trials now match. Both list 365 nights, so both earn a 10 in Trial Period. Leesa adds a limited lifetime warranty, with optional in-home setup and removal.',
+    'Amerisleep lists free returns by mail during the trial, and a 20-year warranty for the AS6.',
     'Shipping is free for both. Amerisleep ships the AS6 Black Series via FedEx in the continental US. Leesa makes the Sapira Chill to order.',
     'Value weighs policies against price, and the AS6 scores a point higher in that field.',
-    'Shoppers who want a full year to decide and a limited lifetime warranty may prefer the Sapira Chill.',
+    'Shoppers who put a limited lifetime warranty first may prefer the Sapira Chill.',
     'Terms for the AS6 Black Series and the Sapira Chill Hybrid can change, so confirm them on each brand\'s site before ordering.',
     'With Overall tied, these policy differences can reasonably decide between the two.',
-    'Shoppers who are unsure which firmness suits them can use either trial to judge it at home, with the Sapira Chill giving a full year to decide.',
+    'Shoppers unsure which firmness suits them can use either trial to judge it at home. Each gives a full year to decide.',
   ],
   buyA: [
     'Couples who want a 10 in Motion Transfer, which the AS6 Black Series offers.',
@@ -88,12 +88,12 @@ const copy: ComparisonCopy = {
   buyB: [
     'Restless sleepers who want a 10 in Response Time, which the Sapira Chill Hybrid offers.',
     'Anyone who sits on the edge often and wants a 10 in Edge Support, which the Sapira Chill Hybrid offers.',
-    'Shoppers who want a 365-night trial and a limited lifetime warranty, which the Sapira Chill Hybrid offers.',
+    'Shoppers who want a limited lifetime warranty and optional in-home setup, which the Sapira Chill Hybrid offers.',
   ],
   faqs: [
     {
       q: 'Which is better, Amerisleep AS6 Black Series or Leesa Sapira Chill Hybrid?',
-      a: `They tie at 9.3/10 Overall. The ${A} leads on Value and Motion Transfer. The ${B} leads on Edge Support and Response Time. They tie on Trial Period and Cooling & Breathability. Choose the AS6 for memory foam stillness, or the Sapira Chill for a livelier surface.`,
+      a: `They tie at 9.5/10 Overall. The ${A} leads on Value and Motion Transfer. The ${B} leads on Edge Support and Response Time. They tie on Trial Period and Cooling & Breathability. Choose the AS6 for memory foam stillness, or the Sapira Chill for a livelier surface.`,
     },
     {
       q: 'What firmness options do they come in?',
@@ -108,8 +108,8 @@ const copy: ComparisonCopy = {
       a: `The AS6 Black Series and the Sapira Chill Hybrid tie at 10 in Cooling & Breathability. The Amerisleep AS6 Black Series names a CryoCool cover and ArcticWave cooling bands, and the Leesa Sapira Chill Hybrid names an Ultra Cool cover. Both have coil cores. Breathable sheets help the AS6 Black Series or the Sapira Chill Hybrid stay comfortable.`,
     },
     {
-      q: 'Which has the longer trial and warranty, the AS6 Black Series or the Sapira Chill Hybrid?',
-      a: `The Leesa Sapira Chill Hybrid lists a 365-night trial and a limited lifetime warranty. Amerisleep lists a 100-night trial and a 20-year warranty for the AS6 Black Series. Both score 9 in Trial Period, and the AS6 scores a point higher in Value.`,
+      q: 'Which has the better trial and warranty, the AS6 Black Series or the Sapira Chill Hybrid?',
+      a: `Both trials run 365 nights, and both score 10 in Trial Period. The Leesa Sapira Chill Hybrid adds a limited lifetime warranty. Amerisleep lists a 20-year warranty for the AS6 Black Series. The AS6 scores a point higher in Value, 9 against 8.`,
     },
     {
       q: 'Which is better for side sleepers, the AS6 Black Series or the Sapira Chill Hybrid?',

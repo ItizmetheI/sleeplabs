@@ -5,8 +5,8 @@ const B = '[Casper Dream Hybrid](/reviews/casper-dream-hybrid/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as3-vs-casper-dream-hybrid',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS3 vs Casper Dream Hybrid: two medium 5/10 beds, one all-foam and one hybrid. The AS3 scores 9.5/10 to 8.7/10 and leads on five fields.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS3 vs Casper Dream Hybrid: two medium 5/10 beds, one all-foam and one hybrid. The AS3 scores 9.7/10 to 8.7/10 and leads on six fields.',
   quickVerdict: `Choose the ${A} if you want a quiet all-foam bed with 10s in Edge Support, Motion Transfer and Cooling & Breathability. Choose the ${B} if you specifically want pocketed coils under a medium 5/10 feel, with zoned memory foam aimed at the hips and lower back.`,
   feel: [
     `On firmness, these two match. The ${A} is sold in one medium feel, and the ${B} is sold in one medium feel. Both sit at 5/10 on our scale, so neither is the softer or firmer choice.`,
@@ -27,13 +27,13 @@ const copy: ComparisonCopy = {
     `The ${A} scores 10 in Edge Support, a standout result. The ${B} scores 8, good with a caveat.`,
     'This is a result you might expect the other way around, since coil beds usually hold an edge better than foam. Casper adds Core Edge foam around the Dream Hybrid\'s coils, and its 8 is a solid score. The AS3\'s dense Bio-Core base still lands higher.',
     'In practice, sitting on the side of the AS3 to put on shoes should feel steady, and a sleeper can lie near its perimeter without feeling a roll. The Dream Hybrid\'s edge holds up for sleeping, though the outer few inches give a little more.',
-    'Couples on a full or queen, who both sleep near an edge, will notice the difference most. Solo sleepers who stay near the center will notice it least.',
+    'Couples on a full or queen, who both sleep near an edge, will notice the difference most. Sleeping alone in the middle of the bed, you will notice it least.',
     'Anyone who sits on the edge each morning should give this field weight, and it favors the AS3. A larger size reduces how much either edge matters, since partners have more room to stay toward the middle. A sturdy frame or foundation also helps both mattresses hold their perimeter shape over the years.',
   ],
   motionTransfer: [
     `The ${A} scores 10 in Motion Transfer. The ${B} scores 9, a strong result.`,
     'The AS3 has no springs to carry movement, so a partner turning over or getting up is unlikely to be felt. The Dream Hybrid\'s pocketed coils move one at a time, and its foams absorb most motion, so it comes close.',
-    'A 9 means most couples will sleep through a partner turning over on the Dream Hybrid. A little movement may reach the other side when someone gets in or out of bed.',
+    'A 9 means most couples will sleep through a partner turning over on the Dream Hybrid. Getting in or out of bed may send a little motion to the other side.',
     'Very light sleepers, couples on different schedules and parents who share the bed with a child or pet should lean toward the AS3 on this field.',
     'Couples who want some bounce from coils, and sleep soundly, will find the Dream Hybrid\'s 9 quiet enough for most nights. A king or Cal King also helps, since more distance between partners means less movement reaches the other side on any mattress.',
   ],
@@ -52,16 +52,16 @@ const copy: ComparisonCopy = {
     'Restless sleepers can decide on the fields where they differ, such as Edge Support and Motion Transfer, both of which favor the AS3. Heavier combination sleepers may notice the Dream Hybrid\'s coils give a little more lift between positions, even though both share the same score in this field.',
   ],
   valuePolicies: [
-    `The ${A} scores 9 in Value and 9 in Trial Period. The ${B} scores 8 in Value and 9 in Trial Period. Value and Trial Period are set from price, trial and warranty facts.`,
-    'Both list a 100-night trial. Amerisleep lists free returns with courier pickup. Casper lists free returns once a 30-night adjustment period has passed.',
+    `The ${A} scores 9 in Value and 10 in Trial Period. The ${B} scores 8 in Value and 9 in Trial Period. Value and Trial Period are set from price, trial and warranty facts.`,
+    'The trials now differ. Amerisleep lists a 365-night trial for the AS3, with free returns and courier pickup. Casper lists a 100-night trial, with free returns once a 30-night adjustment period has passed.',
     'The warranties differ. Amerisleep lists a 20-year warranty for the AS3, and Casper lists a 10-year warranty for the Dream Hybrid. Warranty length is one of the facts our Value score weighs.',
     'Shipping is free for both. Amerisleep ships the AS3 via FedEx in the continental US. Casper lists free no-contact delivery, with extra fees for Alaska and Hawaii, and notes that some states add a recycling fee to mattress orders.',
-    'The AS3 and the Dream Hybrid both come in seven sizes, from Twin to Split King. If the decision comes down to policies, the AS3\'s longer warranty is the clearest difference, since the trial lengths match.',
+    'The AS3 and the Dream Hybrid both come in seven sizes, from Twin to Split King. If the decision comes down to policies, the AS3 lists both the longer trial and the longer warranty. Shoppers unsure about all foam get 365 nights to judge the AS3 at home, against 100 nights for the Dream Hybrid.',
   ],
   buyA: [
     'Couples who want 10s in Motion Transfer and Edge Support.',
     'Warm sleepers who want a 10 in Cooling & Breathability, where the Dream Hybrid scores 9 in Cooling & Breathability.',
-    'Shoppers who want a longer warranty, with 20 years listed by Amerisleep.',
+    'Shoppers who want a 365-night trial and a 20-year warranty.',
   ],
   buyB: [
     'Sleepers who want pocketed coils under a medium 5/10 feel.',
@@ -71,7 +71,7 @@ const copy: ComparisonCopy = {
   faqs: [
     {
       q: 'Which is better, Amerisleep AS3 or Casper Dream Hybrid?',
-      a: `The ${A} scores higher, 9.5/10 against 8.7/10, and leads on Overall, Value, Edge Support, Motion Transfer and Cooling & Breathability. The ${B} does not lead on any field, and the two tie on Trial Period and Response Time. The Dream Hybrid still suits shoppers who want coils. Both are medium 5/10, so the choice comes down to construction.`,
+      a: `The ${A} scores higher, 9.7/10 against 8.7/10, and leads on Overall, Value, Edge Support, Trial Period, Motion Transfer and Cooling & Breathability. The ${B} does not lead on any field, and the two tie on Response Time. The Dream Hybrid still suits shoppers who want coils. Both are medium 5/10, so the choice comes down to construction.`,
     },
     {
       q: 'Are the AS3 and Dream Hybrid the same firmness?',
@@ -86,8 +86,8 @@ const copy: ComparisonCopy = {
       a: 'The Amerisleep AS3 scores 10 in Cooling & Breathability, and the Casper Dream Hybrid scores 9. The Dream Hybrid has a coil core for airflow, but the AS3 still lands a point higher. Breathable sheets help either bed stay comfortable. Very warm sleepers should lean toward the AS3.',
     },
     {
-      q: 'Which has the better warranty?',
-      a: 'Amerisleep lists a 20-year warranty for the AS3, and Casper lists a 10-year warranty for the Dream Hybrid. Both list a 100-night trial, with Casper requiring a 30-night adjustment period before free returns. Confirm current terms on each brand\'s site. Both ship free in the continental US.',
+      q: 'Which has the longer trial and warranty?',
+      a: 'The Amerisleep AS3. Amerisleep lists a 20-year warranty and a 365-night trial. Casper lists a 100-night trial and a 10-year warranty for the Dream Hybrid, with a 30-night adjustment period before free returns. Confirm current terms on each brand\'s site. Both ship free in the continental US.',
     },
     {
       q: 'Which is better for back sleepers?',

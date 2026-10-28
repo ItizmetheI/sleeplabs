@@ -5,9 +5,9 @@ const B = '[Brooklyn Bedding Aurora Luxe](/reviews/brooklyn-bedding-aurora-luxe/
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as3-vs-brooklyn-bedding-aurora-luxe',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS3 vs Brooklyn Bedding Aurora Luxe: medium all foam against a three-firmness hybrid. The AS3 scores 9.5/10 to 8.8/10 and leads on four fields.',
-  quickVerdict: `Choose the ${A} if you want a medium 5/10 all-foam bed with 10s in Edge Support and Motion Transfer. Choose the ${B} if you want a cooling hybrid in Soft, Medium or Firm, two heights, ten sizes, a 365-night trial and a lifetime warranty.`,
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS3 vs Brooklyn Bedding Aurora Luxe: medium all foam against a three-firmness hybrid. The AS3 scores 9.7/10 to 9.0/10 and leads on four fields.',
+  quickVerdict: `Choose the ${A} if you want a medium 5/10 all-foam bed with 10s in Edge Support and Motion Transfer. Choose the ${B} if you want a cooling hybrid in Soft, Medium or Firm, two heights, ten sizes and a lifetime warranty.`,
   feel: [
     `The ${A} is an all-foam bed sold in one medium feel, which sits at 5/10 on our scale. The ${B} is a hybrid sold in Soft 3/10, Medium 5/10 and Firm 7/10, all under one score.`,
     'Choice of firmness is the Aurora Luxe\'s main advantage on feel. A lighter side sleeper can take Soft, a combination sleeper Medium, and a back or stomach sleeper Firm.',
@@ -72,12 +72,12 @@ const copy: ComparisonCopy = {
     'The Aurora Luxe\'s Firm option keeps the body nearer the surface, which can make movement feel quicker in everyday use.',
   ],
   valuePolicies: [
-    `The AS3 and the Aurora Luxe both score 9 in Value and 9 in Trial Period. The ${A} and the ${B} reach those scores with different policies. For the AS3 and the Aurora Luxe, our Value and Trial Period scores are set from price, trial and warranty facts.`,
+    `The AS3 and the Aurora Luxe both score 9 in Value and 10 in Trial Period. The ${A} and the ${B} reach those scores with different policies. For the AS3 and the Aurora Luxe, our Value and Trial Period scores are set from price, trial and warranty facts.`,
     'Brooklyn Bedding lists a 365-night trial and a lifetime warranty for the Aurora Luxe. Return requests start 30 days after delivery, with one return per customer and clearance items excluded.',
-    'Amerisleep lists a 100-night trial with free returns and courier pickup, and a 20-year warranty for the AS3.',
+    'Amerisleep lists the same 365-night trial length for the AS3, with free returns and courier pickup, and a 20-year warranty.',
     'Shipping is free for both. Brooklyn Bedding ships the Aurora Luxe as a bed in a box. Amerisleep ships via FedEx in the continental US.',
-    'Because Value ties, policy alone does not separate these two on our scorecard.',
-    'Shoppers who want a full year to decide and a lifetime warranty may prefer the Aurora Luxe, keeping its return conditions in mind.',
+    'Because Value and Trial Period both tie, policy alone does not separate these two on our scorecard.',
+    'Neither trial is shorter than a year. Shoppers who want a lifetime warranty may prefer the Aurora Luxe, keeping its return conditions in mind.',
     'Terms for the AS3 and the Aurora Luxe can change, so confirm them on each brand\'s site before ordering.',
     'Shoppers who expect to buy on clearance should read Brooklyn Bedding\'s return terms closely, since Brooklyn Bedding excludes clearance items from returns.',
   ],
@@ -88,13 +88,13 @@ const copy: ComparisonCopy = {
   ],
   buyB: [
     'Shoppers who want Soft, Medium or Firm in one model.',
-    'Shoppers who want a 365-night trial and a lifetime warranty.',
+    'Shoppers who want a lifetime warranty and two height options.',
     'Shoppers who need Full XL, Short Queen, RV King or Split Cal King.',
   ],
   faqs: [
     {
       q: 'Which is better, Amerisleep AS3 or Brooklyn Bedding Aurora Luxe?',
-      a: `The ${A} scores higher, 9.5/10 against 8.8/10, and leads on Overall, Edge Support, Response Time and Motion Transfer. The ${B} does not lead on any field, and the two tie on Value, Trial Period and Cooling & Breathability. The Aurora Luxe suits shoppers who want a firmness choice.`,
+      a: `The ${A} scores higher, 9.7/10 against 9.0/10, and leads on Overall, Edge Support, Response Time and Motion Transfer. The ${B} does not lead on any field, and the two tie on Value, Trial Period and Cooling & Breathability. The Aurora Luxe suits shoppers who want a firmness choice.`,
     },
     {
       q: 'What firmness options does the Aurora Luxe come in?',
@@ -109,8 +109,8 @@ const copy: ComparisonCopy = {
       a: `They tie at 10 in Cooling & Breathability. The Brooklyn Bedding Aurora Luxe names a GlacioTex cooling cover, copper foam and a coil core, while the Amerisleep AS3 reaches the same score as an all-foam bed. Breathable sheets help either bed stay comfortable.`,
     },
     {
-      q: 'Which has the longer trial and warranty, the AS3 or the Aurora Luxe?',
-      a: `The Brooklyn Bedding Aurora Luxe lists a 365-night trial and a lifetime warranty, with return requests starting 30 days after delivery. Amerisleep lists a 100-night trial and a 20-year warranty for the AS3. Both score 9 in Trial Period and 9 in Value.`,
+      q: 'How do the trial and warranty compare, the AS3 or the Aurora Luxe?',
+      a: `The Brooklyn Bedding Aurora Luxe lists a 365-night trial and a lifetime warranty, with return requests starting 30 days after delivery. Amerisleep lists the same 365-night trial and a 20-year warranty for the AS3. Both score 10 in Trial Period and 9 in Value.`,
     },
     {
       q: 'Which is better for stomach sleepers, the AS3 or the Aurora Luxe?',

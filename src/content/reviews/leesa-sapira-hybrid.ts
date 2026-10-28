@@ -2,13 +2,13 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'leesa-sapira-hybrid',
-  dateModified: '2026-10-16',
-  metaDescription: 'Leesa Sapira Hybrid review: 8.7/10 Overall, an 11 inch memory foam hybrid on reinforced steel springs with 9s in four fields and 8s in Value and Edge.',
-  quickAnswer: 'Leesa Sapira Hybrid earns an 8.7/10 Overall as an 11 inch hybrid with BioFoam and memory foam over 6 inch reinforced steel springs. At 5-6/10, medium to medium-firm, it suits back and combination sleepers who want an even, all-round bed. It scores 9/10 in Trial Period, Response Time, Motion Transfer and Cooling & Breathability. Its main limitations are 8s in Value and Edge Support.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Leesa Sapira Hybrid review: 8.8/10 Overall for an 11 inch memory foam hybrid on steel springs, with a 10 in Trial Period and no field below 8.',
+  quickAnswer: 'Leesa Sapira Hybrid earns an 8.8/10 Overall as an 11 inch hybrid with BioFoam and memory foam over 6 inch reinforced steel springs. At 5-6/10, it suits back and combination sleepers who want an even, all-round bed. It scores a 10/10 in Trial Period and 9s in Response Time, Motion Transfer and Cooling. Its main limitations are 8s in Value and Edge Support.',
   strengths: [
-    '9/10 scores in Trial Period, Response Time, Motion Transfer and Cooling & Breathability.',
+    'A standout 10/10 in Trial Period, from a 365-night trial and a limited lifetime warranty.',
+    '9/10 scores in Response Time, Motion Transfer and Cooling & Breathability.',
     'Reinforced steel springs under 4 inches of comfort foam.',
-    'A 365-night trial and a limited lifetime warranty, according to Leesa.',
     'CertiPUR-US, GREENGUARD Gold and USDA BioPreferred certifications.',
   ],
   limitations: [
@@ -27,13 +27,13 @@ const copy: ReviewCopy = {
   ],
   construction: [
     'Leesa Sapira Hybrid is an 11 inch hybrid with six named parts. A Cool-Knit cover sits over 1.5 inches of GreenFlex BioFoam, 1.5 inches of memory foam and 1 inch of transition foam. Below those are 6 inches of reinforced steel springs and 1 inch of support foam.',
-    'That gives 4 inches of comfort foam over the springs. Leesa lists CertiPUR-US and GREENGUARD Gold, plus USDA BioPreferred for the GreenFlex foam, and states the mattress is made in Arizona, USA, and made to order. It is sold in one 5-6/10 feel.',
+    'That gives 4 inches of comfort foam over the springs. Leesa lists CertiPUR-US and GREENGUARD Gold, plus USDA BioPreferred for the GreenFlex foam. It states the mattress is made in Arizona, USA, and made to order. It is sold in one 5-6/10 feel.',
   ],
   performance: {
     value: [
       'For the Sapira Hybrid, Value is an 8, good with a caveat. The score is set from price, trial and warranty facts, and it weighs what the Sapira Hybrid delivers against its cost.',
-      'Leesa pairs a 365-night trial with a limited lifetime warranty, and shipping is free, with optional in-home setup and removal. Check the current price on Leesa\'s site to judge the trade for yourself.',
-      'Shoppers who weigh long policies heavily will find the terms strong. On the Sapira Hybrid, those who rank cost first should compare this field across the hybrids we score before deciding. Three certifications also sit behind this score.',
+      'Leesa pairs a 365-night trial with a limited lifetime warranty. Shipping is free, with optional in-home setup and removal. Check the current price on Leesa\'s site to judge the trade for yourself.',
+      'Those terms earn a 10 in Trial Period, so shoppers who weigh long policies will find them strong. On the Sapira Hybrid, those who rank cost first should compare this field across the hybrids we score before deciding. Three certifications also sit behind this score.',
     ],
     edgeSupport: [
       'The Sapira Hybrid scores 8 in Edge Support, good with a caveat. Leesa names reinforced steel springs, which give the perimeter more structure than foam alone.',
@@ -41,8 +41,8 @@ const copy: ReviewCopy = {
       'On the Sapira Hybrid, anyone who sits on the edge to dress each morning should weigh this score. On the Sapira Hybrid, solo sleepers who stay near the center will notice it least. Set the Sapira Hybrid on a sturdy frame to help the perimeter hold its shape.',
     ],
     trialPeriod: [
-      'The Sapira Hybrid scores a strong 9 in Trial Period. Leesa offers a 365-night trial, with no-hassle returns within that window, according to Leesa.',
-      'A full year gives time to judge the feel through every season. On the Sapira Hybrid, that is enough time to judge whether the 5-6/10 feel suits you. Because the mattress is made to order, confirm how returns are handled before ordering.',
+      'The Sapira Hybrid scores a standout 10 in Trial Period. The score is set from trial and warranty facts: a 365-night trial and a limited lifetime warranty.',
+      'Returns within that window are no-hassle, according to Leesa. A full year is enough time to judge whether the 5-6/10 feel suits you in every season. Because the mattress is made to order, confirm how returns are handled before ordering.',
       'First-time buyers of an online hybrid gain the most from this field. Hold on to the Sapira Hybrid order confirmation in case a return comes up. Confirm the current terms on Leesa\'s site, since policies can change between our checks.',
     ],
     responseTime: [
@@ -94,7 +94,7 @@ const copy: ReviewCopy = {
     'Lighter side sleepers who want a plush surface.',
     'Sleepers who sit on the bed edge often, since Edge Support is an 8.',
   ],
-  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Sapira Hybrid and scores 9.5 as a medium all-foam bed. The [Casper Dream Hybrid](/reviews/casper-dream-hybrid/) and the [Helix Sunset Luxe](/reviews/helix-sunset-luxe/) both score 8.7 as hybrids, the same as the Sapira Hybrid. The table below sets their firmness, trial and warranty beside the Sapira Hybrid.',
+  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Sapira Hybrid and scores 9.7 as a medium all-foam bed. The [Helix Sunset Luxe](/reviews/helix-sunset-luxe/) ties the Sapira Hybrid at 8.8, and the [Casper Dream Hybrid](/reviews/casper-dream-hybrid/) scores 8.7. Both are hybrids. The table below sets their firmness, trial and warranty beside the Sapira Hybrid.',
   policies: [
     'Leesa Sapira Hybrid comes with a 365-night trial and a limited lifetime warranty, according to Leesa. Shipping is free, and in-home setup and removal are optional.',
     'Returns within the 365-night trial are no-hassle, according to Leesa. The Sapira Hybrid comes in Twin, Twin XL, Full, Queen, King and Cal King.',
@@ -103,15 +103,15 @@ const copy: ReviewCopy = {
   faqs: [
     {
       q: 'How firm is the Leesa Sapira Hybrid?',
-      a: 'The Leesa Sapira Hybrid sits at 5-6/10, medium to medium-firm. Its 4 inches of comfort foam, including memory foam, over 6 inches of reinforced steel springs give a balanced feel, and the 365-night trial leaves time to judge it. It comes in that one feel only.',
+      a: 'The Leesa Sapira Hybrid sits at 5-6/10, medium to medium-firm. Its 4 inches of comfort foam, including memory foam, sit over 6 inches of reinforced steel springs. That gives a balanced feel, and the 365-night trial leaves time to judge it. It comes in that one feel only.',
     },
     {
       q: 'What is the Leesa Sapira Hybrid score?',
-      a: 'The Sapira Hybrid earns an 8.7/10 Overall. It scores 9/10 in Trial Period, Response Time, Motion Transfer and Cooling & Breathability, and 8/10 in Value and Edge Support. Overall is the average of those six fields, shown to one decimal. It has no field below 8, which makes it an even all-rounder.',
+      a: 'The Sapira Hybrid earns an 8.8/10 Overall. It scores a standout 10/10 in Trial Period and 9/10 in Response Time, Motion Transfer and Cooling & Breathability. Value and Edge Support are 8/10. Overall is the average of those six fields, shown to one decimal. No field falls below 8.',
     },
     {
       q: 'Is Leesa Sapira Hybrid good for couples?',
-      a: 'Yes, for most couples. It earns a 9/10 in Motion Transfer, so most partners sleep through each other turning over, and a 9/10 in Response Time, which suits partners who change position often. The 8/10 Edge Support means the perimeter gives a little when sitting or lying near the side.',
+      a: 'Yes, for most couples. It earns a 9/10 in Motion Transfer, so most partners sleep through each other turning over. A 9/10 in Response Time suits partners who change position often. The 8/10 Edge Support means the perimeter gives a little when sitting or lying near the side.',
     },
     {
       q: 'Is Leesa Sapira Hybrid good for back sleepers?',
@@ -127,14 +127,14 @@ const copy: ReviewCopy = {
     },
     {
       q: 'How is Leesa Sapira Hybrid different from Leesa Sapira Chill Hybrid?',
-      a: 'The Sapira Hybrid is 11 inches with memory foam over reinforced steel springs, and one 5-6/10 feel. The [Leesa Sapira Chill Hybrid](/reviews/leesa-sapira-chill-hybrid/) is 14 inches with an Ultra Cool cover, zoned springs and three firmness options. The Sapira Chill scores 9.3 Overall against 8.7.',
+      a: 'The Sapira Hybrid is 11 inches with memory foam over reinforced steel springs, and one 5-6/10 feel. The [Leesa Sapira Chill Hybrid](/reviews/leesa-sapira-chill-hybrid/) is 14 inches with an Ultra Cool cover, zoned springs and three firmness options. The Sapira Chill scores 9.5 Overall against 8.8 for the Sapira Hybrid.',
     },
     {
       q: 'Is the Leesa Sapira Hybrid good for side sleepers?',
       a: 'The Sapira Hybrid suits average and heavier side sleepers better than lighter ones. At 5-6/10, with 4 inches of comfort foam over reinforced steel springs, it reads as balanced. The BioFoam and memory foam give some contour at the shoulder and hip. Lighter side sleepers who want deep cushioning should look at a model rated 4/10 or softer.',
     },
   ],
-  verdict: 'Leesa Sapira Hybrid earns an 8.7/10 Overall, with 9/10 scores in Trial Period, Response Time, Motion Transfer and Cooling & Breathability and no field below 8. Its BioFoam and memory foam over reinforced steel springs suit back and combination sleepers who want a balanced, quick surface. Value and Edge Support are 8s, and it comes in one 5-6/10 feel.',
+  verdict: 'Leesa Sapira Hybrid earns an 8.8/10 Overall, led by a standout 10/10 in Trial Period. It adds 9/10 scores in Response Time, Motion Transfer and Cooling & Breathability, with no field below 8. Its BioFoam and memory foam over reinforced steel springs suit back and combination sleepers who want a balanced, quick surface. Value and Edge Support are 8s, and it comes in one 5-6/10 feel.',
   related: [
     { label: 'Amerisleep AS3 vs Leesa Sapira Hybrid', href: '/comparison/amerisleep-as3-vs-leesa-sapira-hybrid/' },
     { label: 'Leesa Mattress Reviews (2026)', href: '/brands/leesa/' },

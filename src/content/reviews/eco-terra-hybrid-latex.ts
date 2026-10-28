@@ -2,7 +2,7 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'eco-terra-hybrid-latex',
-  dateModified: '2026-10-11',
+  dateModified: '2026-10-22',
   metaDescription: 'Eco Terra Hybrid Latex review: 9.0/10 Overall, an 11 inch GOTS and GOLS latex hybrid in Medium and Medium-Firm with 10s in Value and Response Time.',
   quickAnswer: 'The Eco Terra Hybrid Latex earns a 9.0/10 Overall as an 11 inch organic latex hybrid sold in Medium 5/10 and Medium-Firm 6/10. It suits back and combination sleepers who want certified organic materials. Its main strength is a pair of 10s in Value and Response Time. Its main limitation is 8s in Edge Support and Trial Period.',
   strengths: [
@@ -92,7 +92,7 @@ const copy: ReviewCopy = {
     'Sleepers who sit on the bed edge often and want a firm perimeter.',
     'Heavier stomach sleepers who need 7/10 or firmer.',
   ],
-  compareIntro: 'No head-to-head pages include the Eco Terra yet, so these are the nearest latex hybrids by Overall. The [Birch Natural](/reviews/birch-natural/), [Nolah Natural 11"](/reviews/nolah-natural-11/) and [Amerisleep Organica Plush](/reviews/amerisleep-organica-plush/) all match its 9.0 Overall. The table lines up their firmness, trial and warranty next to the Hybrid Latex.',
+  compareIntro: 'No head-to-head pages include the Eco Terra yet, so these are the nearest latex hybrids by Overall. The [Birch Natural](/reviews/birch-natural/), [Nolah Natural 11"](/reviews/nolah-natural-11/) and [Amerisleep Organica Plush](/reviews/amerisleep-organica-plush/) each score 9.2, two tenths above its 9.0 Overall. The table lines up their firmness, trial and warranty next to the Hybrid Latex.',
   policies: [
     'The Eco Terra Hybrid Latex comes with a 90-night trial and a 15-year warranty, according to Eco Terra. Shipping is free in the continental US by UPS Ground.',
     'The product page does not list return terms, so we leave them out rather than guess. Sizes run Twin, Twin XL, Full, Queen, King and Cal King, all 11 inches tall.',

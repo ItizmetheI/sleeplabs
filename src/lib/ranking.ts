@@ -83,8 +83,10 @@ export interface BestPageConfig {
   row: RankingRow;
   /** Construction class for the construction row. */
   construction?: 'hybrid' | 'memory foam' | 'latex';
-  /** The page's own field award, given to the top pick that is not the AS3. None on /best/overall/, where Best Overall is the AS3's. */
+  /** The page's own category award. Owner rule (2026-10-22): no pick holds it; the #1 is labeled Best Overall instead. */
   pageAward?: string;
+  /** The page's #1 pick (an Amerisleep, Zoma, Vaya or FORM model), labeled Best Overall. */
+  topPick: string;
 }
 
 export interface RankedPick {
@@ -97,7 +99,8 @@ export interface BestPageResult {
   config: BestPageConfig;
   rule: RowRule;
   qualifierCount: number;
-  as3Qualifies: boolean;
+  /** False when the page's top pick does not meet the page rule; the page is then SKIP and unpublished. */
+  topPickQualifies: boolean;
   skip: boolean;
   picks: RankedPick[];
 }
@@ -127,17 +130,16 @@ export const rankBestPage = (config: BestPageConfig): BestPageResult => {
     || rule.then(a, b)
     || compareTieChain(a.mattress, b.mattress));
 
-  const as3 = sorted.find(c => c.mattress.id === AS3_ID);
-  const others = sorted.filter(c => c.mattress.id !== AS3_ID);
-  const ordered = as3 ? [as3, ...others] : others;
-  const chosen = ordered.slice(0, MAX_PICKS);
-  const skip = candidates.length < 4;
+  const top = sorted.find(c => c.mattress.id === config.topPick);
+  const others = sorted.filter(c => c.mattress.id !== config.topPick);
+  const chosen = top ? [top, ...others].slice(0, MAX_PICKS) : [];
+  const skip = !top || candidates.length < 4;
 
   return {
     config,
     rule,
     qualifierCount: candidates.length,
-    as3Qualifies: Boolean(as3),
+    topPickQualifies: Boolean(top),
     skip,
     picks: skip ? [] : assignAwards(config, chosen),
   };
@@ -171,11 +173,10 @@ const assignAwards = (config: BestPageConfig, chosen: Candidate[]): RankedPick[]
   const used = new Set<string>();
   const awards = new Map<string, string>();
 
-  const as3 = chosen.find(c => c.mattress.id === AS3_ID);
-  if (as3) { awards.set(AS3_ID, 'Best Overall'); used.add('Best Overall'); }
-
-  const topOther = chosen.find(c => c.mattress.id !== AS3_ID);
-  if (topOther && config.pageAward) { awards.set(topOther.mattress.id, config.pageAward); used.add(config.pageAward); }
+  // The page's top pick is #1 and Best Overall; no other pick may hold the page's own category award.
+  awards.set(config.topPick, 'Best Overall');
+  used.add('Best Overall');
+  if (config.pageAward) used.add(config.pageAward);
 
   for (const c of chosen) {
     if (awards.has(c.mattress.id)) continue;
@@ -196,25 +197,25 @@ const assignAwards = (config: BestPageConfig, chosen: Candidate[]): RankedPick[]
 
 /** The page map's ranking row for each best-of page, with its field award. */
 export const BEST_PAGE_CONFIGS: BestPageConfig[] = [
-  { slug: 'overall', row: 'overall' },
-  { slug: 'side-sleepers', row: 'side', pageAward: 'Best for Side Sleepers' },
-  { slug: 'back-sleepers', row: 'back', pageAward: 'Best for Back Sleepers' },
-  { slug: 'stomach-sleepers', row: 'stomach-firm', pageAward: 'Best for Stomach Sleepers' },
-  { slug: 'combination-sleepers', row: 'combination', pageAward: 'Best for Combination Sleepers' },
-  { slug: 'couples', row: 'motion', pageAward: 'Best for Couples' },
-  { slug: 'motion-isolation', row: 'motion', pageAward: 'Best for Motion Isolation' },
-  { slug: 'cooling', row: 'cooling', pageAward: 'Best Cooling' },
-  { slug: 'firm', row: 'stomach-firm', pageAward: 'Best Firm Pick' },
-  { slug: 'soft', row: 'soft', pageAward: 'Best Soft Pick' },
-  { slug: 'hybrid', row: 'construction', construction: 'hybrid', pageAward: 'Best Hybrid' },
-  { slug: 'memory-foam', row: 'construction', construction: 'memory foam', pageAward: 'Best Memory Foam' },
-  { slug: 'latex', row: 'construction', construction: 'latex', pageAward: 'Best Latex' },
-  { slug: 'organic', row: 'organic', pageAward: 'Best Organic' },
-  { slug: 'luxury', row: 'luxury', pageAward: 'Best Luxury Pick' },
-  { slug: 'value', row: 'value', pageAward: 'Best Value' },
-  { slug: 'heavy-sleepers', row: 'heavy', pageAward: 'Best for Heavy Sleepers' },
-  { slug: 'pressure-relief', row: 'side', pageAward: 'Best for Pressure Relief' },
-  { slug: 'back-pain', row: 'back', pageAward: 'Best for Back Support' },
-  { slug: 'hip-pain', row: 'hip', pageAward: 'Best for Hip Cushioning' },
-  { slug: 'shoulder-pain', row: 'side', pageAward: 'Best for Shoulder Cushioning' },
+  { slug: 'overall', row: 'overall', topPick: AS3_ID },
+  { slug: 'side-sleepers', row: 'side', pageAward: 'Best for Side Sleepers', topPick: AS3_ID },
+  { slug: 'back-sleepers', row: 'back', pageAward: 'Best for Back Sleepers', topPick: AS3_ID },
+  { slug: 'stomach-sleepers', row: 'stomach-firm', pageAward: 'Best for Stomach Sleepers', topPick: 'amerisleep-as6' },
+  { slug: 'combination-sleepers', row: 'combination', pageAward: 'Best for Combination Sleepers', topPick: AS3_ID },
+  { slug: 'couples', row: 'motion', pageAward: 'Best for Couples', topPick: AS3_ID },
+  { slug: 'motion-isolation', row: 'motion', pageAward: 'Best for Motion Isolation', topPick: AS3_ID },
+  { slug: 'cooling', row: 'cooling', pageAward: 'Best Cooling', topPick: AS3_ID },
+  { slug: 'firm', row: 'stomach-firm', pageAward: 'Best Firm Pick', topPick: 'amerisleep-as6' },
+  { slug: 'soft', row: 'soft', pageAward: 'Best Soft Pick', topPick: 'amerisleep-as5-hybrid' },
+  { slug: 'hybrid', row: 'construction', construction: 'hybrid', pageAward: 'Best Hybrid', topPick: 'zoma-boost' },
+  { slug: 'memory-foam', row: 'construction', construction: 'memory foam', pageAward: 'Best Memory Foam', topPick: AS3_ID },
+  { slug: 'latex', row: 'construction', construction: 'latex', pageAward: 'Best Latex', topPick: 'amerisleep-organica' },
+  { slug: 'organic', row: 'organic', pageAward: 'Best Organic', topPick: 'amerisleep-organica' },
+  { slug: 'luxury', row: 'luxury', pageAward: 'Best Luxury Pick', topPick: 'amerisleep-as6' },
+  { slug: 'value', row: 'value', pageAward: 'Best Value', topPick: AS3_ID },
+  { slug: 'heavy-sleepers', row: 'heavy', pageAward: 'Best for Heavy Sleepers', topPick: 'zoma-boost' },
+  { slug: 'pressure-relief', row: 'side', pageAward: 'Best for Pressure Relief', topPick: AS3_ID },
+  { slug: 'back-pain', row: 'back', pageAward: 'Best for Back Support', topPick: AS3_ID },
+  { slug: 'hip-pain', row: 'hip', pageAward: 'Best for Hip Cushioning', topPick: AS3_ID },
+  { slug: 'shoulder-pain', row: 'side', pageAward: 'Best for Shoulder Cushioning', topPick: AS3_ID },
 ];

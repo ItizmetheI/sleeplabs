@@ -2,7 +2,7 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'glacier-summit-hybrid',
-  dateModified: '2026-10-11',
+  dateModified: '2026-10-22',
   metaDescription: 'Glacier Summit Hybrid review: 9.3/10 Overall, a 13 inch medium 5/10 pillow top hybrid with 10s in Value, Trial Period and Cooling & Breathability.',
   quickAnswer: 'Glacier Summit Hybrid earns a 9.3/10 Overall as a 13 inch pillow top hybrid rated medium 5/10, with cooling foams over pocketed coils and a reinforced edge. It suits side sleepers and warm sleepers who want cushioning with a quick surface. Its main strengths are 10/10 scores in Value, Trial Period and Cooling & Breathability. Its main limitation is an 8/10 in Motion Transfer.',
   strengths: [
@@ -31,7 +31,7 @@ const copy: ReviewCopy = {
   ],
   performance: {
     value: [
-      'Value is a standout 10. The score is set from price, trial and warranty facts, and it weighs what the Summit delivers against its queen price.',
+      'A 10 in Value is a standout result. The score is set from price, trial and warranty facts, and it weighs what the Summit delivers against its queen price.',
       'Glacier pairs a 365-night trial with a lifetime warranty, and standard UPS delivery to the door is free. White glove delivery is available for an added fee. Three certifications, a pillow top and a reinforced edge add to what the price covers.',
       'Shoppers who want a cushioned hybrid with long policies gain the most from this field. Those who weigh cost alongside features will find a lot behind this 10. The 10 reflects the full package rather than any single term.',
     ],
@@ -94,7 +94,7 @@ const copy: ReviewCopy = {
     'Heavier stomach sleepers who need a firm surface.',
     'Shoppers who want listed layer thicknesses before buying.',
   ],
-  compareIntro: 'The [Zoma Hybrid](/reviews/zoma-hybrid/), the [Glacier Apex Hybrid](/reviews/glacier-apex-hybrid/) and the [Glacier Original Hybrid](/reviews/glacier-original-hybrid/) all score 9.3 as hybrids, the same as the Summit. Use the table to compare their firmness, trial and warranty with the Summit Hybrid.',
+  compareIntro: 'The [Zoma Start](/reviews/zoma-start/), the [Glacier Apex Hybrid](/reviews/glacier-apex-hybrid/) and the [Glacier Original Hybrid](/reviews/glacier-original-hybrid/) all score 9.3 as hybrids, the same as the Summit. Use the table to compare their firmness, trial and warranty with the Summit Hybrid.',
   policies: [
     'Glacier Summit Hybrid comes with a 365-night trial and a lifetime warranty, according to Glacier. Standard UPS delivery to the door is free, and white glove delivery is available for an added fee.',
     'Returns get a full refund with return shipping covered, after at least 30 days of use. The Summit Hybrid comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',

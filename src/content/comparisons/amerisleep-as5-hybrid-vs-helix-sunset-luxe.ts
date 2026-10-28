@@ -5,9 +5,9 @@ const B = '[Helix Sunset Luxe](/reviews/helix-sunset-luxe/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as5-hybrid-vs-helix-sunset-luxe',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS5 Hybrid vs Helix Sunset Luxe: two soft 3/10 hybrids for side sleepers. The AS5 Hybrid scores 8.8/10 to 8.7/10; the Helix leads on Motion Transfer.',
-  quickVerdict: `Choose the ${A} if you want a soft 3/10 hybrid with a 10 in Cooling & Breathability, a 9 in Edge Support and a higher Value score. Choose the ${B} if you want a soft 3/10 hybrid with a 10 in Motion Transfer, a 365-night trial and a limited lifetime warranty.`,
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS5 Hybrid vs Helix Sunset Luxe: two soft 3/10 hybrids for side sleepers. The AS5 Hybrid scores 9.0/10 to 8.8/10; the Helix leads on Motion Transfer.',
+  quickVerdict: `Choose the ${A} if you want a soft 3/10 hybrid with a 10 in Cooling & Breathability, a 9 in Edge Support and a higher Value score. Choose the ${B} if you want a soft 3/10 hybrid with a 10 in Motion Transfer, a 9 in Response Time and a limited lifetime warranty.`,
   feel: [
     `On firmness, these two match. The ${A} and the ${B} are both sold in one soft feel, which sits at 3/10 on our scale. Both are hybrids with memory foam over coils.`,
     'A 3/10 surface lets the shoulder and hip sink deep, and the foam wraps around the body. Both are aimed at side sleepers, especially lighter and average weight side sleepers who feel pressure at the shoulder on firmer beds.',
@@ -72,14 +72,14 @@ const copy: ComparisonCopy = {
     'The gap is one point, so many sleepers will not notice it. It matters most for combination sleepers who turn several times a night on a soft surface.',
   ],
   valuePolicies: [
-    `The ${A} scores 8 in Value and 9 in Trial Period. The ${B} scores 7 in Value and 9 in Trial Period. For the AS5 Hybrid and the Sunset Luxe, our Value and Trial Period scores are set from price, trial and warranty facts.`,
-    'Helix lists the longer policies. The Sunset Luxe comes with a 365-night trial, with a free return or exchange after a 30-day break-in, and a limited lifetime warranty.',
-    'Amerisleep lists a 100-night trial with free returns by mail within 100 days and courier pickup, and a 20-year warranty for the AS5 Hybrid.',
+    `The ${A} scores 8 in Value and 10 in Trial Period. The ${B} scores 7 in Value and 10 in Trial Period. For the AS5 Hybrid and the Sunset Luxe, our Value and Trial Period scores are set from price, trial and warranty facts.`,
+    'Both brands now list a 365-night trial, so the two tie on Trial Period. Helix allows a free return or exchange after a 30-day break-in and lists a limited lifetime warranty.',
+    'Amerisleep lists free returns by mail with courier pickup, and a 20-year warranty for the AS5 Hybrid.',
     'Shipping is free for both. Helix ships free in the contiguous US, with rates for Alaska, Hawaii and Canada. Amerisleep sends the AS5 Hybrid via FedEx within the continental US.',
     'Value weighs those policies against price, and the AS5 Hybrid scores a point higher in that field.',
-    'Shoppers who are unsure whether a soft bed suits them may value the Sunset Luxe\'s 365-night trial.',
+    'Shoppers unsure whether a soft bed suits them get a full year to decide on either model.',
     'Terms for the AS5 Hybrid and the Sunset Luxe can change, so confirm them on each brand\'s site before ordering.',
-    'Since the two are so close on Overall, the policy differences can reasonably decide between them for shoppers who rank trial length and warranty highly.',
+    'Since the two sit only 0.2 apart on Overall, the policy differences can reasonably decide between them for shoppers who rank warranty terms highly. Trial length no longer separates them.',
   ],
   buyA: [
     'Warm side sleepers who want a 10 in Cooling & Breathability.',
@@ -88,13 +88,13 @@ const copy: ComparisonCopy = {
   ],
   buyB: [
     'Couples who want a 10 in Motion Transfer on a soft bed.',
-    'Shoppers who want a 365-night trial and a limited lifetime warranty, which the Sunset Luxe offers.',
+    'Shoppers who want a limited lifetime warranty and a 30-day break-in exchange option, which the Sunset Luxe offers.',
     'Shoppers who need a Short Queen or RV King.',
   ],
   faqs: [
     {
       q: 'Which is better, Amerisleep AS5 Hybrid or Helix Sunset Luxe?',
-      a: `The ${A} scores higher, 8.8/10 against 8.7/10, and leads on Overall, Value, Edge Support and Cooling & Breathability. The ${B} leads on Response Time and Motion Transfer, and the two tie on Trial Period. The scores are close, so the fields you care about most should decide.`,
+      a: `The ${A} scores higher, 9.0/10 against 8.8/10, and leads on Overall, Value, Edge Support and Cooling & Breathability. The ${B} leads on Response Time and Motion Transfer, and the two tie on Trial Period. The scores are close, so the fields you care about most should decide.`,
     },
     {
       q: 'Are the AS5 Hybrid and Sunset Luxe the same firmness?',
@@ -105,8 +105,8 @@ const copy: ComparisonCopy = {
       a: `The Helix Sunset Luxe scores 10 in Motion Transfer, against 9 for the Amerisleep AS5 Hybrid. The AS5 Hybrid scores 9 in Edge Support, against 8 for the Sunset Luxe. Couples with a light sleeper should lean toward the Helix, and couples who sleep near the edge toward the Amerisleep.`,
     },
     {
-      q: 'Which has the longer trial and warranty, the AS5 Hybrid or the Sunset Luxe?',
-      a: `The Helix Sunset Luxe. Helix lists a 365-night trial, with returns or exchanges after a 30-day break-in, and a limited lifetime warranty. Amerisleep lists a 100-night trial and a 20-year warranty for the AS5 Hybrid. The AS5 Hybrid still scores a point higher on Value.`,
+      q: 'Which has the better trial and warranty, the AS5 Hybrid or the Sunset Luxe?',
+      a: `The trials match at 365 nights, and both score 10 in Trial Period. Helix allows returns or exchanges after a 30-day break-in and lists a limited lifetime warranty. Amerisleep lists a 20-year warranty for the AS5 Hybrid. The AS5 Hybrid still scores a point higher on Value.`,
     },
     {
       q: 'Which sleeps cooler, the AS5 Hybrid or the Sunset Luxe?',

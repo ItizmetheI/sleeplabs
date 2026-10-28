@@ -2,14 +2,14 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'amerisleep-as3-hybrid',
-  dateModified: '2026-10-11',
-  metaDescription: 'Amerisleep AS3 Hybrid review: 9.3/10 Overall, a medium 5/10 memory foam hybrid on pocketed coils with 10s in Edge Support and Cooling. Specs and fit.',
-  quickAnswer: 'The Amerisleep AS3 Hybrid earns a 9.3/10 Overall. It suits side and back sleepers who want the medium 5/10 feel of the AS3 with pocketed coils underneath. Its main strength is a pair of 10s in Edge Support and Cooling & Breathability. Its main limitation is a 9 in Motion Transfer, a step down from the all-foam version.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS3 Hybrid review: 9.5/10 Overall, a medium 5/10 memory foam hybrid on pocketed coils with 10s in Edge Support, Trial Period and Cooling.',
+  quickAnswer: 'The Amerisleep AS3 Hybrid earns a 9.5/10 Overall. It suits side and back sleepers who want the medium 5/10 feel of the AS3 with pocketed coils underneath. Its main strength is three 10s, in Edge Support, Trial Period and Cooling & Breathability. Its main limitation is a 9 in Motion Transfer, a step down from the all-foam version.',
   strengths: [
     'A 10/10 in Edge Support, helped by a pocketed coil core.',
     'A 10/10 in Cooling & Breathability from a coil base and a heat transfer cover.',
     'A medium 5/10 feel that cushions the shoulders and supports the lower back.',
-    'A 20-year warranty and a 100-night trial, scored 9/10 for Value.',
+    'A 365-night trial scored a standout 10/10, plus a 20-year warranty.',
   ],
   limitations: [
     'Too soft for stomach sleepers over 230 lb, who need a firmer surface under the hips.',
@@ -29,16 +29,16 @@ const copy: ReviewCopy = {
   ],
   performance: {
     value: [
-      'The Value score is set from price, trial and warranty facts, and the AS3 Hybrid earns a strong 9. A 20-year warranty is a long term for a coil bed, and the 100-night trial gives a full season to decide.',
-      'It lands at 9 rather than 10 because year-long trials are now common among the brands we score. The coil upgrade does not change the policy terms, which match the all-foam AS3. Buyers who want coil support with a long warranty will find it well placed on this field. Seven sizes, from Twin to Split King, cover most bed frames.',
+      'The Value score is set from price, trial and warranty facts, and the AS3 Hybrid earns a strong 9. A 20-year warranty is a long term for a coil bed, and the 365-night trial gives a full year to decide.',
+      'Those two policy facts score well, so the price input is what keeps the field at 9 rather than 10. The coil upgrade does not change the policy terms, which match the all-foam AS3. Buyers who want coil support with a long warranty will find it well placed on this field. Seven sizes, from Twin to Split King, cover most bed frames.',
     ],
     edgeSupport: [
       'Edge Support is a standout 10. The pocketed coil core gives the perimeter a firmer base than foam alone, so the edge holds up when you sit down.',
       'Amerisleep does not name a separate edge layer, so the score reflects the full hybrid stack. In daily use, a 10 means you can sleep close to the side without feeling like you will roll off. Couples sharing a full or queen gain usable width from this field more than from any other. It also helps anyone who sits on the edge to dress each morning. Older sleepers who use the edge to stand up will value a perimeter that does not collapse.',
     ],
     trialPeriod: [
-      'The Trial Period score is set from the trial and return terms, and the AS3 Hybrid earns a 9. Amerisleep offers 100 nights with free returns, and it arranges a courier to collect the mattress.',
-      'A 9 is a strong result. It sits one point under the 365-night trials offered by many brands we cover. The free pickup matters more for a hybrid, which is heavier to move than an all-foam bed. That makes the return process less of a burden if the feel does not work out for you. Give the bed a few weeks before deciding, since a new mattress often feels different after the first month.',
+      'The Trial Period score is set from the trial and return terms, and the AS3 Hybrid earns a standout 10. Amerisleep offers 365 nights with free returns, and it arranges a courier to collect the mattress.',
+      'A full year ties for the longest trial among the models we score, which earns the top band. The free pickup matters more for a hybrid, which is heavier to move than an all-foam bed. That makes the return process less of a burden if the feel does not work out for you. Give the bed a few weeks before deciding, since a new mattress often feels different after the first month.',
     ],
     responseTime: [
       'Response Time is a strong 9. Pocketed coils add some spring under the memory foam, so the surface pushes back a little faster than a foam base would.',
@@ -86,9 +86,9 @@ const copy: ReviewCopy = {
     'Very light sleepers who want the 10/10 motion control of an all-foam bed.',
     'Shoppers who want a choice of firmness levels from one model.',
   ],
-  compareIntro: 'No head-to-head pages include the AS3 Hybrid yet, so these are the nearest hybrids by Overall score on our scorecard. The [Zoma Hybrid](/reviews/zoma-hybrid/), [Glacier Apex Hybrid](/reviews/glacier-apex-hybrid/) and [Glacier Original Hybrid](/reviews/glacier-original-hybrid/) all match its 9.3 Overall. Each uses pocketed coils under foam comfort layers.',
+  compareIntro: 'No head-to-head pages include the AS3 Hybrid yet, so these are the nearest hybrids by Overall score on our scorecard. The [Zoma Hybrid](/reviews/zoma-hybrid/), [Leesa Sapira Chill Hybrid](/reviews/leesa-sapira-chill-hybrid/) and [FORM Core Hybrid](/reviews/form-core-hybrid/) all match its 9.5 Overall. Each pairs a coil core with comfort layers on top.',
   policies: [
-    'The AS3 Hybrid carries the same terms as the all-foam AS3: a 100-night trial and a 20-year warranty. Shipping is free within the continental US by FedEx.',
+    'The AS3 Hybrid carries the same terms as the all-foam AS3: a 365-night trial and a 20-year warranty. Shipping is free within the continental US by FedEx.',
     'Returns are free, and Amerisleep arranges courier pickup from the home. That matters for a coil bed, which is heavier and harder to repack than foam. Sizes include Twin, Twin XL, Full, Queen, King, Cal King and Split King, all at the same 12 inch height.',
     'Amerisleep states the mattress is made in the USA from U.S. and imported components, with covers sewn in Canada. Confirm current terms on the brand\'s site before ordering, since policies can change between our checks.',
   ],
@@ -103,11 +103,11 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What is the Amerisleep AS3 Hybrid score?',
-      a: 'The AS3 Hybrid earns a 9.3/10 Overall. It scores 10/10 in Edge Support and Cooling & Breathability, and 9/10 in Value, Trial Period, Response Time and Motion Transfer. Overall is the average of those six field scores, shown to one decimal. No field falls below a strong 9, and two fields reach a standout 10.',
+      a: 'The AS3 Hybrid earns a 9.5/10 Overall. It scores 10/10 in Edge Support, Trial Period and Cooling & Breathability, and 9/10 in Value, Response Time and Motion Transfer. Overall is the average of those six field scores, shown to one decimal. No field falls below a strong 9, and three fields reach a standout 10.',
     },
     {
       q: 'What is the difference between the AS3 and the AS3 Hybrid?',
-      a: 'The AS3 Hybrid replaces the foam base with pocketed coils. Both are 12 inch, medium 5/10 beds with the same cover and memory foam. The all-foam AS3 scores 9.5 Overall with a 10 in Motion Transfer. The hybrid scores 9.3 and trades that 10 for coil airflow and support.',
+      a: 'The AS3 Hybrid replaces the foam base with pocketed coils. Both are 12 inch, medium 5/10 beds with the same cover and memory foam. The all-foam AS3 scores 9.7 Overall with a 10 in Motion Transfer. The hybrid scores 9.5 and trades that 10 for coil airflow and support.',
     },
     {
       q: 'Is the Amerisleep AS3 Hybrid good for hot sleepers?',
@@ -115,7 +115,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What trial and warranty come with the Amerisleep AS3 Hybrid?',
-      a: 'The AS3 Hybrid has a 100-night trial and a 20-year warranty, according to Amerisleep. Shipping is free in the continental US, and returns are free with courier pickup. Check the current terms on Amerisleep\'s site before buying, since policies can change. The hybrid is heavier than the all-foam model, so the free pickup is a useful part of the return terms.',
+      a: 'The AS3 Hybrid has a 365-night trial and a 20-year warranty, according to Amerisleep. Shipping is free in the continental US, and returns are free with courier pickup. Check the current terms on Amerisleep\'s site before buying, since policies can change. The hybrid is heavier than the all-foam model, so the free pickup is a useful part of the return terms.',
     },
     {
       q: 'Is the Amerisleep AS3 Hybrid good for heavier sleepers?',
@@ -126,7 +126,7 @@ const copy: ReviewCopy = {
       a: 'It has more bounce than the all-foam AS3, because the pocketed coils push back under the foam. The memory foam on top still softens that spring, so it does not feel like a traditional innerspring. Its 9/10 Response Time reflects that balance between contour and lift.',
     },
   ],
-  verdict: 'The Amerisleep AS3 Hybrid earns a 9.3/10 Overall with 10s in Edge Support and Cooling & Breathability. It keeps the medium 5/10 memory foam feel of the AS3 and adds pocketed coils for airflow and a firmer edge. The trade is a 9 in Motion Transfer. Side and back sleepers who run warm get the most from it, while stomach sleepers should look firmer. Couples who want a usable edge and coil airflow will find it a strong all-round choice.',
+  verdict: 'The Amerisleep AS3 Hybrid earns a 9.5/10 Overall with 10s in Edge Support, Trial Period and Cooling & Breathability. It keeps the medium 5/10 memory foam feel of the AS3 and adds pocketed coils for airflow and a firmer edge. The trade is a 9 in Motion Transfer. Side and back sleepers who run warm get the most from it, while stomach sleepers should look firmer. Couples who want a usable edge and coil airflow will find it a strong all-round choice.',
   related: [
     { label: 'Amerisleep AS3 Review', href: '/reviews/amerisleep-as3/' },
     { label: 'Best Cooling Mattress (2026)', href: '/best/cooling/' },

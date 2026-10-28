@@ -2,7 +2,7 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'nest-bedding-raven',
-  dateModified: '2026-10-11',
+  dateModified: '2026-10-22',
   metaDescription: 'Nest Bedding Raven review: 9.2/10 Overall, a 12 inch gel memory foam hybrid in Medium 5 and Firm 7, with 10s in Trial Period and Response Time.',
   quickAnswer: 'Nest Bedding Raven earns a 9.2/10 Overall as a 12 inch hybrid with quilted gel memory foam and reinforced edge pocketed coils, sold in Medium 5/10 and Firm 7/10. It suits back, stomach and combination sleepers who want a supportive, quick surface. Its main strengths are 10/10 scores in Trial Period and Response Time, with a 9 in Value. Its main limitation is an 8/10 in Cooling & Breathability.',
   strengths: [
@@ -93,7 +93,7 @@ const copy: ReviewCopy = {
     'Very warm sleepers who rank cooling first, since Cooling & Breathability is an 8.',
     'Sleepers who want the slow hug of thick memory foam.',
   ],
-  compareIntro: 'The [Zoma Start](/reviews/zoma-start/), the [Saatva Classic](/reviews/saatva-classic/) and the [Saatva RX](/reviews/saatva-rx/) all score 9.2 as hybrids, the same as the Raven. The table lines up their firmness, trial and warranty next to the Raven.',
+  compareIntro: 'The [Helix Midnight Luxe](/reviews/helix-midnight-luxe/), the [Saatva Classic](/reviews/saatva-classic/) and the [Saatva RX](/reviews/saatva-rx/) all score 9.2 as hybrids, the same as the Raven. The table lines up their firmness, trial and warranty next to the Raven.',
   policies: [
     'Nest Bedding Raven comes with a 365-night trial and a limited lifetime warranty, according to Nest Bedding. Shipping is free in the continental US, with extra rates for Alaska, Hawaii and Canada.',
     'An eligible exchange or return is available after a 30-night adjustment period. Sizes run Twin, Twin XL, Full, Queen, King, Cal King and Split Cal King.',

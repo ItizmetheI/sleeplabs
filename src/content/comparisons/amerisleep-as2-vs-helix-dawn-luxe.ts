@@ -5,9 +5,9 @@ const B = '[Helix Dawn Luxe](/reviews/helix-dawn-luxe/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as2-vs-helix-dawn-luxe',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS2 vs Helix Dawn Luxe: medium-firm memory foam against a firm 7/10 hybrid. The AS2 scores 9.3/10 to 8.5/10 and leads on five of seven fields.',
-  quickVerdict: `Choose the ${A} if you want a medium-firm 6/10 all-foam bed with 10s in Response Time, Motion Transfer and Cooling & Breathability. Choose the ${B} if you want a firmer 7/10 hybrid with a TENCEL cover, a 365-night trial and a limited lifetime warranty.`,
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS2 vs Helix Dawn Luxe: medium-firm memory foam against a firm 7/10 hybrid. The AS2 scores 9.5/10 to 8.7/10 and leads on five of seven fields.',
+  quickVerdict: `Choose the ${A} if you want a medium-firm 6/10 all-foam bed with 10s in Response Time, Motion Transfer and Cooling & Breathability. Choose the ${B} if you want a firmer 7/10 hybrid with a TENCEL cover, coils and a limited lifetime warranty.`,
   feel: [
     `Both lean firm, but they are built differently. The ${A} is an all-foam bed sold in medium-firm, which sits at 6/10 on our scale. The ${B} is a hybrid sold in firm, which sits at 7/10.`,
     'One step on our scale is a small gap, but sleepers feel it. The Dawn Luxe holds the hips a little higher and lets the shoulders sink a little less.',
@@ -74,12 +74,12 @@ const copy: ComparisonCopy = {
     'Sleepers who stay in one or two positions will notice the difference least, since both beds are firm enough to stay supportive under a still sleeper.',
   ],
   valuePolicies: [
-    `The ${A} scores 9 in Value and 9 in Trial Period. The ${B} scores 7 in Value and 9 in Trial Period. Price, trial and warranty facts set our Value and Trial Period scores for both the AS2 and the Dawn Luxe.`,
-    'Helix lists the longer policies. The Dawn Luxe comes with a 365-night trial, with a free return or exchange after a 30-day break-in, and a limited lifetime warranty.',
-    'Amerisleep lists a 100-night trial with free returns by mail within 100 days, and a 20-year warranty for the AS2.',
+    `The ${A} scores 9 in Value and 10 in Trial Period. The ${B} scores 7 in Value and 10 in Trial Period, so the two tie on trial. Price, trial and warranty facts set our Value and Trial Period scores for both the AS2 and the Dawn Luxe.`,
+    'Helix lists a longer warranty. The Dawn Luxe comes with a 365-night trial, with a free return or exchange after a 30-day break-in, and a limited lifetime warranty.',
+    'Amerisleep lists the same 365-night trial length for the AS2, with free returns by mail and a 20-year warranty.',
     'Shipping is free for both. Helix ships free in the contiguous US, with rates for Alaska, Hawaii and Canada. Amerisleep ships via FedEx in the continental US.',
     'Value weighs those policies against price, and the AS2 scores two points higher in that field.',
-    'Shoppers who put a long trial and a limited lifetime warranty first may prefer the Dawn Luxe.',
+    'Each bed allows a year at home before deciding. Shoppers who put a limited lifetime warranty first may prefer the Dawn Luxe.',
     'Shoppers who are unsure whether a firm hybrid suits them can use the Dawn Luxe\'s 365-night trial to judge it at home, keeping in mind the 30-day break-in before a return or exchange.',
     'Confirm current terms on each brand\'s site before ordering.',
     'This is the widest gap between them on the scorecard.',
@@ -91,13 +91,13 @@ const copy: ComparisonCopy = {
   ],
   buyB: [
     'Back and stomach sleepers who want a firm 7/10 hybrid.',
-    'Shoppers who want a 365-night trial and a limited lifetime warranty.',
+    'Shoppers who want a limited lifetime warranty.',
     'Shoppers who need a Short Queen or RV King.',
   ],
   faqs: [
     {
       q: 'Which is better, Amerisleep AS2 or Helix Dawn Luxe?',
-      a: `The ${A} scores higher, 9.3/10 against 8.5/10, and leads on Overall, Value, Response Time, Motion Transfer and Cooling & Breathability. The ${B} does not lead on any field, and the two tie on Edge Support and Trial Period. The Dawn Luxe suits sleepers who want a firmer hybrid.`,
+      a: `The ${A} scores higher, 9.5/10 against 8.7/10, and leads on Overall, Value, Response Time, Motion Transfer and Cooling & Breathability. The ${B} does not lead on any field, and the two tie on Edge Support and Trial Period. The Dawn Luxe suits sleepers who want a firmer hybrid.`,
     },
     {
       q: 'Which is firmer, the AS2 or the Dawn Luxe?',
@@ -112,8 +112,8 @@ const copy: ComparisonCopy = {
       a: `The Amerisleep AS2 scores 10 in Motion Transfer, against 9 for the Helix Dawn Luxe, and both score 8 in Edge Support. Couples with a light sleeper should lean toward the AS2. Couples who want a Split King will find it only on the AS2.`,
     },
     {
-      q: 'Which has the longer trial and warranty?',
-      a: `The Helix Dawn Luxe. Helix lists a 365-night trial, with returns or exchanges after a 30-day break-in, and a limited lifetime warranty. Amerisleep lists a 100-night trial and a 20-year warranty for the AS2. The AS2 still scores higher on Value, which weighs policies against price.`,
+      q: 'How do the trial and warranty compare?',
+      a: `Both list a 365-night trial and score 10 in Trial Period. Helix adds returns or exchanges after a 30-day break-in and a limited lifetime warranty for the Dawn Luxe. Amerisleep lists a 20-year warranty for the AS2. The AS2 scores higher on Value, which weighs policies against price.`,
     },
     {
       q: 'Which sleeps cooler?',

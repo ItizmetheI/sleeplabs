@@ -2,7 +2,7 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'form-core-hybrid',
-  dateModified: '2026-10-16',
+  dateModified: '2026-10-22',
   metaDescription: 'FORM Core Hybrid review: 9.5/10 Overall, a 12 inch hybrid with 7-zone pocketed coils and 10s in Edge Support, Response Time, Motion Transfer and Trial.',
   quickAnswer: 'FORM Core Hybrid earns a 9.5/10 Overall as a 12 inch hybrid with a gel polymer grid over 7-zone pocketed coils. At 5-6/10, medium to medium-firm, it suits couples, combination sleepers and heavier sleepers who want support with a quick, quiet surface. Its main strengths are 10/10 scores in four fields. Its main limitation is an 8/10 in Value, the only field below 9.',
   strengths: [
@@ -93,7 +93,7 @@ const copy: ReviewCopy = {
     'Lighter side sleepers who want a deep, plush comfort layer.',
     'Sleepers who want the slow sink of thick memory foam.',
   ],
-  compareIntro: 'The [Zoma Boost](/reviews/zoma-boost/), the [Nolah Evolution 15"](/reviews/nolah-evolution-15/) and the [FORM Prime X](/reviews/form-prime-x/) all score 9.5 as hybrids, the same as the Core Hybrid. Use the table to compare their firmness, trial and warranty with the Core Hybrid.',
+  compareIntro: 'The [Zoma Hybrid](/reviews/zoma-hybrid/), the [Amerisleep AS3 Hybrid](/reviews/amerisleep-as3-hybrid/) and the [Amerisleep AS6 Black Series](/reviews/amerisleep-as6/) all score 9.5 as hybrids, the same as the Core Hybrid. Use the table to compare their firmness, trial and warranty with the Core Hybrid.',
   policies: [
     'FORM Core Hybrid comes with a 365-night trial and a lifetime warranty, according to FORM. Shipping is free via FedEx Ground.',
     'Returns within the trial include free pickup and a full refund, with no restocking fees. The Core Hybrid comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',

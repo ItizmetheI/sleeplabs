@@ -2,13 +2,13 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'brooklyn-bedding-plank-firm',
-  dateModified: '2026-10-11',
-  metaDescription: 'Brooklyn Bedding Plank Firm review: 8.8/10 Overall, a flippable 10 inch all-foam bed with Firm and Extra Firm sides and a 10 in Edge Support. Specs, fit.',
-  quickAnswer: 'The Brooklyn Bedding Plank Firm earns an 8.8/10 Overall as a flippable 10 inch all-foam mattress. It has a Firm side rated 7.5-9/10 and an Extra Firm side. It suits stomach and back sleepers who want a very firm surface. Its main strength is a 10/10 in Edge Support. Its main limitation is a firmness that is too hard for most side sleepers.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Brooklyn Bedding Plank Firm review: 9.0/10 Overall for a flippable 10 inch all-foam bed with two firm sides. It earns 10s in Edge Support and Trial Period.',
+  quickAnswer: 'The Brooklyn Bedding Plank Firm earns a 9.0/10 Overall as a flippable 10 inch all-foam mattress. It has a Firm side rated 7.5-9/10 and an Extra Firm side. It suits stomach and back sleepers who want a very firm surface. Its main strengths are 10/10 scores in Edge Support and Trial Period. Its main limitation is a feel too hard for most side sleepers.',
   strengths: [
     'A 10/10 in Edge Support for a 10 inch foam bed.',
     'Two firmness levels in one mattress, Firm on one side and Extra Firm on the other.',
-    'A 365-night trial and a lifetime warranty behind a 9/10 Value score.',
+    'A 365-night trial and a lifetime warranty behind a 10/10 Trial Period score.',
     'GREENGUARD Gold and CertiPUR-US certifications on the brand page.',
   ],
   limitations: [
@@ -29,7 +29,7 @@ const copy: ReviewCopy = {
   ],
   performance: {
     value: [
-      'The Value score is set from price, trial and warranty facts, and the Plank Firm earns a strong 9. A 365-night trial and a lifetime warranty are the longest terms we record in both fields.',
+      'The Value score is set from price, trial and warranty facts, and the Plank Firm earns a strong 9. Its 365-night trial and lifetime warranty tie for the longest terms we record in each field.',
       'The score stops at 9 because the Value field weighs those terms against the price. Free shipping and two firmness levels in one bed add to the package. Buyers who want a very firm surface get long coverage behind it.',
       'This field matters most to buyers who are unsure how firm to go. A flippable bed gives two chances to get the feel right without a return. Flipping the mattress also spreads wear across both sides over time.',
     ],
@@ -39,8 +39,8 @@ const copy: ReviewCopy = {
       'Heavier sleepers who use the edge to get in and out of bed benefit from this score as well. A firm perimeter gives a stable place to push off from.',
     ],
     trialPeriod: [
-      'The Trial Period score is set from the trial and return terms, and the Plank Firm earns a 9. The brand offers a 365-night trial that starts when the mattress arrives.',
-      'The trial length ties for the longest on our scorecard. It stops at 9 because return requests start 30 days after delivery. The trial can also be used only once per customer, and clearance items are excluded.',
+      'The Trial Period score is set from trial and warranty facts, and the Plank Firm earns a standout 10. The brand pairs a 365-night trial with a lifetime warranty.',
+      'The trial length ties for the longest on our scorecard. Return requests start 30 days after delivery. The trial can also be used only once per customer, and clearance items are excluded.',
       'The long window suits a bed this firm. Many sleepers need several weeks to adjust to a very firm surface. Both sides are worth a few weeks each before deciding.',
     ],
     responseTime: [
@@ -92,7 +92,7 @@ const copy: ReviewCopy = {
     'Light sleepers who share a bed and want strong motion control.',
     'Hot sleepers who do not plan to add a cooling cover.',
   ],
-  compareIntro: 'The [Amerisleep AS2](/reviews/amerisleep-as2/) has a head-to-head page with the Plank Firm and scores 9.3 as a medium-firm 6/10 foam bed. The [SweetNight CoolNest Memory Foam Mattress](/reviews/sweetnight-coolnest/) matches its 8.8 Overall, and the [Vaya Foam](/reviews/vaya-foam/) scores 8.7. All three are all-foam beds.',
+  compareIntro: 'The [Amerisleep AS2](/reviews/amerisleep-as2/) has a head-to-head page with the Plank Firm and scores 9.5 as a medium-firm 6/10 foam bed. The [SweetNight CoolNest Memory Foam Mattress](/reviews/sweetnight-coolnest/) and the [Vaya Foam](/reviews/vaya-foam/) both score 8.8. All three are all-foam beds.',
   policies: [
     'The Plank Firm comes with a 365-night trial and a lifetime warranty, according to the brand. Shipping is free, and the mattress arrives as a bed-in-a-box.',
     'Return requests start 30 days after delivery, and the trial can be used once per customer. Clearance items cannot be returned or exchanged.',
@@ -109,7 +109,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What is the Brooklyn Bedding Plank Firm score?',
-      a: 'The Plank Firm earns an 8.8/10 Overall. It scores 10/10 in Edge Support, 9/10 in Value, Trial Period and Response Time, and 8/10 in Motion Transfer and Cooling & Breathability. Overall is the average of those six fields, shown to one decimal. Edge Support is the standout field.',
+      a: 'The Plank Firm earns a 9.0/10 Overall. It scores 10/10 in Edge Support and Trial Period, and 9/10 in Value and Response Time. Motion Transfer and Cooling & Breathability are 8/10. Overall is the average of those six fields, shown to one decimal.',
     },
     {
       q: 'Is the Brooklyn Bedding Plank Firm good for stomach sleepers?',
@@ -132,7 +132,7 @@ const copy: ReviewCopy = {
       a: 'It earns an 8/10 in Cooling & Breathability, good with a caveat. Dense foam can hold heat, and there are no coils for airflow. The brand sells a GlacioTex cooling cover as an add-on for warm sleepers. That cover is not part of the base model we score, so it does not change the 8.',
     },
   ],
-  verdict: 'The Brooklyn Bedding Plank Firm earns an 8.8/10 Overall with a 10/10 in Edge Support. Its flippable Firm and Extra Firm sides suit stomach sleepers and heavier back sleepers who want a very firm surface. A 365-night trial and a lifetime warranty back it. Motion Transfer and Cooling & Breathability land at 8. Side sleepers should look for a softer bed.',
+  verdict: 'The Brooklyn Bedding Plank Firm earns a 9.0/10 Overall with 10/10 scores in Edge Support and Trial Period. Its flippable Firm and Extra Firm sides suit stomach sleepers and heavier back sleepers who want a very firm surface. A 365-night trial and a lifetime warranty set the Trial Period score. Motion Transfer and Cooling & Breathability land at 8. Side sleepers should look for a softer bed.',
   related: [
     { label: 'Amerisleep AS2 vs Brooklyn Bedding Plank Firm', href: '/comparison/amerisleep-as2-vs-brooklyn-bedding-plank-firm/' },
     { label: 'Best Firm Mattress (2026)', href: '/best/firm/' },

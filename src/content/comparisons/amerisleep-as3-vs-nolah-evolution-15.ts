@@ -5,11 +5,11 @@ const B = '[Nolah Evolution 15"](/reviews/nolah-evolution-15/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as3-vs-nolah-evolution-15',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS3 vs Nolah Evolution 15": both tie at 9.5/10. The AS3 leads on Cooling & Breathability; the Nolah leads on Value and offers three firmness levels.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS3 vs Nolah Evolution 15": a 9.7/10 tie with 365-night trials. The AS3 leads on Cooling; the Nolah leads on Value and has three firmness levels.',
   quickVerdict: `Choose the ${A} if you want a medium 5/10 all-foam bed with a 10 in Cooling & Breathability. Choose the ${B} if you want a zoned coil hybrid in Plush, Luxury Firm or Firm, with a 10 in Value and a limited lifetime warranty.`,
   feel: [
-    `These two tie at the top of our scorecard, so the choice comes down to feel and construction. Against the Evolution 15", the ${A} is an all-foam bed sold in one medium feel, which sits at 5/10 on our scale. The ${B} is a hybrid sold in Plush 4-5/10, Luxury Firm 6-7/10 and Firm 7-8/10, all under one score.`,
+    `These two tie at 9.7 Overall, which ties for the highest Overall score of the 55 models we rate. The choice comes down to feel and construction. Against the Evolution 15", the ${A} is an all-foam bed sold in one medium feel, which sits at 5/10 on our scale. The ${B} is a hybrid sold in Plush 4-5/10, Luxury Firm 6-7/10 and Firm 7-8/10, all under one score.`,
     'Choice of firmness is the Nolah\'s clearest advantage on feel. A side sleeper can take Plush, a back sleeper Luxury Firm, and a heavier stomach sleeper Firm, without changing the model or its score.',
     'The AS3 offers one setting. At 5/10, the AS3 suits side sleepers of average weight, back sleepers and combination sleepers, but heavier stomach sleepers may find it soft.',
     'The texture differs too. The AS3 is all foam, with memory foam near the top, so it feels close and contouring. The Nolah layers several foams over 8 inches of zoned coils, which adds lift and a little bounce underneath.',
@@ -72,15 +72,15 @@ const copy: ComparisonCopy = {
     'The Nolah\'s Firm option keeps the body nearest the surface, which can make movement feel quicker in everyday use.',
   ],
   valuePolicies: [
-    `The ${B} scores 10 in Value and 9 in Trial Period. Against the Evolution 15", the ${A} scores 9 in Value and 9 in Trial Period. Price, trial and warranty facts set our Value and Trial Period scores for both the AS3 and the Evolution 15".`,
-    'Nolah lists a 120-night trial and a limited lifetime warranty. Against the Evolution 15", Amerisleep lists a 100-night trial and a 20-year warranty for the AS3.',
+    `The ${B} scores 10 in Value and 10 in Trial Period. The ${A} scores 9 in Value and 10 in Trial Period. Price, trial and warranty facts set our Value and Trial Period scores for both beds.`,
+    'Both brands now list a 365-night trial, so the two tie on trial length and on Trial Period. Nolah adds a limited lifetime warranty, while Amerisleep lists a 20-year warranty for the AS3.',
     'Returns differ. Nolah offers a full refund and pickup after a 30-night break-in, requested by email. Amerisleep lists free returns with courier pickup.',
     'Shipping is free for both. Nolah ships via FedEx and offers paid in-home setup. The AS3 ships via FedEx in the continental US.',
-    'Value weighs policies against price, and the Nolah scores a point higher in that field.',
+    'Value weighs policies against price, and the Nolah scores a point higher in that field. With the trials now equal, the warranty is the main policy gap.',
     'Both come in seven sizes, including Split King.',
     'Shoppers who put a long warranty and a top Value score first may prefer the Nolah. Before ordering the AS3 or the Evolution 15", confirm current terms on each brand\'s site.',
     'Since the two tie on Overall, this field and cooling are the clearest scorecard differences between them.',
-    'Shoppers who are unsure which Nolah firmness suits them can use its 120-night trial to judge it at home, keeping in mind the 30-night break-in before a return.',
+    'Shoppers unsure which Nolah firmness suits them can use the 365-night trial to judge it at home. Keep the 30-night break-in in mind before a return.',
   ],
   buyA: [
     'Warm sleepers who want a 10 in Cooling & Breathability, where the Evolution 15" scores 9 in Cooling & Breathability.',
@@ -95,7 +95,7 @@ const copy: ComparisonCopy = {
   faqs: [
     {
       q: 'Which is better, Amerisleep AS3 or Nolah Evolution 15"?',
-      a: `They tie at 9.5/10 Overall. The ${A} leads on Cooling & Breathability. The ${B} leads on Value. They tie on Edge Support, Trial Period, Response Time and Motion Transfer. Choose on feel: the AS3 is a medium all-foam bed, and the Nolah is a hybrid in three firmness options.`,
+      a: `They tie at 9.7/10 Overall. The ${A} leads on Cooling & Breathability. The ${B} leads on Value. They tie on Edge Support, Trial Period, Response Time and Motion Transfer. Choose on feel: the AS3 is a medium all-foam bed, and the Nolah is a hybrid in three firmness options.`,
     },
     {
       q: 'What firmness options does the Nolah Evolution 15" come in?',
@@ -111,7 +111,7 @@ const copy: ComparisonCopy = {
     },
     {
       q: 'Which has the better trial and warranty?',
-      a: `The Nolah Evolution 15" lists a 120-night trial and a limited lifetime warranty, with returns after a 30-night break-in. Against the Evolution 15", Amerisleep lists a 100-night trial and a 20-year warranty for the AS3. Both score 9 in Trial Period. Confirm current terms with each brand before ordering.`,
+      a: `Both list a 365-night trial and both score 10 in Trial Period. The Nolah Evolution 15" adds a limited lifetime warranty, with returns after a 30-night break-in. Amerisleep lists a 20-year warranty for the AS3 and free returns. Confirm current terms with each brand before ordering.`,
     },
     {
       q: 'Which is better for heavier sleepers?',

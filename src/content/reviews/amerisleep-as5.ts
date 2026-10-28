@@ -2,14 +2,14 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'amerisleep-as5',
-  dateModified: '2026-10-11',
-  metaDescription: 'Amerisleep AS5 review: 9.0/10 Overall, a soft 3/10 all-foam mattress, 14 inches tall, with 10s in Edge Support and Cooling. Specs, fit and verdict.',
-  quickAnswer: 'The Amerisleep AS5 earns a 9.0/10 Overall as a soft 3/10 all-foam mattress. It suits lighter side sleepers who want deep cushioning at the shoulders and hips. Its main strength is a pair of 10s in Edge Support and Cooling & Breathability. Its main limitation is a soft feel that does not support stomach or heavier back sleepers.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS5 review: 9.2/10 Overall, a soft 3/10 all-foam mattress, 14 inches tall, with 10s in Edge Support, Trial Period and Cooling. Specs and fit.',
+  quickAnswer: 'The Amerisleep AS5 earns a 9.2/10 Overall as a soft 3/10 all-foam mattress. It suits lighter side sleepers who want deep cushioning at the shoulders and hips. Its main strength is three 10s, in Edge Support, Trial Period and Cooling & Breathability. Its main limitation is a soft feel that does not support stomach or heavier back sleepers.',
   strengths: [
     'A soft 3/10 feel that cushions the shoulders and hips of side sleepers.',
     'A 10/10 in Edge Support, which keeps a soft foam bed usable to the perimeter.',
     'A 10/10 in Cooling & Breathability for a 14 inch foam build.',
-    'A 20-year warranty that matches the rest of the Amerisleep foam lineup.',
+    'A 365-night trial, scored a standout 10/10, plus a 20-year warranty.',
   ],
   limitations: [
     'Too soft for stomach sleepers of any weight, and for back sleepers over 230 lb.',
@@ -30,7 +30,7 @@ const copy: ReviewCopy = {
   ],
   performance: {
     value: [
-      'The Value score is set from price, trial and warranty facts, and the AS5 earns an 8, which is good with a caveat. The 20-year warranty and 100-night trial match its Amerisleep siblings.',
+      'The Value score is set from price, trial and warranty facts, and the AS5 earns an 8, which is good with a caveat. The 20-year warranty and 365-night trial match its Amerisleep siblings.',
       'The caveat is that the [Amerisleep AS2](/reviews/amerisleep-as2/) and [Amerisleep AS3](/reviews/amerisleep-as3/) earn a 9 in Value with the same trial and warranty terms. The Value score weighs what buyers get against the queen price, and the AS5 lands one step lower on that measure. Side sleepers who need this softness still get long coverage behind it. Seven sizes, including Split King, keep it easy to fit any frame.',
     ],
     edgeSupport: [
@@ -38,8 +38,8 @@ const copy: ReviewCopy = {
       'Amerisleep does not list a separate edge layer, so the 10 reflects the full 14 inch foam stack. It means a sleeper can lie near the side without rolling toward the floor. It also helps couples on a soft bed, where losing the edge would shrink the usable surface for both. Anyone who sits on the side to dress will find it holds up better than a soft feel suggests. For side sleepers who use the full width of a queen, that is a meaningful gain.',
     ],
     trialPeriod: [
-      'The Trial Period score is set from the trial and return terms, and the AS5 earns a 9. Amerisleep offers a 100-night trial and lists free returns by mail within 100 days, with a courier pickup.',
-      'A 9 is strong, though many brands we score now offer 365 nights. For a soft bed, the trial matters more than usual. Softness preference is personal, and 100 nights is enough time to know whether a 3/10 surface suits your body. Give it at least a few weeks before deciding, since soft foam can feel different once it settles. The courier pickup removes the hardest part of sending back a tall foam bed.',
+      'The Trial Period score is set from the trial and return terms, and the AS5 earns a standout 10. Amerisleep offers a 365-night trial and lists free returns by mail, with a courier pickup.',
+      'A full year ties for the longest trial of the 55 models we score. For a soft bed, the trial matters more than usual. Softness preference is personal, and a year is ample time to know whether a 3/10 surface suits your body. Give it at least a few weeks before deciding, since soft foam can feel different once it settles. The courier pickup removes the hardest part of sending back a tall foam bed.',
     ],
     responseTime: [
       'Response Time is an 8, good with a caveat. A soft memory foam top lets the body sink in further, and the foam takes longer to return to shape when you shift.',
@@ -87,10 +87,10 @@ const copy: ReviewCopy = {
     'Back sleepers over 130 lb who want firm lumbar support.',
     'Combination sleepers who turn often and want quick foam rebound.',
   ],
-  compareIntro: 'Each alternative has a head-to-head page with the AS5. The [Amerisleep AS2](/reviews/amerisleep-as2/) is the medium-firm sibling at 9.3. The [Amerisleep AS3](/reviews/amerisleep-as3/) is the medium sibling at 9.5. The [GhostBed Luxe](/reviews/ghostbed-luxe/) is a medium-firm all-foam bed at 8.3.',
+  compareIntro: 'Each alternative has a head-to-head page with the AS5. The [Amerisleep AS2](/reviews/amerisleep-as2/) is the medium-firm sibling at 9.5. The [Amerisleep AS3](/reviews/amerisleep-as3/) is the medium sibling at 9.7. The [GhostBed Luxe](/reviews/ghostbed-luxe/) is a medium-firm all-foam bed at 8.3.',
   policies: [
-    'The AS5 has a 100-night trial and a 20-year warranty. Shipping is free within the continental US by FedEx. Those terms match every Amerisleep foam model, so the choice between them comes down to feel.',
-    'Amerisleep lists free returns by mail within 100 days, with a courier pickup. Sizes run Twin, Twin XL, Full, Queen, King, Cal King and Split King, all 14 inches tall.',
+    'The AS5 has a 365-night trial and a 20-year warranty. Shipping is free within the continental US by FedEx. Those terms match every Amerisleep foam model, so the choice between them comes down to feel.',
+    'Amerisleep lists free returns by mail within the trial, with a courier pickup. Sizes run Twin, Twin XL, Full, Queen, King, Cal King and Split King, all 14 inches tall.',
     'The brand states the AS5 is made in the USA from U.S. and imported components, with covers sewn in Canada. Confirm the current terms on Amerisleep\'s site before ordering, since policies can change between our checks.',
   ],
   faqs: [
@@ -104,7 +104,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What is the Amerisleep AS5 score?',
-      a: 'The AS5 earns a 9.0/10 Overall. It scores 10/10 in Edge Support and Cooling & Breathability, 9/10 in Trial Period and Motion Transfer, and 8/10 in Value and Response Time. Overall is the average of those six fields, shown to one decimal. The two 10s land in the fields that matter most for a soft bed: the edge and heat.',
+      a: 'The AS5 earns a 9.2/10 Overall. It scores 10/10 in Edge Support, Trial Period and Cooling & Breathability, 9/10 in Motion Transfer, and 8/10 in Value and Response Time. Overall is the average of those six fields, shown to one decimal. Two of the 10s land where soft beds often struggle: the edge and heat.',
     },
     {
       q: 'Is the Amerisleep AS5 too soft for back sleepers?',
@@ -120,14 +120,14 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What trial and warranty come with the Amerisleep AS5?',
-      a: 'The AS5 comes with a 100-night trial and a 20-year warranty, according to Amerisleep. Shipping is free in the continental US, and returns are free by mail within 100 days. Check the current terms on Amerisleep\'s site before buying, since they can change.',
+      a: 'The AS5 comes with a 365-night trial and a 20-year warranty, according to Amerisleep. Shipping is free in the continental US, and returns are free by mail within the trial. Check the current terms on Amerisleep\'s site before buying, since they can change.',
     },
     {
       q: 'What is the difference between the AS5 and the AS5 Hybrid?',
-      a: 'The [Amerisleep AS5 Hybrid](/reviews/amerisleep-as5-hybrid/) adds pocketed coils to the same soft 3/10 design. The all-foam AS5 scores 9.0 Overall with a 10 in Edge Support. The hybrid scores 8.8 and gains coil airflow and bounce, while keeping the soft feel on top.',
+      a: 'The [Amerisleep AS5 Hybrid](/reviews/amerisleep-as5-hybrid/) adds pocketed coils to the same soft 3/10 design. The all-foam AS5 scores 9.2 Overall with a 10 in Edge Support. The hybrid scores 9.0 and gains coil airflow and bounce, while keeping the soft feel on top.',
     },
   ],
-  verdict: 'The Amerisleep AS5 earns a 9.0/10 Overall as the softest of Amerisleep\'s three all-foam models. Its 10s in Edge Support and Cooling & Breathability keep a 3/10 surface usable and comfortable for warm side sleepers. Value and Response Time both sit at 8. Lighter side sleepers are the clear fit, while stomach and heavier back sleepers should choose something firmer. The 20-year warranty adds long coverage behind that soft feel.',
+  verdict: 'The Amerisleep AS5 earns a 9.2/10 Overall as the softest of Amerisleep\'s three all-foam models. Its 10s in Edge Support and Cooling & Breathability keep a 3/10 surface usable and comfortable for warm side sleepers. A 365-night trial adds a third 10. Value and Response Time both sit at 8. Lighter side sleepers are the clear fit, while stomach and heavier back sleepers should choose something firmer. The 20-year warranty adds long coverage behind that soft feel.',
   related: [
     { label: 'Amerisleep AS3 vs Amerisleep AS5', href: '/comparison/amerisleep-as3-vs-as5/' },
     { label: 'Amerisleep AS2 vs Amerisleep AS5', href: '/comparison/amerisleep-as2-vs-as5/' },

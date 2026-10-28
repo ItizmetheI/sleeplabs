@@ -2,9 +2,9 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'saatva-rx',
-  dateModified: '2026-10-16',
+  dateModified: '2026-10-22',
   metaDescription: 'Saatva RX review: 9.2/10 Overall, a supportive plush 3-4/10 hybrid with 10s in Trial Period, Response Time and Motion Transfer and a 7 in Value.',
-  quickAnswer: 'Saatva RX earns a 9.2/10 Overall as a hybrid rated Supportive Plush 3-4/10, with Rx Wave-Tech foam and a gel memory foam lumbar layer over a coil unit framed by foam rails. It suits side sleepers and couples who want a cushioned, quiet bed. Its main strengths are 10/10 scores in Trial Period, Response Time and Motion Transfer. Its main limitation is a 7/10 in Value.',
+  quickAnswer: 'Saatva RX earns a 9.2/10 Overall as a hybrid rated Supportive Plush 3-4/10, with Rx Wave-Tech foam and a gel memory foam lumbar layer over a coil unit framed by foam rails. It suits side sleepers and couples who want a cushioned, quiet bed. Its main strengths are 10/10 scores in Trial Period, Response Time and Motion Transfer. The weakest field is Value at 7/10.',
   strengths: [
     '10/10 scores in Trial Period, Response Time and Motion Transfer.',
     'A Supportive Plush 3-4/10 feel that cushions the shoulder and hip.',
@@ -93,7 +93,7 @@ const copy: ReviewCopy = {
     'Shoppers who rank value first, since Value is a 7 on the RX.',
     'Shoppers who want a published height before buying.',
   ],
-  compareIntro: 'The [Amerisleep AS6 Black Series](/reviews/amerisleep-as6/) has a head-to-head page with the RX and scores 9.3 as a hybrid. The [Zoma Start](/reviews/zoma-start/) and the [Nest Bedding Raven](/reviews/nest-bedding-raven/) both score 9.2 as hybrids, the same as the RX. Use the table to compare their firmness, trial and warranty with the RX.',
+  compareIntro: 'The [Amerisleep AS6 Black Series](/reviews/amerisleep-as6/) has a head-to-head page with the RX and scores 9.5 as a hybrid. The [Nest Bedding Raven](/reviews/nest-bedding-raven/) and the [Helix Midnight Luxe](/reviews/helix-midnight-luxe/) both score 9.2 as hybrids, the same as the RX. Use the table to compare their firmness, trial and warranty with the RX.',
   policies: [
     'Saatva RX comes with a 365-night trial, according to Saatva. Delivery and setup are free.',
     'Saatva lists a lifetime warranty for the RX. Confirm the return terms with Saatva before ordering. Sizes run Twin, Twin XL, Full, Queen, King, Split King and Cal King.',

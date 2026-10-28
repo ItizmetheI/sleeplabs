@@ -2,9 +2,9 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'amerisleep-as2',
-  dateModified: '2026-10-11',
-  metaDescription: 'Amerisleep AS2 review: 9.3/10 Overall, a medium-firm 6/10 all-foam bed with 10s in Response Time, Motion Transfer and Cooling. Specs and fit guide.',
-  quickAnswer: 'The Amerisleep AS2 earns a 9.3/10 Overall as a medium-firm 6/10 all-foam mattress. It fits back and stomach sleepers who want firmer foam support with quiet motion control. Its main strength is a set of 10s in Response Time, Motion Transfer and Cooling & Breathability. Its main limitation is an 8/10 Edge Support score.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS2 review: 9.5/10 Overall, a medium-firm 6/10 all-foam bed with 10s in Response Time, Trial Period, Motion Transfer and Cooling. Specs and fit.',
+  quickAnswer: 'The Amerisleep AS2 earns a 9.5/10 Overall as a medium-firm 6/10 all-foam mattress. It fits back and stomach sleepers who want firmer foam support with quiet motion control. Its main strength is four 10s, led by Response Time and Motion Transfer. Its main limitation is an 8/10 Edge Support score.',
   strengths: [
     'A 10/10 in Response Time, so the foam recovers quickly when you change position.',
     'A 10/10 in Motion Transfer for undisturbed sleep beside a restless partner.',
@@ -29,16 +29,16 @@ const copy: ReviewCopy = {
   ],
   performance: {
     value: [
-      'The Value score is set from price, trial and warranty facts, and the AS2 earns a strong 9. Amerisleep backs it with a 20-year warranty, which is long for an all-foam mattress. A 100-night trial and free shipping round out the package.',
-      'It stops at 9 rather than 10 because several brands on our scorecard pair long warranties with year-long trials. Even so, the AS2 sits firmly in the strong band. Shoppers who want a long warranty on a firmer foam bed will find little to fault on this field. Seven sizes, including Split King, also make it simple to fit an existing frame.',
+      'The Value score is set from price, trial and warranty facts, and the AS2 earns a strong 9. Amerisleep backs it with a 20-year warranty, which is long for an all-foam mattress. A 365-night trial and free shipping round out the package.',
+      'The trial and warranty both rate near the top of our scale. Price is the input that keeps this field at 9 instead of 10. Even so, the AS2 sits firmly in the strong band. Shoppers who want a long warranty on a firmer foam bed will find little to fault on this field. Seven sizes, including Split King, also make it simple to fit an existing frame.',
     ],
     edgeSupport: [
       'Edge Support is an 8, which is good with a caveat. The perimeter is foam with no named edge reinforcement on the brand page, so it can compress when you sit on the side.',
       'For sleeping near the edge, the medium-firm feel helps, since a firmer foam gives a little more push-back. Couples who spread out across a queen should still expect the outer few inches to feel softer than the center. If you sit on the bed edge to dress every morning, weigh this score against the AS2\'s other strengths. A sturdy frame with a solid base helps the perimeter hold its shape over time.',
     ],
     trialPeriod: [
-      'The Trial Period score is set from the trial and return terms, and the AS2 earns a 9. Amerisleep offers a 100-night trial with free returns by mail within 100 days.',
-      'That is a strong result, though it trails the 365-night trials offered by many brands we score. One hundred nights is still enough time to judge a medium-firm surface across seasons and sleep positions. Keep the order number handy in case you start a return, and give your body a few weeks to adjust first. A new firmness level often feels different in week one than in week four.',
+      'The Trial Period score is set from the trial and return terms, and the AS2 earns a standout 10. Amerisleep offers a 365-night trial, and the brand lists free returns by mail.',
+      'A full year ties for the longest trial of the 55 models we cover. That is ample time to judge a medium-firm surface across every season and sleep position. Keep the order number handy in case you start a return, and give your body a few weeks to adjust first. A new firmness level often feels different in week one than in week four.',
     ],
     responseTime: [
       'Response Time is a standout 10. Memory foam usually conforms slowly, so this is one of the AS2\'s clearest strengths on the scorecard.',
@@ -86,11 +86,11 @@ const copy: ReviewCopy = {
     'Anyone who sits on the bed edge often and wants a firm perimeter.',
     'Shoppers who want coil bounce or a choice of firmness levels.',
   ],
-  compareIntro: 'Each model below has a head-to-head page with the AS2, linked under Related for a field-by-field breakdown. The [Bear Original](/reviews/bear-original/) is another medium-firm all-foam bed at 9.2 Overall. The [Amerisleep AS3](/reviews/amerisleep-as3/) is the medium 5/10 sibling at 9.5. The [Amerisleep AS5](/reviews/amerisleep-as5/) is the soft 3/10 sibling at 9.0.',
+  compareIntro: 'Each model below has a head-to-head page with the AS2, linked under Related for a field-by-field breakdown. The [Bear Original](/reviews/bear-original/) is another medium-firm all-foam bed at 9.3 Overall. The [Amerisleep AS3](/reviews/amerisleep-as3/) is the medium 5/10 sibling at 9.7. The [Amerisleep AS5](/reviews/amerisleep-as5/) is the soft 3/10 sibling at 9.2.',
   policies: [
-    'The AS2 comes with a 100-night trial and a 20-year warranty. Shipping is free within the continental US by FedEx, and Amerisleep lists free returns by mail within 100 days.',
+    'The AS2 comes with a 365-night trial and a 20-year warranty. Shipping is free within the continental US by FedEx, and Amerisleep lists free returns by mail.',
     'Sizes run from Twin through Twin XL, Full, Queen, King, Cal King and Split King. Amerisleep states it is made in the USA from U.S. and imported components, with covers sewn in Canada.',
-    'Keep the order details on file, since Amerisleep handles returns by mail within the 100-day window. Confirm the current trial, warranty and return terms on Amerisleep\'s product page before ordering, since brands update these from time to time.',
+    'Keep the order details on file, since Amerisleep handles returns by mail within the 365-night window. Confirm the current trial, warranty and return terms on Amerisleep\'s product page before ordering, since brands update these from time to time.',
   ],
   faqs: [
     {
@@ -103,7 +103,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What is the Amerisleep AS2 score?',
-      a: 'The AS2 earns a 9.3/10 Overall. It scores 10/10 in Response Time, Motion Transfer and Cooling & Breathability, 9/10 in Value and Trial Period, and 8/10 in Edge Support. Overall is the average of those six field scores, shown to one decimal. Three standout 10s and no score below 8 put it in the strong band across the board.',
+      a: 'The AS2 earns a 9.5/10 Overall. It scores 10/10 in Trial Period, Response Time, Motion Transfer and Cooling & Breathability, 9/10 in Value, and 8/10 in Edge Support. Overall is the average of those six field scores, shown to one decimal. Four standout 10s and no score below 8 put it in the strong band overall.',
     },
     {
       q: 'Is the Amerisleep AS2 good for stomach sleepers?',
@@ -111,7 +111,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What is the difference between the Amerisleep AS2 and AS3?',
-      a: 'The AS2 is firmer at 6/10, while the AS3 is medium at 5/10. Both are 12 inch all-foam beds with the same named layers. The AS3 scores 9.5 Overall with a 10 in Edge Support. The AS2 scores 9.3 with a 10 in Response Time. Back and stomach sleepers usually lean toward the AS2, while side sleepers lean toward the AS3.',
+      a: 'The AS2 is firmer at 6/10, while the AS3 is medium at 5/10. Both are 12 inch all-foam beds with the same named layers. The AS3 scores 9.7 Overall with a 10 in Edge Support. The AS2 scores 9.5 with a 10 in Response Time. Back and stomach sleepers usually lean toward the AS2, while side sleepers lean toward the AS3.',
     },
     {
       q: 'Does the Amerisleep AS2 sleep hot?',
@@ -119,14 +119,14 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What trial and warranty come with the Amerisleep AS2?',
-      a: 'The AS2 has a 100-night trial and a 20-year warranty, according to Amerisleep. Shipping is free in the continental US, and the brand lists free returns by mail within 100 days. Check the current terms on Amerisleep\'s site before buying.',
+      a: 'The AS2 has a 365-night trial and a 20-year warranty, according to Amerisleep. Shipping is free in the continental US, and the brand lists free returns by mail within that window. Check the current terms on Amerisleep\'s site before buying.',
     },
     {
       q: 'How tall is the Amerisleep AS2?',
       a: 'The AS2 is 12 inches tall in every size. That height fits standard fitted sheets and works on most platform beds and adjustable bases. Amerisleep sells it from Twin up to Cal King and Split King, so most frames have a matching size.',
     },
   ],
-  verdict: 'The Amerisleep AS2 earns a 9.3/10 Overall with 10s in Response Time, Motion Transfer and Cooling & Breathability. It is the firmer choice in Amerisleep\'s foam lineup, built for back and stomach sleepers who want memory foam without deep sink. The 8/10 Edge Support and a firm feel for light side sleepers are the trade-offs to weigh before ordering. For most back sleepers, it is an easy match.',
+  verdict: 'The Amerisleep AS2 earns a 9.5/10 Overall with 10s in Response Time, Trial Period, Motion Transfer and Cooling & Breathability. It is the firmer choice in Amerisleep\'s foam lineup, built for back and stomach sleepers who want memory foam without deep sink. The 8/10 Edge Support and a firm feel for light side sleepers are the trade-offs to weigh before ordering. For most back sleepers, it is an easy match.',
   related: [
     { label: 'Amerisleep AS2 vs Amerisleep AS3', href: '/comparison/amerisleep-as2-vs-as3/' },
     { label: 'Amerisleep AS2 vs Bear Original', href: '/comparison/amerisleep-as2-vs-bear-original/' },

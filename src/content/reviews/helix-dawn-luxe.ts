@@ -2,14 +2,14 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'helix-dawn-luxe',
-  dateModified: '2026-10-11',
-  metaDescription: 'Helix Dawn Luxe review: 8.5/10 Overall, a 13.5 inch firm 7/10 hybrid with 9s in Trial, Response Time, Motion Transfer and Cooling and a 7 in Value.',
-  quickAnswer: 'Helix Dawn Luxe earns an 8.5/10 Overall as a 13.5 inch hybrid rated firm 7/10, combining memory foam with coils under a TENCEL cover. It suits back and stomach sleepers who want a firm, supportive surface. Its main strengths are 9/10 scores in Trial Period, Response Time, Motion Transfer and Cooling & Breathability. Its main limitation is a 7/10 in Value, an average result.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Helix Dawn Luxe review: 8.7/10 Overall for a 13.5 inch firm 7/10 hybrid. It earns a 10 in Trial Period, 9s in three fields and a 7 in Value on our scorecard.',
+  quickAnswer: 'Helix Dawn Luxe earns an 8.7/10 Overall as a 13.5 inch hybrid rated firm 7/10, combining memory foam with coils under a TENCEL cover. It suits back and stomach sleepers who want a firm, supportive surface. Its main strengths are a 10/10 in Trial Period and 9s in Response Time, Motion Transfer and Cooling. Its main limitation is a 7/10 in Value.',
   strengths: [
-    '9/10 scores in Trial Period, Response Time, Motion Transfer and Cooling & Breathability.',
+    'A standout 10/10 in Trial Period, from a 365-night trial and a limited lifetime warranty.',
+    '9/10 scores in Response Time, Motion Transfer and Cooling & Breathability.',
     'A firm 7/10 feel that keeps the hips level for back and stomach sleepers.',
-    'A 365-night trial and a limited lifetime warranty, according to Helix.',
-    'Extra sizes, including Short Queen and RV King.',
+        'Extra sizes, including Short Queen and RV King.',
   ],
   limitations: [
     'Value is a 7, an average result and the lowest of its six scored fields.',
@@ -28,7 +28,7 @@ const copy: ReviewCopy = {
   performance: {
     value: [
       'Value is a 7, an average result and the lowest of the Dawn Luxe\'s six scored fields. The score is set from price, trial and warranty facts, and it weighs what the Dawn Luxe delivers against its queen price.',
-      'Helix pairs a 365-night trial with a limited lifetime warranty, and shipping is free in the contiguous US, with rates for Alaska, Hawaii and Canada. Those terms are strong.',
+      'Helix pairs a 365-night trial with a limited lifetime warranty. Shipping is free in the contiguous US, with rates for Alaska, Hawaii and Canada. Those terms earn a standout 10 in Trial Period, but they do not lift the Value field on their own.',
       'Shoppers who rank cost first should compare this field across the hybrids we score before deciding. Those who weigh the trial, warranty and firm feel more heavily may see the trade differently.',
     ],
     edgeSupport: [
@@ -37,9 +37,9 @@ const copy: ReviewCopy = {
       'Anyone who sits on the edge to dress each morning should weigh this score. Solo sleepers who stay near the center will notice it least, and a sturdy frame helps the perimeter hold its shape over time.',
     ],
     trialPeriod: [
-      'Trial Period is a strong 9. Helix offers a 365-night trial, with a free return or exchange after a 30-day break-in period.',
-      'The break-in means the mattress has to be kept for 30 nights before a return or exchange. That gives the body time to adjust to a firm surface. After that, the rest of the year is open for a decision, which covers every season.',
-      'Buyers moving from a softer bed gain the most from this field, since a firm 7/10 surface can feel unfamiliar at first. The exchange option also helps if the firm feel turns out to be too much. Keep the order details on file, and confirm the current terms on Helix\'s site before ordering.',
+      'Trial Period is a standout 10 for the Dawn Luxe. The score is set from trial and warranty facts, and Helix pairs a 365-night trial with a limited lifetime warranty.',
+      'A free return or exchange is open after a 30-day break-in period. Those 30 nights give the body time to adjust to a firm surface. The rest of the year stays open for a decision, which covers every season.',
+      'Buyers moving from a softer bed gain the most here, since a firm 7/10 surface can feel unfamiliar at first. The exchange option helps if the firm feel turns out to be too much. Keep the order details on file, and confirm the current terms on Helix\'s site before ordering.',
     ],
     responseTime: [
       'The Dawn Luxe earns a strong 9 in Response Time. The coils add lift from below, and the firm feel keeps the body near the surface, so the memory foam recovers quickly.',
@@ -90,7 +90,7 @@ const copy: ReviewCopy = {
     'Shoppers who rank value first, since Value is a 7.',
     'Shoppers who want a full layer breakdown before buying.',
   ],
-  compareIntro: 'The [Amerisleep AS2](/reviews/amerisleep-as2/) has a head-to-head page with the Dawn Luxe and scores 9.3 as an all-foam bed. The [Casper Dream Hybrid](/reviews/casper-dream-hybrid/) and [Leesa Sapira Hybrid](/reviews/leesa-sapira-hybrid/) both score 8.7 as hybrids. The table below sets their firmness, trial and warranty beside the Dawn Luxe.',
+  compareIntro: 'The [Amerisleep AS2](/reviews/amerisleep-as2/) has a head-to-head page with the Dawn Luxe and scores 9.5 as an all-foam bed. The [Casper Dream Hybrid](/reviews/casper-dream-hybrid/) ties the Dawn Luxe at 8.7, and the [Leesa Sapira Hybrid](/reviews/leesa-sapira-hybrid/) scores 8.8. The table below sets their firmness, trial and warranty beside the Dawn Luxe.',
   policies: [
     'Helix Dawn Luxe comes with a 365-night trial and a limited lifetime warranty, according to Helix. Shipping is free in the contiguous US, with rates for Alaska, Hawaii and Canada.',
     'A free return or exchange is available within 365 nights, after a 30-day break-in period. Sizes run Twin, Twin XL, Full, Queen, King, Cal King, Short Queen and RV King.',
@@ -103,7 +103,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What is the Helix Dawn Luxe score?',
-      a: 'The Dawn Luxe earns an 8.5/10 Overall. It scores 9/10 in Trial Period, Response Time, Motion Transfer and Cooling & Breathability, 8/10 in Edge Support, and 7/10 in Value. Overall is the average of those six fields, shown to one decimal. Value is its weakest field.',
+      a: 'The Dawn Luxe earns an 8.7/10 Overall. It scores a standout 10/10 in Trial Period and 9/10 in Response Time, Motion Transfer and Cooling & Breathability. Edge Support is an 8/10 and Value a 7/10. Overall is the average of those six fields, shown to one decimal.',
     },
     {
       q: 'Is Helix Dawn Luxe good for stomach sleepers?',
@@ -119,18 +119,18 @@ const copy: ReviewCopy = {
     },
     {
       q: 'How is Helix Dawn Luxe different from Helix Midnight Luxe?',
-      a: 'The Dawn Luxe is rated firm 7/10, while the [Helix Midnight Luxe](/reviews/helix-midnight-luxe/) is rated medium 5/10 with a quilted pillow top and zoned coils. The Midnight Luxe scores 9.0 Overall, with 10s in Edge Support and Cooling & Breathability. The Dawn Luxe scores 8.5 and suits back and stomach sleepers who want a firmer bed.',
+      a: 'The Dawn Luxe is rated firm 7/10, while the [Helix Midnight Luxe](/reviews/helix-midnight-luxe/) is rated medium 5/10 with a quilted pillow top and zoned coils. The Midnight Luxe scores 9.2 Overall, with 10s in Edge Support, Trial Period and Cooling & Breathability. The Dawn Luxe scores 8.7 and suits back and stomach sleepers who want a firmer bed.',
     },
     {
       q: 'Is the Helix Dawn Luxe good for side sleepers?',
-      a: 'Not for most side sleepers. The Dawn Luxe is rated firm, which sits at 7/10 on our scale, so lighter and average weight side sleepers are likely to find it hard at the shoulder. Heavier side sleepers may manage, since more weight presses into the memory foam. Most side sleepers should look at the medium Midnight Luxe or the soft [Helix Sunset Luxe](/reviews/helix-sunset-luxe/).',
+      a: 'Not for most side sleepers. The Dawn Luxe is rated firm, which sits at 7/10 on our scale. Lighter and average weight side sleepers are likely to find it hard at the shoulder. Heavier side sleepers may manage, since more weight presses into the memory foam. Most side sleepers should look at the medium Midnight Luxe or the soft [Helix Sunset Luxe](/reviews/helix-sunset-luxe/).',
     },
     {
       q: 'Is Helix Dawn Luxe good for couples?',
       a: 'It suits most couples, especially those who both prefer a firm feel. It earns a 9/10 in Motion Transfer, so most partners sleep through each other turning over. The 8/10 Edge Support means the perimeter gives a little when sitting or lying near the side. Couples where one partner sleeps on the side may prefer the medium Midnight Luxe.',
     },
   ],
-  verdict: 'Helix Dawn Luxe earns an 8.5/10 Overall, with 9/10 scores in Trial Period, Response Time, Motion Transfer and Cooling & Breathability. Its firm 7/10 hybrid build suits back and stomach sleepers, including heavier sleepers who want firm support with quick rebound. Value is a 7, an average result, and Edge Support an 8. Lighter side sleepers should look at a softer Helix model.',
+  verdict: 'Helix Dawn Luxe earns an 8.7/10 Overall, led by a standout 10/10 in Trial Period. It adds 9/10 scores in Response Time, Motion Transfer and Cooling & Breathability. Its firm 7/10 hybrid build suits back and stomach sleepers, including heavier sleepers who want firm support with quick rebound. Value is a 7, an average result, and Edge Support an 8. Lighter side sleepers should look at a softer Helix model.',
   related: [
     { label: 'Amerisleep AS2 vs Helix Dawn Luxe', href: '/comparison/amerisleep-as2-vs-helix-dawn-luxe/' },
     { label: 'Helix Mattress Reviews (2026)', href: '/brands/helix/' },

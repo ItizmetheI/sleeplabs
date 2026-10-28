@@ -2,13 +2,13 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'brooklyn-bedding-aurora-luxe',
-  dateModified: '2026-10-11',
-  metaDescription: 'Brooklyn Bedding Aurora Luxe review: 8.8/10 Overall, a cooling hybrid in Soft, Medium and Firm with a 10 in Cooling & Breathability. Specs, fit, verdict.',
-  quickAnswer: 'The Brooklyn Bedding Aurora Luxe earns an 8.8/10 Overall as a 13.25 inch hybrid sold in Soft 3/10, Medium 5/10 and Firm 7/10. It suits hot sleepers who want a choice of feel over zoned coils. Its main strength is a 10/10 in Cooling & Breathability. Its main limitation is 8s in Edge Support and Response Time.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Brooklyn Bedding Aurora Luxe review: 9.0/10 Overall for a cooling hybrid in Soft, Medium and Firm feels, with 10s in Cooling & Breathability and Trial Period.',
+  quickAnswer: 'The Brooklyn Bedding Aurora Luxe earns a 9.0/10 Overall as a 13.25 inch hybrid sold in Soft 3/10, Medium 5/10 and Firm 7/10. It suits hot sleepers who want a choice of feel over zoned coils. Its main strengths are 10/10 scores in Cooling & Breathability and Trial Period. Its main limitation is 8s in Edge Support and Response Time.',
   strengths: [
     'A 10/10 in Cooling & Breathability, with a cooling cover and copper foam named in the build.',
     'Three firmness options, from Soft 3/10 to Firm 7/10, under one model.',
-    'A 365-night trial and a lifetime warranty for the Aurora Luxe.',
+    'A 10/10 in Trial Period, set from a 365-night trial and a lifetime warranty.',
     'Most layer thicknesses published, including an 8 inch zoned coil core.',
   ],
   limitations: [
@@ -32,7 +32,7 @@ const copy: ReviewCopy = {
   ],
   performance: {
     value: [
-      'The Value score is set from price, trial and warranty facts, and the Aurora Luxe earns a strong 9. A 365-night trial and a lifetime warranty are the longest terms we record in both fields.',
+      'The Value score is set from price, trial and warranty facts, and the Aurora Luxe earns a strong 9. Its 365-night trial and lifetime warranty tie for the longest terms we record in each field.',
       'The score stops at 9 because the Value field weighs those terms against the price. Brooklyn Bedding lists a 365-night trial and a lifetime warranty alongside it. Free shipping is included, and the brand sells a wide range of sizes, including Short Queen and RV King.',
       'Buyers who want long policy coverage with a choice of three feels will find this field well placed. The terms stay the same across every firmness option and size.',
     ],
@@ -42,8 +42,8 @@ const copy: ReviewCopy = {
       'Couples who sleep close to the edge or sit on the side each morning should weigh this score. Solo sleepers who stay near the center will notice it least.',
     ],
     trialPeriod: [
-      'The Trial Period score is set from the trial and return terms, and the Aurora Luxe earns a 9. Brooklyn Bedding offers a 365-night trial that starts when the mattress arrives.',
-      'The trial length ties for the longest on our scorecard. The score stops at 9 because return requests start 30 days after delivery, and the trial can be used once per customer. Clearance items are also excluded from returns.',
+      'The Trial Period score is set from trial and warranty facts, and the Aurora Luxe earns a standout 10. Brooklyn Bedding pairs a 365-night trial with a lifetime warranty.',
+      'The trial length ties for the longest on our scorecard. Return requests start 30 days after delivery, and the trial can be used once per customer. Clearance items are excluded from returns, so check the listing before ordering.',
       'Buyers choosing between three firmness options gain the most from a long trial. A full year gives time to judge the feel across seasons before deciding.',
     ],
     responseTime: [
@@ -95,7 +95,7 @@ const copy: ReviewCopy = {
     'Combination sleepers who want instant rebound from latex or coils on top.',
     'Stomach sleepers who would choose the Soft option.',
   ],
-  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Aurora Luxe and scores 9.5 as an all-foam bed. The [Vaya Hybrid](/reviews/vaya-hybrid/) and [Amerisleep AS5 Hybrid](/reviews/amerisleep-as5-hybrid/) both match its 8.8 Overall as hybrids. The table lines up their firmness, trial and warranty.',
+  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Aurora Luxe and scores 9.7 as an all-foam bed. The [Vaya Hybrid](/reviews/vaya-hybrid/) and [Amerisleep AS5 Hybrid](/reviews/amerisleep-as5-hybrid/) both match its 9.0 Overall as hybrids. The table lines up their firmness, trial and warranty.',
   policies: [
     'The Aurora Luxe comes with a 365-night trial and a lifetime warranty, according to Brooklyn Bedding. Shipping is free, and the mattress arrives as a bed-in-a-box.',
     'Return requests start 30 days after delivery, and the trial can be used once per customer. Clearance items cannot be returned or exchanged.',
@@ -112,11 +112,11 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What is the Brooklyn Bedding Aurora Luxe score?',
-      a: 'The Aurora Luxe earns an 8.8/10 Overall. It scores 10/10 in Cooling & Breathability, 9/10 in Value, Trial Period and Motion Transfer, and 8/10 in Edge Support and Response Time. Overall is the average of those six fields, shown to one decimal. Cooling is the field that sets it apart.',
+      a: 'The Aurora Luxe earns a 9.0/10 Overall. It scores 10/10 in Cooling & Breathability and Trial Period, and 9/10 in Value and Motion Transfer. Edge Support and Response Time are 8/10. Overall is the average of those six fields, shown to one decimal.',
     },
     {
       q: 'Is the Brooklyn Bedding Aurora Luxe good for hot sleepers?',
-      a: 'Yes, cooling is its top field with a 10/10. Brooklyn Bedding names a GlacioTex cooling cover, copper-infused responsive foam and a zoned coil core. The coils leave space for airflow under the foam. A breathable protector helps keep the cover working as designed through warm nights.',
+      a: 'Yes, cooling earns a 10/10 and ties Trial Period for its top field. Brooklyn Bedding names a GlacioTex cooling cover, copper-infused responsive foam and a zoned coil core. The coils leave space for airflow under the foam. A breathable protector helps keep the cover working as designed through warm nights.',
     },
     {
       q: 'How tall is the Brooklyn Bedding Aurora Luxe?',
@@ -135,7 +135,7 @@ const copy: ReviewCopy = {
       a: 'It suits most couples, with a 9/10 in Motion Transfer. Partner movement mostly stays on its own side, though light sleepers may notice some bounce from the coils. The 8/10 Edge Support means the outer few inches give more than a firmer-edged bed, which matters on a smaller size.',
     },
   ],
-  verdict: 'The Brooklyn Bedding Aurora Luxe earns an 8.8/10 Overall, led by a 10/10 in Cooling & Breathability. Three firmness options let it suit side, back and stomach sleepers, and a 365-night trial with a lifetime warranty backs the 9/10 Value score. Edge Support and Response Time land at 8. Hot sleepers who want a foam feel over coils get the most from it.',
+  verdict: 'The Brooklyn Bedding Aurora Luxe earns a 9.0/10 Overall, led by 10/10 scores in Cooling & Breathability and Trial Period. Three firmness options let it suit side, back and stomach sleepers. A 365-night trial with a lifetime warranty also backs the 9/10 Value score. Edge Support and Response Time land at 8. Hot sleepers who want a foam feel over coils get the most from it.',
   related: [
     { label: 'Amerisleep AS3 vs Brooklyn Bedding Aurora Luxe', href: '/comparison/amerisleep-as3-vs-brooklyn-bedding-aurora-luxe/' },
     { label: 'Best Cooling Mattress (2026)', href: '/best/cooling/' },

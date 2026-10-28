@@ -5,8 +5,8 @@ const B = '[Amerisleep Organica](/reviews/amerisleep-organica/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as6-vs-organica',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS6 Black Series vs Organica: a memory foam hybrid in three firmness levels against a natural latex hybrid. The AS6 scores 9.3/10 to 9.2/10.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS6 Black Series vs Organica: a memory foam hybrid in three firmness levels against a natural latex hybrid. The AS6 scores 9.5/10 to 9.3/10.',
   quickVerdict: `Choose the ${A} if you want memory foam over coils in Plush Soft, Luxury Firm or Firm, with 10s in Motion Transfer and Cooling & Breathability. Choose the ${B} if you want natural Talalay latex, organic wool and organic cotton over coils, with a 10 in Response Time.`,
   feel: [
     `Both are hybrids from Amerisleep, but they feel very different. The ${A} places memory foam over individually wrapped coils and comes in Plush Soft 3/10, Luxury Firm 7/10 and Firm 8/10. The ${B} places natural latex over pocketed coils in one feel that Amerisleep calls medium, which sits at 6/10 on our scale.`,
@@ -23,7 +23,7 @@ const copy: ComparisonCopy = {
     `The ${B} lists its thicknesses: an organic cotton cover over 1 inch of organic wool, 2 inches of soft natural Talalay latex, 1 inch of medium natural Talalay latex and an 8 inch pocketed coil unit with edge support.`,
     'Materials are the main difference. The AS6 is built around memory foam and named cooling materials. The Organica is built around natural latex, wool and cotton.',
     'Certifications follow the materials. Amerisleep lists CertiPUR-US, GREENGUARD Gold and OEKO-TEX Standard 100 for the AS6.',
-    'For the Organica, Amerisleep lists OEKO-TEX Standard 100 for the latex and wool, Rainforest Alliance and eco-INSTITUT for the latex, and GOTS for the wool, per its FAQ.',
+    'For the Organica\'s latex, Amerisleep lists OEKO-TEX Standard 100, Rainforest Alliance and eco-INSTITUT. For the wool, it lists GOTS and OEKO-TEX Standard 100, so the GOTS organic certification applies to the wool only.',
     'Amerisleep states the AS6 is made in the USA, and the Organica is made in California from materials sourced in Sri Lanka, New Zealand and India.',
     'The AS6 Black Series and the Organica both come in the same seven sizes, from Twin to Split King.',
     'The Organica lists the thickness of every layer, while Amerisleep does not list thicknesses for the AS6. Shoppers who like to know exactly what is inside a mattress will find more detail on the Organica\'s spec sheet.',
@@ -72,14 +72,14 @@ const copy: ComparisonCopy = {
     'Heavier combination sleepers may notice the latex gives more lift between positions, which helps when changing sides several times a night.',
   ],
   valuePolicies: [
-    `The AS6 Black Series and the Organica both score 9 in Value and 9 in Trial Period. The ${A} and the ${B} share Amerisleep's core policies. Our Value and Trial Period scores for the AS6 Black Series and the Organica come from price, trial and warranty facts.`,
-    'Amerisleep lists a 100-night trial and a 20-year warranty for both.',
+    `The AS6 Black Series and the Organica both score 9 in Value and 10 in Trial Period. The ${A} and the ${B} share Amerisleep's core policies. Our Value and Trial Period scores for the AS6 Black Series and the Organica come from price, trial and warranty facts.`,
+    'Amerisleep lists a 365-night trial and a 20-year warranty for both. That full year is why each earns a 10 in Trial Period.',
     'Shipping is free for both. Amerisleep ships the AS6 via FedEx in the continental US, and lists free FedEx shipping with no-contact delivery in the contiguous US for the Organica.',
-    'Returns are free for both. Amerisleep lists free returns by mail within 100 nights for the AS6.',
-    'Because Value ties, policy alone does not separate these two.',
+    'Returns are free for both. Amerisleep lists free returns by mail during the trial for the AS6.',
+    'Because Value and Trial Period both tie, policy alone does not separate these two.',
     'For the AS6 Black Series and the Organica, confirm current terms on Amerisleep\'s site before ordering.',
     'Since the policies match, the decision rests on materials, firmness choice and the fields where the scores differ.',
-    'Shoppers who are unsure whether latex suits them, or which AS6 firmness to choose, can use the 100-night trial to judge it at home.',
+    'Shoppers who are unsure whether latex suits them, or which AS6 firmness to choose, can use the 365-night trial to judge it at home.',
   ],
   buyA: [
     'Shoppers who want Plush Soft, Luxury Firm or Firm in one model, which the AS6 Black Series offers.',
@@ -94,11 +94,11 @@ const copy: ComparisonCopy = {
   faqs: [
     {
       q: 'Which is better, Amerisleep AS6 Black Series or Amerisleep Organica?',
-      a: `The ${A} scores higher, 9.3/10 against 9.2/10, and leads on Overall, Motion Transfer and Cooling & Breathability. The ${B} leads on Response Time, and the two tie on Value, Edge Support and Trial Period. The Organica suits shoppers who want natural materials.`,
+      a: `The ${A} scores higher, 9.5/10 against 9.3/10, and leads on Overall, Motion Transfer and Cooling & Breathability. The ${B} leads on Response Time, and the two tie on Value, Edge Support and Trial Period. The Organica suits shoppers who want natural materials.`,
     },
     {
       q: 'Which is the natural option?',
-      a: `The Amerisleep Organica. It uses natural Talalay latex, organic wool and an organic cotton cover over pocketed coils, with GOTS listed for the wool per its FAQ. The Amerisleep AS6 Black Series uses memory foam and other foams over coils.`,
+      a: `The Amerisleep Organica. It uses natural Talalay latex, organic wool and an organic cotton cover over pocketed coils, with GOTS organic certification listed for the wool only. The Amerisleep AS6 Black Series uses memory foam and other foams over coils.`,
     },
     {
       q: 'Which comes in more firmness options?',
@@ -114,7 +114,7 @@ const copy: ComparisonCopy = {
     },
     {
       q: 'Do they have the same trial and warranty?',
-      a: `Yes. Amerisleep lists a 100-night trial and a 20-year warranty for both, with free shipping and free returns. The AS6 Black Series and the Organica both score 9 in Value and 9 in Trial Period. Confirm current terms with Amerisleep. Both ship free via FedEx. Returns are free for both.`,
+      a: `Yes. Amerisleep lists a 365-night trial and a 20-year warranty for both, with free shipping and free returns. The AS6 Black Series and the Organica both score 9 in Value and 10 in Trial Period. Confirm current terms with Amerisleep. Both ship free via FedEx. Returns are free for both.`,
     },
   ],
   related: [

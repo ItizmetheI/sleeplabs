@@ -2,14 +2,14 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'amerisleep-as3',
-  dateModified: '2026-10-11',
-  metaDescription: 'Amerisleep AS3 review: 9.5/10 Overall, a medium 5/10 all-foam bed with 10s in Edge Support, Motion Transfer and Cooling. Specs, fit and verdict.',
-  quickAnswer: 'The Amerisleep AS3 earns a 9.5/10 Overall and is our editorial Best Overall pick. It suits side, back and combination sleepers who want a medium 5/10 foam feel with standout motion control. Its main strength is three 10/10 fields. Its main limitation is a medium feel that runs soft for many stomach sleepers.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS3 review: 9.7/10 Overall, a medium 5/10 all-foam bed with 10s in Edge Support, Trial Period, Motion Transfer and Cooling. Specs and verdict.',
+  quickAnswer: 'The Amerisleep AS3 earns a 9.7/10 Overall and is our editorial Best Overall pick. It suits side, back and combination sleepers who want a medium 5/10 foam feel with standout motion control. Its main strength is four 10/10 fields. Its main limitation is a medium feel that runs soft for many stomach sleepers.',
   strengths: [
     'A 10/10 in Edge Support, a standout result for an all-foam mattress.',
     'A 10/10 in Motion Transfer, so a partner\'s movement stays on their side.',
     'A 10/10 in Cooling & Breathability, paired with a cover the brand designs for heat transfer.',
-    'A 20-year warranty and a 100-night trial behind a 9/10 Value score.',
+    'A 365-night trial that earns a standout 10/10, backed by a 20-year warranty.',
   ],
   limitations: [
     'Too soft for most stomach sleepers over 230 lb, since the only feel is medium 5/10.',
@@ -30,23 +30,23 @@ const copy: ReviewCopy = {
   ],
   performance: {
     value: [
-      'The Value score is set from price, trial and warranty facts, and the AS3 earns a strong 9. A 20-year warranty is long for an all-foam bed. The 100-night trial gives a full season to decide whether the feel works.',
-      'The score stops short of a 10 because the trial is shorter than the year-long trials many brands on our scorecard now offer. Free shipping and free returns keep it in the strong band. Shoppers who weigh warranty length above trial length will find the AS3 well placed on this field. The seven available sizes, including Split King, also make it easy to match an existing frame or an adjustable base.',
+      'The Value score is set from price, trial and warranty facts, and the AS3 earns a strong 9. A 20-year warranty is long for an all-foam bed. The 365-night trial gives a full year to decide whether the feel works.',
+      'Both policy terms sit near the top of our scale, so the price side of the formula is what holds this field at 9. Free shipping and free returns keep it in the strong band. Shoppers who weigh policy length heavily will find the AS3 well placed on this field. The seven available sizes, including Split King, also make it easy to match an existing frame or an adjustable base.',
     ],
     edgeSupport: [
       'Edge Support is a standout 10 for an all-foam build. Foam beds without coils can compress more at the perimeter when someone sits on the side.',
       'Amerisleep does not list a separate edge layer, so the score reflects how the full foam stack is rated at the perimeter. In practice, a 10 here means sleepers can use the full width of the surface. It also means the edge holds up when someone sits down to dress or tie shoes. That matters most for couples who share a queen or a full, where every inch of the surface gets used.',
     ],
     trialPeriod: [
-      'The Trial Period score is set from the trial and return terms, and the AS3 earns a 9. Amerisleep offers a 100-night trial, and the brand page lists free returns with courier pickup.',
-      'A 9 is a strong result. It falls one point short because trials of 365 nights are now common among the brands we score. The free pickup removes the hardest part of a mattress return, which is moving a bulky bed back out of the house. Buyers who want the longest possible window should compare trial lengths before ordering.',
+      'The Trial Period score is set from the trial and return terms, and the AS3 earns a standout 10. Amerisleep offers a 365-night trial, and the brand page lists free returns with courier pickup.',
+      'A full year ties for the longest trial length among the 55 models on our scorecard. Every season passes inside that window, so summer heat and winter bedding both get a fair trial. The free pickup removes the hardest part of a mattress return, which is moving a bulky bed back out of the house.',
     ],
     responseTime: [
       'Response Time is a strong 9. The comfort layer is memory foam, which conforms slowly by design, so the AS3 does not spring back like latex or coils.',
       'The 9 means the foam recovers fast enough that turning over takes little effort. Combination sleepers who change position through the night should find it easy to move on. Sleepers who want a bouncy, lifted feel will notice the slower foam response next to a hybrid. For most people, the trade is worth it for the motion control the same foam provides.',
     ],
     motionTransfer: [
-      'Motion Transfer is a standout 10, one of three 10s on the AS3 scorecard. All-foam beds tend to absorb movement well because there are no springs to carry motion across the surface.',
+      'Motion Transfer is a standout 10, one of four 10s on the AS3 scorecard. All-foam beds tend to absorb movement well because there are no springs to carry motion across the surface.',
       'A 10 here means a partner getting in or out of bed is unlikely to disturb the other side. Light sleepers who share a bed get the most from this field. So do people who share the bed with a pet or a child. That 10 ties for the top Motion Transfer score among the picks on our [couples ranking](/best/couples/).',
     ],
     coolingBreathability: [
@@ -87,9 +87,9 @@ const copy: ReviewCopy = {
     'Shoppers who want a choice of firmness levels from one model.',
     'Sleepers who prefer the bounce of coils or latex over a slower foam response.',
   ],
-  compareIntro: 'The [Nolah Evolution 15"](/reviews/nolah-evolution-15/) ties the AS3 at 9.5 Overall as a hybrid with three firmness options. The [Glacier Apex Hybrid](/reviews/glacier-apex-hybrid/) and the [Amerisleep AS6 Black Series](/reviews/amerisleep-as6/) both score 9.3 with coil cores. Each one has a head-to-head page with the AS3, linked under Related.',
+  compareIntro: 'The [Zoma Boost](/reviews/zoma-boost/) and the [Nolah Evolution 15"](/reviews/nolah-evolution-15/) tie the AS3 for the highest Overall score of the 55 models we cover, 9.7. Both are hybrids. The [Amerisleep AS6 Black Series](/reviews/amerisleep-as6/) scores 9.5 with three firmness options. The Nolah and the AS6 each have a head-to-head page with the AS3.',
   policies: [
-    'Amerisleep offers a 100-night trial and a 20-year warranty on the AS3. Shipping is free within the continental US by FedEx, according to the brand page.',
+    'Amerisleep offers a 365-night trial and a 20-year warranty on the AS3. Shipping is free within the continental US by FedEx, according to the brand page.',
     'Returns are free, and Amerisleep arranges a courier to pick the mattress up from the home. The AS3 comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
     'Amerisleep states the AS3 is made in the USA from U.S. and imported components, with covers sewn in Canada. Policies can change between our checks, so confirm the current trial, warranty and shipping terms on Amerisleep\'s site before ordering.',
   ],
@@ -104,11 +104,11 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What is the Amerisleep AS3 score?',
-      a: 'The AS3 earns a 9.5/10 Overall on the Mattress Inquirer scorecard. It scores 10/10 in Edge Support, Motion Transfer and Cooling & Breathability, and 9/10 in Value, Trial Period and Response Time. Six models share the 9.5 Overall, and the AS3 is our editorial Best Overall pick.',
+      a: 'The AS3 earns a 9.7/10 Overall on the Mattress Inquirer scorecard. It scores 10/10 in Edge Support, Trial Period, Motion Transfer and Cooling & Breathability, and 9/10 in Value and Response Time. It ties the [Zoma Boost](/reviews/zoma-boost/) and [Nolah Evolution 15"](/reviews/nolah-evolution-15/) for the highest Overall score of the 55 models we cover.',
     },
     {
       q: 'Is the Amerisleep AS3 all foam or a hybrid?',
-      a: 'The AS3 reviewed here is all foam, with a Bio-Pur memory foam comfort layer over a HIVE transition layer and a Bio-Core base. Amerisleep also sells an [Amerisleep AS3 Hybrid](/reviews/amerisleep-as3-hybrid/) with pocketed coils. The hybrid earns a 9.3 Overall and has its own review on this site.',
+      a: 'The AS3 reviewed here is all foam, with a Bio-Pur memory foam comfort layer over a HIVE transition layer and a Bio-Core base. Amerisleep also sells an [Amerisleep AS3 Hybrid](/reviews/amerisleep-as3-hybrid/) with pocketed coils. The hybrid earns a 9.5 Overall and has its own review on this site.',
     },
     {
       q: 'Does the Amerisleep AS3 sleep hot?',
@@ -116,7 +116,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'How long is the Amerisleep AS3 trial and warranty?',
-      a: 'The AS3 has a 100-night trial and a 20-year warranty, according to Amerisleep\'s product page. Shipping is free in the continental US, and returns are free with courier pickup. Confirm the current terms on Amerisleep\'s site before buying, since policies can change.',
+      a: 'The AS3 has a 365-night trial and a 20-year warranty, according to Amerisleep\'s product page. Shipping is free in the continental US, and returns are free with courier pickup. Confirm the current terms on Amerisleep\'s site before buying, since policies can change.',
     },
     {
       q: 'Is the Amerisleep AS3 good for couples?',
@@ -127,7 +127,7 @@ const copy: ReviewCopy = {
       a: 'The AS3 is 12 inches tall in every size, according to Amerisleep. That height works with standard sheets, which usually fit mattresses up to about 14 inches. Amerisleep sells it in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
     },
   ],
-  verdict: 'The Amerisleep AS3 earns a 9.5/10 Overall with 10s in Edge Support, Motion Transfer and Cooling & Breathability. That mix makes it our editorial Best Overall pick for side, back and combination sleepers who want medium memory foam. It backs the score with a 20-year warranty and a 100-night trial. Stomach sleepers over 130 lb and anyone who wants bounce should look at a firmer hybrid instead.',
+  verdict: 'The Amerisleep AS3 earns a 9.7/10 Overall with 10s in Edge Support, Trial Period, Motion Transfer and Cooling & Breathability. That mix makes it our editorial Best Overall pick for side, back and combination sleepers who want medium memory foam. It backs the score with a 20-year warranty and a 365-night trial. Stomach sleepers over 130 lb and anyone who wants bounce should look at a firmer hybrid instead.',
   related: [
     { label: 'Amerisleep AS3 vs Nolah Evolution 15"', href: '/comparison/amerisleep-as3-vs-nolah-evolution-15/' },
     { label: 'Amerisleep AS2 vs Amerisleep AS3', href: '/comparison/amerisleep-as2-vs-as3/' },

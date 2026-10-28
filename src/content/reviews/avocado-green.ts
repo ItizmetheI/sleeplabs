@@ -2,7 +2,7 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'avocado-green',
-  dateModified: '2026-10-11',
+  dateModified: '2026-10-22',
   metaDescription: 'Avocado Green review: 8.8/10 Overall, a GOTS and GOLS certified latex hybrid in Plush, Medium and Firm with a 10 in Trial Period. Specs, fit and verdict.',
   quickAnswer: 'The Avocado Green earns an 8.8/10 Overall as an organic latex hybrid sold in Plush 4/10, Medium 5/10 and Firm 7/10. It suits shoppers who want certified organic materials and a choice of feel. Its main strength is a 10/10 in Trial Period. Its main limitation is a 7/10 Value score.',
   strengths: [
@@ -93,7 +93,7 @@ const copy: ReviewCopy = {
     'Shoppers who want free returns with no fees.',
     'Memory foam fans who want a slow, sinking feel.',
   ],
-  compareIntro: 'The [Amerisleep Organica](/reviews/amerisleep-organica/) has a head-to-head page with the Avocado Green and scores 9.2 as a Talalay latex hybrid. The [Happsy](/reviews/happsy/) matches its 8.8 Overall, and the [Latex For Less Hybrid Latex Mattress](/reviews/latex-for-less-hybrid-latex-mattress/) scores 8.7. All three are latex hybrids with coil cores.',
+  compareIntro: 'The [Amerisleep Organica](/reviews/amerisleep-organica/) has a head-to-head page with the Avocado Green and scores 9.3 as a Talalay latex hybrid. The [Happsy](/reviews/happsy/) matches its 8.8 Overall, and the [Latex For Less Hybrid Latex Mattress](/reviews/latex-for-less-hybrid-latex-mattress/) scores 8.7. All three are latex hybrids with coil cores.',
   policies: [
     'The Avocado Green comes with a one-year trial and a 25-year warranty, according to Avocado. Queen and smaller sizes ship by FedEx or UPS. King and Cal King ship by doorstep delivery, and in-home delivery and setup is an option.',
     'Returns are accepted after 30 days, and Avocado deducts a return fee plus the original shipping cost. Sizes run Twin, Twin XL, Full, Queen, King, Cal King and Split Cal King.',

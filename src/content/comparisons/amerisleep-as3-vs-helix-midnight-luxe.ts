@@ -5,9 +5,9 @@ const B = '[Helix Midnight Luxe](/reviews/helix-midnight-luxe/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as3-vs-helix-midnight-luxe',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS3 vs Helix Midnight Luxe: both medium 5/10, one all foam and one a pillow top hybrid. The AS3 scores 9.5/10 to 9.0/10 and leads on three fields.',
-  quickVerdict: `Choose the ${A} if you want a medium 5/10 all-foam bed with 10s in Edge Support, Motion Transfer and Cooling & Breathability and a higher Value score. Choose the ${B} if you want a medium 5/10 pillow top hybrid with zoned coils, a 365-night trial and a limited lifetime warranty.`,
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS3 vs Helix Midnight Luxe: both medium 5/10, one all foam and one a pillow top hybrid. The AS3 scores 9.7/10 to 9.2/10 and leads on three fields.',
+  quickVerdict: `Choose the ${A} if you want a medium 5/10 all-foam bed with 10s in Edge Support, Motion Transfer and Cooling & Breathability and a higher Value score. Choose the ${B} if you want a medium 5/10 pillow top hybrid with zoned coils and a limited lifetime warranty.`,
   feel: [
     `On firmness, these two match. The ${A} and the ${B} are both sold in one medium feel, which sits at 5/10 on our scale, so neither is the softer or firmer choice.`,
     'The difference is what sits under that medium surface. The AS3 is all foam, with memory foam near the top, so it feels close and contouring from top to bottom.',
@@ -70,12 +70,12 @@ const copy: ComparisonCopy = {
     'Older sleepers who find it harder to shift position will find both manageable, since each scores 9 in this field.',
   ],
   valuePolicies: [
-    `Against the Midnight Luxe, the ${A} scores 9 in Value and 9 in Trial Period. The ${B} scores 7 in Value and 9 in Trial Period. For the AS3 and the Midnight Luxe, our Value and Trial Period scores are set from price, trial and warranty facts.`,
-    'Helix lists the longer policies. The Midnight Luxe comes with a 365-night trial, with a free return or exchange after a 30-day break-in, and a limited lifetime warranty.',
-    'Amerisleep lists a 100-night trial with free returns and courier pickup, and a 20-year warranty for the AS3.',
+    `Against the Midnight Luxe, the ${A} scores 9 in Value and 10 in Trial Period. The ${B} scores 7 in Value and 10 in Trial Period, so the two tie on trial. For the AS3 and the Midnight Luxe, our Value and Trial Period scores are set from price, trial and warranty facts.`,
+    'Helix lists a longer warranty. The Midnight Luxe comes with a 365-night trial, with a free return or exchange after a 30-day break-in, and a limited lifetime warranty.',
+    'Amerisleep lists the same 365-night trial length for the AS3, with free returns and courier pickup, and a 20-year warranty.',
     'Shipping is free for both. Helix ships free in the contiguous US, with rates for Alaska, Hawaii and Canada. Amerisleep sends the AS3 via FedEx within the continental US.',
     'Value weighs those policies against price, and the AS3 scores two points higher in that field.',
-    'Shoppers who put a long trial and a limited lifetime warranty first may prefer the Midnight Luxe. Shoppers who put the scorecard first should choose the AS3.',
+    'Both give a full year to decide. Shoppers who put a limited lifetime warranty first may prefer the Midnight Luxe. Shoppers who put the scorecard first should choose the AS3.',
     'Terms for the AS3 and the Midnight Luxe can change, so confirm them on each brand\'s site before ordering.',
     'This is the widest gap between them on the scorecard, and the main reason the AS3 scores higher Overall.',
   ],
@@ -86,13 +86,13 @@ const copy: ComparisonCopy = {
   ],
   buyB: [
     'Sleepers who want a pillow top over zoned coils at medium 5/10.',
-    'Shoppers who want a 365-night trial and a limited lifetime warranty.',
+    'Shoppers who want a limited lifetime warranty.',
     'Shoppers who need a Short Queen or RV King.',
   ],
   faqs: [
     {
       q: 'Which is better, Amerisleep AS3 or Helix Midnight Luxe?',
-      a: `The ${A} scores higher, 9.5/10 against 9.0/10, and leads on Overall, Value and Motion Transfer. The ${B} does not lead on any field, and the two tie on Edge Support, Trial Period, Response Time and Cooling & Breathability. The Midnight Luxe suits shoppers who want a pillow top hybrid.`,
+      a: `The ${A} scores higher, 9.7/10 against 9.2/10, and leads on Overall, Value and Motion Transfer. The ${B} does not lead on any field, and the two tie on Edge Support, Trial Period, Response Time and Cooling & Breathability. The Midnight Luxe suits shoppers who want a pillow top hybrid.`,
     },
     {
       q: 'Are the AS3 and Midnight Luxe the same firmness?',
@@ -103,8 +103,8 @@ const copy: ComparisonCopy = {
       a: `Both score 10 in Edge Support. The Amerisleep AS3 adds a 10 in Motion Transfer, against 9 for the Helix Midnight Luxe, so light sleepers who share a bed may prefer the AS3. Couples who want a Split King will find it only on the AS3.`,
     },
     {
-      q: 'Which has the longer trial and warranty, the AS3 or the Midnight Luxe?',
-      a: `The Helix Midnight Luxe. Helix lists a 365-night trial, with returns or exchanges after a 30-day break-in, and a limited lifetime warranty. Amerisleep lists a 100-night trial and a 20-year warranty for the AS3. The AS3 still scores higher on Value, which weighs policies against price.`,
+      q: 'How do the trial and warranty compare, the AS3 or the Midnight Luxe?',
+      a: `Both list a 365-night trial and score 10 in Trial Period. Helix adds returns or exchanges after a 30-day break-in and a limited lifetime warranty for the Midnight Luxe. Amerisleep lists a 20-year warranty for the AS3. The AS3 scores higher on Value, which weighs policies against price.`,
     },
     {
       q: 'Which sleeps cooler, the AS3 or the Midnight Luxe?',

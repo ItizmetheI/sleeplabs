@@ -2,9 +2,9 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'amerisleep-as6',
-  dateModified: '2026-10-11',
-  metaDescription: 'Amerisleep AS6 Black Series review: 9.3/10 Overall, a 14 inch memory foam hybrid in Plush Soft, Luxury Firm and Firm, with 10s in Motion and Cooling.',
-  quickAnswer: 'The Amerisleep AS6 Black Series earns a 9.3/10 Overall. It suits nearly every sleep position because it comes in Plush Soft 3/10, Luxury Firm 7/10 and Firm 8/10. Its main strength is a pair of 10s in Motion Transfer and Cooling & Breathability. Its main limitation is 9s, not 10s, in Edge Support and Response Time.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS6 Black Series review: 9.5/10 Overall, a 14 inch memory foam hybrid in three firmness options, with 10s in Trial, Motion and Cooling.',
+  quickAnswer: 'The Amerisleep AS6 Black Series earns a 9.5/10 Overall. It suits nearly every sleep position because it comes in Plush Soft 3/10, Luxury Firm 7/10 and Firm 8/10. Its main strength is three 10s, in Trial Period, Motion Transfer and Cooling & Breathability. Its main limitation is 9s, not 10s, in Edge Support and Response Time.',
   strengths: [
     'Three firmness options, from Plush Soft 3/10 to Firm 8/10, under one model.',
     'A 10/10 in Motion Transfer, paired with a core of individually wrapped coils.',
@@ -14,7 +14,7 @@ const copy: ReviewCopy = {
   limitations: [
     'The Plush Soft option is too soft for stomach sleepers, who need the Luxury Firm or Firm.',
     'Edge Support is a 9 rather than a 10, so the perimeter gives slightly under a seated load.',
-    'A 100-night trial, shorter than the year-long trials many brands now offer.',
+    'Response Time is a 9, and the Plush Soft top recovers more slowly than the firmer two.',
   ],
   howScored: 'The AS6 is scored on the same seven fields used for all 55 models, from Amerisleep\'s official product page. One score covers all three firmness options. See the [methodology](/methodology/) for details.',
   layerRoles: [
@@ -32,7 +32,7 @@ const copy: ReviewCopy = {
   performance: {
     value: [
       'The Value score is set from price, trial and warranty facts, and the AS6 earns a strong 9. A 20-year warranty covers a 14 inch hybrid with three firmness options, which is a broad package.',
-      'It falls a point short of 10 because the trial runs 100 nights, not the year many brands now offer. The three certifications named on the brand page add to the case for buyers who care about materials. Shoppers who want one model that can fit any sleep position get flexibility that single-feel beds cannot match.',
+      'The 365-night trial and the warranty both rate well, so the price input holds this field a point short of 10. The three certifications named on the brand page add to the case for buyers who care about materials. Shoppers who want one model that can fit any sleep position get flexibility that single-feel beds cannot match.',
       'Value matters most here for households where two sleepers want different feels. One model with three firmness levels keeps the choice simple without trading down on warranty length.',
     ],
     edgeSupport: [
@@ -41,9 +41,9 @@ const copy: ReviewCopy = {
       'Couples who share a queen benefit most from this field. A perimeter that holds up keeps the full width of the surface usable for both sleepers.',
     ],
     trialPeriod: [
-      'The Trial Period score is set from the trial and return terms, and the AS6 earns a 9. Amerisleep offers a 100-night trial with free returns by mail within 100 nights.',
-      'A 9 is strong but trails the 365-night trials offered by many brands on our scorecard. With three firmness options, getting the choice right up front matters. Read the firmness guidance below before ordering so the trial is a confirmation rather than a second attempt.',
-      'Buyers who are unsure between Luxury Firm and Firm gain the most from a full trial. One hundred nights gives enough time to judge either one across seasons.',
+      'The Trial Period score is set from the trial and return terms, and the AS6 earns a standout 10. Amerisleep offers a 365-night trial with free returns by mail.',
+      'A full year ties for the longest trial of the 55 models on our scorecard. With three firmness options, getting the choice right up front matters. Read the firmness guidance below before ordering so the trial is a confirmation rather than a second attempt.',
+      'Buyers who are unsure between Luxury Firm and Firm gain the most from a full trial. A full year gives enough time to judge either one across every season.',
     ],
     responseTime: [
       'Response Time is a strong 9. The coil core adds spring, while the memory foam on top conforms at a slower pace.',
@@ -91,13 +91,13 @@ const copy: ReviewCopy = {
   ],
   skip: [
     'Stomach sleepers who would choose Plush Soft; that option is too soft for the position.',
-    'Buyers who want a year-long trial rather than 100 nights.',
+    'Shoppers who want an all-foam build with no coils in the core.',
     'Sleepers who sit on the bed edge often and want a 10 in Edge Support.',
   ],
-  compareIntro: 'Each alternative has a head-to-head page with the AS6 Black Series. The [Leesa Sapira Chill Hybrid](/reviews/leesa-sapira-chill-hybrid/) matches its 9.3 Overall with three firmness options of its own. The [Amerisleep Organica](/reviews/amerisleep-organica/) and [Saatva RX](/reviews/saatva-rx/) both score 9.2. The Organica swaps memory foam for natural latex, and the Saatva RX is built for a supportive plush feel.',
+  compareIntro: 'Each alternative has a head-to-head page with the AS6 Black Series. The [Leesa Sapira Chill Hybrid](/reviews/leesa-sapira-chill-hybrid/) matches its 9.5 Overall with three firmness options of its own. The [Amerisleep Organica](/reviews/amerisleep-organica/) scores 9.3, and the [Saatva RX](/reviews/saatva-rx/) scores 9.2. The Organica swaps memory foam for natural latex, and the Saatva RX is built for a supportive plush feel.',
   policies: [
-    'The AS6 Black Series has a 100-night trial and a 20-year warranty. On the AS6 Black Series, shipping is free within the continental US by FedEx. Those terms apply to all three firmness options, so the choice of feel does not change the coverage.',
-    'Returns are free by mail within 100 nights, according to the brand page. Sizes include Twin, Twin XL, Full, Queen, King, Cal King and Split King, all at 14 inches tall.',
+    'The AS6 Black Series has a 365-night trial and a 20-year warranty. On the AS6 Black Series, shipping is free within the continental US by FedEx. Those terms apply to all three firmness options, so the choice of feel does not change the coverage.',
+    'Returns are free by mail within the 365-night window, according to the brand page. Sizes include Twin, Twin XL, Full, Queen, King, Cal King and Split King, all at 14 inches tall.',
     'Amerisleep states the AS6 is made in the USA. Confirm the current trial, warranty and return terms on the brand\'s site before ordering, since policies can change between our checks.',
   ],
   faqs: [
@@ -111,7 +111,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What is the Amerisleep AS6 Black Series score?',
-      a: 'The AS6 earns a 9.3/10 Overall. It scores 10/10 in Motion Transfer and Cooling & Breathability, and 9/10 in Value, Edge Support, Trial Period and Response Time. Overall is the average of those six field scores, shown to one decimal. No field falls below a strong 9.',
+      a: 'The AS6 earns a 9.5/10 Overall. It scores 10/10 in Trial Period, Motion Transfer and Cooling & Breathability, and 9/10 in Value, Edge Support and Response Time. Overall is the average of those six field scores, shown to one decimal. No field falls below a strong 9.',
     },
     {
       q: 'Is the Amerisleep AS6 Black Series a hybrid?',
@@ -127,14 +127,14 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What trial and warranty come with the Amerisleep AS6 Black Series?',
-      a: 'The AS6 has a 100-night trial and a 20-year warranty, according to Amerisleep. Shipping is free in the continental US, and returns are free by mail within 100 nights. Confirm the current terms on Amerisleep\'s site before buying, since policies can change. Choosing the right firmness up front makes the 100-night window go further.',
+      a: 'The AS6 has a 365-night trial and a 20-year warranty, according to Amerisleep. Shipping is free in the continental US, and returns are free by mail within that window. Confirm the current terms on Amerisleep\'s site before buying, since policies can change. Choosing the right firmness up front makes the year-long window go further.',
     },
     {
       q: 'What is the difference between the Amerisleep AS3 and AS6 Black Series?',
-      a: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) is a 12 inch all-foam bed in one medium 5/10 feel, scoring 9.5 Overall. The AS6 is a 14 inch hybrid in three firmness options, scoring 9.3. The AS3 leads on Edge Support, while the AS6 adds coil support and firmness choice.',
+      a: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) is a 12 inch all-foam bed in one medium 5/10 feel, scoring 9.7 Overall. The AS6 is a 14 inch hybrid in three firmness options, scoring 9.5. The AS3 leads on Edge Support, while the AS6 adds coil support and firmness choice.',
     },
   ],
-  verdict: 'The Amerisleep AS6 Black Series earns a 9.3/10 Overall with 10s in Motion Transfer and Cooling & Breathability. Three firmness options let one model fit side, back and stomach sleepers, and three certifications sit behind the materials. Edge Support and Response Time land at 9. Hot sleepers and couples who want coil support with quiet motion get the most from it. Pick the firmness carefully, since that choice decides the fit more than any score.',
+  verdict: 'The Amerisleep AS6 Black Series earns a 9.5/10 Overall with 10s in Trial Period, Motion Transfer and Cooling & Breathability. Three firmness options let one model fit side, back and stomach sleepers, and three certifications sit behind the materials. Edge Support and Response Time land at 9. Hot sleepers and couples who want coil support with quiet motion get the most from it. Pick the firmness carefully, since that choice decides the fit more than any score.',
   related: [
     { label: 'Amerisleep AS3 vs Amerisleep AS6 Black Series', href: '/comparison/amerisleep-as3-vs-as6/' },
     { label: 'Amerisleep AS6 Black Series vs Saatva RX', href: '/comparison/amerisleep-as6-black-series-vs-saatva-rx/' },

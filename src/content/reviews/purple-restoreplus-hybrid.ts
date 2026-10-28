@@ -2,9 +2,9 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'purple-restoreplus-hybrid',
-  dateModified: '2026-10-11',
+  dateModified: '2026-10-22',
   metaDescription: 'Purple RestorePlus Hybrid review: 8.8/10 Overall, a 13 inch medium-soft 4/10 hybrid with a 3 inch GelFlex Grid, a 10 in Response Time and a 7 in Value.',
-  quickAnswer: 'Purple RestorePlus Hybrid earns an 8.8/10 Overall as a 13 inch hybrid rated medium-soft 4/10, with a 3 inch GelFlex Grid over comfort foam and 8 inch responsive coils. It suits side and combination sleepers who want cushioning that still moves quickly. Its main strength is a 10/10 in Response Time, with 9s in four fields. Its main limitation is a 7/10 in Value.',
+  quickAnswer: 'Purple RestorePlus Hybrid earns an 8.8/10 Overall as a 13 inch hybrid rated medium-soft 4/10, with a 3 inch GelFlex Grid over comfort foam and 8 inch responsive coils. It suits side and combination sleepers who want cushioning that still moves quickly. Its main strength is a 10/10 in Response Time, with 9s in four fields. A 7/10 in Value is its main limitation.',
   strengths: [
     'A 10/10 in Response Time, with 9s in Edge Support, Trial Period, Motion Transfer and Cooling & Breathability.',
     'A 3 inch GelFlex Grid comfort layer, according to Purple.',
@@ -92,7 +92,7 @@ const copy: ReviewCopy = {
     'Stomach sleepers and heavier back sleepers, who need a firmer surface.',
     'Shoppers who need a Twin, since none is listed.',
   ],
-  compareIntro: 'The [Amerisleep AS6 Black Series](/reviews/amerisleep-as6/) and the [Amerisleep AS3](/reviews/amerisleep-as3/) both have head-to-head pages with the RestorePlus Hybrid, scoring 9.3 and 9.5. The [Vaya Hybrid](/reviews/vaya-hybrid/) scores 8.8, the same as the RestorePlus Hybrid. The table lines up their firmness, trial and warranty next to the RestorePlus Hybrid.',
+  compareIntro: 'The [Amerisleep AS6 Black Series](/reviews/amerisleep-as6/) and the [Amerisleep AS3](/reviews/amerisleep-as3/) both have head-to-head pages with the RestorePlus Hybrid, scoring 9.5 and 9.7. The [Leesa Sapira Hybrid](/reviews/leesa-sapira-hybrid/) scores 8.8, the same as the RestorePlus Hybrid. The table lines up their firmness, trial and warranty next to the RestorePlus Hybrid.',
   policies: [
     'Purple RestorePlus Hybrid comes with a 100-night trial and a 10-year warranty, according to Purple. Delivery is free.',
     'Purple picks up and refunds returns within 100 nights, after at least 21 nights. Sizes run Twin XL, Full, Queen, King, Cal King and Split King.',

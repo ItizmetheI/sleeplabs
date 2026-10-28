@@ -2,7 +2,7 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'sweetnight-coolnest',
-  dateModified: '2026-10-11',
+  dateModified: '2026-10-22',
   metaDescription: 'SweetNight CoolNest review: 8.8/10 Overall, a medium 6.5/10 memory foam bed in 12, 14 or 16 inches, with 10s in Value and Motion Transfer and a 7 in Edge.',
   quickAnswer: 'SweetNight CoolNest Memory Foam Mattress earns an 8.8/10 Overall as an all-foam bed rated medium 6.5/10 by SweetNight, sold in 12, 14 and 16 inch heights with a knitted cooling cover. It suits couples and back sleepers who want a quiet foam bed. Its main strengths are 10/10 scores in Value and Motion Transfer. Its main limitation is a 7/10 in Edge Support, an average result.',
   strengths: [
@@ -32,7 +32,7 @@ const copy: ReviewCopy = {
   ],
   performance: {
     value: [
-      'Value is a standout 10. The score is set from price, trial and warranty facts, and it weighs what the CoolNest delivers against its queen price.',
+      'Value earns a full 10, a standout. The score is set from price, trial and warranty facts, and it weighs what the CoolNest delivers against its queen price.',
       'SweetNight pairs a 100-night trial with a 10-year warranty, and shipping is free in the US. Returns include free pickup and a full refund within the trial.',
       'Shoppers who weigh value heavily gain the most from this field. The 10 holds across the three heights, since the terms do not change between them. Confirm which height the recorded price covers before comparing.',
     ],
@@ -95,7 +95,7 @@ const copy: ReviewCopy = {
     'Combination sleepers who want quick rebound, since Response Time is an 8.',
     'Lighter side sleepers who want a plush surface on the CoolNest Memory Foam Mattress.',
   ],
-  compareIntro: 'The [Brooklyn Bedding Plank Firm](/reviews/brooklyn-bedding-plank-firm/) also scores 8.8 as an all-foam bed. The [Vaya Foam](/reviews/vaya-foam/) scores 8.7 and the [Amerisleep AS5](/reviews/amerisleep-as5/) scores 9.0, both all-foam. The table lines up their firmness, trial and warranty next to the CoolNest Memory Foam Mattress.',
+  compareIntro: 'The [Vaya Foam](/reviews/vaya-foam/) also scores 8.8 as an all-foam bed. The [Brooklyn Bedding Plank Firm](/reviews/brooklyn-bedding-plank-firm/) scores 9.0 and the [Leesa Original](/reviews/leesa-original/) scores 8.5, both all-foam. The table lines up their firmness, trial and warranty next to the CoolNest Memory Foam Mattress.',
   policies: [
     'SweetNight CoolNest comes with a 100-night trial and a 10-year warranty, according to SweetNight. Shipping is free in the US.',
     'Returns include free pickup and a full refund within 100 nights, and SweetNight recommends 30 nights to adjust first. The CoolNest Memory Foam Mattress comes in Twin, Twin XL, Full, Queen, King and Cal King.',

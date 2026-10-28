@@ -2,7 +2,7 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'form-prime-x',
-  dateModified: '2026-10-16',
+  dateModified: '2026-10-22',
   metaDescription: 'FORM Prime X review: 9.5/10 Overall, a 15 inch Euro-top latex hybrid with Talalay latex, zoned coils and 10s in Edge Support, Response Time and Motion Transfer.',
   quickAnswer: 'FORM Prime X earns a 9.5/10 Overall as a 15 inch latex hybrid, rated 4-5/10, with a quilted Euro-top, Talalay latex and memory foam over 7-zone pocketed coils. It suits couples and side or combination sleepers who want a layered, cushioned feel over strong support. Its main strengths are four 10/10 scores. Its main limitation is an 8/10 in Value.',
   strengths: [
@@ -95,7 +95,7 @@ const copy: ReviewCopy = {
     'Shoppers who want a thin comfort layer over the coils.',
     'Shoppers with shallow fitted sheets or a tall frame, since it is 15 inches.',
   ],
-  compareIntro: 'The [Zoma Boost](/reviews/zoma-boost/), the [Nolah Evolution 15"](/reviews/nolah-evolution-15/) and the [FORM Core Hybrid](/reviews/form-core-hybrid/) all score 9.5 as hybrids, the same as the Prime X. The table below sets their firmness, trial and warranty beside the Prime X.',
+  compareIntro: 'The [PlushBeds Signature Bliss](/reviews/plushbeds-signature-bliss/) matches the Prime X at 9.5 as a latex hybrid. The [Amerisleep Organica](/reviews/amerisleep-organica/) scores 9.3 and the [Birch Natural](/reviews/birch-natural/) scores 9.2, both latex hybrids as well. The table below sets their firmness, trial and warranty beside the Prime X.',
   policies: [
     'FORM Prime X comes with a 365-night trial and a lifetime warranty, according to FORM. Delivery is free White Glove service with in-home setup and optional old-mattress removal.',
     'Returns within the trial include free pickup and a full refund, with no restocking fees. The Prime X comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',

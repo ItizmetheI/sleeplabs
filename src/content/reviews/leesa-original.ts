@@ -2,13 +2,13 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'leesa-original',
-  dateModified: '2026-10-11',
-  metaDescription: 'Leesa Original review: 8.3/10 Overall, a 10 inch medium 5/10 all-foam bed with 9s in Trial, Response Time and Motion Transfer and a 7 in Edge Support.',
-  quickAnswer: 'Leesa Original earns an 8.3/10 Overall as a 10 inch all-foam mattress rated medium 5/10, with GreenFlex BioFoam over memory foam. It suits side and back sleepers who want a balanced foam feel that moves easily. Its main strengths are 9/10 scores in Trial Period, Response Time and Motion Transfer. Its main limitation is a 7/10 in Edge Support, an average result.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Leesa Original review: 8.5/10 Overall for a 10 inch medium 5/10 all-foam bed. It earns a 10 in Trial Period and a 7 in Edge Support on our scorecard.',
+  quickAnswer: 'Leesa Original earns an 8.5/10 Overall as a 10 inch all-foam mattress rated medium 5/10, with GreenFlex BioFoam over memory foam. It suits side and back sleepers who want a balanced foam feel that moves easily. Its main strengths are a 10/10 in Trial Period and 9s in Response Time and Motion Transfer. Its main limitation is a 7/10 in Edge Support.',
   strengths: [
-    '9/10 scores in Trial Period, Response Time and Motion Transfer.',
+    'A standout 10/10 in Trial Period, from a 365-night trial and a limited lifetime warranty.',
+    '9/10 scores in Response Time and Motion Transfer.',
     'A medium 5/10 feel that suits side and back sleepers.',
-    'A 365-night trial and a limited lifetime warranty, according to Leesa.',
     'CertiPUR-US, GREENGUARD Gold and USDA BioPreferred certifications.',
   ],
   limitations: [
@@ -30,18 +30,18 @@ const copy: ReviewCopy = {
   performance: {
     value: [
       'The Leesa Original scores 8 in Value, good with a caveat. The score is set from price, trial and warranty facts, and it weighs what the Leesa Original delivers against its cost.',
-      'Leesa pairs a 365-night trial with a limited lifetime warranty, and shipping is free, with optional in-home setup and removal. Check the current price on Leesa\'s site to judge the trade for yourself.',
-      'Shoppers who weigh long policies heavily will find the terms strong. Those who rank cost first should compare this field across the all-foam beds we score before deciding. Three certifications and a made to order build also sit behind this score.',
+      'Leesa pairs a 365-night trial with a limited lifetime warranty. Shipping is free, with optional in-home setup and removal. Check the current price on Leesa\'s site to judge the trade for yourself.',
+      'Those policy terms earn a 10 in Trial Period, so shoppers who weigh them heavily will find them strong. Those who rank cost first should compare this field across the all-foam beds we score before deciding. Three certifications and a made to order build also sit behind this score.',
     ],
     edgeSupport: [
       'Edge Support is a 7, an average result and the lowest of its six scored fields. With no coils and no named edge system, the perimeter is foam only.',
       'For sleeping, the outer few inches feel softer than the center, which narrows the usable surface slightly. Sitting on the edge compresses the foam more than on a coil bed. On the Leesa Original, couples who share a full or queen will notice it most.',
-      'Anyone who sits on the edge to dress each morning should weigh this score carefully. Solo sleepers who stay near the center will notice it least, and a larger size gives couples more room to stay clear of the edge.',
+      'Anyone who sits on the edge to dress each morning should weigh this score carefully. Solo sleepers who stay near the center will notice it least. A larger size gives couples more room to stay clear of the edge.',
     ],
     trialPeriod: [
-      'The Leesa Original earns a strong 9 in Trial Period. Leesa offers a 365-night trial, with no-hassle returns within that window, according to Leesa.',
-      'A full year gives time to judge the medium foam feel through every season. Because the mattress is made to order, confirm how returns are handled before ordering. Save the order details for the Leesa Original in case a return is needed.',
-      'Buyers moving from a much firmer or softer bed gain the most from the full trial, since a new feel can take a few weeks to settle into. Confirm the current terms on Leesa\'s site, since policies can change between our checks.',
+      'The Leesa Original earns a standout 10 in Trial Period. The score is set from trial and warranty facts: a 365-night trial and a limited lifetime warranty, according to Leesa.',
+      'Returns within that window are no-hassle, according to Leesa. A full year gives time to judge the medium foam feel through every season. Because the mattress is made to order, confirm how returns are handled before ordering.',
+      'Buyers moving from a much firmer or softer bed gain the most from the full trial. A new feel can take a few weeks to settle into. Save the order details, and confirm the current terms on Leesa\'s site, since policies can change between our checks.',
     ],
     responseTime: [
       'Response Time is a strong 9, quick for an all-foam bed. Leesa places GreenFlex BioFoam above the memory foam, so the memory foam is not the surface layer.',
@@ -92,7 +92,7 @@ const copy: ReviewCopy = {
     'Heavier stomach sleepers who need a firm surface on the Leesa Original.',
     'Very warm sleepers who want a coil core for airflow.',
   ],
-  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Leesa Original and scores 9.5 as a medium all-foam bed. The [GhostBed Luxe](/reviews/ghostbed-luxe/) also scores 8.3 and the [Casper The One](/reviews/casper-the-one/) scores 8.2, both all-foam. Use the table to compare their firmness, trial and warranty with the Leesa Original.',
+  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Leesa Original and scores 9.7 as a medium all-foam bed. The [GhostBed Luxe](/reviews/ghostbed-luxe/) scores 8.3 and the [Casper The One](/reviews/casper-the-one/) scores 8.2, both all-foam. Use the table to compare their firmness, trial and warranty with the Leesa Original.',
   policies: [
     'Leesa Original comes with a 365-night trial and a limited lifetime warranty, according to Leesa. Shipping is free, and in-home setup and removal are optional.',
     'Returns within the 365-night trial are no-hassle, according to Leesa. Sizes run Twin, Twin XL, Full, Queen, King and Cal King.',
@@ -105,7 +105,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What is the Leesa Original score?',
-      a: 'The Leesa Original earns an 8.3/10 Overall. It scores 9/10 in Trial Period, Response Time and Motion Transfer, 8/10 in Value and Cooling & Breathability, and 7/10 in Edge Support. Overall is the average of those six fields, shown to one decimal. Edge Support is its weakest field.',
+      a: 'The Leesa Original earns an 8.5/10 Overall. It scores a standout 10/10 in Trial Period and 9/10 in Response Time and Motion Transfer. Value and Cooling & Breathability are 8/10, and Edge Support is 7/10. Overall is the average of those six fields, shown to one decimal.',
     },
     {
       q: 'Is the Leesa Original good for side sleepers?',
@@ -129,10 +129,10 @@ const copy: ReviewCopy = {
     },
     {
       q: 'Is Leesa Original good for back sleepers?',
-      a: 'Yes, for most back sleepers. The medium 5/10 surface supports the lower back with some contour, and the 6 inch support foam keeps the hips level with the shoulders. Lighter and average weight back sleepers gain the most. Heavier back sleepers often prefer 6/10 or firmer with coils, so the hips do not sink too far.',
+      a: 'Yes, for most back sleepers. The medium 5/10 surface supports the lower back with some contour, and the 6 inch support foam keeps the hips level with the shoulders. Lighter and average weight back sleepers gain the most. Heavier back sleepers often prefer 6/10 or firmer with coils.',
     },
   ],
-  verdict: 'Leesa Original earns an 8.3/10 Overall, with 9/10 scores in Trial Period, Response Time and Motion Transfer. Its medium 5/10 foam build, with BioFoam over memory foam, suits side and back sleepers and combination sleepers who want an all-foam bed that moves easily. Edge Support is a 7, an average result, and cooling an 8. Stomach sleepers should look firmer.',
+  verdict: 'Leesa Original earns an 8.5/10 Overall, led by a standout 10/10 in Trial Period and 9s in Response Time and Motion Transfer. Its medium 5/10 foam build puts BioFoam over memory foam. It suits side, back and combination sleepers who want an all-foam bed that moves easily. Edge Support is a 7, an average result, and cooling an 8. Stomach sleepers should look firmer.',
   related: [
     { label: 'Amerisleep AS3 vs Leesa Original', href: '/comparison/amerisleep-as3-vs-leesa-original/' },
     { label: 'Leesa Mattress Reviews (2026)', href: '/brands/leesa/' },

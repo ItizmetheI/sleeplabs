@@ -2,9 +2,9 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'plushbeds-signature-bliss',
-  dateModified: '2026-10-16',
+  dateModified: '2026-10-22',
   metaDescription: 'PlushBeds Signature Bliss review: 9.5/10 Overall, a 14 inch organic latex hybrid with 5-zone coils and 10s in Edge Support, Trial and Response Time.',
-  quickAnswer: 'PlushBeds Signature Bliss earns a 9.5/10 Overall, tied with five other models at the top of our scorecard. It is a 14 inch latex hybrid with a 3 inch organic Dunlop latex pillow top over 5-zone fabric-encased coils, rated Medium 5.5/10 or Medium-Firm 8/10 by PlushBeds. Its main strengths are 10/10 scores in Edge Support, Trial Period and Response Time. Its main limitation is an early return fee.',
+  quickAnswer: 'PlushBeds Signature Bliss earns a 9.5/10 Overall, two tenths below the 9.7 top Overall on our scorecard. It is a 14 inch latex hybrid with a 3 inch organic Dunlop latex pillow top over 5-zone fabric-encased coils, rated Medium 5.5/10 or Medium-Firm 8/10 by PlushBeds. Its main strengths are 10/10 scores in Edge Support, Trial Period and Response Time. Its main limitation is an early return fee.',
   strengths: [
     '10/10 scores in Edge Support, Trial Period and Response Time.',
     'A 3 inch GOLS organic Dunlop latex pillow top over 5-zone coils.',
@@ -91,9 +91,9 @@ const copy: ReviewCopy = {
     'Sleepers who want the slow hug of memory foam.',
     'Shoppers with shallow fitted sheets or a tall frame, since it is 14 inches.',
   ],
-  compareIntro: 'The [Amerisleep Organica](/reviews/amerisleep-organica/) and the [Nest Bedding Owl](/reviews/nest-bedding-owl/) both score 9.2 as latex hybrids. The [Eco Terra Hybrid Latex](/reviews/eco-terra-hybrid-latex/) scores 9.0. Use the table to compare their firmness, trial and warranty with the Signature Bliss.',
+  compareIntro: 'The [FORM Prime X](/reviews/form-prime-x/) matches the Signature Bliss at 9.5 as a latex hybrid. The [Amerisleep Organica](/reviews/amerisleep-organica/) scores 9.3 and the [Birch Natural](/reviews/birch-natural/) scores 9.2, both latex hybrids. Use the table to compare their firmness, trial and warranty with the Signature Bliss.',
   policies: [
-    'PlushBeds Signature Bliss comes with a 365-night trial and a limited lifetime warranty, full for 10 years and prorated after, according to PlushBeds. On the Signature Bliss, uPS delivery is free in the contiguous US, and in-home setup is available for a fee.',
+    'PlushBeds Signature Bliss comes with a 365-night trial and a limited lifetime warranty, full for 10 years and prorated after, according to PlushBeds. On the Signature Bliss, UPS delivery is free in the contiguous US, and in-home setup is available for a fee.',
     'Returns get a money-back guarantee, with a fee if returned before 30 days. On the Signature Bliss, concierge removal is available for a fee, and one return is allowed per household. The Signature Bliss comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
     'PlushBeds states the mattress is made in California. For the Signature Bliss, confirm the current terms on PlushBeds\' site before ordering, since policies can change between our checks.',
   ],
@@ -104,7 +104,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What is the PlushBeds Signature Bliss score?',
-      a: 'The Signature Bliss earns a 9.5/10 Overall. It scores 10/10 in Edge Support, Trial Period and Response Time, and 9/10 in Value, Motion Transfer and Cooling & Breathability. Overall is the average of those six fields, shown to one decimal. It ties with five other models we score at 9.5.',
+      a: 'The Signature Bliss earns a 9.5/10 Overall. It scores 10/10 in Edge Support, Trial Period and Response Time, and 9/10 in Value, Motion Transfer and Cooling & Breathability. Overall is the average of those six fields, shown to one decimal. It ties with seven other models we score at 9.5, behind three models at 9.7.',
     },
     {
       q: 'Is PlushBeds Signature Bliss organic?',
@@ -131,7 +131,7 @@ const copy: ReviewCopy = {
       a: 'Yes, in the Medium version. PlushBeds rates Medium 5.5/10, and the 3 inch Dunlop latex pillow top cushions the shoulder and hip while the 5-zone coils keep the waist level. On the Signature Bliss, lighter and average weight side sleepers gain the most. Heavier side sleepers who want more support may prefer Medium-Firm.',
     },
   ],
-  verdict: 'PlushBeds Signature Bliss earns a 9.5/10 Overall, tied with five other models, led by 10/10 scores in Edge Support, Trial Period and Response Time. Its certified organic latex pillow top over 5-zone coils, in Medium or Medium-Firm, suits most sleep positions and couples who want a quick, full-width surface. Its 365-night trial and limited lifetime warranty back that up, with a fee on returns before 30 days.',
+  verdict: 'PlushBeds Signature Bliss earns a 9.5/10 Overall, tied with seven other models at 9.5, led by 10/10 scores in Edge Support, Trial Period and Response Time. Its certified organic latex pillow top over 5-zone coils, in Medium or Medium-Firm, suits most sleep positions and couples who want a quick, full-width surface. Its 365-night trial and limited lifetime warranty back that up, with a fee on returns before 30 days.',
   related: [
     { label: 'PlushBeds Mattress Reviews (2026)', href: '/brands/plushbeds/' },
     { label: 'Best Latex Mattress (2026)', href: '/best/latex/' },

@@ -2,7 +2,7 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'form-prime',
-  dateModified: '2026-10-16',
+  dateModified: '2026-10-22',
   metaDescription: 'FORM Prime review: 9.3/10 Overall, a 14 inch zoned coil hybrid with 10s in Edge Support, Motion Transfer and Trial Period and free White Glove delivery.',
   quickAnswer: 'FORM Prime earns a 9.3/10 Overall as a 14 inch hybrid with 3 inches of adaptive foam over 7-zone pocketed coils. At 5-6/10, medium to medium-firm, it suits couples and heavier sleepers who want a deeper comfort layer over strong support. Its main strengths are 10/10 scores in Edge Support, Motion Transfer and Trial Period. Its main limitation is an 8/10 in Value.',
   strengths: [
@@ -93,7 +93,7 @@ const copy: ReviewCopy = {
     'Stomach sleepers who want a thin comfort layer over the coils.',
     'Restless sleepers who want the quickest surface in the FORM range.',
   ],
-  compareIntro: 'The [Zoma Hybrid](/reviews/zoma-hybrid/), the [Glacier Apex Hybrid](/reviews/glacier-apex-hybrid/) and the [Glacier Original Hybrid](/reviews/glacier-original-hybrid/) all score 9.3 as hybrids, the same as the Prime. The table lines up their firmness, trial and warranty next to the FORM Prime.',
+  compareIntro: 'The [Zoma Start](/reviews/zoma-start/), the [Glacier Apex Hybrid](/reviews/glacier-apex-hybrid/) and the [Glacier Original Hybrid](/reviews/glacier-original-hybrid/) all score 9.3 as hybrids, the same as the Prime. The table lines up their firmness, trial and warranty next to the FORM Prime.',
   policies: [
     'FORM Prime comes with a 365-night trial and a lifetime warranty, according to FORM. Delivery is free White Glove service with in-home setup and optional old-mattress removal.',
     'On the FORM Prime, returns within the trial include free pickup and a full refund, with no restocking fees. The FORM Prime comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',

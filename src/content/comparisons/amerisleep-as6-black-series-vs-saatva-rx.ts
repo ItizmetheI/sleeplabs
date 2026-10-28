@@ -5,9 +5,9 @@ const B = '[Saatva RX](/reviews/saatva-rx/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as6-black-series-vs-saatva-rx',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS6 Black Series vs Saatva RX: a three-firmness hybrid against a supportive plush hybrid. The AS6 scores 9.3/10 to 9.2/10; the RX leads on Trial.',
-  quickVerdict: `Choose the ${A} if you want memory foam over coils in Plush Soft, Luxury Firm or Firm, with a 10 in Cooling & Breathability and a higher Value score. Choose the ${B} if you want a supportive plush 3-4/10 hybrid with a gel memory foam lumbar crown, a 365-night trial and setup included.`,
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS6 Black Series vs Saatva RX: a three-firmness hybrid against a supportive plush hybrid. The AS6 scores 9.5/10 to 9.2/10; the RX leads on Response.',
+  quickVerdict: `Choose the ${A} if you want memory foam over coils in Plush Soft, Luxury Firm or Firm, with a 10 in Cooling & Breathability and a higher Value score. Choose the ${B} if you want a supportive plush 3-4/10 hybrid with a gel memory foam lumbar crown, a lifetime warranty and setup included.`,
   feel: [
     `Both are memory foam hybrids, and both tie at 10 in Motion Transfer, but they are tuned differently. The ${A} comes in Plush Soft 3/10, Luxury Firm 7/10 and Firm 8/10. The ${B} comes in one feel that Saatva calls Supportive Plush, which sits at 3-4/10 on our scale.`,
     'The RX is soft at the surface but names support features underneath: an Rx Wave-Tech foam, a gel memory foam lumbar crown and high-density foam rails over a Comfort Coil unit.',
@@ -74,15 +74,15 @@ const copy: ComparisonCopy = {
     'The gap is one point, so many sleepers will not notice it in everyday use. It matters most for combination sleepers who turn several times a night.',
   ],
   valuePolicies: [
-    `The ${A} scores 9 in Value and 9 in Trial Period. The ${B} scores 7 in Value and 10 in Trial Period. Price, trial and warranty facts set our Value and Trial Period scores for both the AS6 Black Series and the RX.`,
-    'Saatva lists a 365-night trial for the RX, longer than the AS6\'s 100 nights, and free delivery and setup.',
+    `The ${A} scores 9 in Value and 10 in Trial Period. The ${B} scores 7 in Value and 10 in Trial Period. Price, trial and warranty facts set our Value and Trial Period scores for both the AS6 Black Series and the RX.`,
+    'Both brands list a 365-night trial, so the two tie on Trial Period. Saatva adds free delivery and setup for the RX.',
     'Saatva lists a lifetime warranty for the RX, a longer term than the 20-year warranty Amerisleep lists. Confirm its return terms with Saatva before ordering.',
-    'Amerisleep lists a 100-night trial with free returns by mail within 100 nights, a 20-year warranty, and free shipping via FedEx in the continental US.',
+    'Amerisleep lists free returns by mail during the trial, a 20-year warranty, and free shipping via FedEx in the continental US.',
     'Value weighs policies against price, and the AS6 scores two points higher in that field.',
-    'Shoppers who want setup handled and a full year to decide may prefer the RX. Shoppers who put the scorecard first should choose the AS6.',
+    'Either bed gives a full year to decide. Shoppers who want setup handled may prefer the RX. Shoppers who put the scorecard first should choose the AS6.',
     'Before ordering the AS6 Black Series or the RX, confirm current terms on each brand\'s site.',
     'Value is the widest gap between them on the scorecard.',
-    'Shoppers who are unsure whether a soft surface suits them may value the RX\'s 365-night trial, while those who want a firmer option will find it only on the AS6.',
+    'Shoppers unsure whether a soft surface suits them can judge the RX over a full year. Those who want a firmer option will find it only on the AS6.',
   ],
   buyA: [
     'Shoppers who want Plush Soft, Luxury Firm or Firm in one model.',
@@ -92,12 +92,12 @@ const copy: ComparisonCopy = {
   buyB: [
     'Side sleepers who want a supportive plush 3-4/10 surface.',
     'Restless sleepers who want a 10 in Response Time, which the RX offers.',
-    'Shoppers who want a 365-night trial with delivery and setup included.',
+    'Shoppers who want a lifetime warranty with delivery and setup included.',
   ],
   faqs: [
     {
       q: 'Which is better, Amerisleep AS6 Black Series or Saatva RX?',
-      a: `The ${A} scores higher, 9.3/10 against 9.2/10, and leads on Overall, Value and Cooling & Breathability. The ${B} leads on Trial Period and Response Time, and the two tie on Edge Support and Motion Transfer. The RX suits side sleepers who want a soft, supportive feel.`,
+      a: `The ${A} scores higher, 9.5/10 against 9.2/10, and leads on Overall, Value and Cooling & Breathability. The ${B} leads on Response Time, and the two tie on Edge Support, Trial Period and Motion Transfer. The RX suits side sleepers who want a soft, supportive feel.`,
     },
     {
       q: 'How firm is the Saatva RX compared with the AS6?',
@@ -108,8 +108,8 @@ const copy: ComparisonCopy = {
       a: `Both score 10 in Motion Transfer and 9 in Edge Support, so couples are well served by either. The AS6 Black Series and the RX both come in seven sizes, including Split King. Couples who disagree on firmness have more options with the Amerisleep AS6 Black Series.`,
     },
     {
-      q: 'Which has the longer trial?',
-      a: `The Saatva RX lists a 365-night trial with free delivery and setup. Amerisleep lists a 100-night trial and a 20-year warranty for the AS6 Black Series. Saatva lists a lifetime warranty for the RX. Trial Period scores 10 for the RX and 9 for the AS6 Black Series.`,
+      q: 'Which has the better trial and warranty?',
+      a: `The trials match. The Saatva RX and the Amerisleep AS6 Black Series both list 365 nights and both score 10 in Trial Period. Saatva adds free delivery and setup and a lifetime warranty. Amerisleep lists a 20-year warranty for the AS6 Black Series.`,
     },
     {
       q: 'Which sleeps cooler, the AS6 Black Series or the RX?',

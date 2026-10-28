@@ -30,7 +30,7 @@ const copy: ReviewCopy = {
   ],
   performance: {
     value: [
-      'Value is a standout 10. The score is set from price, trial and warranty facts, and it weighs what the mattress delivers against its cost.',
+      'Value reaches the top of the scale at 10. The score is set from price, trial and warranty facts, and it weighs what the mattress delivers against its cost.',
       'Latex For Less pairs a 120-night trial with a 20-year warranty, and shipping is free in the US via UPS or FedEx Ground, excluding Alaska and Hawaii. Four certifications and 3 inches of organic latex sit behind the 10.',
       'Shoppers who want certified organic latex and weigh value heavily gain the most from this field. The 10 holds across both firmness options, since the terms do not change between them.',
     ],

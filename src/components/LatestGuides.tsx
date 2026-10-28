@@ -13,7 +13,7 @@ const guides = [
     href: '/reviews/amerisleep-as3/',
     eyebrow: 'Mattress review',
     title: 'Amerisleep AS3 Review (2026): Scores, Specs and Verdict',
-    description: 'A 9.5/10 Overall, with 10s in Edge Support, Motion Transfer and Cooling & Breathability at a medium 5/10 feel.',
+    description: 'A 9.7/10 Overall, with 10s in Edge Support, Trial Period, Motion Transfer and Cooling & Breathability at a medium 5/10 feel.',
     image: '/images/mattresses/amerisleep-as3.webp',
     imageAlt: 'Amerisleep AS3 mattress',
   },

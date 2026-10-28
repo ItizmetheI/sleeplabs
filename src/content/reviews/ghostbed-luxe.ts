@@ -2,7 +2,7 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'ghostbed-luxe',
-  dateModified: '2026-10-11',
+  dateModified: '2026-10-22',
   metaDescription: 'GhostBed Luxe review: 8.3/10 Overall, a 14 inch medium-firm 6/10 all-foam bed with a 10 in Motion Transfer, a 9 in Cooling and a 6 in Response Time.',
   quickAnswer: 'GhostBed Luxe earns an 8.3/10 Overall as a 14 inch all-foam mattress rated medium-firm 6/10. It suits couples and warm sleepers who want a quiet, contouring foam bed with a cooling cover. Its main strength is a 10/10 in Motion Transfer. Its main limitation is a 6/10 in Response Time, a real weakness for sleepers who change position often.',
   strengths: [
@@ -94,7 +94,7 @@ const copy: ReviewCopy = {
     'Sleepers who sit on the bed edge often, since Edge Support is an 8.',
     'Lighter side sleepers who want a plush surface.',
   ],
-  compareIntro: 'The [Amerisleep AS5](/reviews/amerisleep-as5/) has a head-to-head page with the Luxe and scores 9.0 as an all-foam bed. The [Leesa Original](/reviews/leesa-original/) scores 8.3 and the [Casper The One](/reviews/casper-the-one/) scores 8.2, both all-foam. Use the table to compare their firmness, trial and warranty with the GhostBed Luxe.',
+  compareIntro: 'The [Amerisleep AS5](/reviews/amerisleep-as5/) has a head-to-head page with the Luxe and scores 9.2 as an all-foam bed. The [Leesa Original](/reviews/leesa-original/) scores 8.5 and the [Casper The One](/reviews/casper-the-one/) scores 8.2, both all-foam. Use the table to compare their firmness, trial and warranty with the GhostBed Luxe.',
   policies: [
     'GhostBed Luxe comes with a 101-night trial and a 25-year warranty, according to GhostBed. Shipping is free in the contiguous US.',
     'Returns are free within the 101-night trial in the contiguous US. The GhostBed Luxe comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',

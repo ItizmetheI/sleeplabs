@@ -5,8 +5,8 @@ const B = '[Amerisleep AS6 Black Series](/reviews/amerisleep-as6/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as3-vs-as6',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS3 vs AS6 Black Series: a medium all-foam bed against a three-firmness hybrid. The AS3 scores 9.5/10 to 9.3/10; they tie on five of seven fields.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS3 vs AS6 Black Series: a medium all-foam bed against a three-firmness hybrid. The AS3 scores 9.7/10 to 9.5/10; they tie on five of seven fields.',
   quickVerdict: `Choose the ${A} if you want a medium 5/10 all-foam bed with a 10 in Edge Support. Choose the ${B} if you want individually wrapped coils, a choice of Plush Soft, Luxury Firm or Firm, and a cover and foam set built around cooling.`,
   feel: [
     `These two sit at different ends of Amerisleep's line. The ${A} is an all-foam bed sold in one medium feel, which sits at 5/10 on our scale. The ${B} is a hybrid sold in Plush Soft 3/10, Luxury Firm 7/10 and Firm 8/10, all under one score.`,
@@ -71,15 +71,15 @@ const copy: ComparisonCopy = {
     'Sleepers who often get up at night will find either easy to leave and return to, with the AS6\'s Firm version keeping the body nearest the surface.',
   ],
   valuePolicies: [
-    `Both score 9 in Value and 9 in Trial Period. The ${A} and the ${B} share Amerisleep's core policies. Price, trial and warranty facts set our Value and Trial Period scores for both the AS3 and the AS6 Black Series.`,
-    'Amerisleep lists a 100-night trial and a 20-year warranty for both, with free shipping via FedEx in the continental US.',
-    'The returns wording differs slightly. Amerisleep lists free returns with courier pickup for the AS3, and free returns by mail within 100 nights for the AS6.',
-    'Because Value ties, price and policy alone do not separate these two on our scorecard.',
+    `Both score 9 in Value and 10 in Trial Period. The ${A} and the ${B} share Amerisleep's core policies. Price, trial and warranty facts set our Value and Trial Period scores for both the AS3 and the AS6 Black Series.`,
+    'Amerisleep lists a 365-night trial and a 20-year warranty for both, with free shipping via FedEx in the continental US.',
+    'The returns wording differs slightly. Amerisleep lists free returns with courier pickup for the AS3, and free returns by mail for the AS6.',
+    'Because Value and Trial Period both tie, price and policy alone do not separate these two on our scorecard.',
     'The AS3 and the AS6 Black Series both come in seven sizes, from Twin to Split King.',
     'For the AS3 and the AS6 Black Series, confirm current terms on Amerisleep\'s site before ordering.',
     'Both models list free shipping via FedEx in the continental US, so delivery does not separate them either.',
     'Since the policies match, the decision rests on construction, firmness choice and edge support.',
-    'Shoppers who are unsure which AS6 firmness suits them can use the 100-night trial to judge it at home, since both models carry the same trial and warranty terms.',
+    'Shoppers who are unsure which AS6 firmness suits them can use the 365-night trial to judge it at home, since both models carry the same trial and warranty terms.',
   ],
   buyA: [
     'Shoppers happy with a medium 5/10 all-foam feel.',
@@ -94,7 +94,7 @@ const copy: ComparisonCopy = {
   faqs: [
     {
       q: 'Which is better, Amerisleep AS3 or Amerisleep AS6 Black Series?',
-      a: `The ${A} scores higher, 9.5/10 against 9.3/10, and leads on Overall and Edge Support. The ${B} does not lead on any field, and the two tie on Value, Trial Period, Response Time, Motion Transfer and Cooling & Breathability. The AS6 suits shoppers who want coils and a firmness choice.`,
+      a: `The ${A} scores higher, 9.7/10 against 9.5/10, and leads on Overall and Edge Support. The ${B} does not lead on any field, and the two tie on Value, Trial Period, Response Time, Motion Transfer and Cooling & Breathability. The AS6 suits shoppers who want coils and a firmness choice.`,
     },
     {
       q: 'What firmness options does the AS6 Black Series come in?',
@@ -114,7 +114,7 @@ const copy: ComparisonCopy = {
     },
     {
       q: 'Which is better for couples, the AS3 or the AS6 Black Series?',
-      a: `Both score 10 in Motion Transfer. The Amerisleep AS3 adds a 10 in Edge Support, against 9 for the Amerisleep AS6 Black Series. Both come in seven sizes, including Split King. Both list the same 100-night trial and 20-year warranty.`,
+      a: `Both score 10 in Motion Transfer. The Amerisleep AS3 adds a 10 in Edge Support, against 9 for the Amerisleep AS6 Black Series. Both come in seven sizes, including Split King. Both list the same 365-night trial and 20-year warranty.`,
     },
   ],
   related: [

@@ -5,9 +5,9 @@ const B = '[Leesa Original](/reviews/leesa-original/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as3-vs-leesa-original',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS3 vs Leesa Original: two medium 5/10 all-foam beds on one scorecard. The AS3 scores 9.5/10 to 8.3/10 and leads on five of seven fields.',
-  quickVerdict: `Choose the ${A} if you want a stronger edge, a quieter surface and a cooler top in a medium all-foam bed. Choose the ${B} if you want a 365-night trial and a limited lifetime warranty on a medium foam bed, and you sleep mostly near the center.`,
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS3 vs Leesa Original: two medium 5/10 all-foam beds on one scorecard. The AS3 scores 9.7/10 to 8.5/10 and leads on five of seven fields.',
+  quickVerdict: `Choose the ${A} if you want a stronger edge, a quieter surface and a cooler top in a medium all-foam bed. Choose the ${B} if you want a limited lifetime warranty on a medium foam bed, and you sleep mostly near the center.`,
   feel: [
     `These two are close on feel. The ${A} and the ${B} are both all-foam beds sold in one medium feel, which sits at 5/10 on our scale. Neither offers a softer or firmer version of the same model, so shoppers choose the feel as it comes.`,
     'The layer order shapes the small differences you notice at the surface. The AS3 places Bio-Pur memory foam near the top under its Refresh cover, so the first thing you feel is memory foam contour. The Original places 2 inches of GreenFlex BioFoam above 2 inches of memory foam, so the first layer is not memory foam.',
@@ -57,12 +57,12 @@ const copy: ComparisonCopy = {
     'Restless sleepers who share a bed should still weigh motion and edge, since frequent turning often moves a sleeper toward the side.',
   ],
   valuePolicies: [
-    `Against the Original, the ${A} scores 9 in Value and 9 in Trial Period. The ${B} scores 8 in Value and 9 in Trial Period. Our Value and Trial Period scores are set from price, trial and warranty facts on each brand\'s site.`,
-    'On paper, the Original lists the longer policies. Leesa lists a 365-night trial with no-hassle returns and a limited lifetime warranty. Against the Original, Amerisleep lists a 100-night trial with free returns and courier pickup, and a 20-year warranty for the AS3.',
-    'Value weighs those policies against price, so a longer trial alone does not decide the score. The AS3 still scores higher on Value.',
+    `Against the Original, the ${A} scores 9 in Value and 10 in Trial Period. The ${B} scores 8 in Value and 10 in Trial Period, so the two tie on trial. Our Value and Trial Period scores are set from price, trial and warranty facts on each brand\'s site.`,
+    'The trial lengths now match. Leesa lists a 365-night trial with no-hassle returns and a limited lifetime warranty. Amerisleep lists a 365-night trial with free returns and courier pickup, and a 20-year warranty for the AS3.',
+    'Value weighs those policies against price, so a longer warranty alone does not decide the score. The AS3 scores higher on Value.',
     'Shipping is free for both. Leesa lists optional in-home setup and removal. The AS3 ships via FedEx in the continental US.',
     'Sizes differ slightly. The AS3 comes in seven sizes, including Split King. The Original comes in six, from Twin to Cal King, with no Split King listed.',
-    'Shoppers who put a long trial and a limited lifetime warranty first may prefer the Original. Shoppers who put the scorecard first should choose the AS3. Before ordering the AS3 or the Original, confirm current terms on each brand\'s site.',
+    'Shoppers who put a limited lifetime warranty first may prefer the Original. Shoppers who put the scorecard first should choose the AS3. Before ordering the AS3 or the Original, confirm current terms on each brand\'s site.',
   ],
   buyA: [
     'Couples who want 10s in Motion Transfer and Edge Support, which the AS3 offers.',
@@ -70,14 +70,14 @@ const copy: ComparisonCopy = {
     'Shoppers who need a Split King.',
   ],
   buyB: [
-    'Shoppers who want a 365-night trial and a limited lifetime warranty.',
+    'Shoppers who want a limited lifetime warranty.',
     'Solo sleepers who stay near the center, where the 7 in Edge Support matters less.',
     'Shoppers who want listed layer thicknesses and USDA BioPreferred foam.',
   ],
   faqs: [
     {
       q: 'Which is better, Amerisleep AS3 or Leesa Original?',
-      a: `The ${A} scores higher, 9.5/10 against 8.3/10, and leads on Overall, Value, Edge Support, Motion Transfer and Cooling & Breathability. The ${B} does not lead on any field, and the two tie on Trial Period and Response Time. The Original lists longer policies.`,
+      a: `The ${A} scores higher, 9.7/10 against 8.5/10, and leads on Overall, Value, Edge Support, Motion Transfer and Cooling & Breathability. The ${B} does not lead on any field, and the two tie on Trial Period and Response Time. The Original lists a longer warranty.`,
     },
     {
       q: 'Are the AS3 and Leesa Original the same firmness?',
@@ -88,8 +88,8 @@ const copy: ComparisonCopy = {
       a: 'The Amerisleep AS3 scores higher for couples, with 10s in Motion Transfer and Edge Support against 9 and 7 for the Original. That edge gap matters most on a full or queen, where both partners sleep near a perimeter. A king reduces the difference.',
     },
     {
-      q: 'Which has the longer trial and warranty, the AS3 or the Original?',
-      a: 'The Original does. Leesa lists a 365-night trial and a limited lifetime warranty, while Amerisleep lists a 100-night trial and a 20-year warranty for the AS3. The AS3 still scores higher on Value, which weighs policies against price. Confirm current terms before ordering.',
+      q: 'How do the trial and warranty compare, the AS3 or the Original?',
+      a: 'Both list a 365-night trial and score 10 in Trial Period. Leesa lists a limited lifetime warranty for the Original, while Amerisleep lists a 20-year warranty for the AS3. The AS3 scores higher on Value, which weighs policies against price. Confirm current terms before ordering.',
     },
     {
       q: 'Which sleeps cooler, the AS3 or the Original?',

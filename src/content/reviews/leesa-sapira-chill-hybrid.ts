@@ -2,14 +2,14 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'leesa-sapira-chill-hybrid',
-  dateModified: '2026-10-11',
-  metaDescription: 'Leesa Sapira Chill Hybrid review: 9.3/10 Overall, a 14 inch hybrid in Plush 4, Medium-Firm 6 and Firm 7, with 10s in Edge, Response Time and Cooling.',
-  quickAnswer: 'Leesa Sapira Chill Hybrid earns a 9.3/10 Overall as a 14 inch hybrid sold in Plush 4/10, Medium-Firm 6/10 and Firm 7/10, with foams over 8 inch zoned springs. It suits most sleep positions, since each feel targets a different sleeper. Its main strengths are 10/10 scores in Edge Support, Response Time and Cooling & Breathability. The main limitation of the Sapira Chill Hybrid is an 8/10 in Value.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Leesa Sapira Chill Hybrid review: 9.5/10 Overall for a 14 inch hybrid in Plush, Medium-Firm and Firm, with 10s in four of six scored fields.',
+  quickAnswer: 'Leesa Sapira Chill Hybrid earns a 9.5/10 Overall as a 14 inch hybrid sold in Plush 4/10, Medium-Firm 6/10 and Firm 7/10. Foams sit over 8 inch zoned springs. It suits most sleep positions, since each feel targets a different sleeper. Its main strengths are 10/10 scores in Edge Support, Trial Period, Response Time and Cooling. Value, at 8/10, is its main limitation.',
   strengths: [
     '10/10 scores in Edge Support, Response Time and Cooling & Breathability.',
+    'A standout 10/10 in Trial Period, set from a 365-night trial and a limited lifetime warranty.',
     'Three firmness options, Plush 4/10, Medium-Firm 6/10 and Firm 7/10.',
     'Zoned lumbar springs and an Ultra Cool cover, according to Leesa.',
-    'A full year to try the Sapira Chill Hybrid, plus a limited lifetime warranty.',
   ],
   limitations: [
     'The Sapira Chill Hybrid scores 8 in Value, its lowest field.',
@@ -28,12 +28,12 @@ const copy: ReviewCopy = {
   ],
   construction: [
     'Leesa Sapira Chill Hybrid is a 14 inch hybrid with seven named parts. An Ultra Cool cover sits over 2 inches of quilt foam, 1.5 inches of GreenFlex BioFoam, 1 inch of responsive foam and 1 inch of transition support foam. Below those are 8 inches of zoned lumbar springs and 0.75 inches of support foam.',
-    'That gives 5.5 inches of comfort foam over the springs. The zoning targets the lower back. Leesa lists CertiPUR-US and GREENGUARD Gold, plus USDA BioPreferred for the GreenFlex foam, and states the mattress is designed and assembled in Arizona and made to order.',
+    'That gives 5.5 inches of comfort foam over the springs. The zoning targets the lower back. Leesa lists CertiPUR-US and GREENGUARD Gold, plus USDA BioPreferred for the GreenFlex foam. It states the mattress is designed and assembled in Arizona and made to order.',
   ],
   performance: {
     value: [
       'Value is an 8 for the Sapira Chill Hybrid, good with a caveat. The score is set from price, trial and warranty facts, and it weighs what the Sapira Chill delivers against its cost.',
-      'Leesa pairs a 365-night trial with a limited lifetime warranty, and shipping is free, with optional in-home setup and removal. Check the current price on Leesa\'s site to judge the trade for yourself.',
+      'Leesa pairs a 365-night trial with a limited lifetime warranty, which earns a 10 in Trial Period. Shipping is free, with optional in-home setup and removal. Check the current price on Leesa\'s site to judge the trade for yourself.',
       'Shoppers who weigh long policies and firmness choice will find a lot behind this score. On the Sapira Chill Hybrid, those who rank cost first should compare this field across the hybrids we score before deciding. Value is the only field where the Sapira Chill drops below 9.',
     ],
     edgeSupport: [
@@ -42,8 +42,8 @@ const copy: ReviewCopy = {
       'Couples who share a full or queen Sapira Chill Hybrid gain the most, since both sleepers can use the full width. Heavier sleepers who sit on the edge of the Sapira Chill Hybrid each morning should also give this score weight. A sturdy frame helps the perimeter of the Sapira Chill Hybrid hold its shape over time.',
     ],
     trialPeriod: [
-      'Trial Period is a strong 9 for the Sapira Chill Hybrid. Leesa offers a 365-night trial, and returns are covered within that window, according to Leesa.',
-      'A full year gives time to judge the chosen firmness through every season. Because the mattress is made to order, confirm how returns and exchanges are handled before ordering. Keep the order details for the Sapira Chill Hybrid on file in case a return is needed.',
+      'Trial Period is a standout 10 for the Sapira Chill Hybrid. The score is set from trial and warranty facts, and Leesa pairs a 365-night trial with a limited lifetime warranty.',
+      'Returns are covered within that window, according to Leesa. A full year gives time to judge the chosen firmness through every season. Because the mattress is made to order, confirm how returns and exchanges are handled before ordering.',
       'Shoppers unsure between Plush, Medium-Firm and Firm gain the most from this field. A full year makes it easier to tell whether the chosen feel is right. Confirm the current terms on Leesa\'s site before ordering, since policies can change between our checks.',
     ],
     responseTime: [
@@ -59,7 +59,7 @@ const copy: ReviewCopy = {
     coolingBreathability: [
       'The Sapira Chill Hybrid scores a standout 10 in Cooling & Breathability. Leesa names an Ultra Cool cover, and the 8 inch spring unit leaves room for air to move through the base.',
       'We set the Sapira Chill Hybrid score from its construction, not from a temperature reading. The cover sits directly against the sheets, which is where warm sleepers notice heat first. The 10 applies to all three firmness options.',
-      'Warm sleepers should give this field heavy weight. Breathable sheets and a thin protector keep the surface in line with the score, while heavy, plastic-backed protectors can trap heat and cover the cooling fabric.',
+      'Warm sleepers should give this field heavy weight. A thin protector and breathable sheets help the surface match its score. Heavy, plastic-backed protectors can trap heat and cover the cooling fabric.',
     ],
   },
   positionsIntro: 'Leesa sells the Sapira Chill in Plush 4/10, Medium-Firm 6/10 and Firm 7/10. This guidance names the version that fits each sleep position and body weight, based on those firmness ratings and the zoned spring build.',
@@ -95,7 +95,7 @@ const copy: ReviewCopy = {
     'Shoppers who need a Split King, since none is listed.',
     'Very light sleepers who want an all-foam level of motion control.',
   ],
-  compareIntro: 'The [Amerisleep AS6 Black Series](/reviews/amerisleep-as6/) and the [Amerisleep AS5 Hybrid](/reviews/amerisleep-as5-hybrid/) both have head-to-head pages with the Sapira Chill, scoring 9.3 and 8.8 as hybrids. The [Zoma Hybrid](/reviews/zoma-hybrid/) also scores 9.3. The table lines up their firmness, trial and warranty next to the Sapira Chill Hybrid.',
+  compareIntro: 'The [Amerisleep AS6 Black Series](/reviews/amerisleep-as6/) and the [Amerisleep AS5 Hybrid](/reviews/amerisleep-as5-hybrid/) both have head-to-head pages with the Sapira Chill. They score 9.5 and 9.0 as hybrids, so the AS6 ties the Sapira Chill. The [Zoma Hybrid](/reviews/zoma-hybrid/) also scores 9.5. The table lines up their firmness, trial and warranty next to the Sapira Chill Hybrid.',
   policies: [
     'Leesa Sapira Chill Hybrid comes with a 365-night trial and a limited lifetime warranty, according to Leesa. Shipping is free, and in-home setup and removal are optional.',
     'Returns are covered within the 365-night trial, according to Leesa. Sizes run Twin, Twin XL, Full, Queen, King and Cal King.',
@@ -108,7 +108,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What is the Leesa Sapira Chill Hybrid score?',
-      a: 'The Sapira Chill earns a 9.3/10 Overall. It scores 10/10 in Edge Support, Response Time and Cooling & Breathability, 9/10 in Trial Period and Motion Transfer, and 8/10 in Value. Overall is the average of those six fields, shown to one decimal. Value is the only field below 9.',
+      a: 'The Sapira Chill earns a 9.5/10 Overall. It scores 10/10 in Edge Support, Trial Period, Response Time and Cooling & Breathability. It earns a 9/10 in Motion Transfer and an 8/10 in Value. Overall is the average of those six fields, shown to one decimal. Value is the only field below 9.',
     },
     {
       q: 'Does Leesa Sapira Chill Hybrid sleep hot?',
@@ -116,7 +116,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'Is Leesa Sapira Chill Hybrid good for couples?',
-      a: 'Yes. It earns a 10/10 in Edge Support, so both sleepers can use the full width, and a 9/10 in Motion Transfer, so most partners sleep through each other turning over. The 10/10 Response Time also suits partners who change position often. Couples can pick the firmness that suits both.',
+      a: 'Yes. It earns a 10/10 in Edge Support, so both sleepers can use the full width. A 9/10 in Motion Transfer means most partners sleep through each other turning over. The 10/10 Response Time also suits partners who change position often. Couples can pick the firmness that suits both.',
     },
     {
       q: 'What trial and warranty come with Leesa Sapira Chill Hybrid?',
@@ -124,7 +124,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'How is Leesa Sapira Chill Hybrid different from Leesa Sapira Hybrid?',
-      a: 'The Sapira Chill is 14 inches with an Ultra Cool cover, zoned lumbar springs and three firmness options. The [Leesa Sapira Hybrid](/reviews/leesa-sapira-hybrid/) is 11 inches with memory foam over reinforced steel springs, and one 5-6/10 feel. The Sapira Chill scores 9.3 Overall against 8.7.',
+      a: 'The Sapira Chill is 14 inches with an Ultra Cool cover, zoned lumbar springs and three firmness options. The [Leesa Sapira Hybrid](/reviews/leesa-sapira-hybrid/) is 11 inches with memory foam over reinforced steel springs, and one 5-6/10 feel. The Sapira Chill scores 9.5 Overall against 8.8 for the Sapira Hybrid.',
     },
     {
       q: 'How tall is Leesa Sapira Chill Hybrid?',
@@ -135,7 +135,7 @@ const copy: ReviewCopy = {
       a: 'Yes, in the Plush 4/10 version for most side sleepers. The quilt foam and BioFoam cushion the shoulder and hip, and the zoned springs keep the waist level. Heavier side sleepers may prefer Medium-Firm 6/10 for more support under the hips. The 10/10 Response Time also makes it easy to turn from side to side.',
     },
   ],
-  verdict: 'Leesa Sapira Chill Hybrid earns a 9.3/10 Overall, led by 10/10 scores in Edge Support, Response Time and Cooling & Breathability. Its foams over zoned springs come in Plush, Medium-Firm and Firm, so most sleepers can find a fit, and the cooling cover suits warm sleepers. Value is an 8, the only field below 9. A 365-night trial gives time to pick the right feel.',
+  verdict: 'Leesa Sapira Chill Hybrid earns a 9.5/10 Overall, led by 10/10 scores in Edge Support, Trial Period, Response Time and Cooling & Breathability. Its foams over zoned springs come in Plush, Medium-Firm and Firm, so most sleepers can find a fit. The cooling cover suits warm sleepers. Value is an 8, the only field below 9. A 365-night trial gives time to pick the right feel.',
   related: [
     { label: 'Amerisleep AS6 Black Series vs Leesa Sapira Chill Hybrid', href: '/comparison/amerisleep-as6-black-series-vs-leesa-sapira-chill-hybrid/' },
     { label: 'Amerisleep AS5 Hybrid vs Leesa Sapira Chill Hybrid', href: '/comparison/amerisleep-as5-hybrid-vs-leesa-sapira-chill-hybrid/' },

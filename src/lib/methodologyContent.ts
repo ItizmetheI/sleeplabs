@@ -2,8 +2,11 @@
 // and /llms/methodology.md all read from here so the three never drift.
 import { allMattresses } from '../data/mattresses';
 
-export const METHODOLOGY_UPDATED = '2026-10-11';
+export const METHODOLOGY_UPDATED = '2026-10-22';
 export const MODEL_COUNT = allMattresses.length;
+const TOP_OVERALL = Math.max(...allMattresses.map(m => m.scores.overall));
+const TOP_COUNT = allMattresses.filter(m => m.scores.overall === TOP_OVERALL).length;
+const TOP_COUNT_WORD = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"][TOP_COUNT] ?? String(TOP_COUNT);
 export const BRAND_COUNT = new Set(allMattresses.map(m => m.brand)).size;
 
 export const METHODOLOGY_LEAD = `Mattress Inquirer scores ${MODEL_COUNT} mattresses from ${BRAND_COUNT} brands on seven fields: Overall, Value, Edge Support, Trial Period, Response Time, Motion Transfer, and Cooling & Breathability. Every field uses a 0 to 10 scale, and every brand is scored on the same scorecard.`;
@@ -39,7 +42,7 @@ export const METHODOLOGY_FIELDS: ReadonlyArray<{ heading: string; body: string }
 
 export const METHODOLOGY_OVERALL = [
   'Overall is the average of the other six field scores, shown to one decimal. No field carries extra weight, so a mattress cannot earn a high Overall from one strong field alone.',
-  `The highest Overall on the current scorecard is 9.5, shared by six of the ${MODEL_COUNT} models.`,
+  `The highest Overall on the current scorecard is ${TOP_OVERALL.toFixed(1)}, shared by ${TOP_COUNT_WORD} of the ${MODEL_COUNT} models.`,
   'When Overall scores tie, every list on the site uses the same order: the Amerisleep AS3 first, then Value, Edge Support, brand and model name.',
 ];
 

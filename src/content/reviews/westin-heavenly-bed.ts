@@ -2,7 +2,7 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'westin-heavenly-bed',
-  dateModified: '2026-10-11',
+  dateModified: '2026-10-22',
   metaDescription: 'Westin Heavenly Bed review: 7.7/10 Overall, a 13.25 inch pillow top hybrid with 10s in Edge Support and Response Time, but no trial and a 0 in Trial Period.',
   quickAnswer: 'The Westin Heavenly Bed earns a 7.7/10 Overall as a 13.25 inch pillow top hybrid over reinforced pocketed coils. It suits shoppers who want the hotel bed and are sure of the feel. Its main strengths are 10/10 scores in Edge Support and Response Time. Its main limitation is a 0/10 in Trial Period, since there is no trial and no refund after 48 hours.',
   strengths: [
@@ -91,7 +91,7 @@ const copy: ReviewCopy = {
     'Shoppers who want a firmness rating, layer details or certifications before buying.',
     'Stomach sleepers who need a firm surface without a pillow top.',
   ],
-  compareIntro: 'The [Helix Dawn Luxe](/reviews/helix-dawn-luxe/) scores 8.5, and the [Casper Dream Hybrid](/reviews/casper-dream-hybrid/) and [Leesa Sapira Hybrid](/reviews/leesa-sapira-hybrid/) both score 8.7. All three are hybrids that come with a trial. The table lines up their firmness, trial and warranty next to the Westin Heavenly Bed.',
+  compareIntro: 'The [Casper Dream Hybrid](/reviews/casper-dream-hybrid/) and the [Helix Dawn Luxe](/reviews/helix-dawn-luxe/) both score 8.7, and the [Leesa Sapira Hybrid](/reviews/leesa-sapira-hybrid/) scores 8.8. All three are hybrids that come with a trial. The table lines up their firmness, trial and warranty next to the Westin Heavenly Bed.',
   policies: [
     'The Westin Heavenly Bed comes with a 10-year warranty and no trial, according to Westin. It is made to order, and white-glove delivery, setup and haul-away are included.',
     'There is no cancellation or refund after 48 hours. Sizes run Twin, Full, Queen, King and Cal King.',

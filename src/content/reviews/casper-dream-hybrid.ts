@@ -2,7 +2,7 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'casper-dream-hybrid',
-  dateModified: '2026-10-11',
+  dateModified: '2026-10-22',
   metaDescription: 'Casper Dream Hybrid review: 8.7/10 Overall, a 12 inch medium 5/10 hybrid with zoned memory foam over pocketed coils and four 9s on its scorecard. Specs.',
   quickAnswer: 'The Casper Dream Hybrid earns an 8.7/10 Overall as a 12 inch medium hybrid that we rate 5/10. It suits side and back sleepers who want zoned memory foam over pocketed coils. Its main strength is an even set of 9s in Trial Period, Response Time, Motion Transfer and Cooling. Its main limitation is 8s in Value and Edge Support.',
   strengths: [
@@ -93,7 +93,7 @@ const copy: ReviewCopy = {
     'Stomach sleepers over 130 lb who need a firmer surface.',
     'Sleepers who sit on the bed edge often and want a firm perimeter.',
   ],
-  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Dream Hybrid and scores 9.5 as an all-foam bed. The [Leesa Sapira Hybrid](/reviews/leesa-sapira-hybrid/) and [Helix Sunset Luxe](/reviews/helix-sunset-luxe/) both match its 8.7 Overall as hybrids. The table lines up their firmness, trial and warranty.',
+  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Dream Hybrid and scores 9.7 as an all-foam bed. The [Helix Dawn Luxe](/reviews/helix-dawn-luxe/) matches its 8.7 Overall, and the [Leesa Sapira Hybrid](/reviews/leesa-sapira-hybrid/) scores 8.8, both as hybrids. The table lines up their firmness, trial and warranty.',
   policies: [
     'The Dream Hybrid comes with a 100-night trial and a 10-year warranty, according to Casper. Delivery is free and no-contact, with extra fees for Alaska and Hawaii.',
     'Returns are free once the 30-night adjustment period has passed. Some states add a non-refundable recycling fee to mattress orders. Sizes run Twin, Twin XL, Full, Queen, King, Cal King and Split King.',

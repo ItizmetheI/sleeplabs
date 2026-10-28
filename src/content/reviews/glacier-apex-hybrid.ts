@@ -2,7 +2,7 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'glacier-apex-hybrid',
-  dateModified: '2026-10-11',
+  dateModified: '2026-10-22',
   metaDescription: 'Glacier Apex Hybrid review: 9.3/10 Overall, a 14 inch Euro-top hybrid in Soft 3, Medium 5 and Firm 7, with 10s in Value, Trial Period and Cooling.',
   quickAnswer: 'Glacier Apex Hybrid earns a 9.3/10 Overall as a 14 inch Euro-top hybrid sold in three feels: Soft 3/10, Medium 5/10 and Firm 7/10. It suits warm sleepers and shoppers who want to match the firmness to their sleep position. Its main strengths are 10/10 scores in Value, Trial Period and Cooling & Breathability. Its main limitation is an 8/10 in Response Time.',
   strengths: [
@@ -95,7 +95,7 @@ const copy: ReviewCopy = {
     'Very light sleepers who want an all-foam level of motion control.',
     'Shoppers who want listed layer thicknesses before buying.',
   ],
-  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Apex and scores 9.5 as a medium all-foam bed. The [Zoma Hybrid](/reviews/zoma-hybrid/) and the [Glacier Original Hybrid](/reviews/glacier-original-hybrid/) both score 9.3 as hybrids. The table lines up their firmness, trial and warranty next to the Apex Hybrid.',
+  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Apex and scores 9.7 as a medium all-foam bed. The [Zoma Start](/reviews/zoma-start/) and the [Glacier Original Hybrid](/reviews/glacier-original-hybrid/) both score 9.3 as hybrids, level with the Apex. The table lines up their firmness, trial and warranty next to the Apex Hybrid.',
   policies: [
     'Glacier Apex Hybrid comes with a 365-night trial and a lifetime warranty, according to Glacier. Standard UPS delivery to the door is free, and white glove delivery is available for an added fee.',
     'Returns get a full refund with return shipping covered, after at least 30 days of use. The Apex Hybrid comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',

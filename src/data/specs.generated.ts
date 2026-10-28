@@ -46,10 +46,10 @@ export const SPECS: Record<string, MattressSpec> = {
       949
     ],
     "priceChecked": "October 2026",
-    "trialNights": 100,
+    "trialNights": 365,
     "warranty": "20",
     "shipping": "Free shipping in the continental US via FedEx",
-    "returns": "Free returns by mail within 100 days",
+    "returns": "Free returns by mail within the trial; refund available after the first 30 nights",
     "sizes": [
       "Twin",
       "Twin XL",
@@ -65,7 +65,7 @@ export const SPECS: Record<string, MattressSpec> = {
     "organicCert": "not listed",
     "madeIn": "USA (U.S. and imported components; covers sewn in Canada)",
     "productUrl": "https://amerisleep.com/as2.html",
-    "sourceChecked": "October 2026"
+    "sourceChecked": "October 2026; trial per brand, PDP update pending"
   },
   "amerisleep-as3": {
     "slug": "amerisleep-as3",
@@ -111,10 +111,10 @@ export const SPECS: Record<string, MattressSpec> = {
       1149
     ],
     "priceChecked": "October 2026",
-    "trialNights": 100,
+    "trialNights": 365,
     "warranty": "20",
     "shipping": "Free shipping in the continental US via FedEx",
-    "returns": "Free returns; courier pickup arranged",
+    "returns": "Free returns; courier pickup arranged; refund available after the first 30 nights",
     "sizes": [
       "Twin",
       "Twin XL",
@@ -130,7 +130,7 @@ export const SPECS: Record<string, MattressSpec> = {
     "organicCert": "not listed",
     "madeIn": "USA (U.S. and imported components; covers sewn in Canada)",
     "productUrl": "https://amerisleep.com/as3.html",
-    "sourceChecked": "October 2026"
+    "sourceChecked": "October 2026; trial per brand, PDP update pending"
   },
   "amerisleep-as3-hybrid": {
     "slug": "amerisleep-as3-hybrid",
@@ -177,10 +177,10 @@ export const SPECS: Record<string, MattressSpec> = {
       1349
     ],
     "priceChecked": "October 2026",
-    "trialNights": 100,
+    "trialNights": 365,
     "warranty": "20",
     "shipping": "Free shipping in the continental US via FedEx",
-    "returns": "Free returns; courier pickup arranged",
+    "returns": "Free returns; courier pickup arranged; refund available after the first 30 nights",
     "sizes": [
       "Twin",
       "Twin XL",
@@ -196,7 +196,7 @@ export const SPECS: Record<string, MattressSpec> = {
     "organicCert": "not listed",
     "madeIn": "USA (U.S. and imported components; covers sewn in Canada)",
     "productUrl": "https://amerisleep.com/as3.html",
-    "sourceChecked": "October 2026"
+    "sourceChecked": "October 2026; trial per brand, PDP update pending"
   },
   "amerisleep-as5": {
     "slug": "amerisleep-as5",
@@ -246,10 +246,10 @@ export const SPECS: Record<string, MattressSpec> = {
       1749
     ],
     "priceChecked": "October 2026",
-    "trialNights": 100,
+    "trialNights": 365,
     "warranty": "20",
     "shipping": "Free shipping in the continental US via FedEx",
-    "returns": "Free returns by mail within 100 days; courier pickup",
+    "returns": "Free returns by mail within the trial; courier pickup; refund available after the first 30 nights",
     "sizes": [
       "Twin",
       "Twin XL",
@@ -265,7 +265,7 @@ export const SPECS: Record<string, MattressSpec> = {
     "organicCert": "not listed",
     "madeIn": "USA (U.S. and imported components; covers sewn in Canada)",
     "productUrl": "https://amerisleep.com/as5.html",
-    "sourceChecked": "October 2026"
+    "sourceChecked": "October 2026; trial per brand, PDP update pending"
   },
   "amerisleep-as5-hybrid": {
     "slug": "amerisleep-as5-hybrid",
@@ -310,10 +310,10 @@ export const SPECS: Record<string, MattressSpec> = {
       2049
     ],
     "priceChecked": "October 2026",
-    "trialNights": 100,
+    "trialNights": 365,
     "warranty": "20",
     "shipping": "Free shipping in the continental US via FedEx",
-    "returns": "Free returns by mail within 100 days; courier pickup",
+    "returns": "Free returns by mail within the trial; courier pickup; refund available after the first 30 nights",
     "sizes": [
       "Twin",
       "Twin XL",
@@ -329,7 +329,7 @@ export const SPECS: Record<string, MattressSpec> = {
     "organicCert": "not listed",
     "madeIn": "USA (U.S. and imported components; covers sewn in Canada)",
     "productUrl": "https://amerisleep.com/as5.html",
-    "sourceChecked": "October 2026"
+    "sourceChecked": "October 2026; trial per brand, PDP update pending"
   },
   "amerisleep-as6": {
     "slug": "amerisleep-as6",
@@ -394,10 +394,10 @@ export const SPECS: Record<string, MattressSpec> = {
       2649
     ],
     "priceChecked": "October 2026",
-    "trialNights": 100,
+    "trialNights": 365,
     "warranty": "20",
     "shipping": "Free shipping in the continental US via FedEx",
-    "returns": "Free returns by mail within 100 nights",
+    "returns": "Free returns by mail within the trial; refund available after the first 30 nights",
     "sizes": [
       "Twin",
       "Twin XL",
@@ -415,7 +415,7 @@ export const SPECS: Record<string, MattressSpec> = {
     "organicCert": "not listed",
     "madeIn": "USA",
     "productUrl": "https://amerisleep.com/as6/",
-    "sourceChecked": "October 2026"
+    "sourceChecked": "October 2026; trial per brand, PDP update pending"
   },
   "amerisleep-organica": {
     "slug": "amerisleep-organica",
@@ -464,10 +464,10 @@ export const SPECS: Record<string, MattressSpec> = {
     "queenPriceRaw": "not listed",
     "queenPricesUsd": [],
     "priceChecked": "October 2026",
-    "trialNights": 100,
+    "trialNights": 365,
     "warranty": "20",
     "shipping": "Free FedEx shipping in the contiguous US; no-contact delivery",
-    "returns": "Free returns",
+    "returns": "Free returns; refund available after the first 30 nights",
     "sizes": [
       "Twin",
       "Twin XL",
@@ -478,14 +478,13 @@ export const SPECS: Record<string, MattressSpec> = {
       "Split King"
     ],
     "certifications": [
-      "OEKO-TEX Standard 100 (latex and wool)",
-      "Rainforest Alliance (latex)",
-      "eco-INSTITUT (latex)"
+      "Latex: OEKO-TEX Standard 100, Rainforest Alliance, eco-INSTITUT",
+      "Wool: GOTS, OEKO-TEX Standard 100"
     ],
-    "organicCert": "GOTS (wool, per FAQ)",
+    "organicCert": "GOTS (wool)",
     "madeIn": "California, USA (materials from Sri Lanka, New Zealand, and India)",
     "productUrl": "https://amerisleep.com/organica/organic-mattress/",
-    "sourceChecked": "October 2026"
+    "sourceChecked": "October 2026; trial per brand, PDP update pending"
   },
   "amerisleep-organica-plush": {
     "slug": "amerisleep-organica-plush",
@@ -538,10 +537,10 @@ export const SPECS: Record<string, MattressSpec> = {
     "queenPriceRaw": "not listed",
     "queenPricesUsd": [],
     "priceChecked": "October 2026",
-    "trialNights": 100,
+    "trialNights": 365,
     "warranty": "20",
     "shipping": "Free FedEx shipping in the contiguous US; no-contact delivery",
-    "returns": "Free returns",
+    "returns": "Free returns; refund available after the first 30 nights",
     "sizes": [
       "Twin",
       "Twin XL",
@@ -552,14 +551,13 @@ export const SPECS: Record<string, MattressSpec> = {
       "Split King"
     ],
     "certifications": [
-      "OEKO-TEX Standard 100 (latex and wool)",
-      "Rainforest Alliance (latex)",
-      "eco-INSTITUT (latex)"
+      "Latex: OEKO-TEX Standard 100, Rainforest Alliance, eco-INSTITUT",
+      "Wool: GOTS, OEKO-TEX Standard 100"
     ],
-    "organicCert": "GOTS (wool, per FAQ)",
+    "organicCert": "GOTS (wool)",
     "madeIn": "California, USA (materials from Sri Lanka, New Zealand, and India)",
     "productUrl": "https://amerisleep.com/organica/organic-mattress/",
-    "sourceChecked": "October 2026"
+    "sourceChecked": "October 2026; trial per brand, PDP update pending"
   },
   "avocado-green": {
     "slug": "avocado-green",
@@ -710,6 +708,32 @@ export const SPECS: Record<string, MattressSpec> = {
     "madeIn": "USA (foreign and domestic components)",
     "productUrl": "https://bearmattress.com/products/bear-original-mattress",
     "sourceChecked": "October 2026"
+  },
+  "bear-star-hybrid": {
+    "slug": "bear-star-hybrid",
+    "model": "Bear Star Hybrid",
+    "reachable": false,
+    "type": null,
+    "construction": [],
+    "firmnessRaw": "FAIL: page not reachable",
+    "firmnessOptions": [],
+    "heightRaw": "FAIL: page not reachable",
+    "heightsIn": [],
+    "layersRaw": "FAIL: page not reachable",
+    "layers": [],
+    "queenPriceRaw": "FAIL: page not reachable",
+    "queenPricesUsd": [],
+    "priceChecked": "FAIL: page not reachable",
+    "trialNights": null,
+    "warranty": "FAIL: page not reachable",
+    "shipping": "FAIL: page not reachable",
+    "returns": "FAIL: page not reachable",
+    "sizes": [],
+    "certifications": [],
+    "organicCert": "FAIL: page not reachable",
+    "madeIn": "FAIL: page not reachable",
+    "productUrl": "https://www.bearmattress.com/products/bear-star-hybrid",
+    "sourceChecked": "DISCONTINUED: Bear no longer lists it"
   },
   "birch-natural": {
     "slug": "birch-natural",
@@ -2827,7 +2851,7 @@ export const SPECS: Record<string, MattressSpec> = {
       1480
     ],
     "priceChecked": "October 2026",
-    "trialNights": 120,
+    "trialNights": 365,
     "warranty": "Limited Lifetime",
     "shipping": "Free shipping via FedEx; paid in-home setup available",
     "returns": "Full refund and pickup after a 30-night break-in, requested by email",
@@ -2902,7 +2926,7 @@ export const SPECS: Record<string, MattressSpec> = {
       1364
     ],
     "priceChecked": "October 2026",
-    "trialNights": 120,
+    "trialNights": 365,
     "warranty": "Limited Lifetime",
     "shipping": "Free shipping via FedEx; paid in-home setup available",
     "returns": "Full refund and pickup after a 30-night break-in, requested by email",
@@ -3624,10 +3648,10 @@ export const SPECS: Record<string, MattressSpec> = {
     "queenPriceRaw": "not listed",
     "queenPricesUsd": [],
     "priceChecked": "October 2026",
-    "trialNights": 100,
+    "trialNights": 365,
     "warranty": "10",
     "shipping": "Free FedEx curbside shipping in the lower 48 states",
-    "returns": "Free returns within 100 nights after at least 30 nights",
+    "returns": "Free returns within the trial; try it for at least 30 nights before starting a return",
     "sizes": [
       "Twin",
       "Twin XL",
@@ -3642,7 +3666,7 @@ export const SPECS: Record<string, MattressSpec> = {
     "organicCert": "not listed",
     "madeIn": "USA",
     "productUrl": "https://vayasleep.com/mattresses/vaya/",
-    "sourceChecked": "October 2026"
+    "sourceChecked": "October 2026; trial per brand, PDP update pending"
   },
   "vaya-hybrid": {
     "slug": "vaya-hybrid",
@@ -3686,10 +3710,10 @@ export const SPECS: Record<string, MattressSpec> = {
     "queenPriceRaw": "not listed",
     "queenPricesUsd": [],
     "priceChecked": "October 2026",
-    "trialNights": 100,
+    "trialNights": 365,
     "warranty": "10",
     "shipping": "Free FedEx curbside shipping in the lower 48 states",
-    "returns": "Free returns within the 100-night trial",
+    "returns": "Free returns within the trial; try it for at least 30 nights before starting a return",
     "sizes": [
       "Twin",
       "Twin XL",
@@ -3706,7 +3730,7 @@ export const SPECS: Record<string, MattressSpec> = {
     "organicCert": "not listed",
     "madeIn": "USA",
     "productUrl": "https://vayasleep.com/mattresses/hybrid/",
-    "sourceChecked": "October 2026"
+    "sourceChecked": "October 2026; trial per brand, PDP update pending"
   },
   "westin-heavenly-bed": {
     "slug": "westin-heavenly-bed",
@@ -3810,10 +3834,10 @@ export const SPECS: Record<string, MattressSpec> = {
       1349.25
     ],
     "priceChecked": "October 2026",
-    "trialNights": 100,
+    "trialNights": 365,
     "warranty": "10",
     "shipping": "Free FedEx curbside shipping in the lower 48 states",
-    "returns": "Free returns with a full refund within the 100-night trial",
+    "returns": "Free returns with a full refund within the trial; try it for at least 30 nights before starting a return",
     "sizes": [
       "Twin",
       "Twin XL",
@@ -3829,7 +3853,7 @@ export const SPECS: Record<string, MattressSpec> = {
     "organicCert": "not listed",
     "madeIn": "USA",
     "productUrl": "https://zomasleep.com/mattresses/zoma-boost",
-    "sourceChecked": "October 2026"
+    "sourceChecked": "October 2026; trial per brand, PDP update pending"
   },
   "zoma-hybrid": {
     "slug": "zoma-hybrid",
@@ -3880,10 +3904,10 @@ export const SPECS: Record<string, MattressSpec> = {
       974.25
     ],
     "priceChecked": "October 2026",
-    "trialNights": 100,
+    "trialNights": 365,
     "warranty": "10",
     "shipping": "Free FedEx curbside shipping in the lower 48 states",
-    "returns": "Free returns with a full refund and pickup within the 100-night trial",
+    "returns": "Free returns with a full refund and pickup within the trial; try it for at least 30 nights before starting a return",
     "sizes": [
       "Twin",
       "Twin XL",
@@ -3899,7 +3923,7 @@ export const SPECS: Record<string, MattressSpec> = {
     "organicCert": "not listed",
     "madeIn": "USA",
     "productUrl": "https://zomasleep.com/mattresses/zoma-mattress?material=hybrid",
-    "sourceChecked": "October 2026"
+    "sourceChecked": "October 2026; trial per brand, PDP update pending"
   },
   "zoma-start": {
     "slug": "zoma-start",
@@ -3946,10 +3970,10 @@ export const SPECS: Record<string, MattressSpec> = {
       674.25
     ],
     "priceChecked": "October 2026",
-    "trialNights": 100,
+    "trialNights": 365,
     "warranty": "10",
     "shipping": "Free FedEx curbside shipping in the lower 48 states",
-    "returns": "Free returns with a full refund and pickup within the 100-night trial after 30 nights",
+    "returns": "Free returns with a full refund and pickup within the trial; try it for at least 30 nights before starting a return",
     "sizes": [
       "Twin",
       "Twin XL",
@@ -3965,6 +3989,6 @@ export const SPECS: Record<string, MattressSpec> = {
     "organicCert": "not listed",
     "madeIn": "USA",
     "productUrl": "https://zomasleep.com/mattresses/zoma-start-mattress",
-    "sourceChecked": "October 2026"
+    "sourceChecked": "October 2026; trial per brand, PDP update pending"
   }
 };

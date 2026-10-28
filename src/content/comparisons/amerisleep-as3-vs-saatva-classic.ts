@@ -5,9 +5,9 @@ const B = '[Saatva Classic](/reviews/saatva-classic/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as3-vs-saatva-classic',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS3 vs Saatva Classic: all-foam medium against a dual-coil pillow top. The AS3 scores 9.5/10 to 9.2/10; the Classic leads on trial and response.',
-  quickVerdict: `Choose the ${A} if you want a quiet, cool, medium 5/10 all-foam bed with a 10 in Edge Support. Choose the ${B} if you want a dual-coil pillow top in a choice of three firmness levels and two heights, with a 365-night trial and setup included.`,
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS3 vs Saatva Classic: all foam against a dual-coil pillow top. The AS3 scores 9.7/10 to 9.2/10; the Classic leads on Response Time.',
+  quickVerdict: `Choose the ${A} if you want a quiet, cool, medium 5/10 all-foam bed with a 10 in Edge Support. Choose the ${B} if you want a dual-coil pillow top in a choice of three firmness levels and two heights, with a lifetime warranty and setup included.`,
   feel: [
     `These two come from different traditions. Against the Classic, the ${A} is an all-foam bed sold in one medium feel, which sits at 5/10 on our scale. The ${B} is a dual-coil hybrid with a 3 inch Euro pillow top, sold in Plush Soft 3/10, Luxury Firm 5-7/10 and Firm 8/10.`,
     'The AS3 feels close and contouring, with memory foam near the top. The Saatva Classic feels like a classic innerspring with a cushioned top: a soft first layer, then the lift of two layers of coils beneath.',
@@ -69,13 +69,13 @@ const copy: ComparisonCopy = {
     'Heavier combination sleepers may notice the Classic\'s coils give more lift between positions, which helps when changing sides several times a night.',
   ],
   valuePolicies: [
-    `Against the Classic, the ${A} scores 9 in Value and 9 in Trial Period. The ${B} scores 7 in Value and 10 in Trial Period. For the AS3 and the Classic, our Value and Trial Period scores are set from price, trial and warranty facts.`,
-    'Saatva lists a 365-night trial for the Classic, longer than the AS3\'s 100 nights, and free delivery and setup.',
+    `Against the Classic, the ${A} scores 9 in Value and 10 in Trial Period. The ${B} scores 7 in Value and 10 in Trial Period. For the AS3 and the Classic, our Value and Trial Period scores are set from price, trial and warranty facts.`,
+    'Both brands list a 365-night trial, so the two tie on Trial Period. Saatva also lists free delivery and setup for the Classic.', 'Trial length no longer separates the AS3\'s scorecard from the Classic. Warranty, setup and Value are the policy differences left.',
     'Saatva lists a lifetime warranty for the Classic, a longer term than the 20-year warranty Amerisleep lists. Confirm its return terms with Saatva before ordering.',
-    'Amerisleep lists a 100-night trial with free returns and courier pickup, a 20-year warranty, and free shipping via FedEx in the continental US.',
+    'Amerisleep lists free returns and courier pickup, a 20-year warranty, and free shipping via FedEx in the continental US.',
     'Value weighs policies against price, and the AS3 scores two points higher in that field.',
     'Sizes differ slightly. Against the Classic, the AS3 comes in seven sizes, including Split King. The Classic comes in eight, adding Split Cal King.',
-    'Shoppers who want setup handled and a full year to decide may prefer the Classic. Against the Classic, shoppers who put the scorecard first should choose the AS3.',
+    'Either bed gives a full year to decide. Shoppers who want setup handled may prefer the Classic. Against the Classic, shoppers who put the scorecard first should choose the AS3.',
   ],
   buyA: [
     'Couples who want a 10 in Motion Transfer with a 10 in Edge Support.',
@@ -85,12 +85,12 @@ const copy: ComparisonCopy = {
   buyB: [
     'Shoppers who want a dual-coil pillow top in Plush Soft, Luxury Firm or Firm.',
     'Restless sleepers who want a 10 in Response Time, which the Classic offers.',
-    'Shoppers who want a 365-night trial with delivery and setup included.',
+    'Shoppers who want a lifetime warranty with delivery and setup included.',
   ],
   faqs: [
     {
       q: 'Which is better, Amerisleep AS3 or Saatva Classic?',
-      a: `The ${A} scores higher, 9.5/10 against 9.2/10, and leads on Overall, Value, Motion Transfer and Cooling & Breathability. The ${B} leads on Trial Period and Response Time, and the two tie on Edge Support. The Classic suits shoppers who want more firmness choice.`,
+      a: `The ${A} scores higher, 9.7/10 against 9.2/10, and leads on Overall, Value, Motion Transfer and Cooling & Breathability. The ${B} leads on Response Time, and the two tie on Edge Support and Trial Period. The Classic suits shoppers who want more firmness choice.`,
     },
     {
       q: 'Which comes in more firmness options?',
@@ -101,8 +101,8 @@ const copy: ComparisonCopy = {
       a: 'Both score 10 in Edge Support, so the full width is usable on either. The Amerisleep AS3 adds a 10 in Motion Transfer, against 9 for the Saatva Classic, so light sleepers who share a bed may prefer the AS3. The Classic\'s Split Cal King adds a size option.',
     },
     {
-      q: 'Which has the longer trial?',
-      a: 'The Saatva Classic lists a 365-night trial, and the Amerisleep AS3 lists 100 nights. Amerisleep lists a 20-year warranty for the AS3. Saatva lists a lifetime warranty for the Classic. Our Trial Period scores reflect the trial gap: 10 for the Classic and 9 for the AS3.',
+      q: 'Which has the better trial and warranty?',
+      a: 'The trials match. The Saatva Classic and the Amerisleep AS3 both list 365 nights, and both score 10 in Trial Period. The warranties differ: Amerisleep lists 20 years for the AS3, and Saatva lists a lifetime warranty for the Classic. Confirm current terms before ordering.',
     },
     {
       q: 'Which sleeps cooler, the AS3 or the Classic?',

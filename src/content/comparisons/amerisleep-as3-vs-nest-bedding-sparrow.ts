@@ -5,9 +5,9 @@ const B = '[Nest Bedding Sparrow](/reviews/nest-bedding-sparrow/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as3-vs-nest-bedding-sparrow',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS3 vs Nest Bedding Sparrow: medium all foam against a three-firmness hybrid. The AS3 scores 9.5/10 to 9.3/10; the Sparrow leads on Trial Period.',
-  quickVerdict: `Choose the ${A} if you want a medium 5/10 all-foam bed with a 10 in Cooling & Breathability and a higher Value score. Choose the ${B} if you want a hybrid with reinforced edge coils in Plush, Medium or Firm, with a 365-night trial.`,
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS3 vs Nest Bedding Sparrow: medium all foam against a three-firmness hybrid. The AS3 scores 9.7/10 to 9.3/10, and both list 365 nights.',
+  quickVerdict: `Choose the ${A} if you want a medium 5/10 all-foam bed with a 10 in Cooling & Breathability and a higher Value score. Choose the ${B} if you want a hybrid with reinforced edge coils in Plush, Medium or Firm, with a limited lifetime warranty.`,
   feel: [
     `Against the Sparrow, the ${A} is an all-foam bed sold in one medium feel, which sits at 5/10 on our scale. The ${B} is a hybrid sold in Plush 4/10, Medium 5/10 and Firm 7/10, all under one score.`,
     'Choice of firmness is the Sparrow\'s main advantage on feel. A lighter side sleeper can take Plush, a combination sleeper Medium, and a back or stomach sleeper Firm.',
@@ -73,15 +73,15 @@ const copy: ComparisonCopy = {
     'Older sleepers who find it harder to shift position will find both manageable, since each scores 9 in this field. The Sparrow\'s Firm option keeps the body nearest the surface, which can make movement feel quicker in everyday use.',
   ],
   valuePolicies: [
-    `Against the Sparrow, the ${A} scores 9 in Value and 9 in Trial Period. The ${B} scores 8 in Value and 10 in Trial Period. Our Value and Trial Period scores for the AS3 and the Sparrow come from price, trial and warranty facts.`,
-    'Nest lists a 365-night trial for the Sparrow, with free returns after a 30-night adjustment period. Amerisleep lists a 100-night trial with free returns and courier pickup.',
+    `The AS3 earns a 9 in Value and a 10 in Trial Period. The ${B} scores 8 in Value and 10 in Trial Period. Our Value and Trial Period scores for the AS3 and the Sparrow come from price, trial and warranty facts.`,
+    'Both brands list a 365-night trial, so the two tie on Trial Period. Nest allows free returns after a 30-night adjustment period. Amerisleep lists free returns with courier pickup.',
     'The warranties differ in length. Amerisleep lists a 20-year warranty for the AS3, and Nest lists a limited lifetime warranty for the Sparrow.',
     'Shipping is free for both in the continental US. Nest lists extra rates for Alaska, Hawaii and Canada. Amerisleep ships via FedEx.',
     'Value weighs policies against price, and the AS3 scores a point higher in that field.',
-    'Shoppers who want a full year to decide may prefer the Sparrow. Shoppers who put the scorecard first should choose the AS3.',
-    'This is the only field the Sparrow leads, and for shoppers unsure about firmness it can matter more than a one-point gap elsewhere on the scorecard.',
+    'Either bed gives a full year to decide. Shoppers who put the scorecard first should choose the AS3, which leads on Value.',
+    'The Sparrow leads on no scorecard field, so its case rests on firmness choice, coils and a limited lifetime warranty. For some shoppers those matter more than a one-point gap.',
     'Confirm current terms for the AS3 and the Sparrow on each brand\'s site before ordering.',
-    'Shoppers who are unsure which Sparrow firmness suits them can use its 365-night trial to judge it at home, keeping in mind the 30-night adjustment period before a free return.',
+    'Shoppers unsure which Sparrow firmness suits them can judge it at home over the year-long trial. Keep the 30-night adjustment period in mind before a free return.',
   ],
   buyA: [
     'Warm sleepers who want a 10 in Cooling & Breathability, where the Sparrow scores 9 in Cooling & Breathability.',
@@ -90,13 +90,13 @@ const copy: ComparisonCopy = {
   ],
   buyB: [
     'Shoppers who want Plush, Medium or Firm in one model.',
-    'Shoppers who want a 365-night trial.',
+    'Shoppers who want a limited lifetime warranty.',
     'Sleepers who want reinforced edge pocketed coils with listed layer thicknesses.',
   ],
   faqs: [
     {
       q: 'Which is better, Amerisleep AS3 or Nest Bedding Sparrow?',
-      a: `The ${A} scores higher, 9.5/10 against 9.3/10, and leads on Overall, Value and Cooling & Breathability. The ${B} leads on Trial Period, and the two tie on Edge Support, Response Time and Motion Transfer. The Sparrow suits shoppers who want coils and a firmness choice.`,
+      a: `The ${A} scores higher, 9.7/10 against 9.3/10, and leads on Overall, Value and Cooling & Breathability. The ${B} ties it on Edge Support, Trial Period, Response Time and Motion Transfer. The Sparrow suits shoppers who want coils and a firmness choice.`,
     },
     {
       q: 'What firmness options does the Sparrow come in?',
@@ -107,8 +107,8 @@ const copy: ComparisonCopy = {
       a: `Both score 10 in Motion Transfer and 10 in Edge Support, so couples are well served by either. The Amerisleep AS3 offers a Split King, and the Nest Bedding Sparrow offers a Split Cal King. Couples who want three firmness options have more to choose from with the Sparrow.`,
     },
     {
-      q: 'Which has the longer trial?',
-      a: `The Nest Bedding Sparrow lists a 365-night trial, with free returns after a 30-night adjustment period. Amerisleep lists a 100-night trial for the AS3. Amerisleep lists a 20-year warranty for the AS3, and Nest lists a limited lifetime warranty for the Sparrow. Confirm current terms before ordering.`,
+      q: 'Which has the better trial and warranty?',
+      a: `The trials match. Both the Amerisleep AS3 and the Nest Bedding Sparrow list 365 nights and score 10 in Trial Period. The Sparrow allows free returns after a 30-night adjustment period. Amerisleep lists a 20-year warranty, and Nest lists a limited lifetime warranty. Confirm current terms before ordering.`,
     },
     {
       q: 'Which sleeps cooler, the AS3 or the Sparrow?',

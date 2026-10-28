@@ -5,8 +5,8 @@ const B = '[Purple RestorePlus Hybrid](/reviews/purple-restoreplus-hybrid/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as6-black-series-vs-purple-restoreplus-hybrid',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS6 Black Series vs Purple RestorePlus Hybrid: memory foam over coils against a GelFlex Grid. The AS6 scores 9.3/10 to 8.8/10 and leads on four.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS6 Black Series vs Purple RestorePlus Hybrid: memory foam over coils against a GelFlex Grid. The AS6 scores 9.5/10 to 8.8/10 and leads on five.',
   quickVerdict: `Choose the ${A} if you want memory foam over coils in Plush Soft, Luxury Firm or Firm, with 10s in Motion Transfer and Cooling & Breathability. Choose the ${B} if you want a medium-soft 4/10 GelFlex Grid surface over coils that springs back the moment you move.`,
   feel: [
     `Both are hybrids, but they feel very different. The ${A} places titanium-infused memory foam over coils and comes in Plush Soft 3/10, Luxury Firm 7/10 and Firm 8/10. The ${B} places a 3 inch GelFlex Grid over coils and comes in one medium-soft feel, which sits at 4/10 on our scale.`,
@@ -71,12 +71,12 @@ const copy: ComparisonCopy = {
     'The gap is one point, so many sleepers will not notice it in everyday use.',
   ],
   valuePolicies: [
-    `The ${A} scores 9 in Value and 9 in Trial Period. The ${B} scores 7 in Value and 9 in Trial Period. Our Value and Trial Period scores for the AS6 Black Series and the RestorePlus Hybrid come from price, trial and warranty facts.`,
-    'Both list a 100-night trial. Purple picks up and refunds returns after at least 21 nights. Amerisleep lists free returns by mail within 100 nights.',
+    `The ${A} scores 9 in Value and 10 in Trial Period. The ${B} scores 7 in Value and 9 in Trial Period. Our Value and Trial Period scores for the AS6 Black Series and the RestorePlus Hybrid come from price, trial and warranty facts.`,
+    'The trials differ. Amerisleep lists a 365-night trial for the AS6, and Purple lists 100 nights for the RestorePlus Hybrid. That gap gives the AS6 the higher Trial Period score.', 'Purple picks up and refunds returns after at least 21 nights. Amerisleep lists free returns by mail during the trial.',
     'The warranties differ. Amerisleep lists a 20-year warranty for the AS6. Purple lists a 10-year warranty for the RestorePlus Hybrid. With the AS6 Black Series and the RestorePlus Hybrid, warranty length is one of the facts our Value score weighs.',
     'Delivery is free for both. The AS6 Black Series ships via FedEx in the continental US.',
     'Value weighs policies against price, and the AS6 scores two points higher in that field.',
-    'If the decision comes down to policies, the AS6\'s longer warranty and higher Value score are the clearest differences, since the trial lengths match.',
+    'If the decision comes down to policies, the AS6\'s longer trial, longer warranty and higher Value score are the clearest differences.',
     'Confirm current terms for the AS6 Black Series and the RestorePlus Hybrid on each brand\'s site before ordering.',
     'This is the widest gap between them on the scorecard.',
   ],
@@ -93,7 +93,7 @@ const copy: ComparisonCopy = {
   faqs: [
     {
       q: 'Which is better, Amerisleep AS6 Black Series or Purple RestorePlus Hybrid?',
-      a: `The ${A} scores higher, 9.3/10 against 8.8/10, and leads on Overall, Value, Motion Transfer and Cooling & Breathability. The ${B} leads on Response Time, and the two tie on Edge Support and Trial Period. The Purple suits side sleepers who want a soft, quick surface.`,
+      a: `The ${A} scores higher, 9.5/10 against 8.8/10, and leads on Overall, Value, Trial Period, Motion Transfer and Cooling & Breathability. The ${B} leads on Response Time, and the two tie on Edge Support. The Purple suits side sleepers who want a soft, quick surface.`,
     },
     {
       q: 'Which comes in more firmness options?',
@@ -108,8 +108,8 @@ const copy: ComparisonCopy = {
       a: `The Amerisleep AS6 Black Series scores 10 in Cooling & Breathability, and the Purple RestorePlus Hybrid scores 9. The AS6 names a CryoCool cover and ArcticWave cooling bands. The Purple has an open grid and coils. Breathable sheets help either bed.`,
     },
     {
-      q: 'Which has the better warranty, the AS6 Black Series or the RestorePlus Hybrid?',
-      a: `Amerisleep lists a 20-year warranty for the AS6 Black Series, and Purple lists a 10-year warranty for the RestorePlus Hybrid. Both list a 100-night trial, with Purple requiring at least 21 nights before a return. Confirm current terms with each brand.`,
+      q: 'Which has the better trial and warranty, the AS6 Black Series or the RestorePlus Hybrid?',
+      a: `Amerisleep lists a 20-year warranty for the AS6 Black Series, and Purple lists a 10-year warranty for the RestorePlus Hybrid. Amerisleep also lists a 365-night trial against 100 nights for the Purple, which requires at least 21 nights before a return. Confirm current terms with each brand.`,
     },
     {
       q: 'Which is better for back sleepers, the AS6 Black Series or the RestorePlus Hybrid?',

@@ -158,7 +158,7 @@ export const brandModels = (brand: string) => orderScorecard(allMattresses.filte
 
 export const brandSlug = (brand: string) => brand.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-/** Best-of "How We Picked" opener: the owner's fixed AS3 sentence plus the ranking rule in plain words. */
+/** Best-of "How We Picked": who qualifies, the page's Best Overall pick listed first, then the ranking rule in plain words. */
 export const as3RankingSentence = (config: BestPageConfig, result: BestPageResult): string => {
   const rankPhrase = config.row === 'motion' || config.row === 'cooling' || config.row === 'value'
     ? `${FIELD_LABEL[result.rule.rankBy]} score`
@@ -173,9 +173,11 @@ export const as3RankingSentence = (config: BestPageConfig, result: BestPageResul
     : config.row === 'construction'
     ? `Models qualify when the brand lists ${config.construction} in the construction. `
     : result.rule.whoQualifies === 'every scored model' ? '' : `Models qualify with ${result.rule.whoQualifies}. `;
-  return qualifies + (result.as3Qualifies
+  const top = result.picks[0]?.candidate.mattress;
+  const topLink = top ? `[${top.name}](/reviews/${top.id}/)` : '';
+  return qualifies + (top?.id === 'amerisleep-as3'
     ? `The [Amerisleep AS3](/reviews/amerisleep-as3/) is our editorial Best Overall pick and is listed first. The other picks are ranked by ${rankPhrase}, then ${tieText}.`
-    : `The [Amerisleep AS3](/reviews/amerisleep-as3/) is our editorial Best Overall pick, shown above. The picks below are ranked by ${rankPhrase}, then ${tieText}.`);
+    : `The ${topLink} is our Best Overall pick for this page and is listed first. The other picks are ranked by ${rankPhrase}, then ${tieText}.`);
 };
 
 /** Specs at a Glance rows for a review, in the owner's fixed order. */

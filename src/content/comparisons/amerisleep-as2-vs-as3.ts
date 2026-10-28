@@ -5,8 +5,8 @@ const B = '[Amerisleep AS3](/reviews/amerisleep-as3/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as2-vs-as3',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS2 vs AS3: two 12 inch all-foam beds a step apart in firmness. The AS3 scores 9.5/10 to 9.3/10, and the AS2 leads on Response Time.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS2 vs AS3: two 12 inch all-foam beds a step apart in firmness. The AS3 scores 9.7/10 to 9.5/10, and the AS2 leads on Response Time.',
   quickVerdict: `Choose the ${A} if you sleep on your back or stomach and want a medium-firm 6/10 surface that scores 10 in Response Time. Choose the ${B} if you sleep on your side or switch positions and want a medium 5/10 surface with a 10 in Edge Support.`,
   feel: [
     `These two are siblings, built from the same four named layers, so the main difference is firmness. The ${A} is sold in medium-firm, which sits at 6/10 on our scale. The ${B} is sold in medium, which sits at 5/10.`,
@@ -69,14 +69,14 @@ const copy: ComparisonCopy = {
     'Sleepers who often get up at night may also find the AS2\'s firmer surface easier to leave and return to, since less effort goes into rising from it.',
   ],
   valuePolicies: [
-    `Both score 9 in Value and 9 in Trial Period. The ${A} and the ${B} share Amerisleep's policies. Our Value and Trial Period scores are set from price, trial and warranty facts.`,
-    'Amerisleep lists a 100-night trial and a 20-year warranty for both models, with free shipping via FedEx in the continental US.',
-    'The returns wording differs slightly. Amerisleep lists free returns by mail within 100 days for the AS2, and free returns with courier pickup for the AS3.',
-    'Because Value ties, price and policy alone do not separate these two on our scorecard.',
+    `Both score 9 in Value and 10 in Trial Period. The ${A} and the ${B} share Amerisleep's policies. Our Value and Trial Period scores are set from price, trial and warranty facts.`,
+    'Amerisleep lists a 365-night trial and a 20-year warranty for both models, with free shipping via FedEx in the continental US.',
+    'The returns wording differs slightly. Amerisleep lists free returns by mail for the AS2, and free returns with courier pickup for the AS3.',
+    'Because Value and Trial Period both tie, price and policy alone do not separate these two on our scorecard.',
     'Both come in seven sizes, from Twin to Split King, so couples who want a Split King can choose either.',
     'Confirm current terms on Amerisleep\'s site before ordering.',
     'Since policies, sizes and materials match, the decision rests on firmness, edge support and response.',
-    'Shoppers who are unsure between the two can use the 100-night trial to judge the firmness at home, since both carry the same trial and warranty terms.',
+    'Shoppers who are unsure between the two can use the 365-night trial to judge the firmness at home, since both carry the same trial and warranty terms.',
   ],
   buyA: [
     'Back and stomach sleepers who want a medium-firm 6/10 surface.',
@@ -91,11 +91,11 @@ const copy: ComparisonCopy = {
   faqs: [
     {
       q: 'Which is better, Amerisleep AS2 or Amerisleep AS3?',
-      a: `The ${B} scores higher, 9.5/10 against 9.3/10, and leads on Overall and Edge Support. The ${A} leads on Response Time. They tie on Value, Trial Period, Motion Transfer and Cooling & Breathability. The AS2 suits back and stomach sleepers who want a firmer feel.`,
+      a: `The ${B} scores higher, 9.7/10 against 9.5/10, and leads on Overall and Edge Support. The ${A} leads on Response Time. They tie on Value, Trial Period, Motion Transfer and Cooling & Breathability. The AS2 suits back and stomach sleepers who want a firmer feel.`,
     },
     {
       q: 'What is the difference between the AS2 and the AS3?',
-      a: `Firmness. The Amerisleep AS2 is medium-firm, 6/10 on our scale, and the Amerisleep AS3 is medium, 5/10. Both list the same four layers, both are 12 inches tall, and both share Amerisleep's 100-night trial and 20-year warranty. Neither is sold in another firmness.`,
+      a: `Firmness. The Amerisleep AS2 is medium-firm, 6/10 on our scale, and the Amerisleep AS3 is medium, 5/10. Both list the same four layers, both are 12 inches tall, and both share Amerisleep's 365-night trial and 20-year warranty. Neither is sold in another firmness.`,
     },
     {
       q: 'Which is better for side sleepers?',

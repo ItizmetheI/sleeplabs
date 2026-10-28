@@ -2,7 +2,7 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'casper-the-one',
-  dateModified: '2026-10-11',
+  dateModified: '2026-10-22',
   metaDescription: 'Casper The One review: 8.2/10 Overall, an 11 inch medium-firm 6/10 all-foam bed with a 10 in Motion Transfer and 7s in Edge Support and Response Time.',
   quickAnswer: 'Casper The One earns an 8.2/10 Overall as an 11 inch all-foam mattress that we rate medium-firm 6/10. It suits back sleepers and couples who want quiet, contouring foam. Its main strength is a 10/10 in Motion Transfer. Its main limitation is a pair of 7s, an average result, in Edge Support and Response Time.',
   strengths: [
@@ -92,7 +92,7 @@ const copy: ReviewCopy = {
     'Combination sleepers who want quick rebound, since Response Time is a 7.',
     'Hot sleepers who want a coil core for airflow.',
   ],
-  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with The One and scores 9.5 as a medium all-foam bed. The [GhostBed Luxe](/reviews/ghostbed-luxe/) and [Leesa Original](/reviews/leesa-original/) both score 8.3 as all-foam beds. The table lines up their firmness, trial and warranty.',
+  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with The One and scores 9.7 as a medium all-foam bed. The [GhostBed Luxe](/reviews/ghostbed-luxe/) scores 8.3 and the [Leesa Original](/reviews/leesa-original/) scores 8.5, both as all-foam beds. The table lines up their firmness, trial and warranty.',
   policies: [
     'Casper The One comes with a 100-night trial and a 10-year warranty, according to Casper. Delivery is free and no-contact, with extra fees for Alaska and Hawaii.',
     'Returns are free once the 30-night adjustment period has passed. Some states add a non-refundable recycling fee to mattress orders. Sizes run Twin, Twin XL, Full, Queen, King, Cal King and Split King.',

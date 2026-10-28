@@ -5,9 +5,9 @@ const B = '[Birch Natural](/reviews/birch-natural/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-organica-vs-birch-natural',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep Organica vs Birch Natural: two 6/10 natural latex hybrids with wool and coils. The Organica scores 9.2/10 to 9.0/10 and leads on Motion Transfer.',
-  quickVerdict: `Choose the ${A} if you want a 12 inch natural latex hybrid with a 9 in Motion Transfer, listed layer thicknesses and a Split King option. Choose the ${B} if you want a 10 inch GOLS certified organic latex hybrid with a 365-night trial and a limited lifetime warranty.`,
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep Organica vs Birch Natural: two 6/10 natural latex hybrids with wool and coils. The Organica scores 9.3/10 to 9.2/10 and leads on Motion Transfer.',
+  quickVerdict: `Choose the ${A} if you want a 12 inch natural latex hybrid with a 9 in Motion Transfer, listed layer thicknesses and a Split King option. Choose the ${B} if you want a 10 inch GOLS certified organic latex hybrid with a limited lifetime warranty.`,
   feel: [
     `These two are close relatives. The ${A} and the ${B} both place natural latex and wool over coils, and both sit at 6/10 on our scale. Amerisleep calls the Organica medium, and Birch calls the Natural medium-firm.`,
     'Latex pushes back the moment it is pressed, so both feel buoyant, with the body resting on the surface rather than sinking in. Neither has memory foam.',
@@ -23,7 +23,7 @@ const copy: ComparisonCopy = {
     `Amerisleep lists every thickness in the ${A}: an organic cotton cover over 1 inch of organic wool, 2 inches of soft natural Talalay latex, 1 inch of medium natural Talalay latex and an 8 inch pocketed coil unit with edge support.`,
     `The ${B} has four named parts: an organic cotton cover, GOLS organic latex, New Zealand wool and individually wrapped steel coils. Birch does not list thicknesses.`,
     'Both pair latex, wool and cotton with coils, so the core materials match closely. The Organica names Talalay latex. Birch names GOLS organic latex.',
-    'Certifications differ. Birch lists GOLS and GREENGUARD Gold for the Natural. For the Organica, Amerisleep lists OEKO-TEX Standard 100 for the latex and wool, Rainforest Alliance and eco-INSTITUT for the latex, and GOTS for the wool, per its FAQ.',
+    'Certifications differ. Birch lists GOLS and GREENGUARD Gold for the Natural. Amerisleep lists OEKO-TEX Standard 100, Rainforest Alliance and eco-INSTITUT for the Organica\'s latex. Its wool carries GOTS and OEKO-TEX Standard 100, and that GOTS listing is its only organic certification.',
     'Shoppers who want organic certification on the latex itself will find GOLS listed only for the Natural.',
     'The Organica and the Natural are both made in the USA. Amerisleep states the Organica is made in California from materials sourced in Sri Lanka, New Zealand and India. Birch states the Natural is made in Phoenix, Arizona, with wool from New Zealand.',
     'Sizes differ slightly. The Organica comes in seven sizes, including Split King. The Natural comes in six, from Twin to Cal King.',
@@ -75,13 +75,13 @@ const copy: ComparisonCopy = {
     'Heavier combination sleepers will find both supportive enough to turn on easily, since latex and coils keep the hips from sinking far.',
   ],
   valuePolicies: [
-    `The Organica and the Natural both score 9 in Value and 9 in Trial Period. The ${A} and the ${B} reach those scores with different policies. Our Value and Trial Period scores for the Organica and the Natural come from price, trial and warranty facts.`,
+    `The Organica and the Natural both score 9 in Value and 10 in Trial Period. The ${A} and the ${B} reach those scores with different policies. Our Value and Trial Period scores for the Organica and the Natural come from price, trial and warranty facts.`,
     'Birch lists a 365-night trial and a limited lifetime warranty for the Natural, with a free return or exchange after a 30-day break-in.',
-    'Amerisleep lists a 100-night trial with free returns and a 20-year warranty for the Organica.',
+    'Amerisleep now lists a 365-night trial for the Organica too, with free returns and a 20-year warranty. The trial lengths match.',
     'Shipping is free for both in the contiguous US. Birch ships via FedEx Ground, with shipping charged for Alaska, Hawaii and Canada. Amerisleep ships via FedEx with no-contact delivery.',
-    'With the Organica and the Natural, because Value ties, policy alone does not separate these two on our scorecard.',
+    'With Value and Trial Period tied, policy terms do not split these two on our scorecard.',
     'Shoppers who want a full year to decide and a limited lifetime warranty may prefer the Natural.',
-    'Shoppers who are unsure whether latex suits them can use the Birch\'s 365-night trial to judge it at home, keeping in mind the 30-day break-in before a return or exchange.',
+    'Shoppers unsure whether latex suits them get a full year on either bed. On the Birch, keep the 30-day break-in in mind before a return or exchange.',
     'Confirm current terms for the Organica and the Natural on each brand\'s site before ordering.',
     'Since the scores are so close, policies and certifications can reasonably decide between these two.',
   ],
@@ -92,13 +92,13 @@ const copy: ComparisonCopy = {
   ],
   buyB: [
     'Shoppers who want GOLS certified organic latex.',
-    'Shoppers who want a 365-night trial and a limited lifetime warranty, which the Natural offers.',
+    'Shoppers who want a limited lifetime warranty and an exchange option, which the Natural offers.',
     'Shoppers who want a lower 10 inch latex hybrid.',
   ],
   faqs: [
     {
       q: 'Which is better, Amerisleep Organica or Birch Natural?',
-      a: `The ${A} scores higher, 9.2/10 against 9.0/10, and leads on Overall and Motion Transfer. The ${B} does not lead on any field, and the two tie on Value, Edge Support, Trial Period, Response Time and Cooling & Breathability. The Natural lists longer policies and GOLS latex.`,
+      a: `The ${A} scores higher, 9.3/10 against 9.2/10, and leads on Overall and Motion Transfer. The ${B} does not lead on any field, and the two tie on Value, Edge Support, Trial Period, Response Time and Cooling & Breathability. The Natural lists a longer warranty and GOLS latex.`,
     },
     {
       q: 'Are the Organica and Birch Natural the same firmness?',
@@ -106,15 +106,15 @@ const copy: ComparisonCopy = {
     },
     {
       q: 'Which is more organic?',
-      a: `The Natural lists GOLS certification for its organic latex, plus GREENGUARD Gold. The Amerisleep Organica lists GOTS for its wool per its FAQ, with OEKO-TEX, Rainforest Alliance and eco-INSTITUT for its latex. Shoppers who want certified organic latex should lean toward the Birch.`,
+      a: `The Natural lists GOLS certification for its organic latex, plus GREENGUARD Gold. The Amerisleep Organica lists GOTS and OEKO-TEX Standard 100 for its wool, and OEKO-TEX Standard 100, Rainforest Alliance and eco-INSTITUT for its latex. Shoppers who want certified organic latex should lean toward the Birch.`,
     },
     {
       q: 'Which is better for couples, the Organica or the Natural?',
       a: `The Amerisleep Organica scores 9 in Motion Transfer, against 8 for the Natural, and both score 9 in Edge Support. Only the Organica comes in a Split King. Couples where one partner is a light sleeper should lean toward the Organica.`,
     },
     {
-      q: 'Which has the longer trial and warranty, the Organica or the Natural?',
-      a: `The Natural lists a 365-night trial, with a free return or exchange after a 30-day break-in, and a limited lifetime warranty. Amerisleep lists a 100-night trial and a 20-year warranty for the Organica. Both score 9 in Trial Period. Confirm current terms before ordering.`,
+      q: 'Which has the better trial and warranty, the Organica or the Natural?',
+      a: `The Natural lists a 365-night trial, with a free return or exchange after a 30-day break-in, and a limited lifetime warranty. Amerisleep also lists a 365-night trial and a 20-year warranty for the Organica. Both score 10 in Trial Period. Confirm current terms before ordering.`,
     },
     {
       q: 'Which is better for side sleepers, the Organica or the Natural?',

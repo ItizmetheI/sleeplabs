@@ -2,14 +2,14 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'amerisleep-as5-hybrid',
-  dateModified: '2026-10-11',
-  metaDescription: 'Amerisleep AS5 Hybrid review: 8.8/10 Overall, a soft 3/10 memory foam hybrid on pocketed coils with a 10 in Cooling. Specs, sleeper fit and verdict.',
-  quickAnswer: 'The Amerisleep AS5 Hybrid earns an 8.8/10 Overall. It suits side sleepers who want a soft 3/10 surface with pocketed coils underneath. Its main strength is a 10/10 in Cooling & Breathability. Its main limitation is 8s in Value and Response Time, and a soft feel that does not suit stomach sleepers.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS5 Hybrid review: 9.0/10 Overall, a soft 3/10 memory foam hybrid on pocketed coils with 10s in Cooling and Trial Period. Specs, fit and verdict.',
+  quickAnswer: 'The Amerisleep AS5 Hybrid earns a 9.0/10 Overall. It suits side sleepers who want a soft 3/10 surface with pocketed coils underneath. Its main strength is a pair of 10s in Cooling & Breathability and Trial Period. Its main limitation is 8s in Value and Response Time, and a soft feel that does not suit stomach sleepers.',
   strengths: [
     'A 10/10 in Cooling & Breathability, with a coil core for airflow.',
     'A soft 3/10 feel that cushions the shoulders and hips of side sleepers.',
     'A 9/10 in Edge Support, so a soft surface still holds up near the side.',
-    'A 20-year warranty and 100-night trial, scored 9/10 for Trial Period.',
+    'A 365-night trial, scored a standout 10/10, plus a 20-year warranty.',
   ],
   limitations: [
     'Too soft for stomach sleepers of any weight and for back sleepers over 130 lb.',
@@ -29,7 +29,7 @@ const copy: ReviewCopy = {
   ],
   performance: {
     value: [
-      'The Value score is set from price, trial and warranty facts, and the AS5 Hybrid earns an 8, good with a caveat. It carries a 20-year warranty and a 100-night trial, the same terms as every Amerisleep foam model.',
+      'The Value score is set from price, trial and warranty facts, and the AS5 Hybrid earns an 8, good with a caveat. It carries a 20-year warranty and a 365-night trial, the same terms as every Amerisleep foam model.',
       'The caveat is that the coil upgrade does not add policy length. The [Amerisleep AS3 Hybrid](/reviews/amerisleep-as3-hybrid/) carries the same terms and earns a 9 in Value. Shoppers set on a soft hybrid with long warranty coverage still get a solid package here. The seven sizes, including Split King, also make it easy to match an existing frame or base.',
       'This field matters most to buyers comparing several soft hybrids side by side. For them, the long warranty is the strongest part of the AS5 Hybrid\'s value case.',
     ],
@@ -39,9 +39,9 @@ const copy: ReviewCopy = {
       'Side sleepers who curl near the edge of the bed benefit most from this score. On a soft surface, a perimeter that holds up stops the feeling of sliding toward the side.',
     ],
     trialPeriod: [
-      'The Trial Period score is set from the trial and return terms, and the AS5 Hybrid earns a 9. Amerisleep offers 100 nights and lists free returns by mail within 100 days, with courier pickup.',
-      'A 9 is strong, one point under the 365-night trials common among the brands we score. A soft bed is a personal choice, and 100 nights is enough to judge it across seasons. The courier pickup helps, since a hybrid is heavy to move once it is out of the box. Give the surface a few weeks to settle before deciding.',
-      'First-time buyers of a soft hybrid gain the most from a full trial window. It is the only reliable way to know whether a 3/10 surface works for your body over many nights.',
+      'The Trial Period score is set from the trial and return terms, and the AS5 Hybrid earns a standout 10. Amerisleep offers 365 nights and lists free returns by mail, with courier pickup.',
+      'A full year ties for the longest trial of the 55 models on our scorecard. A soft bed is a personal choice, and a year is enough to judge it across seasons. The courier pickup helps, since a hybrid is heavy to move once it is out of the box. Give the surface a few weeks to settle before deciding.',
+      'First-time buyers of a soft hybrid gain the most from a full trial window. It is a reliable way to know whether a 3/10 surface works for your body over many nights.',
     ],
     responseTime: [
       'Response Time is an 8, good with a caveat. The soft memory foam top lets the body sink in, and deep foam takes a moment to return to shape.',
@@ -59,7 +59,7 @@ const copy: ReviewCopy = {
       'Hot sleepers who avoid soft beds because of heat are the group this score serves best. The coil airflow gives a soft surface a cooler base than an all-foam core.',
     ],
   },
-  positionsIntro: 'The AS5 Hybrid comes in one soft 3/10 feel over pocketed coils, so the same surface has to serve every position. This is fit guidance from that firmness and construction, arranged by sleep position and body weight. The 100-night trial is the best way to confirm a soft feel suits you.',
+  positionsIntro: 'The AS5 Hybrid comes in one soft 3/10 feel over pocketed coils, so the same surface has to serve every position. This is fit guidance from that firmness and construction, arranged by sleep position and body weight. The 365-night trial gives ample time to confirm a soft feel suits you.',
   positions: {
     side: {
       under130: 'An excellent fit. Lighter side sleepers sink into the soft foam enough for full shoulder and hip cushioning. This is the core audience for the AS5 Hybrid.',
@@ -92,10 +92,10 @@ const copy: ReviewCopy = {
     'Back sleepers over 130 lb who want firm lumbar support.',
     'Buyers who weigh Value most, since this model scores 8 there.',
   ],
-  compareIntro: 'Two alternatives have head-to-head pages with the AS5 Hybrid. The [Helix Sunset Luxe](/reviews/helix-sunset-luxe/) is a soft 3/10 hybrid at 8.7. The [Leesa Sapira Chill Hybrid](/reviews/leesa-sapira-chill-hybrid/) scores 9.3 with three firmness options. The [Vaya Hybrid](/reviews/vaya-hybrid/) matches its 8.8 Overall. The table shows how their firmness, trial and warranty line up against the AS5 Hybrid.',
+  compareIntro: 'Two alternatives have head-to-head pages with the AS5 Hybrid. The [Helix Sunset Luxe](/reviews/helix-sunset-luxe/) is a soft 3/10 hybrid at 8.8. The [Leesa Sapira Chill Hybrid](/reviews/leesa-sapira-chill-hybrid/) scores 9.5 with three firmness options. The [Vaya Hybrid](/reviews/vaya-hybrid/) matches its 9.0 Overall. The table shows how their firmness, trial and warranty line up against the AS5 Hybrid.',
   policies: [
-    'The AS5 Hybrid has a 100-night trial and a 20-year warranty. Shipping is free within the continental US by FedEx.',
-    'Returns are free by mail within 100 days, and Amerisleep arranges a courier pickup. Sizes run Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
+    'The AS5 Hybrid has a 365-night trial and a 20-year warranty. Shipping is free within the continental US by FedEx.',
+    'Returns are free by mail within the trial, and Amerisleep arranges a courier pickup. Sizes run Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
     'Amerisleep states its mattresses are made in the USA from U.S. and imported components, with covers sewn in Canada. Confirm current terms on the AS5 product page before ordering, since policies can change between our checks.',
   ],
   faqs: [
@@ -109,11 +109,11 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What is the Amerisleep AS5 Hybrid score?',
-      a: 'The AS5 Hybrid earns an 8.8/10 Overall. It scores 10/10 in Cooling & Breathability, 9/10 in Edge Support, Trial Period and Motion Transfer, and 8/10 in Value and Response Time. Overall is the average of those six field scores, shown to one decimal.',
+      a: 'The AS5 Hybrid earns a 9.0/10 Overall. It scores 10/10 in Trial Period and Cooling & Breathability, 9/10 in Edge Support and Motion Transfer, and 8/10 in Value and Response Time. Overall is the average of those six field scores, shown to one decimal.',
     },
     {
       q: 'What is the difference between the AS5 and the AS5 Hybrid?',
-      a: 'The AS5 Hybrid adds pocketed coils to the soft 3/10 AS5 design. Both share the Refresh cover, Bio-Pur memory foam and Active Flex foam. The all-foam AS5 scores 9.0 Overall with a 10 in Edge Support. The hybrid scores 8.8 and adds coil airflow and bounce.',
+      a: 'The AS5 Hybrid adds pocketed coils to the soft 3/10 AS5 design. Both share the Refresh cover, Bio-Pur memory foam and Active Flex foam. The all-foam AS5 scores 9.2 Overall with a 10 in Edge Support. The hybrid scores 9.0 and adds coil airflow and bounce.',
     },
     {
       q: 'Is the Amerisleep AS5 Hybrid good for hot sleepers?',
@@ -121,7 +121,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What trial and warranty come with the Amerisleep AS5 Hybrid?',
-      a: 'The AS5 Hybrid has a 100-night trial and a 20-year warranty, according to Amerisleep. Shipping is free in the continental US, and returns are free by mail within 100 days with courier pickup. Confirm the current terms on Amerisleep\'s site before buying.',
+      a: 'The AS5 Hybrid has a 365-night trial and a 20-year warranty, according to Amerisleep. Shipping is free in the continental US, and returns are free by mail within the trial, with courier pickup. Confirm the current terms on Amerisleep\'s site before buying.',
     },
     {
       q: 'How tall is the Amerisleep AS5 Hybrid?',
@@ -132,7 +132,7 @@ const copy: ReviewCopy = {
       a: 'It suits couples who both like a soft surface. The 9/10 Motion Transfer keeps most movement on its own side, and the 9/10 Edge Support keeps the full width usable. Couples with one stomach sleeper should look for a model with firmer options instead. The 10/10 cooling score also helps when two people share the heat of one bed.',
     },
   ],
-  verdict: 'The Amerisleep AS5 Hybrid earns an 8.8/10 Overall, led by a 10/10 in Cooling & Breathability. It pairs a soft 3/10 feel with pocketed coils for side sleepers who want plush cushioning and airflow. Value and Response Time both land at 8. Lighter side sleepers are the clear fit, while stomach and back sleepers should look firmer. The 20-year warranty adds long coverage behind it.',
+  verdict: 'The Amerisleep AS5 Hybrid earns a 9.0/10 Overall, led by 10s in Cooling & Breathability and Trial Period. It pairs a soft 3/10 feel with pocketed coils for side sleepers who want plush cushioning and airflow. Value and Response Time both land at 8. Lighter side sleepers are the clear fit, while stomach and back sleepers should look firmer. The 20-year warranty and 365-night trial add long coverage behind it.',
   related: [
     { label: 'Amerisleep AS5 Hybrid vs Helix Sunset Luxe', href: '/comparison/amerisleep-as5-hybrid-vs-helix-sunset-luxe/' },
     { label: 'Amerisleep AS5 Hybrid vs Leesa Sapira Chill Hybrid', href: '/comparison/amerisleep-as5-hybrid-vs-leesa-sapira-chill-hybrid/' },

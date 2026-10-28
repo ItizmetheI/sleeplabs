@@ -5,8 +5,8 @@ const B = '[Casper The One](/reviews/casper-the-one/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as3-vs-casper-the-one',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS3 vs Casper The One: two all-foam beds compared on one scorecard. The AS3 scores 9.5/10 to 8.2/10 and leads on five of the seven fields.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS3 vs Casper The One: two all-foam beds compared on one scorecard. The AS3 scores 9.7/10 to 8.2/10 and leads on six of the seven fields.',
   quickVerdict: `Choose the ${A} if you want a medium 5/10 feel with a firm edge, a cool surface and quick rebound. Choose the ${B} if you want a slightly firmer medium-firm 6/10 foam bed and value its quiet surface above everything else, since both score 10 in Motion Transfer.`,
   feel: [
     `Both are all-foam beds, but they sit at different points on our firmness scale. The ${A} is sold in one medium feel, which sits at 5/10. The ${B} is sold in one medium-firm feel, which Casper describes without a number and we map to 6/10.`,
@@ -50,11 +50,11 @@ const copy: ComparisonCopy = {
     'Restless sleepers and combination sleepers should favor the AS3 on this field. Sleepers who like the held-in feel of slow memory foam may not mind The One\'s pace. Heavier sleepers press further into foam, so the gap between a 9 and a 7 can feel larger for them when turning.',
   ],
   valuePolicies: [
-    `The ${A} scores 9 in Value and 9 in Trial Period. The ${B} scores 8 in Value and 9 in Trial Period. For the AS3 and the Casper The One, our Value and Trial Period scores are set from price, trial and warranty facts.`,
-    'Both list a 100-night trial. Amerisleep lists free returns with courier pickup. Casper lists free returns once a 30-night adjustment period has passed, and notes that some states add a recycling fee to mattress orders.',
+    `The ${A} scores 9 in Value and 10 in Trial Period. The ${B} scores 8 in Value and 9 in Trial Period. For the AS3 and the Casper The One, our Value and Trial Period scores are set from price, trial and warranty facts.`,
+    'The trials differ. Amerisleep lists a 365-night trial with free returns and courier pickup. Casper lists a 100-night trial, with free returns once a 30-night adjustment period has passed, and notes that some states add a recycling fee to mattress orders.',
     'The warranties differ more. Amerisleep lists a 20-year warranty for the AS3. Casper lists a 10-year warranty for The One. Warranty length is one of the facts our Value score weighs.',
     'Shipping is free for both. Amerisleep ships via FedEx in the continental US, and Casper lists free no-contact delivery, with extra fees for Alaska and Hawaii. The AS3 and the Casper The One both come in seven sizes, from Twin to Split King.',
-    'Confirm current terms for the AS3 and the Casper The One on each brand\'s site before ordering. If you are unsure between the two, the shared 100-night trial gives the same window to decide either way.',
+    'Confirm current terms for the AS3 and the Casper The One on each brand\'s site before ordering. If you are unsure about firmness, the AS3\'s 365-night trial gives the longer window to decide at home.',
   ],
   buyA: [
     'Couples who want a 10 in both Motion Transfer and Edge Support.',
@@ -69,7 +69,7 @@ const copy: ComparisonCopy = {
   faqs: [
     {
       q: 'Which is better, Amerisleep AS3 or Casper The One?',
-      a: `The ${A} scores higher, 9.5/10 against 8.2/10, and leads on Overall, Value, Edge Support, Response Time and Cooling & Breathability. The ${B} does not lead on any field, and the two tie on Trial Period and Motion Transfer. The One still suits sleepers who want a firmer medium-firm feel.`,
+      a: `The ${A} scores higher, 9.7/10 against 8.2/10, and leads on Overall, Value, Edge Support, Trial Period, Response Time and Cooling & Breathability. The ${B} does not lead on any field, and the two tie on Motion Transfer. The One still suits sleepers who want a firmer medium-firm feel.`,
     },
     {
       q: 'Which is firmer, the AS3 or The One?',
@@ -84,8 +84,8 @@ const copy: ComparisonCopy = {
       a: 'The Amerisleep AS3 scores 10 in Cooling & Breathability, and Casper The One scores 8. Neither has a coil core, so both rely on their covers and foams. Warm sleepers should lean toward the AS3, and pair either bed with breathable sheets.',
     },
     {
-      q: 'Which has the better warranty?',
-      a: 'Amerisleep lists a 20-year warranty for the AS3, and Casper lists a 10-year warranty for The One. Both list a 100-night trial, with Casper requiring a 30-night adjustment period before free returns. Confirm current terms for the AS3 and the Casper The One on each brand\'s site before ordering.',
+      q: 'Which has the longer trial and warranty?',
+      a: 'The Amerisleep AS3. The trial runs 365 nights and the warranty 20 years, per Amerisleep. Casper lists a 100-night trial and a 10-year warranty for The One, with a 30-night adjustment period before free returns. Confirm current terms for the AS3 and the Casper The One on each brand\'s site before ordering.',
     },
     {
       q: 'Which is better for side sleepers, the AS3 or the Casper The One?',

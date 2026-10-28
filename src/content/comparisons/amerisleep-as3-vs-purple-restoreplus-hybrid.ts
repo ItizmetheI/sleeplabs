@@ -5,8 +5,8 @@ const B = '[Purple RestorePlus Hybrid](/reviews/purple-restoreplus-hybrid/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as3-vs-purple-restoreplus-hybrid',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS3 vs Purple RestorePlus Hybrid: memory foam against a GelFlex Grid. The AS3 scores 9.5/10 to 8.8/10; the Purple leads on Response Time.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS3 vs Purple RestorePlus Hybrid: memory foam against a GelFlex Grid. The AS3 scores 9.7/10 to 8.8/10; the Purple leads on Response Time.',
   quickVerdict: `Choose the ${A} if you want a medium 5/10 memory foam bed with 10s in Edge Support, Motion Transfer and Cooling & Breathability. Choose the ${B} if you want a softer 4/10 surface that springs back the moment you move, since it scores 10 in Response Time.`,
   feel: [
     `These two feel different from the first touch. The ${A} is sold in one medium feel, which sits at 5/10 on our scale, with memory foam near the top. The ${B} is sold in one medium-soft feel, which sits at 4/10, with a 3 inch GelFlex Grid on top.`,
@@ -35,7 +35,7 @@ const copy: ComparisonCopy = {
   motionTransfer: [
     `Against the RestorePlus Hybrid, the ${A} scores 10 in Motion Transfer. The ${B} scores 9, a strong result.`,
     'The AS3 has no springs to carry movement, and its memory foam compresses where pressure lands without pulling the surface around it. That keeps a partner\'s turns on their side.',
-    'The Purple\'s grid and comfort foam absorb much of the motion before it reaches the coils, and the coils limit how far it travels. A little movement may reach the other side when someone gets in or out of bed.',
+    'The Purple\'s grid and comfort foam absorb much of the motion before it reaches the coils, and the coils limit how far it travels. A partner climbing in or out may cause slight movement across the bed.',
     'Most couples will sleep through a partner turning over on the AS3 or the RestorePlus Hybrid. Very light sleepers and couples on different schedules should lean toward the AS3.',
     'Parents who share the bed with a child or pet will find both settled, with the AS3 holding stiller.',
     'Couples where one partner turns often and the other sleeps soundly may still prefer the Purple for its quick surface. A larger size helps either bed, since more distance between partners means less movement reaches the other side. Split King is available on both models for couples who want separate halves.',
@@ -57,12 +57,12 @@ const copy: ComparisonCopy = {
     'Getting in and out of bed should feel easy on both, with a little more spring on the Purple. Couples where one partner turns often may value the Purple\'s quick surface, since a fast-recovering bed settles again soon after each move.',
   ],
   valuePolicies: [
-    `Against the RestorePlus Hybrid, the ${A} scores 9 in Value and 9 in Trial Period. The ${B} scores 7 in Value and 9 in Trial Period. Price, trial and warranty facts set our Value and Trial Period scores for both the AS3 and the RestorePlus Hybrid.`,
-    'Both list a 100-night trial. Purple picks up and refunds returns after at least 21 nights. Against the RestorePlus Hybrid, Amerisleep lists free returns with courier pickup.',
+    `Against the RestorePlus Hybrid, the ${A} scores 10 in Trial Period and 9 in Value. The ${B} scores 9 in Trial Period and 7 in Value. Price, trial and warranty facts set our Value and Trial Period scores for both the AS3 and the RestorePlus Hybrid.`,
+    'The trials now differ. Amerisleep lists a 365-night trial for the AS3, while Purple lists 100 nights. That gap is why the AS3 leads on Trial Period, 10 against 9.', 'Purple picks up and refunds returns after at least 21 nights. Amerisleep lists free returns with courier pickup.',
     'The warranties differ. Amerisleep lists a 20-year warranty for the AS3. Purple lists a 10-year warranty for the RestorePlus Hybrid. Warranty length is one of the facts our Value score weighs.',
     'Delivery is free for both. Amerisleep ships the AS3 via FedEx in the continental US. Both list free shipping, so delivery cost does not separate them.',
     'Sizes differ slightly. The AS3 comes in seven sizes, from Twin to Split King. The Purple starts at Twin XL, with no Twin listed.',
-    'Confirm current terms for the AS3 and the RestorePlus Hybrid on each brand\'s site before ordering. If the decision comes down to policies, the AS3\'s longer warranty and higher Value score are the clearest differences, since the trial lengths match.',
+    'Confirm current terms for the AS3 and the RestorePlus Hybrid on each brand\'s site before ordering. If the decision comes down to policies, the AS3\'s longer trial, longer warranty and higher Value score are the clearest differences.',
   ],
   buyA: [
     'Couples who want 10s in Motion Transfer and Edge Support, which the AS3 offers.',
@@ -77,7 +77,7 @@ const copy: ComparisonCopy = {
   faqs: [
     {
       q: 'Which is better, Amerisleep AS3 or Purple RestorePlus Hybrid?',
-      a: `The ${A} scores higher, 9.5/10 against 8.8/10, and leads on Overall, Value, Edge Support, Motion Transfer and Cooling & Breathability. The ${B} leads on Response Time, and the two tie on Trial Period. The Purple suits sleepers who want a softer, quicker surface.`,
+      a: `The ${A} scores higher, 9.7/10 against 8.8/10. It leads on Overall, Value, Edge Support, Trial Period, Motion Transfer and Cooling & Breathability. The ${B} leads on Response Time, and the two tie on no field of the seven. The Purple suits sleepers who want a softer, quicker surface.`,
     },
     {
       q: 'Which is softer, the AS3 or the Purple RestorePlus Hybrid?',
@@ -96,8 +96,8 @@ const copy: ComparisonCopy = {
       a: 'The Amerisleep AS3 scores 10 in Cooling & Breathability, and the Purple RestorePlus Hybrid scores 9. The Purple has a grid with open spaces and a coil core, but the AS3 still lands a point higher. Breathable sheets help either bed stay comfortable. Very warm sleepers should lean toward the AS3 for its top-band cooling score.',
     },
     {
-      q: 'Which has the better warranty?',
-      a: 'Amerisleep lists a 20-year warranty for the AS3, and Purple lists a 10-year warranty for the RestorePlus Hybrid. Both list a 100-night trial, with Purple requiring at least 21 nights before a return. Confirm current terms for the AS3 and the RestorePlus Hybrid on each brand\'s site before ordering.',
+      q: 'Which has the better trial and warranty?',
+      a: 'Amerisleep lists a 20-year warranty for the AS3, and Purple lists a 10-year warranty for the RestorePlus Hybrid. Amerisleep also lists a 365-night trial against 100 nights for the Purple, which requires at least 21 nights before a return. Confirm current terms for the AS3 and the RestorePlus Hybrid on each brand\'s site before ordering.',
     },
   ],
   related: [

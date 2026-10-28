@@ -2,14 +2,14 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'helix-sunset-luxe',
-  dateModified: '2026-10-11',
-  metaDescription: 'Helix Sunset Luxe review: 8.7/10 Overall, a 13.5 inch soft 3/10 hybrid with a 10 in Motion Transfer, 9s in Response Time and Cooling and a 7 in Value.',
-  quickAnswer: 'Helix Sunset Luxe earns an 8.7/10 Overall as a 13.5 inch hybrid rated soft 3/10, combining memory foam with coils under a TENCEL cover. It suits side sleepers, especially lighter ones, who want deep cushioning with coil support. Its main strength is a 10/10 in Motion Transfer. Its main limitation is a 7/10 in Value, an average result.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Helix Sunset Luxe review: 8.8/10 Overall for a 13.5 inch soft 3/10 hybrid. It earns 10s in Motion Transfer and Trial Period and a 7 in Value.',
+  quickAnswer: 'Helix Sunset Luxe earns an 8.8/10 Overall as a 13.5 inch hybrid rated soft 3/10, combining memory foam with coils under a TENCEL cover. It suits side sleepers, especially lighter ones, who want deep cushioning with coil support. Its main strengths are 10/10 scores in Motion Transfer and Trial Period. Its main limitation is a 7/10 in Value.',
   strengths: [
     'A 10/10 in Motion Transfer, so a partner\'s movement stays on their side on the Sunset Luxe.',
     'A soft 3/10 feel that cushions the shoulder and hip for side sleepers.',
-    '9/10 scores in Trial Period, Response Time and Cooling & Breathability.',
-    'A 365-night trial and a limited lifetime warranty, according to Helix.',
+    'A standout 10/10 in Trial Period, set from a 365-night trial and a limited lifetime warranty.',
+    '9/10 scores in Response Time and Cooling & Breathability.',
   ],
   limitations: [
     'Value is a 7, an average result and the lowest of its six scored fields.',
@@ -28,17 +28,17 @@ const copy: ReviewCopy = {
   performance: {
     value: [
       'Value is a 7, an average result and the lowest of the Sunset Luxe\'s six scored fields. The score is set from price, trial and warranty facts, and it weighs what the Sunset Luxe delivers against its queen price.',
-      'Helix pairs a 365-night trial with a limited lifetime warranty, and shipping is free in the contiguous US, with rates for Alaska, Hawaii and Canada. Those terms are strong.',
+      'Helix pairs a 365-night trial with a limited lifetime warranty. Shipping is free in the contiguous US, with rates for Alaska, Hawaii and Canada. Those terms earn a 10 in Trial Period.',
       'Shoppers who rank cost first should compare this field across the hybrids we score before deciding. Side sleepers who weigh the soft feel and long trial more heavily may see the trade differently.',
     ],
     edgeSupport: [
       'For the Sunset Luxe, Edge Support is an 8, good with a caveat. The coils give the perimeter structure, though Helix names no reinforced edge on the Sunset Luxe.',
-      'A soft 3/10 top compresses more at the perimeter than a firmer surface. For sleeping, the outer few inches feel softer than the center, and sitting on the edge gives more than on beds that score 9 or 10 here. On the Sunset Luxe, couples who share a full or queen will notice it most.',
+      'A soft 3/10 top compresses more at the perimeter than a firmer surface. For sleeping, the outer few inches feel softer than the center. Sitting on the edge gives more than on beds that score 9 or 10 here. On the Sunset Luxe, couples who share a full or queen will notice it most.',
       'Anyone who sits on the edge to dress each morning should weigh this score. On the Sunset Luxe, solo sleepers who stay near the center will notice it least. A larger size gives couples more room to stay clear of the edge, and a sturdy frame helps the perimeter hold its shape.',
     ],
     trialPeriod: [
-      'Trial Period is a strong 9 for the Sunset Luxe. Helix offers a 365-night trial, with a free return or exchange after a 30-day break-in period.',
-      'The break-in means the mattress has to be kept for 30 nights before a return or exchange. That gives the body time to adjust to a soft surface. After that, the rest of the year is open for a decision, which covers every season.',
+      'Trial Period is a standout 10 for the Sunset Luxe. The score is set from trial and warranty facts, and Helix lists a 365-night trial with a limited lifetime warranty.',
+      'A free return or exchange opens after a 30-day break-in period. Those first 30 nights give the body time to adjust to a soft surface. After that, the rest of the year is open for a decision.',
       'Buyers moving from a firmer bed gain the most from this field, since a soft 3/10 surface can feel very different at first. The exchange option also helps if the soft feel turns out to be too much. Keep the order details on file, and confirm the current terms on Helix\'s site before ordering.',
     ],
     responseTime: [
@@ -47,7 +47,7 @@ const copy: ReviewCopy = {
       'Restless side sleepers gain the most from this score, since they get deep cushioning without feeling held in place. Sleepers who stay in one position will notice it least. Lighter sleepers feel the rebound most, since they stay nearer the surface.',
     ],
     motionTransfer: [
-      'Motion Transfer is a standout 10, the Sunset Luxe\'s top score. The soft memory foam absorbs movement before it reaches the surface, and the coils limit how far it travels.',
+      'Motion Transfer is a standout 10, tied with Trial Period for the Sunset Luxe\'s top score. The soft memory foam absorbs movement before it reaches the surface, and the coils limit how far it travels.',
       'With a 10 here, a partner getting in or out of the Sunset Luxe is unlikely to disturb the other sleeper. On the Sunset Luxe, light sleepers who share a bed get the most from this field. It is the clearest reason to choose the Sunset Luxe over a firmer coil bed.',
       'Couples on different schedules should give this score heavy weight on the Sunset Luxe. Parents who share the bed with a child or pet will also find it calm through the night.',
     ],
@@ -90,7 +90,7 @@ const copy: ReviewCopy = {
     'Shoppers who rank value first, since Value is a 7.',
     'Sleepers who sit on the bed edge often, since Edge Support is an 8.',
   ],
-  compareIntro: 'The [Amerisleep AS5 Hybrid](/reviews/amerisleep-as5-hybrid/) has a head-to-head page with the Sunset Luxe and scores 8.8 as a hybrid. The [Casper Dream Hybrid](/reviews/casper-dream-hybrid/) and [Leesa Sapira Hybrid](/reviews/leesa-sapira-hybrid/) both score 8.7, the same as the Sunset Luxe. The table lines up their firmness, trial and warranty next to the Sunset Luxe.',
+  compareIntro: 'The [Amerisleep AS5 Hybrid](/reviews/amerisleep-as5-hybrid/) has a head-to-head page with the Sunset Luxe and scores 9.0 as a hybrid. The [Leesa Sapira Hybrid](/reviews/leesa-sapira-hybrid/) ties the Sunset Luxe at 8.8, and the [Casper Dream Hybrid](/reviews/casper-dream-hybrid/) scores 8.7. The table lines up their firmness, trial and warranty next to the Sunset Luxe.',
   policies: [
     'Helix Sunset Luxe comes with a 365-night trial and a limited lifetime warranty, according to Helix. On the Sunset Luxe, shipping is free in the contiguous US, with rates for Alaska, Hawaii and Canada.',
     'A free return or exchange is available within 365 nights, after a 30-day break-in period. Sizes run Twin, Twin XL, Full, Queen, King, Cal King, Short Queen and RV King.',
@@ -103,7 +103,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What is the Helix Sunset Luxe score?',
-      a: 'The Sunset Luxe earns an 8.7/10 Overall. It scores 10/10 in Motion Transfer, 9/10 in Trial Period, Response Time and Cooling & Breathability, 8/10 in Edge Support, and 7/10 in Value. Overall is the average of those six fields, shown to one decimal. Motion Transfer is its standout field.',
+      a: 'The Sunset Luxe earns an 8.8/10 Overall. It scores 10/10 in Motion Transfer and Trial Period, and 9/10 in Response Time and Cooling & Breathability. Edge Support is an 8/10 and Value a 7/10. Overall is the average of those six fields, shown to one decimal.',
     },
     {
       q: 'Is the Helix Sunset Luxe good for side sleepers?',
@@ -127,10 +127,10 @@ const copy: ReviewCopy = {
     },
     {
       q: 'Is Helix Sunset Luxe good for back sleepers?',
-      a: 'It suits lighter back sleepers better than heavier ones. A soft 3/10 surface keeps a lighter frame near the top while the coils hold the lower back. Average and heavier back sleepers usually need 5/10 to 7/10, so the medium Midnight Luxe or firm Dawn Luxe is a safer choice for them.',
+      a: 'It suits lighter back sleepers better than heavier ones. A soft 3/10 surface keeps a lighter frame near the top while the coils hold the lower back. Average and heavier back sleepers usually need 5/10 to 7/10. For them, the medium Midnight Luxe or the firm [Helix Dawn Luxe](/reviews/helix-dawn-luxe/) is a safer choice.',
     },
   ],
-  verdict: 'Helix Sunset Luxe earns an 8.7/10 Overall, led by a 10/10 in Motion Transfer, with 9s in Trial Period, Response Time and Cooling & Breathability. Its soft 3/10 hybrid build suits side sleepers, especially lighter ones, and couples who want a quiet bed. Value is a 7 and Edge Support an 8. Stomach sleepers and heavier back sleepers should look at a firmer model.',
+  verdict: 'Helix Sunset Luxe earns an 8.8/10 Overall, led by 10/10 scores in Motion Transfer and Trial Period. It adds 9s in Response Time and Cooling & Breathability. Its soft 3/10 hybrid build suits side sleepers, especially lighter ones, and couples who want a quiet bed. Value is a 7 and Edge Support an 8. Stomach sleepers and heavier back sleepers should look at a firmer model.',
   related: [
     { label: 'Amerisleep AS5 Hybrid vs Helix Sunset Luxe', href: '/comparison/amerisleep-as5-hybrid-vs-helix-sunset-luxe/' },
     { label: 'Helix Mattress Reviews (2026)', href: '/brands/helix/' },

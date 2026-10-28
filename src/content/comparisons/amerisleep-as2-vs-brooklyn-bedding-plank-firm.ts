@@ -5,8 +5,8 @@ const B = '[Brooklyn Bedding Plank Firm](/reviews/brooklyn-bedding-plank-firm/)'
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as2-vs-brooklyn-bedding-plank-firm',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS2 vs Brooklyn Bedding Plank Firm: medium-firm memory foam against a very firm foam bed. The AS2 scores 9.3/10 to 8.8/10; the Plank leads on Edge.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS2 vs Brooklyn Bedding Plank Firm: medium-firm memory foam against a very firm foam bed. The AS2 scores 9.5/10 to 9.0/10; the Plank leads on Edge.',
   quickVerdict: `Choose the ${A} if you want a medium-firm 6/10 memory foam bed with 10s in Response Time, Motion Transfer and Cooling & Breathability. Choose the ${B} if you want a very firm surface, in Firm or Extra Firm, with a 10 in Edge Support and a wide range of sizes.`,
   feel: [
     `Both are firm-leaning all-foam beds, but they sit far apart. Against the Plank Firm, the ${A} is sold in medium-firm, which sits at 6/10 on our scale. The ${B} is sold in Firm, listed at 7.5-9, and Extra Firm, listed at 9.5-10.5, all under one score.`,
@@ -31,7 +31,7 @@ const copy: ComparisonCopy = {
   ],
   edgeSupport: [
     `This is the Plank's field. The ${B} scores 10 in Edge Support. The ${A} scores 8, good with a caveat.`,
-    'A very firm foam surface holds its shape at the perimeter, and the Plank\'s 6 inch high-density base backs that up. Sitting on the side to put on shoes should feel steady.',
+    'A very firm foam surface holds its shape at the perimeter, and the Plank\'s 6 inch high-density base backs that up. Sitting at the side to lace up shoes should feel secure.',
     'Against the Plank Firm, on the AS2, the edge holds up for sleeping, though the outer few inches give a little more than the center when you sit there.',
     'With the AS2 and the Plank Firm, couples on a full or queen, who both sleep near a perimeter, will notice the gap most. On a king, there is more room to stay toward the middle.',
     'With the AS2 and the Plank Firm, anyone who sits on the edge each morning to dress should give this field weight. It is the Plank\'s clearest scorecard advantage.',
@@ -71,12 +71,12 @@ const copy: ComparisonCopy = {
     'Heavier stomach sleepers who choose the Plank for its firmness will find it quick to move on as well, since the body barely sinks into its surface.',
   ],
   valuePolicies: [
-    `Both score 9 in Value and 9 in Trial Period. The ${A} and the ${B} reach those scores with different policies. For the AS2 and the Plank Firm, our Value and Trial Period scores are set from price, trial and warranty facts.`,
+    `Both score 9 in Value and 10 in Trial Period. The ${A} and the ${B} reach those scores with different policies. For the AS2 and the Plank Firm, our Value and Trial Period scores are set from price, trial and warranty facts.`,
     'Brooklyn Bedding lists a 365-night trial and a lifetime warranty for the Plank Firm. Return requests start 30 days after delivery, with one return per customer and clearance items excluded.',
-    'Amerisleep lists a 100-night trial with free returns by mail within 100 days, and a 20-year warranty for the AS2.',
+    'Amerisleep also lists a 365-night trial for the AS2, with free returns by mail and a 20-year warranty.',
     'Shipping is free for both. Brooklyn Bedding ships the Plank as a bed in a box. Amerisleep ships via FedEx in the continental US.',
-    'Because Value ties, policy alone does not separate these two on our scorecard.',
-    'Shoppers who want a full year to decide and a lifetime warranty may prefer the Plank, keeping its return conditions in mind.',
+    'Because Value and Trial Period both tie, policy alone does not separate these two on our scorecard.',
+    'The trial windows match at one year. Shoppers who want a lifetime warranty may prefer the Plank, keeping its return conditions in mind.',
     'Confirm current terms on each brand\'s site before ordering.',
     'Shoppers who are unsure whether they want the Plank\'s Firm or Extra Firm feel can use the 365-night trial to judge it at home, keeping in mind that return requests start 30 days after delivery.',
   ],
@@ -93,7 +93,7 @@ const copy: ComparisonCopy = {
   faqs: [
     {
       q: 'Which is better, Amerisleep AS2 or Brooklyn Bedding Plank Firm?',
-      a: `The ${A} scores higher, 9.3/10 against 8.8/10, and leads on Overall, Response Time, Motion Transfer and Cooling & Breathability. The ${B} leads on Edge Support, and the two tie on Value and Trial Period. The Plank suits sleepers who want a very firm bed.`,
+      a: `The ${A} scores higher, 9.5/10 against 9.0/10, and leads on Overall, Response Time, Motion Transfer and Cooling & Breathability. The ${B} leads on Edge Support, and the two tie on Value and Trial Period. The Plank suits sleepers who want a very firm bed.`,
     },
     {
       q: 'How firm is the Plank Firm compared with the AS2?',
@@ -112,8 +112,8 @@ const copy: ComparisonCopy = {
       a: `The Amerisleep AS2 scores 10 in Motion Transfer, against 8 for the Brooklyn Bedding Plank Firm. The Plank scores 10 in Edge Support, against 8 for the AS2. Couples with a light sleeper should lean toward the AS2, and couples who sit on the edge often toward the Plank.`,
     },
     {
-      q: 'Which has the longer trial and warranty?',
-      a: `The Brooklyn Bedding Plank Firm lists a 365-night trial and a lifetime warranty, with return requests starting 30 days after delivery. Amerisleep lists a 100-night trial and a 20-year warranty for the AS2. Both score 9 in Trial Period and 9 in Value.`,
+      q: 'How do the trial and warranty compare?',
+      a: `The Brooklyn Bedding Plank Firm lists a 365-night trial and a lifetime warranty, with return requests starting 30 days after delivery. Amerisleep lists the same 365-night trial and a 20-year warranty for the AS2. Both score 10 in Trial Period and 9 in Value.`,
     },
   ],
   related: [

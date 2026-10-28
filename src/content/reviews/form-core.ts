@@ -2,7 +2,7 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'form-core',
-  dateModified: '2026-10-16',
+  dateModified: '2026-10-22',
   metaDescription: 'FORM Core review: 9.2/10 Overall, a 10 inch all-foam bed with 10s in Motion Transfer and Trial Period, a 365-night trial and a lifetime warranty.',
   quickAnswer: 'FORM Core earns a 9.2/10 Overall as a 10 inch all-foam mattress with a gel polymer grid near the surface. At 5-6/10, medium to medium-firm, it suits couples and back sleepers who want a quiet, supportive foam bed. Its main strengths are 10/10 scores in Motion Transfer and Trial Period. Its main limitation is an 8/10 in Value.',
   strengths: [
@@ -92,7 +92,7 @@ const copy: ReviewCopy = {
     'Lighter side sleepers who want a deep, plush comfort layer.',
     'Heavier stomach sleepers who want coils under the hips.',
   ],
-  compareIntro: 'The [Bear Original](/reviews/bear-original/) also scores 9.2 as an all-foam bed. The [Amerisleep AS2](/reviews/amerisleep-as2/) scores 9.3 and the [Amerisleep AS5](/reviews/amerisleep-as5/) scores 9.0, both all-foam. The table below sets their firmness, trial and warranty beside the FORM Core.',
+  compareIntro: 'The [Amerisleep AS5](/reviews/amerisleep-as5/) matches the FORM Core at 9.2 as an all-foam bed. The [Bear Original](/reviews/bear-original/) scores 9.3 and the [Brooklyn Bedding Plank Firm](/reviews/brooklyn-bedding-plank-firm/) scores 9.0, both all-foam. The table below sets their firmness, trial and warranty beside the FORM Core.',
   policies: [
     'FORM Core comes with a 365-night trial and a lifetime warranty, according to FORM. Shipping is free via FedEx Ground.',
     'Returns within the trial include free pickup and a full refund, with no restocking fees. The FORM Core comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',

@@ -5,8 +5,8 @@ const B = '[GhostBed Luxe](/reviews/ghostbed-luxe/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as5-vs-ghostbed-luxe',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS5 vs GhostBed Luxe: soft 3/10 against medium-firm 6/10, both 14 inch all-foam beds. The AS5 scores 9.0/10 to 8.3/10; the GhostBed leads on Motion.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS5 vs GhostBed Luxe: soft 3/10 against medium-firm 6/10, both 14 inch all-foam beds. The AS5 scores 9.2/10 to 8.3/10; the GhostBed leads on Motion.',
   quickVerdict: `Choose the ${A} if you sleep on your side and want a soft 3/10 bed with 10s in Edge Support and Cooling & Breathability. Choose the ${B} if you want a medium-firm 6/10 all-foam bed with a 10 in Motion Transfer and a 25-year warranty, and you rarely change position.`,
   feel: [
     `Both are 14 inch all-foam beds, but they sit three steps apart in firmness. The ${A} is sold in soft, which sits at 3/10 on our scale. The ${B} is sold in medium-firm, which sits at 6/10.`,
@@ -72,14 +72,14 @@ const copy: ComparisonCopy = {
     'Older sleepers who find it harder to shift position may want a quicker bed than either.',
   ],
   valuePolicies: [
-    `Both score 8 in Value and 9 in Trial Period. The ${A} and the ${B} reach those scores with different policies. Our Value and Trial Period scores for the AS5 and the Luxe come from price, trial and warranty facts.`,
+    `Both score 8 in Value. The ${A} scores 10 in Trial Period and the ${B} scores 9, so the AS5 leads that field. Our Value and Trial Period scores for the AS5 and the Luxe come from price, trial and warranty facts.`,
     'GhostBed lists a 101-night trial with free returns within the trial in the contiguous US, and a 25-year warranty for the Luxe.',
-    'Amerisleep lists a 100-night trial with free returns by mail within 100 days and courier pickup, and a 20-year warranty for the AS5.',
+    'Amerisleep lists a 365-night trial with free returns by mail and courier pickup, and a 20-year warranty for the AS5.',
     'Shipping is free for both. GhostBed ships free in the contiguous US. Amerisleep ships the AS5 via FedEx in the continental US.',
-    'With the AS5 and the Luxe, because Value ties, policy alone does not separate these two on our scorecard.',
+    'Value ties, but Trial Period does not. A full year to decide, against 101 nights, gives the AS5 the higher Trial Period score.',
     'Shoppers who put warranty length first may prefer the Luxe.',
     'Confirm current terms for the AS5 and the Luxe on each brand\'s site before ordering.',
-    'Since the trials are almost the same length, the decision rests on firmness and the fields where the scores differ.',
+    'Shoppers who want more time at home should lean toward the AS5, whose trial runs more than three times as long as the Luxe\'s.',
     'Shoppers who are unsure which end of the firmness range suits them can use either trial to judge the feel at home.',
   ],
   buyA: [
@@ -95,7 +95,7 @@ const copy: ComparisonCopy = {
   faqs: [
     {
       q: 'Which is better, Amerisleep AS5 or GhostBed Luxe?',
-      a: `The ${A} scores higher, 9.0/10 against 8.3/10, and leads on Overall, Edge Support, Response Time and Cooling & Breathability. The ${B} leads on Motion Transfer, and the two tie on Value and Trial Period. The Luxe suits back and stomach sleepers who rarely change position.`,
+      a: `The ${A} scores higher, 9.0/10 against 8.3/10, and leads on Overall, Edge Support, Response Time and Cooling & Breathability. The AS5 also leads on Trial Period. The ${B} leads on Motion Transfer, and the two tie on Value. The Luxe suits back and stomach sleepers who rarely change position.`,
     },
     {
       q: 'How different are they in firmness?',
@@ -114,8 +114,8 @@ const copy: ComparisonCopy = {
       a: `The Luxe scores 10 in Motion Transfer, against 9 for the Amerisleep AS5. The AS5 scores 10 in Edge Support, against 8 for the Luxe. Couples with a light sleeper should lean toward the GhostBed, and couples who sleep near the edge toward the AS5.`,
     },
     {
-      q: 'Which has the longer warranty?',
-      a: `GhostBed lists a 25-year warranty for the Luxe, and Amerisleep lists a 20-year warranty for the AS5. The trials are close: 101 nights for the Luxe and 100 nights for the AS5. Both score 8 in Value and 9 in Trial Period.`,
+      q: 'Which has the better trial and warranty?',
+      a: `Each leads on one term. Amerisleep lists a 365-night trial for the AS5, against 101 nights for the Luxe, so the AS5 scores 10 in Trial Period and the Luxe 9. GhostBed lists a 25-year warranty, longer than the 20 years Amerisleep lists. Both score 8 in Value.`,
     },
   ],
   related: [

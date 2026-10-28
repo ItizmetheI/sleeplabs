@@ -2,17 +2,17 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'zoma-boost',
-  dateModified: '2026-10-11',
-  metaDescription: 'Zoma Boost review: 9.5/10 Overall, a 15 inch medium-firm 5.5/10 hybrid with dynamic edge coils and 10s in Value, Edge Support and Motion Transfer.',
-  quickAnswer: 'Zoma Boost earns a 9.5/10 Overall, tied with five other models at the top of our scorecard. It is a 15 inch hybrid rated medium-firm 5.5/10 by Zoma, with graphite memory foam and gel foam over dynamic edge coils. It suits couples, back sleepers and heavier sleepers. Its main strengths are 10/10 scores in Value, Edge Support and Motion Transfer. Its main limitation is a 100-night trial.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Zoma Boost review: 9.7/10 Overall, a 15 inch medium-firm 5.5/10 hybrid with 10s in Value, Edge Support, Trial Period and Motion Transfer on our scorecard.',
+  quickAnswer: 'Zoma Boost earns a 9.7/10 Overall, which ties for the highest Overall score of the 55 models we cover. It is a 15 inch hybrid rated medium-firm 5.5/10 by Zoma, with graphite memory foam over dynamic edge coils. It suits couples, back sleepers and heavier sleepers. Its main strengths are four 10/10 fields. Its main limitation is a 10-year warranty.',
   strengths: [
-    '10/10 scores in Value, Edge Support and Motion Transfer.',
-    'Dynamic edge coils under four named comfort parts, according to Zoma.',
-    'A medium-firm 5.5/10 feel that balances contour and support.',
+    '10/10 scores in Value, Edge Support, Trial Period and Motion Transfer.',
+    'A 365-night trial with free returns and a full refund, according to Zoma.',
+    'A medium-firm 5.5/10 feel over dynamic edge coils that balances contour and support.',
     'Made in the USA, with free FedEx curbside shipping in the lower 48 states.',
   ],
   limitations: [
-    'Trial Period is a 9, with a 100-night trial shorter than the year-long trials many brands we score offer.',
+    'Sold in one medium-firm feel, with no softer or firmer version to choose.',
     'A 10-year warranty, shorter than the lifetime warranties several brands we score offer.',
     'The Zoma Boost is 15 inches tall, so it needs deep pocket fitted sheets.',
   ],
@@ -31,40 +31,40 @@ const copy: ReviewCopy = {
   ],
   performance: {
     value: [
-      'Value is a standout 10. The score is set from price, trial and warranty facts, and it weighs what the Boost delivers against its queen price.',
-      'Zoma pairs a 100-night trial with a 10-year warranty, and FedEx curbside shipping is free in the lower 48 states. Returns within the trial are free, with a full refund.',
-      'On the Zoma Boost, shoppers who weigh value heavily gain the most from this field. A tall, layered hybrid with edge coils adds to what the price covers. Those who weigh trial or warranty length first should note that both are shorter than many we record.',
+      'Value is at the ceiling of the scale, 10. We set Value from the price, trial and warranty on record. It weighs what the Boost delivers against its queen price.',
+      'Zoma pairs a 365-night trial with a 10-year warranty, and Shipping is free by FedEx curbside delivery in the lower 48 states. Returns within the trial are free, with a full refund.',
+      'On the Zoma Boost, shoppers who weigh value heavily gain the most from this field. A tall, layered hybrid with edge coils adds to what the price covers. Those who weigh warranty length first should note that several brands we cover list lifetime coverage.',
     ],
     edgeSupport: [
       'The Zoma Boost earns a standout 10 in Edge Support. Zoma names dynamic edge coils, which give the side of the bed firm structure under the comfort foams.',
-      'On the Zoma Boost, the whole sleeping surface stays usable, so lying near the edge does not bring a roll. On the Zoma Boost, sitting on the side to put on shoes should feel steady.',
-      'Couples who share a full or queen Zoma Boost gain the most, since both sleepers can use the full width. Heavier sleepers who sit on the edge of the Zoma Boost each morning should also give this score weight. Set the Zoma Boost on a sturdy frame to help the perimeter hold its shape.',
+      'On the Zoma Boost, the whole sleeping surface stays usable, so lying near the edge does not bring a roll. Sitting on the side to put on shoes should feel steady.',
+      'Couples who share a full or queen Zoma Boost gain the most, since both sleepers can use the full width. If you are heavier and sit on the edge daily, give this score extra attention. Set the Zoma Boost on a sturdy frame to help the perimeter hold its shape.',
     ],
     trialPeriod: [
-      'The Zoma Boost earns a strong 9 in Trial Period. Zoma offers a 100-night trial, with free returns and a full refund within that window.',
-      'The 9 for the Zoma Boost is strong, though its trial trails the 365-night trials offered by many brands we score. One hundred nights is enough to judge a medium-firm hybrid across a change of season. On the Zoma Boost, free returns remove the cost of sending it back within the trial.',
-      'First-time buyers of an online hybrid gain the most from the full trial. Keep the order details on file in case a return is needed, and confirm the current terms on Zoma\'s site before ordering.',
+      'The Zoma Boost earns a standout 10 in Trial Period. We score this field from the trial length and return terms. Zoma offers a 365-night trial with free returns and a full refund.',
+      'A full year leaves room to judge a medium-firm hybrid through every season. It also covers the weeks a new bed can take to feel familiar. On the Zoma Boost, free returns remove the cost of sending it back.',
+      'First-time buyers of an online hybrid gain the most from the long trial. Keep the order details on file in case a return is needed, and confirm the current terms on Zoma\'s site before ordering.',
     ],
     responseTime: [
       'The Zoma Boost earns a strong 9 in Response Time. The Reactiv foam and coils add lift under the memory foams, so the surface recovers quickly after you move.',
       'Combination sleepers who turn several times a night should find changing position on the Zoma Boost easy. There is a slight settling feel from the graphite memory foam, but it is brief. The Zoma Boost should also feel easy to get in and out of.',
-      'This is the score restless sleepers should look at first on the Zoma Boost. The Zoma Boost suits people who move between the back and side through the night. Sleepers who want the slow, deep sink of thick memory foam should know the Boost feels livelier than that.',
+      'This is the score restless sleepers should look at first on the Zoma Boost. It fits sleepers who shift between back and side overnight. Sleepers who want the slow, deep sink of thick memory foam should know the Boost feels livelier than that.',
     ],
     motionTransfer: [
       'Motion Transfer is a standout 10 for the Zoma Boost. The memory foam and gel foam absorb motion before it reaches the surface, and the coils limit how far it travels.',
-      'With a 10 here, a partner getting in or out of the Zoma Boost is unlikely to disturb the other sleeper. On the Zoma Boost, many coil beds carry more bounce across the surface, so this score stands out within the hybrid group. On the Zoma Boost, light sleepers who share a bed get the most from it.',
-      'Couples on different schedules should give this score heavy weight on the Zoma Boost. On the Zoma Boost, parents who share the bed with a child or pet will also find it calm through the night. On the Zoma Boost, paired with the 10 in Edge Support, it gives both partners a quiet surface across the full width of the bed.',
+      'With a 10 here, a partner getting in or out of the Zoma Boost is unlikely to disturb the other sleeper. Among hybrids, which tend to carry bounce, this score is a standout. It helps most when a light sleeper shares the bed.',
+      'Couples on different schedules should give this score heavy weight on the Zoma Boost. Parents who share the bed with a child or pet should find it calm overnight. Paired with the 10 in Edge Support, it gives both partners a quiet, full-width surface.',
     ],
     coolingBreathability: [
-      'The Zoma Boost earns a strong 9 in Cooling & Breathability. Zoma names an advanced cooling cover, graphite in the memory foam and gel in the quilted foam, and the coil core leaves room for air to move.',
-      'We set the Zoma Boost score from its construction, not from a temperature reading. It stops at 9 because the stack includes memory foam close to the body. On the Zoma Boost, most warm sleepers should find it comfortable through the year. On the Zoma Boost, cotton or linen sheets suit the build better than heavy synthetic bedding.',
+      'The Zoma Boost earns a strong 9 in Cooling & Breathability. Zoma names an advanced cooling cover, graphite in the memory foam and gel in the quilted foam. The coil core leaves room for air to move.',
+      'We set the Zoma Boost score from its construction, not from a temperature reading. It stops at 9 because the stack includes memory foam close to the body. It should suit most warm sleepers across the year. Natural-fiber sheets such as cotton or linen fit this build well.',
       'Breathable sheets and a thin protector suit very warm sleepers on the Zoma Boost. Heavy, plastic-backed protectors can trap heat and cover the cooling fabric at the surface.',
     ],
   },
   positionsIntro: 'Zoma rates the Boost medium-firm 5.5/10. That is the only feel the Zoma Boost comes in. On the Zoma Boost, this guidance comes from that firmness and the hybrid build, by sleep position and body weight.',
   positions: {
     side: {
-      under130: 'The Zoma Boost is a reasonable fit. A lighter frame sinks a little into the memory foam and gel foam, though the medium-firm feel may be firm at the shoulder for some. Those who want a plush surface should look softer. The coils keep the waist level.',
+      under130: 'The Zoma Boost is a reasonable fit. A lighter frame sinks a little into the memory foam and gel foam. The medium-firm feel may still be firm at the shoulder for some. Those who want a plush surface should look softer. The coils keep the waist level.',
       from130to230: 'The Zoma Boost is a good fit. The memory foam contours at the shoulder and hip, and the coils keep the hips from sinking too far. On the Zoma Boost, side sleepers who also spend time on the back will find it easy to switch.',
       over230: 'The Zoma Boost is a good fit. More weight presses the shoulder and hip into the comfort foams, and the coils hold the waist level. The edge coils carry the extra weight at the perimeter. This is a strong group for the Boost.',
     },
@@ -87,17 +87,17 @@ const copy: ReviewCopy = {
   buy: [
     'Couples who want quiet nights and a full-width surface, backed by 10s in Motion Transfer and Edge Support on the Zoma Boost.',
     'Back sleepers and heavier sleepers who want a medium-firm hybrid with edge coils.',
-    'Shoppers who weigh value, backed by a 10/10 Value score on the Zoma Boost.',
+    'Shoppers who want a full year to decide, backed by 10/10 scores in Value and Trial Period.',
   ],
   skip: [
-    'Shoppers who want a year-long trial or a lifetime warranty.',
+    'Shoppers who want a lifetime warranty.',
     'Stomach sleepers who need 7/10 or firmer.',
     'Shoppers with shallow fitted sheets or a tall frame, since it is 15 inches.',
   ],
-  compareIntro: 'The [Nolah Evolution 15"](/reviews/nolah-evolution-15/), the [FORM Core Hybrid](/reviews/form-core-hybrid/) and the [FORM Prime X](/reviews/form-prime-x/) all score 9.5 as hybrids, the same as the Boost. The table below sets their firmness, trial and warranty beside the Zoma Boost.',
+  compareIntro: 'The [Nolah Evolution 15"](/reviews/nolah-evolution-15/) ties the Boost at 9.7 as a hybrid. The [FORM Core Hybrid](/reviews/form-core-hybrid/) and the [FORM Prime X](/reviews/form-prime-x/) score 9.5. The table below sets their firmness, trial and warranty beside the Zoma Boost.',
   policies: [
-    'Zoma Boost comes with a 100-night trial and a 10-year warranty, according to Zoma. FedEx curbside shipping is free in the lower 48 states.',
-    'Returns within the 100-night trial are free, with a full refund. The Zoma Boost comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
+    'Zoma Boost comes with a 365-night trial and a 10-year warranty, according to Zoma. Shipping is free by FedEx curbside delivery in the lower 48 states.',
+    'Returns within the 365-night trial are free, with a full refund. The Zoma Boost comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
     'Zoma states the mattress is made in the USA. Save the order details for the Zoma Boost until the trial ends, in case a return is needed. Confirm the current terms on Zoma\'s site before ordering, since policies can change between our checks.',
   ],
   faqs: [
@@ -107,11 +107,11 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What is the Zoma Boost score?',
-      a: 'The Boost earns a 9.5/10 Overall. It scores 10/10 in Value, Edge Support and Motion Transfer, and 9/10 in Trial Period, Response Time and Cooling & Breathability. Overall is the average of those six fields, shown to one decimal. It ties with five other models we score at 9.5.',
+      a: 'The Boost earns a 9.7/10 Overall. It scores 10/10 in Value, Edge Support, Trial Period and Motion Transfer, and 9/10 in Response Time and Cooling & Breathability. Overall is the average of those six fields, shown to one decimal. It ties two other models for the highest Overall score we record.',
     },
     {
       q: 'Is Zoma Boost good for couples?',
-      a: 'Yes. The Zoma Boost earns a 10/10 in Motion Transfer, so one partner moving is unlikely to wake the other, and a 10/10 in Edge Support, so both sleepers can use the full width. The 9/10 Response Time suits partners who change position often. Split King is also available.',
+      a: 'Yes. The Zoma Boost earns a 10/10 in Motion Transfer, so one partner moving is unlikely to wake the other. A 10/10 in Edge Support lets both sleepers use the full width. The 9/10 Response Time suits partners who change position often. Split King is also available.',
     },
     {
       q: 'Is Zoma Boost good for heavier sleepers?',
@@ -119,7 +119,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What trial and warranty come with Zoma Boost?',
-      a: 'The Boost comes with a 100-night trial and a 10-year warranty, according to Zoma. Returns within the trial are free, with a full refund, and FedEx curbside shipping is free in the lower 48 states. Confirm the current terms on Zoma\'s site before ordering, since they can change.',
+      a: 'The Boost comes with a 365-night trial and a 10-year warranty, according to Zoma. Returns within the trial are free, with a full refund, and Shipping is free by FedEx curbside delivery in the lower 48 states. Confirm the current terms on Zoma\'s site before ordering, since they can change.',
     },
     {
       q: 'Does Zoma Boost sleep hot?',
@@ -127,14 +127,14 @@ const copy: ReviewCopy = {
     },
     {
       q: 'Is the Zoma Boost good for side sleepers?',
-      a: 'It suits average and heavier side sleepers best. Zoma rates the Boost medium-firm 5.5/10, so the memory foam and gel foam contour at the shoulder and hip while the coils keep the waist level. Lighter side sleepers may find it firm at the shoulder and should look at a softer model.',
+      a: 'It suits average and heavier side sleepers best. Zoma rates the Boost medium-firm 5.5/10. The memory foam and gel foam contour at the shoulder and hip, while the coils keep the waist level. Lighter side sleepers may find it firm at the shoulder and should look at a softer model.',
     },
     {
       q: 'How is Zoma Boost different from Zoma Hybrid?',
-      a: 'The Boost is 15 inches with graphite memory foam, quilted gel foam and dynamic edge coils, rated 5.5/10. The [Zoma Hybrid](/reviews/zoma-hybrid/) is 12 inches with perforated gel memory foam over pocketed coils, rated Luxury Firm 6/10. The Boost scores 9.5 with a 10 in Motion Transfer, and the Hybrid scores 9.3.',
+      a: 'The Boost is 15 inches with graphite memory foam, quilted gel foam and dynamic edge coils, rated 5.5/10. The [Zoma Hybrid](/reviews/zoma-hybrid/) is 12 inches with perforated gel memory foam over pocketed coils, rated Luxury Firm 6/10. The Boost scores 9.7 with a 10 in Motion Transfer, and the Hybrid scores 9.5.',
     },
   ],
-  verdict: 'Zoma Boost earns a 9.5/10 Overall, tied with five other models, led by 10/10 scores in Value, Edge Support and Motion Transfer. Its graphite memory foam and gel foam over dynamic edge coils, rated medium-firm 5.5/10, suit couples, back sleepers and heavier sleepers who want a quiet, full-width bed. The trial is 100 nights and the warranty 10 years. Stomach sleepers should look firmer.',
+  verdict: 'Zoma Boost earns a 9.7/10 Overall, which ties for the highest Overall score we record. It is led by 10/10 scores in Value, Edge Support, Trial Period and Motion Transfer. Its graphite memory foam over dynamic edge coils, rated medium-firm 5.5/10, suits couples, back sleepers and heavier sleepers. The trial is 365 nights and the warranty 10 years. Stomach sleepers should look firmer.',
   related: [
     { label: 'Zoma Mattress Reviews (2026)', href: '/brands/zoma/' },
     { label: 'Best Mattress (2026)', href: '/best/overall/' },

@@ -5,8 +5,8 @@ const B = '[Amerisleep AS5](/reviews/amerisleep-as5/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as2-vs-as5',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS2 vs AS5: medium-firm 6/10 against soft 3/10, both all foam. The AS2 scores 9.3/10 to 9.0/10, and the AS5 leads on Edge Support.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS2 vs AS5: medium-firm 6/10 against soft 3/10, both all foam. The AS2 scores 9.5/10 to 9.2/10, and the AS5 leads on Edge Support.',
   quickVerdict: `Choose the ${A} if you sleep on your back or stomach and want a medium-firm 6/10 surface with 10s in Response Time and Motion Transfer. Choose the ${B} if you sleep on your side and want a soft 3/10, 14 inch bed with a 10 in Edge Support.`,
   feel: [
     `These two sit at opposite ends of Amerisleep's all-foam line. The ${A} is sold in medium-firm, which sits at 6/10 on our scale. The ${B} is sold in soft, which sits at 3/10.`,
@@ -73,15 +73,15 @@ const copy: ComparisonCopy = {
     'Sleepers who often get up at night may also find the AS2\'s firmer surface easier to leave and return to, since less effort goes into rising from it.',
   ],
   valuePolicies: [
-    `The ${A} scores 9 in Value and 9 in Trial Period. The ${B} scores 8 in Value and 9 in Trial Period. Our Value and Trial Period scores are set from price, trial and warranty facts.`,
-    'Amerisleep lists a 100-night trial and a 20-year warranty for both, with free shipping via FedEx in the continental US.',
-    'Returns are free by mail within 100 days for both, and Amerisleep also lists courier pickup for the AS5.',
+    `The ${A} scores 9 in Value and 10 in Trial Period. The ${B} scores 8 in Value and 10 in Trial Period, so the two tie on trial. Our Value and Trial Period scores are set from price, trial and warranty facts.`,
+    'Amerisleep lists a 365-night trial and a 20-year warranty for both, with free shipping via FedEx in the continental US.',
+    'Returns are free by mail for both, and Amerisleep also lists courier pickup for the AS5.',
     'Value weighs policies against price, and the AS2 scores a point higher in that field.',
-    'Both come in seven sizes, from Twin to Split King.',
+    'Both come in seven sizes, from Twin to Split King, and both share the same 20-year warranty terms.',
     'Couples who want separate halves can choose a Split King on either model, which keeps the sizing decision the same whichever firmness they choose.',
     'Confirm current terms on Amerisleep\'s site before ordering.',
     'Since the policies match, the decision rests on firmness, edge support and response.',
-    'Shoppers who are unsure which end of the range suits them can use the 100-night trial to judge it at home, since both share the same trial and warranty.',
+    'Shoppers who are unsure which end of the range suits them can use the 365-night trial to judge it at home, since both share the same trial and warranty.',
   ],
   buyA: [
     'Back and stomach sleepers who want a medium-firm 6/10 surface.',
@@ -96,7 +96,7 @@ const copy: ComparisonCopy = {
   faqs: [
     {
       q: 'Which is better, Amerisleep AS2 or Amerisleep AS5?',
-      a: `The ${A} scores higher, 9.3/10 against 9.0/10, and leads on Overall, Value, Response Time and Motion Transfer. The ${B} leads on Edge Support, and the two tie on Trial Period and Cooling & Breathability. The AS5 suits side sleepers who want a soft bed.`,
+      a: `The ${A} scores higher, 9.5/10 against 9.2/10, and leads on Overall, Value, Response Time and Motion Transfer. The ${B} leads on Edge Support, and the two tie on Trial Period and Cooling & Breathability. The AS5 suits side sleepers who want a soft bed.`,
     },
     {
       q: 'How different are the AS2 and AS5 in firmness?',
@@ -116,7 +116,7 @@ const copy: ComparisonCopy = {
     },
     {
       q: 'Do the AS2 and AS5 have the same policies?',
-      a: `Yes. Amerisleep lists a 100-night trial, a 20-year warranty and free FedEx shipping in the continental US for both. The AS2 scores a point higher on Value, which weighs policies against price. Confirm current terms with Amerisleep before ordering. Both list the same free returns.`,
+      a: `Yes. Amerisleep lists a 365-night trial, a 20-year warranty and free FedEx shipping in the continental US for both. The AS2 scores a point higher on Value, which weighs policies against price. Confirm current terms with Amerisleep before ordering. Both list the same free returns.`,
     },
   ],
   related: [

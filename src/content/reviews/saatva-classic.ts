@@ -2,9 +2,9 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'saatva-classic',
-  dateModified: '2026-10-16',
+  dateModified: '2026-10-22',
   metaDescription: 'Saatva Classic review: 9.2/10 Overall, a Euro pillow top dual-coil hybrid in three firmness options and two heights, with 10s in Edge, Trial and Response.',
-  quickAnswer: 'Saatva Classic earns a 9.2/10 Overall as a dual-coil hybrid with a 3 inch Euro pillow top, sold in Plush Soft 3/10, Luxury Firm 5-7/10 and Firm 8/10, in 11.5 or 14.5 inch heights. It suits most sleep positions and couples who want a firm edge. Its main strengths are 10/10 scores in Edge Support, Trial Period and Response Time. Its main limitation is a 7/10 in Value.',
+  quickAnswer: 'Saatva Classic earns a 9.2/10 Overall as a dual-coil hybrid with a 3 inch Euro pillow top, sold in Plush Soft 3/10, Luxury Firm 5-7/10 and Firm 8/10, in 11.5 or 14.5 inch heights. It suits most sleep positions and couples who want a firm edge. Its main strengths are 10/10 scores in Edge Support, Trial Period and Response Time. Value, at 7/10, is where it falls short most.',
   strengths: [
     '10/10 scores in Edge Support, Trial Period and Response Time.',
     'Three firmness options and two heights.',
@@ -93,7 +93,7 @@ const copy: ReviewCopy = {
     'Shoppers who rank value first, since Value is a 7 on the Classic.',
     'Sleepers who want the slow hug of thick memory foam on the Classic.',
   ],
-  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Classic and scores 9.5 as a medium all-foam bed. The [Zoma Start](/reviews/zoma-start/) and the [Nest Bedding Raven](/reviews/nest-bedding-raven/) both score 9.2 as hybrids, the same as the Classic. The table below sets their firmness, trial and warranty beside the Classic.',
+  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Classic and scores 9.7 as a medium all-foam bed. The [Nest Bedding Raven](/reviews/nest-bedding-raven/) and the [Helix Midnight Luxe](/reviews/helix-midnight-luxe/) both score 9.2 as hybrids, the same as the Classic. The table below sets their firmness, trial and warranty beside the Classic.',
   policies: [
     'Saatva Classic comes with a 365-night trial, according to Saatva. Delivery and setup are free.',
     'Saatva lists a lifetime warranty for the Classic. Confirm the return terms with Saatva before ordering. Sizes run Twin, Twin XL, Full, Queen, King, Split King, Cal King and Split Cal King.',

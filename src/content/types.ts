@@ -69,8 +69,6 @@ export interface BestCopy {
   metaDescription: string;
   /** 1. Quick answer, 2 to 3 sentences. */
   quickAnswer: string;
-  /** 2. Box sentence when the AS3 does not qualify. */
-  as3BoxReason?: string;
   /** 5. One entry per ranked pick, in rank order. */
   picks: BestPickCopy[];
   /** 6. What Matters, 200 to 400 words. */

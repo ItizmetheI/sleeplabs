@@ -48,7 +48,7 @@ export interface LlmDocument {
 /** Markdown form of the owner's "See Price" CTA; machine documents carry no prices. */
 const seePrice = (spec: MattressSpec) => `[${SEE_PRICE}](${spec.productUrl})`;
 
-const UPDATED = '2026-10-12';
+const UPDATED = '2026-10-22';
 const SCORE_LINE = "Scores are Mattress Inquirer's editorial ratings on a 0 to 10 scale.";
 
 const normalizeSiteUrl = (siteUrl: string) => siteUrl.replace(/\/$/, '');
@@ -168,13 +168,11 @@ const buildBestDocument = (siteUrl: string, config: (typeof BEST_PAGE_CONFIGS)[n
   const result = rankBestPage(config);
   const canonicalPath = `/best/${config.slug}/`;
   const title = h1For(canonicalPath);
-  const as3 = getMattress('amerisleep-as3');
   const showPrice = config.row === 'luxury' || config.row === 'under-1000';
   const howWePicked = [as3RankingSentence(config, result), ...(PAIN_PAGE_SLUGS.has(config.slug) ? [COMFORT_NOT_TREATMENT] : [])];
   const content = [
     header(title, `${siteUrl}${canonicalPath}`, copy.dateModified, 'ranked mattress category'),
     '', plainInline(copy.quickAnswer),
-    ...(result.as3Qualifies ? [] : ['', `Our Best Overall Pick: Amerisleep AS3 (${fieldScore(as3, 'overall')}/10). ${plainInline(copy.as3BoxReason ?? '')}`]),
     '', '## Our Picks at a Glance', '',
     markdownTable(['Rank', 'Mattress', 'Award', 'Overall', 'Firmness', 'Type', 'Trial', 'Warranty'], result.picks.map(p => {
       const m = p.candidate.mattress, s = p.candidate.spec, q = p.candidate.qualifyingFirmness;

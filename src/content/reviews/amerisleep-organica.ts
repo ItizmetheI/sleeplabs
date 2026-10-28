@@ -2,18 +2,18 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'amerisleep-organica',
-  dateModified: '2026-10-11',
-  metaDescription: 'Amerisleep Organica review: 9.2/10 Overall, a 12 inch Talalay latex hybrid at medium 6/10 with a 10 in Response Time. Layers, specs, fit and verdict.',
-  quickAnswer: 'The Amerisleep Organica earns a 9.2/10 Overall as a 12 inch latex hybrid at medium 6/10. It suits back and combination sleepers who want a buoyant latex feel over pocketed coils. Its main strength is a 10/10 in Response Time. Its main limitation is a 6/10 feel that is firmer than many lighter side sleepers want.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep Organica review: 9.3/10 Overall, a 12 inch Talalay latex hybrid at medium 6/10 with 10s in Response Time and Trial Period. Specs, fit and verdict.',
+  quickAnswer: 'The Amerisleep Organica earns a 9.3/10 Overall as a 12 inch latex hybrid at medium 6/10. It suits back and combination sleepers who want a buoyant latex feel over pocketed coils. Its main strength is a pair of 10s in Response Time and Trial Period. Its main limitation is a 6/10 feel that is firmer than many lighter side sleepers want.',
   strengths: [
     'A 10/10 in Response Time from natural Talalay latex over coils.',
     'Every layer thickness published, adding up to the full 12 inches.',
     'An 8 inch pocketed coil unit with edge support named on the brand page.',
-    'A 20-year warranty and 100-night trial behind a 9/10 Value score.',
+    'A 365-night trial that earns a standout 10/10, plus a 20-year warranty.',
   ],
   limitations: [
     'Firm at the shoulder for side sleepers under 130 lb on its 6/10 feel.',
-    'A 100-night trial, shorter than the 365-night trials several brands offer.',
+    'Delivery is no-contact, so setting up a heavy latex hybrid takes two people.',
     'Cooling & Breathability and Motion Transfer are 9s rather than 10s.',
   ],
   howScored: 'The Organica is scored on the same seven fields as every model we cover, using Amerisleep\'s official product page. The [methodology](/methodology/) explains each field and the 0 to 10 scale.',
@@ -30,8 +30,8 @@ const copy: ReviewCopy = {
   ],
   performance: {
     value: [
-      'The Value score is set from price, trial and warranty facts, and the Organica earns a strong 9. A 20-year warranty covers a latex hybrid built with organic cotton, wool and natural latex. The 100-night trial gives a full season to decide.',
-      'The score stops at 9 because many brands we score now offer year-long trials. Shoppers who want natural materials with long coverage will find the Organica well placed here.',
+      'The Value score is set from price, trial and warranty facts, and the Organica earns a strong 9. A 20-year warranty covers a latex hybrid built with organic cotton, wool and natural latex. The 365-night trial gives a full year to decide.',
+      'Both policy terms rate well, so price is the input that stops the score at 9. Shoppers who want natural materials with long coverage will find the Organica well placed here.',
       'Buyers comparing natural latex beds gain the most from this field. Few of them pair a 20-year warranty with a fully published layer stack.',
     ],
     edgeSupport: [
@@ -40,12 +40,12 @@ const copy: ReviewCopy = {
       'Couples sharing a queen benefit most from this score. A supported perimeter keeps the outer inches of the bed usable for both sleepers.',
     ],
     trialPeriod: [
-      'The Trial Period score is set from the trial and return terms, and the Organica earns a 9. Amerisleep offers a 100-night trial and lists free returns on the product page.',
-      'A 9 is strong, though it sits one point under the year-long trials offered by several brands we score. Latex has a distinct, buoyant feel that some sleepers need time to judge. One hundred nights gives enough room to decide whether that feel suits your body and position.',
+      'The Trial Period score is set from the trial and return terms, and the Organica earns a standout 10. Amerisleep offers a 365-night trial and lists free returns on the product page.',
+      'A full year ties for the longest trial of the 55 models we score. Latex has a distinct, buoyant feel that some sleepers need time to judge. A year gives ample room to decide whether that feel suits your body and position.',
       'First-time latex buyers gain the most from a full trial. The feel differs from memory foam enough that a few weeks of adjustment is normal. Sleep on it through at least one change of season before deciding.',
     ],
     responseTime: [
-      'Response Time is a standout 10, the Organica\'s top score on our scorecard. Talalay latex springs back quickly, and the coil core adds lift underneath.',
+      'Response Time is a standout 10, one of two 10s on the Organica\'s scorecard. Talalay latex springs back quickly, and the coil core adds lift underneath.',
       'In practice, a 10 means the surface rebounds the moment you shift weight. Combination sleepers who turn several times a night will find it easy to move on. Sleepers who prefer the slow, sinking feel of memory foam should know the Organica feels very different.',
       'This score matters most for restless sleepers and anyone who changes position often. It also makes getting in and out of bed feel easy, since the surface lifts rather than holds.',
     ],
@@ -91,13 +91,13 @@ const copy: ReviewCopy = {
   skip: [
     'Side sleepers under 130 lb who want more cushioning at the shoulder.',
     'Memory foam fans who want a slow, contouring feel.',
-    'Shoppers who want a full year to decide, since the trial is 100 nights.',
+    'Very light sleepers who want a 10 in Motion Transfer.',
   ],
-  compareIntro: 'Each alternative has a head-to-head page with the Organica. The [Amerisleep AS6 Black Series](/reviews/amerisleep-as6/) is a 9.3 memory foam hybrid. The [Birch Natural](/reviews/birch-natural/) is a 9.0 latex hybrid. The [Amerisleep AS3](/reviews/amerisleep-as3/) is the 9.5 all-foam pick. The table compares their firmness, trial and warranty with the Organica.',
+  compareIntro: 'Each alternative has a head-to-head page with the Organica. The [Amerisleep AS6 Black Series](/reviews/amerisleep-as6/) is a 9.5 memory foam hybrid. The [Birch Natural](/reviews/birch-natural/) is a 9.2 latex hybrid. The [Amerisleep AS3](/reviews/amerisleep-as3/) is the 9.7 all-foam pick. The table compares their firmness, trial and warranty with the Organica.',
   policies: [
-    'The Organica comes with a 100-night trial and a 20-year warranty. Amerisleep ships it free by FedEx within the contiguous US, with no-contact delivery.',
+    'The Organica comes with a 365-night trial and a 20-year warranty. Amerisleep ships it free by FedEx within the contiguous US, with no-contact delivery.',
     'The brand lists free returns. Sizes run Twin, Twin XL, Full, Queen, King, Cal King and Split King, all 12 inches tall. Delivery is no-contact, so plan to set the mattress up on the frame yourself, ideally with a second person to help.',
-    'Amerisleep names OEKO-TEX Standard 100 for the latex and wool, plus Rainforest Alliance and eco-INSTITUT for the latex. Its FAQ states the wool is GOTS-certified. Check current terms and certificates before buying.',
+    'Amerisleep lists OEKO-TEX Standard 100, Rainforest Alliance and eco-INSTITUT for the latex. The wool carries GOTS and OEKO-TEX Standard 100. Check current terms and certificates before buying.',
   ],
   faqs: [
     {
@@ -110,7 +110,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What is the Amerisleep Organica score?',
-      a: 'The Organica earns a 9.2/10 Overall. It scores 10/10 in Response Time and 9/10 in Value, Edge Support, Trial Period, Motion Transfer and Cooling & Breathability. Overall is the average of those six field scores, shown to one decimal. Every field lands in the strong band or higher.',
+      a: 'The Organica earns a 9.3/10 Overall. It scores 10/10 in Trial Period and Response Time, and 9/10 in Value, Edge Support, Motion Transfer and Cooling & Breathability. Overall is the average of those six field scores, shown to one decimal. Every field lands in the strong band or higher.',
     },
     {
       q: 'What is inside the Amerisleep Organica?',
@@ -118,11 +118,11 @@ const copy: ReviewCopy = {
     },
     {
       q: 'Is the Amerisleep Organica organic certified?',
-      a: 'Amerisleep\'s FAQ states the wool is GOTS-certified, while its spec section lists OEKO-TEX Standard 100 for the wool and latex. The latex also carries Rainforest Alliance and eco-INSTITUT certifications on the brand page. Check the certificates directly for current scope before relying on any label.',
+      a: 'The organic certification is GOTS, and it covers the wool. The wool also carries OEKO-TEX Standard 100. The latex is certified to OEKO-TEX Standard 100, Rainforest Alliance and eco-INSTITUT, which are not organic certifications. Check the certificates directly for current scope before relying on any label.',
     },
     {
       q: 'What trial and warranty come with the Amerisleep Organica?',
-      a: 'The Organica has a 100-night trial and a 20-year warranty, according to Amerisleep. Shipping is free by FedEx in the contiguous US, and returns are free. Confirm the current terms on Amerisleep\'s site before ordering, since policies can change between our checks.',
+      a: 'The Organica has a 365-night trial and a 20-year warranty, according to Amerisleep. Shipping is free by FedEx in the contiguous US, and returns are free. Confirm the current terms on Amerisleep\'s site before ordering, since policies can change between our checks.',
     },
     {
       q: 'Does the Amerisleep Organica sleep hot?',
@@ -133,7 +133,7 @@ const copy: ReviewCopy = {
       a: 'Yes, for couples who like a responsive surface. It scores 9/10 in both Motion Transfer and Edge Support, so movement stays mostly on one side and the perimeter stays usable. Couples who rank motion control first may prefer an all-foam bed with a 10 in that field. The 10/10 Response Time suits partners who both move often.',
     },
   ],
-  verdict: 'The Amerisleep Organica earns a 9.2/10 Overall as a 12 inch Talalay latex hybrid at medium 6/10. It is built from organic cotton, wool and natural latex over pocketed coils. It pairs a 10/10 Response Time with a fully published layer stack, and every other field scores a strong 9. Back, stomach and combination sleepers under 230 lb are the best fit. Light side sleepers should consider the Plush version instead, which keeps the same materials and warranty with a softer top.',
+  verdict: 'The Amerisleep Organica earns a 9.3/10 Overall as a 12 inch Talalay latex hybrid at medium 6/10. It is built from organic cotton, wool and natural latex over pocketed coils. It pairs 10s in Response Time and Trial Period with a fully published layer stack, and every other field scores a strong 9. Back, stomach and combination sleepers under 230 lb are the best fit. Light side sleepers should consider the Plush version instead, which keeps the same materials and warranty with a softer top.',
   related: [
     { label: 'Amerisleep AS3 vs Amerisleep Organica', href: '/comparison/amerisleep-as3-vs-organica/' },
     { label: 'Amerisleep Organica vs Birch Natural', href: '/comparison/amerisleep-organica-vs-birch-natural/' },

@@ -10,7 +10,6 @@ import { BEST_COPY } from '../../content/best';
 import { BYLINE_DISCLOSURE } from '../../lib/disclosure';
 import { toArticleBody, articleList, articleTable } from '../../lib/schemaArticleBody';
 import { BEST_PAGE_CONFIGS, FIELD_LABEL, rankBestPage, SIX_FIELDS } from '../../lib/ranking';
-import { AS3_ID } from '../../lib/scoreFieldOrder';
 import { as3RankingSentence, bestSeoTitle, getMattress, getSpec, scoreText } from '../../lib/pageData';
 import {
   h1For, renderInline, plainInline, assertAllowedLink, reviewUrl, qualifyingFirmnessText, firmnessShort,
@@ -36,7 +35,7 @@ const picks = result.picks;
 if (copy.picks.length !== picks.length || copy.picks.some((p, i) => p.slug !== picks[i].candidate.mattress.id)) {
   throw new Error(`/best/${config.slug}/ copy picks [${copy.picks.map(p => p.slug).join(', ')}] do not match the ranked order [${picks.map(p => p.candidate.mattress.id).join(', ')}].`);
 }
-if (!result.as3Qualifies && !copy.as3BoxReason) throw new Error(`/best/${config.slug}/ needs the AS3 box sentence.`);
+if (result.skip) throw new Error(`/best/${config.slug}/ is SKIP: its top pick does not qualify or fewer than 4 models do. Leave it unpublished.`);
 if (copy.faqs.length < 5 || copy.faqs.length > 8) throw new Error(`/best/${config.slug}/ needs 5 to 8 FAQs.`);
 
 const SITE_URL = import.meta.env.SITE_URL || 'https://mattressinquirer.ahmedbarkat1067.workers.dev';
@@ -44,7 +43,6 @@ const pageUrl = `/best/${config.slug}/`;
 const canonicalUrl = `${SITE_URL}${pageUrl}`;
 const h1 = h1For(pageUrl);
 const ctx = `best ${config.slug}`;
-const as3 = getMattress(AS3_ID);
 const showPrice = config.row === 'luxury' || config.row === 'under-1000';
 const isPainPage = PAIN_PAGE_SLUGS.has(config.slug);
 copy.related.forEach(link => assertAllowedLink(link.href, `${ctx} related`));
@@ -76,7 +74,6 @@ const articleBody = toArticleBody(
   h1,
   BYLINE_DISCLOSURE,
   plainInline(copy.quickAnswer),
-  ...(result.as3Qualifies ? [] : [`Our Best Overall Pick: Amerisleep AS3 (${scoreText(as3, 'overall')}/10). ${plainInline(copy.as3BoxReason!)}`]),
   articleTable('Our Picks at a Glance', ['Rank', 'Mattress', 'Award', 'Overall', 'Firmness', 'Type', 'Trial', 'Warranty'],
     pickRows.map(r => [String(r.pick.rank), r.m.name, r.pick.award, `${scoreText(r.m, 'overall')}/10`, r.glanceFirmness, typeText(r.spec), trialText(r.spec), warrantyText(r.spec)])),
   'How We Picked', plain(howWePicked),
@@ -160,17 +157,6 @@ const td = 'px-4 py-3 text-on-surface-variant border-t border-outline-variant/30
           <img src={picks[0].candidate.mattress.heroImage || picks[0].candidate.mattress.image} alt={`${picks[0].candidate.mattress.name} mattress`} class="w-full h-56 md:h-72 object-contain bg-white p-3" loading="eager" />
         </a>
       </header>
-
-      {!result.as3Qualifies && (
-        <aside class="border-2 border-primary rounded-lg bg-surface-container-low p-6 flex flex-col sm:flex-row gap-5 sm:items-center" data-as3-box>
-          <img src={as3.image} alt="Amerisleep AS3 mattress" class="w-full sm:w-40 h-28 object-contain bg-white rounded-lg p-2 shrink-0" loading="lazy" />
-          <div class="flex flex-col gap-2">
-          <p class="text-title-lg font-bold text-primary">Our Best Overall Pick: Amerisleep AS3 ({scoreText(as3, 'overall')}/10)</p>
-          <p class="text-body-md text-on-surface-variant" set:html={renderInline(copy.as3BoxReason!, ctx)} />
-          <p><a href={reviewUrl(AS3_ID)} class="text-primary underline underline-offset-4 font-bold">Read the Amerisleep AS3 review</a></p>
-          </div>
-        </aside>
-      )}
 
       <section class="flex flex-col gap-3" data-section="Our Picks at a Glance">
         <h2 class={h2}>Our Picks at a Glance</h2>

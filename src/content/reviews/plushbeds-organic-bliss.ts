@@ -2,7 +2,7 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'plushbeds-organic-bliss',
-  dateModified: '2026-10-11',
+  dateModified: '2026-10-22',
   metaDescription: 'PlushBeds Organic Bliss review: 9.0/10 Overall, a 14 inch organic all-latex bed with a latex pillow top, in Medium 5.5 and Medium-Firm 8 by PlushBeds.',
   quickAnswer: 'PlushBeds Organic Bliss earns a 9.0/10 Overall as a 14 inch all-latex mattress with a 3 inch latex pillow top over a 6 inch Dunlop core, rated Medium 5.5/10 or Medium-Firm 8/10 by PlushBeds. It suits shoppers who want certified organic latex with deep cushioning. Its main strength is a 10/10 in Trial Period, with 9s in four fields. Its limitation is an 8/10 in Value.',
   strengths: [
@@ -14,7 +14,7 @@ const copy: ReviewCopy = {
   limitations: [
     'Value is an 8, good with a caveat, the lowest of its six scored fields.',
     'A fee applies to returns made before 30 days, and one return is allowed per household.',
-    'At 14 inches, it needs deep pocket fitted sheets.',
+    'Its 14 inch height calls for deep pocket fitted sheets.',
   ],
   howScored: 'PlushBeds Organic Bliss is scored on the same seven fields as every model we cover, from PlushBeds\' official product page. Our [methodology page](/methodology/) explains how each field is set, for the Organic Bliss and every other model we score.',
   layerRoles: [
@@ -92,7 +92,7 @@ const copy: ReviewCopy = {
     'Heavier stomach sleepers who want a firm hybrid over coils.',
     'Shoppers with shallow fitted sheets or a tall frame, since it is 14 inches.',
   ],
-  compareIntro: 'The [PlushBeds Botanical Bliss](/reviews/plushbeds-botanical-bliss/) scores 8.7 as an all-latex bed in three heights. The [Eco Terra Hybrid Latex](/reviews/eco-terra-hybrid-latex/) scores 9.0, the same as the Organic Bliss, as a latex hybrid. The table lines up their firmness, trial and warranty next to the Organic Bliss.',
+  compareIntro: 'The [PlushBeds Botanical Bliss](/reviews/plushbeds-botanical-bliss/) scores 8.7 as an all-latex bed in three heights. The [Vaya Hybrid](/reviews/vaya-hybrid/) scores 9.0, the same as the Organic Bliss, as a foam and coil hybrid. The table lines up their firmness, trial and warranty next to the Organic Bliss.',
   policies: [
     'PlushBeds Organic Bliss comes with a 365-night trial and a lifetime warranty, according to PlushBeds. UPS delivery is free in the contiguous US, and in-home setup is available for a fee.',
     'Returns get a full refund after 30 days, with a fee if returned before 30 days. Concierge removal is available for a fee, and one return is allowed per household. Sizes run Twin, Twin XL, Full, Queen, King, Cal King, Split King, Split Cal King and Split Queen.',

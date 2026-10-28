@@ -5,8 +5,8 @@ const B = '[Amerisleep AS5](/reviews/amerisleep-as5/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as3-vs-as5',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS3 vs AS5: a medium 5/10 all-foam bed against a soft 3/10, 14 inch all-foam bed. The AS3 scores 9.5/10 to 9.0/10; both score 10 in Edge Support.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS3 vs AS5: a medium 5/10 all-foam bed against a soft 3/10, 14 inch all-foam bed. The AS3 scores 9.7/10 to 9.2/10; both score 10 in Edge Support.',
   quickVerdict: `Choose the ${A} if you want a medium 5/10 all-foam bed for side, back or combination sleeping. Choose the ${B} if you sleep on your side and want a soft 3/10, 14 inch bed with an extra Active Flex layer and the same 10 in Edge Support.`,
   feel: [
     `These are two Amerisleep all-foam beds two steps apart in firmness. The ${A} is sold in medium, which sits at 5/10 on our scale. The ${B} is sold in soft, which sits at 3/10.`,
@@ -72,15 +72,15 @@ const copy: ComparisonCopy = {
     'Sleepers who often get up at night may also find the AS3\'s firmer surface easier to leave and return to.',
   ],
   valuePolicies: [
-    `The ${A} scores 9 in Value and 9 in Trial Period. The ${B} scores 8 in Value and 9 in Trial Period. Our Value and Trial Period scores for the AS3 and the AS5 come from price, trial and warranty facts.`,
-    'Amerisleep lists a 100-night trial and a 20-year warranty for both models, with free shipping via FedEx in the continental US.',
-    'The returns wording differs slightly. Amerisleep lists free returns with courier pickup for the AS3, and free returns by mail within 100 days, with courier pickup, for the AS5.',
+    `The ${A} scores 9 in Value and 10 in Trial Period. The ${B} scores 8 in Value and 10 in Trial Period, so the two tie on trial. Our Value and Trial Period scores for the AS3 and the AS5 come from price, trial and warranty facts.`,
+    'Amerisleep lists a 365-night trial and a 20-year warranty for both models, with free shipping via FedEx in the continental US.',
+    'The returns wording differs slightly. Amerisleep lists free returns with courier pickup for the AS3, and free returns by mail, with courier pickup, for the AS5.',
     'Value weighs policies against price, and the AS3 scores a point higher in that field.',
     'Both come in seven sizes, from Twin to Split King.',
     'Couples who want separate halves can choose a Split King on either model, so sizing does not separate them.',
     'Confirm current terms on Amerisleep\'s site before ordering.',
     'Since the policies match, the decision rests on firmness, motion and response.',
-    'Shoppers who are unsure between the two can use the 100-night trial to judge the firmness at home, since both carry the same trial and warranty terms.',
+    'Shoppers who are unsure between the two can use the 365-night trial to judge the firmness at home, since both carry the same trial and warranty terms.',
   ],
   buyA: [
     'Side, back and combination sleepers who want a medium 5/10 surface.',
@@ -95,7 +95,7 @@ const copy: ComparisonCopy = {
   faqs: [
     {
       q: 'Which is better, Amerisleep AS3 or Amerisleep AS5?',
-      a: `The ${A} scores higher, 9.5/10 against 9.0/10, and leads on Overall, Value, Response Time and Motion Transfer. The ${B} does not lead on any field, and the two tie on Edge Support, Trial Period and Cooling & Breathability. The AS5 suits side sleepers who want a softer bed.`,
+      a: `The ${A} scores higher, 9.7/10 against 9.2/10, and leads on Overall, Value, Response Time and Motion Transfer. The ${B} does not lead on any field, and the two tie on Edge Support, Trial Period and Cooling & Breathability. The AS5 suits side sleepers who want a softer bed.`,
     },
     {
       q: 'How much softer is the AS5 than the AS3?',
@@ -107,7 +107,7 @@ const copy: ComparisonCopy = {
     },
     {
       q: 'Is the AS5 good for back sleepers?',
-      a: `Most back sleepers will be better served by the Amerisleep AS3. A soft 3/10 surface like the Amerisleep AS5 can let the hips sink below the chest. Lighter back sleepers who like a plush feel can still try the AS5 during its 100-night trial.`,
+      a: `Most back sleepers will be better served by the Amerisleep AS3. A soft 3/10 surface like the Amerisleep AS5 can let the hips sink below the chest. Lighter back sleepers who like a plush feel can still try the AS5 during its 365-night trial.`,
     },
     {
       q: 'Which is better for couples, the AS3 or the AS5?',
@@ -115,7 +115,7 @@ const copy: ComparisonCopy = {
     },
     {
       q: 'Do the AS3 and AS5 have the same policies?',
-      a: `Yes. Amerisleep lists a 100-night trial, a 20-year warranty and free FedEx shipping in the continental US for both. The AS3 scores a point higher on Value, which weighs policies against price. Confirm current terms with Amerisleep. Both ship free via FedEx in the continental US.`,
+      a: `Yes. Amerisleep lists a 365-night trial, a 20-year warranty and free FedEx shipping in the continental US for both. The AS3 scores a point higher on Value, which weighs policies against price. Confirm current terms with Amerisleep. Both ship free via FedEx in the continental US.`,
     },
   ],
   related: [

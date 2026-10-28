@@ -2,7 +2,7 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'nest-bedding-sparrow',
-  dateModified: '2026-10-16',
+  dateModified: '2026-10-22',
   metaDescription: 'Nest Bedding Sparrow review: 9.3/10 Overall, a 14 inch hybrid in Plush 4, Medium 5 and Firm 7, with 10s in Edge Support, Trial Period and Motion Transfer.',
   quickAnswer: 'Nest Bedding Sparrow earns a 9.3/10 Overall as a 14 inch hybrid with a phase change cover, Energex foam and reinforced edge pocketed coils, sold in Plush 4/10, Medium 5/10 and Firm 7/10. It suits couples and most sleep positions. Its main strengths are 10/10 scores in Edge Support, Trial Period and Motion Transfer. The main limitation of the Sparrow is an 8/10 in Value.',
   strengths: [
@@ -93,7 +93,7 @@ const copy: ReviewCopy = {
     'Shoppers who want to return early, since a 30-night adjustment period comes first.',
     'Sleepers who want the slow hug of thick memory foam.',
   ],
-  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Sparrow and scores 9.5 as a medium all-foam bed. The [Zoma Hybrid](/reviews/zoma-hybrid/) and the [Glacier Apex Hybrid](/reviews/glacier-apex-hybrid/) both score 9.3 as hybrids, the same as the Sparrow. The table below sets their firmness, trial and warranty beside the Sparrow.',
+  compareIntro: 'The [Amerisleep AS3](/reviews/amerisleep-as3/) has a head-to-head page with the Sparrow and scores 9.7 as a medium all-foam bed. The [Zoma Start](/reviews/zoma-start/) and the [Glacier Apex Hybrid](/reviews/glacier-apex-hybrid/) both score 9.3 as hybrids, the same as the Sparrow. The table below sets their firmness, trial and warranty beside the Sparrow.',
   policies: [
     'Nest Bedding Sparrow comes with a 365-night trial and a limited lifetime warranty, according to Nest Bedding. On the Sparrow, shipping is free in the continental US, with extra rates for Alaska, Hawaii and Canada.',
     'On the Sparrow, returns are free after a 30-night adjustment period. The Sparrow comes in Twin, Twin XL, Full, Queen, King, Cal King and Split Cal King.',

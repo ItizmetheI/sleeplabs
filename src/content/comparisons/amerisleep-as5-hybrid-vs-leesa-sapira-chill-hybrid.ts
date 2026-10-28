@@ -5,9 +5,9 @@ const B = '[Leesa Sapira Chill Hybrid](/reviews/leesa-sapira-chill-hybrid/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as5-hybrid-vs-leesa-sapira-chill-hybrid',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS5 Hybrid vs Leesa Sapira Chill Hybrid: soft memory foam against a three-firmness hybrid. The Leesa scores 9.3/10 to 8.8/10 and leads on three.',
-  quickVerdict: `Choose the ${A} if you sleep on your side and want a soft 3/10 memory foam hybrid with a 10 in Cooling & Breathability and a Split King option. Choose the ${B} if you want a livelier hybrid in Plush, Medium-Firm or Firm, with 10s in Edge Support and Response Time, a 365-night trial and a limited lifetime warranty.`,
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS5 Hybrid vs Leesa Sapira Chill Hybrid: soft memory foam against a three-firmness hybrid. The Leesa scores 9.5/10 to 9.0/10 and leads on three.',
+  quickVerdict: `Choose the ${A} if you sleep on your side and want a soft 3/10 memory foam hybrid with a 10 in Cooling & Breathability and a Split King option. Choose the ${B} if you want a livelier hybrid in Plush, Medium-Firm or Firm, with 10s in Edge Support and Response Time and a limited lifetime warranty.`,
   feel: [
     `These two are both cooling-minded hybrids, but they feel different. The ${A} is sold in one soft feel, which sits at 3/10 on our scale, with memory foam near the top. The ${B} is sold in Plush 4/10, Medium-Firm 6/10 and Firm 7/10, all under one score.`,
     'The AS5 Hybrid lets the shoulder and hip sink deep, and the memory foam wraps around the body. It is aimed at side sleepers, especially lighter and average weight side sleepers.',
@@ -71,9 +71,9 @@ const copy: ComparisonCopy = {
     'Restless sleepers should lean toward the Sapira Chill on this field.',
   ],
   valuePolicies: [
-    `Both score 8 in Value and 9 in Trial Period. The ${A} and the ${B} reach those scores with different policies. Price, trial and warranty facts set our Value and Trial Period scores for both the AS5 Hybrid and the Sapira Chill Hybrid.`,
-    'Leesa lists the longer policies. The Sapira Chill comes with a 365-night trial and a limited lifetime warranty, with optional in-home setup and removal.',
-    'Amerisleep lists a 100-night trial with free returns by mail within 100 days and courier pickup, and a 20-year warranty for the AS5 Hybrid.',
+    `Both score 8 in Value and 10 in Trial Period. The ${A} and the ${B} reach those scores with different policies. Price, trial and warranty facts set our Value and Trial Period scores for both the AS5 Hybrid and the Sapira Chill Hybrid.`,
+    'Both brands list a 365-night trial, which is why each earns a 10 in Trial Period. Leesa adds a limited lifetime warranty, with optional in-home setup and removal.',
+    'Amerisleep lists free returns by mail with courier pickup, and a 20-year warranty for the AS5 Hybrid.',
     'Shipping is free for both. The AS5 Hybrid ships via FedEx in the continental US. Leesa makes the Sapira Chill to order.',
     'With the AS5 Hybrid and the Sapira Chill Hybrid, because Value ties, policy alone does not separate these two on our scorecard.',
     'Shoppers who want a full year to decide and a limited lifetime warranty may prefer the Sapira Chill.',
@@ -89,12 +89,12 @@ const copy: ComparisonCopy = {
   buyB: [
     'Shoppers who want Plush, Medium-Firm or Firm in one model.',
     'Restless sleepers who want a 10 in Response Time, which the Sapira Chill Hybrid offers.',
-    'Shoppers who want a 365-night trial and a limited lifetime warranty, which the Sapira Chill Hybrid offers.',
+    'Shoppers who want a limited lifetime warranty and optional in-home setup, which the Sapira Chill Hybrid offers.',
   ],
   faqs: [
     {
       q: 'Which is better, Amerisleep AS5 Hybrid or Leesa Sapira Chill Hybrid?',
-      a: `The ${B} scores higher, 9.3/10 against 8.8/10, and leads on Overall, Edge Support and Response Time. The ${A} does not lead on any field, and the two tie on Value, Trial Period, Motion Transfer and Cooling & Breathability. The AS5 Hybrid suits side sleepers who want a soft memory foam feel.`,
+      a: `The ${B} scores higher, 9.5/10 against 9.0/10, and leads on Overall, Edge Support and Response Time. The ${A} does not lead on any field, and the two tie on Value, Trial Period, Motion Transfer and Cooling & Breathability. The AS5 Hybrid suits side sleepers who want a soft memory foam feel.`,
     },
     {
       q: 'Which is softer?',
@@ -109,8 +109,8 @@ const copy: ComparisonCopy = {
       a: `The AS5 Hybrid and the Sapira Chill Hybrid tie at 10 in Cooling & Breathability. Both have coil cores, and the Leesa Sapira Chill Hybrid names an Ultra Cool cover. Warm side sleepers who want a soft bed can take the Amerisleep AS5 Hybrid without giving up anything on cooling.`,
     },
     {
-      q: 'Which has the longer trial and warranty, the AS5 Hybrid or the Sapira Chill Hybrid?',
-      a: `The Leesa Sapira Chill Hybrid lists a 365-night trial and a limited lifetime warranty. Amerisleep lists a 100-night trial and a 20-year warranty for the AS5 Hybrid. Both score 8 in Value and 9 in Trial Period. Confirm current terms with each brand before ordering.`,
+      q: 'Which has the better trial and warranty, the AS5 Hybrid or the Sapira Chill Hybrid?',
+      a: `The trials match: both list 365 nights. The Leesa Sapira Chill Hybrid adds a limited lifetime warranty, and Amerisleep lists a 20-year warranty for the AS5 Hybrid. Both score 8 in Value and 10 in Trial Period. Confirm current terms with each brand before ordering.`,
     },
     {
       q: 'Which is better for back sleepers, the AS5 Hybrid or the Sapira Chill Hybrid?',

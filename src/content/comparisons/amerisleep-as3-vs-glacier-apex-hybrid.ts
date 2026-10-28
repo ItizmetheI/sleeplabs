@@ -5,9 +5,9 @@ const B = '[Glacier Apex Hybrid](/reviews/glacier-apex-hybrid/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as3-vs-glacier-apex-hybrid',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS3 vs Glacier Apex Hybrid: medium all foam against a three-firmness cooling hybrid. The AS3 scores 9.5/10 to 9.3/10; the Glacier leads on Value.',
-  quickVerdict: `Choose the ${A} if you want a medium 5/10 all-foam bed with 10s in Edge Support and Motion Transfer and a quicker surface. Choose the ${B} if you want a cooling-focused hybrid in Soft, Medium or Firm, with 10s in Value and Trial Period and a lifetime warranty.`,
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS3 vs Glacier Apex Hybrid: medium all foam against a three-firmness cooling hybrid. The AS3 scores 9.7/10 to 9.3/10; the Glacier leads on Value.',
+  quickVerdict: `Choose the ${A} if you want a medium 5/10 all-foam bed with 10s in Edge Support and Motion Transfer and a quicker surface. Choose the ${B} if you want a cooling-focused hybrid in Soft, Medium or Firm, with a 10 in Value and a lifetime warranty.`,
   feel: [
     `The ${A} is an all-foam bed sold in one medium feel, which sits at 5/10 on our scale. The ${B} is a hybrid sold in Soft 3/10, Medium 5/10 and Firm 7/10, all under one score.`,
     'Choice of firmness is the Glacier\'s main advantage on feel. A lighter side sleeper can take Soft, a combination sleeper Medium, and a back or stomach sleeper Firm.',
@@ -72,13 +72,13 @@ const copy: ComparisonCopy = {
     'The Glacier\'s Firm option keeps the body nearer the surface, which can make movement feel quicker in everyday use.',
   ],
   valuePolicies: [
-    `The ${B} scores 10 in Value and 10 in Trial Period. Against the Apex Hybrid, the ${A} scores 9 in Value and 9 in Trial Period. Price, trial and warranty facts set our Value and Trial Period scores for both the AS3 and the Apex Hybrid.`,
+    `The ${B} scores 10 in Value and 10 in Trial Period. Against the Apex Hybrid, the ${A} scores 9 in Value and 10 in Trial Period, so the two tie on trial. Price, trial and warranty facts set our Value and Trial Period scores for both the AS3 and the Apex Hybrid.`,
     'Glacier lists a 365-night trial and a lifetime warranty for the Apex Hybrid, with a full refund and return shipping covered after at least 30 days of use.',
-    'Amerisleep lists a 100-night trial with free returns and courier pickup, and a 20-year warranty for the AS3.',
+    'Amerisleep lists the same 365-night trial length for the AS3, with free returns and courier pickup, and a 20-year warranty.',
     'Shipping differs. Glacier lists free standard UPS delivery to the door, with paid white glove delivery available. Amerisleep ships free via FedEx in the continental US.',
     'Value weighs policies against price, and the Glacier scores a point higher in that field.',
-    'These are the Glacier\'s two strongest fields against the AS3. Shoppers who put policies first may prefer it.',
-    'Two points of difference across Value and Trial Period is a meaningful policy advantage, and it keeps the Glacier within 0.2 of the AS3 Overall despite trailing on four fields.',
+    'Value is the only field where the Glacier leads the AS3. Shoppers who put that field and a lifetime warranty first may prefer it.',
+    'With trial lengths now matched, the Glacier\'s policy edge narrows to one point in Value. It trails the AS3 by 0.4 Overall after trailing on four fields.',
     'Before ordering the AS3 or the Apex Hybrid, confirm current terms on each brand\'s site.',
     'Shoppers who are unsure which Glacier firmness suits them can use its 365-night trial to judge it at home, keeping in mind the 30-day minimum before a return.',
   ],
@@ -89,13 +89,13 @@ const copy: ComparisonCopy = {
   ],
   buyB: [
     'Shoppers who want Soft, Medium or Firm in one model.',
-    'Shoppers who want 10s in Value and Trial Period and a lifetime warranty.',
+    'Shoppers who want a 10 in Value and a lifetime warranty.',
     'Shoppers who want named cooling materials over pocketed coils.',
   ],
   faqs: [
     {
       q: 'Which is better, Amerisleep AS3 or Glacier Apex Hybrid?',
-      a: `The ${A} scores higher, 9.5/10 against 9.3/10, and leads on Overall, Edge Support, Response Time and Motion Transfer. The ${B} leads on Value and Trial Period, and the two tie on Cooling & Breathability. The Glacier suits shoppers who want a firmness choice and long policies.`,
+      a: `The ${A} scores higher, 9.7/10 against 9.3/10, and leads on Overall, Edge Support, Response Time and Motion Transfer. The ${B} leads on Value, and the two tie on Trial Period and Cooling & Breathability. The Glacier suits shoppers who want a firmness choice and long policies.`,
     },
     {
       q: 'What firmness options does the Glacier Apex Hybrid come in?',
@@ -111,7 +111,7 @@ const copy: ComparisonCopy = {
     },
     {
       q: 'Which has the better trial and warranty?',
-      a: `The Glacier Apex Hybrid lists a 365-night trial and a lifetime warranty, with returns after at least 30 days of use. Amerisleep lists a 100-night trial and a 20-year warranty for the AS3. The Glacier scores 10 in Value and 10 in Trial Period.`,
+      a: `The Glacier Apex Hybrid lists a 365-night trial and a lifetime warranty, with returns after at least 30 days of use. Amerisleep lists the same 365-night trial and a 20-year warranty for the AS3. Both score 10 in Trial Period, and the Glacier leads on Value, 10 against 9.`,
     },
     {
       q: 'Which is better for stomach sleepers, the AS3 or the Apex Hybrid?',

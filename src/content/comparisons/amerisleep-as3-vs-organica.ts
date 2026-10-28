@@ -5,8 +5,8 @@ const B = '[Amerisleep Organica](/reviews/amerisleep-organica/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as3-vs-organica',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS3 vs Organica: memory foam against natural Talalay latex over coils. The AS3 scores 9.5/10 to 9.2/10; the Organica leads on Response Time.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS3 vs Organica: memory foam against natural Talalay latex over coils. The AS3 scores 9.7/10 to 9.3/10; the Organica leads on Response Time.',
   quickVerdict: `Choose the ${A} if you want a medium 5/10 memory foam bed with 10s in Edge Support, Motion Transfer and Cooling & Breathability. Choose the ${B} if you want natural Talalay latex and organic wool over pocketed coils, a 6/10 feel and a 10 in Response Time.`,
   feel: [
     `These two take different routes to comfort. The ${A} is an all-foam bed with memory foam near the top, sold in medium, which sits at 5/10 on our scale. The ${B} is a latex hybrid sold in one feel that Amerisleep calls medium, which sits at 6/10 on our scale.`,
@@ -22,7 +22,7 @@ const copy: ComparisonCopy = {
     `Against the Organica, the ${A} has four named parts: a Refresh cover, Bio-Pur memory foam, a HIVE transition layer and a Bio-Core base foam. The AS3 comes without listed layer thicknesses from Amerisleep.`,
     `The ${B} lists its thicknesses: an organic cotton cover over 1 inch of organic wool, 2 inches of soft natural Talalay latex, 1 inch of medium natural Talalay latex and an 8 inch pocketed coil unit with edge support.`,
     'Materials are the main difference. The AS3 uses CertiPUR-US certified foams. The Organica uses natural latex, organic wool and organic cotton over coils.',
-    'Certifications follow the materials. Amerisleep lists OEKO-TEX Standard 100 for the Organica\'s latex and wool, Rainforest Alliance and eco-INSTITUT for its latex, and GOTS for its wool, per its FAQ.',
+    'Certifications follow the materials. For the Organica\'s latex, Amerisleep lists OEKO-TEX Standard 100, Rainforest Alliance and eco-INSTITUT. For its wool, it lists GOTS and OEKO-TEX Standard 100. The GOTS organic certification covers the wool only.',
     'Where they are made differs. Amerisleep states the AS3 is made in the USA from U.S. and imported components, with covers sewn in Canada. It states the Organica is made in California from materials sourced in Sri Lanka, New Zealand and India.',
     'Shoppers who put natural and organic materials first will find them only on the Organica.',
     'The AS3 and the Organica both come in the same seven sizes, from Twin to Split King.',
@@ -72,14 +72,14 @@ const copy: ComparisonCopy = {
     'Heavier combination sleepers may notice the Organica\'s coils and latex give more lift between positions, which helps when changing sides several times a night.',
   ],
   valuePolicies: [
-    `The AS3 and the Organica both score 9 in Value and 9 in Trial Period. The ${A} and the ${B} share Amerisleep's core policies. For the AS3 and the Organica, our Value and Trial Period scores are set from price, trial and warranty facts.`,
-    'Amerisleep lists a 100-night trial and a 20-year warranty for both.',
+    `The AS3 and the Organica both score 9 in Value and 10 in Trial Period. The ${A} and the ${B} share Amerisleep's core policies. For the AS3 and the Organica, our Value and Trial Period scores are set from price, trial and warranty facts.`,
+    'Amerisleep lists a 365-night trial and a 20-year warranty for both. A full year at home is the reason both earn a 10 in Trial Period.',
     'Shipping is free for both. Amerisleep ships the AS3 via FedEx in the continental US, and lists free FedEx shipping with no-contact delivery in the contiguous US for the Organica.',
     'Returns are free for both, with courier pickup listed for the AS3.',
-    'Because Value ties, policy alone does not separate these two on our scorecard.',
+    'Because Value and Trial Period both tie, policy alone does not separate these two on our scorecard.',
     'For the AS3 and the Organica, confirm current terms on Amerisleep\'s site before ordering.',
     'Since the policies match, the decision rests on materials, feel and the fields where the scores differ.',
-    'Shoppers who are unsure whether latex suits them can use the 100-night trial to judge it at home, since both models carry the same trial and warranty terms.',
+    'Shoppers unsure whether latex suits them can use the 365-night trial to judge it at home. Both models carry the same trial and warranty terms.',
   ],
   buyA: [
     'Side and combination sleepers who want a medium 5/10 memory foam feel.',
@@ -94,7 +94,7 @@ const copy: ComparisonCopy = {
   faqs: [
     {
       q: 'Which is better, Amerisleep AS3 or Amerisleep Organica?',
-      a: `The ${A} scores higher, 9.5/10 against 9.2/10, and leads on Overall, Edge Support, Motion Transfer and Cooling & Breathability. The ${B} leads on Response Time, and the two tie on Value and Trial Period. The Organica suits shoppers who want natural materials.`,
+      a: `The ${A} scores higher, 9.7/10 against 9.3/10, and leads on Overall, Edge Support, Motion Transfer and Cooling & Breathability. The ${B} leads on Response Time, and the two tie on Value and Trial Period. The Organica suits shoppers who want natural materials.`,
     },
     {
       q: 'What is the Organica made of?',
@@ -114,7 +114,7 @@ const copy: ComparisonCopy = {
     },
     {
       q: 'Do the AS3 and Organica have the same trial and warranty?',
-      a: `Yes. Amerisleep lists a 100-night trial and a 20-year warranty for both, with free shipping and free returns. The AS3 and the Organica both score 9 in Value and 9 in Trial Period. Confirm current terms with Amerisleep before ordering. Returns are free for both.`,
+      a: `Yes. Amerisleep lists a 365-night trial and a 20-year warranty for both, with free shipping and free returns. The AS3 and the Organica both score 9 in Value and 10 in Trial Period. Confirm current terms with Amerisleep before ordering. Returns are free for both.`,
     },
   ],
   related: [

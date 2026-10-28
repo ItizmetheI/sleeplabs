@@ -5,9 +5,9 @@ const B = '[Bear Original](/reviews/bear-original/)';
 
 const copy: ComparisonCopy = {
   slug: 'amerisleep-as2-vs-bear-original',
-  dateModified: '2026-10-12',
-  metaDescription: 'Amerisleep AS2 vs Bear Original: two medium-firm all-foam beds. The AS2 scores 9.3/10 to 9.2/10 and leads on four fields; the Bear leads on Value and Edge.',
-  quickVerdict: `Choose the ${A} if you want a medium-firm 6/10 memory foam bed with 10s in Response Time, Motion Transfer and Cooling & Breathability. Choose the ${B} if you want a medium-firm foam bed with 10s in Value and Edge Support, a 365-night trial and a limited lifetime warranty.`,
+  dateModified: '2026-10-22',
+  metaDescription: 'Amerisleep AS2 vs Bear Original: two medium-firm all-foam beds. The AS2 scores 9.5/10 to 9.3/10 and leads on four fields; the Bear leads on Value and Edge.',
+  quickVerdict: `Choose the ${A} if you want a medium-firm 6/10 memory foam bed with 10s in Response Time, Motion Transfer and Cooling & Breathability. Choose the ${B} if you want a medium-firm foam bed with 10s in Value and Edge Support and a limited lifetime warranty.`,
   feel: [
     `These two are close on feel. The ${A} is sold in medium-firm, which sits at 6/10 on our scale. The ${B} is sold in medium-firm too, listed at 6.5-7, so it sits a half step firmer.`,
     'Both are all foam with memory foam near the top, so both feel contouring without letting the body sink deep.',
@@ -59,7 +59,7 @@ const copy: ComparisonCopy = {
     'For most sleepers, both should be comfortable through the year. Very warm sleepers who rank cooling first should lean toward the AS2.',
     'The gap is one point, so many sleepers will not notice it. It matters most for those who already sleep warm in summer or share the bed.',
     'Since both are medium-firm, neither lets the body sink especially deep, which helps both stay comfortable for warm sleepers.',
-    'On either bed, breathable cotton or linen sheets and a thin protector help. Heavy, plastic-backed protectors can trap heat at the surface.',
+    'On either bed, breathable cotton or linen sheets and a thin protector help. A heavy protector with a plastic backing can hold heat at the surface.',
     'Couples who sleep warm should weigh this field more heavily, since two bodies add warmth to one surface.',
     'Bedroom temperature and bedding usually matter more than a one-point gap for most sleepers.',
     'The Bear\'s Celliant cover is a named material, while the AS2 relies on its Refresh cover. On our scorecard, the AS2 still lands a point higher in this field.',
@@ -76,15 +76,15 @@ const copy: ComparisonCopy = {
     'Heavier combination sleepers will find both supportive enough to turn on easily, since neither lets the hips sink far. The AS2\'s extra point shows most for sleepers who change position many times a night.',
   ],
   valuePolicies: [
-    `The ${B} scores 10 in Value and 9 in Trial Period. The ${A} scores 9 in Value and 9 in Trial Period. Our Value and Trial Period scores for the AS2 and the Bear Original come from price, trial and warranty facts.`,
+    `The ${B} scores 10 in Value and 10 in Trial Period. The ${A} scores 9 in Value and 10 in Trial Period, so the two tie on trial. Our Value and Trial Period scores for the AS2 and the Bear Original come from price, trial and warranty facts.`,
     'Bear lists a 365-night trial and a limited lifetime warranty for the Original, with free returns after a 30-night break-in period.',
-    'Amerisleep lists a 100-night trial with free returns by mail within 100 days, and a 20-year warranty for the AS2.',
+    'Amerisleep also lists a 365-night trial for the AS2, with free returns by mail and a 20-year warranty.',
     'Shipping is free for both via FedEx. Bear notes fees may apply for Alaska and Hawaii. Amerisleep ships in the continental US.',
     'Value weighs policies against price, and the Bear scores a point higher in that field.',
-    'Shoppers who want a full year to decide and a limited lifetime warranty may prefer the Bear Original.',
-    'Shoppers who are unsure whether the half step of extra firmness suits them can use the Bear\'s 365-night trial to judge it at home, keeping in mind the 30-night break-in before a free return.',
+    'Both now give a full year to decide. Shoppers who want a limited lifetime warranty may prefer the Bear Original.',
+    'Shoppers who are unsure whether the half step of extra firmness suits them can use either 365-night trial to judge it at home. Keep in mind the Bear\'s 30-night break-in before a free return.',
     'Confirm current terms on each brand\'s site before ordering.',
-    'With Overall separated by a tenth, policies and the fields each bed leads can reasonably decide between them.',
+    'With Overall separated by two tenths, policies and the fields each bed leads can reasonably decide between them.',
   ],
   buyA: [
     'Couples who want a 10 in Motion Transfer.',
@@ -94,12 +94,12 @@ const copy: ComparisonCopy = {
   buyB: [
     'Shoppers who want a 10 in Value and a limited lifetime warranty.',
     'Anyone who sits on the edge often and wants a 10 in Edge Support.',
-    'Shoppers who want a 365-night trial.',
+    'Shoppers who want GREENGUARD Gold listed alongside CertiPUR-US.',
   ],
   faqs: [
     {
       q: 'Which is better, Amerisleep AS2 or Bear Original?',
-      a: `The ${A} scores higher, 9.3/10 against 9.2/10, and leads on Overall, Response Time, Motion Transfer and Cooling & Breathability. The ${B} leads on Value and Edge Support, and the two tie on Trial Period. The scores are close, so policies and edge support can decide it.`,
+      a: `The ${A} scores higher, 9.5/10 against 9.3/10, and leads on Overall, Response Time, Motion Transfer and Cooling & Breathability. The ${B} leads on Value and Edge Support, and the two tie on Trial Period. The scores are close, so policies and edge support can decide it.`,
     },
     {
       q: 'Are the AS2 and Bear Original the same firmness?',
@@ -110,8 +110,8 @@ const copy: ComparisonCopy = {
       a: `The Amerisleep AS2 scores 10 in Motion Transfer, against 8 for the Bear Original. The Bear scores 10 in Edge Support, against 8 for the AS2. Couples with a light sleeper should lean toward the AS2, and couples who sit on the edge often toward the Bear.`,
     },
     {
-      q: 'Which has the longer trial and warranty?',
-      a: `The Bear Original lists a 365-night trial, with free returns after a 30-night break-in, and a limited lifetime warranty. Amerisleep lists a 100-night trial and a 20-year warranty for the AS2. Both score 9 in Trial Period, and the Bear scores 10 in Value.`,
+      q: 'How do the trial and warranty compare?',
+      a: `Both list a 365-night trial, and both score 10 in Trial Period. The Bear Original adds free returns after a 30-night break-in and a limited lifetime warranty. Amerisleep lists a 20-year warranty for the AS2. The Bear scores 10 in Value, against 9 for the AS2.`,
     },
     {
       q: 'Which sleeps cooler?',

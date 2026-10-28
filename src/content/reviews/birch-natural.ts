@@ -2,17 +2,17 @@ import type { ReviewCopy } from '../types';
 
 const copy: ReviewCopy = {
   slug: 'birch-natural',
-  dateModified: '2026-10-11',
-  metaDescription: 'Birch Natural review: 9.0/10 Overall, a 10 inch GOLS latex hybrid at medium-firm 6/10 with a 10 in Response Time and a limited lifetime warranty. Specs and fit.',
-  quickAnswer: 'The Birch Natural earns a 9.0/10 Overall as a 10 inch organic latex hybrid at medium-firm 6/10. It suits back and combination sleepers who want natural materials with a buoyant feel. Its main strength is a 10/10 in Response Time. Its main limitation is an 8 in Motion Transfer.',
+  dateModified: '2026-10-22',
+  metaDescription: 'Birch Natural review: 9.2/10 Overall, a GOLS latex hybrid at medium-firm 6/10 with 10s in Trial Period and Response Time and a limited lifetime warranty.',
+  quickAnswer: 'The Birch Natural earns a 9.2/10 Overall as a 10 inch organic latex hybrid at medium-firm 6/10. It suits back and combination sleepers who want natural materials with a buoyant feel. Its main strengths are 10/10 scores in Trial Period and Response Time, backed by a 365-night trial. Its main limitation is an 8 in Motion Transfer.',
   strengths: [
-    'A 10/10 in Response Time from organic latex over individually wrapped coils.',
+    '10/10 scores in Trial Period and Response Time, the second from organic latex over wrapped coils.',
     'GOLS-certified organic latex and GREENGUARD Gold certification, per the brand.',
     'A 365-night trial and a limited lifetime warranty for the Birch Natural.',
     'A medium-firm 6/10 feel that keeps the hips level for back sleepers.',
   ],
   limitations: [
-    'Firm at the shoulder for side sleepers under 130 lb.',
+    'Side sleepers under 130 lb may find the shoulder firm.',
     'Motion Transfer is an 8, so more bounce reaches a partner than on foam beds.',
     'Birch does not list layer thicknesses or the stacking order.',
   ],
@@ -36,15 +36,15 @@ const copy: ReviewCopy = {
     edgeSupport: [
       'Edge Support is a strong 9 for the Birch Natural. Individually wrapped steel coils give the perimeter more structure than a foam or all-latex base.',
       'Birch does not name a separate edge system, so the score reflects the coil core and the latex above it. The latex compresses slightly at the very edge, which keeps it from reaching a 10. For sitting and sleeping near the side, the perimeter holds up well.',
-      'Couples who share a queen gain the most from this score. A supported edge keeps the full surface usable, and it helps anyone who sits on the side of the bed to dress each morning.',
+      'Couples who share a queen gain the most from this score. A supported edge keeps the full surface usable. It also helps anyone who sits on the side of the bed to dress each morning.',
     ],
     trialPeriod: [
-      'The Trial Period score is set from the trial and return terms, and the Birch Natural earns a 9. Birch offers a 365-night trial with a free return or exchange.',
-      'The trial ties for the longest length on our scorecard. The score stops at 9 because Birch asks for a 30-day break-in before a return starts. That is a short wait inside a year-long window.',
+      'The Trial Period score is set from the trial and return terms, and the Birch Natural earns a standout 10. Birch offers a 365-night trial with a free return or exchange.',
+      'The trial ties for the longest trial length among the models we cover. Birch asks for a 30-day break-in before a return starts. That is a short wait inside a year-long window.',
       'First-time latex buyers benefit most from a long trial. The buoyant feel of latex can take a few weeks to get used to. A full year leaves time to judge it in every season.',
     ],
     responseTime: [
-      'Response Time is a standout 10, the Birch Natural\'s top score. Organic latex springs back quickly, and the coil core adds lift underneath.',
+      'Response Time is a standout 10, one of the Birch Natural\'s two top scores. Organic latex springs back quickly, and the coil core adds lift underneath.',
       'In practice, the surface rebounds the moment you shift weight. Combination sleepers who turn often will find it easy to move on. Sleepers who like the slow sink of memory foam should know the Birch feels very different.',
       'Restless sleepers and anyone who gets up during the night will notice this score most. It also makes getting in and out of bed feel easy, since the surface lifts the body rather than holding it.',
     ],
@@ -92,7 +92,7 @@ const copy: ReviewCopy = {
     'Light sleepers who want strong motion control, since it scores 8 here.',
     'Buyers who want every layer thickness published.',
   ],
-  compareIntro: 'The [Amerisleep Organica](/reviews/amerisleep-organica/) has a head-to-head page with the Birch Natural and scores 9.2 as a Talalay latex hybrid. The [Eco Terra Hybrid Latex](/reviews/eco-terra-hybrid-latex/) and [Nolah Natural 11"](/reviews/nolah-natural-11/) both match its 9.0 Overall. All four pair natural latex with a coil core, so the table shows where firmness, trial and warranty differ.',
+  compareIntro: 'The [Amerisleep Organica](/reviews/amerisleep-organica/) has a head-to-head page with the Birch Natural and scores 9.3 as a Talalay latex hybrid. The [Nolah Natural 11"](/reviews/nolah-natural-11/) matches its 9.2 Overall, and the [Eco Terra Hybrid Latex](/reviews/eco-terra-hybrid-latex/) scores 9.0. All four pair natural latex with a coil core, so the table shows where firmness, trial and warranty differ.',
   policies: [
     'The Birch Natural has a 365-night trial and a limited lifetime warranty, according to Birch. Shipping is free in the contiguous US by FedEx Ground, while Alaska, Hawaii and Canada pay shipping.',
     'Birch offers a free return or an exchange within the trial, after a 30-day break-in. Sizes run Twin, Twin XL, Full, Queen, King and Cal King, all 10 inches tall.',
@@ -109,7 +109,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What is the Birch Natural score?',
-      a: 'The Birch Natural earns a 9.0/10 Overall. It scores 10/10 in Response Time, 9/10 in Value, Edge Support, Trial Period and Cooling & Breathability, and 8/10 in Motion Transfer. Overall is the average of those six fields, shown to one decimal. Five of the six fields reach 9 or higher.',
+      a: 'The Birch Natural earns a 9.2/10 Overall. It scores 10/10 in Trial Period and Response Time, 9/10 in Value, Edge Support and Cooling & Breathability, and 8/10 in Motion Transfer. Overall is the average of those six fields, shown to one decimal. Five of the six fields reach 9 or higher.',
     },
     {
       q: 'Is the Birch Natural organic?',
@@ -125,14 +125,14 @@ const copy: ReviewCopy = {
     },
     {
       q: 'Is the Birch Natural good for couples?',
-      a: 'It works for couples who like a responsive surface and use the full width of the bed, with a 9/10 in Edge Support. Motion Transfer is an 8, so light sleepers may feel a partner move. Couples who rank motion control first may prefer an all-foam bed with a 10 in that field.',
+      a: 'It works for couples who like a responsive surface and use the full width of the bed. Edge Support is a 9/10. Motion Transfer is an 8, so light sleepers may feel a partner move. Couples who rank motion control first may prefer an all-foam bed with a 10 in that field.',
     },
     {
       q: 'Does the Birch Natural sleep hot?',
       a: 'On the Birch Natural, heat is not a weak spot. It earns a 9/10 in Cooling & Breathability from organic cotton, New Zealand wool, natural latex and a coil core. It stops short of 10 because no dedicated cooling layer is named in the specs. Cotton or linen sheets suit the natural materials and keep the surface breathable.',
     },
   ],
-  verdict: 'The Birch Natural earns a 9.0/10 Overall as a 10 inch organic latex hybrid at medium-firm. Its 10/10 Response Time and long terms, a 365-night trial and a limited lifetime warranty, are its main draws. Motion Transfer lands at 8. Back, stomach and combination sleepers who want natural latex will find it a strong fit, while light side sleepers should look softer. The year-long trial and limited lifetime warranty back that fit with long coverage.',
+  verdict: 'The Birch Natural earns a 9.2/10 Overall as a 10 inch organic latex hybrid at medium-firm. Its 10/10 scores in Trial Period and Response Time are its main draws. Motion Transfer lands at 8. Back, stomach and combination sleepers who want natural latex will find it a strong fit. Light side sleepers should look softer. The year-long trial and limited lifetime warranty back that fit with long coverage.',
   related: [
     { label: 'Amerisleep Organica vs Birch Natural', href: '/comparison/amerisleep-organica-vs-birch-natural/' },
     { label: 'Best Latex Mattress (2026)', href: '/best/latex/' },
