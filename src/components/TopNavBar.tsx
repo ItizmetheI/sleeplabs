@@ -110,7 +110,7 @@ const navItems: NavItem[] = [
           { label: 'How Memory Foam Works', href: '/blog/how-does-memory-foam-work/' },
           { label: 'Mattress Certifications', href: '/blog/what-mattress-certifications-actually-mean/' },
           { label: 'Compare Two Mattresses', href: '/blog/how-to-choose-between-two-mattresses/' },
-          { label: 'Mattress Trial Guide', href: '/blog/what-the-100-night-trial-actually-covers/' },
+          { label: 'Mattress Trial Guide', href: '/blog/what-a-mattress-sleep-trial-actually-covers/' },
           { label: 'Build a Sleep Routine', href: '/blog/how-to-build-a-sleep-routine-that-works/' },
           { label: 'All Posts', href: '/blog/' }
         ]

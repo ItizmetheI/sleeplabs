@@ -7,7 +7,7 @@ const copy: ReviewCopy = {
   quickAnswer: 'Zoma Hybrid earns a 9.5/10 Overall as a 12 inch hybrid rated Luxury Firm 6/10. It pairs perforated gel memory foam and Reactiv foam with pocketed coils. It suits back, stomach and combination sleepers who want a supportive, even bed. Its main strengths are 10/10 scores in Value, Edge Support and Trial Period. Its main limitation is a 10-year warranty.',
   strengths: [
     '10/10 scores in Value, Edge Support and Trial Period.',
-    'A 365-night trial with free returns, a full refund and pickup, according to Zoma.',
+    'A 365-night trial with free returns, a full refund and pickup after at least 30 nights, according to Zoma.',
     'A Luxury Firm 6/10 feel that keeps the hips level.',
     'Made in the USA, with free FedEx curbside shipping in the lower 48 states.',
   ],
@@ -31,7 +31,7 @@ const copy: ReviewCopy = {
   performance: {
     value: [
       'Value scores a standout 10 here. This field is scored from price, trial and warranty terms. It weighs what the Zoma Hybrid delivers against its queen price.',
-      'Zoma pairs a 365-night trial with a 10-year warranty, and Delivery comes free by FedEx to the curb in the lower 48 states. Returns within the trial are free, with a full refund and pickup.',
+      'Zoma pairs a 365-night trial with a 10-year warranty, and Delivery comes free by FedEx to the curb in the lower 48 states. Returns within the trial are free, with a full refund and pickup, after at least 30 nights at home.',
       'On the Zoma Hybrid, shoppers who weigh value heavily gain the most from this field. Those who weigh warranty length first should note that several brands we cover list lifetime coverage. The 10 holds across every size, since the terms do not change between them.',
     ],
     edgeSupport: [
@@ -40,7 +40,7 @@ const copy: ReviewCopy = {
       'On a full or queen Zoma Hybrid, couples gain the most, since both sleepers can use the full width. This score also matters for heavier sleepers who sit on the edge each morning. Over time, a sturdy frame helps the edge of the Zoma Hybrid keep its shape.',
     ],
     trialPeriod: [
-      'Trial Period is a standout 10 for the Zoma Hybrid. This field reflects trial and return facts only. Zoma offers a 365-night trial, with free returns, a full refund and pickup.',
+      'Trial Period is a standout 10 for the Zoma Hybrid. This field reflects trial and return facts only. Zoma offers a 365-night trial, with free returns, a full refund and pickup once 30 nights have passed.',
       'A year is long enough to judge a Luxury Firm feel through hot and cold months alike. It also gives the body time to settle into a firmer surface. Free pickup removes the hassle of sending it back.',
       'Buyers moving from a softer bed gain the most from the long trial. A 6/10 surface can feel unfamiliar for the first few weeks. Keep the order details on file, and confirm the current terms on Zoma\'s site before ordering.',
     ],
@@ -96,7 +96,7 @@ const copy: ReviewCopy = {
   compareIntro: 'The [Amerisleep AS3 Hybrid](/reviews/amerisleep-as3-hybrid/), the [FORM Core Hybrid](/reviews/form-core-hybrid/) and the [Leesa Sapira Chill Hybrid](/reviews/leesa-sapira-chill-hybrid/) all score 9.5 as hybrids. That matches the Zoma Hybrid. Use the table to compare their firmness, trial and warranty with the Zoma Hybrid.',
   policies: [
     'Zoma Hybrid comes with a 365-night trial and a 10-year warranty, according to Zoma. Delivery comes free by FedEx to the curb in the lower 48 states.',
-    'Returns within the 365-night trial are free, with a full refund and pickup. The Zoma Hybrid comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
+    'Returns within the 365-night trial are free, with a full refund and pickup. Zoma asks for at least 30 nights before a return starts. The Zoma Hybrid comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
     'Zoma states the mattress is made in the USA. Keep the order details for the Zoma Hybrid on file in case a return is needed during the trial. Confirm the current terms on Zoma\'s site before ordering, since policies can change between our checks.',
   ],
   faqs: [
@@ -118,7 +118,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What trial and warranty come with Zoma Hybrid?',
-      a: 'The Zoma Hybrid comes with a 365-night trial and a 10-year warranty, according to Zoma. Returns within the trial are free, with a full refund and pickup. Delivery comes free by FedEx to the curb in the lower 48 states. Confirm the current terms on Zoma\'s site before ordering.',
+      a: 'The Zoma Hybrid comes with a 365-night trial and a 10-year warranty, according to Zoma. Returns within the trial are free, with a full refund and pickup, after at least 30 nights at home. Delivery comes free by FedEx to the curb in the lower 48 states. Confirm the current terms on Zoma\'s site before ordering.',
     },
     {
       q: 'Does Zoma Hybrid sleep hot?',

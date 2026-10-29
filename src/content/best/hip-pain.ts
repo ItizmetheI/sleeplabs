@@ -55,7 +55,7 @@ const copy: BestCopy = {
         'Graphite memory foam and quilted gel foam let the hip settle. A Reactiv layer over coils with a dynamic edge pushes back under it, so the pelvis stays level.',
         'It ties for the highest Value score of the eight picks with the Nolah, each at 10. Edge Support, Trial Period and Motion Transfer are 10s as well, and no field falls below 9.',
         'Back sleepers of most weights fit it, and lighter stomach sleepers usually do too. Lighter side sleepers may want more give at the hip than 5.5/10 offers.',
-        'Zoma lists a 365-night trial with free returns and a 10-year warranty. At 15 inches, it needs deep pocket fitted sheets, and Split King is among its sizes.',
+        'Zoma lists a 365-night trial with free returns after 30 nights and a 10-year warranty. At 15 inches, it needs deep pocket fitted sheets, and Split King is among its sizes.',
       ],
       strengths: [
         'A medium-firm 5.5/10 feel over coils with a dynamic edge.',

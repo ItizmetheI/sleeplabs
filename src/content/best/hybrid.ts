@@ -14,7 +14,7 @@ const copy: BestCopy = {
         'That is the classic hybrid formula: contour at the surface and lift from below. The Boost also ties for the highest Motion Transfer score on this page at 10. A partner turning over stays on their own side.',
         'It ties with two other picks for the highest Value score at 10. Response Time and Cooling & Breathability are 9s, so no field falls below 9.',
         'Zoma rates it Medium-Firm 5.5/10, a fit for back sleepers, many side sleepers and lighter stomach sleepers. The Reactiv layer adds push under the memory foam, so the surface does not feel stuck.',
-        'Zoma lists a 365-night trial with free returns, a 10-year warranty and free FedEx curbside shipping in the lower 48 states. The 15 inch height needs deep pocket sheets, and Split King is offered.',
+        'Zoma lists a 365-night trial with free returns after at least 30 nights, a 10-year warranty and free FedEx curbside shipping in the lower 48 states. The 15 inch height needs deep pocket sheets, and Split King is offered.',
       ],
       strengths: [
         'Dynamic edge coils under memory foam and gel foam.',

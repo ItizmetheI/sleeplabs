@@ -55,7 +55,7 @@ const copy: BestCopy = {
         'Zoma sells it in one Luxury Firm feel at 6/10 on our scale. For a heavier sleeper, that firmer setting keeps the hips from sinking into the foam. It suits back sleepers and many stomach sleepers.',
         'It ties for the highest Value score of the eight picks at 10, shared with the Boost and the [Nolah Evolution 15"](/reviews/nolah-evolution-15/). Edge Support and Trial Period are 10s as well, and the other three fields are 9s.',
         'Heavier side sleepers may find 6/10 firm at the shoulder and should look at the deeper stacks on this page. At 12 inches, it takes standard fitted sheets.',
-        'Zoma lists a 365-night trial with free returns and pickup, and a 10-year warranty. Split King is available for couples who want separate halves.',
+        'Zoma lists a 365-night trial with free returns and pickup after 30 nights, plus a 10-year warranty. Split King is available for couples who want separate halves.',
         'The breathable mesh cover helps a little with heat, a common concern for heavier sleepers who sink further into foam.',
       ],
       strengths: [

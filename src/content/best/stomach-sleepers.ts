@@ -88,7 +88,7 @@ const copy: BestCopy = {
         'The Zoma Hybrid is sold in one Luxury Firm feel, 6/10 on our scale, which is the floor for this page. It fits lighter and average weight stomach sleepers better than heavier ones.',
         'A breathable mesh cover tops perforated gel memory foam and Reactiv foam, with pocketed coils and a base foam below. At 6/10, the coils keep the pelvis up while the gel foam adds a soft first touch at the chest.',
         'It ties with three other picks for the highest Value score of the eight at 10. It also ties for the highest Edge Support score at 10. Trial Period is a 10 too, and the remaining fields are 9s.',
-        'Zoma lists a 365-night trial with free returns and pickup, plus free FedEx curbside shipping in the lower 48 states. The warranty runs 10 years. Its 12 inch profile works with standard fitted sheets.',
+        'Zoma lists a 365-night trial with free returns and pickup after 30 nights, plus free FedEx curbside shipping in the lower 48 states. The warranty runs 10 years. Its 12 inch profile works with standard fitted sheets.',
         'Heavier stomach sleepers who want 7/10 or firmer can look at the [Zoma Start](/reviews/zoma-start/) further down this page, which Zoma rates Firm 7/10. Lighter stomach sleepers who want a little give at the chest will find 6/10 a comfortable middle.',
       ],
       strengths: [

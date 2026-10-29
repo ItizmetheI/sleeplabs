@@ -35,7 +35,7 @@ const copy: BestCopy = {
         'The construction pairs quiet with lift. Graphite memory foam and quilted gel foam absorb movement at the surface. A Reactiv layer and coils with a dynamic edge give both sleepers support out to the perimeter.',
         'Those dynamic edge coils are the detail couples notice most. When both people sleep near the outside of the bed, the edge stays firm instead of sloping.',
         'Zoma rates it medium-firm 5.5/10, which suits back and side sleepers and holds up for many stomach sleepers. Both partners share that one feel. Couples who agree on a medium-firm surface give up nothing else to get it.',
-        'Zoma gives couples 365 nights to decide, with free returns, and backs the Boost with a 10-year warranty. Its 15 inch height needs deep pocket sheets, and Split King is among its sizes.',
+        'Zoma gives couples 365 nights to decide, with free returns after the first 30 nights, and backs the Boost with a 10-year warranty. Its 15 inch height needs deep pocket sheets, and Split King is among its sizes.',
       ],
       strengths: [
         'Dynamic edge coils that keep the full width usable.',

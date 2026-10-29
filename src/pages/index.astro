@@ -47,7 +47,8 @@ const picks = PICK_PAGES.map(slug => {
   const page = h1For(`/best/${slug}/`);
   return { slug, href: `/best/${slug}/`, page, award: page.replace(/ \(2026\)$/, ''), mattress: pick.candidate.mattress };
 });
-const heroLeaders = [{ id: as3.id, label: 'Best Overall' }, ...picks.slice(0, 2).map(p => ({ id: p.mattress.id, label: p.award }))];
+// Owner 2026-10-29: the hero shows only the AS3; the category #1s appear once, in Top picks below.
+const heroLeaders = [{ id: as3.id, label: 'Best Overall', name: as3.name, image: as3.image, overall: as3.scores.overall }];
 
 const teaser = scorecardRows().slice(0, 10);
 const teaserHeaders = SCORECARD_HEADERS.slice(0, 8);
@@ -163,7 +164,7 @@ const cardCls = 'glass-panel p-6 rounded-lg border border-outline-variant/30 hov
   jsonLd={jsonLd}
 >
   <article class="contents" data-body data-page-type="home">
-    <Hero client:load h1={h1} leaderConfig={heroLeaders} updated={UPDATED_LABEL} />
+    <Hero client:load h1={h1} leaders={heroLeaders} updated={UPDATED_LABEL} />
 
     <!-- Coverage Banner -->
     <div class="w-full bg-secondary-container py-4 flex flex-col justify-center items-center px-margin-mobile relative z-10 border-y border-secondary/20">

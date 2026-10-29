@@ -1,22 +1,16 @@
 import { ArrowRight, BookOpen, Scale } from 'lucide-react';
 import { TRUST_BADGE_LABEL } from '../lib/disclosure';
 import { motion } from 'motion/react';
-import { allMattresses } from '../data/mattresses';
 
 interface HeroProps {
   /** Owner homepage H1: answers "what is the best mattress" with the AS3 and its score. */
   h1: string;
-  /** Category leaders from the ranking engine (label is the award on that page). */
-  leaderConfig: { id: string; label: string }[];
+  /** Leaders shown in the hero. Only display fields are passed so the client bundle carries no product data. */
+  leaders: { id: string; label: string; name: string; image: string; overall: number }[];
   updated: string;
 }
 
-export default function Hero({ h1, leaderConfig, updated }: HeroProps) {
-  const leaders = leaderConfig.map(config => {
-    const mattress = allMattresses.find(item => item.id === config.id);
-    if (!mattress) throw new Error(`Missing homepage leader: ${config.id}`);
-    return { ...config, mattress };
-  });
+export default function Hero({ h1, leaders, updated }: HeroProps) {
 
   return (
     <header className="border-b border-outline-variant bg-surface py-14 md:py-20 px-margin-mobile md:px-margin-desktop">
@@ -65,27 +59,27 @@ export default function Hero({ h1, leaderConfig, updated }: HeroProps) {
         >
           <div className="flex items-start justify-between gap-4 p-5 border-b border-outline-variant bg-surface-container-low">
             <div>
-              <p className="text-label-sm font-label-sm uppercase text-secondary font-bold">Selected category leaders</p>
-              <h2 className="text-headline-md font-headline-md text-primary mt-2">Start with three different strengths</h2>
+              <p className="text-label-sm font-label-sm uppercase text-secondary font-bold">Our Best Overall pick</p>
+              <h2 className="text-headline-md font-headline-md text-primary mt-2">Start with the top of the scorecard</h2>
             </div>
             <span className="text-label-sm text-on-surface-variant whitespace-nowrap">{updated}</span>
           </div>
           <div className="divide-y divide-outline-variant">
-            {leaders.map(({ label, mattress }) => (
+            {leaders.map(({ id, label, name, image, overall }) => (
               <a
-                key={mattress.id}
-                href={`/reviews/${mattress.id}/`}
+                key={id}
+                href={`/reviews/${id}/`}
                 className="grid grid-cols-[72px_1fr_auto] items-center gap-4 p-4 hover:bg-surface-container-low transition-colors group"
               >
                 <div className="w-[72px] h-14 bg-white flex items-center justify-center overflow-hidden">
-                  <img src={mattress.image} alt="" className="w-full h-full object-contain" />
+                  <img src={image} alt="" className="w-full h-full object-contain" />
                 </div>
                 <div className="min-w-0">
                   <p className="text-label-sm text-secondary font-bold">{label}</p>
-                  <h3 className="text-body-md text-primary font-bold mt-1 break-words group-hover:text-secondary transition-colors">{mattress.name}</h3>
+                  <h3 className="text-body-md text-primary font-bold mt-1 break-words group-hover:text-secondary transition-colors">{name}</h3>
                 </div>
                 <div className="text-right">
-                  <span className="text-headline-md font-bold text-primary">{mattress.scores.overall.toFixed(1)}</span>
+                  <span className="text-headline-md font-bold text-primary">{overall.toFixed(1)}</span>
                   <span className="block text-[11px] text-on-surface-variant">Overall</span>
                 </div>
               </a>

@@ -208,7 +208,7 @@ const copy: BestCopy = {
     },
     {
       q: 'How long are the trials on these firm picks?',
-      a: 'All eight picks list a 365-night trial, so none leads on trial length. The terms differ, though. The Nolah Evolution 15" asks for a 30-night break-in, and the [Zoma Start](/reviews/zoma-start/) opens returns after 30 nights. The Signature Bliss charges a fee for returns before 30 days.',
+      a: 'All eight picks list a 365-night trial, so none leads on trial length. The terms differ, though. The Nolah Evolution 15" asks for a 30-night break-in, and Zoma models such as the [Zoma Start](/reviews/zoma-start/) open returns after 30 nights. The Signature Bliss charges a fee for returns before 30 days.',
     },
   ],
   related: [

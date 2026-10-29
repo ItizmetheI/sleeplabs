@@ -74,7 +74,7 @@ const copy: BestCopy = {
         'For a value shopper, that flat scorecard means little is given up anywhere. The build is simpler than the Boost. A breathable mesh cover sits over perforated gel memory foam and Reactiv foam, then pocketed coils and a base foam.',
         'At 12 inches, it fits standard fitted sheets and most frames. Zoma sells it in one Luxury Firm feel that sits at 6/10 on our scale, which suits back and stomach sleepers.',
         'Lighter side sleepers may find 6/10 firm at the shoulder, which is its main fit limit. Heavier side sleepers often do well on it, since the coils keep the hips from sinking too far.',
-        'Zoma lists a 365-night trial with free returns and pickup, and a 10-year warranty. Free FedEx curbside shipping covers the lower 48 states.',
+        'Zoma lists a 365-night trial with free returns and pickup after 30 nights, plus a 10-year warranty. Free FedEx curbside shipping covers the lower 48 states.',
         'Back and stomach sleepers who want a supportive hybrid with no weak field should look here first.',
       ],
       strengths: [
@@ -94,7 +94,7 @@ const copy: BestCopy = {
         'Its build is short and simple. A breathable mesh cover tops 1 inch of gel memory foam and a 1 inch Reactiv layer. Below sit 8 inch zoned pocketed coils, for 10 inches in all.',
         'Zoma rates it firm, which sits at 7/10 on our scale. With only 2 inches of comfort foam, the coils do most of the work, which suits back and stomach sleepers who want firm support.',
         'Response Time is an 8, tied with the Apex for the lowest Response Time score of the eight picks. Most side sleepers will find 7/10 hard at the shoulder.',
-        'Zoma backs the Start with a 365-night trial, free returns and a 10-year warranty. At 10 inches, it fits standard sheets, low frames and bunk beds, and Split King is among its sizes.',
+        'Zoma backs the Start with a 365-night trial, free returns after 30 nights and a 10-year warranty. At 10 inches, it fits standard sheets, low frames and bunk beds, and Split King is among its sizes.',
         'Back and stomach sleepers who want firm support over coils, in a low profile, get it here with a 10 in Value.',
       ],
       strengths: [
@@ -210,7 +210,7 @@ const copy: BestCopy = {
     },
     {
       q: 'Are free shipping and returns part of value?',
-      a: 'They are part of the policy facts we record, and they matter when comparing total cost. Most picks here list free shipping, and the Zoma picks list free returns with pickup. Check each brand\'s return terms for minimum nights or fees before ordering.',
+      a: 'They are part of the policy facts we record, and they matter when comparing total cost. Most picks here list free shipping, and the Zoma picks list free returns with pickup after 30 nights. Check each brand\'s return terms for minimum nights or fees before ordering.',
     },
   ],
   related: [

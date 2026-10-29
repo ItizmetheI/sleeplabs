@@ -7,7 +7,7 @@ const copy: ReviewCopy = {
   quickAnswer: 'Zoma Boost earns a 9.7/10 Overall, which ties for the highest Overall score of the 55 models we cover. It is a 15 inch hybrid rated medium-firm 5.5/10 by Zoma, with graphite memory foam over dynamic edge coils. It suits couples, back sleepers and heavier sleepers. Its main strengths are four 10/10 fields. Its main limitation is a 10-year warranty.',
   strengths: [
     '10/10 scores in Value, Edge Support, Trial Period and Motion Transfer.',
-    'A 365-night trial with free returns and a full refund, according to Zoma.',
+    'A 365-night trial with free returns and a full refund after at least 30 nights, according to Zoma.',
     'A medium-firm 5.5/10 feel over dynamic edge coils that balances contour and support.',
     'Made in the USA, with free FedEx curbside shipping in the lower 48 states.',
   ],
@@ -32,7 +32,7 @@ const copy: ReviewCopy = {
   performance: {
     value: [
       'Value is at the ceiling of the scale, 10. We set Value from the price, trial and warranty on record. It weighs what the Boost delivers against its queen price.',
-      'Zoma pairs a 365-night trial with a 10-year warranty, and Shipping is free by FedEx curbside delivery in the lower 48 states. Returns within the trial are free, with a full refund.',
+      'Zoma pairs a 365-night trial with a 10-year warranty, and Shipping is free by FedEx curbside delivery in the lower 48 states. Returns within the trial are free, with a full refund, once you have tried it for at least 30 nights.',
       'On the Zoma Boost, shoppers who weigh value heavily gain the most from this field. A tall, layered hybrid with edge coils adds to what the price covers. Those who weigh warranty length first should note that several brands we cover list lifetime coverage.',
     ],
     edgeSupport: [
@@ -41,7 +41,7 @@ const copy: ReviewCopy = {
       'Couples who share a full or queen Zoma Boost gain the most, since both sleepers can use the full width. If you are heavier and sit on the edge daily, give this score extra attention. Set the Zoma Boost on a sturdy frame to help the perimeter hold its shape.',
     ],
     trialPeriod: [
-      'The Zoma Boost earns a standout 10 in Trial Period. We score this field from the trial length and return terms. Zoma offers a 365-night trial with free returns and a full refund.',
+      'The Zoma Boost earns a standout 10 in Trial Period. We score this field from the trial length and return terms. Zoma offers a 365-night trial with free returns and a full refund, and asks you to try it 30 nights before a return.',
       'A full year leaves room to judge a medium-firm hybrid through every season. It also covers the weeks a new bed can take to feel familiar. On the Zoma Boost, free returns remove the cost of sending it back.',
       'First-time buyers of an online hybrid gain the most from the long trial. Keep the order details on file in case a return is needed, and confirm the current terms on Zoma\'s site before ordering.',
     ],
@@ -97,7 +97,7 @@ const copy: ReviewCopy = {
   compareIntro: 'The [Nolah Evolution 15"](/reviews/nolah-evolution-15/) ties the Boost at 9.7 as a hybrid. The [FORM Core Hybrid](/reviews/form-core-hybrid/) and the [FORM Prime X](/reviews/form-prime-x/) score 9.5. The table below sets their firmness, trial and warranty beside the Zoma Boost.',
   policies: [
     'Zoma Boost comes with a 365-night trial and a 10-year warranty, according to Zoma. Shipping is free by FedEx curbside delivery in the lower 48 states.',
-    'Returns within the 365-night trial are free, with a full refund. The Zoma Boost comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
+    'Returns within the 365-night trial are free, with a full refund. Zoma asks you to try it for at least 30 nights before starting one. The Zoma Boost comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
     'Zoma states the mattress is made in the USA. Save the order details for the Zoma Boost until the trial ends, in case a return is needed. Confirm the current terms on Zoma\'s site before ordering, since policies can change between our checks.',
   ],
   faqs: [
@@ -119,7 +119,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What trial and warranty come with Zoma Boost?',
-      a: 'The Boost comes with a 365-night trial and a 10-year warranty, according to Zoma. Returns within the trial are free, with a full refund, and Shipping is free by FedEx curbside delivery in the lower 48 states. Confirm the current terms on Zoma\'s site before ordering, since they can change.',
+      a: 'The Boost comes with a 365-night trial and a 10-year warranty, according to Zoma. Returns within the trial are free after at least 30 nights, with a full refund, and shipping is free by FedEx curbside delivery in the lower 48 states. Confirm the current terms on Zoma\'s site before ordering, since they can change.',
     },
     {
       q: 'Does Zoma Boost sleep hot?',

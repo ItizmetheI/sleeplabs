@@ -7,7 +7,7 @@ const copy: ReviewCopy = {
   quickAnswer: 'Vaya Hybrid earns a 9.0/10 Overall as a 14 inch hybrid at 5-6/10. A quilted cotton cushion and Vaya foam sit over 8 inch pocketed coils. It suits side and combination sleepers who want a balanced, quick surface. Its main strengths are 10/10 scores in Value, Trial Period and Response Time. Its main limitations are 8s in Edge Support, Motion Transfer and Cooling & Breathability.',
   strengths: [
     '10/10 scores in Value, Trial Period and Response Time.',
-    'A 365-night trial with free returns, according to Vaya.',
+    'A 365-night trial with free returns after at least 30 nights, according to Vaya.',
     'A 5-6/10 feel, medium to medium-firm, that suits side and combination sleepers.',
     'A 2 inch quilted cotton cushion over 8 inch pocketed coils, made in the USA.',
   ],
@@ -39,7 +39,7 @@ const copy: ReviewCopy = {
       'Anyone who sits on the edge of the Vaya Hybrid to dress each morning should weigh this score. Couples on a full or queen size will feel the difference most. A solo sleeper who keeps to the center will feel it least. Over time, a sturdy frame helps the edge keep its shape.',
     ],
     trialPeriod: [
-      'The Vaya Hybrid scores a standout 10 in Trial Period. Trial and return terms set this score. Vaya offers a 365-night trial, with free returns within that window.',
+      'The Vaya Hybrid scores a standout 10 in Trial Period. Trial and return terms set this score. Vaya offers a 365-night trial, with free returns within that window after at least 30 nights.',
       'A full year leaves room to judge a 5-6/10 hybrid feel through warm and cool months alike. It also gives the body time to settle into a new surface. Free returns remove the cost of sending it back within the trial.',
       'First-time buyers of an online hybrid gain the most from the long trial. Keep the order details on file in case a return is needed, and confirm the current terms on Vaya\'s site before ordering.',
     ],
@@ -95,7 +95,7 @@ const copy: ReviewCopy = {
   compareIntro: 'The [Brooklyn Bedding Aurora Luxe](/reviews/brooklyn-bedding-aurora-luxe/) and the [Amerisleep AS5 Hybrid](/reviews/amerisleep-as5-hybrid/) both score 9.0 as hybrids, the same as the Vaya Hybrid. The [Purple RestorePlus Hybrid](/reviews/purple-restoreplus-hybrid/) scores 8.8. Use the table to compare their firmness, trial and warranty with the Vaya Hybrid.',
   policies: [
     'Vaya Hybrid comes with a 365-night trial and a 10-year warranty, according to Vaya. FedEx curbside shipping is free in the lower 48 states.',
-    'Returns are free within the 365-night trial. The Vaya Hybrid comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
+    'Returns are free within the 365-night trial. Vaya asks you to try it for at least 30 nights before starting one. The Vaya Hybrid comes in Twin, Twin XL, Full, Queen, King, Cal King and Split King.',
     'Vaya states the mattress is made in the USA. The mattress is 14 inches tall, so deep pocket fitted sheets may help. Hold on to the Vaya Hybrid order confirmation in case a return comes up during the trial. Confirm the current terms on Vaya\'s site before ordering, since policies can change between our checks.',
   ],
   faqs: [
@@ -117,7 +117,7 @@ const copy: ReviewCopy = {
     },
     {
       q: 'What trial and warranty come with Vaya Hybrid?',
-      a: 'The Vaya Hybrid comes with a 365-night trial and a 10-year warranty, according to Vaya. Returns are free within the trial, and FedEx curbside shipping is free in the lower 48 states. Confirm the current terms on Vaya\'s site before ordering, since they can change between our checks.',
+      a: 'The Vaya Hybrid comes with a 365-night trial and a 10-year warranty, according to Vaya. Returns are free within the trial after 30 nights, and FedEx curbside shipping is free in the lower 48 states. Confirm the current terms on Vaya\'s site before ordering, since they can change between our checks.',
     },
     {
       q: 'Does Vaya Hybrid sleep hot?',

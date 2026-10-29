@@ -4,6 +4,7 @@ import { allMattresses } from '../../data/mattresses';
 import { topics } from '../../data/topics';
 import { articleTable, toArticleBody } from '../../lib/schemaArticleBody';
 import { EDITORIAL_INDEPENDENCE_DISCLOSURE, LINK_DISCLOSURE } from '../../lib/disclosure';
+import { formatOverall } from '../../lib/scoreFieldOrder';
 
 export function getStaticPaths() {
   return topics.map((topic) => ({
@@ -37,7 +38,7 @@ const articleBody = toArticleBody(
       ['Mattress', 'Overall', 'Value', 'Edge Support', 'Response Time', 'Motion Transfer', 'Cooling & Breathability'],
       relatedMattresses.map((mattress) => [
         mattress.name,
-        `${mattress.scores.overall}/10`,
+        `${formatOverall(mattress.scores.overall)}/10`,
         `${mattress.scores.value}/10`,
         `${mattress.scores.edgeSupport}/10`,
         `${mattress.scores.responseTime}/10`,
@@ -185,7 +186,7 @@ const breadcrumbSchema = {
                     <td class="p-4 font-bold">
                       <a href={`/reviews/${mattress.id}/`} class="text-primary underline underline-offset-4 hover:text-secondary">{mattress.name}</a>
                     </td>
-                    <td class="p-4">{mattress.scores.overall}/10</td>
+                    <td class="p-4">{formatOverall(mattress.scores.overall)}/10</td>
                     <td class="p-4">{mattress.scores.value}/10</td>
                     <td class="p-4">{mattress.scores.edgeSupport}/10</td>
                     <td class="p-4">{mattress.scores.responseTime}/10</td>

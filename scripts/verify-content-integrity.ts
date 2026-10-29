@@ -238,14 +238,14 @@ for (const [source, destination] of Object.entries(LEGACY_BEST_BLOG_REDIRECTS)) 
 }
 
 const activeBlogPosts = blogPosts.filter(post => !post.redirectTo && !LEGACY_BEST_BLOG_REDIRECTS[`/blog/${post.slug}/`]);
-assert(blogPosts.length === 149, `Expected 149 source blog records; found ${blogPosts.length}.`);
-assert(activeBlogPosts.length === 76, `Expected 76 active blog articles after the 2026-10-16 page-map cuts; found ${activeBlogPosts.length}.`);
+assert(blogPosts.length === 138, `Expected 138 source blog records (owner 2026-10-29: 10 health posts removed, 1 held); found ${blogPosts.length}.`);
+assert(activeBlogPosts.length === 65, `Expected 65 active blog articles after the 2026-10-29 owner cuts; found ${activeBlogPosts.length}.`);
 for (const post of activeBlogPosts) {
   assert(post.author.name === 'Mattress Inquirer Editorial Team', `${post.slug} must use the Mattress Inquirer Editorial Team organizational byline.`);
   assert(post.reviewedBy === null, `${post.slug} contains an unverified reviewer attribution.`);
 }
 const sourceReviewPendingPosts = activeBlogPosts.filter(requiresBlogSourceReview);
-assert(sourceReviewPendingPosts.length === 22, `Expected 22 source-review-pending blog articles; found ${sourceReviewPendingPosts.length}.`);
+assert(sourceReviewPendingPosts.length === 0, `Expected 0 source-review-pending blog articles; found ${sourceReviewPendingPosts.length}.`);
 
 const surfaceFiles = [
   'AGENTS.md',
